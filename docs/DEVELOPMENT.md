@@ -8,7 +8,7 @@ Hollywild targets a native Game Boy Color cartridge for Chromatic. A development
 2. Install [GB Studio 4.3.2](https://github.com/chrismaltby/gb-studio/releases/tag/v4.3.2).
 3. Open `hollywild.gbsproj`. The accompanying `project/` and `assets/` directories contain the editable native resources.
 4. Keep the project set to **Color Only**, with the existing MBC5 cartridge settings, and choose **Export ROM**.
-5. Inspect and test the exported cartridge before installing it on hardware.
+5. Inspect and test the exported cartridge before installing it on hardware. See [Installing on a Chromatic](HARDWARE_INSTALL.md), which also covers flashing from a computer other than the development computer.
 
 The included resources are sufficient to open the game in the editor. Regenerating the project is optional. An editor export is a separate build from any published cartridge, even when both use the same source version. Hardware installation is not part of these commands.
 
