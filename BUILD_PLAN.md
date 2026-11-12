@@ -2,7 +2,7 @@
 
 ## Detailed production blueprint
 
-Version 0.4, November 12, 2026. This document describes the larger design. A native prototype now builds and has emulator coverage; see [current build status](docs/BUILD_STATUS.md) for implemented scope and evidence. Physical cartridge testing and measured playtime are pending.
+Version 0.5, November 12, 2026. This document describes the larger design. A native 24-mission campaign now builds and has complete emulator routes; see [current build status](docs/BUILD_STATUS.md) for implemented scope and evidence. Physical cartridge testing and measured playtime are pending.
 
 This is the entry point for the expanded plan. This blueprint and its linked specifications define the current proposal. Numeric values are tuning hypotheses until playtested.
 

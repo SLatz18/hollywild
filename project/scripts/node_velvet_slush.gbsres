@@ -1,0 +1,1215 @@
+{
+  "_resourceType": "script",
+  "id": "91361ab4-3f6a-4387-a966-bc093f8c79ab",
+  "name": "Story node_velvet_slush",
+  "symbol": "script_story_node_velvet_slush",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "651e3f00-81d7-4192-afb8-1dbb5db5e6b2",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 4
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "833d3595-30db-49f2-acf1-5f1094841fdc",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 5
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "1a902991-7ed3-4cdd-a792-00e9f1a8ecf7",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Slush: You have\ndiscovered a\ndistinction.\nCongratulations. I",
+                      "discovered twelve\nleaking roofs\nwhile the council\ndiscovered lunch.",
+                      "Bring me a\nworkable network\nplan, and I will\ndiscuss my\ninvoice.",
+                      "Bring me a slogan,\nand I will charge\nfor the umbrella."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "a99ec058-bd62-4977-ab11-41bb0bf45fd2",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 6
+                    }
+                  }
+                },
+                {
+                  "id": "9c1350b3-5714-47ba-ae02-4659d05a2ee5",
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "26ed6071-fc9e-4419-a207-9b2ec4430755"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "af318b34-f814-4cb5-a14e-ad36f1e12f6b",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 6
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "c006f83d-8765-4ec8-ae21-61a73137c09a",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "26ed6071-fc9e-4419-a207-9b2ec4430755"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "4702e758-0daf-46f6-aad1-f928acdd0ac4",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "79"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "c80130b7-a73a-4bf4-a75e-b8e066725d5f",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "79",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "d8232aee-7f76-414f-a9fb-53cbf0b68f01",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Greenhouse\nBill",
+                                  "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                  "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                  "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                  "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                  "words."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "97f768a5-d8e8-4f50-a4f2-eed649c7168b",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Greenhouse\nBill",
+                                  "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                  "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                  "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                  "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                  "words."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "dbf192a9-d11a-4a95-a918-b6b6f1706427",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 14
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "888160f1-afd6-4525-a1ae-77067dc3d028",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "c3318d6b-0da1-4ea1-ad5b-902436d6682c",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Slush: My father\nran the east\ngreenhouse. One\nfrozen reply wire,\none",
+                            "unopened valve,\nand a season of\nseedlings lost.\nThe city sent",
+                            "condolences\nprinted on very\nwarm paper. I\nbought the lodge\nto stop",
+                            "waiting for\npermission to keep\npeople safe."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "814a4277-1c3a-4859-a2f8-873c60848b5c",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "ee3a16b5-c04f-4e79-a6d7-8c1c98268089",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Velvet Rooftops:\ncompare public\nreview fields with\nthe privacy note."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "9bca3098-2d0e-4b96-a0fd-1b4252bd70f4",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "79"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "06ae813c-3265-4c20-ab20-4070da3504d3",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "79",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "11d5e89e-5e6f-4fd8-a3a8-e712c4d33fbf",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Greenhouse\nBill",
+                                  "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                  "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                  "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                  "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                  "words."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "328dc55f-16f5-47db-afae-df6b4bad3b99",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Greenhouse\nBill",
+                                  "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                  "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                  "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                  "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                  "words."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "7a0760c3-7e5b-4b3f-a75c-cad62061ab60",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 15
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "cb24db5a-e26b-494e-ae6f-733fc364abc5",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "8a923a9a-4f3a-439b-a0da-f15f214e089e",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "An estate summary\nsays the lodge may\nreserve all heat\nafter paying",
+                                  "an inspection\ninvoice. Page TWO\ngrants service\naccess, not",
+                                  "ownership. Page\nTHREE forbids\nclosing public\nbranches for\nprivate",
+                                  "priority. The\nsummary is\nunsigned; both\nnumbered pages\ncarry the",
+                                  "city seal. Nib\nrecognizes his old\nphrasing in the\nsummary and admits",
+                                  "he repeated a\nclaim he had not\nchecked. He asks\nto correct it\nwhere",
+                                  "everyone can see."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "c7b585c4-f78d-437b-a0b6-b9a1a9499356",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              }
+                            },
+                            {
+                              "id": "e1223962-776a-47d2-aab2-a133dde6f63c",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Velvet Rooftops:\ncompare the permit\npages at the\npermit board."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "94494544-3a97-4f44-aa2a-c355046f2ad7",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "79"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "f6b69e42-016b-4653-a589-b0b2486ce601",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "79",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "5be009c4-fbb1-41e8-ae61-fcc10a90ae5b",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Greenhouse\nBill",
+                                        "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                        "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                        "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                        "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                        "words."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "f78197af-f2a7-40b9-ae2e-32b99b42fa48",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Greenhouse\nBill",
+                                        "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                        "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                        "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                        "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                        "words."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "e5ead31f-b3ae-49ed-ac5e-7c12e13ca054",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "43"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 16
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "7c813398-c53e-4d23-ad19-bfe553f7edd9",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 3
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "d0664c17-91e2-4512-ab86-962c497b1ad3",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Slush checks the\nline with his own\nruler. The second\ndoor does not",
+                                        "remove his wheel.\nIt prevents his\nwheel from being\nthe only door. He",
+                                        "asks Dot to\nexplain what fails\nif the bypass\nfreezes too."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "631a730f-ed24-406f-a013-557942d68488",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "48"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 1
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "3d267df5-5ea2-4c03-a483-ef0abf6f315d",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Slush: We read the\nfile together.\nYour plan names\nthe same faults I",
+                                              "did and proposes\nan answer I can\ncheck. That earns\na trial, not",
+                                              "blind faith."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  },
+                                  {
+                                    "id": "14c7e028-92b6-44ec-a1c0-1c89b2a00f9a",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "48"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 2
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "18d6a9e4-d8e0-41a9-aec1-c0edfc483037",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Slush: The clerk\npublished my costs\naccurately. I\ndisliked the",
+                                              "process. I have\nless reason to\ndistrust its\ndrawing. Let the\nwitness",
+                                              "keep the test log."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  },
+                                  {
+                                    "id": "9a9e9bec-c5e6-4c41-ac84-1606cad74e12",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 4
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "a750fa5e-e768-417e-a1a3-0fcdc89cd6a9",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Velvet Rooftops:\napprove the\nfitting that\nmatches the signed\npermission."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "32d9370f-177d-4cb1-a187-ad085bcd8579",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "79"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "91b71a5d-3f4e-48b4-a1c6-50a85715f1ec",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "79",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "97d75083-18ea-43dd-a39e-712153e856f2",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Greenhouse\nBill",
+                                              "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                              "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                              "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                              "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                              "words."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "8d536c94-6fb8-4d05-a574-246fad983890",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Greenhouse\nBill",
+                                              "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                              "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                              "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                              "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                              "words."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "8ab590e5-c5b2-4be1-af13-debd35400c49",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "43"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 20
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "20a6b800-5dab-4820-af68-454944d93d6c",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "44"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 5
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "cab258af-07b0-4b05-a8ff-f3a0fcae92b7",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Slush: My plan\nprotected one\ndistrict by\nexcluding the\nrest. Yours",
+                                              "keeps the rest\nserved while\nadmitting one\nneeds help. That\nis a",
+                                              "distinction with a\nmachine behind it.\nHe signs the trial\nresult and",
+                                              "asks to keep the\npaper fault card."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "a810341f-152d-4570-a880-a2ffd5c2737c",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "44",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 6
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "e9cdce42-c923-4167-a27b-aca43c743585",
+                                          "command": "EVENT_CALL_CUSTOM_EVENT",
+                                          "args": {
+                                            "customEventId": "cecdf4e9-62d1-4d36-a81f-bb9171af646c"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "4a95c0d9-de02-4afc-ab3b-b41adcace812",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "44"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 6
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "04baebfc-4f30-46d0-a1e9-ad1435c268d8",
+                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                "args": {
+                                                  "customEventId": "cecdf4e9-62d1-4d36-a81f-bb9171af646c"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "c8f7a266-43f8-4740-a869-d39b447764ca",
+                                                "command": "EVENT_IF",
+                                                "args": {
+                                                  "condition": {
+                                                    "type": "eq",
+                                                    "valueA": {
+                                                      "type": "variable",
+                                                      "value": "79"
+                                                    },
+                                                    "valueB": {
+                                                      "type": "number",
+                                                      "value": 0
+                                                    }
+                                                  }
+                                                },
+                                                "children": {
+                                                  "true": [
+                                                    {
+                                                      "id": "d3a3c495-557e-4524-a6c0-2813ac6c2c1e",
+                                                      "command": "EVENT_SET_VALUE",
+                                                      "args": {
+                                                        "variable": "79",
+                                                        "value": {
+                                                          "type": "number",
+                                                          "value": 1
+                                                        }
+                                                      }
+                                                    },
+                                                    {
+                                                      "id": "bde5ed08-1bf9-4b65-a61a-19610d29901a",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "The Greenhouse\nBill",
+                                                          "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                                          "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                                          "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                                          "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                                          "words."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "minHeight": 4,
+                                                        "maxHeight": 7,
+                                                        "position": "bottom",
+                                                        "closeWhen": "key",
+                                                        "closeButton": "a"
+                                                      }
+                                                    }
+                                                  ],
+                                                  "false": [
+                                                    {
+                                                      "id": "cd32002e-57b1-42dc-a8b4-9a096dee87e0",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "The Greenhouse\nBill",
+                                                          "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                                          "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                                          "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                                          "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                                          "words."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "minHeight": 4,
+                                                        "maxHeight": 7,
+                                                        "position": "bottom",
+                                                        "closeWhen": "key",
+                                                        "closeButton": "a"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "d8981c5c-2200-4e48-a3c2-622b4464c07c",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "43"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 21
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "e84efd64-afba-473a-a901-affdfb48dbc1",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "44"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 5
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "199569e0-d1c7-4a36-a7d8-8167bdc4fc18",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Slush: I still\nprefer a building\nwith my name on\nit. But a city\nthat",
+                                                    "works is a better\nneighbor than an\nestate surrounded\nby cold. He",
+                                                    "offers the\numbrella to Pip,\nwho discovers it\nis heavy because\nthe",
+                                                    "handle stores\ntwelve emergency\nforms."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              },
+                                              {
+                                                "id": "4df172bb-b2ec-48bd-ab0f-2c0ab45b4d75",
+                                                "command": "EVENT_SET_VALUE",
+                                                "args": {
+                                                  "variable": "44",
+                                                  "value": {
+                                                    "type": "number",
+                                                    "value": 6
+                                                  }
+                                                }
+                                              },
+                                              {
+                                                "id": "754b3fcb-2610-41bf-a783-13fa532399fb",
+                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                "args": {
+                                                  "customEventId": "51eb1ffb-4abd-4dda-acf9-7aad9dcfbd7c"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "ab58b141-5889-4cdb-a0c3-ca52db16c1b8",
+                                                "command": "EVENT_IF",
+                                                "args": {
+                                                  "condition": {
+                                                    "type": "eq",
+                                                    "valueA": {
+                                                      "type": "variable",
+                                                      "value": "44"
+                                                    },
+                                                    "valueB": {
+                                                      "type": "number",
+                                                      "value": 6
+                                                    }
+                                                  }
+                                                },
+                                                "children": {
+                                                  "true": [
+                                                    {
+                                                      "id": "2ec6c123-5b60-4e12-a236-0f240810daf7",
+                                                      "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                      "args": {
+                                                        "customEventId": "51eb1ffb-4abd-4dda-acf9-7aad9dcfbd7c"
+                                                      }
+                                                    }
+                                                  ],
+                                                  "false": [
+                                                    {
+                                                      "id": "d14d77eb-0506-4a22-a8a8-fba7d23045ff",
+                                                      "command": "EVENT_IF",
+                                                      "args": {
+                                                        "condition": {
+                                                          "type": "eq",
+                                                          "valueA": {
+                                                            "type": "variable",
+                                                            "value": "79"
+                                                          },
+                                                          "valueB": {
+                                                            "type": "number",
+                                                            "value": 0
+                                                          }
+                                                        }
+                                                      },
+                                                      "children": {
+                                                        "true": [
+                                                          {
+                                                            "id": "7c6ecc0b-dc05-43af-a593-0aac606833e9",
+                                                            "command": "EVENT_SET_VALUE",
+                                                            "args": {
+                                                              "variable": "79",
+                                                              "value": {
+                                                                "type": "number",
+                                                                "value": 1
+                                                              }
+                                                            }
+                                                          },
+                                                          {
+                                                            "id": "74b2e864-77b0-460e-a56d-b891eba7db69",
+                                                            "command": "EVENT_TEXT",
+                                                            "args": {
+                                                              "text": [
+                                                                "The Greenhouse\nBill",
+                                                                "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                                                "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                                                "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                                                "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                                                "words."
+                                                              ],
+                                                              "avatarId": "",
+                                                              "minHeight": 4,
+                                                              "maxHeight": 7,
+                                                              "position": "bottom",
+                                                              "closeWhen": "key",
+                                                              "closeButton": "a"
+                                                            }
+                                                          }
+                                                        ],
+                                                        "false": [
+                                                          {
+                                                            "id": "0213140b-dd20-476f-a1e8-7676e0bf4657",
+                                                            "command": "EVENT_TEXT",
+                                                            "args": {
+                                                              "text": [
+                                                                "The Greenhouse\nBill",
+                                                                "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                                                "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                                                "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                                                "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                                                "words."
+                                                              ],
+                                                              "avatarId": "",
+                                                              "minHeight": 4,
+                                                              "maxHeight": 7,
+                                                              "position": "bottom",
+                                                              "closeWhen": "key",
+                                                              "closeButton": "a"
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "9b298fb3-2948-4a26-ab27-c56c5d17dcb5",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "79"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "9fd5e004-f38e-40c9-aacd-6e80d78f5304",
+                                                "command": "EVENT_SET_VALUE",
+                                                "args": {
+                                                  "variable": "79",
+                                                  "value": {
+                                                    "type": "number",
+                                                    "value": 1
+                                                  }
+                                                }
+                                              },
+                                              {
+                                                "id": "9f2699b3-8e1c-4672-a219-76fb070e2bff",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "The Greenhouse\nBill",
+                                                    "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                                    "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                                    "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                                    "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                                    "words."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "9be5e3e8-d575-4674-a0d1-2ce8ca0a2e7d",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "The Greenhouse\nBill",
+                                                    "A tucked receipt\nrecords a\ngreenhouse\nemergency repair.\nThe payer is",
+                                                    "Sterling, not\nSlush Estates. It\npredates his first\nproperty",
+                                                    "purchase. The\nfigure is modest\nbeside later\ninvoices. The\nbottom",
+                                                    "says: Save what\ncan still grow. No\nadvertising mark\naccompanies the",
+                                                    "words."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

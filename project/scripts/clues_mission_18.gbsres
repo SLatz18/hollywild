@@ -1,0 +1,305 @@
+{
+  "_resourceType": "script",
+  "id": "d11d9861-7419-47a0-a716-171d36c8cf76",
+  "name": "Story clues_mission_18",
+  "symbol": "script_story_clues_mission_18",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "a4f0ecef-a165-4804-ac96-8396589a5972",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Clues: A Light\nWith a Meaning"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "a638d7ec-06e9-40b1-a9fa-d5ed33f72367",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b7f52b11-597d-4c56-a291-e703a1388595",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "No clues yet for\nthis mission.\nFollow the next\nlead in START >\nStory."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "1a8fab68-8eb9-4ed1-a7f2-a80f9c8e3f1a",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "7f3424e8-7f00-4b93-ab1e-247d0a64e2b4",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Clerk: STEADY\nmeans message\nreceived. DOUBLE\nmeans send the\ncourier.",
+                "DARK means no\nconfirmed signal,\nso check in\nperson. No rapid",
+                "flashing, and no\ncolor test. We use\na plain written\ncard at every",
+                "post as well as\nthe lamp."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "b0fd2fe8-d35e-43a0-a2d1-8cfa2f9174a6",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "42cccb24-0472-44a2-ac9c-d379815df027",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A sample report\nsays someone saw a\nlamp but could not\ntell whether",
+                "it was steady or\ndouble. The\nreceiver must not\ninvent a clear\ncode",
+                "from an unclear\nsighting. A\nwritten received\ncard at the post\ncan",
+                "resolve the doubt;\nif it cannot, the\nreceiver must\ncheck in person.",
+                "The clerk\nremembers how much\ntrouble began when\nsilence was\ntreated",
+                "as agreement. An\nuncertain flash\ndeserves the same\nhonest caution."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "4a4a5d2f-240c-48ea-a885-cefa7b5088d3",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "45738b0b-6e9d-49eb-a998-936cb416cc55",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The card uses\nwords and distinct\nmarks. Pip can\nread it at arm",
+                "length; Moxie can\nread it through a\nscarf. Nib\nproposes a gold",
+                "border. The clerk\npermits the border\nafter he proves it\ncovers none",
+                "of the\ninstructions."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "8afb0338-77d3-47e9-ae4a-3a3bc1d141a2",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5e6a4d05-612e-47eb-ae43-caab361d8feb",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The roof antenna\nreceives a clear\nDOUBLE signal.\nWhat action does",
+                "the agreed code\nrequire?"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "ad25ed2d-bbb6-40ea-a03b-b163e2e4f8f5",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 4
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b21d999f-605f-4884-a865-1cb01ccfeecf",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "What should the\nroof keeper do\nfirst with a\nreport that cannot",
+                "distinguish the\ntwo active\nsignals? The\nwritten received\ncard is",
+                "available beside\nthe lamp. No\nwarning is\ncurrently\nconfirmed. Choose",
+                "a check that can\nestablish what was\nactually sent\nbefore calling",
+                "either receipt or\na courier request.\nThe keeper wants a\nrule that",
+                "still works on a\nmisty night."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "dfeae9d8-ed03-4653-af32-317e52dbcb7f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "537d9ffe-e53b-41e9-a16f-4080ae035046",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Moxie repeats the\nsignal and names\nthe depot handoff.\nShe asks Pip",
+                "to stop calling\nher the emergency\nmiracle. A courier\nis a normal",
+                "part of the plan,\nshe says. Miracles\nhave terrible\nmaintenance",
+                "schedules."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

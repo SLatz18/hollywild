@@ -1,0 +1,787 @@
+{
+  "_resourceType": "script",
+  "id": "0fa80135-2d6c-4492-a373-66c78a88e080",
+  "name": "Story node_roof_antenna",
+  "symbol": "script_story_node_roof_antenna",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "080b824a-75a7-4d14-a4a8-1cc6c101b760",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "f5525eba-d7d8-4e05-af6b-5fe83a64201e",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "ca515607-2aad-47c9-ab1f-067f131ca59b",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Moxie has six\nsmall parcels for\nthe first round.\nHer roof harness",
+                      "carries three at a\ntime; the covered\nhandcart carries\nall six. The",
+                      "high line is\nchecked in two\ntrips, and the\ncovered line in\none.",
+                      "Neither route has\na timer. The\nclinic wants a\ncomplete delivery",
+                      "record, not a\nspeed boast. Moxie\nasks how many\ntrips the larger\ncart",
+                      "saves on this\nround."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "49802553-4b0c-4b17-aa95-c1a12c922ea6",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  }
+                },
+                {
+                  "id": "654fccd2-7a9f-4def-abec-77881e1c90a7",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Candy Rooftops:\nspeak to the\ncourier beside the\nroof landing."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "f2057b86-e1ef-46e0-a79e-cabc5490803c",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "64"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "edac01ce-8c4f-4d6a-ab99-5affd928460c",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "64",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "9ad17c60-db44-465a-ae62-a468d8ac283b",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Quiet Reply",
+                            "A maintenance note\ndescribes a bell\nloud enough to\nwake the market",
+                            "and a reply wire\ntoo frail to\nsurvive the cold.\nThe note is not",
+                            "about sound. Its\nauthor wanted the\nsender to know\nsomeone had",
+                            "listened. Dot has\nunderlined that\nsentence."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "1a7223d4-4d88-4be0-a357-5f42a9bbe26f",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Quiet Reply",
+                            "A maintenance note\ndescribes a bell\nloud enough to\nwake the market",
+                            "and a reply wire\ntoo frail to\nsurvive the cold.\nThe note is not",
+                            "about sound. Its\nauthor wanted the\nsender to know\nsomeone had",
+                            "listened. Dot has\nunderlined that\nsentence."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "736e10f8-5a9f-45ec-ad4f-a07e2ea76557",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 6
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "c532ef7b-c13f-48e8-a73c-b1e170a7564a",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "1b95d5b7-6863-4eb8-a9b9-064e33bfe270",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Dot: The bell wire\ngoes to this\nantenna. Its brass\ntag says SEND",
+                            "NORTH. The vane\npoints toward\nAurora when its\narrow meets the\nnotch.",
+                            "Wind moved the\nvane, but the\nnotch is still cut\ninto the stone."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "b54854b9-d2b8-4706-aee4-a59d900c957d",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "73b7533f-8886-4db6-a05b-9a96ab4702a1",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Candy Rooftops:\ncompare the dated\nwatch entries with\nthe courier."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "f228e038-f53d-4999-aaa2-9f97826b9fdc",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 4
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "f234c767-7c02-4c80-aaaf-d0cb1fca5ddb",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Which leg needs\ninvestigation\nfirst: the alarm\nleaving the roof,\nthe",
+                                  "alarm reaching\nAurora, or the\nattempted reply\nreturning? Use the",
+                                  "separate entries\nrather than\nassuming the whole\nsystem either\nworked",
+                                  "or failed. The\nwatch keeper has\nwaited years to\nhear an answer\nthat",
+                                  "distinguishes what\nhis crew did from\nwhat the machinery\ncould",
+                                  "confirm."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "a5e6fff8-8eab-477f-ab04-04aee6e99612",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "ROOF",
+                                "option2": "ARRIVAL",
+                                "option3": "REPLY"
+                              }
+                            },
+                            {
+                              "id": "613685b1-72d8-412b-a6a6-29f4f6dc481c",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 3
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "3ec34ab7-ad29-416d-a9af-666cec77687d",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 5
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "5186327b-a866-423b-aa2b-c10e3117cd5f",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Aurora Signal:\nshow the watch log\nto the signal\nclerk."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "63e6e7b0-25fb-4277-a637-2434f1f3d1cb",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "39080100-c57a-476c-a515-66e755c9339e",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Find the earliest\nmissing\nconfirmation. Two\nentries record\ncompleted",
+                                              "events; the third\nrecords an attempt\nwithout its\nreceiving mark."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "f4103d12-8ee3-41dd-a603-dcaa86d468d3",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "64"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "f371b7c9-5a58-4d6c-aa4b-90957276de3e",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "64",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "221d1ff2-47fd-4010-a0fb-039404ce6953",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Quiet Reply",
+                                        "A maintenance note\ndescribes a bell\nloud enough to\nwake the market",
+                                        "and a reply wire\ntoo frail to\nsurvive the cold.\nThe note is not",
+                                        "about sound. Its\nauthor wanted the\nsender to know\nsomeone had",
+                                        "listened. Dot has\nunderlined that\nsentence."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "65a9cc4b-f9dc-4aaf-a337-e26719a092ae",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Quiet Reply",
+                                        "A maintenance note\ndescribes a bell\nloud enough to\nwake the market",
+                                        "and a reply wire\ntoo frail to\nsurvive the cold.\nThe note is not",
+                                        "about sound. Its\nauthor wanted the\nsender to know\nsomeone had",
+                                        "listened. Dot has\nunderlined that\nsentence."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "0584bb64-ee79-499c-a324-9f7a70d6aa05",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 18
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "6326ba68-5bd4-43ed-aafa-114499e6b7ae",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 3
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "5ee76f68-021c-4d49-a744-d749a9cb0efd",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The roof antenna\nreceives a clear\nDOUBLE signal.\nWhat action does",
+                                  "the agreed code\nrequire?"
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "76d18a36-39ff-46d0-aed9-f7b30913e364",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "WAIT",
+                                "option2": "COURIER",
+                                "option3": "PARTY"
+                              }
+                            },
+                            {
+                              "id": "8357573b-43ae-4837-a116-4e5a9a4db34f",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "b1dc3adb-f384-4e90-aa98-cc4cd42030f3",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 4
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "b87bf86d-fb6e-4955-ad1d-d5fc71f940c6",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Candy Rooftops:\nchoose the\nresponse to an\nuncertain lamp\nreport."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "87845f92-61b3-4cdf-a6f8-132361c709c0",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "8a935147-be69-44d7-a744-386ba8ba179d",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Consult the signal\ncard. Receipt\nconfirmation,\nbackup request,\nand",
+                                              "lack of a\nconfirmed signal\neach have a\ndistinct response."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "90b76059-7aa5-4217-adb2-7fe13a906ed5",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "64"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "0a5187c1-551a-4937-a73a-32062235f590",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "64",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "272e64a5-9002-4137-a3b8-1e6e0cc67961",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Quiet Reply",
+                                        "A maintenance note\ndescribes a bell\nloud enough to\nwake the market",
+                                        "and a reply wire\ntoo frail to\nsurvive the cold.\nThe note is not",
+                                        "about sound. Its\nauthor wanted the\nsender to know\nsomeone had",
+                                        "listened. Dot has\nunderlined that\nsentence."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "614b158f-7486-4000-aaa5-76e46114e869",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Quiet Reply",
+                                        "A maintenance note\ndescribes a bell\nloud enough to\nwake the market",
+                                        "and a reply wire\ntoo frail to\nsurvive the cold.\nThe note is not",
+                                        "about sound. Its\nauthor wanted the\nsender to know\nsomeone had",
+                                        "listened. Dot has\nunderlined that\nsentence."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "0a5dd323-f33e-48d4-ad75-2a6628503393",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "64"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "d7de7d22-eca5-4916-ae8d-df5ec25bb57a",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "64",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "af997118-3c62-4443-a171-f54961b06835",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Quiet Reply",
+                                  "A maintenance note\ndescribes a bell\nloud enough to\nwake the market",
+                                  "and a reply wire\ntoo frail to\nsurvive the cold.\nThe note is not",
+                                  "about sound. Its\nauthor wanted the\nsender to know\nsomeone had",
+                                  "listened. Dot has\nunderlined that\nsentence."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "6974d9f6-97ee-4b96-af4e-eaacf61fe16f",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Quiet Reply",
+                                  "A maintenance note\ndescribes a bell\nloud enough to\nwake the market",
+                                  "and a reply wire\ntoo frail to\nsurvive the cold.\nThe note is not",
+                                  "about sound. Its\nauthor wanted the\nsender to know\nsomeone had",
+                                  "listened. Dot has\nunderlined that\nsentence."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

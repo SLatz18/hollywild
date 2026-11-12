@@ -1,0 +1,693 @@
+{
+  "_resourceType": "script",
+  "id": "7c88d2ad-cb99-4a02-a9b3-8ca6ca8338be",
+  "name": "Story node_depot_gate",
+  "symbol": "script_story_node_depot_gate",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "06e64d68-337e-42c7-a9bf-3e124c5f4487",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "e5f29ee2-2412-4eda-ab10-47d9d5a5b692",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "804c6e48-45e3-4a06-a7a2-a56fc6b32056",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The valve account\nshows twenty Coins\nfor inspection,\nalready paid by",
+                      "Slush, and six for\nstorage, still\ndisputed. The city\nclaim slip",
+                      "keeps ownership\npublic. The\nforeman remembers\nSlush paying\npromptly",
+                      "when the pipe was\nmoved; he also\nremembers nobody\nagreeing to",
+                      "private ownership.\nPip suggests\nthanking him for\nthe actual payment",
+                      "without accepting\nthe extra claim.\nThe foreman hands\nyou a clean",
+                      "tally card."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "6fb68559-b439-49d4-acf4-b5a260687ab2",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  }
+                },
+                {
+                  "id": "19c28a8c-46e8-40b0-ac9a-2d41a1a7d1bf",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Frostwick Depot:\ninspect the\ntoolbox for the\ncarbon copy."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "612904a1-92bf-430d-a735-25197e542da1",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 3
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "2844d5f0-5b89-4f51-ae25-1f70274798d4",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The gate register\nneeds the color of\nthe cart that\ncarried the",
+                            "valve. Which exit\nslip should the\nclerk retrieve?"
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "5b19b266-36fe-4013-ad8c-ad40a22687cc",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "RED",
+                          "option2": "BLUE",
+                          "option3": "YELLOW"
+                        }
+                      },
+                      {
+                        "id": "502fa7ec-edc1-4a40-a9b2-7c6b4d685cc3",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 3
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "37cc16f9-2ca8-4464-a269-ae16126a5940",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              }
+                            },
+                            {
+                              "id": "986a2618-3641-4772-af86-e09ea3aa7cde",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Frostwick Depot:\nprepare the\nfactual account at\nthe manifest\nboard."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "27b33d66-2f15-46ca-a685-1028e05a1c29",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "db527d6a-3db5-4ae5-a074-aa400c82358a",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Match the valve\ncargo to its cart\nin the manifest,\nrather than",
+                                        "choosing the color\nof a different\nuseful supply."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "1a9df467-436a-40ff-adbf-520ac8ba22b3",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "56"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "126328e3-9fe4-4fab-af10-82c4f0431f92",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "56",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "fd734768-2958-4b8e-a125-ac8c961a2384",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Gate Height",
+                                  "The gate beam has\ntiny marks for\nparcel loads and\nthree pencil marks",
+                                  "for a child\nheight. The\ntallest child mark\nnow has a courier\nlicense",
+                                  "number beside it.\nMoxie pretends not\nto recognize the\nhandwriting.",
+                                  "The foreman\npretends to\nbelieve her."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "456c8ed8-25d6-4d22-a599-73d8aaf3fd21",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Gate Height",
+                                  "The gate beam has\ntiny marks for\nparcel loads and\nthree pencil marks",
+                                  "for a child\nheight. The\ntallest child mark\nnow has a courier\nlicense",
+                                  "number beside it.\nMoxie pretends not\nto recognize the\nhandwriting.",
+                                  "The foreman\npretends to\nbelieve her."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "61bb726b-b030-4980-adef-5cad23fbac91",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 7
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "fd43699e-0cdd-4c9f-a374-082804d1f779",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "abf1e4a1-83eb-42b5-aa3c-6ff4a3c574df",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The release\nchecklist requires\ntwo facts: public\nownership and a",
+                            "cleared repair\ncharge. The\nsorting register\nproves ownership;\nthe",
+                            "paid repair line\nproves the charge\ncleared. The\nstorage dispute",
+                            "belongs on a\nseparate account.\nA substitute form\noffers release if",
+                            "Moxie signs a\npersonal loan. She\ncould sign\nquickly, but it\nwould",
+                            "turn a public\npaperwork error\ninto her private\ndebt. She puts the",
+                            "pen down."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "18e85de8-93c6-4250-ac57-232129a2fed1",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 2
+                          }
+                        }
+                      },
+                      {
+                        "id": "8341cdfe-1752-4e02-ad24-cc12d4350ce8",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Frostwick Depot:\ncompare the sled\nentry on the\nmanifest."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "c7912b07-c84a-4b38-a748-49e5651336ba",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 3
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "84be8084-db3a-4853-a9c7-a527c69d0968",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Select the release\nform appropriate\nto this sled\nownership. The\nmark",
+                                  "is specified in\nthe manifest."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "89ab3ed5-39d8-46de-abc9-fc5312e17660",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "SQUARE",
+                                "option2": "CROWN",
+                                "option3": "BLANK"
+                              }
+                            },
+                            {
+                              "id": "d4017a85-1670-402c-ab44-73eaa1b1b0be",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "0180422f-33d2-484c-ad99-7bd56ddf82de",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 4
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "0226cd8c-3e94-454f-a243-f680bdbb6258",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Frostwick Depot:\nchoose the\nevidence packet\nfor a fair sled\nrelease."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "82a6cc9c-42c6-48ed-af88-0b9036edffff",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "46c8cea5-ff04-477a-af63-14f03e725b21",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Decide whether the\nvehicle is public\nor private, then\nuse the",
+                                              "corresponding\nrelease mark named\nby the manifest."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "c2d5872f-1887-4c49-a084-c866f7303499",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "56"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "894248c0-6378-4518-aee5-3bb2366181bb",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "56",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "864da82e-76e5-43d5-ad38-c5de13378c73",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Gate Height",
+                                        "The gate beam has\ntiny marks for\nparcel loads and\nthree pencil marks",
+                                        "for a child\nheight. The\ntallest child mark\nnow has a courier\nlicense",
+                                        "number beside it.\nMoxie pretends not\nto recognize the\nhandwriting.",
+                                        "The foreman\npretends to\nbelieve her."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "c3a243f6-39e1-4419-a448-8bd7aad4c4bf",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Gate Height",
+                                        "The gate beam has\ntiny marks for\nparcel loads and\nthree pencil marks",
+                                        "for a child\nheight. The\ntallest child mark\nnow has a courier\nlicense",
+                                        "number beside it.\nMoxie pretends not\nto recognize the\nhandwriting.",
+                                        "The foreman\npretends to\nbelieve her."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "9e73b8cb-459d-4ab8-a86d-20efb805db94",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "56"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "1b657f26-1be8-4eb8-ab93-b57c5d8d0cd6",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "56",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "f1db589b-755f-4ce0-acab-a2fa647ae6c7",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Gate Height",
+                            "The gate beam has\ntiny marks for\nparcel loads and\nthree pencil marks",
+                            "for a child\nheight. The\ntallest child mark\nnow has a courier\nlicense",
+                            "number beside it.\nMoxie pretends not\nto recognize the\nhandwriting.",
+                            "The foreman\npretends to\nbelieve her."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "3d41875f-adfd-49b7-a9e1-af20b8329385",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Gate Height",
+                            "The gate beam has\ntiny marks for\nparcel loads and\nthree pencil marks",
+                            "for a child\nheight. The\ntallest child mark\nnow has a courier\nlicense",
+                            "number beside it.\nMoxie pretends not\nto recognize the\nhandwriting.",
+                            "The foreman\npretends to\nbelieve her."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -31,11 +31,13 @@ The build helper invokes the official native `make:rom` command. It checks the G
 
 ## Authoring and regeneration
 
-The checked-in native resources are editable in GB Studio. The generators provide another authoring path:
+The checked-in native resources are editable in GB Studio. Campaign writing lives in `content/campaign.json`. The generators provide another authoring path:
 
 ```bash
 python3 scripts/create-assets.py
 node scripts/create-game.mjs
+node scripts/check-campaign.mjs
+python3 scripts/create-campaign-tests.py
 ```
 
 **These commands overwrite generated art, world data, project settings, scenes, actors, and scripts.** Commit or preserve deliberate editor changes before regeneration. Do not run them as a routine prerequisite for opening or exporting the included project.
@@ -55,7 +57,7 @@ python3 -m venv .tools/emulator
 
 The test runner executes asset and native-resource checks, then each checked-in button replay on a fresh test cartridge, retaining a report for the exact ROM.
 
-The asset check verifies source colors, dimensions, the chosen tile budget, walkability to interaction sites, and district connectivity. The separate ROM inspector checks the actual compiled file. Neither check proves that the game plays correctly.
+The asset check verifies source colors, dimensions, the chosen tile budget, walkability to interaction sites, and district connectivity. The campaign checker exercises emitted native event logic; it complements the separate actual-ROM walkthroughs. The separate ROM inspector checks the actual compiled file. Neither check proves that the game plays correctly.
 
 The emulator harness runs the genuine cartridge in PyBoy with no display window. It accepts one JSON command per input line, for example:
 
@@ -67,6 +69,8 @@ The emulator harness runs the genuine cartridge in PyBoy with no display window.
 {"restart":true}
 {"stop":true}
 ```
+
+Additional commands support `read` (advance dialogue but stop at a choice menu), `choose` (1-based selection, or 0 for B), `travel` (walk through connected scenes), and `interact` (walk to an actor and press A). These helpers send ordinary buttons and check observed positions. They do not teleport or alter state.
 
 Buttons advance the game. Debug symbols from the matching build allow read-only observation of variables and position. The harness does not inject gameplay state or write game memory. Restart carries cartridge RAM into a newly booted emulator; it does not restore an emulator save state. A fresh harness process starts with blank test cartridge RAM and does not access a player's save files.
 

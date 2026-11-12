@@ -1,0 +1,244 @@
+{
+  "_resourceType": "script",
+  "id": "c61bc73a-727a-481a-ac3b-b3b7caa0b879",
+  "name": "Story node_archive_badge",
+  "symbol": "script_story_node_archive_badge",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "d5882b5c-0993-467f-a8f7-e883a05151b1",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2c0fe623-eea2-4a6e-a640-575b2a423592",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "9e2acbdf-abf8-485a-a864-1901860358d5",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The badge is warm\nfrom the clerk\nholding it. Its\nowner was the last",
+                      "city pipe walker.\nA penciled note\nreads: If anyone\nsays the network",
+                      "is dead, ask who\nstopped checking\nthe valves."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "d6b91aa7-baee-4ae5-a8fc-566caf4efa3d",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 4
+                    }
+                  }
+                },
+                {
+                  "id": "24a1e0f9-43e0-42c1-a238-d4bc3b522b26",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Frostwick Archive:\nidentify which\nrecord actually\nchanged ownership."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "7e219c19-162c-4d62-ab3f-854665760ea9",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "51"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "6af0c29d-4b43-4e3a-aec6-6889a6af9f39",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "51",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "0c603c47-00a1-400c-ab14-dff3a1860a86",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Badge With Soup\nStains",
+                            "The old badge has\na square seal and\na repaired pin.\nIts owner",
+                            "scratched a list\ninside: Ask.\nMeasure. Carry a\nspare. Eat lunch.\nThe",
+                            "final instruction\nwas added more\ndeeply than the\nothers, perhaps",
+                            "after someone\nlearned its\nimportance."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "9ce6d545-40ee-4f18-a3a9-8c7bc50d8a1a",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Badge With Soup\nStains",
+                            "The old badge has\na square seal and\na repaired pin.\nIts owner",
+                            "scratched a list\ninside: Ask.\nMeasure. Carry a\nspare. Eat lunch.\nThe",
+                            "final instruction\nwas added more\ndeeply than the\nothers, perhaps",
+                            "after someone\nlearned its\nimportance."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "02e82678-d876-4ad8-a87a-5577ac2ea3fa",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "51"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "10a16907-7b7f-426f-a1c0-c3ae17c5c9da",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "51",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "99fe6f0d-b4df-499b-aeb8-36dbe369be34",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A Badge With Soup\nStains",
+                      "The old badge has\na square seal and\na repaired pin.\nIts owner",
+                      "scratched a list\ninside: Ask.\nMeasure. Carry a\nspare. Eat lunch.\nThe",
+                      "final instruction\nwas added more\ndeeply than the\nothers, perhaps",
+                      "after someone\nlearned its\nimportance."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "1d1786de-6836-489e-a35a-0939d3e1ed87",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A Badge With Soup\nStains",
+                      "The old badge has\na square seal and\na repaired pin.\nIts owner",
+                      "scratched a list\ninside: Ask.\nMeasure. Carry a\nspare. Eat lunch.\nThe",
+                      "final instruction\nwas added more\ndeeply than the\nothers, perhaps",
+                      "after someone\nlearned its\nimportance."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,484 @@
+{
+  "_resourceType": "script",
+  "id": "9f9646f4-4e14-4d25-addd-aaab072de8c0",
+  "name": "Story node_roof_parcel",
+  "symbol": "script_story_node_roof_parcel",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "1f5f0ac5-659a-471d-a31a-9311b34261a0",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 6
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "38f8e67a-06e5-4399-ad1a-ac6b2cd7da5f",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "faeb6134-9fe8-47cb-a6e0-9c81a03f76de",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A waxed parcel\nholds the watch\nlog, kept dry\nbeneath the chest\nlid.",
+                      "The alarm was\nsent. The\nacknowledgment\nnever came back.\nDot reads",
+                      "this twice, then\nasks you to carry\nthe original while\nshe keeps an",
+                      "exact copy."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "922858b9-2a91-4f2a-a008-22253d0a1bca",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 3
+                    }
+                  }
+                },
+                {
+                  "id": "1ce3b3f9-2c84-4175-a7f4-aec92a819959",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Candy Rooftops:\nalign the signal\nvane using its\nbrass tag."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "e6d3d301-4c52-47c7-a319-a00dfda7cae5",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "65"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "057bd8fe-1924-4762-a53c-0d37b9f41f84",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "65",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "4042decc-b277-4b03-a5c1-e1a57076fd42",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Dry Box",
+                            "The parcel chest\nhas three layers\nof waterproof\ncloth and a very",
+                            "modest lock. A\nlabel explains\nthat the contents\nare public\nrecords.",
+                            "The lock keeps\nwind out rather\nthan people.\nWhoever last\nchecked the",
+                            "chest left a clean\ncloth for the next\nreader."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "b0d6d2e8-fa67-4c47-a36e-0735054f15e8",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Dry Box",
+                            "The parcel chest\nhas three layers\nof waterproof\ncloth and a very",
+                            "modest lock. A\nlabel explains\nthat the contents\nare public\nrecords.",
+                            "The lock keeps\nwind out rather\nthan people.\nWhoever last\nchecked the",
+                            "chest left a clean\ncloth for the next\nreader."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "38916f2f-8b38-433e-a433-ea78fda36315",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 18
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "a50ca308-6360-4aa3-acf0-098e00fad031",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 4
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "0005a03f-bf6a-4e98-a19d-a424c889ebd7",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "What should the\nroof keeper do\nfirst with a\nreport that cannot",
+                            "distinguish the\ntwo active\nsignals? The\nwritten received\ncard is",
+                            "available beside\nthe lamp. No\nwarning is\ncurrently\nconfirmed. Choose",
+                            "a check that can\nestablish what was\nactually sent\nbefore calling",
+                            "either receipt or\na courier request.\nThe keeper wants a\nrule that",
+                            "still works on a\nmisty night."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "78253277-8933-43dc-a257-63b8a845017b",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "GUESS",
+                          "option2": "READ",
+                          "option3": "IGNORE"
+                        }
+                      },
+                      {
+                        "id": "9f4bd684-d9c3-4624-ad4a-0443d5bdd5bc",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "8b6f1088-f275-4d04-a879-68dac5232490",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              }
+                            },
+                            {
+                              "id": "079f99b9-a8d3-4412-a3b7-299b81f0f259",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Candy Rooftops:\nconfirm the backup\nduty with Moxie."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "70ff0b5f-d9df-4d41-af7c-880092282e8e",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "56981949-c2b8-4e0b-ac82-bbaa4c36c6b6",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "An uncertain\nobservation is not\na known signal.\nUse the available",
+                                        "independent\nwritten record\nbefore assigning a\nmeaning to the\nlight."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "67365f3b-14ca-479b-a31d-f8f9abb76803",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "65"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "aaba370a-9427-4464-a18f-4610275ed6f1",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "65",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "c26f688c-1ce4-4453-af70-7a544d2f45f3",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Dry Box",
+                                  "The parcel chest\nhas three layers\nof waterproof\ncloth and a very",
+                                  "modest lock. A\nlabel explains\nthat the contents\nare public\nrecords.",
+                                  "The lock keeps\nwind out rather\nthan people.\nWhoever last\nchecked the",
+                                  "chest left a clean\ncloth for the next\nreader."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "12e936ce-73ef-416a-a00d-2f263a5ae430",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Dry Box",
+                                  "The parcel chest\nhas three layers\nof waterproof\ncloth and a very",
+                                  "modest lock. A\nlabel explains\nthat the contents\nare public\nrecords.",
+                                  "The lock keeps\nwind out rather\nthan people.\nWhoever last\nchecked the",
+                                  "chest left a clean\ncloth for the next\nreader."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "246b426e-f7b2-4cbd-a62e-5570da151c82",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "65"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "659a647a-e4a8-4be5-a10f-5da7f9d82c2f",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "65",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "60b47223-ee14-497f-aeb6-fa10d656fec4",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Dry Box",
+                            "The parcel chest\nhas three layers\nof waterproof\ncloth and a very",
+                            "modest lock. A\nlabel explains\nthat the contents\nare public\nrecords.",
+                            "The lock keeps\nwind out rather\nthan people.\nWhoever last\nchecked the",
+                            "chest left a clean\ncloth for the next\nreader."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "d433b9d7-ff1f-45b0-a2e2-6071788c94b9",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Dry Box",
+                            "The parcel chest\nhas three layers\nof waterproof\ncloth and a very",
+                            "modest lock. A\nlabel explains\nthat the contents\nare public\nrecords.",
+                            "The lock keeps\nwind out rather\nthan people.\nWhoever last\nchecked the",
+                            "chest left a clean\ncloth for the next\nreader."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

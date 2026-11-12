@@ -1,0 +1,737 @@
+{
+  "_resourceType": "script",
+  "id": "7691e959-a586-4dcb-a29f-5ecf35bb99bb",
+  "name": "Story node_velvet_permits",
+  "symbol": "script_story_node_velvet_permits",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "857a9b72-21dc-4b74-a3ce-f10c8a794024",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 14
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "8d6a3104-5c77-439d-a307-20ea191dfcf6",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "d5ba6b48-7ef5-44de-aa61-9f1585c4347f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The review file\nhas four fields:\nrepair amount,\nwork date, tenant",
+                      "name, and medical\nnote. The public\nfund needs the\namount and work",
+                      "date to verify the\nrepair. Neither a\ntenant name nor a\nmedical note",
+                      "is needed for that\ncheck. Slush fears\nthe review will\nmake his",
+                      "residents into\nexhibits. Dot says\naccountability for\nmoney does not",
+                      "require exposing\ndetails that\ncannot prove how a\nroof was repaired."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "b230b635-2411-4ac0-a9dc-13349398ac3a",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  }
+                },
+                {
+                  "id": "fafd86c5-cd62-4fc2-a70a-18a83dbc48ad",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Velvet Rooftops:\nexamine the\ngreenhouse survey\nbook."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "92a76890-2df5-4e84-a2ae-9aa6eaa91565",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 5
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "4797d993-c64f-42ce-aee3-e601076a01c3",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Permit note: A\nprivate owner may\nmaintain the\njunction but\ncannot",
+                            "shut public\nbranches to\nreserve heat for a\nnew estate. Slush\nsigns",
+                            "beneath it. I know\nwhat the paper\nsays, he tells\nNib. I need to\nknow",
+                            "the machine will\nagree."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "3e37df85-4f13-4464-a745-c45b6f647f97",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 6
+                          }
+                        }
+                      },
+                      {
+                        "id": "65d8ddf4-dd87-486c-a4fa-68f3aace423b",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "4ac810da-743d-4f31-aaf9-a4df56886ee4"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "d35a9baa-daa0-4784-a2bb-ca7884c8ab00",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 6
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "58981630-a855-469d-ada8-ec9032a3b3ad",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "4ac810da-743d-4f31-aaf9-a4df56886ee4"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "6d769907-69f7-4ea4-a461-fd2c5846b1cd",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "78"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "fb89bc0b-1df9-407b-a444-eae1bb220d52",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "78",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "68252db1-7e9e-499f-ad92-6c4b7cc8cedc",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Paper Against Wind",
+                                        "The permit clips\nare brass, broad,\nand heavier than\nexpected. An",
+                                        "inspector designed\nthem after a roof\nvisit ended with\nthree pages in",
+                                        "a chimney. The\noffice bought\nbetter clips\ninstead of banning\nroof",
+                                        "inspections. A\nsmall practical\ntriumph, recorded\nwithout a slogan."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "9505d566-3db2-4fa4-a02c-3a2a33b7a61d",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Paper Against Wind",
+                                        "The permit clips\nare brass, broad,\nand heavier than\nexpected. An",
+                                        "inspector designed\nthem after a roof\nvisit ended with\nthree pages in",
+                                        "a chimney. The\noffice bought\nbetter clips\ninstead of banning\nroof",
+                                        "inspections. A\nsmall practical\ntriumph, recorded\nwithout a slogan."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "c67aff5e-1974-4b0c-a81d-81cf6544734c",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 15
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "e95c9082-31f8-488d-a52a-843637d930c4",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "effbdba6-a136-435a-a38d-e64f4f73cd94",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Nib: The signature\npage refers to TWO\nfor the access\nright. THREE",
+                            "limits how that\nright may be used.\nThe clerk needs\nthe access page",
+                            "first, then its\nlimit. I could\nturn this into a\nspeech. I am",
+                            "choosing to turn\nit into a packet."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "b7f7fb6e-c74c-494a-af1f-9d4b421a878b",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 3
+                          }
+                        }
+                      },
+                      {
+                        "id": "063baa41-d359-41de-a2c9-693f83f75036",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Velvet Lodge: hand\nNib the page\ngranting pipe\naccess."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "4e6116e4-acef-454d-ae59-e80e1ddea8e3",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "78"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "c64ef5cc-0447-4249-a58c-7360260e131a",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "78",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "e30135f8-c059-4c53-a0e8-3ce9feac935d",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Paper Against Wind",
+                                  "The permit clips\nare brass, broad,\nand heavier than\nexpected. An",
+                                  "inspector designed\nthem after a roof\nvisit ended with\nthree pages in",
+                                  "a chimney. The\noffice bought\nbetter clips\ninstead of banning\nroof",
+                                  "inspections. A\nsmall practical\ntriumph, recorded\nwithout a slogan."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "042de636-7b1e-4f09-ad98-9cd507afd6c5",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Paper Against Wind",
+                                  "The permit clips\nare brass, broad,\nand heavier than\nexpected. An",
+                                  "inspector designed\nthem after a roof\nvisit ended with\nthree pages in",
+                                  "a chimney. The\noffice bought\nbetter clips\ninstead of banning\nroof",
+                                  "inspections. A\nsmall practical\ntriumph, recorded\nwithout a slogan."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "9272f247-c3f1-48c2-ac47-7c531d907ad8",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 16
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "8af65174-b7aa-4f02-aed5-dc367197e383",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 4
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "81b5f5e4-dd4d-44fa-ac31-2e547a84f290",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Which fitting\nposition is ready\nto authorize under\nthe agreement you",
+                                  "already hold?\nNeither option\nneeds your\npersonal money.\nThe decision",
+                                  "is about matching\nwork to its legal\nand physical\nboundary. Slush\ncan",
+                                  "grant a new\nkitchen-wall\nagreement later if\nthe tenant\nconsents, but",
+                                  "that permission\ndoes not exist now\nand should not be\nassumed."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "a2d5042c-07ff-4ab1-a725-135a7c182cc1",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "A",
+                                "option2": "B",
+                                "option3": "EITHER"
+                              }
+                            },
+                            {
+                              "id": "a71bfdac-a284-4006-ab7b-1592b8b8d94a",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "b5f6717a-761a-4ead-afbe-12eef3b625f6",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 5
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "2bc931f1-34e4-42e6-acd0-45ddc0714fc2",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Velvet Lodge:\nreceive the signed\nbypass permission\nat the disclosure\ndesk."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "85d41462-69bf-4fcb-ad88-a1f7e2c4b96d",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "dc9bade5-0d24-4466-a92b-0e95984f97f8",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Compare each\nposition with the\nactual signed\npermission. A",
+                                              "technically safe\ndesign can still\nrequire an access\nright the crew",
+                                              "has not obtained."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "75803e92-165c-4aca-a79d-926aef432390",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "78"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "c67e8909-0b29-4579-a8ab-f3d8016d19ef",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "78",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "d8c90bca-5a22-442d-a5f8-ebac119654d1",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Paper Against Wind",
+                                        "The permit clips\nare brass, broad,\nand heavier than\nexpected. An",
+                                        "inspector designed\nthem after a roof\nvisit ended with\nthree pages in",
+                                        "a chimney. The\noffice bought\nbetter clips\ninstead of banning\nroof",
+                                        "inspections. A\nsmall practical\ntriumph, recorded\nwithout a slogan."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "e3709c10-69cd-467d-ac96-e346c1bc66b8",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Paper Against Wind",
+                                        "The permit clips\nare brass, broad,\nand heavier than\nexpected. An",
+                                        "inspector designed\nthem after a roof\nvisit ended with\nthree pages in",
+                                        "a chimney. The\noffice bought\nbetter clips\ninstead of banning\nroof",
+                                        "inspections. A\nsmall practical\ntriumph, recorded\nwithout a slogan."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "ca4b711f-dd07-44be-ac41-a90b7febd4ad",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "78"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "6f641414-f77f-499d-adba-ac6b6ee12f37",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "78",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "0ca01a04-f19a-47da-abbb-d6e655f86e06",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Paper Against Wind",
+                                  "The permit clips\nare brass, broad,\nand heavier than\nexpected. An",
+                                  "inspector designed\nthem after a roof\nvisit ended with\nthree pages in",
+                                  "a chimney. The\noffice bought\nbetter clips\ninstead of banning\nroof",
+                                  "inspections. A\nsmall practical\ntriumph, recorded\nwithout a slogan."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "e5cdd61f-94c0-46b0-a709-4869d773976c",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Paper Against Wind",
+                                  "The permit clips\nare brass, broad,\nand heavier than\nexpected. An",
+                                  "inspector designed\nthem after a roof\nvisit ended with\nthree pages in",
+                                  "a chimney. The\noffice bought\nbetter clips\ninstead of banning\nroof",
+                                  "inspections. A\nsmall practical\ntriumph, recorded\nwithout a slogan."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

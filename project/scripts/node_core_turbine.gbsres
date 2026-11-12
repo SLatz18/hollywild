@@ -1,0 +1,931 @@
+{
+  "_resourceType": "script",
+  "id": "65f978b0-19fa-4820-a81a-eb4531db9c81",
+  "name": "Story node_core_turbine",
+  "symbol": "script_story_node_core_turbine",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "0191349d-18f9-40bd-af2f-06b173f70c52",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 19
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "7d4f88b2-9d22-4232-adff-d27e7644ae22",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "351bb330-403b-47d3-acfb-cd7aaf7dabc2",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Rivet: The\nmeasured safe\nservice limit is\nFOUR. SIX is a\nbrief test",
+                      "ceiling, not a\nnormal setting.\nEIGHT is a damage\nwarning. We set\nthe",
+                      "regulator for\nservice, then\nverify the gauge.\nBigger is not a\nplan",
+                      "just because it\nfits on a sign."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "f1310468-cffa-44cc-a955-c8ef92481b0f",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "0d3dd81d-e562-4e99-a6e9-28846a74f21f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Aurora Core: read\nthe branch demand\ncard at the\nbypass."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "5de6cd93-17fe-4c36-ae26-79d4f534026a",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 4
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "53e6d2bf-6f07-4b48-aec6-bee74172ad79",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Which launch plan\nserves every\nrequired stop\nwithout exceeding\nthe",
+                            "measured limit?\nThe choice of\nfuture emphasis\ndoes not add\npressure",
+                            "today. Slush\noffers to buy\nbrighter paint for\nthe arch instead.\nYou",
+                            "must decide\nwhether it can run\nnow, not whether\nit would\nphotograph",
+                            "well or whether\nsomeone can afford\nits construction."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "14241828-ff64-44e9-a335-c442614abcce",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "ALL",
+                          "option2": "NO ARCH",
+                          "option3": "NO CLIN"
+                        }
+                      },
+                      {
+                        "id": "c349134b-2417-4e68-ab3e-ab257e828b8e",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "d79b5e9e-e498-427f-a8bd-628ed5c4f30d",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              }
+                            },
+                            {
+                              "id": "8f147b92-c5b3-49af-a8a5-4d3735399754",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Core:\nreview the\nisolation plan at\nthe bypass."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "a96a9762-3fb6-4641-a6fe-047dfe60c78d",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "d606392b-d333-4553-ac75-d70e2252868d",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Add the required\nbranch demands\nfirst. Compare\ntheir total with\nthe",
+                                        "available safe\nservice, then test\nwhether optional\ndemand still",
+                                        "fits."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "0f1bf45b-3f54-46df-a5d8-29156d1832a4",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "86"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "85d76a47-1ebd-46ed-aa22-537144ace5b3",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "86",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "4a0c7ca4-09ae-4693-af41-2bd93442dcd5",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Small Sound",
+                                  "A notice asks\nvisitors to listen\nfor changes rather\nthan loudness.",
+                                  "The turbine was\ndesigned to run\nquietly. The\nopening committee\nonce",
+                                  "requested a\ndramatic startup\nnoise. A builder\nsuggested paying\nthe",
+                                  "band instead. The\nband invoice is\nclipped behind the\nnotice."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "438082b1-69f3-44fa-a259-b0cd3a9a3d79",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Small Sound",
+                                  "A notice asks\nvisitors to listen\nfor changes rather\nthan loudness.",
+                                  "The turbine was\ndesigned to run\nquietly. The\nopening committee\nonce",
+                                  "requested a\ndramatic startup\nnoise. A builder\nsuggested paying\nthe",
+                                  "band instead. The\nband invoice is\nclipped behind the\nnotice."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "aecb9ca0-4db4-4860-acf5-03a133fce635",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 23
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "d620a422-71f6-4a3d-aa4e-dcbc864c790c",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 3
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "9ecb7df9-8965-4394-a1ba-00c9465e71e4",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Choose the first\nemphasis. WARMTH\nimproves daily\ncomfort. WORK",
+                            "invests first in\nrepair shops and\nlivelihoods.\nCOMMONS invests\nfirst",
+                            "in shared places.\nAll three restore\nthe network and\nkeep the city",
+                            "open for free\nexploration."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "34386138-38b4-48b1-ac11-aaa551bd0067",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "WARMTH",
+                          "option2": "WORK",
+                          "option3": "COMMONS"
+                        }
+                      },
+                      {
+                        "id": "8360a7cd-cbb0-4fa6-a194-43d9dc268a91",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "9dc54dad-c1da-48e5-aec0-4a1ad2aeff98",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "49",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "37a0679d-4cc2-4b95-a530-8e5f214119f5",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Pip marks homes\nand the clinic for\nthe first\nupgrades. He says",
+                                  "comfort is useful\nwork too. Rivet\nagrees and asks\nwhich window leaks",
+                                  "most."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "a257f8d1-8050-4dd9-aea1-5f0e4e330467",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              }
+                            },
+                            {
+                              "id": "70f1acb8-fbfa-44c3-a67a-36c82e8d89da",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Core:\nprotect the common\nbaseline before\napplying your\nemphasis."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "6cb389a7-af5c-4a33-a71f-2c26b89324dc",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "baa36209-0412-482a-a87a-2ef4294e9847",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "49",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 2
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "8f411147-c9cd-4923-a2e5-151808e28fcc",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Rivet marks repair\nshops for the\nfirst upgrades.\nThe first wage",
+                                        "board includes\npaid training, so\nthe work has a\ndoor people can",
+                                        "enter."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "7d02aff8-49ef-4429-ad55-0dcd990c023e",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 4
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "2eab752a-9cde-4df2-a184-b702d7ddbab2",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Aurora Core:\nprotect the common\nbaseline before\napplying your\nemphasis."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "4ad89142-d6b0-4c9e-a6f1-0341a26c7c99",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "08a05833-43a1-4f6f-a845-f616e1eb46cf",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "49",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 3
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "99c2bb52-3763-4411-acd9-2715750a7226",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Nib marks the\nshared halls for\nthe first\nupgrades. He gives\nup the",
+                                              "grand opening\nspeech and asks\nwho has keys to\nthe kitchen."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "52e28e78-89d3-4713-adc9-f86f6e85d597",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "44",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 4
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "04ef3d62-72c2-447d-ad73-97ece04a3f1b",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Aurora Core:\nprotect the common\nbaseline before\napplying your\nemphasis."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "566aba53-318e-4992-a374-395c35331e2c",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "86"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "1052450f-6d3f-4ecf-a7be-8fa1c0edb41b",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "86",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "ce35e69d-17e6-462c-a8a3-926c5b05d4d7",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Small Sound",
+                                  "A notice asks\nvisitors to listen\nfor changes rather\nthan loudness.",
+                                  "The turbine was\ndesigned to run\nquietly. The\nopening committee\nonce",
+                                  "requested a\ndramatic startup\nnoise. A builder\nsuggested paying\nthe",
+                                  "band instead. The\nband invoice is\nclipped behind the\nnotice."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "99367564-c607-4d4c-a46d-7b69888dd33b",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Small Sound",
+                                  "A notice asks\nvisitors to listen\nfor changes rather\nthan loudness.",
+                                  "The turbine was\ndesigned to run\nquietly. The\nopening committee\nonce",
+                                  "requested a\ndramatic startup\nnoise. A builder\nsuggested paying\nthe",
+                                  "band instead. The\nband invoice is\nclipped behind the\nnotice."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "05c31c0d-aecc-433d-afad-b6b65f7aaeb3",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 24
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "76137491-0eb4-456c-a5be-7dc6acfb9c2b",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 3
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "51e557e1-1bf2-46c1-a360-f3e8770aaab4",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Rivet fits the\nchecked regulator,\nsigns its launch\nrecord, and",
+                                  "starts the\nturbine. The\nneedle rises to\nthe service mark\nand stays",
+                                  "there. A branch\nvalve clicks, then\nanother. No one\ncheers until Dot",
+                                  "confirms that the\nreadings agree."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "4b031660-4821-4d73-a032-fcf9b347b12d",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              }
+                            },
+                            {
+                              "id": "eb043fd5-b756-4868-a216-f29d0b097ca9",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Core:\nchoose the\nintegrated\nresponse before\nthe final festival",
+                                  "report."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "83337a21-c0c2-4415-ae27-23766385e43c",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "86"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "77270678-cdd0-4da6-a8ab-5b65a03c2093",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "86",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "7ef6ddf7-64cd-47f8-a545-39f3e177b7b7",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Small Sound",
+                                        "A notice asks\nvisitors to listen\nfor changes rather\nthan loudness.",
+                                        "The turbine was\ndesigned to run\nquietly. The\nopening committee\nonce",
+                                        "requested a\ndramatic startup\nnoise. A builder\nsuggested paying\nthe",
+                                        "band instead. The\nband invoice is\nclipped behind the\nnotice."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "b3fb5d96-9ebb-4401-a3a3-446f26b5b36c",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Small Sound",
+                                        "A notice asks\nvisitors to listen\nfor changes rather\nthan loudness.",
+                                        "The turbine was\ndesigned to run\nquietly. The\nopening committee\nonce",
+                                        "requested a\ndramatic startup\nnoise. A builder\nsuggested paying\nthe",
+                                        "band instead. The\nband invoice is\nclipped behind the\nnotice."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "cc680539-2769-490e-a3b5-802738d176f7",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "86"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "dfca0cae-f56d-40e2-af76-71bde9e018c8",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "86",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "2d7a3271-eb9a-4ac8-ae33-4c70450b7480",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Small Sound",
+                                  "A notice asks\nvisitors to listen\nfor changes rather\nthan loudness.",
+                                  "The turbine was\ndesigned to run\nquietly. The\nopening committee\nonce",
+                                  "requested a\ndramatic startup\nnoise. A builder\nsuggested paying\nthe",
+                                  "band instead. The\nband invoice is\nclipped behind the\nnotice."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "4ace9f4d-2ee5-43ac-a574-808b4cd49d10",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Small Sound",
+                                  "A notice asks\nvisitors to listen\nfor changes rather\nthan loudness.",
+                                  "The turbine was\ndesigned to run\nquietly. The\nopening committee\nonce",
+                                  "requested a\ndramatic startup\nnoise. A builder\nsuggested paying\nthe",
+                                  "band instead. The\nband invoice is\nclipped behind the\nnotice."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

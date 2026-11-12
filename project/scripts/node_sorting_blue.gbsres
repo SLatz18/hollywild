@@ -1,0 +1,389 @@
+{
+  "_resourceType": "script",
+  "id": "ea6ab6b7-5b74-4173-afae-6335ea7a3eff",
+  "name": "Story node_sorting_blue",
+  "symbol": "script_story_node_sorting_blue",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "3bac9d1b-877f-41b9-aec2-e9ae69f82a0f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "cdff618c-8bbf-4af4-a81e-6b86cd6458fc",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "4b920627-190c-4bd7-abb4-f6a96712a3cb",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The blue parcel\nhas a stitched\nsquare and smells\nfaintly of cedar.",
+                      "Inside the tag, a\nnurse has written:\nThank you for\nsending things",
+                      "that fit actual\npeople. Moxie\nchecks the seal,\nthen marks this as\na",
+                      "protected\ndelivery."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "a8bbe73f-897d-4a3f-aa83-3fe97ece13fa",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 3
+                    }
+                  }
+                },
+                {
+                  "id": "511652a4-4304-40f2-a839-e10a7008a264",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Candy Sorting:\nlabel the red bell\nparcel."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "d1cd71e5-5c58-4585-ad6d-b3911c95028e",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 4
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "64108968-49a6-42bc-ab24-b5f015eb9d0d",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Which action meets\nboth handling\nneeds without\nchanging who\nreceives",
+                            "either item? The\naddress tags can\nmove with their\ncontents. Nothing",
+                            "is spoiled yet,\nand there is no\nhurry. A correct\ndelivery means",
+                            "checking the\nparcel as well as\nthe name on it.\nMoxie waits with\nthe",
+                            "dispatch pen\ninstead of\nrewarding the\nfirst answer."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "93b48639-841c-41d7-a64b-b2301a800579",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "SWAP",
+                          "option2": "RETAG",
+                          "option3": "SEND"
+                        }
+                      },
+                      {
+                        "id": "ef20823c-7ff1-4f4a-a35c-aaa9f4ac85b3",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "b4104bd5-8486-49ff-a1e7-481b69014011",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              }
+                            },
+                            {
+                              "id": "f563c94b-7760-4509-ad60-c73d99272531",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Candy Rooftops:\ngive the route\nplan to the\ncourier."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "80c42820-f181-4ac3-a178-d880d7a970de",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "88eaf3d6-065b-4f90-ab19-5440f2fc1680",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The clinic labels\nmust stay dry.\nCompare the two\ncontainers, then",
+                                        "ask which change\npreserves the\ncorrect\ndestinations while\nfixing the",
+                                        "handling problem."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "ae5e29f4-0327-411e-ac0f-352308539d32",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "59"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "24c13398-1a54-4adb-a567-e2cd7c0e164b",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "59",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "f6eef65b-454a-4782-a635-96258da1ffa8",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A Blanket Label",
+                                  "A blanket tag\nnames the person\nwho sewed it and\nthe person who",
+                                  "checked it.\nNeither name is\nlarge. Someone has\nadded a third line",
+                                  "for whoever\nrepairs it next.\nThe tag assumes\nthe blanket will\nlive",
+                                  "long enough to\nneed another kind\npair of hands."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "993993a0-eef3-4d31-af4d-a176e11dca28",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A Blanket Label",
+                                  "A blanket tag\nnames the person\nwho sewed it and\nthe person who",
+                                  "checked it.\nNeither name is\nlarge. Someone has\nadded a third line",
+                                  "for whoever\nrepairs it next.\nThe tag assumes\nthe blanket will\nlive",
+                                  "long enough to\nneed another kind\npair of hands."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "4342ab87-e0f1-4ac3-ab19-ce314cd40055",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "59"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "8242eb4f-c544-4e1b-a32a-7fdc4e042a7f",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "59",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "a60bdd33-7ebc-49ef-ac96-0619629891e2",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A Blanket Label",
+                      "A blanket tag\nnames the person\nwho sewed it and\nthe person who",
+                      "checked it.\nNeither name is\nlarge. Someone has\nadded a third line",
+                      "for whoever\nrepairs it next.\nThe tag assumes\nthe blanket will\nlive",
+                      "long enough to\nneed another kind\npair of hands."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "7e6c74c3-dc5d-4a07-aaed-6b931b302a46",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A Blanket Label",
+                      "A blanket tag\nnames the person\nwho sewed it and\nthe person who",
+                      "checked it.\nNeither name is\nlarge. Someone has\nadded a third line",
+                      "for whoever\nrepairs it next.\nThe tag assumes\nthe blanket will\nlive",
+                      "long enough to\nneed another kind\npair of hands."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

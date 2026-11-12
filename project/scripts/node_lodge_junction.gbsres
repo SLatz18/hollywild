@@ -1,0 +1,686 @@
+{
+  "_resourceType": "script",
+  "id": "bcfebcc2-b33a-4ae7-a66c-23c0c7c0002c",
+  "name": "Story node_lodge_junction",
+  "symbol": "script_story_node_lodge_junction",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "f2568f78-815f-4b0b-a060-ac3db414b1f8",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 13
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5b99e396-47a0-4360-a847-771c5bf88c0f",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 5
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "8edd7ae2-17d6-43b0-aa5a-754c48c43fae",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Four branches feed\ninto one iron\nthroat. A polished\nbrass wheel",
+                      "closes all four\ntogether. Dot sees\nfresh grease on\nthe wheel.",
+                      "Someone has cared\nfor it. Someone\nhas also made\nevery branch\ndepend",
+                      "on a single moving\npiece."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "b75813e2-af63-46d9-a696-1f5d0c51d996",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 6
+                    }
+                  }
+                },
+                {
+                  "id": "bf48c726-ce88-4a51-a48a-e857aeabdc96",
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "d58aa1e6-b663-44d0-afff-801c21b7dc58"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "f6bba8f6-1182-48d6-a10c-bdbe1b081fb6",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 6
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "5ef6e269-9bad-4f4e-a054-e770a59dd00e",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "d58aa1e6-b663-44d0-afff-801c21b7dc58"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "d8c63240-824f-4746-a6db-a122c622b848",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "76"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "1cb7894a-8623-42fe-a890-7e115b514d95",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "76",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "d201213a-fd6e-44bd-aee7-5bc68c65ef8d",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Four Branches",
+                                  "The junction\nlabels name\ndistricts rather\nthan premium\ntiers. The",
+                                  "oldest label is\nhand cut and\nslightly crooked.\nBehind it, a\nworker",
+                                  "wrote: Same winter\non both sides of\nthis wall. Slush\nhas not ordered",
+                                  "the note removed,\nthough he can\ncertainly see it."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "d4c2f7fc-1daf-4347-ab39-ca3ffc98ace1",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Four Branches",
+                                  "The junction\nlabels name\ndistricts rather\nthan premium\ntiers. The",
+                                  "oldest label is\nhand cut and\nslightly crooked.\nBehind it, a\nworker",
+                                  "wrote: Same winter\non both sides of\nthis wall. Slush\nhas not ordered",
+                                  "the note removed,\nthough he can\ncertainly see it."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "4f7b3435-9af7-496c-a688-e86850a27d7a",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 15
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "3be80ea4-0999-41c1-a0fa-848b3a1b41f0",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 5
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "e023d24f-9362-43a5-a601-8ab106cad582",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The clerk posts\nthe packet beside\nthe wheel. Private\nrooms remain",
+                            "private; public\nservice stays\npublic. Slush asks\nfor clear fault",
+                            "reports in return.\nPip accepts the\nduty and names\nMoxie as the",
+                            "person who will\ncarry reports if a\nwire fails."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "c834d627-a6cb-4695-a222-9c29897bdb7a",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 6
+                          }
+                        }
+                      },
+                      {
+                        "id": "dbb39585-51bc-41f8-a46a-0d4b26ac7fcd",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "b660503e-2053-47b4-a2c5-7a35bb543f1a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "000cfbb6-a476-42f9-a340-a36158ea0f37",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 6
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "7d0b4e49-5bc0-411a-af6d-cff71ac468cc",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "b660503e-2053-47b4-a2c5-7a35bb543f1a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "bda53519-dcde-479e-a826-2aa30fbdcaaf",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "76"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "37a6fe02-0608-4ee5-a55d-213fe05c5399",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "76",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "4c1124b0-b835-4f17-ae4d-08149e1c8ba7",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Four Branches",
+                                        "The junction\nlabels name\ndistricts rather\nthan premium\ntiers. The",
+                                        "oldest label is\nhand cut and\nslightly crooked.\nBehind it, a\nworker",
+                                        "wrote: Same winter\non both sides of\nthis wall. Slush\nhas not ordered",
+                                        "the note removed,\nthough he can\ncertainly see it."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "dd1cc429-11cd-4c5c-ab39-28a6a87734ef",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Four Branches",
+                                        "The junction\nlabels name\ndistricts rather\nthan premium\ntiers. The",
+                                        "oldest label is\nhand cut and\nslightly crooked.\nBehind it, a\nworker",
+                                        "wrote: Same winter\non both sides of\nthis wall. Slush\nhas not ordered",
+                                        "the note removed,\nthough he can\ncertainly see it."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "bce6bf67-c9cf-4475-a39f-191125c29444",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 16
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "54f8624c-32b5-4824-a625-6cce0ccae63d",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "7dfaeb9a-9535-4c4c-a603-e300883a1f3e",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Which existing\nhatch reaches the\npipe chase without\nentering a",
+                                  "private room?"
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "2fd606d9-5686-40c4-a6a3-bc59cffe4c90",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "NORTH",
+                                "option2": "EAST",
+                                "option3": "SOUTH"
+                              }
+                            },
+                            {
+                              "id": "e1bc0ff6-6446-45db-ad6c-81063399f6a2",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 3
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "cb0f0f05-8fec-4374-a22d-f3c8cb771a5c",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 3
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "6c8b24b7-3b87-4fd5-a8f3-0fcb67f46c0e",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Velvet Rooftops:\npresent the bypass\nplan to Slush."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "bd4a492f-0cb3-499d-ac77-6217aee6f736",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "d0b6083b-ad32-4d57-ad89-e8c471e5bc09",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Trace each\nsurveyed wall to\nthe room or chase\nbeyond it. Only a",
+                                              "route within the\nrecorded easement\nis already\nauthorized."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "fc957a96-a4f9-4630-a3b3-fa99c26fb1bd",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "76"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "36d67db5-c61f-4bde-ad5c-dc1d4b2554a9",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "76",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "2d8a47d2-75f8-4b9c-ae29-966f716498cd",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Four Branches",
+                                        "The junction\nlabels name\ndistricts rather\nthan premium\ntiers. The",
+                                        "oldest label is\nhand cut and\nslightly crooked.\nBehind it, a\nworker",
+                                        "wrote: Same winter\non both sides of\nthis wall. Slush\nhas not ordered",
+                                        "the note removed,\nthough he can\ncertainly see it."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "b5ff86e9-9c93-4e92-acbc-b4016f484430",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Four Branches",
+                                        "The junction\nlabels name\ndistricts rather\nthan premium\ntiers. The",
+                                        "oldest label is\nhand cut and\nslightly crooked.\nBehind it, a\nworker",
+                                        "wrote: Same winter\non both sides of\nthis wall. Slush\nhas not ordered",
+                                        "the note removed,\nthough he can\ncertainly see it."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "c536bca7-a3df-422e-adc9-3b86e6aafeef",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "76"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "7d3cb487-f297-446f-a677-6a2bb6590152",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "76",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "17c6cb40-93dd-4cd9-aa76-1dcad8923a16",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Four Branches",
+                                  "The junction\nlabels name\ndistricts rather\nthan premium\ntiers. The",
+                                  "oldest label is\nhand cut and\nslightly crooked.\nBehind it, a\nworker",
+                                  "wrote: Same winter\non both sides of\nthis wall. Slush\nhas not ordered",
+                                  "the note removed,\nthough he can\ncertainly see it."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "98091f16-3e65-42e0-ab38-35bb651c5dc8",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Four Branches",
+                                  "The junction\nlabels name\ndistricts rather\nthan premium\ntiers. The",
+                                  "oldest label is\nhand cut and\nslightly crooked.\nBehind it, a\nworker",
+                                  "wrote: Same winter\non both sides of\nthis wall. Slush\nhas not ordered",
+                                  "the note removed,\nthough he can\ncertainly see it."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

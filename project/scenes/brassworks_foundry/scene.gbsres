@@ -1,0 +1,1629 @@
+{
+  "_resourceType": "scene",
+  "id": "3f09cb02-3300-45c5-aac8-7413a6b7b3c0",
+  "_index": 14,
+  "type": "TOPDOWN",
+  "name": "Brassworks Foundry",
+  "symbol": "scene_brassworks_foundry",
+  "x": 4480,
+  "y": 0,
+  "width": 32,
+  "height": 32,
+  "backgroundId": "6e1fe9b1-c382-4491-a394-6b16fc31eb1c",
+  "tilesetId": "",
+  "colorModeOverride": "none",
+  "paletteIds": [
+    "be4d929d-ce5d-4e91-a798-738b68e57804",
+    "c2a72276-94dc-4f0d-abf6-bd57faeceb4d",
+    "26d5ed00-1c9e-45bb-ade0-6bd6e4cccc47",
+    "96c11cac-1d7b-4c85-a289-7985364df48f",
+    "dff14241-4872-45c1-a840-6d64b4957863",
+    "71a26046-b104-4fa3-a7a9-692e82fe39ec",
+    "78d5a80e-90e9-4c64-adc7-31302c766130",
+    "f1fe02fa-b1ba-4adf-a589-021e89c02a08"
+  ],
+  "spritePaletteIds": [
+    "be4d929d-ce5d-4e91-a798-738b68e57804",
+    "c2a72276-94dc-4f0d-abf6-bd57faeceb4d",
+    "26d5ed00-1c9e-45bb-ade0-6bd6e4cccc47",
+    "96c11cac-1d7b-4c85-a289-7985364df48f",
+    "dff14241-4872-45c1-a840-6d64b4957863",
+    "71a26046-b104-4fa3-a7a9-692e82fe39ec",
+    "78d5a80e-90e9-4c64-adc7-31302c766130",
+    "f1fe02fa-b1ba-4adf-a589-021e89c02a08"
+  ],
+  "autoFadeSpeed": 2,
+  "script": [
+    {
+      "id": "32520581-e4d1-48e6-ab1b-e58d351c0d85",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "0"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "36e4ac33-23fb-4835-ad3b-31167520ed10",
+            "command": "EVENT_IF_SAVED_DATA",
+            "args": {
+              "saveSlot": 0
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "22ca36d3-554a-4592-a4e4-699be6e0106f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "HOLLYWILD\nELF-MADE EMPIRE"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "257b450f-94a4-476c-a7bd-d774ff517386",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 2,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "Resume",
+                    "option2": "New"
+                  }
+                },
+                {
+                  "id": "15beca79-7853-4789-afe1-c78ba162d4b8",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "f2f36689-f09e-4c65-ad5f-dbe11cb7863e",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "New journey?\nOld save stays\nuntil you save."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "a767595f-2435-42ee-a234-9d1301ae9e2e",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 2,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "New",
+                          "option2": "Load"
+                        }
+                      },
+                      {
+                        "id": "cc9c5373-bdbc-4346-aaa0-3d42beec5d59",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "1a4fc684-b784-42a2-ab78-4438e98891ef",
+                              "command": "EVENT_RESET_VARIABLES",
+                              "args": {}
+                            },
+                            {
+                              "id": "85b003ea-8f4a-4614-a9d2-2818ddb66b75",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "0",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "cc63d47e-ba21-401d-af44-7e218d16b5b2",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "1",
+                                "value": {
+                                  "type": "number",
+                                  "value": 100
+                                }
+                              }
+                            },
+                            {
+                              "id": "e1217ab1-30dd-49ee-a8cc-4d6e5f140b9f",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "35",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "d7edf28d-838d-41d2-a5b9-a0f115bf9abb",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "HOLLYWILD\nELF-MADE EMPIRE",
+                                  "A garage. 100 Coins.\nA whole city\nwaiting for you.",
+                                  "PIP: Good news!\nYou own a garage.\nMost is still indoors."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "6ba4e951-ecfa-47f7-a229-e4205d547840",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "D-PAD: walk freely\nA: talk / confirm\nB: close menus",
+                                  "START: pocket book\nSELECT: city routes\nSave in the garage.",
+                                  "All five districts\nare open. Follow\nthe road signs.",
+                                  "Accept one job at\na board. Success\nfinishes crew work.",
+                                  "Keep 4 scrap for\nbuilding. Work uses\n2 surplus scrap."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "c2eb8b0f-68e4-4cc6-a381-1e73ba223984",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "6"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "bad7b73c-4797-45c6-af61-9b1dac92393e",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "8"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "113a683b-6204-404b-a9d8-108958b82753",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "SALVAGE READY\nReturn to any job\nboard to bank it."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "284efef3-37fd-475f-a511-38d9c4b265da",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "SALVAGE JOB\nAny marked depot.\nTry Frostwick first."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "16ada3b0-8188-4b67-aa7e-c81f65bdf10e",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "6"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 2
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "2c5ac2d0-ecab-42b9-a077-a249028ab3bf",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "DELIVERY JOB\nAny marked drop-off.\nTry Cocoa first."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "d24b199f-b250-4d30-a5b3-66f6ff689d26",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "4"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "041ef922-d3cc-4dfb-ab69-65d0b834bc93",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "A warm beginning:\nSalvage, then fix\nyour garage bench."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "b7ad6c28-4797-48aa-ae42-88eb199f85e7",
+                                                "command": "EVENT_IF",
+                                                "args": {
+                                                  "condition": {
+                                                    "type": "eq",
+                                                    "valueA": {
+                                                      "type": "variable",
+                                                      "value": "5"
+                                                    },
+                                                    "valueB": {
+                                                      "type": "number",
+                                                      "value": 0
+                                                    }
+                                                  }
+                                                },
+                                                "children": {
+                                                  "true": [
+                                                    {
+                                                      "id": "34681718-6456-426a-a934-7b93d4fcb506",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "Build your empire:\nWork + delivery\ncan fund Cocoa."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "minHeight": 4,
+                                                        "maxHeight": 7,
+                                                        "position": "bottom",
+                                                        "closeWhen": "key",
+                                                        "closeButton": "a"
+                                                      }
+                                                    }
+                                                  ],
+                                                  "false": [
+                                                    {
+                                                      "id": "93fe3e14-d08d-42be-a988-5c274729a877",
+                                                      "command": "EVENT_IF",
+                                                      "args": {
+                                                        "condition": {
+                                                          "type": "eq",
+                                                          "valueA": {
+                                                            "type": "variable",
+                                                            "value": "34"
+                                                          },
+                                                          "valueB": {
+                                                            "type": "number",
+                                                            "value": 0
+                                                          }
+                                                        }
+                                                      },
+                                                      "children": {
+                                                        "true": [
+                                                          {
+                                                            "id": "93198b94-1753-43c3-a72e-baecd33f9e3d",
+                                                            "command": "EVENT_TEXT",
+                                                            "args": {
+                                                              "text": [
+                                                                "Follow the ledger.\nGarage story desk\nleads to Aurora."
+                                                              ],
+                                                              "avatarId": "",
+                                                              "minHeight": 4,
+                                                              "maxHeight": 7,
+                                                              "position": "bottom",
+                                                              "closeWhen": "key",
+                                                              "closeButton": "a"
+                                                            }
+                                                          }
+                                                        ],
+                                                        "false": [
+                                                          {
+                                                            "id": "ece0d364-33ac-4045-a8a8-7f6949d23735",
+                                                            "command": "EVENT_TEXT",
+                                                            "args": {
+                                                              "text": [
+                                                                "Winterlight shines!\nKeep exploring and\nbuilding your city."
+                                                              ],
+                                                              "avatarId": "",
+                                                              "minHeight": 4,
+                                                              "maxHeight": 7,
+                                                              "position": "bottom",
+                                                              "closeWhen": "key",
+                                                              "closeButton": "a"
+                                                            }
+                                                          }
+                                                        ]
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "2b2864a1-e859-4d69-a3b5-693a89b326f4",
+                              "command": "EVENT_LOAD_DATA",
+                              "args": {
+                                "saveSlot": 0
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "49317f65-5187-4423-a427-fad04b772a6b",
+                        "command": "EVENT_LOAD_DATA",
+                        "args": {
+                          "saveSlot": 0
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "337d3447-c655-4be8-aeb4-b23486412b7e",
+                  "command": "EVENT_RESET_VARIABLES",
+                  "args": {}
+                },
+                {
+                  "id": "90b7fdbf-86e9-4ef0-ab76-5f4b03153006",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "0",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "579b4eba-0968-45ca-a339-a700f60c060a",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "1",
+                    "value": {
+                      "type": "number",
+                      "value": 100
+                    }
+                  }
+                },
+                {
+                  "id": "6e823d31-7adf-49b7-ae36-9625465c387f",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "35",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "2476507f-74ea-46f5-a9ab-5b02473c8e1f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "HOLLYWILD\nELF-MADE EMPIRE",
+                      "A garage. 100 Coins.\nA whole city\nwaiting for you.",
+                      "PIP: Good news!\nYou own a garage.\nMost is still indoors."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "88b3fe9e-d0bc-4d4c-ab0a-4f062b447727",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "D-PAD: walk freely\nA: talk / confirm\nB: close menus",
+                      "START: pocket book\nSELECT: city routes\nSave in the garage.",
+                      "All five districts\nare open. Follow\nthe road signs.",
+                      "Accept one job at\na board. Success\nfinishes crew work.",
+                      "Keep 4 scrap for\nbuilding. Work uses\n2 surplus scrap."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "b05d99ca-40fa-41d9-a203-2655f994b825",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "6"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "cc40bb84-22ac-438b-a356-e1a1b3ebf1eb",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "gt",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "8"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "5598ff51-88ad-4321-a493-1aceff81915c",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "SALVAGE READY\nReturn to any job\nboard to bank it."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "63b85203-249c-4d59-a11b-97d9ee9b1aca",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "SALVAGE JOB\nAny marked depot.\nTry Frostwick first."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "633d074a-f9ca-43a6-a7cd-ddda6e6fce6d",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "6"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "cb1aed6b-928d-4e4f-a563-71ba2d0aedd2",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "DELIVERY JOB\nAny marked drop-off.\nTry Cocoa first."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "f214b4d5-3593-45be-a6b7-765bdaeea2fd",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "4"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "00398dbf-0dab-48d3-affd-52c4d26b98d1",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A warm beginning:\nSalvage, then fix\nyour garage bench."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "3bf86435-4d79-46ed-aa33-d007fdb75320",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "5"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "de415e66-3fe6-4c95-a5d4-b4f9927c58b1",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Build your empire:\nWork + delivery\ncan fund Cocoa."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "3ed35733-afc6-4528-a300-3ee68a9b9d4c",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "34"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "da7feb53-33d2-473b-ac25-04878be67b73",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Follow the ledger.\nGarage story desk\nleads to Aurora."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "431aafd7-c292-4985-ab0a-4f87d3fb6e98",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Winterlight shines!\nKeep exploring and\nbuilding your city."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "44e80adc-f27f-425f-ae3e-a613eb71ed2c",
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "start"
+        ],
+        "override": true
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5c294846-5899-4358-ad19-d6df15753995",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "COINS $1$\nSCRAP $2$\nCHEER $3$",
+                "Jobs done: $13$\nPlaces found: $21$/5\nA talk  START menu"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "a8125284-50fd-4260-a8d5-6f47a1935dbf",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 7,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "Job",
+              "option2": "Guide",
+              "option3": "Crew",
+              "option4": "Cancel",
+              "option5": "Close",
+              "option6": "Story",
+              "option7": "Clues"
+            }
+          },
+          {
+            "id": "bacadade-c447-437b-a8e1-bd89b752a147",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "e1f4c24a-cf04-4742-abfa-0332054f2819",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "6"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "351a1063-ed0d-4fd3-a707-42e874360567",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "gt",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "8"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "8d656b09-86e7-4515-a44e-496e56edfb40",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "SALVAGE READY\nReturn to any job\nboard to bank it."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "c6929757-9aa3-4305-ab93-52831a49c242",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "SALVAGE JOB\nAny marked depot.\nTry Frostwick first."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "07086f96-8b48-4e84-abb9-315f0ddee992",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "6"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "de22d436-ee51-4cea-a799-093f45d75b11",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "DELIVERY JOB\nAny marked drop-off.\nTry Cocoa first."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "dc9d6499-184b-41bb-a722-f9c6b53e6134",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "4"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "4e5c67f9-e39e-43b7-a71b-4cd55fb8300f",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A warm beginning:\nSalvage, then fix\nyour garage bench."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "b8b45981-5490-4276-a910-ad4321e59dbf",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "5"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "1d1cddf8-5db1-48a1-a4b2-42281868cadf",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Build your empire:\nWork + delivery\ncan fund Cocoa."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "12a00c1b-443d-4f26-ab67-4331c19355eb",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "34"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "ef4d1c8f-fcc9-4833-a1e7-946a6b3e7b76",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Follow the ledger.\nGarage story desk\nleads to Aurora."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "7231aebe-429d-4128-a637-e7d2cde579c1",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Winterlight shines!\nKeep exploring and\nbuilding your city."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "8407687e-60d7-4a03-a86f-4a72501403b4",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "79d22059-8abb-4e9a-a564-9fe05728516c",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "D-PAD: walk freely\nA: talk / confirm\nB: close menus",
+                      "START: pocket book\nSELECT: city routes\nSave in the garage.",
+                      "All five districts\nare open. Follow\nthe road signs.",
+                      "Accept one job at\na board. Success\nfinishes crew work.",
+                      "Keep 4 scrap for\nbuilding. Work uses\n2 surplus scrap."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "4ed874fe-1b69-472c-a036-67a0839733ac",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "70bab479-1cf9-4321-a722-a16515959404",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "4"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "dd225536-2c83-45fb-a1c3-99f7eff28383",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Rivet needs a\nrepaired workshop.\n40 Coins + 4 scrap."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "f6f1c855-c8d8-4540-a5ad-c2a5658a6435",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "10"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "b8c9804b-bbc6-4ef1-a67c-be36d0cc9c24",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "41"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "8292ca57-7597-40a2-ac43-94b3bf03271b",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "RIVET: maker\n2 spare scrap makes\n30 Coins per job."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "cd544502-d21a-4212-a8e7-a986d658a34f",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "41"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 1
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "24131735-781e-4599-ae3f-80fc08d2d2df",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "RIVET: recycler\n2 scrap per job.\nNo supplies used."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "62b34d48-9bb9-49e2-a287-1d93f59c7cd2",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "RIVET: runner\n10 Coins per job.\nNo supplies used."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "4778a490-cf8b-41f6-a9bd-e2813a0eb9b6",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "RIVET: resting\nTalk at the garage\nto assign work."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "5bbefc93-47e9-4f12-a4c8-05ceb54d7feb",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 4
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "716e685b-b8ff-4507-ae4b-36c752950b86",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "gt",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "6"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "b9405279-2d27-496f-ab9a-17709bd20248",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Cancel this job?\nCarried scrap goes\nback. No crew tick."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "453d2def-d70f-405b-a911-a85cac2a1d02",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 2,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "Cancel",
+                          "option2": "Back"
+                        }
+                      },
+                      {
+                        "id": "2b9460fc-377b-4729-ae72-0c31414a373b",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "9f9584ac-197d-4fe6-aba7-46db225b8817",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "6",
+                                "value": {
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              }
+                            },
+                            {
+                              "id": "316b3aee-9190-4f39-aa8a-3b21e0080004",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "8",
+                                "value": {
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              }
+                            },
+                            {
+                              "id": "d5a8e6a2-5d1a-40ea-a407-e2ee15ac220b",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "9",
+                                "value": {
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              }
+                            },
+                            {
+                              "id": "9dd1fe15-b5b0-4a7a-a884-8fe2ab3af698",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "11",
+                                "value": {
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              }
+                            },
+                            {
+                              "id": "e8b26eac-a532-4ba8-a57c-4cdfab63cc5e",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Job cancelled.\nStored supplies\nare unchanged."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "f353726a-b960-4be5-ae84-57569827f4ed",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "No active job.\nWander wherever\nyou like."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "f4d20b09-0b43-4f42-aebe-bd80227a7a55",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 6
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "e4d62b2a-6702-45a8-a258-66da8af82dcc",
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "1f447236-729f-4d76-a14f-33a7a3ff5505"
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "def0a742-679b-4d9b-a5c1-feda0dfeaf82",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 7
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "273d1ec3-274b-4f3b-a51c-828ce68670cb",
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "67179144-64f2-41bb-ad3b-aa2d20d33998"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "8e5601e1-5fc7-485b-a5ee-ef9137571fc8",
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "select"
+        ],
+        "override": true
+      },
+      "children": {
+        "true": [
+          {
+            "id": "01edd736-eb0a-4488-ae7b-8819fcbf73c7",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "HOLLYWILD ROUTES\nEast-west streets\nform one big loop.",
+                "Frostwick > Candy\n> Brassworks >\nVelvet > Aurora",
+                "North shortcuts:\nFrostwick-Brass\nCandy-Velvet",
+                "Aurora north goes\nto Frostwick south.\nEvery road is open."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": [],
+  "collisions": "0fe+004+0f1c+004+0f10+001c+0f4+001c+0f4+001c+0f4+001c+0f4+007+0f4+006+0f3+008+0f4+007+0f4+006+0f3+008+0f4+007+0f4+006+0f3+008+0f4+007+0f4+006+0f3+008+0f4+007+0f4+006+0f3+008+0f4+007+0f4+006+0f3+008+0f4+007+0f4+006+0f3+008+0f4+0011+0f3+008+0f4+001c+0f4+001c+0f4+001c+0f4+001c+0f4+001c+0f4+007+0fd+008+0f4+007+0fd+008+0f4+007+0fd+008+0f4+001c+0f4+001c+0f4+001c+0f4+001c+0f4+001c+0f4+001c+0f4+001c+0f4+001c+0f10+004+0f1c+004+0fe+"
+}

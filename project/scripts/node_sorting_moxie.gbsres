@@ -1,0 +1,961 @@
+{
+  "_resourceType": "script",
+  "id": "13652b41-d30e-4ffa-a0de-04720dd88d0c",
+  "name": "Story node_sorting_moxie",
+  "symbol": "script_story_node_sorting_moxie",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "68b5e8b6-2ca1-4df0-ab2a-11f9f86c9933",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "23daa04e-ac0d-49cf-a4ab-145ec72b26f3",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 5
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "71a980d8-0fc2-4ee2-ad7a-cb99a909c1e8",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Moxie pins your\nroute on the\nsorting desk. She\nstops calling the",
+                      "project a rescue.\nRescue sounds like\none brave person,\nshe says. A",
+                      "route needs\nsomebody to do it\nagain tomorrow.\nPip quietly\nchanges",
+                      "the heading."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "7311d4ba-a16e-46d0-a6f6-6e915bc0d7b5",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 6
+                    }
+                  }
+                },
+                {
+                  "id": "09b54cda-3149-4a3d-aa7e-49424f019671",
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "63eca8db-89b4-4652-aff3-9e6ea9bbaf98"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "b549ad12-0f3e-4d09-a052-e6c5b4476857",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 6
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "cb50a79c-e650-42c0-ae5a-e2c72d9346cd",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "63eca8db-89b4-4652-aff3-9e6ea9bbaf98"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "673ee811-2cb6-4784-a72a-7b30d9d1c0da",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "61"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "b98dcb2a-ecc5-4aa2-ae64-149e3b7fd64d",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "61",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "a87dead9-da9f-4d7f-a449-4c28cd574210",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Famous Racing\nStripe",
+                                  "Moxie's racing\nstripe is painted\non the inside of\nthe sled runner,",
+                                  "where almost\nnobody sees it.\nShe painted it\nduring a long\nrepair. It",
+                                  "reminds her the\nsled can move\nagain. She claims\nit adds speed, but",
+                                  "only when properly\nmaintained."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "d774ba39-ff56-4093-ab6d-f402ef50aef8",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Famous Racing\nStripe",
+                                  "Moxie's racing\nstripe is painted\non the inside of\nthe sled runner,",
+                                  "where almost\nnobody sees it.\nShe painted it\nduring a long\nrepair. It",
+                                  "reminds her the\nsled can move\nagain. She claims\nit adds speed, but",
+                                  "only when properly\nmaintained."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "b4be5891-ef10-416f-ab24-5af9b3fd3f60",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 5
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "a11b2e3c-9a54-439f-a4c3-25c0ddb2f441",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "816a2ecd-5393-41c1-aa32-7087bf0b6740",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A second shipment\nhas a tin of soup\nand a packet of\npaper medicine",
+                            "labels. The clinic\ntakes the labels\nand requires a dry\ncontainer.",
+                            "Cocoa takes soup\nand can accept a\nwashable crate.\nThe only dry box",
+                            "holds the soup;\nthe washable crate\nholds the labels.\nBoth containers",
+                            "have correct\naddress tags for\ntheir contents.\nMoxie says the\ntags",
+                            "are right but the\npacking still\nneeds a decision."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "aaf5653c-9ce0-404b-a559-6a367fd676fd",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 2
+                          }
+                        }
+                      },
+                      {
+                        "id": "6cd9c6e5-6d81-4762-a871-177a2ff4bece",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Candy Sorting:\ncollect the\nblanket parcel\nfrom the blue\nshelf."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "e3178f45-af80-49f5-a194-d0f0e7a4d61a",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "61"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "66300fa8-fcfd-4652-ac15-77f9d835ce3f",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "61",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "57daecb8-854a-4c90-a1d5-8b4632f4ae16",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Famous Racing\nStripe",
+                                  "Moxie's racing\nstripe is painted\non the inside of\nthe sled runner,",
+                                  "where almost\nnobody sees it.\nShe painted it\nduring a long\nrepair. It",
+                                  "reminds her the\nsled can move\nagain. She claims\nit adds speed, but",
+                                  "only when properly\nmaintained."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "c855551f-e9bc-41e7-a964-9ec98b825c49",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Famous Racing\nStripe",
+                                  "Moxie's racing\nstripe is painted\non the inside of\nthe sled runner,",
+                                  "where almost\nnobody sees it.\nShe painted it\nduring a long\nrepair. It",
+                                  "reminds her the\nsled can move\nagain. She claims\nit adds speed, but",
+                                  "only when properly\nmaintained."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "b666f7e5-2460-48b9-a2ff-508fbc7c643c",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 7
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "7c308b44-4c15-4d19-ab71-2185df5ba1bb",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 5
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "d211fe33-53af-4134-a086-a3f8fc278409",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Moxie: We can use\nthe sled again\nwithout pretending\nthe storage bill",
+                                  "disappeared. That\nis a surprisingly\ngrown up victory.\nShe writes",
+                                  "REPAIR THE RUNNER\nbefore drawing a\nracing stripe. The\nstripe comes",
+                                  "second, by a\nnarrow vote."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "203382f6-75b8-443d-a7b7-2d50b021ad89",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              }
+                            },
+                            {
+                              "id": "46e2f6ff-d63c-49b9-ab24-e3ac7b1eab3d",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "1f0c1670-100d-4ba5-ac6a-ec1d9f48e1fb"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "9f6d34a7-0b41-4fa5-a3a1-79323979398c",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 6
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "80a3c712-9fd7-47a6-ace5-a35d79b17d58",
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "1f0c1670-100d-4ba5-ac6a-ec1d9f48e1fb"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "33cee21a-f50c-4f17-aee2-a11965db53dc",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "61"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "99127253-7d7e-4fd7-a083-99172af1f59b",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "61",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "d99d4b9e-9725-47f2-a9fd-1d47c596fa55",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Famous Racing\nStripe",
+                                              "Moxie's racing\nstripe is painted\non the inside of\nthe sled runner,",
+                                              "where almost\nnobody sees it.\nShe painted it\nduring a long\nrepair. It",
+                                              "reminds her the\nsled can move\nagain. She claims\nit adds speed, but",
+                                              "only when properly\nmaintained."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "12a976f2-4f69-40d7-a177-0cc10ff8738d",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Famous Racing\nStripe",
+                                              "Moxie's racing\nstripe is painted\non the inside of\nthe sled runner,",
+                                              "where almost\nnobody sees it.\nShe painted it\nduring a long\nrepair. It",
+                                              "reminds her the\nsled can move\nagain. She claims\nit adds speed, but",
+                                              "only when properly\nmaintained."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "c13d20bf-f50b-49e2-a938-70c7119a1adc",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "43"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 8
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "20448508-9853-4397-a278-9b07adfd8da8",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 5
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "3905b327-9889-491c-aa28-caf816d58fe5",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Pip reads his\nsmaller speech: We\nwill visit these\nstops, record what",
+                                        "fails, and tell\npeople the truth.\nMoxie signs it.\nDot signs as",
+                                        "witness. Nib says\nit lacks sparkle,\nthen asks for a\ncopy to hang in",
+                                        "the lodge."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "d6f64361-0d55-4c58-acdf-647874ca0103",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 6
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "525a348a-281b-4dbd-ab3c-2f668aba29de",
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "a7bf37ee-9ecb-4699-a262-6e7381c4acad"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "4c63c77a-7481-441d-a897-ebb0a9d0175d",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "44"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 6
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "898fb270-0c34-4a53-a34a-7d11036b6c1a",
+                                          "command": "EVENT_CALL_CUSTOM_EVENT",
+                                          "args": {
+                                            "customEventId": "a7bf37ee-9ecb-4699-a262-6e7381c4acad"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "612598c2-51e5-42df-a5ed-190e2bdb7a22",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "61"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "9c8900ea-3e62-4286-a6a4-c3a61fc316d6",
+                                                "command": "EVENT_SET_VALUE",
+                                                "args": {
+                                                  "variable": "61",
+                                                  "value": {
+                                                    "type": "number",
+                                                    "value": 1
+                                                  }
+                                                }
+                                              },
+                                              {
+                                                "id": "cbf3c5d5-ac79-429c-a1ef-733f1f464884",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "The Famous Racing\nStripe",
+                                                    "Moxie's racing\nstripe is painted\non the inside of\nthe sled runner,",
+                                                    "where almost\nnobody sees it.\nShe painted it\nduring a long\nrepair. It",
+                                                    "reminds her the\nsled can move\nagain. She claims\nit adds speed, but",
+                                                    "only when properly\nmaintained."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "3e752f22-80fc-4ae5-a840-955e2e9f36b1",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "The Famous Racing\nStripe",
+                                                    "Moxie's racing\nstripe is painted\non the inside of\nthe sled runner,",
+                                                    "where almost\nnobody sees it.\nShe painted it\nduring a long\nrepair. It",
+                                                    "reminds her the\nsled can move\nagain. She claims\nit adds speed, but",
+                                                    "only when properly\nmaintained."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "6bdd1684-96b0-4133-a3ba-86beb68aed96",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "43"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 22
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "14d0cc56-5e2e-41fb-a94f-5db2111b9870",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "44"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 2
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "946a78d8-be6f-41c5-a27f-12fe8a152671",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Moxie signs: Stops\nare named, signal\ncards posted,\nbackup copies",
+                                              "ready. If I miss a\nhandoff, Pip gets\nthe truth. She\nadds that the",
+                                              "sled runner now\nturns without\neditorial comment,\nthen crosses out",
+                                              "now to avoid\ntempting fate."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "90821e69-424b-40a6-a4a0-7624d8e3e427",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "44",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 3
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "7c417172-3e8f-4437-a864-a3f5de32bc12",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Brassworks\nFoundry: record\nRivet's launch\nreply."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "8ddc9337-7fbf-4f64-abce-78ed98ccf4f4",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "61"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "a4801850-8639-4e0b-ab81-f6efe15707a4",
+                                                "command": "EVENT_SET_VALUE",
+                                                "args": {
+                                                  "variable": "61",
+                                                  "value": {
+                                                    "type": "number",
+                                                    "value": 1
+                                                  }
+                                                }
+                                              },
+                                              {
+                                                "id": "c46414e7-2ffe-48c2-a877-33d6d651e960",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "The Famous Racing\nStripe",
+                                                    "Moxie's racing\nstripe is painted\non the inside of\nthe sled runner,",
+                                                    "where almost\nnobody sees it.\nShe painted it\nduring a long\nrepair. It",
+                                                    "reminds her the\nsled can move\nagain. She claims\nit adds speed, but",
+                                                    "only when properly\nmaintained."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "8091e7c9-cf61-48e8-a8ec-63cf6926eef7",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "The Famous Racing\nStripe",
+                                                    "Moxie's racing\nstripe is painted\non the inside of\nthe sled runner,",
+                                                    "where almost\nnobody sees it.\nShe painted it\nduring a long\nrepair. It",
+                                                    "reminds her the\nsled can move\nagain. She claims\nit adds speed, but",
+                                                    "only when properly\nmaintained."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "fbe3d2da-7b1a-42a7-ae83-761797da5e91",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "61"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "9e5baec6-1e88-4b80-ad29-74698c99bbee",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "61",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "71dabc47-1339-41ee-a60e-c3488e11e387",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Famous Racing\nStripe",
+                                              "Moxie's racing\nstripe is painted\non the inside of\nthe sled runner,",
+                                              "where almost\nnobody sees it.\nShe painted it\nduring a long\nrepair. It",
+                                              "reminds her the\nsled can move\nagain. She claims\nit adds speed, but",
+                                              "only when properly\nmaintained."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "bd2d452d-ebac-48cd-af76-76adb4fb96fc",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Famous Racing\nStripe",
+                                              "Moxie's racing\nstripe is painted\non the inside of\nthe sled runner,",
+                                              "where almost\nnobody sees it.\nShe painted it\nduring a long\nrepair. It",
+                                              "reminds her the\nsled can move\nagain. She claims\nit adds speed, but",
+                                              "only when properly\nmaintained."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

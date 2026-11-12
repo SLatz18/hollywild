@@ -14,6 +14,8 @@ manifest = json.loads((ROOT / "build/rom/build-manifest.json").read_text())
 rom = ROOT / manifest["rom"]
 expected = manifest["cartridge"]["sha256"]
 assert hashlib.sha256(rom.read_bytes()).hexdigest() == expected, "ROM differs from manifest"
+for filename, digest in manifest.get("generation_sha256", {}).items():
+    assert hashlib.sha256((ROOT / filename).read_bytes()).hexdigest() == digest, f"Build source changed: {filename}"
 report = {"romSha256": expected, "checks": [], "replays": [], "passed": True}
 for name in ("validate-assets.py", "check-native-source.py"):
     result = subprocess.run([sys.executable, str(ROOT / "scripts" / name)], cwd=ROOT,

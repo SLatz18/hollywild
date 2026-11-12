@@ -1,0 +1,632 @@
+{
+  "_resourceType": "script",
+  "id": "6c1936c9-5c2c-4259-ab44-f59ca0d85824",
+  "name": "Story node_control_gauge",
+  "symbol": "script_story_node_control_gauge",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "6e6634dd-6a67-4c90-ae39-8ae15e5d7152",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 10
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "1fa6808e-1f2a-4ecb-aa92-3fb64abe8479",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "3bf3de57-e527-465b-a883-164cee6b559f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "For the original\nstandard\ninspection, use\nDot two-seal\nrequirement",
+                      "and the standard\ntwo-seal batch,\nnot the different\npractice recipes.",
+                      "How many standard\nbatches cover that\ninspection exactly\nbefore",
+                      "adding a buffer?"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "56ff29f1-9da0-42f0-af30-f2a900bce73f",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 3,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "ONE",
+                    "option2": "TWO",
+                    "option3": "THREE"
+                  }
+                },
+                {
+                  "id": "2446e7d3-1dc5-41a4-aca8-a6751c7c6a12",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "a294fb2b-6f89-4a03-a82a-2d00ff14f2b6",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 3
+                          }
+                        }
+                      },
+                      {
+                        "id": "783c1e2f-fc08-414c-a3ad-aab0bb138929",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Brassworks\nFoundry: choose\nthe repair supply\npolicy with Rivet."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "fc02d146-0637-416d-a848-31c9887d063e",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "gt",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "fe02cfde-6060-4d23-a8f4-178fd069f57b",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Compare the\ninspection need\nwith the output of\na single standard",
+                                  "batch. Extra\ncapacity is not\npart of the stated\nrequirement."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "12773e9e-b816-4526-ac9c-ce4255eeae69",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "71"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "e0df6281-d034-4119-a201-a2ff530cce31",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "71",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "e3f7d46e-803e-4e35-a824-9694bbd8d98a",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Confident Needle",
+                            "The gauge face\ncarries an old\nslogan: ALWAYS\nCERTAIN. Someone\nhas",
+                            "covered CERTAIN\nwith CHECKED.\nRivet recognizes\nDot's handwriting\nand",
+                            "says nothing. Dot\nrecognizes Rivet's\nsilence as\npermission. The",
+                            "crossed out word\nremains visible\nbeneath the paper,\nwhich feels like",
+                            "the point."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "af3efe44-1123-4efc-a43b-a5afcadbd38b",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Confident Needle",
+                            "The gauge face\ncarries an old\nslogan: ALWAYS\nCERTAIN. Someone\nhas",
+                            "covered CERTAIN\nwith CHECKED.\nRivet recognizes\nDot's handwriting\nand",
+                            "says nothing. Dot\nrecognizes Rivet's\nsilence as\npermission. The",
+                            "crossed out word\nremains visible\nbeneath the paper,\nwhich feels like",
+                            "the point."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "43fc251b-c950-4e3f-a4f0-d7b7497de93d",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 11
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "691d78f0-9987-4ffa-a51c-958271d0e124",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "f0e25c3d-a524-473b-a5fc-58d78184f1a4",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Dot turns the pump\noff. The line is\nopen, the bucket\nis empty, and",
+                            "the needle still\nreads TWO. She\nrecords all three\nfacts before",
+                            "touching the\nscrew. Rivet says\na neat notebook is\nless expensive",
+                            "than a neat\nexplanation\nafterward."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "5bf1f11b-f85f-4fae-a309-4939eea40b96",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 3
+                          }
+                        }
+                      },
+                      {
+                        "id": "f8f5289d-8c53-4845-a5e2-ecad3c2c13d6",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Brassworks\nControl: report\nthe fault at the\nrelay desk."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "50dd4373-8b0f-4990-afe5-6fb765775db0",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 4
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "b93d318f-68a6-4f01-a3d0-5596c32aae5f",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Which action\nfollows the\ncombined checks?\nThe bucket agrees\nwith the",
+                                  "certified jug, the\noff line is empty,\nand the fixed\nneedle claims",
+                                  "pressure. You may\ninspect the gauge\nmechanism, replace\nthe verified",
+                                  "bucket, or raise\npump power until\nthe display looks\nright. Dot will",
+                                  "record the reason\nbefore anyone\ntouches a tool."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "1c9da258-9538-413a-a825-4ba3aef018f6",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "GAUGE",
+                                "option2": "BUCKET",
+                                "option3": "POWER"
+                              }
+                            },
+                            {
+                              "id": "d0a21084-80a9-4f64-a530-5c51147273ef",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "247a4c06-36c5-4b15-a4fe-65ac9d6ce3fc",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 5
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "dc2c5b37-4bc8-4aa6-a656-6018af690ca4",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Brassworks\nControl: approve\nDot's calibrated\nreading."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "ccf881e2-c278-4a0a-ab16-944a121f811b",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "eec9072e-4650-4779-a1b4-497c87ed558a",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Look for the\nobservation that\ndisagrees with two\nseparately checked",
+                                              "facts. Changing a\nverified reference\nor forcing the\nmachine to match",
+                                              "a display would\nhide the\ndisagreement."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "21ef194f-8d66-46a1-a9e8-bfc722f87118",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "71"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "6f81f88a-2be7-4a7a-a883-0b51a6db463d",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "71",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "070ba838-feef-48f5-a9ae-ae97578701fc",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Confident Needle",
+                                        "The gauge face\ncarries an old\nslogan: ALWAYS\nCERTAIN. Someone\nhas",
+                                        "covered CERTAIN\nwith CHECKED.\nRivet recognizes\nDot's handwriting\nand",
+                                        "says nothing. Dot\nrecognizes Rivet's\nsilence as\npermission. The",
+                                        "crossed out word\nremains visible\nbeneath the paper,\nwhich feels like",
+                                        "the point."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "22a28857-0e3d-46b5-a2ad-3392b0ced8f9",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Confident Needle",
+                                        "The gauge face\ncarries an old\nslogan: ALWAYS\nCERTAIN. Someone\nhas",
+                                        "covered CERTAIN\nwith CHECKED.\nRivet recognizes\nDot's handwriting\nand",
+                                        "says nothing. Dot\nrecognizes Rivet's\nsilence as\npermission. The",
+                                        "crossed out word\nremains visible\nbeneath the paper,\nwhich feels like",
+                                        "the point."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "420daab3-94c3-46fc-adff-b9f794ef3506",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "71"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "9688f48b-692d-41b8-adbc-1cd202b24f08",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "71",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "982ad1f1-7edf-457a-a8e5-d6bbfa629630",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Confident Needle",
+                            "The gauge face\ncarries an old\nslogan: ALWAYS\nCERTAIN. Someone\nhas",
+                            "covered CERTAIN\nwith CHECKED.\nRivet recognizes\nDot's handwriting\nand",
+                            "says nothing. Dot\nrecognizes Rivet's\nsilence as\npermission. The",
+                            "crossed out word\nremains visible\nbeneath the paper,\nwhich feels like",
+                            "the point."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "e130ef99-7741-4ac8-a62d-aae6e675ca0c",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Confident Needle",
+                            "The gauge face\ncarries an old\nslogan: ALWAYS\nCERTAIN. Someone\nhas",
+                            "covered CERTAIN\nwith CHECKED.\nRivet recognizes\nDot's handwriting\nand",
+                            "says nothing. Dot\nrecognizes Rivet's\nsilence as\npermission. The",
+                            "crossed out word\nremains visible\nbeneath the paper,\nwhich feels like",
+                            "the point."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "_resourceType": "script",
+  "id": "123455c5-17b2-4ccd-a9e8-63313388c7e2",
+  "name": "Story clues_mission_12",
+  "symbol": "script_story_clues_mission_12",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "fff5fdea-ad49-4d3f-a5b6-6c7c34c3fd3e",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Clues: A Shift\nWithout Guesswork"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "5d11b3ae-6b60-4e97-ab9c-cb69db1b06d6",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "60ca8fdc-87f3-495b-afc9-d8c3d21b93b1",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "No clues yet for\nthis mission.\nFollow the next\nlead in START >\nStory."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "710af3a4-ea55-4261-a11d-f0ab4441efa6",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b1fa00b6-26eb-4156-abc7-54b6f4ac66e5",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Process cards: FIT\nspring before\nenergizing. SET\nlimit after",
+                "fitting. TEST with\npower last. Card\norder is not a\nsuggestion. The",
+                "inspector asks if\nthe wooden spoon\nis approved\nequipment. Rivet\nsays",
+                "it is approved for\nmoving his ruler."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "f403ccb9-0ac6-4cfb-a631-536f3ed44cbf",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "308479d3-a7d8-460a-aa43-4309d8d232b2",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The lock card adds\na condition to the\nprocess sheets:\nthe crew must",
+                "disconnect power\nbefore opening the\nregulator cover.\nThe spring is",
+                "fitted with the\ncover open. The\nlimit is set after\nthe spring is",
+                "secured. The cover\nis then shut\nbefore power\nreturns for\ntesting.",
+                "Dot arranges blank\ncards on the desk\nand asks the\ninspector to keep",
+                "his silver ruler\naway from all of\nthem."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "3bf12aab-9e87-4abd-a20c-19f3f906f4fd",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "88d1700b-c1a5-4e5e-a708-16e0a571ab8e",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Which pair of\nactions must be\ncompleted, in that\norder, before the",
+                "powered test?"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "9da74414-b297-42a5-aa7a-b0f680bc1888",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "89707e8d-4520-4a25-a06e-4c76604d0023",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The inspector asks\nwhat happens if\none seal fails the\ntest. Rivet",
+                "points to the\nsupply promise you\nmade, then asks\nDot to explain how",
+                "the replacement\nreaches the bench."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "7d74e560-f7a4-4101-a44b-25003deb373f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 4
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "7da21085-ef32-48b3-a2f4-f4096d8facda",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The inspector has\nwritten OPEN, FIT,\nSET, CLOSE, TEST.\nSomething",
+                "must happen before\nOPEN, and must\nremain in force\nthrough the",
+                "open-cover work.\nWhich first action\nmakes this\nsequence safe?\nThis",
+                "is a planning\ncheck, not a live\nswitch experiment.\nRivet will not",
+                "open the machine\nuntil the written\norder accounts for\nthe lock card."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "b935a131-3144-4000-a599-c794fe97c66a",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "161e0966-db7d-4c2a-aaf7-0a78ca04f29d",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The inspector\nwatches three\ncycles, including\na loss of power.\nThe",
+                "valve closes each\ntime. He signs a\nplain sheet. Slush\nwanted a",
+                "certificate\nsuitable for a\nwall. Rivet wants\na record suitable\nfor",
+                "the next person at\nthe bench."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

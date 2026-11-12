@@ -1,0 +1,1020 @@
+{
+  "_resourceType": "script",
+  "id": "68e1a2c5-220f-42f3-abc7-a7cd598686d9",
+  "name": "Story node_depot_manifest",
+  "symbol": "script_story_node_depot_manifest",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "12debe07-dc79-4a22-ad95-74d365edb009",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "4b9ff9ed-21e8-47be-aa1a-e8522b8f683d",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "0879e4c6-9263-4031-a089-9904f0e7c600",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Manifest: The red\ncart carried\nbells. The blue\ncart carried",
+                      "blankets. The\nyellow cart\ncarried a pressure\nvalve to\nBrassworks.",
+                      "Silver S signed\nfor the yellow\ncart, then crossed\nout the",
+                      "destination. The\ncarbon copy\nsurvived."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "f1f23269-1a46-4d6c-a5ed-7c983a00cbc2",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "932f4e80-be0d-4cd1-a192-7253cefbc0e0",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Frostwick Depot:\ncompare the paid\nbill and storage\ntally beside the\ngate."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "56884549-aa09-49d0-a814-14692698b736",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 4
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "fda64f58-0288-438e-afc3-c4434cb4ee95",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The tally must\nseparate a\nverified past\npayment from a\ndisputed",
+                            "charge. Which\namount can you\ntruthfully record\nas already paid by",
+                            "Slush? This is not\npermission to take\nmoney from your\nwallet. It is",
+                            "the figure the\nforeman will\nacknowledge, and\nSlush will see\nwhether",
+                            "you counted his\ncontribution\nhonestly."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "85eec3ad-1a91-44f2-ac35-1ce02500b6a2",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "SIX",
+                          "option2": "TWENTY",
+                          "option3": "26"
+                        }
+                      },
+                      {
+                        "id": "3329e6e0-5428-4247-a080-292274353807",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "0581b1ff-8697-49e1-a471-67fae414d23a",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              }
+                            },
+                            {
+                              "id": "ddb26630-3dfc-4d46-a07a-2d53bf3992cf",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Frostwick Depot:\nask the foreman\nabout the silver\nsignature."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "085d95d3-fce1-46a2-a664-0bf82eb13f1a",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "7ecbb9ad-c59a-4261-a533-46f3bf30379a",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The inspection and\nstorage entries\nhave different\npayment states.",
+                                        "Count only an\nentry marked paid,\nnot every figure\non the account."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "ce8e8a69-ec51-4236-a15f-82851c84135c",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "54"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "fccb39a4-967c-4d9f-a268-55d7584661fe",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "54",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "28de615d-49ce-4d34-aa28-e9eac6e0bdb3",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Missing Comma",
+                                  "An old manifest\nordered twelve\ncrates of bells\nand one foreman.",
+                                  "Someone added a\ncomma and a note:\nForeman arrives\nunder own power.",
+                                  "The foreman has\nframed the\ncorrection. He\nsays accurate\nrecords",
+                                  "matter,\nparticularly when\nthe records\nthreaten to ship\nhim."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "442590be-0034-4c64-ad08-6db2f1a2431a",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Missing Comma",
+                                  "An old manifest\nordered twelve\ncrates of bells\nand one foreman.",
+                                  "Someone added a\ncomma and a note:\nForeman arrives\nunder own power.",
+                                  "The foreman has\nframed the\ncorrection. He\nsays accurate\nrecords",
+                                  "matter,\nparticularly when\nthe records\nthreaten to ship\nhim."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "b6096028-e000-4354-a63a-daae2c1e51e5",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 7
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "8dc7a0ec-b03f-445d-a307-844fbf3ddd8a",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "4d2b24a4-bf53-4a44-aa33-a48803f679f5",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Manifest: Vehicle\nloan: none. Repair\ndebt: cleared.\nStorage claim:",
+                            "disputed. Release\nrequires the\nmunicipal owner\nmark, a square.\nThe",
+                            "crown stamp would\ntransfer a private\nvehicle, which\nthis sled has",
+                            "never been."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "8d0350d5-43cb-4026-af34-baf56b864f5d",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 3
+                          }
+                        }
+                      },
+                      {
+                        "id": "4e941dff-c201-4809-aa8d-08b021923f9b",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Frostwick Depot:\nselect the lawful\nrelease mark at\nthe gate."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "a9d3b68f-b951-4fe2-ab96-17cfe6961960",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 4
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "fe1d4ca1-177a-439f-a158-d830abb2ee73",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Which packet\nsatisfies the two\nrelease conditions\nwithout making",
+                                  "Moxie personally\nliable? The clerk\ncan attach more\nthan one",
+                                  "document. Do not\nsolve a missing\nproof by inventing\na new borrower.",
+                                  "Moxie says she\nwill wait while\nyou get it right;\nthe sled belongs\nto",
+                                  "the city, and so\ndoes the duty to\nkeep its records\nstraight."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "7d2aeafd-fed8-4f8c-ad60-f2f0fd2cd836",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "OWNER",
+                                "option2": "BOTH",
+                                "option3": "LOAN"
+                              }
+                            },
+                            {
+                              "id": "1776a19b-4b9f-4873-abf9-9588fbb37756",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "543370fc-446e-4009-ab2a-b000c565d429",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 5
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "30d694c9-9feb-4453-a517-0097bedfdffa",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Candy Sorting:\nreport the sled\nrelease to Moxie."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "ffad44a3-5b65-4e2c-a45a-2ecd23bc539a",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "6da40424-324e-4b82-a336-4e39124263d8",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The checklist has\ntwo required\nfacts. A single\nregister proves\nonly",
+                                              "one of them; a\npersonal loan\ncreates a new\nobligation instead\nof",
+                                              "proving the old\nfacts."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "e0f8c372-00a5-4ba4-a69a-7fc98d81185e",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "54"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "0b6e554a-83b0-4111-a0d5-6743dec2e23c",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "54",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "7b87a479-76a9-4ce2-a46c-c8ffce2376a0",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Missing Comma",
+                                        "An old manifest\nordered twelve\ncrates of bells\nand one foreman.",
+                                        "Someone added a\ncomma and a note:\nForeman arrives\nunder own power.",
+                                        "The foreman has\nframed the\ncorrection. He\nsays accurate\nrecords",
+                                        "matter,\nparticularly when\nthe records\nthreaten to ship\nhim."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "37b7f4bb-7099-4d46-ae31-34668354fabd",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Missing Comma",
+                                        "An old manifest\nordered twelve\ncrates of bells\nand one foreman.",
+                                        "Someone added a\ncomma and a note:\nForeman arrives\nunder own power.",
+                                        "The foreman has\nframed the\ncorrection. He\nsays accurate\nrecords",
+                                        "matter,\nparticularly when\nthe records\nthreaten to ship\nhim."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "f7d757a4-f3aa-4141-ad62-7fdf0db8ea68",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 8
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "777dc738-777e-430f-a263-4be600e64763",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "94886bee-505e-4aed-a248-2e41086cf619",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The regulator\ncrate weighs six\nunits. The west\nroof bridge holds",
+                                  "three. The east\nstair holds five.\nThe depot gate\nholds eight. The",
+                                  "crate must travel\nintact because its\nspring is secured\ninside a",
+                                  "sealed test frame.\nMoxie cannot split\nit into two trips\nwithout",
+                                  "invalidating the\ntest. The gate\nroute is longer on\nthe drawing but",
+                                  "has no toll,\ntimer, or closed\ndoor."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "6dbc6a18-1460-4b94-a893-534612635c58",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              }
+                            },
+                            {
+                              "id": "2a832e6d-842c-4c5e-a764-a06c01d7e641",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Frostwick Depot:\nchoose the safe\npath for heavy\nparts."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "da7cf6ca-fc36-4dc7-aa91-dbe6a41b3c64",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "54"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "4eec51b1-49ec-4b27-a52c-5cb1fc7409c3",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "54",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "da7f34f9-4702-4ae1-aec7-9054744f4d34",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Missing Comma",
+                                        "An old manifest\nordered twelve\ncrates of bells\nand one foreman.",
+                                        "Someone added a\ncomma and a note:\nForeman arrives\nunder own power.",
+                                        "The foreman has\nframed the\ncorrection. He\nsays accurate\nrecords",
+                                        "matter,\nparticularly when\nthe records\nthreaten to ship\nhim."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "e02d72c6-b551-4f4f-a70a-0ea037160fff",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Missing Comma",
+                                        "An old manifest\nordered twelve\ncrates of bells\nand one foreman.",
+                                        "Someone added a\ncomma and a note:\nForeman arrives\nunder own power.",
+                                        "The foreman has\nframed the\ncorrection. He\nsays accurate\nrecords",
+                                        "matter,\nparticularly when\nthe records\nthreaten to ship\nhim."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "67ccea8c-a4a6-421f-a484-fe3657ea7399",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "43"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 22
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "cd88d914-9482-4db9-aef1-e42cf05a0397",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "7bdfffed-f0d2-4718-a8c1-003f59df212b",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Foreman signs: The\nheavy parts route\nstays clear. I\nhold the gate",
+                                        "key and a spare at\nthe archive. If\nthe gate freezes,\ncall me; do not",
+                                        "send the load over\nthe roof bridge.\nThe foreman draws\na very heavy",
+                                        "arrow under this."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "5f7c88f0-3da9-406b-a4de-55597db8585c",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "28f7c584-be80-4f2f-aaf6-eef074af5e85",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Brassworks\nFoundry: inspect\nthe launch packet\nmismatch at the\nshelf."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "b7595934-8709-4d44-afa6-84c0031bdff0",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "54"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "31e02ea3-8711-467e-ad72-9e18bb58567f",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "54",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "265a1a9b-9bf8-4830-ae73-1dd128889f8f",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Missing Comma",
+                                              "An old manifest\nordered twelve\ncrates of bells\nand one foreman.",
+                                              "Someone added a\ncomma and a note:\nForeman arrives\nunder own power.",
+                                              "The foreman has\nframed the\ncorrection. He\nsays accurate\nrecords",
+                                              "matter,\nparticularly when\nthe records\nthreaten to ship\nhim."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "57ee7bd1-4670-4905-aeb7-c856547c1c6c",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Missing Comma",
+                                              "An old manifest\nordered twelve\ncrates of bells\nand one foreman.",
+                                              "Someone added a\ncomma and a note:\nForeman arrives\nunder own power.",
+                                              "The foreman has\nframed the\ncorrection. He\nsays accurate\nrecords",
+                                              "matter,\nparticularly when\nthe records\nthreaten to ship\nhim."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "53ae5cdd-dc07-42de-ab3c-5a266a59b3f0",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "54"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "6a842f80-326f-4d79-a5f2-e967045ead1e",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "54",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "513ad08c-db7b-4cd7-a2bc-e3b280ca7359",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Missing Comma",
+                                        "An old manifest\nordered twelve\ncrates of bells\nand one foreman.",
+                                        "Someone added a\ncomma and a note:\nForeman arrives\nunder own power.",
+                                        "The foreman has\nframed the\ncorrection. He\nsays accurate\nrecords",
+                                        "matter,\nparticularly when\nthe records\nthreaten to ship\nhim."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "cc388bd3-0087-477e-a05e-093380b73d67",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Missing Comma",
+                                        "An old manifest\nordered twelve\ncrates of bells\nand one foreman.",
+                                        "Someone added a\ncomma and a note:\nForeman arrives\nunder own power.",
+                                        "The foreman has\nframed the\ncorrection. He\nsays accurate\nrecords",
+                                        "matter,\nparticularly when\nthe records\nthreaten to ship\nhim."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,450 @@
+{
+  "_resourceType": "script",
+  "id": "db5923bb-c645-4498-add6-92a62c5e6980",
+  "name": "Story node_depot_foreman",
+  "symbol": "script_story_node_depot_foreman",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "6439867e-9724-48c2-ae0c-e67602117133",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "ac82ed5a-240e-47e7-a293-86f957503433",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 5
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "5b8bf80f-8b5a-49b7-a06a-c6b84e203864",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Foreman: I knew\nthat coat. Your\naunt carried soup\nin the left pocket",
+                      "and drawings in\nthe right.\nSometimes the\ndrawings smelled\nof leek.",
+                      "She left a\nmanifest here, and\na warning against\npeople selling",
+                      "perfect winters."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "c95db9df-6360-4f18-aa62-b80a02ece5f9",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 6
+                    }
+                  }
+                },
+                {
+                  "id": "09235ab3-54f3-43d2-ae80-f2ee64720450",
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "c11cb78e-affe-42b3-a181-4a17c7571515"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "67aabba2-4d5c-414a-ada5-06592c3bbac3",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 6
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "1e8f7fcc-2242-4b39-abb5-b9c2a76dd30a",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "c11cb78e-affe-42b3-a181-4a17c7571515"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "63c9e775-26e2-4a3a-a937-84cd150b69c4",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "57"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "a270c821-93d8-4908-a9d5-d5a9dac212ad",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "57",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "d31b930b-9513-4422-afd8-8d8314006041",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A Kettle Schedule",
+                                  "The kettle card\ngives names, not\nhours. Whoever\ntakes the last cup",
+                                  "fills it. Whoever\ncomes in cold gets\nthe first. The\nforeman calls",
+                                  "this a scheduling\nsystem. He says\nits only serious\ndefect is Pip",
+                                  "interpreting cold\nas an emotional\ncondition."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "97aff763-7f22-4fcc-a1d3-906fb8d93188",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A Kettle Schedule",
+                                  "The kettle card\ngives names, not\nhours. Whoever\ntakes the last cup",
+                                  "fills it. Whoever\ncomes in cold gets\nthe first. The\nforeman calls",
+                                  "this a scheduling\nsystem. He says\nits only serious\ndefect is Pip",
+                                  "interpreting cold\nas an emotional\ncondition."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "3639ec5f-c3f2-4700-a7ed-89e203d1f127",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "ca7f3f78-97cd-45ac-ad67-df6d427a78bc",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 5
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "80495695-3f3a-482e-a3eb-a4df0823ad7d",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Foreman: Sterling\nSlush paid the\ninspection bill.\nHe may own the",
+                            "bill, but that is\nnot the same as\nowning the valve.\nTell the archive",
+                            "clerk we still\nknow the\ndifference. Tell\nPip the kettle\ndoes not."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "b6efbe5f-5f8b-4b07-a071-fef0f636df3f",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 6
+                          }
+                        }
+                      },
+                      {
+                        "id": "3ba1bd3b-aaef-4599-a7fc-c0c77b29df4a",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "12356c19-4724-452d-a41f-10d3861c7100"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "4bd0796c-61d7-432c-a8a0-162cd6a252da",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 6
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "6ce0c7a9-7d2b-4555-ac2a-7141d95767a4",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "12356c19-4724-452d-a41f-10d3861c7100"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "eeef462c-2481-4a9a-abf5-a1b51dbdc94f",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "57"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "3971d20c-5f99-4b15-a0f3-276d62429f1c",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "57",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "60933976-c1dc-427e-ab71-97941fb44c84",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Kettle Schedule",
+                                        "The kettle card\ngives names, not\nhours. Whoever\ntakes the last cup",
+                                        "fills it. Whoever\ncomes in cold gets\nthe first. The\nforeman calls",
+                                        "this a scheduling\nsystem. He says\nits only serious\ndefect is Pip",
+                                        "interpreting cold\nas an emotional\ncondition."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "dc008779-a6c0-42a7-a587-d3efaf50cd21",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Kettle Schedule",
+                                        "The kettle card\ngives names, not\nhours. Whoever\ntakes the last cup",
+                                        "fills it. Whoever\ncomes in cold gets\nthe first. The\nforeman calls",
+                                        "this a scheduling\nsystem. He says\nits only serious\ndefect is Pip",
+                                        "interpreting cold\nas an emotional\ncondition."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "838d575b-1308-4404-aa57-47fed45e7def",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "57"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "b19e7f87-c6fb-44cb-ad53-2095c2227cc8",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "57",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "f0a7df34-d3d5-4178-a2d0-e7ad5121efa7",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Kettle Schedule",
+                            "The kettle card\ngives names, not\nhours. Whoever\ntakes the last cup",
+                            "fills it. Whoever\ncomes in cold gets\nthe first. The\nforeman calls",
+                            "this a scheduling\nsystem. He says\nits only serious\ndefect is Pip",
+                            "interpreting cold\nas an emotional\ncondition."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "f005c205-a648-45fe-a106-4918dee8ceaa",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Kettle Schedule",
+                            "The kettle card\ngives names, not\nhours. Whoever\ntakes the last cup",
+                            "fills it. Whoever\ncomes in cold gets\nthe first. The\nforeman calls",
+                            "this a scheduling\nsystem. He says\nits only serious\ndefect is Pip",
+                            "interpreting cold\nas an emotional\ncondition."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

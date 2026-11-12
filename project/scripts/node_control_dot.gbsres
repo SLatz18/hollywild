@@ -1,0 +1,989 @@
+{
+  "_resourceType": "script",
+  "id": "f1250c78-c7bc-45e7-a511-9c802f0c0729",
+  "name": "Story node_control_dot",
+  "symbol": "script_story_node_control_dot",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "6dfdfabb-6595-4a8b-a1b7-cd7ea801705a",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 10
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d68fd41c-9831-4192-a4e9-53d335b1a086",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "61693ea1-52f0-403d-aca9-a5d3aea83e2b",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Dot: One standard\nbatch makes two\nseals from two\nunits. One repair",
+                      "takes one seal.\nThe next\ninspection needs\ntwo seals. So a\nsingle",
+                      "batch covers that\ninspection\nexactly. A second\nbatch is a buffer,",
+                      "not a requirement\nwe should hide."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "61ac4569-8314-4607-a451-2a05bb3095d3",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "b6ee25ee-bade-4101-a625-61612ba4140c",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Brassworks\nControl: inspect\nthe two batch\nrecipes on the\npump desk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "12ffbc3b-90ea-4e83-af96-5d19080a407e",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "73"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "3ca146e1-c120-4f22-aed1-511042c98f7f",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "73",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "cfa09c5b-5237-469d-a1f1-6054c934ca15",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Good Pencil",
+                            "Dot's notebook\nbegins with tiny\nletters and long\napologies. Later",
+                            "pages have larger\ndiagrams and fewer\napologies. The\nlast margin",
+                            "says: I can be\ncareful and still\nspeak first. She\nhas drawn a small",
+                            "square around the\nsentence, as if\ngiving herself a\nbadge."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "d9e4f765-8894-4dcf-af93-d7b2e538cd9d",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Good Pencil",
+                            "Dot's notebook\nbegins with tiny\nletters and long\napologies. Later",
+                            "pages have larger\ndiagrams and fewer\napologies. The\nlast margin",
+                            "says: I can be\ncareful and still\nspeak first. She\nhas drawn a small",
+                            "square around the\nsentence, as if\ngiving herself a\nbadge."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "3fa9f760-f896-4c32-a1a9-5300f80e27f7",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 11
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "ae2962a4-96b3-4ee8-aa60-87192272548f",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "b227e15c-8aaa-44f0-a22c-c054f62aad36",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Dot tests the\nbucket itself\nbefore blaming the\ngauge. A certified",
+                            "jug pours one unit\nto its first mark\nand another unit\nto its second.",
+                            "The bucket agrees\non both. The open\nline is visibly\nempty when the",
+                            "pump is off. A\nspare gauge from a\nprivate showroom\nhas no test",
+                            "record. Slush\noffers it anyway,\nthen listens when\nDot explains that",
+                            "a more expensive\nreading is not\nindependent\nevidence."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "6ad292e6-1f91-4385-a773-ea371c55bdaf",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 2
+                          }
+                        }
+                      },
+                      {
+                        "id": "9dcf7f9c-2132-4093-aca6-75a2192863b6",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Brassworks\nControl: compare\nthe gauge and\nbucket."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "b4ed03a7-9f73-4fbb-a250-8d46f6c41509",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 5
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "eb6ca2f8-93d7-43dd-a81a-6ab032416276",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "With the needle\nfreed, OFF reads\nZERO. ON fills the\nbucket to TWO",
+                                  "marks, and the\ngauge agrees. Dot\nsigns the test\nherself. Pip\noffers",
+                                  "a gold star. She\naccepts a second\nwitness signature\ninstead, then",
+                                  "asks for the star\nas well."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "5d3dea1f-e090-40ff-ad84-d3a62c572d15",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              }
+                            },
+                            {
+                              "id": "ad37065c-72f5-4fc1-a884-5c5aeed9a168",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "74614834-e005-485e-a720-daf6938a68b7"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "5ddcb00b-6921-4f54-aa35-c7ab3fc1b2ff",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 6
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "4705c858-25ec-4789-a6fb-aa5df8b84507",
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "74614834-e005-485e-a720-daf6938a68b7"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "a3fd137d-2d4e-4f38-a8a3-235c67448e39",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "73"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "a7395752-965d-4f43-a1c0-1420ccb8934f",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "73",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "e7432baa-4124-4df4-ad37-7386653501ba",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Good Pencil",
+                                              "Dot's notebook\nbegins with tiny\nletters and long\napologies. Later",
+                                              "pages have larger\ndiagrams and fewer\napologies. The\nlast margin",
+                                              "says: I can be\ncareful and still\nspeak first. She\nhas drawn a small",
+                                              "square around the\nsentence, as if\ngiving herself a\nbadge."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "790f9ded-1124-4b9c-a3e8-631c815ce840",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Good Pencil",
+                                              "Dot's notebook\nbegins with tiny\nletters and long\napologies. Later",
+                                              "pages have larger\ndiagrams and fewer\napologies. The\nlast margin",
+                                              "says: I can be\ncareful and still\nspeak first. She\nhas drawn a small",
+                                              "square around the\nsentence, as if\ngiving herself a\nbadge."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "b0f079fb-30cd-479d-a133-ed760c71a086",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 12
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "e20adab4-3560-4dcc-a2b1-47aa11bb360e",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "f76730a3-1dce-4780-a58a-c530e60be0e0",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The lock card adds\na condition to the\nprocess sheets:\nthe crew must",
+                                  "disconnect power\nbefore opening the\nregulator cover.\nThe spring is",
+                                  "fitted with the\ncover open. The\nlimit is set after\nthe spring is",
+                                  "secured. The cover\nis then shut\nbefore power\nreturns for\ntesting.",
+                                  "Dot arranges blank\ncards on the desk\nand asks the\ninspector to keep",
+                                  "his silver ruler\naway from all of\nthem."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "37aa0fbc-7352-46f3-ad70-4cb9cd28ec6c",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              }
+                            },
+                            {
+                              "id": "0899c0b2-7b88-4d6b-a4fe-0224df94b9ed",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Brassworks\nFoundry: choose\nthe safe process\norder."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "1f8a14d0-0282-4103-acc7-76d48fd5abe4",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "73"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "64f3f636-cf6e-4b93-ad7d-1e1e181c3e36",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "73",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "ddf69304-7c86-4f32-a0e0-1fb9eba6c479",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Good Pencil",
+                                        "Dot's notebook\nbegins with tiny\nletters and long\napologies. Later",
+                                        "pages have larger\ndiagrams and fewer\napologies. The\nlast margin",
+                                        "says: I can be\ncareful and still\nspeak first. She\nhas drawn a small",
+                                        "square around the\nsentence, as if\ngiving herself a\nbadge."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "7d1cc463-a906-4a30-ae00-1601ee152db0",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Good Pencil",
+                                        "Dot's notebook\nbegins with tiny\nletters and long\napologies. Later",
+                                        "pages have larger\ndiagrams and fewer\napologies. The\nlast margin",
+                                        "says: I can be\ncareful and still\nspeak first. She\nhas drawn a small",
+                                        "square around the\nsentence, as if\ngiving herself a\nbadge."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "634710f9-fa1b-4423-af41-8bd0bab6046c",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "43"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 19
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "f0c770f5-c079-4e5c-a6f5-c024a451196e",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "b8c11a3b-2351-4925-a143-df7a14d7671f",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Dot checks the\nbucket record\nagainst the\nturbine plate.\nFOUR remains",
+                                        "the safe service\nlimit. She signs\nthe card and asks\nRivet to witness",
+                                        "it. Slush watches\nthe two signatures\nand asks where to\nput his. Dot",
+                                        "gives him the copy\nreceipt."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "840e8644-d6d7-4175-ad78-7aed4d6dee60",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 3
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "6f93f152-0e05-4b28-a83d-97b687d04764",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Aurora Core: set\nthe safe service\nlimit at the grid."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "7ccddd9d-f97c-49b6-aeeb-ed054bbc688e",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "73"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "ba4d0907-77cb-4e24-ad5d-011025eaaba8",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "73",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "8078add8-7b49-4271-a5d5-c2e121bc1bb9",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Good Pencil",
+                                              "Dot's notebook\nbegins with tiny\nletters and long\napologies. Later",
+                                              "pages have larger\ndiagrams and fewer\napologies. The\nlast margin",
+                                              "says: I can be\ncareful and still\nspeak first. She\nhas drawn a small",
+                                              "square around the\nsentence, as if\ngiving herself a\nbadge."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "e93073d4-203c-459d-a5f6-88699a907fe1",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Good Pencil",
+                                              "Dot's notebook\nbegins with tiny\nletters and long\napologies. Later",
+                                              "pages have larger\ndiagrams and fewer\napologies. The\nlast margin",
+                                              "says: I can be\ncareful and still\nspeak first. She\nhas drawn a small",
+                                              "square around the\nsentence, as if\ngiving herself a\nbadge."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "c7e9080a-d39c-46df-a059-a49b7946c454",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "43"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 20
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "d1fc94a0-d40f-48e9-a4b8-30080bda5a3b",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "44"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 1
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "59ca7980-190c-449f-a65d-9bc95cca8049",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The drill adds\nmeasured demand:\nclear branches\nneed three units",
+                                              "together. The\nfaulty lodge\nbranch leaks two\nextra units. Safe",
+                                              "service is four.\nIsolating the\nlodge removes the\nleak and leaves\nthe",
+                                              "clear branches at\nthree. Raising the\nservice setting to\nsix would",
+                                              "hide the shortage\nwithout repairing\nthe fault, and six\nis still only",
+                                              "a test ceiling.\nSlush checks the\narithmetic himself\nand does not",
+                                              "like how familiar\nthe wrong plan\nfeels."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "f75871fc-95ca-4361-a917-3f4ff782622f",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "44",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 2
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "9b7c4977-9736-428a-ab6d-e32efeec3131",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Aurora Core:\nchoose the\nresponse to the\nlodge fault."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "e6b865cc-c40c-498e-a972-a5c9621b465c",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "73"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "2d245323-e74f-4b81-a363-f36a051e8499",
+                                                "command": "EVENT_SET_VALUE",
+                                                "args": {
+                                                  "variable": "73",
+                                                  "value": {
+                                                    "type": "number",
+                                                    "value": 1
+                                                  }
+                                                }
+                                              },
+                                              {
+                                                "id": "e5959bac-1639-4c10-ae36-b9accfadd4b3",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "The Good Pencil",
+                                                    "Dot's notebook\nbegins with tiny\nletters and long\napologies. Later",
+                                                    "pages have larger\ndiagrams and fewer\napologies. The\nlast margin",
+                                                    "says: I can be\ncareful and still\nspeak first. She\nhas drawn a small",
+                                                    "square around the\nsentence, as if\ngiving herself a\nbadge."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "49602e1f-44e8-41d0-a355-a23857f8ef96",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "The Good Pencil",
+                                                    "Dot's notebook\nbegins with tiny\nletters and long\napologies. Later",
+                                                    "pages have larger\ndiagrams and fewer\napologies. The\nlast margin",
+                                                    "says: I can be\ncareful and still\nspeak first. She\nhas drawn a small",
+                                                    "square around the\nsentence, as if\ngiving herself a\nbadge."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "54449d44-f73c-421a-a10c-efa9f5d0d156",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "73"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "85faa888-57a8-42a3-adf4-2e4663664107",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "73",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "2adf772c-20f1-4012-a423-259cbeb53f62",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Good Pencil",
+                                              "Dot's notebook\nbegins with tiny\nletters and long\napologies. Later",
+                                              "pages have larger\ndiagrams and fewer\napologies. The\nlast margin",
+                                              "says: I can be\ncareful and still\nspeak first. She\nhas drawn a small",
+                                              "square around the\nsentence, as if\ngiving herself a\nbadge."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "95fc3ced-ae3a-409e-aec2-3ba29d4a72b7",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Good Pencil",
+                                              "Dot's notebook\nbegins with tiny\nletters and long\napologies. Later",
+                                              "pages have larger\ndiagrams and fewer\napologies. The\nlast margin",
+                                              "says: I can be\ncareful and still\nspeak first. She\nhas drawn a small",
+                                              "square around the\nsentence, as if\ngiving herself a\nbadge."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

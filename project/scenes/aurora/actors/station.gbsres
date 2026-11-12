@@ -22,31 +22,30 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "0ee8d197-4e94-48cf-aa47-e4b545bf15fb",
+      "id": "4376e4c2-672c-47e9-a5e4-47a604f3c490",
       "command": "EVENT_IF",
       "args": {
         "condition": {
           "type": "eq",
           "valueA": {
             "type": "variable",
-            "value": "34"
+            "value": "45"
           },
           "valueB": {
             "type": "number",
-            "value": 1
+            "value": 24
           }
         }
       },
       "children": {
         "true": [
           {
-            "id": "52de1185-457c-4e07-a753-ff6e07f9273d",
+            "id": "195f5ba4-57e0-488d-a2b7-d53087438f58",
             "command": "EVENT_TEXT",
             "args": {
               "text": [
                 "THE WINTERLIGHT\nFESTIVAL IS ALIVE!",
-                "You made a city\nfrom places others\npassed by.",
-                "Keep roaming.\nYour crew and\nproperties remain."
+                "Your choices gave\nthe city a future.\nKeep exploring!"
               ],
               "avatarId": "",
               "minHeight": 4,
@@ -59,11 +58,11 @@
         ],
         "false": [
           {
-            "id": "f6c3d94d-a371-474e-a93f-ccd35566c23e",
+            "id": "41f4158a-abf4-4d14-a811-9a10b6efefda",
             "command": "EVENT_TEXT",
             "args": {
               "text": [
-                "AURORA STATION\nRestore the network:\n1000 Coins +20 scrap."
+                "AURORA STATION\nThe network needs\nmore than property."
               ],
               "avatarId": "",
               "minHeight": 4,
@@ -74,376 +73,10 @@
             }
           },
           {
-            "id": "d5779c99-8ae6-465c-ad08-2bb5a312562b",
-            "command": "EVENT_IF",
+            "id": "ef2ad0e2-ea9b-4cb6-af08-8c5b383f739f",
+            "command": "EVENT_CALL_CUSTOM_EVENT",
             "args": {
-              "condition": {
-                "type": "eq",
-                "valueA": {
-                  "type": "variable",
-                  "value": "5"
-                },
-                "valueB": {
-                  "type": "number",
-                  "value": 1
-                }
-              }
-            },
-            "children": {
-              "true": [
-                {
-                  "id": "34865342-863b-43b1-a39e-25cc639870b2",
-                  "command": "EVENT_IF",
-                  "args": {
-                    "condition": {
-                      "type": "eq",
-                      "valueA": {
-                        "type": "variable",
-                        "value": "15"
-                      },
-                      "valueB": {
-                        "type": "number",
-                        "value": 1
-                      }
-                    }
-                  },
-                  "children": {
-                    "true": [
-                      {
-                        "id": "47b599e8-33fd-4346-a072-b9833aa23a03",
-                        "command": "EVENT_IF",
-                        "args": {
-                          "condition": {
-                            "type": "eq",
-                            "valueA": {
-                              "type": "variable",
-                              "value": "16"
-                            },
-                            "valueB": {
-                              "type": "number",
-                              "value": 1
-                            }
-                          }
-                        },
-                        "children": {
-                          "true": [
-                            {
-                              "id": "76f911c8-cbef-4f4f-a559-da15e201fec4",
-                              "command": "EVENT_IF",
-                              "args": {
-                                "condition": {
-                                  "type": "eq",
-                                  "valueA": {
-                                    "type": "variable",
-                                    "value": "17"
-                                  },
-                                  "valueB": {
-                                    "type": "number",
-                                    "value": 1
-                                  }
-                                }
-                              },
-                              "children": {
-                                "true": [
-                                  {
-                                    "id": "298aeaed-c464-432d-a115-1208cc20b3af",
-                                    "command": "EVENT_IF",
-                                    "args": {
-                                      "condition": {
-                                        "type": "eq",
-                                        "valueA": {
-                                          "type": "variable",
-                                          "value": "6"
-                                        },
-                                        "valueB": {
-                                          "type": "number",
-                                          "value": 0
-                                        }
-                                      }
-                                    },
-                                    "children": {
-                                      "true": [
-                                        {
-                                          "id": "247297f3-2a5a-429d-af77-d5ac54d6d83c",
-                                          "command": "EVENT_MENU",
-                                          "args": {
-                                            "variable": "14",
-                                            "items": 2,
-                                            "layout": "menu",
-                                            "cancelOnLastOption": false,
-                                            "cancelOnB": true,
-                                            "option1": "Restore",
-                                            "option2": "Back"
-                                          }
-                                        },
-                                        {
-                                          "id": "5c13c048-4bcb-4afc-acfa-4ba01b56135e",
-                                          "command": "EVENT_IF",
-                                          "args": {
-                                            "condition": {
-                                              "type": "eq",
-                                              "valueA": {
-                                                "type": "variable",
-                                                "value": "14"
-                                              },
-                                              "valueB": {
-                                                "type": "number",
-                                                "value": 1
-                                              }
-                                            }
-                                          },
-                                          "children": {
-                                            "true": [
-                                              {
-                                                "id": "b8acafb8-4dd6-4e71-acb9-360fc1fefdd5",
-                                                "command": "EVENT_IF",
-                                                "args": {
-                                                  "condition": {
-                                                    "type": "gte",
-                                                    "valueA": {
-                                                      "type": "variable",
-                                                      "value": "1"
-                                                    },
-                                                    "valueB": {
-                                                      "type": "number",
-                                                      "value": 1000
-                                                    }
-                                                  }
-                                                },
-                                                "children": {
-                                                  "true": [
-                                                    {
-                                                      "id": "a21d45b4-cc41-4aa2-aba9-f8cabd00bfce",
-                                                      "command": "EVENT_IF",
-                                                      "args": {
-                                                        "condition": {
-                                                          "type": "gte",
-                                                          "valueA": {
-                                                            "type": "variable",
-                                                            "value": "2"
-                                                          },
-                                                          "valueB": {
-                                                            "type": "number",
-                                                            "value": 20
-                                                          }
-                                                        }
-                                                      },
-                                                      "children": {
-                                                        "true": [
-                                                          {
-                                                            "id": "6b437a58-ba5c-493a-ae59-c10582273d98",
-                                                            "command": "EVENT_VARIABLE_MATH",
-                                                            "args": {
-                                                              "vectorX": "1",
-                                                              "operation": "sub",
-                                                              "other": "val",
-                                                              "value": 1000,
-                                                              "clamp": false
-                                                            }
-                                                          },
-                                                          {
-                                                            "id": "ec71b100-b59f-4029-af46-4360d1907c0f",
-                                                            "command": "EVENT_VARIABLE_MATH",
-                                                            "args": {
-                                                              "vectorX": "2",
-                                                              "operation": "sub",
-                                                              "other": "val",
-                                                              "value": 20,
-                                                              "clamp": false
-                                                            }
-                                                          },
-                                                          {
-                                                            "id": "d4918751-98e4-42a7-a039-6f0288c5e62f",
-                                                            "command": "EVENT_SET_VALUE",
-                                                            "args": {
-                                                              "variable": "18",
-                                                              "value": {
-                                                                "type": "number",
-                                                                "value": 1
-                                                              }
-                                                            }
-                                                          },
-                                                          {
-                                                            "id": "1c0f67fb-a1a3-4151-a921-45fdd063ea7f",
-                                                            "command": "EVENT_SET_VALUE",
-                                                            "args": {
-                                                              "variable": "34",
-                                                              "value": {
-                                                                "type": "number",
-                                                                "value": 1
-                                                              }
-                                                            }
-                                                          },
-                                                          {
-                                                            "id": "fed85cde-8ae5-4d3f-a4ca-d8c8ad58bd35",
-                                                            "command": "EVENT_SET_VALUE",
-                                                            "args": {
-                                                              "variable": "3",
-                                                              "value": {
-                                                                "type": "number",
-                                                                "value": 100
-                                                              }
-                                                            }
-                                                          },
-                                                          {
-                                                            "id": "765499e3-fa4e-4060-a4f6-374190103119",
-                                                            "command": "EVENT_TEXT",
-                                                            "args": {
-                                                              "text": [
-                                                                "THE LIGHTS RETURN!",
-                                                                "Cocoa steams.\nWorkshops hum.\nThe city is yours.",
-                                                                "HOLLYWILD\nELF-MADE EMPIRE\nKeep exploring!"
-                                                              ],
-                                                              "avatarId": "",
-                                                              "minHeight": 4,
-                                                              "maxHeight": 7,
-                                                              "position": "bottom",
-                                                              "closeWhen": "key",
-                                                              "closeButton": "a"
-                                                            }
-                                                          }
-                                                        ],
-                                                        "false": [
-                                                          {
-                                                            "id": "127e6aa4-2ae1-481b-a1d2-0da642dc5ded",
-                                                            "command": "EVENT_TEXT",
-                                                            "args": {
-                                                              "text": [
-                                                                "Not enough scrap.\nYour Coins were\nnot spent."
-                                                              ],
-                                                              "avatarId": "",
-                                                              "minHeight": 4,
-                                                              "maxHeight": 7,
-                                                              "position": "bottom",
-                                                              "closeWhen": "key",
-                                                              "closeButton": "a"
-                                                            }
-                                                          }
-                                                        ]
-                                                      }
-                                                    }
-                                                  ],
-                                                  "false": [
-                                                    {
-                                                      "id": "92231cc7-2d4e-4319-a389-dfe3321e841f",
-                                                      "command": "EVENT_TEXT",
-                                                      "args": {
-                                                        "text": [
-                                                          "Not enough Coins.\nNothing was spent."
-                                                        ],
-                                                        "avatarId": "",
-                                                        "minHeight": 4,
-                                                        "maxHeight": 7,
-                                                        "position": "bottom",
-                                                        "closeWhen": "key",
-                                                        "closeButton": "a"
-                                                      }
-                                                    }
-                                                  ]
-                                                }
-                                              }
-                                            ],
-                                            "false": []
-                                          }
-                                        }
-                                      ],
-                                      "false": [
-                                        {
-                                          "id": "072d0691-9968-4db7-a984-bc92994dfdbf",
-                                          "command": "EVENT_TEXT",
-                                          "args": {
-                                            "text": [
-                                              "Finish or cancel\nyour current job\nfirst. START menu."
-                                            ],
-                                            "avatarId": "",
-                                            "minHeight": 4,
-                                            "maxHeight": 7,
-                                            "position": "bottom",
-                                            "closeWhen": "key",
-                                            "closeButton": "a"
-                                          }
-                                        }
-                                      ]
-                                    }
-                                  }
-                                ],
-                                "false": [
-                                  {
-                                    "id": "6704fa1d-c254-4418-a529-6e5015058f7f",
-                                    "command": "EVENT_TEXT",
-                                    "args": {
-                                      "text": [
-                                        "You need a working\nParcel Palace\nto supply the station."
-                                      ],
-                                      "avatarId": "",
-                                      "minHeight": 4,
-                                      "maxHeight": 7,
-                                      "position": "bottom",
-                                      "closeWhen": "key",
-                                      "closeButton": "a"
-                                    }
-                                  }
-                                ]
-                              }
-                            }
-                          ],
-                          "false": [
-                            {
-                              "id": "98cc0c8c-f58c-4fbd-afd2-2ba7bc54a60e",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "Restore Tinsel\nToolworks to make\nthe station parts."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
-                              }
-                            }
-                          ]
-                        }
-                      }
-                    ],
-                    "false": [
-                      {
-                        "id": "8c3b3ef7-9310-46cf-a859-e8cf7350da16",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Restore Lantern\nFlats to house\nthe station crew."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
-                        }
-                      }
-                    ]
-                  }
-                }
-              ],
-              "false": [
-                {
-                  "id": "d8d3b6f6-6873-47d0-a381-125196e93a7a",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "Restore Cocoa\nCorner first.\nWarmth starts small."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
-                  }
-                }
-              ]
+              "customEventId": "1f447236-729f-4d76-a14f-33a7a3ff5505"
             }
           }
         ]

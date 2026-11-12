@@ -1,0 +1,245 @@
+{
+  "_resourceType": "script",
+  "id": "64a2a115-1eb8-437a-a13f-1934c325096e",
+  "name": "Story node_foundry_gears",
+  "symbol": "script_story_node_foundry_gears",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "0ad22e6e-54bb-4969-ae12-48aed9af8551",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 9
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "46d0d58a-5594-4f28-a4f2-dd285fb0bbd8",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "5d3e96dc-e6e3-488c-a4e0-ce492fcf3629",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The gears turn\nfreely in Rivet's\ngloves. Each tooth\nhas a number",
+                      "rather than a\ndecorative\nsnowflake. She\nsays decorative\nsnowflakes",
+                      "are acceptable on\nmany things,\nincluding neither\nload teeth nor",
+                      "safety\ninstructions. Dot\ncopies the numbers\ninto the parts\nrecord."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "a3b54c34-a319-4bf9-afe4-f85ae579f9e2",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 3
+                    }
+                  }
+                },
+                {
+                  "id": "8c074302-b586-4086-a482-e4b48ffe85c7",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Brassworks\nFoundry: recover\nthe spring and\nlimit key from the\nshelf."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "59950ab5-4f7f-4170-ad4b-6cf6b98bfa62",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "66"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "191702a0-219c-4dfe-a763-6609654c4306",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "66",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "bede6ae3-8b72-4c89-a55b-b2d0d91fc4a7",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Tooth Number",
+                            "Rivet numbers each\ngear tooth so\ndamage can be\ndescribed exactly.",
+                            "Once, a caller\nsaid the unhappy\nbit near the other\nunhappy bit.",
+                            "Rivet walked\nacross town, fixed\nthe gear, and\nreturned with a",
+                            "numbering punch.\nThe caller now\nteaches\napprentices how to\nuse it."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "5fe1a0cf-a744-4100-a805-af5129aa0cd0",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Tooth Number",
+                            "Rivet numbers each\ngear tooth so\ndamage can be\ndescribed exactly.",
+                            "Once, a caller\nsaid the unhappy\nbit near the other\nunhappy bit.",
+                            "Rivet walked\nacross town, fixed\nthe gear, and\nreturned with a",
+                            "numbering punch.\nThe caller now\nteaches\napprentices how to\nuse it."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "5de0dc97-e7a7-40b6-afdc-872aa86010f4",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "66"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "b4fb7d6d-f663-4f92-aac5-2084f2b4e325",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "66",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "3e426b85-2300-4529-af01-e71fc16524cf",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A Tooth Number",
+                      "Rivet numbers each\ngear tooth so\ndamage can be\ndescribed exactly.",
+                      "Once, a caller\nsaid the unhappy\nbit near the other\nunhappy bit.",
+                      "Rivet walked\nacross town, fixed\nthe gear, and\nreturned with a",
+                      "numbering punch.\nThe caller now\nteaches\napprentices how to\nuse it."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "30d4d06b-4cc4-4194-a7c9-74f02ea0d99e",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A Tooth Number",
+                      "Rivet numbers each\ngear tooth so\ndamage can be\ndescribed exactly.",
+                      "Once, a caller\nsaid the unhappy\nbit near the other\nunhappy bit.",
+                      "Rivet walked\nacross town, fixed\nthe gear, and\nreturned with a",
+                      "numbering punch.\nThe caller now\nteaches\napprentices how to\nuse it."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

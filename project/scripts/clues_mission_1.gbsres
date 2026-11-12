@@ -1,0 +1,304 @@
+{
+  "_resourceType": "script",
+  "id": "101c945c-86d3-4c05-a57c-7290613d06f8",
+  "name": "Story clues_mission_1",
+  "symbol": "script_story_clues_mission_1",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "e225a08f-ebcd-4f05-a642-0fbd66b09ace",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Clues: The City in\nthe Drawer"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "3c6a5e1e-7799-45d9-a9b9-8a46e9cffa35",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "3f550cd1-d4e6-4ab4-ac90-f0a55d2b3980",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "No clues yet for\nthis mission.\nFollow the next\nlead in START >\nStory."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "37101271-9419-4be6-aed9-077a1cc6c002",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "49b3c685-deb3-4cff-aa35-4d2b4df2a9e4",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Clerk: Aurora did\nnot vanish. It was\nfiled under\nSeasonal Mood.\nThat",
+                "drawer holds a tax\nappeal from a\nsnowman. Search\nthe catalog for",
+                "SERVICE. The\npublic repair\nledger has a\nsquare seal;\nprivate sales",
+                "use a crown."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "d458b1a3-f19b-4de2-a8f9-9a5d0348d0ea",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "af1fab4c-4793-4cff-a932-5336893e0c2e",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The table holds\nthree index notes.\nDecember: repairs\ncomplete,",
+                "signed by the\nengineer. January:\nsale proposed,\nunsigned.\nFebruary:",
+                "ownership\nunchanged until a\ndeed is signed and\nentered. A\nresident",
+                "named Mara needs\nto know who must\nfix her leaking\nstair pipe. She",
+                "has already been\nsent between three\ndesks. The clerk\nsays a later",
+                "date does not make\nan unsigned\nproposal into a\ncompleted\ntransfer."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "e86e7673-7f5e-49eb-a2fc-406c40f9baf5",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5a128ae8-1675-4b71-a833-4498aafbc625",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The catalog has\nthree seal marks.\nWhich mark\nidentifies the\npublic",
+                "repair ledger? Use\nthe filing rule\nthe clerk gave\nyou, rather than",
+                "the most\ndecorative cover."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "13827598-e3d9-4a38-a059-5f7e06c4afa0",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "672a06ec-678a-4493-aeaf-4c34c5aa49f2",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The badge is warm\nfrom the clerk\nholding it. Its\nowner was the last",
+                "city pipe walker.\nA penciled note\nreads: If anyone\nsays the network",
+                "is dead, ask who\nstopped checking\nthe valves."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "6914e6c9-da7d-4d9a-a2cf-79863ad8ac76",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 4
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "4ddf19e0-e3e9-4342-a899-2bcffed1bdfd",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Mara asks whether\nthe newer sale\nproposal means she\nmust call a",
+                "private estate\noffice. Consider\nthe dates,\nsignatures, and\nthe rule",
+                "about entering a\ndeed. Which\nconclusion can the\nclerk support? Pip",
+                "will put it on her\nreferral card and\nsign his name, so\na confident",
+                "guess could send\nher back into the\ncold."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "f068fec3-8d3d-4281-a954-f091c11ab8f5",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "fbaad62f-02fd-4596-a98f-ac7202b23ff6",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Foreman: I knew\nthat coat. Your\naunt carried soup\nin the left pocket",
+                "and drawings in\nthe right.\nSometimes the\ndrawings smelled\nof leek.",
+                "She left a\nmanifest here, and\na warning against\npeople selling",
+                "perfect winters."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

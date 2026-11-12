@@ -1,0 +1,148 @@
+{
+  "_resourceType": "script",
+  "id": "7ad8b39d-edf8-45c8-aa2e-b094d304015d",
+  "name": "Story desk",
+  "symbol": "script_story_desk",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "9e725179-ed75-463d-ac15-062de69202ad",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "aff7af71-d81d-4362-abff-178e0ae31882",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Hollywild: The\nCity That Answers",
+                "A long city story.\nYou can pause to\nexplore or work at\nany time.",
+                "Need an old clue?\nOpen START > Clues\nto read the leads\nyou have\ncompleted."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "5de279f8-17b7-4f8d-a2fd-edcab88e5dd4",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 2,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "Begin",
+              "option2": "Back"
+            }
+          },
+          {
+            "id": "f08ada6a-5ca6-4d6e-aa8f-e40b8d109a32",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "1801e841-0be7-4261-ad92-c15c47dc925a",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "43",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "17ce2f7d-06d6-4de2-a775-b6bb32a13d45",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 0
+                    }
+                  }
+                },
+                {
+                  "id": "c35f78c5-11cb-4e57-a5bf-b95205e50c91",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Pip has inherited\na desk with your\ngarage. The desk\nhas inherited a",
+                      "complaint. Every\nwinter, Frostwick\npays to thaw the\nsame pipe. This",
+                      "year the city\nplans to sell the\nwhole network\ninstead. Pip asks\nfor",
+                      "one useful fact\nbefore anyone\nsigns anything."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "d03d29d0-5dd0-4eb3-a6de-8cb26bbc3269",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Frostwick Archive:\nspeak to the\nclerk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "313096a1-b00f-445f-a52a-b8f346ee6314",
+            "command": "EVENT_CALL_CUSTOM_EVENT",
+            "args": {
+              "customEventId": "1f447236-729f-4d76-a14f-33a7a3ff5505"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

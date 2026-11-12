@@ -1,0 +1,307 @@
+{
+  "_resourceType": "script",
+  "id": "3bcbda76-fdcd-485f-a550-e171141e2f5d",
+  "name": "Story clues_mission_10",
+  "symbol": "script_story_clues_mission_10",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "67a43bd6-7321-466b-a02f-569f1c842006",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Clues: Enough Is a\nSetting"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "753ad2a5-fb80-4abc-ae2b-4c8c57df610e",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "8751ba2d-a7b9-450d-a7f4-3b4ec40d3cfa",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "No clues yet for\nthis mission.\nFollow the next\nlead in START >\nStory."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "a712f6b8-1e2a-4edc-a9a0-57e839ed1aad",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "fda3164e-ceb4-4699-ae52-2c74dafdf8af",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Dot: One standard\nbatch makes two\nseals from two\nunits. One repair",
+                "takes one seal.\nThe next\ninspection needs\ntwo seals. So a\nsingle",
+                "batch covers that\ninspection\nexactly. A second\nbatch is a buffer,",
+                "not a requirement\nwe should hide."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "e50da1cf-9e85-4422-a23d-92d248072e14",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "f5a38ce3-c948-43e3-a8cd-aad4c6694600",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Rivet presents a\nDIFFERENT practice\norder, separate\nfrom the",
+                "two-seal standard\ninspection. This\norder needs\nexactly three\nseals,",
+                "with no spare\noutput because the\nmix expires. Six\nstock units are",
+                "available; two\nmust remain for\nanother crew.\nRecipe A uses two\nstock",
+                "for two seals.\nRecipe B uses four\nstock for three.\nOnly whole",
+                "batches are\nallowed. The first\nstandard\ninspection and\nthis practice",
+                "order must each be\nplanned on their\nown terms."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "9476cc48-be25-4c4a-aaab-daa7a1776f36",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b737ec53-3247-4fa9-aa06-d18ea4f4ddd8",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "For the original\nstandard\ninspection, use\nDot two-seal\nrequirement",
+                "and the standard\ntwo-seal batch,\nnot the different\npractice recipes.",
+                "How many standard\nbatches cover that\ninspection exactly\nbefore",
+                "adding a buffer?"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "542efe9f-4623-4c8b-af15-57dbf151623c",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "fcdc52f0-3bc0-406b-a6b2-3d95c12f257a",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Rivet offers\nRESERVE, holding\nspare seals for\nsudden faults, or",
+                "SHARED, pooling\norders and\npublishing the\nstock ledger. Each\ncan",
+                "work if people\nkeep the promise.\nChoose the policy\nthe crew will use",
+                "in later tests."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "9b2c0635-7641-40fd-a6d6-a3dc400c73be",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 4
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "9bb57c0b-1199-4145-a792-d00f7dbc5656",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Which recipe plan\nmeets all three\nconstraints:\nexactly three\nseals,",
+                "no partial batch,\nand at least two\nstock left? Read\nthe output as",
+                "carefully as the\ninput. Two small\nbatches may look\neconomical until",
+                "you count what\nthey make. The\nother crew has\nalready planned a",
+                "repair around the\nstock you promised\nnot to consume."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "55b855e9-ea3f-43f9-ad22-f24342e42c63",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "54c4d625-4ede-45a1-a057-321ec859f989",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The spring closes\nthe valve with a\nsmall click. Rivet\nrepeats the",
+                "test with the\npower\ndisconnected. The\nsame click\nanswers. Pip says",
+                "it sounds less\ngrand than\nexpected. Rivet\nsays good safety\nequipment",
+                "often has\nexcellent manners."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

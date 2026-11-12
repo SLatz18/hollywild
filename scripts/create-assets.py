@@ -405,7 +405,8 @@ def make_world():
             district=district,sprite="parcel",name="Local supply cache")
     a.site("aurora_contact","district_contact",18,22,district="aurora",
            sprite="dot",name="Station Clerk")
-    return districts+[g]+interiors
+    old_rooms = districts+[g]+interiors
+    return old_rooms + campaign_rooms(old_rooms)
 
 
 def property_room(ident,title,prop,district,contact,sprite):
@@ -519,6 +520,176 @@ def property_room(ident,title,prop,district,contact,sprite):
     return room
 
 
+
+# Public campaign rooms use tile-aligned motifs so every original background
+# remains within the native 256-tile limit. Their obstacle plans are independent.
+CAMPAIGN_ROOMS = [
+    ("frostwick_archive", "Frostwick Archive", "ARCHIVE", 4,
+     ["archive_catalog", "archive_badge", "archive_blueprint", "archive_clerk"],
+     ["CATALOG", "BADGE", "BLUEPRINT", "CLERK"], ["book", "parcel", "board", "pip"],
+     [(4,7),(24,8),(5,22),(25,22)],
+     [(9,5,3,9),(19,11,3,13),(8,19,6,2)]),
+    ("frostwick_depot", "Frostwick Depot", "DEPOT", 1,
+     ["depot_manifest", "depot_toolbox", "depot_gate", "depot_foreman"],
+     ["MANIFEST", "TOOLBOX", "GATE", "FOREMAN"], ["board", "crate", "door_marker", "rivet"],
+     [(5,7),(24,7),(5,23),(25,22)],
+     [(10,6,12,3),(10,15,5,3),(20,20,3,6)]),
+    ("candy_sorting", "Candy Sorting", "SORTING", 6,
+     ["sorting_red", "sorting_blue", "sorting_addresses", "sorting_moxie"],
+     ["RED", "BLUE", "ADDRESSES", "MOXIE"], ["parcel", "parcel", "board", "moxie"],
+     [(4,8),(25,8),(5,22),(25,23)],
+     [(8,6,4,15),(20,12,4,14),(12,13,4,3)]),
+    ("candy_rooftops", "Candy Rooftops", "CANDY ROOFTOPS", 3,
+     ["roof_courier", "roof_vane", "roof_antenna", "roof_parcel"],
+     ["COURIER", "VANE", "ANTENNA", "PARCEL"], ["moxie", "door_marker", "board", "parcel"],
+     [(5,7),(24,8),(4,22),(25,23)],
+     [(9,7,4,5),(18,18,5,6),(8,17,4,8),(21,5,3,1)]),
+    ("brassworks_foundry", "Brassworks Foundry", "FOUNDRY", 4,
+     ["foundry_gears", "foundry_regulator", "foundry_rivet", "foundry_shelf"],
+     ["GEARS", "REGULATOR", "RIVET", "SHELF"], ["crate", "board", "rivet", "book"],
+     [(4,7),(25,9),(4,23),(25,23)],
+     [(9,6,4,7),(19,6,3,8),(9,19,13,3)]),
+    ("brassworks_control", "Brassworks Control", "CONTROL", 1,
+     ["control_pump", "control_gauge", "control_relay", "control_dot"],
+     ["PUMP", "GAUGE", "RELAY", "DOT"], ["crate", "board", "door_marker", "dot"],
+     [(5,7),(25,7),(5,22),(25,22)],
+     [(10,6,12,2),(10,15,4,9),(18,15,4,9)]),
+    ("velvet_lodge", "Velvet Lodge", "VELVET LODGE", 5,
+     ["lodge_listing", "lodge_disclosure", "lodge_junction", "lodge_nib"],
+     ["LISTING", "DISCLOSURE", "JUNCTION", "NIB"], ["board", "book", "door_marker", "nib"],
+     [(4,8),(25,8),(5,23),(25,23)],
+     [(9,7,4,4),(19,7,4,4),(9,18,14,3),(15,11,2,3)]),
+    ("velvet_rooftops", "Velvet Rooftops", "VELVET ROOFTOPS", 5,
+     ["velvet_permits", "velvet_slush", "velvet_skylight", "velvet_survey"],
+     ["PERMITS", "SLUSH", "SKYLIGHT", "SURVEY"], ["book", "slush", "board", "parcel"],
+     [(4,7),(25,8),(5,22),(25,23)],
+     [(8,10,7,5),(20,13,4,6),(9,22,7,2)]),
+    ("aurora_signal", "Aurora Signal", "AURORA SIGNAL", 6,
+     ["signal_box", "signal_map", "signal_lantern", "signal_clerk"],
+     ["SIGNAL BOX", "MAP", "LANTERN", "CLERK"], ["crate", "board", "door_marker", "dot"],
+     [(4,8),(25,7),(5,23),(25,23)],
+     [(9,6,4,13),(19,13,4,12),(13,17,3,2)]),
+    ("aurora_core", "Aurora Core", "AURORA CORE", 1,
+     ["core_turbine", "core_bypass", "core_grid", "core_festival"],
+     ["TURBINE", "BYPASS", "GRID", "FESTIVAL"], ["crate", "door_marker", "board", "parcel"],
+     [(4,8),(25,8),(4,23),(25,23)],
+     [(10,6,12,3),(10,13,4,9),(19,13,3,9),(14,19,5,3)]),
+]
+
+
+def campaign_rooms(old_rooms):
+    by_id = {room.data["id"]: room for room in old_rooms}
+    # The campaign desk sits below the original storage crates and above the
+    # old save journal. Existing sites and exit dictionaries remain untouched.
+    by_id["garage"].site("campaign_desk", "campaign_desk", 16, 10,
+        sprite="board", name="Story desk")
+    rooms=[]
+    for index,(ident,title,heading,palette,nodes,names,sprites,positions,blocks) in enumerate(CAMPAIGN_ROOMS):
+        room=District(ident,title,palette)
+        room.data["campaign"] = True
+        room.data["spawn"]={"x":15,"y":28}
+        room.area(0,0,32,32,palette,0)
+        # Every surface is an intentionally repeating, readable tile motif.
+        for ty in range(32):
+            for tx in range(32):
+                x,y=tx*8,ty*8
+                room.c.rect(x,y,8,8,2 if index in (1,4,5,9) else 3)
+                if index in (0,6):
+                    room.c.line(x,y+7,x+7,y+7,2)
+                    room.c.pixel(x+(3 if ty%2 else 0),y+3,2)
+                elif index in (3,7):
+                    room.c.line(x,y+7,x+7,y+7,1)
+                    room.c.line(x,y,x,y+7,2)
+                elif index in (4,5,9):
+                    room.c.pixel(x+2,y+2,3);room.c.pixel(x+6,y+6,1)
+                else:
+                    room.c.line(x,y,x+7,y,1 if index==1 else 2)
+        # A broad clear circulation ring joins both doors and all four stations.
+        for x,y,w,h in [(0,0,32,2),(0,30,32,2),(0,0,2,32),(30,0,2,32)]:
+            room.area(x,y,w,h,palette,1)
+            room.c.rect(x*8,y*8,w*8,h*8,0)
+            room.c.rect(x*8+1,y*8+1,w*8-2,h*8-2,1)
+        room.c.rect(16,17,224,7,3)
+        label(room.c,heading, (256-len(heading)*4)//2,18)
+        for n,(x,y,w,h) in enumerate(blocks):
+            room.area(x,y,w,h,palette,1)
+            room.c.rect(x*8,y*8,w*8,h*8,0)
+            room.c.rect(x*8+2,y*8+2,w*8-4,h*8-4,1)
+            if index==0: # book stacks, alternately long and short shelves
+                for yy in range(y*8+4,(y+h)*8-2,8):
+                    room.c.rect(x*8+3,yy,w*8-6,3,3)
+                    for xx in range(x*8+5,(x+w)*8-3,8):room.c.rect(xx,yy-2,3,2,2)
+            elif index in (1,2): # freight rows and striped sorting conveyors
+                for yy in range(y*8+4,(y+h)*8-2,8):
+                    room.c.rect(x*8+3,yy,w*8-6,2,2)
+                    room.c.rect(x*8+4,yy+2,3,3,3)
+            elif index in (3,7): # snow-capped skylights over roof wells
+                room.c.rect(x*8+3,y*8+3,w*8-6,h*8-6,2)
+                for yy in range(y*8+4,(y+h)*8-3,8):room.c.line(x*8+3,yy,(x+w)*8-4,yy,0)
+                room.c.rect(x*8,y*8,w*8,3,3)
+            elif index in (4,5,8,9): # furnaces, pipes and turbine housings
+                for yy in range(y*8+4,(y+h)*8-3,8):
+                    room.c.line(x*8+3,yy,(x+w)*8-4,yy,3)
+                    room.c.rect(x*8+4,yy+2,4,2,2)
+                room.c.line(x*8+4,y*8+3,x*8+4,(y+h)*8-4,2)
+            else: # lodge planters and long reading tables
+                room.c.rect(x*8+3,y*8+3,w*8-6,h*8-6,3)
+                for xx in range(x*8+5,(x+w)*8-4,8):room.c.rect(xx,y*8+4,3,h*8-8,2)
+        # Painted route markings never change collisions.
+        if index in (1,8):
+            for xx in (6,27):
+                for yy in range(11,20):
+                    room.c.rect(xx*8+1,yy*8,2,8,0)
+                    room.c.rect(xx*8+5,yy*8,2,8,1)
+        elif index in (3,7):
+            for yy in (14,26):
+                for xx in range(3,29):room.c.rect(xx*8,yy*8+3,8,2,2)
+        elif index==6:
+            room.c.rect(112,32,32,192,2)
+            for yy in range(36,224,8):room.c.rect(116,yy,24,2,3)
+        for key,name,sprite,(x,y) in zip(nodes,names,sprites,positions):
+            room.site(key,"campaign_node",x,y,node=key,sprite=sprite,name=name.title())
+            label(room.c,name,max(16,min(232-len(name)*4,x*8-4)),(y+2)*8+1)
+        room.site(ident+"_save","campaign_save",6,27,sprite="book",name="Story checkpoint")
+        label(room.c,"SAVE",44,233)
+        for y,word in ((0,"NEXT"),(30,"BACK")):
+            room.area(14,y,4,2,4,0)
+            room.c.rect(112,y*8,32,16,1)
+            room.c.rect(114,y*8,28,3,3)
+            label(room.c,word,120,y*8+7,3)
+        rooms.append(room)
+    pairs=[("cocoa_interior","frostwick_archive","frostwick_depot"),
+           ("parcel_interior","candy_sorting","candy_rooftops"),
+           ("toolworks_interior","brassworks_foundry","brassworks_control"),
+           ("flats_interior","velvet_lodge","velvet_rooftops"),
+           ("aurora_yard","aurora_signal","aurora_core")]
+    all_rooms={**by_id,**{room.data["id"]:room for room in rooms}}
+    for source,first,second in pairs:
+        src,one,two=(all_rooms[key] for key in (source,first,second))
+        x,y=(29,6) if source=="aurora_yard" else (18,8)
+        src.area(x,y,2,2,4,0)
+        src.c.rect(x*8,y*8,16,16,0)
+        src.c.rect(x*8+2,y*8+2,12,14,1)
+        src.c.rect(x*8+3,y*8+3,10,4,3)
+        # Short entrance labels fit the existing wall without touching old sites.
+        short={"frostwick_archive":"ARCHIVE","candy_sorting":"SORTING",
+               "brassworks_foundry":"FOUNDRY","velvet_lodge":"LODGE","aurora_signal":"SIGNAL"}[first]
+        sx,sy=(204,39) if source=="aurora_yard" else (116,75)
+        src.c.rect(sx-1,sy-1,len(short)*4+1,7,3);label(src.c,short,sx,sy)
+        src.data["exits"].append({"x":x,"y":y,"width":2,"height":2,
+            "destScene":first,"destX":15,"destY":28,"direction":"up"})
+        return_x,return_y=(29,9) if source=="aurora_yard" else (16,9)
+        one.data["exits"]=[
+            {"x":14,"y":30,"width":4,"height":2,"destScene":source,"destX":return_x,"destY":return_y,"direction":"down"},
+            {"x":14,"y":0,"width":4,"height":2,"destScene":second,"destX":15,"destY":28,"direction":"up"}]
+        two.data["exits"]=[
+            {"x":14,"y":30,"width":4,"height":2,"destScene":first,"destX":15,"destY":4,"direction":"down"},
+            {"x":14,"y":0,"width":4,"height":2,"destScene":source,"destX":return_x,"destY":return_y,"direction":"up"}]
+        # The far door completes a loop directly to the original public hub.
+        two.c.rect(112,7,32,7,1);label(two.c,"HUB",122,7,3)
+    return rooms
+
+
 def person(kind, direction, step=0):
     c=Canvas(16,16,4)
     # A two-pixel dark outline keeps small characters legible against the snow.
@@ -545,12 +716,15 @@ def person(kind, direction, step=0):
         c.rect(4,2,9,2,3)
         if direction=="down":
             c.rect(5,6,3,2,0);c.rect(9,6,3,2,0);c.pixel(6,6,3);c.pixel(10,6,3)
+    if kind=="slush":
+        c.rect(3,1,11,4,0);c.rect(5,0,7,2,3);c.rect(3,5,11,2,2)
+        c.rect(3,9,3,4,3);c.rect(7,9,6,2,0)
     return c
 
 
 def create_sprites():
     meta=[]
-    for name in ["player","pip","rivet","moxie","nib","dot"]:
+    for name in ["player","pip","rivet","moxie","nib","dot","slush"]:
         frames=[person(name,d,s) for d in ["down","up","right"] for s in ([0,1] if name=="player" else [0])]
         sheet=Canvas(16*len(frames),16,4)
         for i,frame in enumerate(frames):
@@ -603,13 +777,50 @@ def validate(world):
         for e in scene["exits"]:
             dest=by_id[e["destScene"]]; dw=dest["width"]//8
             assert all(not dest["collisions"][(e["destY"]+dy)*dw+e["destX"]+dx] for dy in (0,1) for dx in (0,1)),(scene["id"],"blocked destination")
+    # Native GB Studio uses a 16x8 player at y and 16x16 actors at y-8.
+    # Prove actual interaction approaches, rather than walking through actors.
+    for scene in world["scenes"]:
+        if not scene.get("campaign") and scene["id"] != "garage":
+            continue
+        w, h = scene["width"] // 8, scene["height"] // 8
+        def rect(x, y, width=2, height=1):
+            return x, y, x + width - 1, y + height - 1
+        def overlap(a, b):
+            return a[0] <= b[2] and b[0] <= a[2] and a[1] <= b[3] and b[1] <= a[3]
+        actors = [rect(a["x"], a["y"] - 1, 2, 2) for a in scene["sites"]]
+        triggers = [rect(e["x"], e["y"], e["width"], e["height"]) for e in scene["exits"]]
+        def free(point, allowed=None):
+            x, y = point
+            body = rect(x, y)
+            return (0 <= x < w-1 and 0 <= y < h
+                and not any(scene["collisions"][y*w+xx] for xx in (x, x+1))
+                and not any(overlap(body, a) for a in actors)
+                and not any(overlap(body, t) for t in triggers if t != allowed))
+        start = (scene["spawn"]["x"], scene["spawn"]["y"])
+        assert free(start), (scene["id"], "native spawn blocked")
+        seen, queue = {start}, deque([start])
+        while queue:
+            x, y = queue.popleft()
+            for point in [(x-1,y),(x+1,y),(x,y-1),(x,y+1)]:
+                if point not in seen and free(point):
+                    seen.add(point); queue.append(point)
+        for index, site in enumerate(scene["sites"]):
+            if not site["type"].startswith("campaign_"):
+                continue
+            x, y = site["x"], site["y"]
+            assert any(p in seen for p in [(x,y+1),(x,y-2),(x-2,y),(x+2,y)]), (scene["id"], site["id"], "no native approach")
+            assert not any(overlap(actors[index], a) for j, a in enumerate(actors) if j != index)
+            assert not any(overlap(actors[index], t) for t in triggers)
+        for trigger in triggers:
+            assert any(overlap(rect(*n), trigger) and free(n, trigger)
+                for x, y in seen for n in [(x-1,y),(x+1,y),(x,y-1),(x,y+1)]), (scene["id"], "unreachable native door")
     assert all(set(c.p)<=set(range(4)) for c in WORLD_CANVASES)
 
 
 if __name__=="__main__":
     districts=make_world()
     WORLD_CANVASES=[d.c for d in districts]
-    world={"version":1,"tileSize":8,"coordinateNotes":"All scene positions, sites, collision cells, and exit rectangles use 8-pixel tiles. Actors need a 2x2-tile clear footprint.",
+    world={"version":1,"tileSize":8,"coordinateNotes":"All positions use 8-pixel tiles. Native player bounds are 16x8 at y; actor bounds are 16x16 at y-8. Sites retain a conservative 2x2 terrain clearance.",
            "palettes":PALETTES,"scenes":[d.finish() for d in districts],"sprites":create_sprites()}
     validate(world)
     (ROOT/"world-layout.json").write_text(json.dumps(world,indent=2)+"\n")

@@ -1,0 +1,619 @@
+{
+  "_resourceType": "script",
+  "id": "63458686-3256-4069-aad0-608b0166b55a",
+  "name": "Story node_roof_vane",
+  "symbol": "script_story_node_roof_vane",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "1a2aefa0-4aaf-4dc0-a209-f2539f56b699",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "e8904b57-a2cc-4a43-af2e-f1456f232460",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "aba8c18b-38d1-4a80-a9b3-3ea838a23a6a",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The vane bears two\nservice marks:\nHIGH for the roof\ncircuit, COVER",
+                      "for the sheltered\nclinic circuit.\nThis sets your\ndelivery plan.\nBoth",
+                      "routes stay\nwalkable, and the\ncity will remember\nwhich promise you",
+                      "made."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "633133ac-5f0a-4c72-a9bc-832f102767d2",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 2,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "HIGH",
+                    "option2": "COVER"
+                  }
+                },
+                {
+                  "id": "a84d33a9-1115-47a2-aedf-a6125f37169f",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "98bd2e64-448e-44de-a905-e703c5817fee",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "46",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "5b442091-0a43-4dac-a2fa-1a1aa51d70ab",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Moxie ties a\nbright roof\nribbon. We will\nkeep the roof\nstops",
+                            "supplied, she\nsays. Speed is\nuseful when it has\nan address."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "d0e5c24d-f2d0-48d6-a108-e614a5fa816b",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 4
+                          }
+                        }
+                      },
+                      {
+                        "id": "a1e4baf0-8e82-4ad7-ad8a-49b224ae29e3",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Candy Rooftops:\ncompare trips for\nthe six-parcel\nround."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "edbe9bfc-ca52-4b57-a18f-8caea33cd511",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "898891a4-99ec-4f93-a55c-fe008a48a76d",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "46",
+                                "value": {
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              }
+                            },
+                            {
+                              "id": "063aa7c3-d95b-476c-a2a2-759bbe9eb256",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Moxie knots a rain\ncover onto the\nharness. The\nclinic gets a",
+                                  "dependable round.\nShe calls it the\ndry victory and\nrefuses to",
+                                  "explain the joke."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "62465566-037d-42ab-a4da-2c8889ba50a7",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              }
+                            },
+                            {
+                              "id": "de8ed27c-56ec-4410-a93b-dc584989fedf",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Candy Rooftops:\ncompare trips for\nthe six-parcel\nround."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "130442ec-532a-4bfd-a562-01222c3487c5",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "63"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "177ad901-9377-4517-a33f-4f6598021b85",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "63",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "270e6ebb-028f-41b2-a5ac-acb669f912a8",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Bird Vote",
+                            "Small birds have\nscratched the vane\ncrossbar smooth. A\nnotice asks",
+                            "residents not to\ntreat their facing\ndirection as a\nforecast. The",
+                            "birds have no duty\nto predict\nweather. Moxie\nadded: Neither\ndoes my",
+                            "left knee, despite\nseveral confident\nnewspaper\ninterviews."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "870c75c6-cdeb-4dbc-a5d6-53d673435b5d",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Bird Vote",
+                            "Small birds have\nscratched the vane\ncrossbar smooth. A\nnotice asks",
+                            "residents not to\ntreat their facing\ndirection as a\nforecast. The",
+                            "birds have no duty\nto predict\nweather. Moxie\nadded: Neither\ndoes my",
+                            "left knee, despite\nseveral confident\nnewspaper\ninterviews."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "bbc6f596-7383-4235-ad34-f6afe496bbe2",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 6
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "756553f3-3a4b-4a0f-aa9b-ff65734433d5",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 3
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "6818eeb8-04cd-4984-a3ff-cda9f4f9b408",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Align the vane for\nthe signal\ndestination named\non the antenna\ntag.",
+                            "Which direction\nmatches its fixed\nstone mark?"
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "8bd557cd-4e35-4331-ab44-e027a80f0530",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "NORTH",
+                          "option2": "SOUTH",
+                          "option3": "WEST"
+                        }
+                      },
+                      {
+                        "id": "faed8b79-664e-4df8-a4cb-590384c35bb8",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "5f2f1969-5976-4576-aba0-655806fd5159",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              }
+                            },
+                            {
+                              "id": "e5610a00-7e9e-4a89-ae0d-fcd5f57f7b1f",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Candy Rooftops:\nlocate the first\nunconfirmed signal\nleg."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "0b4a8aee-63c8-4421-a8e6-2b1f27056f18",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "9f5d0ca3-a89e-4bd5-a4e0-e710bc5996e2",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The movable arrow\nis not a reliable\nlandmark in wind.\nCompare the",
+                                        "antenna\ninstruction with\nthe fixed notch."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "51174396-0dd3-453c-a35e-f6788bfd3e3f",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "63"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "39d3e4e4-8759-4192-a27c-e35530d18a80",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "63",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "37dc8bfb-767c-4ffe-a6a7-88e3e9f40eeb",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Bird Vote",
+                                  "Small birds have\nscratched the vane\ncrossbar smooth. A\nnotice asks",
+                                  "residents not to\ntreat their facing\ndirection as a\nforecast. The",
+                                  "birds have no duty\nto predict\nweather. Moxie\nadded: Neither\ndoes my",
+                                  "left knee, despite\nseveral confident\nnewspaper\ninterviews."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "3381be98-8808-4a1a-a2a5-f86b9b5e77a7",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Bird Vote",
+                                  "Small birds have\nscratched the vane\ncrossbar smooth. A\nnotice asks",
+                                  "residents not to\ntreat their facing\ndirection as a\nforecast. The",
+                                  "birds have no duty\nto predict\nweather. Moxie\nadded: Neither\ndoes my",
+                                  "left knee, despite\nseveral confident\nnewspaper\ninterviews."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "551490cb-6148-4574-a3a8-be960298e910",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "63"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "2746726b-fbeb-4f4c-a2db-7c1da870993f",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "63",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "57ca02f8-e725-479b-a157-545261e7bca1",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Bird Vote",
+                            "Small birds have\nscratched the vane\ncrossbar smooth. A\nnotice asks",
+                            "residents not to\ntreat their facing\ndirection as a\nforecast. The",
+                            "birds have no duty\nto predict\nweather. Moxie\nadded: Neither\ndoes my",
+                            "left knee, despite\nseveral confident\nnewspaper\ninterviews."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "e0b18cb4-d03a-4086-ac55-80fa02a0eb1c",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Bird Vote",
+                            "Small birds have\nscratched the vane\ncrossbar smooth. A\nnotice asks",
+                            "residents not to\ntreat their facing\ndirection as a\nforecast. The",
+                            "birds have no duty\nto predict\nweather. Moxie\nadded: Neither\ndoes my",
+                            "left knee, despite\nseveral confident\nnewspaper\ninterviews."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

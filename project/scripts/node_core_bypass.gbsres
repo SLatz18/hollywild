@@ -1,0 +1,1177 @@
+{
+  "_resourceType": "script",
+  "id": "4f98f09c-974a-4922-aa51-da1fc8614383",
+  "name": "Story node_core_bypass",
+  "symbol": "script_story_node_core_bypass",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "16593d49-6acc-41dc-a8b1-b9b918628b50",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 19
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2976af2e-5fdb-41c0-a11f-b54c28111641",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "9add50f8-ec66-44cc-a9e2-6942eae9757f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The first service\nplan has four\npressure units\navailable within\nthe",
+                      "safe limit. The\nclinic needs two,\nthe depot needs\none, and the",
+                      "foundry needs one.\nA decorative steam\narch would take\nanother two.",
+                      "The arch is\noptional; the\nthree working\nstops are not. Pip\nadmits he",
+                      "drew the arch\nbefore adding the\ndemand numbers.\nRivet hands him an",
+                      "eraser without\ncommenting on its\nimpressive curve."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "0d6fa733-d052-4f04-ac8a-a285c99fbeac",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  }
+                },
+                {
+                  "id": "690100f9-bf61-4c02-a7d5-5f05779fef3b",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Brassworks\nControl: collect\nDot's signed\nservice setting\ncard."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "66c5de9d-9872-4f99-a428-2a853bb9864c",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 5
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "3778c101-0753-4fbf-ac1b-c38f1a885edd",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Rivet shows\nseparate branch\nvalves. A blocked\ndistrict can be",
+                            "isolated while the\nothers keep\nservice. The\nbypass does not\ncreate",
+                            "more heat. It\ngives the crew a\nway to make a\nrepair without\nmaking",
+                            "the whole city\nwait outside."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "dd14d444-b243-4672-ac4d-0a149d95114a",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 6
+                          }
+                        }
+                      },
+                      {
+                        "id": "35c3733f-ada4-45e6-ae43-e16eb64189af",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "509e4618-fc57-43ce-a974-f5ea356608be"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "8e7971df-1f68-4be4-a2c7-971ebb0c3a60",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 6
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "00b0555f-4c41-4f81-a3c8-b9926a786d58",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "509e4618-fc57-43ce-a974-f5ea356608be"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "83b5d934-e3f2-41bf-a8e3-343e23eb2eae",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "87"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "f184d068-ec2d-4936-a3ab-c2c875f31e63",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "87",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "d4d51281-543d-4c5a-a367-f73d0784c2df",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Door Beside a\nDoor",
+                                        "The bypass has a\nplain handle and a\nclear label. Its\ndesigner wrote",
+                                        "that the best\nbackup is one a\ntired person can\nfind. No hidden",
+                                        "panel, special key\nriddle, or proud\nmaker mark blocks\naccess. The",
+                                        "proud work is\nmaking the\nordinary route\nobvious."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "d8499d79-0666-4351-a5f6-464f9e69c7a3",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Door Beside a\nDoor",
+                                        "The bypass has a\nplain handle and a\nclear label. Its\ndesigner wrote",
+                                        "that the best\nbackup is one a\ntired person can\nfind. No hidden",
+                                        "panel, special key\nriddle, or proud\nmaker mark blocks\naccess. The",
+                                        "proud work is\nmaking the\nordinary route\nobvious."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "cf601cc5-62e5-41e2-aac7-19f934269eff",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 20
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "381dc398-50fc-469a-a7a8-0d8ab5feadc4",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "ba5c3186-ee54-4240-af18-375ae06dcaa3",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Fault card: Lodge\nbranch closed.\nFrostwick, Candy,\nand Brassworks",
+                            "branches clear.\nThe independent\nbypass is open.\nCorrect response:",
+                            "isolate the closed\nlodge branch, keep\nclear branches\nserved, and",
+                            "send the lodge a\nfault report.\nClosing everything\nrepeats the old",
+                            "failure."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "c2cbfdc7-bfde-4d19-a787-585cf93e3e02",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "a1f27dae-5b45-466e-a056-4d7277bed2ad",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Brassworks\nControl: compare\nthe staged leak\nmeasurements with\nDot."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "09b2bb5e-d93c-4d00-acbe-b63e04b7a6c9",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 4
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "a9e5a99b-ce4a-4ad9-a2c1-41e8c2072ebf",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "After isolating\nthe leaking lodge\nbranch, how many\nservice units",
+                                  "remain as headroom\nwhile all clear\nbranches stay\nsupplied? This",
+                                  "margin is not\npermission to\nraise the\nregulator. It\nshows whether",
+                                  "the chosen\nresponse fits the\nmeasured safe\nlimit. Slush wants\nthe",
+                                  "number written\nbeside the\noperating\ninstruction so a\nfuture crew can",
+                                  "see why it was\nsafe."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "e522ee24-643b-4d8a-afb7-f55e500abf3e",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "ONE",
+                                "option2": "TWO",
+                                "option3": "THREE"
+                              }
+                            },
+                            {
+                              "id": "f64e9aaf-6de8-4897-a524-74aae420b828",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "336299ff-78f4-4863-ae59-19d051dfdebd",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 5
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "6f10247d-4615-4b62-af39-0958eded6d7d",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Velvet Rooftops:\nreview the fault\nresult with Slush."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "cb40c220-af02-43f4-a065-ebba77bfa06e",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "72093e58-a2ea-4c07-aaf6-f1a53300fc30",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Use the\nclear-branch\ndemand after the\nleak is isolated.\nSubtract",
+                                              "that demand from\nthe safe service\nlimit, rather than\ncounting the",
+                                              "leak as a working\nbranch."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "ac5e5e22-0c4d-4048-aff3-8d947943c6ff",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "87"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "16559bb7-a4bb-4a71-a5dc-cd1131ea4a3d",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "87",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "180ec89a-1d00-4c00-a068-be004eae23c3",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Door Beside a\nDoor",
+                                        "The bypass has a\nplain handle and a\nclear label. Its\ndesigner wrote",
+                                        "that the best\nbackup is one a\ntired person can\nfind. No hidden",
+                                        "panel, special key\nriddle, or proud\nmaker mark blocks\naccess. The",
+                                        "proud work is\nmaking the\nordinary route\nobvious."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "9c818fa4-7590-4ea8-a7df-5e2388d6eadd",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Door Beside a\nDoor",
+                                        "The bypass has a\nplain handle and a\nclear label. Its\ndesigner wrote",
+                                        "that the best\nbackup is one a\ntired person can\nfind. No hidden",
+                                        "panel, special key\nriddle, or proud\nmaker mark blocks\naccess. The",
+                                        "proud work is\nmaking the\nordinary route\nobvious."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "dbf039d2-8c83-4518-aeb9-933f6e074d45",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 23
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "abdcd80d-8db1-4e8c-adf2-0e65610dd341",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "f4a1aa41-41c5-4699-a089-bf64d842aebd",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The public fund\nsets aside six\ntokens for basic\nservice: two for",
+                                  "homes, two for\nwork sites, two\nfor shared rooms.\nIt has three more",
+                                  "for the first\nimprovements. One\ndraft spends four\nextra tokens on a",
+                                  "grand hall and\nsilently takes one\nfrom the home\nbaseline. Nib",
+                                  "rejects that draft\nbefore anyone\nvotes. Preferences\nmay decide the",
+                                  "extra three; they\nmust not remove\nthe common floor\neveryone agreed",
+                                  "to preserve."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "b2c243eb-00a6-4ccc-a80a-3a7ff52fee1d",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              }
+                            },
+                            {
+                              "id": "2a73cb28-aaf0-491e-ada8-2b4b9ea56525",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Core:\ninspect the common\nprotections on the\ngrid."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "bf861d67-f127-4e74-ac26-15f9e34bda13",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 5
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "9960b194-4ef1-4e68-a24a-385ce41e1109",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Slush checks the\npublic\nprotections, then\nsigns as one\nparticipant.",
+                                        "He has kept the\nold fault card.\nThis time, he\nsays, if my branch",
+                                        "fails, I know who\nto call. Pip\nanswers: And they\nknow you will",
+                                        "answer back."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "19ed6873-49e1-419f-ace0-57fbddb98c0c",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "49"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 1
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "0a0a1110-52e4-45b5-a9e8-9a37cc906a54",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Slush offers his\nroof crew for the\nfirst drafty\nhomes. The clinic",
+                                              "gets a plain cost\nestimate before\nanyone orders a\ngold plaque."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  },
+                                  {
+                                    "id": "4fabb28c-d0ef-4938-a454-cf1c3f2539a3",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "49"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 2
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "cd6a317d-84ef-4fa1-aee1-c6d70b70a556",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Slush offers paid\ntool training\nspace in the lodge\nyard. Rivet",
+                                              "insists trainees\nlearn shutdown\ntests before\npolishing the\nmachines."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  },
+                                  {
+                                    "id": "5c9ea79b-5dba-4356-a5db-4be528a73ecc",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "49"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "a3430697-ebe9-4b3b-ab8b-57ddab1206ce",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Slush offers the\nlodge hall on the\nposted public\nschedule. Nib",
+                                              "writes its\ncapacity honestly\nand leaves room\nfor a coat rack."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  },
+                                  {
+                                    "id": "0f6321f2-a6d5-494c-a732-80416082dc07",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 6
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "ddd15354-12f3-4a31-ad8c-0ff654a36ca7",
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "9cfd4254-4400-4f58-aa65-d5c140b477c4"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "02e72489-fd62-4a50-a8b7-21dd54c41e8f",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "44"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 6
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "9728c042-835c-4647-a3e1-d5f00eb64e12",
+                                          "command": "EVENT_CALL_CUSTOM_EVENT",
+                                          "args": {
+                                            "customEventId": "9cfd4254-4400-4f58-aa65-d5c140b477c4"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "0e8b9ddd-3eeb-4c45-a605-a7a8be96211b",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "87"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "e7c0702f-3bc3-4e1f-ab94-0679592796b7",
+                                                "command": "EVENT_SET_VALUE",
+                                                "args": {
+                                                  "variable": "87",
+                                                  "value": {
+                                                    "type": "number",
+                                                    "value": 1
+                                                  }
+                                                }
+                                              },
+                                              {
+                                                "id": "2bf98ec0-bd15-4cd3-a039-880eb07127b5",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "A Door Beside a\nDoor",
+                                                    "The bypass has a\nplain handle and a\nclear label. Its\ndesigner wrote",
+                                                    "that the best\nbackup is one a\ntired person can\nfind. No hidden",
+                                                    "panel, special key\nriddle, or proud\nmaker mark blocks\naccess. The",
+                                                    "proud work is\nmaking the\nordinary route\nobvious."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "ad1f3be4-ce16-439c-ad6d-688f31507a67",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "A Door Beside a\nDoor",
+                                                    "The bypass has a\nplain handle and a\nclear label. Its\ndesigner wrote",
+                                                    "that the best\nbackup is one a\ntired person can\nfind. No hidden",
+                                                    "panel, special key\nriddle, or proud\nmaker mark blocks\naccess. The",
+                                                    "proud work is\nmaking the\nordinary route\nobvious."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "b24903ec-4830-49a2-ab61-1c77f860ff82",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "43"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 24
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "c2ce2707-54fc-47f0-a671-1388a6ea7be8",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "c1499560-98cb-483d-ad50-10950a9726e5",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The final\nrehearsal combines\ntwo problems: the\nlodge branch is",
+                                        "isolated for\nrepair, and the\nrelay reply is\nunconfirmed. Other",
+                                        "branches remain\nwithin the service\nbudget. The\narchive foot route\nis",
+                                        "available for the\nmessage copy.\nSlush asks if the\nwhole launch must",
+                                        "stop. Dot says the\nplan has separate\nresponses for\nseparate faults;",
+                                        "the important\nquestion is\nwhether each is\nactually used, not\nwhether",
+                                        "the city can\npretend the faults\nnever happened."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "31b2b756-c70c-4eb8-a710-bb1bcc98450c",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 2
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "4b7ba32c-f39d-475f-abdd-684bd8497f11",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Aurora Core:\nverify the launch\nservice setting at\nthe grid."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "4ab0c0d3-448e-49b3-ae5f-0eaf16c16ec0",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "87"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "0c7b3940-1af8-40ea-a26b-045d81ec50b1",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "87",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "469ff849-e4c0-4af0-a285-099590b01c35",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "A Door Beside a\nDoor",
+                                              "The bypass has a\nplain handle and a\nclear label. Its\ndesigner wrote",
+                                              "that the best\nbackup is one a\ntired person can\nfind. No hidden",
+                                              "panel, special key\nriddle, or proud\nmaker mark blocks\naccess. The",
+                                              "proud work is\nmaking the\nordinary route\nobvious."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "e236f35c-0e92-4637-a89a-53c11e46ca1d",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "A Door Beside a\nDoor",
+                                              "The bypass has a\nplain handle and a\nclear label. Its\ndesigner wrote",
+                                              "that the best\nbackup is one a\ntired person can\nfind. No hidden",
+                                              "panel, special key\nriddle, or proud\nmaker mark blocks\naccess. The",
+                                              "proud work is\nmaking the\nordinary route\nobvious."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "4746e0cb-04fa-446f-a124-43754f80df3d",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "87"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "61a4b9e6-cbf1-4d26-ad3e-029c1f53ab31",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "87",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "bb0f7ea2-1a51-439a-aef0-228b89884115",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Door Beside a\nDoor",
+                                        "The bypass has a\nplain handle and a\nclear label. Its\ndesigner wrote",
+                                        "that the best\nbackup is one a\ntired person can\nfind. No hidden",
+                                        "panel, special key\nriddle, or proud\nmaker mark blocks\naccess. The",
+                                        "proud work is\nmaking the\nordinary route\nobvious."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "795bca4f-c6c5-4ff4-a257-d0353623f45e",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Door Beside a\nDoor",
+                                        "The bypass has a\nplain handle and a\nclear label. Its\ndesigner wrote",
+                                        "that the best\nbackup is one a\ntired person can\nfind. No hidden",
+                                        "panel, special key\nriddle, or proud\nmaker mark blocks\naccess. The",
+                                        "proud work is\nmaking the\nordinary route\nobvious."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

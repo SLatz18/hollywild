@@ -1,0 +1,649 @@
+{
+  "_resourceType": "script",
+  "id": "42f65a29-3680-405e-a6e9-001e10e77f98",
+  "name": "Story node_signal_lantern",
+  "symbol": "script_story_node_signal_lantern",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "922aadf2-764d-429b-aed5-3af5b75b4fdf",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 17
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "94c6a13d-94ec-4223-a00b-255688b4e8d3",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "9618c409-f6bb-401e-acc3-5861ffe1a6db",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "For the EARLIER\nrelay-only\nfailure, before\nthe gate fault was\nadded,",
+                      "which backup\navoided the failed\nrelay? The next\ncheck will",
+                      "separately ask you\nto solve the\ntwo-fault drill.\nKeep the two cases",
+                      "distinct in the\nlog."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "b7ba0629-387d-4359-af31-bdcfa6832f4d",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 3,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "WIRE",
+                    "option2": "COURIER",
+                    "option3": "BULB"
+                  }
+                },
+                {
+                  "id": "33fb6b41-f14c-46e7-ad3a-1a3a4196346b",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "679d0aae-35c4-44e0-ad50-9394852cae87",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 4
+                          }
+                        }
+                      },
+                      {
+                        "id": "dd62c82e-5125-47ab-ad69-9345f1badfc3",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Aurora Signal:\nchoose the message\npath that avoids\nboth marked\nfaults."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "8d91b535-4ddf-4ecd-ad29-c69a680af0f6",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "gt",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "ac1fb098-a8c6-4495-acea-475c9386a7d4",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A backup must\navoid the failed\ncomponent.\nChanging the\nappearance of",
+                                  "a path while\nkeeping its\ndependency does\nnot make it\nindependent."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "69a2c3b2-49ef-4c49-ace3-eecac69848b1",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "84"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "0dccc5ec-12f6-4276-af33-1bfe6ef86dbb",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "84",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "20ca9368-306e-4f4e-ad18-e3edfb2ddfba",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Plain Lens",
+                            "The plain lantern\nlens costs less\nthan the colored\nset. The clerk",
+                            "chose it because a\nsignal should be\nreadable without\nnaming colors.",
+                            "The unused lenses\ndecorate the tea\nshelf. Their\nbeauty has found a",
+                            "job that does not\ncarry an alarm."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "22021eb8-042e-4301-a088-ffd99fc39e24",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Plain Lens",
+                            "The plain lantern\nlens costs less\nthan the colored\nset. The clerk",
+                            "chose it because a\nsignal should be\nreadable without\nnaming colors.",
+                            "The unused lenses\ndecorate the tea\nshelf. Their\nbeauty has found a",
+                            "job that does not\ncarry an alarm."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "8087034b-05aa-475a-ae59-f9b61ed8550f",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 18
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "874a728c-7498-431d-af47-130a5cf8ea83",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "da54766e-7f02-4dc6-ac6b-14f2f6676620",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The card uses\nwords and distinct\nmarks. Pip can\nread it at arm",
+                            "length; Moxie can\nread it through a\nscarf. Nib\nproposes a gold",
+                            "border. The clerk\npermits the border\nafter he proves it\ncovers none",
+                            "of the\ninstructions."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "cb9e9774-c851-466f-acc3-54571a7f0b14",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 3
+                          }
+                        }
+                      },
+                      {
+                        "id": "298d7709-c1a8-4aad-a6f6-087dc86520d7",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Candy Rooftops:\nanswer the double\nsignal at the\nantenna."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "89861608-5b00-48f9-ab1c-28618df34f9d",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "84"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "527e6627-f7d3-4b13-a701-88427f1aa9e9",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "84",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "bbc7f6fc-adfb-4bcd-a88c-aba5a334699b",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Plain Lens",
+                                  "The plain lantern\nlens costs less\nthan the colored\nset. The clerk",
+                                  "chose it because a\nsignal should be\nreadable without\nnaming colors.",
+                                  "The unused lenses\ndecorate the tea\nshelf. Their\nbeauty has found a",
+                                  "job that does not\ncarry an alarm."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "dd6accb0-9599-4121-a177-d0a7d18bcd9d",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Plain Lens",
+                                  "The plain lantern\nlens costs less\nthan the colored\nset. The clerk",
+                                  "chose it because a\nsignal should be\nreadable without\nnaming colors.",
+                                  "The unused lenses\ndecorate the tea\nshelf. Their\nbeauty has found a",
+                                  "job that does not\ncarry an alarm."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "a144dae7-f394-41b7-a301-6ad513462309",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 24
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "b42950d1-e8ea-45b3-ad6c-a78f8fab49ab",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "8156ef6f-b373-4b11-a22e-34fd6e789e2f",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The lantern shows\nSTEADY, and the\nwritten received\ncard is signed.",
+                                  "The backup courier\nis named in the\nlog. Dot reads\nboth before",
+                                  "declaring the\nsignal ready. Pip\nwaits for the\nwhole sentence,\nwhich",
+                                  "she appreciates\nmore than he\nknows.",
+                                  "The received\nlaunch card also\nconfirms the\nnormal service\nlimit is",
+                                  "FOUR. The brief\ntest ceiling\nremains SIX; EIGHT\nremains a damage",
+                                  "warning. Dot asks\nyou to carry that\nchecked value to\nthe final grid",
+                                  "inspection, rather\nthan remembering\nthe largest number\non the old",
+                                  "plate."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "c15cfdec-eee6-466c-af94-f2e547fe016c",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "ae000a48-840a-4b8a-aee0-9b8858a320ac",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Core: read\nthe last combined\nlaunch check at\nthe bypass."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "adad6896-a038-4cda-ac14-d47d9c341664",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "84"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "2ca62dfa-ca9a-4a9e-ae02-744f4b21024b",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "84",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "7455dd0a-d0f0-49b1-a2dd-8be4de84d65a",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Plain Lens",
+                                        "The plain lantern\nlens costs less\nthan the colored\nset. The clerk",
+                                        "chose it because a\nsignal should be\nreadable without\nnaming colors.",
+                                        "The unused lenses\ndecorate the tea\nshelf. Their\nbeauty has found a",
+                                        "job that does not\ncarry an alarm."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "2ef6d131-3ea4-49d6-a7b9-11019e4d8ee8",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Plain Lens",
+                                        "The plain lantern\nlens costs less\nthan the colored\nset. The clerk",
+                                        "chose it because a\nsignal should be\nreadable without\nnaming colors.",
+                                        "The unused lenses\ndecorate the tea\nshelf. Their\nbeauty has found a",
+                                        "job that does not\ncarry an alarm."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "a1939d5d-0654-4beb-a2e9-5db2c8bf978e",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "84"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "67be35dc-8830-4f79-a57b-05636b908292",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "84",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "f46550a1-75a4-49a4-a2ea-bebbd4be427f",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Plain Lens",
+                                  "The plain lantern\nlens costs less\nthan the colored\nset. The clerk",
+                                  "chose it because a\nsignal should be\nreadable without\nnaming colors.",
+                                  "The unused lenses\ndecorate the tea\nshelf. Their\nbeauty has found a",
+                                  "job that does not\ncarry an alarm."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "67855608-8776-4926-ab75-7a5b2964b134",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Plain Lens",
+                                  "The plain lantern\nlens costs less\nthan the colored\nset. The clerk",
+                                  "chose it because a\nsignal should be\nreadable without\nnaming colors.",
+                                  "The unused lenses\ndecorate the tea\nshelf. Their\nbeauty has found a",
+                                  "job that does not\ncarry an alarm."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1104 @@
+{
+  "_resourceType": "script",
+  "id": "2dc04086-a821-4147-a0ee-acd3abacab8b",
+  "name": "Story node_signal_clerk",
+  "symbol": "script_story_node_signal_clerk",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "0c21b638-41c6-40b8-ae8d-1ad0a02d9121",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 6
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d9734c29-e15c-4646-a7cb-ab11bd9baff9",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 5
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "8cc95dfd-3e5b-40b6-a8a9-94bb488f9bba",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Clerk: We received\nthe bell. We sent\na reply through\nthe same wire",
+                      "after the relay\nfroze. That reply\nnever left the\nbuilding. Two",
+                      "messages, one\nwire, and no other\nway to ask for\nhelp. Dot shuts\nher",
+                      "notebook very\nsoftly."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "40b6f395-fd6b-448a-a1be-5f2b7fb070d4",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 6
+                    }
+                  }
+                },
+                {
+                  "id": "c5d0b336-351a-4920-a845-fccf8dd329ac",
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "3498e906-d885-433a-af90-c479d37cb343"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "8d6748fe-ff33-4473-a25a-b57486abf0ba",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 6
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "0a1e7702-0c4c-4c2d-a360-27da5a010139",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "3498e906-d885-433a-af90-c479d37cb343"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "cd6ab8de-2180-4389-a03d-4f1e41cf3b2e",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "85"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "be04d2f8-8395-459f-a42f-f2474696bb85",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "85",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "8091302b-4bf0-4096-a7ad-babaea33ac34",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Kept Log",
+                                  "The clerk could\nhave discarded the\nfailure log when\nnobody asked for",
+                                  "it. Instead she\ncopied the fading\nentries each\nspring and kept\nthe",
+                                  "original dry. She\ndoes not call this\nhope. She calls it\nrecords",
+                                  "care, then offers\nDot the good\npencil."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "411532ce-3d4b-4ab3-ae00-73cb5ca7b107",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Kept Log",
+                                  "The clerk could\nhave discarded the\nfailure log when\nnobody asked for",
+                                  "it. Instead she\ncopied the fading\nentries each\nspring and kept\nthe",
+                                  "original dry. She\ndoes not call this\nhope. She calls it\nrecords",
+                                  "care, then offers\nDot the good\npencil."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "472efd46-d8f1-49b6-a1bf-8137938fa415",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 17
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "c46d1a8a-b8a4-4740-abb0-c7afe09f7a3b",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "94f8052e-3542-4f48-a38e-5892344e251c",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Dot marks a second\npaper fault: the\ndepot gate is\nblocked while the",
+                            "relay remains\nfrozen. Courier\nroute A crosses\nthat gate. Foot\nroute",
+                            "B goes through the\narchive service\nlane and touches\nneither gate nor",
+                            "relay. Wire route\nC uses the frozen\nrelay. These are\ntest marks",
+                            "only; no public\ndoorway is locked.\nMoxie asks for a\nbackup that",
+                            "survives both\nfaults, not just\nthe one that made\nyesterday famous."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "84dae0e6-2aa6-47ad-aeb2-4f6aa00eb31b",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 2
+                          }
+                        }
+                      },
+                      {
+                        "id": "b1cf41f1-e0f9-46a6-aec3-d9d590773600",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Aurora Signal:\ninspect the\nmessage paths on\nthe map."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "24bc5594-5344-4c40-add8-70881f5ede4f",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 5
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "9617b2ea-4643-4b29-a1c7-a3c073839fdc",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Clerk: I will log\nthe sent message\nand ask for a\nreceived mark. If",
+                                  "no mark returns,\nMoxie carries a\ncopy. We will not\ncall silence",
+                                  "agreement. Pip\nwrites that\nsentence at the\ntop, then asks\npermission",
+                                  "to keep it there."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "60a568bb-87e8-41f5-a7d0-2cca51c9a4e3",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              }
+                            },
+                            {
+                              "id": "9d1d8a81-b3b6-4228-ae2d-390b940abdfb",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "17bdf7ed-02e8-4f84-a182-6c789eb0814c"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "dee074af-6d71-4f8c-ad03-31379de93ca1",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 6
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "9c353ee4-484e-4ac3-a626-62a1979875bb",
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "17bdf7ed-02e8-4f84-a182-6c789eb0814c"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "dc7e4939-7535-4738-ae68-db1d86569a99",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "85"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "e217b646-b915-479b-a88b-ad9150cacdce",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "85",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "2a44cd8f-7baa-4bef-a8bd-7902028d58c0",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Kept Log",
+                                              "The clerk could\nhave discarded the\nfailure log when\nnobody asked for",
+                                              "it. Instead she\ncopied the fading\nentries each\nspring and kept\nthe",
+                                              "original dry. She\ndoes not call this\nhope. She calls it\nrecords",
+                                              "care, then offers\nDot the good\npencil."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "8978082d-1625-4180-ab63-835983626579",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Kept Log",
+                                              "The clerk could\nhave discarded the\nfailure log when\nnobody asked for",
+                                              "it. Instead she\ncopied the fading\nentries each\nspring and kept\nthe",
+                                              "original dry. She\ndoes not call this\nhope. She calls it\nrecords",
+                                              "care, then offers\nDot the good\npencil."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "07898fab-305f-4738-adb1-763395d76b76",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 18
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "4212f42a-ec2c-4e9c-a69c-575e9dcb789a",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "849a5de6-b827-458f-af23-96e1ea785a53",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Clerk: STEADY\nmeans message\nreceived. DOUBLE\nmeans send the\ncourier.",
+                                  "DARK means no\nconfirmed signal,\nso check in\nperson. No rapid",
+                                  "flashing, and no\ncolor test. We use\na plain written\ncard at every",
+                                  "post as well as\nthe lamp."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "111200a7-168d-4041-a0d2-94993911583d",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "7fd08545-b386-44d4-a80e-c1d00fe742a6",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Signal:\ninspect the\ndamaged-card drill\nbeside the map."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "173804fc-d8b9-4218-a6b7-7b4b70e80c5f",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "85"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "a989a4fa-f908-42b7-a4d4-21b96974ea27",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "85",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "d91f9058-28e8-4df0-a1c1-84d4840fa2cf",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Kept Log",
+                                        "The clerk could\nhave discarded the\nfailure log when\nnobody asked for",
+                                        "it. Instead she\ncopied the fading\nentries each\nspring and kept\nthe",
+                                        "original dry. She\ndoes not call this\nhope. She calls it\nrecords",
+                                        "care, then offers\nDot the good\npencil."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "e22b76cf-062c-4cb4-a95e-f079ce055ce3",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Kept Log",
+                                        "The clerk could\nhave discarded the\nfailure log when\nnobody asked for",
+                                        "it. Instead she\ncopied the fading\nentries each\nspring and kept\nthe",
+                                        "original dry. She\ndoes not call this\nhope. She calls it\nrecords",
+                                        "care, then offers\nDot the good\npencil."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "20470d4c-0a04-4155-afaf-1fba3d6d191a",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "43"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 21
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "7982866c-304b-44be-a192-5f8b87bbbff1",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "1d6927bb-9546-4cc4-a7ff-728e615f79c8",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A resident reports\na cold room but\nthe current gauge\nreading is",
+                                        "unverified. Pip\nmust acknowledge\nthe resident and\nrecord the report.",
+                                        "Dot checks the\nreading. Rivet\ndecides the\nmechanical repair\nfrom",
+                                        "verified evidence.\nMoxie carries a\ncopy if the signal\nreply fails.",
+                                        "One draft skips\nstraight from\ncomplaint to\nordering Rivet to\nreplace",
+                                        "the pump. The\nclerk asks who has\nbeen left out, and\nwhy that",
+                                        "omission matters."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "eb98d276-12b8-44a9-a580-8625269d6fbc",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 2
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "1819d131-74ad-46cb-a298-c144697d62b2",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Aurora Signal:\nassign the missing\nreply at the\nsignal box."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "b340b0e3-f7c8-4bbc-a7f2-b8dc6a6fa1cc",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "85"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "2e4efe5a-d7b7-401d-aae2-5d1b18f20e66",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "85",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "0f289212-de5e-4334-afba-71921f58c2aa",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Kept Log",
+                                              "The clerk could\nhave discarded the\nfailure log when\nnobody asked for",
+                                              "it. Instead she\ncopied the fading\nentries each\nspring and kept\nthe",
+                                              "original dry. She\ndoes not call this\nhope. She calls it\nrecords",
+                                              "care, then offers\nDot the good\npencil."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "2555de3c-b54c-4364-a4bd-7c88669395e5",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Kept Log",
+                                              "The clerk could\nhave discarded the\nfailure log when\nnobody asked for",
+                                              "it. Instead she\ncopied the fading\nentries each\nspring and kept\nthe",
+                                              "original dry. She\ndoes not call this\nhope. She calls it\nrecords",
+                                              "care, then offers\nDot the good\npencil."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "40f4a2c8-68cb-4df4-af44-60a9e8e8497e",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "43"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 22
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "d159b4dc-9a8d-42cb-ac16-6c827c2759d5",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "44"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 5
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "3ab02bff-828f-4a35-a9e2-e83dd529af18",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "One station has\nnot replied to the\nlaunch question.\nWhat can the",
+                                              "clerk honestly\nrecord as the next\naction?"
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "161eb5d1-bb08-4b4e-ae6c-e4f77fbfb174",
+                                          "command": "EVENT_MENU",
+                                          "args": {
+                                            "variable": "14",
+                                            "items": 3,
+                                            "layout": "menu",
+                                            "cancelOnLastOption": false,
+                                            "cancelOnB": true,
+                                            "option1": "YES",
+                                            "option2": "NO",
+                                            "option3": "CHECK"
+                                          }
+                                        },
+                                        {
+                                          "id": "c87d18df-b201-46bb-a195-94a7ad03ff0f",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "14"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 3
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "23419255-17a6-4d06-a4f2-85f383410604",
+                                                "command": "EVENT_SET_VALUE",
+                                                "args": {
+                                                  "variable": "44",
+                                                  "value": {
+                                                    "type": "number",
+                                                    "value": 6
+                                                  }
+                                                }
+                                              },
+                                              {
+                                                "id": "811a3865-f134-46eb-a53c-2bac27e7b664",
+                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                "args": {
+                                                  "customEventId": "42bf1447-dedf-4f59-ada8-000acf7e9b5f"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "87c8c835-05b1-48b5-a1ec-bff3cc425491",
+                                                "command": "EVENT_IF",
+                                                "args": {
+                                                  "condition": {
+                                                    "type": "gt",
+                                                    "valueA": {
+                                                      "type": "variable",
+                                                      "value": "14"
+                                                    },
+                                                    "valueB": {
+                                                      "type": "number",
+                                                      "value": 0
+                                                    }
+                                                  }
+                                                },
+                                                "children": {
+                                                  "true": [
+                                                    {
+                                                      "id": "7e9d6560-6835-4c92-ad5d-1cc166743468",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "A missing reply is\nneither agreement\nnor refusal. Use\nthe rule for",
+                                                          "establishing what\nhappened instead\nof inventing an\nanswer."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "minHeight": 4,
+                                                        "maxHeight": 7,
+                                                        "position": "bottom",
+                                                        "closeWhen": "key",
+                                                        "closeButton": "a"
+                                                      }
+                                                    }
+                                                  ],
+                                                  "false": []
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "0efa45c7-06c2-4594-a4ba-ac89b38ac894",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "44"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 6
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "c969113c-b2af-42e3-aa65-fed043608e78",
+                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                "args": {
+                                                  "customEventId": "42bf1447-dedf-4f59-ada8-000acf7e9b5f"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "ea5adaa2-799e-4e65-a113-77470378026d",
+                                                "command": "EVENT_IF",
+                                                "args": {
+                                                  "condition": {
+                                                    "type": "eq",
+                                                    "valueA": {
+                                                      "type": "variable",
+                                                      "value": "85"
+                                                    },
+                                                    "valueB": {
+                                                      "type": "number",
+                                                      "value": 0
+                                                    }
+                                                  }
+                                                },
+                                                "children": {
+                                                  "true": [
+                                                    {
+                                                      "id": "c4eddb34-6bfc-4386-a478-94bf543e7f1e",
+                                                      "command": "EVENT_SET_VALUE",
+                                                      "args": {
+                                                        "variable": "85",
+                                                        "value": {
+                                                          "type": "number",
+                                                          "value": 1
+                                                        }
+                                                      }
+                                                    },
+                                                    {
+                                                      "id": "71a67023-ed48-4594-aff3-609b2736716c",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "The Kept Log",
+                                                          "The clerk could\nhave discarded the\nfailure log when\nnobody asked for",
+                                                          "it. Instead she\ncopied the fading\nentries each\nspring and kept\nthe",
+                                                          "original dry. She\ndoes not call this\nhope. She calls it\nrecords",
+                                                          "care, then offers\nDot the good\npencil."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "minHeight": 4,
+                                                        "maxHeight": 7,
+                                                        "position": "bottom",
+                                                        "closeWhen": "key",
+                                                        "closeButton": "a"
+                                                      }
+                                                    }
+                                                  ],
+                                                  "false": [
+                                                    {
+                                                      "id": "c04d21a3-0617-4df7-a60a-9d0a715620b8",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "The Kept Log",
+                                                          "The clerk could\nhave discarded the\nfailure log when\nnobody asked for",
+                                                          "it. Instead she\ncopied the fading\nentries each\nspring and kept\nthe",
+                                                          "original dry. She\ndoes not call this\nhope. She calls it\nrecords",
+                                                          "care, then offers\nDot the good\npencil."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "minHeight": 4,
+                                                        "maxHeight": 7,
+                                                        "position": "bottom",
+                                                        "closeWhen": "key",
+                                                        "closeButton": "a"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "b09fcbce-4eb0-4403-a86d-b3ef539a1d65",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "85"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "fec3892a-cb54-423e-ae93-cf497d338e7a",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "85",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "091bc0c7-763c-4982-ae80-eedea7284169",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Kept Log",
+                                              "The clerk could\nhave discarded the\nfailure log when\nnobody asked for",
+                                              "it. Instead she\ncopied the fading\nentries each\nspring and kept\nthe",
+                                              "original dry. She\ndoes not call this\nhope. She calls it\nrecords",
+                                              "care, then offers\nDot the good\npencil."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "2de69046-db72-427e-a0b6-b60e66b6e912",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Kept Log",
+                                              "The clerk could\nhave discarded the\nfailure log when\nnobody asked for",
+                                              "it. Instead she\ncopied the fading\nentries each\nspring and kept\nthe",
+                                              "original dry. She\ndoes not call this\nhope. She calls it\nrecords",
+                                              "care, then offers\nDot the good\npencil."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,624 @@
+{
+  "_resourceType": "script",
+  "id": "a9536acb-5968-4c54-ad0c-b71ea9e852af",
+  "name": "Story node_signal_box",
+  "symbol": "script_story_node_signal_box",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "50301f47-479f-4a13-aa66-e3557cb42a4f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 17
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "cfc4c4fd-98f6-47a4-a075-2e1f042b46ad",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "2ec41f93-7d9d-462c-a32f-6aa5213601d4",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Log: Roof alarm\nreceived. Station\nreply sent. Shared\nrelay froze",
+                      "before the reply\nleft. No second\npath existed. The\noperator stayed",
+                      "to hand carry the\nreply, but the\ngate crew had\nalready withdrawn.",
+                      "Nobody could\nconfirm whether\nthe message\narrived."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "bfbbf1ba-35c4-4640-a69f-b032627e7602",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "12032711-a814-4dfe-a981-dc5ed37d2b6b",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Aurora Signal:\nstudy the\ntwo-fault map\ndrill with the\nclerk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "e4bfe4c1-2d19-4d17-a3fa-7b2e16918eac",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 4
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "768a048a-0f39-416c-a759-72bf3fc8a87c",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "For this two-fault\ndrill, which route\ncan still carry\nthe reply? Use",
+                            "the map topology\nrather than\nassuming any\ncourier path must\nbe",
+                            "independent. Moxie\nis willing to walk\nthe longer foot\nroute, but",
+                            "wants the planner\nto name why it is\nneeded. Dot keeps\nboth blocked",
+                            "components marked\nso nobody forgets\nthe second\nconstraint while",
+                            "solving the first."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "b98f3639-4238-4f38-ac0e-0eb77aef4a2e",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "A",
+                          "option2": "B",
+                          "option3": "C"
+                        }
+                      },
+                      {
+                        "id": "65ed3744-3d01-4b83-af3d-ffadad7d0da3",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "8f93b962-7b7b-4b8d-aef9-fa359e19e6ab",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              }
+                            },
+                            {
+                              "id": "db16c516-d5d7-4364-abb3-439b505949f3",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Signal:\ngive the clerk the\nindependent path\nplan."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "c40e511e-d5c5-4919-a63a-2c3e4363d22f",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "b3e1eb34-a624-4bac-a101-770665efc94e",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Trace each path\nagainst both\nmarked failures. A\nroute is\nindependent",
+                                        "only if it avoids\nevery component\nthe drill has\ntaken out."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "9bd5bd34-74ab-4134-a166-917247303156",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "82"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "ff98bc15-8554-494d-a604-a8ea4d8a1db4",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "82",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "a4f7c0fa-e995-4cbb-a941-b62e1a33e76c",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "An Unanswered Seat",
+                                  "Beside the signal\nlog stands a chair\nwith a mended\ncushion. The",
+                                  "clerk waited there\nafter the old\nalarm, expecting a\nreply from",
+                                  "anyone. She still\nuses the chair,\nbut now the desk\nhas space for a",
+                                  "second person and\na duplicate log."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "12ffa8dd-5617-4b9c-a1ed-bdc0b2a39b0a",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "An Unanswered Seat",
+                                  "Beside the signal\nlog stands a chair\nwith a mended\ncushion. The",
+                                  "clerk waited there\nafter the old\nalarm, expecting a\nreply from",
+                                  "anyone. She still\nuses the chair,\nbut now the desk\nhas space for a",
+                                  "second person and\na duplicate log."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "6a667e33-dde2-41fc-a446-6951e7a3291b",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 21
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "fe42a3c2-38eb-480e-a7e4-8c54e4febd55",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "96e968fc-1785-425a-ada6-6f3780e793d2",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A message has no\nreceived mark. Who\nis assigned to\ncarry its backup",
+                            "copy?"
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "abbde706-dacf-4090-a5f8-282eb316c53f",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "RIVET",
+                          "option2": "DOT",
+                          "option3": "MOXIE"
+                        }
+                      },
+                      {
+                        "id": "92b4c76a-3d95-4d70-a4dd-ce9a9a7b5c86",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 3
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "bba0fce3-6db3-45bc-ab7b-91bc13537cf8",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              }
+                            },
+                            {
+                              "id": "85539e9c-eb08-4094-a0f0-582eca7d51e7",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Velvet Lodge:\nsettle the invoice\nterms with Nib."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "d0ec3569-b0bb-45ff-a03c-dfca0460575d",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "481cdc47-e7fc-4d24-a82b-fd5565cb9b64",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Read the duty\nregister as\nseparate jobs.\nMeasuring and\nrepairing do",
+                                        "not replace the\nperson assigned to\ncarry a failed\nmessage."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "35271c81-6cd1-4ca0-a280-eb447161584f",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "82"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "60dbc66e-8a34-4255-a974-8f686858d6b1",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "82",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "9604979b-f56e-4236-ae5b-f3a7713b2207",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "An Unanswered Seat",
+                                  "Beside the signal\nlog stands a chair\nwith a mended\ncushion. The",
+                                  "clerk waited there\nafter the old\nalarm, expecting a\nreply from",
+                                  "anyone. She still\nuses the chair,\nbut now the desk\nhas space for a",
+                                  "second person and\na duplicate log."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "c98bd4f4-e65b-4d92-a267-6e72c16bbaa5",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "An Unanswered Seat",
+                                  "Beside the signal\nlog stands a chair\nwith a mended\ncushion. The",
+                                  "clerk waited there\nafter the old\nalarm, expecting a\nreply from",
+                                  "anyone. She still\nuses the chair,\nbut now the desk\nhas space for a",
+                                  "second person and\na duplicate log."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "f1675860-0044-4c6e-a44a-5fdaa3eaf129",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "82"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "706b319b-70f2-42d8-a083-38168cb4e7f3",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "82",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "188fa6c8-38eb-48b2-a423-c40ed5950027",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "An Unanswered Seat",
+                            "Beside the signal\nlog stands a chair\nwith a mended\ncushion. The",
+                            "clerk waited there\nafter the old\nalarm, expecting a\nreply from",
+                            "anyone. She still\nuses the chair,\nbut now the desk\nhas space for a",
+                            "second person and\na duplicate log."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "9966d706-dd93-442b-ab20-13407c4e1c69",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "An Unanswered Seat",
+                            "Beside the signal\nlog stands a chair\nwith a mended\ncushion. The",
+                            "clerk waited there\nafter the old\nalarm, expecting a\nreply from",
+                            "anyone. She still\nuses the chair,\nbut now the desk\nhas space for a",
+                            "second person and\na duplicate log."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

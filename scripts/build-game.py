@@ -49,6 +49,12 @@ def authored_snapshot(folder: Path) -> dict[str, str]:
     }
 
 
+def generation_snapshot() -> dict[str, str]:
+    paths = ["scripts/create-assets.py", "scripts/create-game.mjs", "scripts/campaign-events.mjs",
+             "world-layout.json", "content/campaign.json"]
+    return {name: digest(ROOT / name) for name in paths if (ROOT / name).is_file()}
+
+
 def inspect_rom(path: Path) -> dict:
     data = path.read_bytes()
     if len(data) < 0x150:
@@ -118,6 +124,7 @@ def main() -> int:
         parser.error("Node.js is required")
 
     before = authored_snapshot(project.parent)
+    generation_before = generation_snapshot()
     output.parent.mkdir(parents=True, exist_ok=True)
     # GBDK's subprocess commands cannot safely compile beneath a space-bearing
     # temp path. Use a unique short scratch root; authored paths remain unchanged.
@@ -131,7 +138,7 @@ def main() -> int:
     with log_path.open("w") as log:
         result = subprocess.run(command, cwd=ROOT, env=env, stdout=log, stderr=subprocess.STDOUT)
     after = authored_snapshot(project.parent)
-    if before != after:
+    if before != after or generation_before != generation_snapshot():
         print("ERROR: Authored project files changed during compilation. Outputs were not promoted.", file=sys.stderr)
         return 1
     if result.returncode != 0 or not produced.is_file():
@@ -164,6 +171,7 @@ def main() -> int:
         "node_version": subprocess.check_output([node, "--version"], text=True).strip(),
         "authored_files_unchanged": True,
         "authored_sha256": before,
+        "generation_sha256": generation_before,
         "cartridge": rom,
         "debug_artifacts_sha256": debug_files,
         "runtime_test_status": "Not established by compilation or header inspection",

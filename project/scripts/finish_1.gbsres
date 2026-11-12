@@ -1,0 +1,269 @@
+{
+  "_resourceType": "script",
+  "id": "c11cb78e-affe-42b3-a181-4a17c7571515",
+  "name": "Story finish_1",
+  "symbol": "script_story_finish_1",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "d298a4ed-0aa5-4371-a4e7-4d8a2981dfe0",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "6"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5c0ed553-d561-4b69-ab78-bcb775b31710",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "lte",
+                "valueA": {
+                  "type": "variable",
+                  "value": "1"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 9959
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "3024dcf3-84e2-4261-add5-1ecb19ac410c",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "lte",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "2"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 97
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "4e17ee38-1869-42fd-af28-554215bdacb9",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "lt",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "45"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "a4334072-84f1-4e38-ab2f-db1f2eadb1f6",
+                              "command": "EVENT_VARIABLE_MATH",
+                              "args": {
+                                "vectorX": "1",
+                                "operation": "add",
+                                "other": "val",
+                                "value": 40,
+                                "clamp": false
+                              }
+                            },
+                            {
+                              "id": "354857f0-49ec-4642-aa04-b88e54e6b26a",
+                              "command": "EVENT_VARIABLE_MATH",
+                              "args": {
+                                "vectorX": "2",
+                                "operation": "add",
+                                "other": "val",
+                                "value": 2,
+                                "clamp": false
+                              }
+                            },
+                            {
+                              "id": "1e94fdcf-2b0e-4307-a7f8-6da3554a7ecf",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "45",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "2fdd8993-a703-485e-a6c0-67c741ab355d",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Pip writes the\nfirst honest entry\non the new desk:\nNetwork condition",
+                                  "unknown. It looks\nless heroic than\nSave Winter. It is\nalso something",
+                                  "you can\ninvestigate. The\nforeman promises a\nsmall records fee,\npaid",
+                                  "from the public\nrepair fund."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "42f4a489-4fc1-4f2a-abd1-571089931474",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Mission complete.\n40 Coins and 2\nscrap."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "44f65741-8081-4f8c-a700-56f208bebdfd",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              }
+                            },
+                            {
+                              "id": "b76b42b0-927d-44ca-ad69-9f6a2a0bacef",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "43",
+                                "value": {
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              }
+                            },
+                            {
+                              "id": "4ac8ac72-5195-4127-a7a6-266a14d75e90",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The depot has\nthree rows of idle\nequipment and one\nvery busy kettle.",
+                                  "Its deliveries\nstopped after\nAurora failed, yet\nthe manifest kept",
+                                  "receiving\nsignatures.\nSomeone moved\nparts after the\nofficial",
+                                  "closure. The\nsignature is a\nneat silver S."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "1eef6b33-e255-472f-a388-29f8e6e7b58a",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Frostwick Depot:\nread the manifest\nboard."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "d448ecbb-ab34-4791-af42-b5813cdb36ad",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Your reward is\nsafe. Make room in\nscrap storage,\nthen use Story or\nreturn here."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "3d18cd44-74a0-4a2e-a414-2e3dca1c23d2",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Your reward is\nsafe. Spend some\nCoins, then use\nStory or return\nhere."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "fcd9dcd4-d576-4e7c-a872-a0aa56a3e71f",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Mission ready.\nFinish or cancel\nyour job, then use\nStory or return\nhere for the",
+                "reward."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

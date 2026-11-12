@@ -1,0 +1,1311 @@
+{
+  "_resourceType": "script",
+  "id": "2ecdacec-df38-4ee9-ac10-1f5e0f71398d",
+  "name": "Story node_roof_courier",
+  "symbol": "script_story_node_roof_courier",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "9af65add-5d48-4a61-ab50-61eb40f22339",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "8d364e52-5485-4262-a099-a5a37e500c23",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "389d0b7a-298a-4797-a698-370530c73be4",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Moxie: I can take\nthe high line.\nThree turns,\nexcellent view,",
+                      "terrible hat\ninsurance. The\ncovered route\nserves the clinic.\nIt is",
+                      "longer but gives\nme someone to talk\nto besides weather\nvanes. Pick a",
+                      "promise we can\nkeep."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "f014b985-3bc3-4421-addb-a5b9045c02f6",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 3
+                    }
+                  }
+                },
+                {
+                  "id": "c65420fc-a751-4856-adf2-0b0f2bcf859b",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Candy Rooftops:\nchoose a route at\nthe weather vane."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "4c1b1d2c-e9eb-45cb-a1eb-fdd55c464677",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 4
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "00cdc079-978c-407a-af0e-502a44d12c42",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Use the capacity\ncard to compare\nthe six-parcel\nload. How many\nfewer",
+                            "trips does the\ncovered handcart\nneed than the roof\nharness? Your",
+                            "route choice\nremains valid\neither way: the\nanswer tells Moxie\nhow to",
+                            "staff it. A roof\nroute can make two\nhonest trips\nrather than claim",
+                            "an overloaded\nharness is somehow\nmore festive."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "65c96410-9684-4bcc-a87d-accf02eaa415",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "ONE",
+                          "option2": "TWO",
+                          "option3": "THREE"
+                        }
+                      },
+                      {
+                        "id": "4ba6c4df-9883-477c-a93c-9f7afbe129f6",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "41b21906-8be4-492e-af26-91307d534aba",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              }
+                            },
+                            {
+                              "id": "3efce021-5def-4e66-aa22-7d02b0ed2d2c",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Candy Sorting:\nconfirm the route\nwith Moxie."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "93249b38-ee20-4efc-a8e7-b53a4bfb1004",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "d2511085-d168-497a-abf5-a1d529a1661a",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Divide the six\nparcels by each\ncarrying limit,\nthen compare those",
+                                        "trip counts. Do\nnot confuse the\nnumber of parcels\nwith the number of",
+                                        "journeys."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "f11814a9-02fb-4911-af4d-56b8b67b6f33",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "62"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "076c6be0-6dc7-49b8-ac87-be91d27ccea0",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "62",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "037db142-8acb-425e-abd3-7102fe0c7c7b",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A Letter Never\nSent",
+                                  "A draft\nresignation sits\nbeneath the\ncourier ledger. It\nbegins: I",
+                                  "cannot promise the\nimpossible. The\nnext line reads: I\ncan promise to",
+                                  "report what\nhappened. The rest\nof the page is\nblank. The draft\nwas",
+                                  "kept, but no\nenvelope was ever\naddressed."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "8cf6219e-ae1c-466b-aefb-8fe8fa7137fd",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A Letter Never\nSent",
+                                  "A draft\nresignation sits\nbeneath the\ncourier ledger. It\nbegins: I",
+                                  "cannot promise the\nimpossible. The\nnext line reads: I\ncan promise to",
+                                  "report what\nhappened. The rest\nof the page is\nblank. The draft\nwas",
+                                  "kept, but no\nenvelope was ever\naddressed."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "0ef6d82a-74b0-4b82-a044-328d566adc26",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 5
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "f4c575fb-03b1-4ead-adf6-48cb73f0f6af",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 5
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "e43451df-83b1-4606-a301-9628f360c4de",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Moxie: The point\nis that each\nparcel has a\nreason to be on\nthe cart.",
+                            "We are not making\nthe city look\nsupplied. We are\nsupplying it. She",
+                            "keeps the spare\nlabel in case\nsomeone tries to\nsend the clinic a",
+                            "decorative gong."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "034e7d76-ceb6-485a-a6ac-b9138de3e39e",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "46"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "b661bbd2-4ec0-43c3-a5b6-2e95866e9afa",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Moxie: Your high\nroute gets the\nwatch bell first.\nA fast alarm can",
+                                  "help the sheltered\nstreets too."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      },
+                      {
+                        "id": "e68637a1-ca73-4480-af77-4c9624eeb64e",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "46"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "c72ac5b1-ab45-4cff-adf7-5e52f5ea5d8c",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Moxie: Your\ncovered route\nprotects the\nblankets first.\nThe watch",
+                                  "agreed to wait its\nproper turn."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      },
+                      {
+                        "id": "3f84cfa4-1f55-461b-a132-ee5e8d203a33",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 6
+                          }
+                        }
+                      },
+                      {
+                        "id": "26499b89-2bba-4a2f-af03-531adbcd9dcf",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "50ccf74f-1f37-4eac-a78b-7853d1b55fb8"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "8d7264a7-919d-4558-a1ab-80ea1498cf51",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 6
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "a2c24119-0cd6-4b9a-a126-91a2bb53ea2f",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "50ccf74f-1f37-4eac-a78b-7853d1b55fb8"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "48ac85ee-a60e-4447-a107-46e61a4a8b44",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "62"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "f73ad9ba-ae7b-4209-aaea-fb16225ad4a0",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "62",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "23e3a0b9-864c-4bb1-afe6-8c59a3fe4c6d",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Letter Never\nSent",
+                                        "A draft\nresignation sits\nbeneath the\ncourier ledger. It\nbegins: I",
+                                        "cannot promise the\nimpossible. The\nnext line reads: I\ncan promise to",
+                                        "report what\nhappened. The rest\nof the page is\nblank. The draft\nwas",
+                                        "kept, but no\nenvelope was ever\naddressed."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "f1294f2b-fae7-40d7-ad8a-6d697cfc4dfb",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Letter Never\nSent",
+                                        "A draft\nresignation sits\nbeneath the\ncourier ledger. It\nbegins: I",
+                                        "cannot promise the\nimpossible. The\nnext line reads: I\ncan promise to",
+                                        "report what\nhappened. The rest\nof the page is\nblank. The draft\nwas",
+                                        "kept, but no\nenvelope was ever\naddressed."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "e2739088-c49e-40eb-a9d1-c5b3734e059f",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 6
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "b7b38eb0-c220-4608-ab9c-ab7e58b9c0f4",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "63bedd41-c7e6-45a6-a04a-db00a768cd94",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Three entries\nsurvive in the\nwatch log. At\nseven, the roof\nsent its",
+                                  "alarm. At eight,\nAurora recorded\nthat alarm. At\nnine, Aurora",
+                                  "attempted a reply,\nbut no roof\nreceipt was\nlogged. Dot points\nout",
+                                  "that the first two\nentries show a\nsuccessful outward\npath. A later",
+                                  "problem may affect\nthe return path\nwithout erasing\nthe earlier",
+                                  "delivery. The\nwatch keeper wants\nhis crew cleared\nof a false",
+                                  "accusation."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "868562d0-2f5e-4059-a673-fe4b66debcbf",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 2
+                                }
+                              }
+                            },
+                            {
+                              "id": "4792e4ec-4437-45db-a935-08a3c6f8e2b7",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Candy Rooftops:\nrecover the sealed\nparcel chest."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "fc78c088-381d-48a7-a373-3ed0d695e03f",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "62"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "123d7bd4-3ef5-4692-a3f0-9691fb2b7734",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "62",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "68e6458c-05c7-4195-aa19-e8b7caef930c",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Letter Never\nSent",
+                                        "A draft\nresignation sits\nbeneath the\ncourier ledger. It\nbegins: I",
+                                        "cannot promise the\nimpossible. The\nnext line reads: I\ncan promise to",
+                                        "report what\nhappened. The rest\nof the page is\nblank. The draft\nwas",
+                                        "kept, but no\nenvelope was ever\naddressed."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "10401f1c-ea73-40bb-a4f4-82b5142ecd0e",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Letter Never\nSent",
+                                        "A draft\nresignation sits\nbeneath the\ncourier ledger. It\nbegins: I",
+                                        "cannot promise the\nimpossible. The\nnext line reads: I\ncan promise to",
+                                        "report what\nhappened. The rest\nof the page is\nblank. The draft\nwas",
+                                        "kept, but no\nenvelope was ever\naddressed."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "50667072-b17b-4d9e-a252-b452fe0ae262",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "43"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 8
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "290a2d72-cfbf-4a9f-a7de-49eb9d13f470",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 3
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "f67fe258-09fc-4475-a782-26e65cec09a9",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Moxie: I will keep\nthe stop list and\nlog a missed call.\nPip will",
+                                        "answer when I\nreport one. Nobody\ngets to replace\nthe word missed",
+                                        "with almost. The\nroof watch\nvolunteers a dry\nshelf for the log."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "44603e4d-5210-4a7f-a96e-bed54dfcafbc",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "46"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 1
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "74495cdd-90c0-498b-a943-c57f77120789",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The watch keeps\nyour high circuit\nfirst on its\nboard. Moxie notes",
+                                              "the wind check\nbeside each roof\nstop."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  },
+                                  {
+                                    "id": "999f9fa4-a2e6-4bb4-ac71-46e40fb310f5",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "46"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 2
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "664adbb1-fd14-4839-ae79-359bce337160",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The clinic keeps\nyour covered\ncircuit first on\nits board. Moxie\nadds",
+                                              "a dry bag check\nbeside its stop."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  },
+                                  {
+                                    "id": "74cd9291-8aa0-4fff-a1c8-fba05afd3389",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 4
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "91498771-20d0-46af-a16e-25806f737997",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Velvet Rooftops:\napprove the intact\nregulator route on\nthe survey."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "1e386aa8-6e8b-4d0d-ab9c-0cfce3679e9d",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "62"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "24e11d97-448f-4347-a100-21dbbe61d47f",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "62",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "2fc5e02a-5f65-49c2-a78d-5094a1cad807",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "A Letter Never\nSent",
+                                              "A draft\nresignation sits\nbeneath the\ncourier ledger. It\nbegins: I",
+                                              "cannot promise the\nimpossible. The\nnext line reads: I\ncan promise to",
+                                              "report what\nhappened. The rest\nof the page is\nblank. The draft\nwas",
+                                              "kept, but no\nenvelope was ever\naddressed."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "2f3df2b7-0ad4-4ab0-aae7-9c9a9daf3861",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "A Letter Never\nSent",
+                                              "A draft\nresignation sits\nbeneath the\ncourier ledger. It\nbegins: I",
+                                              "cannot promise the\nimpossible. The\nnext line reads: I\ncan promise to",
+                                              "report what\nhappened. The rest\nof the page is\nblank. The draft\nwas",
+                                              "kept, but no\nenvelope was ever\naddressed."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "58ead49e-508a-447c-ab8c-31ef7b41eb24",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "43"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 18
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "dee3a8eb-5e09-4ff3-aca5-38ae341bdb9f",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "44"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 5
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "d8f09249-7851-4765-a263-f099ce32e820",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Moxie repeats the\nsignal and names\nthe depot handoff.\nShe asks Pip",
+                                              "to stop calling\nher the emergency\nmiracle. A courier\nis a normal",
+                                              "part of the plan,\nshe says. Miracles\nhave terrible\nmaintenance",
+                                              "schedules."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "ac40b776-cfe3-46a4-a96d-8174ab7cd8b6",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "46"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 1
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "5a916bfa-bebb-4d64-aadf-fbec085ad1ea",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Your high route\nmakes the roof\nwatch the first\nbackup contact.\nMoxie",
+                                                    "also sends the\nclinic a written\ncopy by the depot."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": []
+                                          }
+                                        },
+                                        {
+                                          "id": "2ab9362a-9e9e-4f02-a464-acaca76d6d18",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "46"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 2
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "a1d3f0b0-c377-43ed-a657-32b41891cfeb",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Your covered route\nmakes the clinic\nthe first handoff.\nMoxie",
+                                                    "continues to the\nroof watch with\nthe matching\nwritten copy."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": []
+                                          }
+                                        },
+                                        {
+                                          "id": "580a02b7-cbd4-4fcf-a9ea-d002ec473b3b",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "44",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 6
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "2aeb630f-2fbe-48b8-a28d-a317d1a4f5b7",
+                                          "command": "EVENT_CALL_CUSTOM_EVENT",
+                                          "args": {
+                                            "customEventId": "984c82a2-22e8-40e4-a851-31c8fa4538bc"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "73e54818-172b-459d-aeed-75426c6ca25a",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "44"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 6
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "88cd582e-946c-4276-a7d6-b00031cfa6dd",
+                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                "args": {
+                                                  "customEventId": "984c82a2-22e8-40e4-a851-31c8fa4538bc"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "dc737c64-d0bc-48bf-a5b3-ccbb9d695a21",
+                                                "command": "EVENT_IF",
+                                                "args": {
+                                                  "condition": {
+                                                    "type": "eq",
+                                                    "valueA": {
+                                                      "type": "variable",
+                                                      "value": "62"
+                                                    },
+                                                    "valueB": {
+                                                      "type": "number",
+                                                      "value": 0
+                                                    }
+                                                  }
+                                                },
+                                                "children": {
+                                                  "true": [
+                                                    {
+                                                      "id": "4c1af38f-9c97-47e5-a990-ae36190ad327",
+                                                      "command": "EVENT_SET_VALUE",
+                                                      "args": {
+                                                        "variable": "62",
+                                                        "value": {
+                                                          "type": "number",
+                                                          "value": 1
+                                                        }
+                                                      }
+                                                    },
+                                                    {
+                                                      "id": "59b3423b-1bf5-4872-a36e-60d530d3d7c5",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "A Letter Never\nSent",
+                                                          "A draft\nresignation sits\nbeneath the\ncourier ledger. It\nbegins: I",
+                                                          "cannot promise the\nimpossible. The\nnext line reads: I\ncan promise to",
+                                                          "report what\nhappened. The rest\nof the page is\nblank. The draft\nwas",
+                                                          "kept, but no\nenvelope was ever\naddressed."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "minHeight": 4,
+                                                        "maxHeight": 7,
+                                                        "position": "bottom",
+                                                        "closeWhen": "key",
+                                                        "closeButton": "a"
+                                                      }
+                                                    }
+                                                  ],
+                                                  "false": [
+                                                    {
+                                                      "id": "9ac901a1-50c5-4c1e-a9dc-9b6006568323",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "A Letter Never\nSent",
+                                                          "A draft\nresignation sits\nbeneath the\ncourier ledger. It\nbegins: I",
+                                                          "cannot promise the\nimpossible. The\nnext line reads: I\ncan promise to",
+                                                          "report what\nhappened. The rest\nof the page is\nblank. The draft\nwas",
+                                                          "kept, but no\nenvelope was ever\naddressed."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "minHeight": 4,
+                                                        "maxHeight": 7,
+                                                        "position": "bottom",
+                                                        "closeWhen": "key",
+                                                        "closeButton": "a"
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "f4eccfdb-d761-48f8-a86f-1e8228811efb",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "62"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "b261bf39-712a-4c40-aa2b-d580361c8239",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "62",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "9cbbb796-ca25-4897-aa4c-d1fc65d2af15",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "A Letter Never\nSent",
+                                              "A draft\nresignation sits\nbeneath the\ncourier ledger. It\nbegins: I",
+                                              "cannot promise the\nimpossible. The\nnext line reads: I\ncan promise to",
+                                              "report what\nhappened. The rest\nof the page is\nblank. The draft\nwas",
+                                              "kept, but no\nenvelope was ever\naddressed."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "b9d110e8-9be0-4eaf-aa94-dbd2cb8046d9",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "A Letter Never\nSent",
+                                              "A draft\nresignation sits\nbeneath the\ncourier ledger. It\nbegins: I",
+                                              "cannot promise the\nimpossible. The\nnext line reads: I\ncan promise to",
+                                              "report what\nhappened. The rest\nof the page is\nblank. The draft\nwas",
+                                              "kept, but no\nenvelope was ever\naddressed."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

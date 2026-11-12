@@ -18,6 +18,7 @@ parcel aurora toolworks_snapshot parcel_snapshot district_count visited_frostwic
 visited_candy visited_brassworks visited_velvet visited_aurora cache_frostwick
 cache_candy cache_brassworks cache_velvet cache_aurora deliveries salvage_runs festival
 save_version""".split()
+LEGACY_VARIABLES += "quest_frostwick quest_candy quest_brassworks quest_velvet quest_aurora crew_mode crew_mode_snapshot".split()
 UUID = re.compile(r"^[0-9a-f]{8}(?:-[0-9a-f]{4}){3}-[0-9a-f]{12}$", re.I)
 
 
@@ -143,6 +144,8 @@ def check(root):
                         f"{location}: missing actor reference {actor!r}")
             if command == "EVENT_ACTOR_SET_SPRITE":
                 reference(args.get("spriteSheetId"), "sprite", location)
+            if command == "EVENT_CALL_CUSTOM_EVENT":
+                reference(args.get("customEventId"), "script", location)
 
     # A scene must have a real return path, not merely an inbound link.
     graph = {identifier: set() for identifier in scene_index}

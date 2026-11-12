@@ -1,0 +1,647 @@
+{
+  "_resourceType": "script",
+  "id": "50187973-2664-4c21-ae40-00cfa73775ff",
+  "name": "Story node_sorting_addresses",
+  "symbol": "script_story_node_sorting_addresses",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "177d34b0-b6d6-4336-a64d-03ccd26d9e03",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "033e271b-4249-4a4b-a39f-d07a10aa6bd6",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "1ae1ad1a-8999-4f9d-a936-f9a13b1ee1cb",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Address board: The\nclinic takes\nblankets, never\nbells. The roof",
+                      "watch takes bells,\nnever food. Cocoa\nCorner takes the\nsoup tin. Red",
+                      "shelf holds bells.\nBlue shelf holds\nblankets. The soup\nis already at",
+                      "the dispatch desk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "db5458f7-0bf5-4846-a17e-5c5eb408643d",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "a26ea1c9-a694-4e02-a5ca-711c73c4349f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Candy Sorting: ask\nMoxie about the\nhandling\nrequirements."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "588d2c07-2882-4d10-ad6d-d03f8ab06cf3",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "60"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "be17fc55-b2b9-473f-a91a-f9e93a3cd0c0",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "60",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "d8d15416-89cb-4e4a-a0cf-9ff0b2ebcc7f",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Address That\nMoved",
+                            "One address card\nreads: Mrs. Elm,\nformerly third\nfloor, now ground",
+                            "floor by the ramp.\nHer mail followed\nher before the\nofficial map",
+                            "did. The couriers\nkeep the\ncorrection pinned\nup until the city",
+                            "prints a new map.\nAccuracy sometimes\nstarts on a scrap."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "f269d77a-a0e3-4b1c-a74a-4646ead73ae7",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Address That\nMoved",
+                            "One address card\nreads: Mrs. Elm,\nformerly third\nfloor, now ground",
+                            "floor by the ramp.\nHer mail followed\nher before the\nofficial map",
+                            "did. The couriers\nkeep the\ncorrection pinned\nup until the city",
+                            "prints a new map.\nAccuracy sometimes\nstarts on a scrap."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "37246f82-b9d7-45ee-a91c-dc0334b832e9",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 7
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "548292ec-0c90-4ddd-a1e1-59bb6fa1ef65",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "32af56e3-de16-46a9-a120-5e3da7690bca",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The sled register\nlists the city as\nowner. Its repair\ncharge was",
+                            "paid from a public\nfund. Storage is\nthe only unpaid\nitem. A penciled",
+                            "note says\nequipment cannot\nbe pledged by a\ndriver. Moxie\nlooks",
+                            "deeply relieved by\nthis detail."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "777a6a37-7bb2-48d8-a975-2a87b6a9fb99",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "6f0a770a-fcae-4984-a38f-e0b72c47943c",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Frostwick Depot:\ninspect the sled\nrelease checklist\nat the gate."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "c41cbad6-7213-4ae6-a7e9-0d1898e1d1d2",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "60"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "a4888d95-0241-4b7f-a9a4-cb5dae8d7a00",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "60",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "bb4aa86c-90c7-4943-a736-78561163dd26",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Address That\nMoved",
+                                  "One address card\nreads: Mrs. Elm,\nformerly third\nfloor, now ground",
+                                  "floor by the ramp.\nHer mail followed\nher before the\nofficial map",
+                                  "did. The couriers\nkeep the\ncorrection pinned\nup until the city",
+                                  "prints a new map.\nAccuracy sometimes\nstarts on a scrap."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "acf591d9-d600-47c4-a018-72da4737d4a5",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Address That\nMoved",
+                                  "One address card\nreads: Mrs. Elm,\nformerly third\nfloor, now ground",
+                                  "floor by the ramp.\nHer mail followed\nher before the\nofficial map",
+                                  "did. The couriers\nkeep the\ncorrection pinned\nup until the city",
+                                  "prints a new map.\nAccuracy sometimes\nstarts on a scrap."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "ff1e96de-dd32-4f5e-aea1-b9a677b97170",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 22
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "91f19b9c-6689-4c5b-ac54-68615e0de84e",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 4
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "4936ef40-72eb-4467-a1e3-72fc8f82e087",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Which branch\nshould receive the\nbackup copy in\nthis practice\npacket?",
+                                  "Do not resend\nevery confirmed\ndelivery just to\nlook busy.\nIdentify",
+                                  "the unmatched sent\nentry and use the\nassigned backup\nduty. Moxie",
+                                  "puts her finger\nbeside the three\nsignatures and\nwaits for a",
+                                  "destination, not\nan instruction to\nride around until\nsomebody feels",
+                                  "reassured."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "873bc134-41e2-4fda-a93d-5eaab53abb2e",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "VELVET",
+                                "option2": "CANDY",
+                                "option3": "ALL"
+                              }
+                            },
+                            {
+                              "id": "de8367fd-e86b-456a-ad90-1de17500ce90",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "eb93957b-f7e2-4f5c-ae51-ac0fa8c3c909",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 5
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "e5a40c1c-2a32-44f3-a992-bc7b73140359",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Aurora Signal:\nconfirm what a\nmissing reply\nmeans."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "8d74b156-3e27-403b-a8af-182918474d19",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "f243e44e-b331-4417-ac44-6a7073097d62",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Compare branch\nnames against\nreceived marks.\nOnly one listed\nbranch",
+                                              "has an attempted\nsend without the\nconfirmation\nrequired by the",
+                                              "launch rule."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "cad49f20-978c-46a2-a90c-f292ea8e5f54",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "60"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "69824f8b-fbb6-4ba8-a2f1-5f0a8513067e",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "60",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "a8099d65-983d-4031-a22c-21166b9290a2",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Address That\nMoved",
+                                        "One address card\nreads: Mrs. Elm,\nformerly third\nfloor, now ground",
+                                        "floor by the ramp.\nHer mail followed\nher before the\nofficial map",
+                                        "did. The couriers\nkeep the\ncorrection pinned\nup until the city",
+                                        "prints a new map.\nAccuracy sometimes\nstarts on a scrap."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "b0803403-5c38-4a08-a190-57abd480da74",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Address That\nMoved",
+                                        "One address card\nreads: Mrs. Elm,\nformerly third\nfloor, now ground",
+                                        "floor by the ramp.\nHer mail followed\nher before the\nofficial map",
+                                        "did. The couriers\nkeep the\ncorrection pinned\nup until the city",
+                                        "prints a new map.\nAccuracy sometimes\nstarts on a scrap."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "4dd0892e-fc08-4e6b-a640-a7df97aeb388",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "60"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "fce3182a-c362-4d8c-a525-1ef223f15e74",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "60",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "3de40649-6637-4275-a2f2-4548a4404883",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Address That\nMoved",
+                                  "One address card\nreads: Mrs. Elm,\nformerly third\nfloor, now ground",
+                                  "floor by the ramp.\nHer mail followed\nher before the\nofficial map",
+                                  "did. The couriers\nkeep the\ncorrection pinned\nup until the city",
+                                  "prints a new map.\nAccuracy sometimes\nstarts on a scrap."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "80303642-4b0c-4f35-a6f6-8699f8f2ee99",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Address That\nMoved",
+                                  "One address card\nreads: Mrs. Elm,\nformerly third\nfloor, now ground",
+                                  "floor by the ramp.\nHer mail followed\nher before the\nofficial map",
+                                  "did. The couriers\nkeep the\ncorrection pinned\nup until the city",
+                                  "prints a new map.\nAccuracy sometimes\nstarts on a scrap."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

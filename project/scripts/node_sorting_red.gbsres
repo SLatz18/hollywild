@@ -1,0 +1,319 @@
+{
+  "_resourceType": "script",
+  "id": "56c58325-227d-4624-a9f9-340c7f70598c",
+  "name": "Story node_sorting_red",
+  "symbol": "script_story_node_sorting_red",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "b607822f-a8a4-4140-a31a-7703d52d542f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "da7b8c94-a910-460a-ad5f-f5fd64cc09f7",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "a7816505-1c5d-4e4b-a45f-06388aa6e917",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Choose the\ndestination for\nthe red shelf\nparcel. Use the\ncontents",
+                      "and recipient\nrules on the\naddress board,\nrather than the\ncolor",
+                      "alone."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "16e2855a-babb-4820-ad2a-0d96bb55e540",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 3,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "CLINIC",
+                    "option2": "WATCH",
+                    "option3": "COCOA"
+                  }
+                },
+                {
+                  "id": "9a2665fe-04e4-4ae1-a64a-9bd58f7b86d7",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "1f0c3907-0153-4573-aa5b-6b2ae2d12a79",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 4
+                          }
+                        }
+                      },
+                      {
+                        "id": "8db1a29e-62ff-4107-a3dc-a4e3a3c44da1",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Candy Sorting:\nchoose a packing\naction that\npreserves both\ndestinations."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "cfc2c65b-b21d-4aa0-ab88-678ad1227d50",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "gt",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "b79cbcf1-e715-47bc-ae15-42401f936835",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Look up what the\nred shelf holds,\nthen match that\nitem with the",
+                                  "recipient that\nrequested it."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "f0f9425d-80f6-4942-a40b-15a5490de5d2",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "58"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "9e7f60b6-aee1-4a38-a7ed-14a7b10fcfd5",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "58",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "1eeab17b-b815-4287-ac22-27e529276e55",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Bells With a\nPurpose",
+                            "The red shelf\ncontains watch\nbells, door bells,\nand one bell\nlabeled",
+                            "NO PURPOSE YET.\nMoxie refuses to\ndiscard it. A\nuseful thing can\nwait",
+                            "for a useful job,\nshe says. It need\nnot become a\nsouvenir simply",
+                            "because the\ninvoice is tidy."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "9f07b373-6340-477c-a59d-89cd0525c7cb",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Bells With a\nPurpose",
+                            "The red shelf\ncontains watch\nbells, door bells,\nand one bell\nlabeled",
+                            "NO PURPOSE YET.\nMoxie refuses to\ndiscard it. A\nuseful thing can\nwait",
+                            "for a useful job,\nshe says. It need\nnot become a\nsouvenir simply",
+                            "because the\ninvoice is tidy."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "289974b8-47bb-445f-afe1-9e1ec6c69c7c",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "58"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "e131bcb8-a421-4b3d-abae-102462431178",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "58",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "f00d714c-e3c8-4720-a04a-51577da5638c",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Bells With a\nPurpose",
+                      "The red shelf\ncontains watch\nbells, door bells,\nand one bell\nlabeled",
+                      "NO PURPOSE YET.\nMoxie refuses to\ndiscard it. A\nuseful thing can\nwait",
+                      "for a useful job,\nshe says. It need\nnot become a\nsouvenir simply",
+                      "because the\ninvoice is tidy."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "1f8578df-b434-41ef-aa49-a2be48e4f030",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Bells With a\nPurpose",
+                      "The red shelf\ncontains watch\nbells, door bells,\nand one bell\nlabeled",
+                      "NO PURPOSE YET.\nMoxie refuses to\ndiscard it. A\nuseful thing can\nwait",
+                      "for a useful job,\nshe says. It need\nnot become a\nsouvenir simply",
+                      "because the\ninvoice is tidy."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "_resourceType": "script",
+  "id": "e648e66c-7a3e-4e89-a062-adc3406f2f38",
+  "name": "Story clues_mission_17",
+  "symbol": "script_story_clues_mission_17",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "6f618232-7594-4c5b-a2d8-850e0f6925a8",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Clues: Where the\nReply Went"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "0f2fa9bf-59a7-4e4c-a708-717d0452a98e",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "9ecf4449-9d1c-4e4f-a2d3-2f49c2c9a5f1",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "No clues yet for\nthis mission.\nFollow the next\nlead in START >\nStory."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "a7308026-25a2-4983-a327-8bad1d9e4758",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "faf6132f-aee5-42b5-a13a-f1c163733e64",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Log: Roof alarm\nreceived. Station\nreply sent. Shared\nrelay froze",
+                "before the reply\nleft. No second\npath existed. The\noperator stayed",
+                "to hand carry the\nreply, but the\ngate crew had\nalready withdrawn.",
+                "Nobody could\nconfirm whether\nthe message\narrived."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "14f4e64d-2266-4459-af0d-8f8e7195dd09",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "e529a56b-c9e1-407c-a730-00036d7dcbe5",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Dot marks a second\npaper fault: the\ndepot gate is\nblocked while the",
+                "relay remains\nfrozen. Courier\nroute A crosses\nthat gate. Foot\nroute",
+                "B goes through the\narchive service\nlane and touches\nneither gate nor",
+                "relay. Wire route\nC uses the frozen\nrelay. These are\ntest marks",
+                "only; no public\ndoorway is locked.\nMoxie asks for a\nbackup that",
+                "survives both\nfaults, not just\nthe one that made\nyesterday famous."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "735996a5-e148-4084-a100-92f394214432",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "8cd1523d-3d07-45f8-a5ba-b7277db172aa",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Dot: The wire path\nruns roof, relay,\nstation. A courier\npath can run",
+                "station, depot,\nroof. They share\nno relay. A second\nwire through the",
+                "same frozen box\nwould have the\nsame fault. A new\ncolor is not a new",
+                "path."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "23c6d2b1-61b7-4f03-a6e8-6a6c06dfbc76",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "7fc21a87-d21d-4a15-af62-a4a4f9066083",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "For the EARLIER\nrelay-only\nfailure, before\nthe gate fault was\nadded,",
+                "which backup\navoided the failed\nrelay? The next\ncheck will",
+                "separately ask you\nto solve the\ntwo-fault drill.\nKeep the two cases",
+                "distinct in the\nlog."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "03a63186-a940-4877-a2cd-2f6c09bbedb3",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 4
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "00439dab-25fb-4ed1-a958-6b16603cc1cd",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "For this two-fault\ndrill, which route\ncan still carry\nthe reply? Use",
+                "the map topology\nrather than\nassuming any\ncourier path must\nbe",
+                "independent. Moxie\nis willing to walk\nthe longer foot\nroute, but",
+                "wants the planner\nto name why it is\nneeded. Dot keeps\nboth blocked",
+                "components marked\nso nobody forgets\nthe second\nconstraint while",
+                "solving the first."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "38434902-a610-44f6-ae09-0b7dc883da85",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d0390629-bf1e-406e-ad7e-dd7a0969d977",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Clerk: I will log\nthe sent message\nand ask for a\nreceived mark. If",
+                "no mark returns,\nMoxie carries a\ncopy. We will not\ncall silence",
+                "agreement. Pip\nwrites that\nsentence at the\ntop, then asks\npermission",
+                "to keep it there."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

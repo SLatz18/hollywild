@@ -1,0 +1,304 @@
+{
+  "_resourceType": "script",
+  "id": "2f001b6b-9f44-4c3e-a459-b5ae22c2461c",
+  "name": "Story clues_mission_2",
+  "symbol": "script_story_clues_mission_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "7afeab4f-3bba-458d-ae18-dc28fa77929f",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Clues: A Receipt\nfor Winter"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "aa2d78b7-e74d-416f-a027-6cd3f902cf37",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "e7303024-e398-40e4-a5ba-98e9b5173675",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "No clues yet for\nthis mission.\nFollow the next\nlead in START >\nStory."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "acbba158-0f33-43df-a931-4d283782af59",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "ab93ffe0-51c0-452d-af05-460c3de23877",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Manifest: The red\ncart carried\nbells. The blue\ncart carried",
+                "blankets. The\nyellow cart\ncarried a pressure\nvalve to\nBrassworks.",
+                "Silver S signed\nfor the yellow\ncart, then crossed\nout the",
+                "destination. The\ncarbon copy\nsurvived."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "dbb1909b-c649-4cff-ae61-188ea657f974",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "ef525e85-c870-4a29-af18-672901ea7a31",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The valve account\nshows twenty Coins\nfor inspection,\nalready paid by",
+                "Slush, and six for\nstorage, still\ndisputed. The city\nclaim slip",
+                "keeps ownership\npublic. The\nforeman remembers\nSlush paying\npromptly",
+                "when the pipe was\nmoved; he also\nremembers nobody\nagreeing to",
+                "private ownership.\nPip suggests\nthanking him for\nthe actual payment",
+                "without accepting\nthe extra claim.\nThe foreman hands\nyou a clean",
+                "tally card."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "d3641b76-8329-4655-a222-922c6e40c8e7",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "26378495-c8a6-4991-ae7e-b40d07d7c2d5",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Inside the toolbox\nis the carbon\ncopy, folded\naround a biscuit.\nThe",
+                "valve was not\nsold. It was sent\nfor inspection,\nwith the city",
+                "retaining\nownership. Pip\nputs the biscuit\nback. Evidence\nshould have",
+                "standards."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "1bb43b94-3b87-4965-a6c4-d1e1c35fa84c",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "273d7aed-f77b-4cd2-a511-1f8855c90876",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The gate register\nneeds the color of\nthe cart that\ncarried the",
+                "valve. Which exit\nslip should the\nclerk retrieve?"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "54cef2e4-e8d8-463a-a581-3359c3d4a571",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 4
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d0764002-8e12-415a-a571-cd66f397d11c",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The tally must\nseparate a\nverified past\npayment from a\ndisputed",
+                "charge. Which\namount can you\ntruthfully record\nas already paid by",
+                "Slush? This is not\npermission to take\nmoney from your\nwallet. It is",
+                "the figure the\nforeman will\nacknowledge, and\nSlush will see\nwhether",
+                "you counted his\ncontribution\nhonestly."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "30fe192e-b7a6-4f16-a4fd-cf9a2d304cf5",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "0888afd4-2539-43d6-afc8-1408cd7c6e52",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Foreman: Sterling\nSlush paid the\ninspection bill.\nHe may own the",
+                "bill, but that is\nnot the same as\nowning the valve.\nTell the archive",
+                "clerk we still\nknow the\ndifference. Tell\nPip the kettle\ndoes not."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

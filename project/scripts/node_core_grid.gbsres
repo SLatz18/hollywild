@@ -1,0 +1,1240 @@
+{
+  "_resourceType": "script",
+  "id": "ae8b2606-0b14-4676-aa09-ec89d4d25bda",
+  "name": "Story node_core_grid",
+  "symbol": "script_story_node_core_grid",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "b875259b-d07b-4028-a0b5-31ad69ef4e16",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 19
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b783871d-b1f8-4f55-a5e9-e49e55e3cbd0",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "5665d7a8-6082-4eea-a0ac-11a69608de03",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Choose the normal\nservice setting\nfrom the signed\nengineering",
+                      "record."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "f182a83f-f285-46bb-a4b1-cea3739804e4",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 3,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "FOUR",
+                    "option2": "SIX",
+                    "option3": "EIGHT"
+                  }
+                },
+                {
+                  "id": "6179ae4d-a51f-45da-a911-2d7fdfd3c4c3",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "e6bb9c2f-e9cf-45c7-ad56-87ab27808ce2",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 4
+                          }
+                        }
+                      },
+                      {
+                        "id": "decf744c-863e-42a7-a66a-9508be049d33",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Aurora Core:\napprove a launch\nload that fits the\nmeasured service\nbudget."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "b8969ac4-f907-4f08-a402-0934cd3833ee",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "gt",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "fb4a8229-b68b-4c08-a023-7254ac7d25ef",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The plate\ndistinguishes\ndaily service, a\nbrief test\nceiling, and a",
+                                  "damage warning.\nOnly one category\napplies to normal\noperation."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "59b644d4-b23f-4f2b-a34e-5992dff56b6f",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "88"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "fbc25221-3bca-46ad-a185-64a6b1b19c4a",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "88",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "65d47b22-807f-42b2-a144-feada5ad085a",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Margin",
+                            "The grid plan\nleaves spare\ncapacity marked in\npencil. Slush\nfirst",
+                            "called it unused\nvalue. Rivet\ncalled it room for\na fault. The\npencil",
+                            "note now says\nboth, with enough\nspace underneath\nto record what",
+                            "happens. Neither\nhas erased the\nother person's\nhandwriting."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "8b651706-f38f-4334-a8e3-fd666f04ed0a",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Margin",
+                            "The grid plan\nleaves spare\ncapacity marked in\npencil. Slush\nfirst",
+                            "called it unused\nvalue. Rivet\ncalled it room for\na fault. The\npencil",
+                            "note now says\nboth, with enough\nspace underneath\nto record what",
+                            "happens. Neither\nhas erased the\nother person's\nhandwriting."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "a68911a3-86b3-4d3b-a733-538dbcd7ba29",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 20
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "979f5c40-3d39-4cf4-a47c-13b05785e529",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "d6676b76-4da9-405b-a12c-8c6a3f83d390",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "What response\nfollows the staged\nbranch fault plan?"
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "3c5927cd-b3a9-42ee-a4b6-1424f9540639",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "ISOLATE",
+                          "option2": "ALL OFF",
+                          "option3": "MORE"
+                        }
+                      },
+                      {
+                        "id": "ac94db69-c316-4963-a5c0-47bf84f25e7a",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "eff2ab96-f0c4-4c43-a01b-c3e04f32b37a",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              }
+                            },
+                            {
+                              "id": "7ba03ad7-8ccc-4488-a052-e085585ad2e0",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Brassworks\nControl: record\nhow the supply\npolicy covers the\nrepair."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "a1472ca9-85ac-4e50-a35b-5bdd9d48faca",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "767aa2fd-cecc-42a7-ad3f-0186741f01aa",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Only one branch\nhas a fault.\nConsider whether\nthe independent\nbypass",
+                                        "can keep the clear\nbranches operating\nwhile that fault\nis contained."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "ead9f714-73d8-4363-a7b7-55d13d8695ca",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "88"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "ac204818-8ce3-46df-a876-745351b68910",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "88",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "0ef908b1-4194-4b4d-a2ee-d2f4e10d5f3c",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Margin",
+                                  "The grid plan\nleaves spare\ncapacity marked in\npencil. Slush\nfirst",
+                                  "called it unused\nvalue. Rivet\ncalled it room for\na fault. The\npencil",
+                                  "note now says\nboth, with enough\nspace underneath\nto record what",
+                                  "happens. Neither\nhas erased the\nother person's\nhandwriting."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "ca61c189-096e-4850-a30d-a02a2095107d",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Margin",
+                                  "The grid plan\nleaves spare\ncapacity marked in\npencil. Slush\nfirst",
+                                  "called it unused\nvalue. Rivet\ncalled it room for\na fault. The\npencil",
+                                  "note now says\nboth, with enough\nspace underneath\nto record what",
+                                  "happens. Neither\nhas erased the\nother person's\nhandwriting."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "dd4c2aca-97a9-4bf0-a6a3-fac273f9391c",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 23
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "1cc19329-5f49-40c4-a6a1-7e492b1490a4",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "be00eba7-761f-4e43-a11b-316ce2e8d433",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Dot reads the\nprotections aloud.\nService stays\nwithin FOUR.\nFaults",
+                                  "are logged. Public\npaths stay open.\nHomes are not\npledged against",
+                                  "the repair debt.\nSlush asks whether\nthese apply to all\nthree",
+                                  "proposals. They\ndo. He nods and\nputs away a fourth\nproposal."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "6202ca83-902b-4e20-a14c-9230f28b118c",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              }
+                            },
+                            {
+                              "id": "50ff1ea1-c064-4201-aa9e-17e219c23f78",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Core:\nselect the first\nservice emphasis\nat the turbine."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "29e9eb02-03a2-4a1c-a083-f44b17c82d0b",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 4
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "c087756c-4853-4aec-ac54-7a30540e689d",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Which improvement\nbudget can be\npromised without\ntaking tokens from",
+                                        "basic service? The\nsame budget\napplies to every\nemphasis. It\ndefines",
+                                        "the honest amount\nany of the three\nproposals may\nspend first. Pip",
+                                        "will read the\nfigure before the\nribbon, because an\ninspiring",
+                                        "proposal is still\na promise somebody\nmust be able to\nkeep."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "cff717ac-ab08-40b9-a129-a6409308af9d",
+                                    "command": "EVENT_MENU",
+                                    "args": {
+                                      "variable": "14",
+                                      "items": 3,
+                                      "layout": "menu",
+                                      "cancelOnLastOption": false,
+                                      "cancelOnB": true,
+                                      "option1": "THREE",
+                                      "option2": "FOUR",
+                                      "option3": "NINE"
+                                    }
+                                  },
+                                  {
+                                    "id": "ba7f9477-f910-406d-ae81-226628cc734f",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 1
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "6a67e338-ab11-4807-ad05-23bb08d3bc71",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "44",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 5
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "e2ece690-559c-4909-a2fb-f6af734dd2c1",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Aurora Core:\nconfirm the plan\nwith Slush at the\nbypass."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "9fa3b0e1-34f6-41c3-a3f2-73a6cd8155ce",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "gt",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "14"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "ab22a4ac-0cc4-4384-ac4c-5b44ecd21583",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Separate the six\ntokens already\ncommitted to the\nbaseline from the",
+                                                    "additional\nimprovement fund.\nOnly the\nuncommitted amount\ncan support",
+                                                    "the first\nemphasis."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": []
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "9c305b64-74e4-4d6e-a40f-2b4ad6dfba7d",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "88"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "7df1e39c-4b07-457d-a41d-966e463f2fc2",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "88",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "3c6d979e-b8c8-4a47-ae59-abfc68616e90",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Margin",
+                                              "The grid plan\nleaves spare\ncapacity marked in\npencil. Slush\nfirst",
+                                              "called it unused\nvalue. Rivet\ncalled it room for\na fault. The\npencil",
+                                              "note now says\nboth, with enough\nspace underneath\nto record what",
+                                              "happens. Neither\nhas erased the\nother person's\nhandwriting."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "4627876a-1037-4555-ab55-ec9f7cc2a757",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Margin",
+                                              "The grid plan\nleaves spare\ncapacity marked in\npencil. Slush\nfirst",
+                                              "called it unused\nvalue. Rivet\ncalled it room for\na fault. The\npencil",
+                                              "note now says\nboth, with enough\nspace underneath\nto record what",
+                                              "happens. Neither\nhas erased the\nother person's\nhandwriting."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "8ae22fd8-96e8-4607-a8ad-d569453facd6",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "43"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 24
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "d0d2dfad-a5b6-4455-acda-24b3c5baa7a0",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "1425a26c-75ca-4b09-a9e5-0f7d7f90599f",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Verify the correct\nnormal service\nsetting before the\nlaunch. A",
+                                        "celebration does\nnot change the\nengineering\nrecord."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "37bb1354-66a8-4149-a5fe-65961c3c1d6b",
+                                    "command": "EVENT_MENU",
+                                    "args": {
+                                      "variable": "14",
+                                      "items": 3,
+                                      "layout": "menu",
+                                      "cancelOnLastOption": false,
+                                      "cancelOnB": true,
+                                      "option1": "FOUR",
+                                      "option2": "SIX",
+                                      "option3": "EIGHT"
+                                    }
+                                  },
+                                  {
+                                    "id": "517713da-01fb-4a04-a1e8-182192132b18",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 1
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "053dfd6a-1a78-4dea-ad69-1fcaa4c04482",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "44",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 3
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "c9dd3f5a-68f1-4431-a521-0573b78a83c9",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Aurora Core: ask\nRivet to start the\nchecked turbine."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "aa1ea13a-cd96-43e6-adeb-02704041d4ca",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "gt",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "14"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "eae2bb23-52f9-4719-aeae-659dbc5e4473",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "The final check\nmust use the\nservice limit, not\nthe brief test",
+                                                    "ceiling or damage\nwarning. Reopen\nthe current\nmission clues if\nyou",
+                                                    "need the plate\ndistinction."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": []
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "909d25b1-5918-424a-a871-01a364a1df59",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "44"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 4
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "76ded0d5-4e56-455e-ac20-dbd3258b2065",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Which combined\nresponse applies\nthe demonstrated\nsafeguards? HOLD",
+                                              "means shut every\nbranch and wait\nfor a perfect\nsystem. PUSH means",
+                                              "increase pressure\nand assume the\nmessage arrived.\nSERVE means keep",
+                                              "clear branches at\nsafe service,\nretain lodge\nisolation, and\nsend the",
+                                              "backup copy by the\navailable foot\nroute. Choose the\nplan you can",
+                                              "explain to the\nwaiting residents."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "2aa0aec3-ec76-435e-a524-fb00470129cf",
+                                          "command": "EVENT_MENU",
+                                          "args": {
+                                            "variable": "14",
+                                            "items": 3,
+                                            "layout": "menu",
+                                            "cancelOnLastOption": false,
+                                            "cancelOnB": true,
+                                            "option1": "HOLD",
+                                            "option2": "PUSH",
+                                            "option3": "SERVE"
+                                          }
+                                        },
+                                        {
+                                          "id": "7bc4143c-86eb-46b6-a510-8986b651bd68",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "14"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 3
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "35800d06-ea1f-47c9-a815-286d0ce0ef88",
+                                                "command": "EVENT_SET_VALUE",
+                                                "args": {
+                                                  "variable": "44",
+                                                  "value": {
+                                                    "type": "number",
+                                                    "value": 5
+                                                  }
+                                                }
+                                              },
+                                              {
+                                                "id": "ac5b9236-4576-45d5-a98a-e8e8dcf9f9b6",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Aurora Core: join\nthe festival at\nthe public desk."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "a0454199-7b63-4a9d-add4-c81d5b4ef708",
+                                                "command": "EVENT_IF",
+                                                "args": {
+                                                  "condition": {
+                                                    "type": "gt",
+                                                    "valueA": {
+                                                      "type": "variable",
+                                                      "value": "14"
+                                                    },
+                                                    "valueB": {
+                                                      "type": "number",
+                                                      "value": 0
+                                                    }
+                                                  }
+                                                },
+                                                "children": {
+                                                  "true": [
+                                                    {
+                                                      "id": "e4911171-f123-4465-a230-bedf4842bbcd",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "Use both\nsafeguards\ntogether. One\ncontains the\nbranch problem;",
+                                                          "the",
+                                                          "other confirms\ncommunication\nwithout relying on\nthe failed reply",
+                                                          "path. Neither\nrequires denying\nthe fault."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "minHeight": 4,
+                                                        "maxHeight": 7,
+                                                        "position": "bottom",
+                                                        "closeWhen": "key",
+                                                        "closeButton": "a"
+                                                      }
+                                                    }
+                                                  ],
+                                                  "false": []
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "639979df-467b-4800-afc2-a2a49d59a9ab",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "88"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 0
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "73e07ff1-8c73-4a18-a497-35a49a00448e",
+                                                "command": "EVENT_SET_VALUE",
+                                                "args": {
+                                                  "variable": "88",
+                                                  "value": {
+                                                    "type": "number",
+                                                    "value": 1
+                                                  }
+                                                }
+                                              },
+                                              {
+                                                "id": "40c64723-eb86-4572-aa17-3ff91edad22f",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "The Margin",
+                                                    "The grid plan\nleaves spare\ncapacity marked in\npencil. Slush\nfirst",
+                                                    "called it unused\nvalue. Rivet\ncalled it room for\na fault. The\npencil",
+                                                    "note now says\nboth, with enough\nspace underneath\nto record what",
+                                                    "happens. Neither\nhas erased the\nother person's\nhandwriting."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "8ea2dbee-0502-4030-a595-2614d99b5e0d",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "The Margin",
+                                                    "The grid plan\nleaves spare\ncapacity marked in\npencil. Slush\nfirst",
+                                                    "called it unused\nvalue. Rivet\ncalled it room for\na fault. The\npencil",
+                                                    "note now says\nboth, with enough\nspace underneath\nto record what",
+                                                    "happens. Neither\nhas erased the\nother person's\nhandwriting."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "411b2c40-fa47-4fff-ade2-a42e862893a2",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "88"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "aa5df0f7-dee4-4605-ae9a-6034ee10d4b5",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "88",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "52569a7f-174c-4c5d-ac3f-01da79ee9e61",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Margin",
+                                        "The grid plan\nleaves spare\ncapacity marked in\npencil. Slush\nfirst",
+                                        "called it unused\nvalue. Rivet\ncalled it room for\na fault. The\npencil",
+                                        "note now says\nboth, with enough\nspace underneath\nto record what",
+                                        "happens. Neither\nhas erased the\nother person's\nhandwriting."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "fb39f4a2-d359-4f91-a98b-3ffc10598a87",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Margin",
+                                        "The grid plan\nleaves spare\ncapacity marked in\npencil. Slush\nfirst",
+                                        "called it unused\nvalue. Rivet\ncalled it room for\na fault. The\npencil",
+                                        "note now says\nboth, with enough\nspace underneath\nto record what",
+                                        "happens. Neither\nhas erased the\nother person's\nhandwriting."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

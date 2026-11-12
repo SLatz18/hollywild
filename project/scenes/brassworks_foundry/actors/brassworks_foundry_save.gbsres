@@ -1,0 +1,309 @@
+{
+  "_resourceType": "actor",
+  "id": "759675f1-cd5b-4a8f-a733-a53331ef694d",
+  "_index": 4,
+  "symbol": "actor_brassworks_foundry_brassworks_foundry_save",
+  "prefabId": "",
+  "name": "Story checkpoint",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 27,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "b36bffac-91c0-43c8-af9f-f9f8b62cccd9",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "d1cedffa-5f6e-441d-a8d6-7cc61d502b49",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "CITY CHECKPOINT\nSave only between\njobs. One save slot."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "8950d418-eae5-4aba-a61b-7de163e2a32d",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "Save",
+        "option2": "Load",
+        "option3": "Back"
+      }
+    },
+    {
+      "id": "31dd74f0-4494-4af4-a1e2-8d0c62c588a5",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "7ecb2bd1-279e-45cd-a628-0954d49d57eb",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "6"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "3b64bb0f-281a-47dc-af5c-74a4543ae92e",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "35",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "fd72c35a-82c1-4662-a16c-721522669e68",
+                  "command": "EVENT_SAVE_DATA",
+                  "args": {
+                    "saveSlot": 0
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "c67fc272-fa31-4f9e-af50-8bcfa80ba491",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Progress saved.\nKeep exploring!"
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "load": [
+                      {
+                        "id": "a390da71-8a5d-4784-aaf3-107060dc89b9",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "6",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "10028ecf-e13e-41a6-afc8-16cc64bfe576",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "11",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "1d8eba80-e3f3-481f-a743-113848122222",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "8",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "cbf71084-87a0-498b-a39b-70ddb3e089ad",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "9",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "02829cb1-d9e8-4593-aabc-175c203333b1",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Welcome home.\nProgress loaded."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "7856fd25-5f8c-44e4-ad16-1667a0c97010",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Finish or cancel\nyour current job\nfirst. START menu."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "955011ab-0802-4785-abdc-331a34982571",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "92844816-e62c-4d55-a556-2c658eaa7822",
+            "command": "EVENT_IF_SAVED_DATA",
+            "args": {
+              "saveSlot": 0
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "6720a780-892d-4cfe-a50c-67efe64ac1b0",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 2,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "Load",
+                    "option2": "Back"
+                  }
+                },
+                {
+                  "id": "e8add9dc-84b0-4e15-a9b6-b518f0e3d6c8",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "c5c93361-0d82-4824-ae48-214f500e2d4e",
+                        "command": "EVENT_LOAD_DATA",
+                        "args": {
+                          "saveSlot": 0
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "0bd8fce7-49c5-434f-a37d-344096a28156",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "No saved journey\nyet. Save here\nbetween jobs."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

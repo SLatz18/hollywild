@@ -1,0 +1,480 @@
+{
+  "_resourceType": "script",
+  "id": "e69284a8-4484-40c0-a126-936c0aa1c4b8",
+  "name": "Story node_depot_toolbox",
+  "symbol": "script_story_node_depot_toolbox",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "dff9b227-58ea-4d37-a533-ece64b089e2a",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "fa246cae-6396-435a-a6b8-93bc05a5b153",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "d17d56fa-1687-439e-a7fb-ea857cb95869",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Inside the toolbox\nis the carbon\ncopy, folded\naround a biscuit.\nThe",
+                      "valve was not\nsold. It was sent\nfor inspection,\nwith the city",
+                      "retaining\nownership. Pip\nputs the biscuit\nback. Evidence\nshould have",
+                      "standards."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "d8851232-d6e8-43fa-a9e0-1ed1fa71d2f0",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 3
+                    }
+                  }
+                },
+                {
+                  "id": "20637e64-a329-4038-a451-9886dfa684b1",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Frostwick Depot:\nidentify the valve\ncart at the gate."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "68765ee5-80fd-462c-a805-fe8c7f127c7f",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "55"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "987aca92-546f-481c-a255-e51f2ea164e5",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "55",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "4dc309f9-236e-424c-a49d-780d7d374dc5",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Borrowed\nHammer",
+                            "Every tool has a\nnumbered outline\nexcept a hammer\nwhose place says",
+                            "WITH ELSA, EAST\nROOF. A return\ndate is crossed\nout and replaced\nwith",
+                            "ASK IF ROOF IS\nSAFE. The depot\ncan tolerate a\nmissing hammer\nbetter",
+                            "than a missing\nneighbor."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "773e6360-4714-47c8-a550-aaf23e8ed7a4",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Borrowed\nHammer",
+                            "Every tool has a\nnumbered outline\nexcept a hammer\nwhose place says",
+                            "WITH ELSA, EAST\nROOF. A return\ndate is crossed\nout and replaced\nwith",
+                            "ASK IF ROOF IS\nSAFE. The depot\ncan tolerate a\nmissing hammer\nbetter",
+                            "than a missing\nneighbor."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "c7043bac-3526-4a0c-a7f4-109411986875",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 8
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "76fe77bb-7115-4d2d-a823-081f0d296b75",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "1688dfdd-252f-4f31-a042-3def90f9df72",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Which route did\nthe survey approve\nfor the heavy\nregulator parts?",
+                            "Choose a route\nthat respects its\nload limits."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "a1aee87f-0d83-4ebe-ad3c-3a2075bf41fb",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "BRIDGE",
+                          "option2": "STAIR",
+                          "option3": "GATE"
+                        }
+                      },
+                      {
+                        "id": "74693bd8-9840-4d0a-a109-f65ad9ce29a1",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 3
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "d22a39be-a0a5-4d1c-aba0-3d21287333cd",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              }
+                            },
+                            {
+                              "id": "4adb1651-dd18-449c-a404-87cabe916a6f",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Candy Rooftops:\nagree the route\nduty with the\ncourier."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "43598b19-beca-46e8-ae42-34ad2f395a7d",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "57097295-2c3f-4f8a-ac8a-0981e9213c46",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The survey\ndistinguishes\nparcel routes from\nthe machinery\nroute.",
+                                        "Shorter does not\nmean strong\nenough."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "e2d11a18-5adb-4f0c-a75a-8a8738b43dc7",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "55"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "6249fa21-1660-4a17-ad23-70737da5317e",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "55",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "eb7ba348-b020-484c-aba6-49494061a54b",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Borrowed\nHammer",
+                                  "Every tool has a\nnumbered outline\nexcept a hammer\nwhose place says",
+                                  "WITH ELSA, EAST\nROOF. A return\ndate is crossed\nout and replaced\nwith",
+                                  "ASK IF ROOF IS\nSAFE. The depot\ncan tolerate a\nmissing hammer\nbetter",
+                                  "than a missing\nneighbor."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "6c108281-8348-42a5-a0da-11c9bc1f3a71",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Borrowed\nHammer",
+                                  "Every tool has a\nnumbered outline\nexcept a hammer\nwhose place says",
+                                  "WITH ELSA, EAST\nROOF. A return\ndate is crossed\nout and replaced\nwith",
+                                  "ASK IF ROOF IS\nSAFE. The depot\ncan tolerate a\nmissing hammer\nbetter",
+                                  "than a missing\nneighbor."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "8d4017a2-1ce6-4015-ac94-02a851978bf7",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "55"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "50eb25f3-c4b6-4d22-a127-bf7e0d8857d0",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "55",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "94575843-fff0-422b-a1e9-439f67fefdd4",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Borrowed\nHammer",
+                            "Every tool has a\nnumbered outline\nexcept a hammer\nwhose place says",
+                            "WITH ELSA, EAST\nROOF. A return\ndate is crossed\nout and replaced\nwith",
+                            "ASK IF ROOF IS\nSAFE. The depot\ncan tolerate a\nmissing hammer\nbetter",
+                            "than a missing\nneighbor."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "1ee265ca-469b-4005-a0a5-3d786e5a793c",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Borrowed\nHammer",
+                            "Every tool has a\nnumbered outline\nexcept a hammer\nwhose place says",
+                            "WITH ELSA, EAST\nROOF. A return\ndate is crossed\nout and replaced\nwith",
+                            "ASK IF ROOF IS\nSAFE. The depot\ncan tolerate a\nmissing hammer\nbetter",
+                            "than a missing\nneighbor."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

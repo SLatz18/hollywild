@@ -1,0 +1,794 @@
+{
+  "_resourceType": "script",
+  "id": "305ebada-4357-4671-a14c-42fda66260f2",
+  "name": "Story node_control_relay",
+  "symbol": "script_story_node_control_relay",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "0683a67c-4437-4714-a1db-960ba9a807a6",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 11
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b616f7d6-52cc-43fc-a7b7-e2b517fb8071",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "ce0d46fc-1f5d-43d7-a673-b482ccff6e41",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Which fault\nexplains the\ndisagreement\nbetween the gauge\nand the",
+                      "physical checks?"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "9150d12f-06dd-4539-a456-e5a7978b28f8",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 3,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "NEEDLE",
+                    "option2": "PUMP",
+                    "option3": "LEAK"
+                  }
+                },
+                {
+                  "id": "fc6b3ac1-f22c-45d6-a6ab-8aa2630a1867",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "1df72485-b3d0-4ad6-aebe-48032164f4a4",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 4
+                          }
+                        }
+                      },
+                      {
+                        "id": "4d84f7bb-927b-4673-a091-4312a808eb22",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Brassworks\nControl: choose\nthe first\njustified\ncorrective action."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "4d87df44-c55b-45fa-ad5d-6ed80e37695d",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "gt",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "a5eefb32-52a8-4b14-af66-4c50d01e5f5c",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Compare the off\npump, open line,\nempty bucket, and\nneedle claim.",
+                                  "Which observation\nfails to agree\nwith the others?"
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "f9c71342-7b81-45bb-ac84-13a1f6319340",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "72"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "643ba45c-9042-4f59-aafe-0f478e14f9b9",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "72",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "8fdbb157-ed7f-4006-a1b7-856af84021a2",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Spoon",
+                            "A wooden spoon\nrests beside a\ndrawing of the\ncontacts. It is\nnot a",
+                            "substitute for\nswitching off\npower. Rivet\nlabeled it for\nmoving",
+                            "objects away from\nthe desk before\nwork begins. The\nspoon carries a",
+                            "second warning:\nALSO NOT FOR LIVE\nSOUP."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "a9abac8d-994b-40ae-aebb-6a011247626e",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Spoon",
+                            "A wooden spoon\nrests beside a\ndrawing of the\ncontacts. It is\nnot a",
+                            "substitute for\nswitching off\npower. Rivet\nlabeled it for\nmoving",
+                            "objects away from\nthe desk before\nwork begins. The\nspoon carries a",
+                            "second warning:\nALSO NOT FOR LIVE\nSOUP."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "57221150-59b4-4ead-a32d-3c8772b39878",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 12
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "1722b258-d8a5-43a8-a1a2-6e0fa3289791",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 3
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "174ef94a-3966-497f-a4cb-dd47e1705e8f",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The inspector asks\nwhat happens if\none seal fails the\ntest. Rivet",
+                            "points to the\nsupply promise you\nmade, then asks\nDot to explain how",
+                            "the replacement\nreaches the bench."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "6ee117b4-9513-4250-a18e-1dc687796d71",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "47"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "84f969ad-ef92-489b-a0e7-278b41a37916",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Dot: The labeled\nreserve shelf\nholds the\nreplacement. I\nrecord its",
+                                  "use and request a\nnew seal before\ncalling the\nreserve full\nagain."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      },
+                      {
+                        "id": "6d478a26-ecc3-4b59-a65f-fa5cf930dee3",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "47"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "63ee613d-22ff-4976-a127-9e538def0fe3",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Dot: The shared\nledger assigns a\nspare from the\nnext pooled batch.\nI",
+                                  "record the\ntransfer so two\ndistricts cannot\npromise the same\nseal."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      },
+                      {
+                        "id": "ff74ba10-755c-41ea-a66e-dbcb141b0162",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 4
+                          }
+                        }
+                      },
+                      {
+                        "id": "68ffa2dd-149a-4ed8-a2a1-51fcf56c5ca8",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Brassworks\nControl: choose\nthe missing first\naction in the\nmaintenance plan."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "cb405101-80e0-4101-a4d0-1eaa1b067604",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "72"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "cc89d269-1e56-4588-a58b-e76b249b1763",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "72",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "6f51e037-f43d-4fda-a396-f947dd9610e5",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Spoon",
+                                  "A wooden spoon\nrests beside a\ndrawing of the\ncontacts. It is\nnot a",
+                                  "substitute for\nswitching off\npower. Rivet\nlabeled it for\nmoving",
+                                  "objects away from\nthe desk before\nwork begins. The\nspoon carries a",
+                                  "second warning:\nALSO NOT FOR LIVE\nSOUP."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "10edbc53-86d1-4c7e-ae5f-47af0ce5b98e",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Spoon",
+                                  "A wooden spoon\nrests beside a\ndrawing of the\ncontacts. It is\nnot a",
+                                  "substitute for\nswitching off\npower. Rivet\nlabeled it for\nmoving",
+                                  "objects away from\nthe desk before\nwork begins. The\nspoon carries a",
+                                  "second warning:\nALSO NOT FOR LIVE\nSOUP."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "b7d009bd-57ae-49ab-ae99-efcf887b5ced",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 20
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "656adeca-8dab-4baf-a0e5-bf5c044d63bf",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 3
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "247ad458-b78a-454e-a8ff-577f36924766",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The paper test\ncalls for one\nreplacement seal\nat Velvet. Rivet\nasks",
+                                  "the crew to show\nthe stock entry\nand name the\nreplenishment duty",
+                                  "before calling the\nrepair supplied."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "936ded0c-8fe6-4cca-a1ac-2d13fcff4250",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "47"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "d2af36ac-7e98-41ac-a688-9d76aa4be29b",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The reserve card\nassigns one spare\nto Velvet and\nmarks it used. Pip",
+                                        "logs a replacement\nrequest. The\nreserve does its\njob without",
+                                        "pretending it\nstayed full."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            },
+                            {
+                              "id": "ca86b903-6f8c-47a7-ad38-26ab36ca30de",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "47"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "526528b8-8dd7-4a2d-ac61-0adbc633d3b8",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The shared ledger\ntransfers one seal\nfrom the pooled\nbatch to",
+                                        "Velvet. Candy sees\nthe update, so\nnobody counts that\nseal twice. The",
+                                        "next shared order\nreplaces it."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            },
+                            {
+                              "id": "b07751d3-dbb5-4d1c-a721-e03b8e3190a9",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              }
+                            },
+                            {
+                              "id": "02fb0da5-5306-43e4-abae-9e2e6d9b75b2",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Core:\nselect the safe\nresponse to the\nmeasured leak\ndrill."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "0aa0af12-74f5-47ec-aebe-7ac6c64942d9",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "72"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "8e435e01-bf7b-472a-a7d5-e51acf86a13a",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "72",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "66a18bff-3226-4e51-afb9-4e75963620c4",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Spoon",
+                                        "A wooden spoon\nrests beside a\ndrawing of the\ncontacts. It is\nnot a",
+                                        "substitute for\nswitching off\npower. Rivet\nlabeled it for\nmoving",
+                                        "objects away from\nthe desk before\nwork begins. The\nspoon carries a",
+                                        "second warning:\nALSO NOT FOR LIVE\nSOUP."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "87f829c4-f005-4d24-a1db-4d37ed76f652",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Spoon",
+                                        "A wooden spoon\nrests beside a\ndrawing of the\ncontacts. It is\nnot a",
+                                        "substitute for\nswitching off\npower. Rivet\nlabeled it for\nmoving",
+                                        "objects away from\nthe desk before\nwork begins. The\nspoon carries a",
+                                        "second warning:\nALSO NOT FOR LIVE\nSOUP."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "5003667d-18d8-4272-a5e4-8ddfed9e9708",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "72"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "7f77fda4-1a34-4d60-ac09-78d5c3322aa3",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "72",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "a9e29b29-76c7-4334-aeab-14035e17e51f",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Spoon",
+                                  "A wooden spoon\nrests beside a\ndrawing of the\ncontacts. It is\nnot a",
+                                  "substitute for\nswitching off\npower. Rivet\nlabeled it for\nmoving",
+                                  "objects away from\nthe desk before\nwork begins. The\nspoon carries a",
+                                  "second warning:\nALSO NOT FOR LIVE\nSOUP."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "24e7795a-14b1-4095-a9b4-d9b6f92b840d",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Spoon",
+                                  "A wooden spoon\nrests beside a\ndrawing of the\ncontacts. It is\nnot a",
+                                  "substitute for\nswitching off\npower. Rivet\nlabeled it for\nmoving",
+                                  "objects away from\nthe desk before\nwork begins. The\nspoon carries a",
+                                  "second warning:\nALSO NOT FOR LIVE\nSOUP."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

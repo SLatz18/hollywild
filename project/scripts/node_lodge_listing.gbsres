@@ -1,0 +1,935 @@
+{
+  "_resourceType": "script",
+  "id": "229aa111-2e34-4368-ac06-ec192c271850",
+  "name": "Story node_lodge_listing",
+  "symbol": "script_story_node_lodge_listing",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "0f99049a-1399-42de-a586-dcabc729b389",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 4
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "82c8f86d-827f-4727-ae87-144beeb5a7f9",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "e569ccd4-4b47-45d2-adc9-7982ab4bbeab",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Nib: The lodge\nboasts heated\nfloors, a private\nhorizon, and\nmature",
+                      "silence. The\nsilence is\nactually a broken\npump. I wrote the\nlisting",
+                      "before I saw the\npipe map. I would\nlike to correct\nthat before",
+                      "someone believes\nme."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "efaf2dac-8e53-4e3c-abaa-2b987ed4c740",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "e87fddd5-32b5-4cb8-a98e-215323e48516",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Velvet Lodge:\ncompare the\ninvoice and sale\nschedule with Nib."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "48347c3b-c431-4700-a26a-78deda37c94b",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 4
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "213edac5-23b0-4688-ab07-57233fe11a9a",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Which statement\ncan stay on the\ncorrected listing?\nConsider what the",
+                            "invoice proves was\ndone and what the\nsale schedule\nactually",
+                            "includes. Slush\nwill receive the\nrevision too. Nib\nwants to",
+                            "acknowledge real\nrepairs without\nturning an\ninspected public\npipe",
+                            "into private\nproperty, or\npretending a paid\ninspection was\nnever",
+                            "useful work."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "6c2ab76f-2419-4ecd-a622-abbcfa6e9d07",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "OWNS",
+                          "option2": "ROOFS",
+                          "option3": "NO WORK"
+                        }
+                      },
+                      {
+                        "id": "ce9bf10c-8702-4891-a5a2-59d3da4255ee",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "2408c13e-9bba-4d8b-af68-86e52fd81574",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              }
+                            },
+                            {
+                              "id": "be65398a-ae18-48e2-a2a5-d85682863d54",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Velvet Rooftops:\nmeet Slush by the\numbrella stand."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "fb757781-94a2-405b-a921-4763d8f18386",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "71ca157c-6ccb-4a36-aefd-5f9b21154a64",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "One page proves\nrepairs were paid\nfor; the other\ndefines the",
+                                        "property. Reject\nboth the inflated\nownership claim\nand the claim",
+                                        "that nothing was\ndone."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "d3d3bc34-4185-4d7e-a42c-3b793bcc6c12",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "74"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "71b8c9c1-8cae-44f3-a24d-1abb2f572795",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "74",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "7370bcdd-3d8c-4886-a753-91e1aae0d2b5",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Mature Silence",
+                                  "Nib's first draft\ncalled the lodge\nsilence mature.\nHis revision",
+                                  "calls it a symptom\nof the idle pump.\nBoth drafts remain\non display.",
+                                  "The little\nembarrassment\nhelps buyers see\nwhat changed. Nib\nsays a",
+                                  "correction is\nuseful only if\npeople can find\nit."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "a32b2f71-88e6-418e-ac35-048dff647471",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Mature Silence",
+                                  "Nib's first draft\ncalled the lodge\nsilence mature.\nHis revision",
+                                  "calls it a symptom\nof the idle pump.\nBoth drafts remain\non display.",
+                                  "The little\nembarrassment\nhelps buyers see\nwhat changed. Nib\nsays a",
+                                  "correction is\nuseful only if\npeople can find\nit."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "a4422282-a1b7-4f1b-a2c0-64483b8173fa",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 13
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "89ef091a-25b5-43cb-ab03-c39a554ed720",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "6b073c08-8f82-4888-a62b-0ed18208f69d",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The listing plan\nshows the service\ndoor south, the\nguest bedroom",
+                            "north, and the\nkitchen east. A\nrepair crew can\ncarry tools from\nthe",
+                            "south door\nstraight to the\njunction along the\nservice hall. A",
+                            "proposed shortcut\ncrosses the\nbedroom. Nib\npoints to the\neasement:",
+                            "permission to\nrepair pipes does\nnot grant whatever\nroute is",
+                            "shortest. A tenant\nhas asked that\nworkers stop\ntreating her\ncarpet",
+                            "as public\ninfrastructure."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "e478c7a1-3941-45f3-a235-af28aed155d9",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 2
+                          }
+                        }
+                      },
+                      {
+                        "id": "29dd34f3-d01b-4bd5-a9ff-862dad786030",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Velvet Lodge:\ncollect the\neasement copy at\nthe disclosure\ndesk."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "21ccc129-49a3-488b-a9c9-09f43287f152",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 3
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "c3c21881-499d-49df-aef6-c75a537b5dd1",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Which space does\nthe easement\nauthorize the\nrepair crew to\nuse?"
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "4a5cf4bd-bdb7-4ea0-ac5c-35c0fe7e5160",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "HALL",
+                                "option2": "BEDROOM",
+                                "option3": "KITCHEN"
+                              }
+                            },
+                            {
+                              "id": "5a652d1c-2109-4525-ae73-1baee08782a2",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "8975e46d-db81-4dc2-aad4-11b57fa340a4",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 4
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "8b86b6c9-3a56-4b0a-a9c4-cb28483766d6",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Velvet Lodge:\nchoose an access\nplan that respects\nthe recorded\nboundary."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "2100af14-4b3a-4c23-ac96-fe022a732970",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "f44678fb-c060-4f8e-a21d-d862ece0ef43",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The easement gives\na specific service\nroute and\nexplicitly leaves",
+                                              "other rooms\nprivate. A\ndestination does\nnot grant every\npossible",
+                                              "approach."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "ee9488a4-d89d-4a6c-ac68-f1aa967148aa",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "74"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "ac968d1b-46b6-44e4-a44a-c30c38eeb5b8",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "74",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "ce271208-3121-4a60-a38e-a4f345eb2f4f",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Mature Silence",
+                                        "Nib's first draft\ncalled the lodge\nsilence mature.\nHis revision",
+                                        "calls it a symptom\nof the idle pump.\nBoth drafts remain\non display.",
+                                        "The little\nembarrassment\nhelps buyers see\nwhat changed. Nib\nsays a",
+                                        "correction is\nuseful only if\npeople can find\nit."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "c20b4491-640f-4dff-a263-057b16acbdac",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Mature Silence",
+                                        "Nib's first draft\ncalled the lodge\nsilence mature.\nHis revision",
+                                        "calls it a symptom\nof the idle pump.\nBoth drafts remain\non display.",
+                                        "The little\nembarrassment\nhelps buyers see\nwhat changed. Nib\nsays a",
+                                        "correction is\nuseful only if\npeople can find\nit."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "6214ac98-eb72-42d7-a09e-3d1e88ed6e02",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 15
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "f7ee3cc4-8ca9-4778-ab39-d2f3213d8144",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 4
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "d752a81e-8e66-4db6-ac99-02d887eaa7db",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Which claim should\nreplace the\nunsigned priority\nsentence? The",
+                                  "signed pages still\ngive useful repair\naccess, so the\ncorrection must",
+                                  "not erase that\nright. Compare\nwhat each document\npermits, and let",
+                                  "the sealed terms\ngovern the\nsummary. Nib will\nput his name\nbeneath",
+                                  "the correction,\nincluding the\nuncomfortable\nsentence that the",
+                                  "earlier claim was\nhis mistake."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "5c879967-673d-43c1-ac36-4cf036f46611",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "ACCESS",
+                                "option2": "PRIVATE",
+                                "option3": "NONE"
+                              }
+                            },
+                            {
+                              "id": "d641fc64-a73d-41f8-a3df-72856de4068e",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "de83f776-8ef9-4ff6-a433-ccf9c943a6da",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 5
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "e9a75868-00be-453c-a1af-bade18100014",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Velvet Lodge: read\nthe posted access\nagreement at the\njunction."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "8f4e6176-5ca0-4bff-ac84-2869d2e8d074",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "36f5ecc0-28a1-473d-af99-03c7307b68b5",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The valid pages\ngrant a limited\nright and restrict\nits use. Reject",
+                                              "both an expanded\nprivate privilege\nand the opposite\nclaim that no",
+                                              "access exists."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "a9f43f27-bc20-4ed1-afdc-841402130a9e",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "74"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "b736e64d-a54b-47b6-a93e-b797dfce66d8",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "74",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "63b0d8ac-8ef4-4269-a32c-bad432a07b3b",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Mature Silence",
+                                        "Nib's first draft\ncalled the lodge\nsilence mature.\nHis revision",
+                                        "calls it a symptom\nof the idle pump.\nBoth drafts remain\non display.",
+                                        "The little\nembarrassment\nhelps buyers see\nwhat changed. Nib\nsays a",
+                                        "correction is\nuseful only if\npeople can find\nit."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "bb57f17c-9855-44a0-acad-494e5fe21f94",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Mature Silence",
+                                        "Nib's first draft\ncalled the lodge\nsilence mature.\nHis revision",
+                                        "calls it a symptom\nof the idle pump.\nBoth drafts remain\non display.",
+                                        "The little\nembarrassment\nhelps buyers see\nwhat changed. Nib\nsays a",
+                                        "correction is\nuseful only if\npeople can find\nit."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "0cee9eea-9f0b-4ae2-a795-160b53241323",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "74"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "a63c70d6-d87f-45a9-a0c3-0597409dbc34",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "74",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "974b7672-17d0-415b-a8af-c02235069bb0",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Mature Silence",
+                                  "Nib's first draft\ncalled the lodge\nsilence mature.\nHis revision",
+                                  "calls it a symptom\nof the idle pump.\nBoth drafts remain\non display.",
+                                  "The little\nembarrassment\nhelps buyers see\nwhat changed. Nib\nsays a",
+                                  "correction is\nuseful only if\npeople can find\nit."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "981f0e44-1f5e-420b-a744-0409f0ec19ad",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Mature Silence",
+                                  "Nib's first draft\ncalled the lodge\nsilence mature.\nHis revision",
+                                  "calls it a symptom\nof the idle pump.\nBoth drafts remain\non display.",
+                                  "The little\nembarrassment\nhelps buyers see\nwhat changed. Nib\nsays a",
+                                  "correction is\nuseful only if\npeople can find\nit."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

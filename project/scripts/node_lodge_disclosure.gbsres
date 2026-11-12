@@ -1,0 +1,734 @@
+{
+  "_resourceType": "script",
+  "id": "83fb6a43-1d56-4124-a879-615491e0585c",
+  "name": "Story node_lodge_disclosure",
+  "symbol": "script_story_node_lodge_disclosure",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "d3550680-1695-4762-ab6a-203c5eb4588b",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 4
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "912ac343-0ca0-4f05-a338-7c139e47bb50",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "598ff37a-275b-43a3-a6b1-ee0a44392020",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The disclosure\nlists walls, roof,\nand courtyard. It\nexcludes",
+                      "municipal pipes\nand rights of\npassage. A\nseparate\ninspection invoice",
+                      "carries Slush's\nletterhead. Nib\ncircles EXCLUDES\nwith a pen",
+                      "expensive enough\nto regret every\ncircle."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "b83e84b2-f99d-43a4-a854-416328cf0ec7",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 3
+                    }
+                  }
+                },
+                {
+                  "id": "249c0bdf-d5ec-4633-a0cb-3165b709649d",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Frostwick Archive:\nidentify the\ndocument that\ngoverns the pipes."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "19cfc081-a0b8-4d75-a114-85612c2a8991",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "75"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "d81421cb-6e25-4609-ab11-07718c37e0aa",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "75",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "f2988361-c41c-4ad1-acad-4d262d3fc7a0",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The White Space",
+                            "The disclosure\nleaves a blank\nstrip beside each\nexclusion so a",
+                            "reader can ask\nquestions. Nib\nonce thought blank\nspace wasted a",
+                            "selling chance.\nNow he keeps spare\npencils beside it.\nThe most",
+                            "recent question is\nsimple: Who fixes\nthis if you move\naway?"
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "98276d6e-5e7b-4621-a443-07edefe31b8f",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The White Space",
+                            "The disclosure\nleaves a blank\nstrip beside each\nexclusion so a",
+                            "reader can ask\nquestions. Nib\nonce thought blank\nspace wasted a",
+                            "selling chance.\nNow he keeps spare\npencils beside it.\nThe most",
+                            "recent question is\nsimple: Who fixes\nthis if you move\naway?"
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "bc90eb7f-e27e-40cd-aaa2-454e1928e17c",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 13
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "a29ab8b8-7929-4f78-abe4-786c097202fe",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "233246b1-f1f4-46fd-a210-5cb669125191",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The easement\npermits city\nworkers to cross\nthe service hall\nfor pipe",
+                            "repairs. It does\nnot grant public\nuse of bedrooms or\nkitchen. The",
+                            "lodge owner keeps\nthose rooms. Nib\nreads the boundary\naloud,",
+                            "unusually free of\ntheatrical\ngestures."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "4f5ffdf0-c2e8-41e1-a2cd-4aa14cef0c4a",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 3
+                          }
+                        }
+                      },
+                      {
+                        "id": "0091f705-b59f-41da-a161-9ca967f47e28",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Velvet Lodge: mark\nthe lawful access\narea on the\nlisting."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "668509df-e661-4bd4-accc-cb981a62624f",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 4
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "3afff1ae-cc78-44d7-a82c-d3acf99db8b3",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Which instruction\nbelongs in the\ncrew access\nnotice? Keep the",
+                                  "service right\neffective without\nturning it into a\nclaim over private",
+                                  "rooms. The tenant\nwill receive the\nsame notice as the\nbuilders. Nib",
+                                  "wants her to know\nexactly where\nstrangers will\nwalk, not merely\nbe",
+                                  "reassured that\neveryone means\nwell and carries\nclean boots."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "519478f8-098e-4276-a059-32082e58018f",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 3,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "SOUTH",
+                                "option2": "BEDROOM",
+                                "option3": "ANY"
+                              }
+                            },
+                            {
+                              "id": "78e7087b-6930-4f8c-a924-d18deb2997a6",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "bebc5016-1f60-42ad-aa3e-f855976aab27",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 5
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "7f73c4d1-72b5-45da-a67a-ee1e557dc2c2",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Velvet Lodge:\ninspect the\njunction behind\nthe service door."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "b6acf696-571c-4c6e-ad1f-1d59b2c7f635",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "gt",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "eefdc50a-7347-48d3-a9fc-5c4e0e3009af",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Trace the route\nthat stays within\nthe service hall.\nA shortcut is",
+                                              "not authorized\nmerely because it\nreaches a\npermitted\ndestination."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "97b10b8b-245d-42d2-a753-f1e852cadf95",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "75"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "eab0975e-1f6c-4b7d-a72a-de6dab73bf94",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "75",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "fec82bda-ced3-4e08-aca3-6405d4661507",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The White Space",
+                                        "The disclosure\nleaves a blank\nstrip beside each\nexclusion so a",
+                                        "reader can ask\nquestions. Nib\nonce thought blank\nspace wasted a",
+                                        "selling chance.\nNow he keeps spare\npencils beside it.\nThe most",
+                                        "recent question is\nsimple: Who fixes\nthis if you move\naway?"
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "ee228e0d-ea62-4e01-a3d2-75af8e8d40c4",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The White Space",
+                                        "The disclosure\nleaves a blank\nstrip beside each\nexclusion so a",
+                                        "reader can ask\nquestions. Nib\nonce thought blank\nspace wasted a",
+                                        "selling chance.\nNow he keeps spare\npencils beside it.\nThe most",
+                                        "recent question is\nsimple: Who fixes\nthis if you move\naway?"
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "11e35565-6b1f-4486-a042-1be57fb7bc69",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 16
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "9fcdfabd-ded0-44bc-af81-54ee78cabed6",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 5
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "7d1b06e6-a475-4b5c-a25e-92add6f592ac",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Nib reads every\nlimit before\nanyone signs. The\npermission covers\nthe",
+                                  "existing hatch and\npipe chase only.\nSlush adds his\nrepair invoice as",
+                                  "a separate\nattachment. For\nonce, nobody tries\nto sell a corridor\nby",
+                                  "calling it a\nlifestyle."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "38d8d80c-15d2-47d3-adbe-7c5c57e484a3",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              }
+                            },
+                            {
+                              "id": "a9395995-6272-4f2e-ae93-4455082106e7",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "66ee0cae-76a2-4760-a88e-78daae64c21e"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "ad3ca721-6087-4d49-aa8b-41d8aa1bbccf",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 6
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "decd5407-0f7e-48f5-a91a-ecce2aa43992",
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "66ee0cae-76a2-4760-a88e-78daae64c21e"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "4123bebc-6e09-4d8d-a2ba-2bb0584da91a",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "75"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "a7c0fc9d-99df-4436-a774-6fa29ce75111",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "75",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "30567016-9b60-464e-a19f-67f70765f39b",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The White Space",
+                                              "The disclosure\nleaves a blank\nstrip beside each\nexclusion so a",
+                                              "reader can ask\nquestions. Nib\nonce thought blank\nspace wasted a",
+                                              "selling chance.\nNow he keeps spare\npencils beside it.\nThe most",
+                                              "recent question is\nsimple: Who fixes\nthis if you move\naway?"
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "53a16010-3100-44d3-ae3a-4281798ee364",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The White Space",
+                                              "The disclosure\nleaves a blank\nstrip beside each\nexclusion so a",
+                                              "reader can ask\nquestions. Nib\nonce thought blank\nspace wasted a",
+                                              "selling chance.\nNow he keeps spare\npencils beside it.\nThe most",
+                                              "recent question is\nsimple: Who fixes\nthis if you move\naway?"
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "d8a62349-4688-47a7-aaf7-383c5aa0a922",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "75"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "5f9e185f-15a3-41e4-abe1-0008cedd4269",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "75",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "de135143-1a1d-464b-a35c-225d70f20371",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The White Space",
+                                  "The disclosure\nleaves a blank\nstrip beside each\nexclusion so a",
+                                  "reader can ask\nquestions. Nib\nonce thought blank\nspace wasted a",
+                                  "selling chance.\nNow he keeps spare\npencils beside it.\nThe most",
+                                  "recent question is\nsimple: Who fixes\nthis if you move\naway?"
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "8ef72dc3-a086-46af-a50f-63437744604b",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The White Space",
+                                  "The disclosure\nleaves a blank\nstrip beside each\nexclusion so a",
+                                  "reader can ask\nquestions. Nib\nonce thought blank\nspace wasted a",
+                                  "selling chance.\nNow he keeps spare\npencils beside it.\nThe most",
+                                  "recent question is\nsimple: Who fixes\nthis if you move\naway?"
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -73,6 +73,7 @@ def state():
     result = {k: word(mem + index * 2) for k, index in variables.items() if not k.startswith("temp_")}
     result.update(scene=scene_symbols.get(far, hex(far)), x=word(actor + 1) / 256,
                   y=word(actor + 3) / 256,
+                  windowX=pyboy.memory[symbols["_win_pos_x"]],
                   windowY=pyboy.memory[symbols["_win_pos_y"]],
                   textDrawn=pyboy.memory[symbols["_text_drawn"]])
     return result
@@ -182,14 +183,113 @@ def navigate(destination):
     return walked
 
 
+def read_dialogue(limit=240):
+    """Press A through text, stopping before a right-side choice menu.
+
+    GB Studio's checked-in menu renderer positions menu layouts at x=80.
+    Dialogue is at x=0. This observes rendered UI position, not story state.
+    """
+    presses = 0
+    pyboy.tick(200)
+    while state()["windowY"] != 144 and state()["windowX"] != 80:
+        assert presses < limit, "Dialogue did not close within the button budget"
+        pyboy.button("a")
+        pyboy.tick(200)
+        presses += 1
+    return presses
+
+
+def choose(index):
+    current = state()
+    assert current["windowY"] < 144 and current["windowX"] == 80, "No choice menu is open"
+    assert isinstance(index, int) and 0 <= index <= 8
+    if index == 0:
+        pyboy.button("b")
+        pyboy.tick(200)
+    else:
+        for _ in range(index - 1):
+            pyboy.button("down")
+            pyboy.tick(20)
+        pyboy.button("a")
+        pyboy.tick(200)
+    return read_dialogue()
+
+
+def travel(destination):
+    """Cross the native scene graph using real directional inputs."""
+    by_id = {resource["id"]: name for name, (_, resource) in scene_resources.items()}
+    graph = {}
+    for name, (path, _) in scene_resources.items():
+        graph[name] = []
+        for trigger_path in sorted((path.parent / "triggers").glob("*.gbsres")):
+            trigger = checked_resource(trigger_path)
+            for event in trigger.get("script", []):
+                if event.get("command") == "EVENT_SWITCH_SCENE":
+                    graph[name].append((by_id[event["args"]["sceneId"]], trigger))
+    start = state()["scene"]
+    queue, previous = deque([start]), {start: None}
+    while queue and destination not in previous:
+        scene = queue.popleft()
+        for target, trigger in graph[scene]:
+            if target not in previous:
+                previous[target] = (scene, trigger)
+                queue.append(target)
+    assert destination in previous, f"No scene route to {destination}"
+    route, target = [], destination
+    while previous[target] is not None:
+        prior, trigger = previous[target]
+        route.append((target, trigger))
+        target = prior
+    moves = []
+    for target, trigger in reversed(route):
+        moves.extend(navigate({"x": trigger["x"], "y": trigger["y"], "expectScene": target}))
+        pyboy.tick(160)
+        read_dialogue()
+        assert state()["scene"] == target
+    return moves
+
+
+def interact(target):
+    """Walk to an authored actor and press A; no teleportation or memory writes."""
+    if target.get("scene") and state()["scene"] != target["scene"]:
+        travel(target["scene"])
+    scene_path, _ = scene_resources[state()["scene"]]
+    actor_path = scene_path.parent / "actors" / (target["actor"] + ".gbsres")
+    actor = checked_resource(actor_path)
+    x, y = actor["x"], actor["y"]
+    approaches = ((x, y + 1, "up"), (x, y - 2, "down"),
+                  (x - 2, y, "right"), (x + 2, y, "left"))
+    for px, py, direction in approaches:
+        try:
+            walked = navigate({"x": px, "y": py})
+        except AssertionError as error:
+            # These path-planning failures occur before any buttons are sent.
+            if str(error).startswith(("Navigation target is blocked", "No unobstructed route")):
+                continue
+            raise
+        pyboy.button_press(direction)
+        pyboy.tick(8)
+        pyboy.button_release(direction)
+        pyboy.tick(1)
+        pyboy.button("a")
+        pyboy.tick(200)
+        read_dialogue()
+        return walked
+    raise AssertionError(f"No safe interaction approach to {actor_path.name}")
+
+
 print(json.dumps({"ready": True, "state": state()}), flush=True)
 try:
     for line in sys.stdin:
         try:
             cmd = json.loads(line)
             navigation_steps = None
+            if "travel" in cmd:
+                navigation_steps = travel(cmd["travel"])
             if "navigate" in cmd:
                 navigation_steps = navigate(cmd["navigate"])
+            if "interact" in cmd:
+                navigation_steps = interact(cmd["interact"])
             if "tap" in cmd:
                 for _ in range(cmd.get("count", 1)):
                     pyboy.button(cmd["tap"])
@@ -201,15 +301,19 @@ try:
                 pyboy.tick(1)
             if "tick" in cmd:
                 pyboy.tick(cmd["tick"])
+            if "restart" in cmd:
+                ram.seek(0)
+                pyboy.stop(ram_file=ram)
+                pyboy = boot()
+            if cmd.get("read"):
+                read_dialogue()
+            if "choose" in cmd:
+                choose(cmd["choose"])
             if "capture" in cmd:
                 name = Path(cmd["capture"]).name
                 assert name.endswith(".png")
                 pyboy.tick(1)
                 pyboy.screen.image.save(OUT / name)
-            if "restart" in cmd:
-                ram.seek(0)
-                pyboy.stop(ram_file=ram)
-                pyboy = boot()
             current = state()
             if "assert" in cmd:
                 for key, expected in cmd["assert"].items():

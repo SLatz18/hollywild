@@ -1,0 +1,702 @@
+{
+  "_resourceType": "script",
+  "id": "e40105a4-1ce3-417a-a54d-632ec664c297",
+  "name": "Story node_archive_catalog",
+  "symbol": "script_story_node_archive_catalog",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "af7d852b-ca28-4c34-ab2d-03dfcf4597b8",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "21712f74-e8a5-49f3-a992-7ec983547342",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "adb97e75-1901-4904-a914-2232a42cbb14",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The catalog has\nthree seal marks.\nWhich mark\nidentifies the\npublic",
+                      "repair ledger? Use\nthe filing rule\nthe clerk gave\nyou, rather than",
+                      "the most\ndecorative cover."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "f8c0c617-94a9-41c7-a5c9-ed2db34fcb11",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 3,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "SQUARE",
+                    "option2": "CROWN",
+                    "option3": "STAR"
+                  }
+                },
+                {
+                  "id": "67a8ce85-fba8-4f97-abea-f5edef3d880d",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "ec32b9bc-817c-47be-a7a1-94d9c7af577f",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 3
+                          }
+                        }
+                      },
+                      {
+                        "id": "75e93bf6-664f-4e13-a314-c98897aea3e4",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Frostwick Archive:\ncollect the badge\nat the badge\nstand."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "2bc8d21b-e0e7-4a10-a5fd-d6b987a7b9ec",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "gt",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "6bf71a4f-2fbd-45c8-a32b-5503895c7c36",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Recall the clerk\nfiling rule for\npublic service.\nSales and parties",
+                                  "have different\nmarks."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "3a107bca-1505-48cb-aef5-edb84b0a75ec",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 4
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "5ed88bc6-c63a-4f01-a471-3b9dedfedd07",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Mara asks whether\nthe newer sale\nproposal means she\nmust call a",
+                            "private estate\noffice. Consider\nthe dates,\nsignatures, and\nthe rule",
+                            "about entering a\ndeed. Which\nconclusion can the\nclerk support? Pip",
+                            "will put it on her\nreferral card and\nsign his name, so\na confident",
+                            "guess could send\nher back into the\ncold."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "932f1521-8625-4652-a240-a92067266bc7",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "NO SALE",
+                          "option2": "JAN",
+                          "option3": "FEB"
+                        }
+                      },
+                      {
+                        "id": "f783503b-327f-4b4a-a481-8853c031cfe5",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "b457f9f1-0e98-4ec2-a006-76f738b5dd47",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              }
+                            },
+                            {
+                              "id": "7974cbf3-c652-409c-ad51-58ae67be0416",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Frostwick Depot:\nshow the badge to\nthe foreman."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "46b27343-77ef-445c-af28-2126749cb9c9",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "4db94b20-db4a-48fc-aaec-a04e7c83af94",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Check the\nsignature on the\nJanuary proposal\nand the February\nrule. A",
+                                        "proposed event and\na completed legal\nact need different\nevidence."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "ebcc9c2c-4a69-4ed8-add4-f4bd144cf333",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "50"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "50908f37-6039-416d-a893-ad925a78ea63",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "50",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "729dee59-4f37-49a9-a1cd-d2c3b9dc0c0d",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Unusual Index",
+                                  "The catalog lists\nSNOW under\nWEATHER, WEATHER\nunder OUTSIDE, and",
+                                  "OUTSIDE under\nPLEASE CLOSE THE\nDOOR. A newer\nclerk has added\ndirect",
+                                  "references in neat\nink. The\nimprovement has no\nribbon or donor",
+                                  "plaque. People now\nfind what they\ncame for."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "bacb7b16-79d2-4025-a0a9-7793d1388c57",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Unusual Index",
+                                  "The catalog lists\nSNOW under\nWEATHER, WEATHER\nunder OUTSIDE, and",
+                                  "OUTSIDE under\nPLEASE CLOSE THE\nDOOR. A newer\nclerk has added\ndirect",
+                                  "references in neat\nink. The\nimprovement has no\nribbon or donor",
+                                  "plaque. People now\nfind what they\ncame for."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "e2069d00-6c54-4ec0-a85e-1432189a4518",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 21
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "524c620b-6035-4290-a257-641f6a0c31f3",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 4
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "0626cb2d-8244-4d3a-a43a-d5fd7e1019ce",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Before choosing a\nmechanical\nreplacement, whose\nassigned work must",
+                            "occur in the\nexample? The\nresident report is\nreal and should be",
+                            "acknowledged. It\ndoes not by itself\nidentify which\npart failed.",
+                            "Choose the missing\nverification\nhandoff, so the\nduty register",
+                            "protects both the\nresident from\ndelay and the\nbuilder from\nrepairing",
+                            "a guess."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "a604df31-015e-412b-adbe-f8072d9d75a8",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "DOT",
+                          "option2": "NIB",
+                          "option3": "SLUSH"
+                        }
+                      },
+                      {
+                        "id": "f5a95873-8565-404c-abf7-856e3bdfd838",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "50e59b1f-37b5-45e3-a7cd-937b36de20a0",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              }
+                            },
+                            {
+                              "id": "95133201-c4e4-494c-aab6-ed72781ee948",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Velvet Rooftops:\nreceive Slush's\nsigned settlement."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "3a575c48-cd46-4baa-a21a-17fec0588d36",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "b2699bc7-a27b-49f7-a20d-a7e91bed53f5",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Find the named\nduty that checks\nwhether the\nreading is\ntrustworthy.",
+                                        "Reporting a\nsymptom and\ndeciding which\npart to replace\nare different",
+                                        "steps."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "1f6f0b01-bade-4e6a-a89d-b94247e67b32",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "50"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "681bc609-4d26-4f2f-a9e6-eb31d95239aa",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "50",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "f0f5bcb8-563a-4cf4-a1c2-66c47d61ecd0",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Unusual Index",
+                                  "The catalog lists\nSNOW under\nWEATHER, WEATHER\nunder OUTSIDE, and",
+                                  "OUTSIDE under\nPLEASE CLOSE THE\nDOOR. A newer\nclerk has added\ndirect",
+                                  "references in neat\nink. The\nimprovement has no\nribbon or donor",
+                                  "plaque. People now\nfind what they\ncame for."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "c2fdab2c-0f82-4857-a803-c9ecdfa5a530",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The Unusual Index",
+                                  "The catalog lists\nSNOW under\nWEATHER, WEATHER\nunder OUTSIDE, and",
+                                  "OUTSIDE under\nPLEASE CLOSE THE\nDOOR. A newer\nclerk has added\ndirect",
+                                  "references in neat\nink. The\nimprovement has no\nribbon or donor",
+                                  "plaque. People now\nfind what they\ncame for."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "5cc7f556-c3ee-4850-acba-cd7df339e1fa",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "50"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "7b29f5c6-5b2c-4483-ad93-de2662ed61cd",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "50",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "0f7307ac-3ad3-482d-ae9b-3a7eb2577565",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Unusual Index",
+                            "The catalog lists\nSNOW under\nWEATHER, WEATHER\nunder OUTSIDE, and",
+                            "OUTSIDE under\nPLEASE CLOSE THE\nDOOR. A newer\nclerk has added\ndirect",
+                            "references in neat\nink. The\nimprovement has no\nribbon or donor",
+                            "plaque. People now\nfind what they\ncame for."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "de69dfca-c44a-4a66-acee-3a36fa5a3c72",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Unusual Index",
+                            "The catalog lists\nSNOW under\nWEATHER, WEATHER\nunder OUTSIDE, and",
+                            "OUTSIDE under\nPLEASE CLOSE THE\nDOOR. A newer\nclerk has added\ndirect",
+                            "references in neat\nink. The\nimprovement has no\nribbon or donor",
+                            "plaque. People now\nfind what they\ncame for."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

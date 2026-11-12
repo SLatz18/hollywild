@@ -1,0 +1,269 @@
+{
+  "_resourceType": "script",
+  "id": "63eca8db-89b4-4652-aff3-9e6ea9bbaf98",
+  "name": "Story finish_3",
+  "symbol": "script_story_finish_3",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "0d6d62c4-855d-4728-a15c-be27d9d4fdb8",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "6"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "575a1395-4e55-4d9c-aaa6-24275f1805ef",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "lte",
+                "valueA": {
+                  "type": "variable",
+                  "value": "1"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 9951
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "f97a23d5-8461-4a8b-a09d-55680ec8db9e",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "lte",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "2"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 97
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "99e558e6-1844-40fc-ad13-56f754be14cc",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "lt",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "45"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 3
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "9c622691-c8b9-4aa5-a4d0-e6ac8e70605b",
+                              "command": "EVENT_VARIABLE_MATH",
+                              "args": {
+                                "vectorX": "1",
+                                "operation": "add",
+                                "other": "val",
+                                "value": 48,
+                                "clamp": false
+                              }
+                            },
+                            {
+                              "id": "b0e3c0a1-179a-4447-a08e-d7951f95dfc9",
+                              "command": "EVENT_VARIABLE_MATH",
+                              "args": {
+                                "vectorX": "2",
+                                "operation": "add",
+                                "other": "val",
+                                "value": 2,
+                                "clamp": false
+                              }
+                            },
+                            {
+                              "id": "ee37dc5e-218c-4eb2-ad24-aebca6d519b8",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "45",
+                                "value": {
+                                  "type": "number",
+                                  "value": 3
+                                }
+                              }
+                            },
+                            {
+                              "id": "c4d720ad-bdc9-4ce1-aec2-77fc6dcd0286",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The plan now has\nits first public\npromise. You can\nexplore every",
+                                  "district, take\nother jobs, or buy\nproperty whenever\nyou like. The",
+                                  "investigation\ncontinues here\nwhen you return.\nNobody loses their",
+                                  "place because you\ntook a walk."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "6c2c3bb5-547b-47b2-a082-4c267f12a227",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Mission complete.\n48 Coins and 2\nscrap."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "a8b9a95c-1718-4f06-acd1-e19e606a6997",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              }
+                            },
+                            {
+                              "id": "e7f2b466-463e-4055-acc9-57a7428dbc5e",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "43",
+                                "value": {
+                                  "type": "number",
+                                  "value": 4
+                                }
+                              }
+                            },
+                            {
+                              "id": "53e650ec-e98d-4c5c-a0ff-4e969039d47f",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Nib has found an\nadvertisement for\nVelvet Lodge: Five\ndistricts of",
+                                  "potential, one\nconvenient owner.\nThe small print\nseems to include a",
+                                  "pipe under four\nproperties not in\nthe listing. Nib\nconsiders this",
+                                  "bold. The archive\nclerk considers it\nTuesday."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "dc82bdb8-b3f3-4c49-afd5-7a1e09c24f5a",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Velvet Lodge: read\nthe listing stand."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "e72a2999-364f-4aa5-ac5e-266bd4e8a14e",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Your reward is\nsafe. Make room in\nscrap storage,\nthen use Story or\nreturn here."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "efaaa329-3521-4003-a92e-a0cada004981",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Your reward is\nsafe. Spend some\nCoins, then use\nStory or return\nhere."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "138a70dd-3c32-4431-ad57-b11290f281f6",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Mission ready.\nFinish or cancel\nyour job, then use\nStory or return\nhere for the",
+                "reward."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

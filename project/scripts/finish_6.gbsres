@@ -1,0 +1,269 @@
+{
+  "_resourceType": "script",
+  "id": "3498e906-d885-433a-af90-c479d37cb343",
+  "name": "Story finish_6",
+  "symbol": "script_story_finish_6",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "244c99eb-d378-4546-a6c9-d8176c388daf",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "6"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "f910d24c-0027-4cad-aa66-76104aad7409",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "lte",
+                "valueA": {
+                  "type": "variable",
+                  "value": "1"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 9955
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "a6bde870-4f66-4af7-a1bb-2eaf5c9be5bd",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "lte",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "2"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 97
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "8c30a5b0-f583-4a86-a984-0fee30c3ba1a",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "lt",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "45"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 6
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "34bc885c-ad35-4a89-a9fc-41be8f68b6ee",
+                              "command": "EVENT_VARIABLE_MATH",
+                              "args": {
+                                "vectorX": "1",
+                                "operation": "add",
+                                "other": "val",
+                                "value": 44,
+                                "clamp": false
+                              }
+                            },
+                            {
+                              "id": "af06bd13-68f4-48f1-aa16-1b444edbbfe1",
+                              "command": "EVENT_VARIABLE_MATH",
+                              "args": {
+                                "vectorX": "2",
+                                "operation": "add",
+                                "other": "val",
+                                "value": 2,
+                                "clamp": false
+                              }
+                            },
+                            {
+                              "id": "42a5aa75-c157-487a-a6a4-1506c24a1697",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "45",
+                                "value": {
+                                  "type": "number",
+                                  "value": 6
+                                }
+                              }
+                            },
+                            {
+                              "id": "3a8b6687-102e-4e2b-a4f8-c530decb18c6",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The failure has a\nshape now. People\ndid their jobs,\nbut one frozen",
+                                  "link silenced them\nall. Dot does not\ncelebrate being\nright. She asks",
+                                  "for a second path\nbefore anyone asks\nfor a bigger bell.\nPip makes",
+                                  "space for her name\non the plan."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "17c3000a-dde9-4b31-a164-8802234a5819",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Mission complete.\n44 Coins and 2\nscrap."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "8604d13c-a11f-4fff-ab52-fe158cd0a9ed",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              }
+                            },
+                            {
+                              "id": "b9694664-759b-4a1e-ad59-6f6edc1bac0a",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "43",
+                                "value": {
+                                  "type": "number",
+                                  "value": 7
+                                }
+                              }
+                            },
+                            {
+                              "id": "d0bb0c73-44c2-4024-a864-72eb3d3f2314",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A repossessed\nservice sled sits\nbehind the depot\ngate. Slush\ncovered",
+                                  "its storage\ncharges, then a\nclerk marked the\nsled as\ncollateral.",
+                                  "Moxie remembers\ndriving it. She\nalso remembers its\nleft runner,",
+                                  "which expresses\nopinions on\ncorners."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "4d244441-92c3-40e5-a7f2-d7a3508cf720",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Candy Sorting:\nrecover the sled\nregister from the\naddress board."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "45fb8ac9-56a4-4dd5-ad6f-0d3e1a1c07b4",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Your reward is\nsafe. Make room in\nscrap storage,\nthen use Story or\nreturn here."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "9c7fe458-1a2f-4d40-a00f-4028e4eb3716",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Your reward is\nsafe. Spend some\nCoins, then use\nStory or return\nhere."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "c97a6844-da0c-48f0-a5ce-fe2edfffd83b",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Mission ready.\nFinish or cancel\nyour job, then use\nStory or return\nhere for the",
+                "reward."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

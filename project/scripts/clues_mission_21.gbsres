@@ -1,0 +1,307 @@
+{
+  "_resourceType": "script",
+  "id": "d5952c48-65d7-49e0-ab43-12ba98ddbbbe",
+  "name": "Story clues_mission_21",
+  "symbol": "script_story_clues_mission_21",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "adbb466f-a6d3-4e5d-a0e0-79d52373c568",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Clues: Who Holds\nthe Spare Key"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "6f5f84f6-8597-460f-a169-76aa241ccb9d",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "41aa1c7c-e9a3-475d-af1a-d41fa962ea53",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "No clues yet for\nthis mission.\nFollow the next\nlead in START >\nStory."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "699c0fa6-2f20-42f4-a470-6ea0bd1656cb",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "01e9f395-d628-4426-a4a2-89a7322b0637",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Register: Rivet\nmaintains valves.\nDot verifies\nreadings. Moxie",
+                "carries failed\nmessage copies.\nPip records faults\nand informs",
+                "residents. The\nclerk keeps the\npublic access\nagreement. Slush\noffers",
+                "his roof crew for\nlodge repairs,\nsubject to the\nsame written fault",
+                "log."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "a4d4b08f-03d7-4695-adf7-28a45ecd28f5",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "1cdfadd4-6df0-4717-a22b-bf4d65d3bf80",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A resident reports\na cold room but\nthe current gauge\nreading is",
+                "unverified. Pip\nmust acknowledge\nthe resident and\nrecord the report.",
+                "Dot checks the\nreading. Rivet\ndecides the\nmechanical repair\nfrom",
+                "verified evidence.\nMoxie carries a\ncopy if the signal\nreply fails.",
+                "One draft skips\nstraight from\ncomplaint to\nordering Rivet to\nreplace",
+                "the pump. The\nclerk asks who has\nbeen left out, and\nwhy that",
+                "omission matters."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "5a7c628e-2158-45c2-af10-6791f41f2a7c",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "0cd5e5b2-4513-4376-a034-3e9cb07f637d",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A message has no\nreceived mark. Who\nis assigned to\ncarry its backup",
+                "copy?"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "c09fdb81-ecd4-4022-ac01-1340d2dc5e7f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "a26f6d87-3cf9-43ac-a45d-c46761166d4d",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Nib reads the\nproposed\nsettlement:\nverified repair\ncosts are repaid",
+                "from the public\nfund in recorded\ninstallments. No\ntenant loses a",
+                "home to pay it.\nSlush gives up the\nsealed estate\npriority. The city",
+                "takes an actual\ndebt, not a\nflattering favor."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "c088d868-1a59-4770-a3c8-9449bd5d5160",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 4
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "09f198b8-386a-42e9-a12a-3f11bd78ac47",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Before choosing a\nmechanical\nreplacement, whose\nassigned work must",
+                "occur in the\nexample? The\nresident report is\nreal and should be",
+                "acknowledged. It\ndoes not by itself\nidentify which\npart failed.",
+                "Choose the missing\nverification\nhandoff, so the\nduty register",
+                "protects both the\nresident from\ndelay and the\nbuilder from\nrepairing",
+                "a guess."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "338b7236-768d-4e75-ad12-0233e3c059c1",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "14a4ff45-e161-415d-a335-566f99cba8b6",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Slush: I still\nprefer a building\nwith my name on\nit. But a city\nthat",
+                "works is a better\nneighbor than an\nestate surrounded\nby cold. He",
+                "offers the\numbrella to Pip,\nwho discovers it\nis heavy because\nthe",
+                "handle stores\ntwelve emergency\nforms."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

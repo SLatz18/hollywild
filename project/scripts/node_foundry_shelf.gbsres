@@ -1,0 +1,880 @@
+{
+  "_resourceType": "script",
+  "id": "58ad4c98-18ff-447f-a439-f54645be52a4",
+  "name": "Story node_foundry_shelf",
+  "symbol": "script_story_node_foundry_shelf",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "979f859e-2d39-4b42-a709-8ae20944011f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "43"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 9
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "8dbdc405-2177-4bc0-a8b1-36ffc48aaf99",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "44"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "fbb0bff3-763e-414d-a451-fab325cba04d",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Rivet has two\nsprings. The short\nspring closes a\nvalve that travels",
+                      "two marks. The\nlong spring closes\none that travels\nfour. This",
+                      "regulator travels\nfour marks and\nmust close fully\nwith power off.",
+                      "Both springs look\nclean. A trainee\nchose the short\none because it",
+                      "fits the tin more\nneatly. Rivet asks\nyou to explain the\nselection",
+                      "without making the\ntrainee afraid to\nask another\nquestion."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "f4668f2c-a279-4f05-aed8-231e80417b11",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "44",
+                    "value": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  }
+                },
+                {
+                  "id": "9bfc429b-7813-4e7d-a55f-409cf5470ef4",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Brassworks\nFoundry: collect\nthe tagged gears."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "f3984800-2614-487f-ace1-40dd2ef55c6a",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 3
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "cd525e50-160a-4d2d-a3d4-8347de1b802b",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The spring sits\ninside a biscuit\ntin marked DO NOT\nEAT ENGINEERING.",
+                            "The brass key\nhangs beside it.\nRivet checks both\nagainst her",
+                            "drawing. Rivet\ntags the parts for\npublic repair and\nlocks their",
+                            "carrying case.\nWhatever you build\nfor yourself,\nthese belong to\nthe",
+                            "network."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "ebda72b4-8aa2-4c5b-a249-453b937d048e",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "44",
+                          "value": {
+                            "type": "number",
+                            "value": 4
+                          }
+                        }
+                      },
+                      {
+                        "id": "ca22d8a1-2533-41ab-a420-870ecd606c62",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Brassworks\nFoundry: select\nthe spring that\nmatches the full\nvalve travel."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "0303a8ba-99b7-4313-a8fc-05974aa98675",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "69"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "cfe67f42-92d1-4c0a-a522-90cd78717161",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "69",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "8d36b716-6988-45ce-a1bf-216dd76467a0",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Not Waste",
+                                  "A shelf holds\nparts too worn for\npressure work but\nstill useful for",
+                                  "training. Each\nbears a clear red\ncross and a\nwritten TRAINING\nlabel.",
+                                  "Rivet would rather\nteach with a real\nfailed part than\nlet a new",
+                                  "worker learn\nfailure on a live\npipe."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "e6a9a493-f1d8-4c12-a701-456aff4a6426",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Not Waste",
+                                  "A shelf holds\nparts too worn for\npressure work but\nstill useful for",
+                                  "training. Each\nbears a clear red\ncross and a\nwritten TRAINING\nlabel.",
+                                  "Rivet would rather\nteach with a real\nfailed part than\nlet a new",
+                                  "worker learn\nfailure on a live\npipe."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "9b63739d-782a-480b-abc1-d5da11635bf7",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "43"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 10
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "54c46ed6-30fd-4925-a078-1b99e407f402",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "44"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 4
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "a9cb00fe-654c-4ec9-a857-cc9b4b821131",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Which recipe plan\nmeets all three\nconstraints:\nexactly three\nseals,",
+                            "no partial batch,\nand at least two\nstock left? Read\nthe output as",
+                            "carefully as the\ninput. Two small\nbatches may look\neconomical until",
+                            "you count what\nthey make. The\nother crew has\nalready planned a",
+                            "repair around the\nstock you promised\nnot to consume."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "17ef1f6a-52c8-439e-a153-50fd1fb568e4",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "A ONCE",
+                          "option2": "A TWICE",
+                          "option3": "B ONCE"
+                        }
+                      },
+                      {
+                        "id": "fcea8bec-376e-48c1-a743-999612f97409",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 3
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "85819bd6-6c2d-4d3e-a2a6-c8341a2fc7d2",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 5
+                                }
+                              }
+                            },
+                            {
+                              "id": "892bcc74-1ba7-48b3-ab16-4fb4578a48fd",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Brassworks\nFoundry: watch\nRivet fit the\nregulator."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "6b6fe1af-8289-4ca1-a888-2ad3fb3f1c4a",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gt",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "14"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "986400b5-edeb-4973-a4fc-8c91a08cc68f",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Check both stock\nremaining and seal\noutput for each\nplan. The order",
+                                        "requires an exact\nquantity, so extra\noutput is not a\nfree advantage."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": []
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "8c203e37-d9c3-4600-a715-4093acebf871",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "69"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "7d29d42a-a2d6-461a-ac7c-47e720bfd359",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "69",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "2d9eac09-8160-4b11-add5-2615b6d8b213",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Not Waste",
+                                  "A shelf holds\nparts too worn for\npressure work but\nstill useful for",
+                                  "training. Each\nbears a clear red\ncross and a\nwritten TRAINING\nlabel.",
+                                  "Rivet would rather\nteach with a real\nfailed part than\nlet a new",
+                                  "worker learn\nfailure on a live\npipe."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "89c3699e-ee5d-4cdc-ae56-29a7cea1245f",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Not Waste",
+                                  "A shelf holds\nparts too worn for\npressure work but\nstill useful for",
+                                  "training. Each\nbears a clear red\ncross and a\nwritten TRAINING\nlabel.",
+                                  "Rivet would rather\nteach with a real\nfailed part than\nlet a new",
+                                  "worker learn\nfailure on a live\npipe."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "f9232e42-99d2-4c65-ad87-d3f657e6be82",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "43"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 12
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "5654197f-7876-4fc7-aab5-6bf000c40b2f",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "44"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "d6654ce5-3a82-4ca6-a7d2-2b749c6b3dfe",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Process cards: FIT\nspring before\nenergizing. SET\nlimit after",
+                                  "fitting. TEST with\npower last. Card\norder is not a\nsuggestion. The",
+                                  "inspector asks if\nthe wooden spoon\nis approved\nequipment. Rivet\nsays",
+                                  "it is approved for\nmoving his ruler."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "4dedebb4-5023-4068-a6a9-1398bfe20fba",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "96dc08b5-bf9e-4aaa-adf7-7557699b7d61",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Brassworks\nControl: review\nthe maintenance\nlock card with\nDot."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "d8cab038-9da8-4c98-a986-5fa0c3ee969b",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "69"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "246e98b3-310a-4c9d-a59c-b8bdc0f68557",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "69",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "79e3b5c2-38db-4ece-a585-8807c9215074",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Not Waste",
+                                        "A shelf holds\nparts too worn for\npressure work but\nstill useful for",
+                                        "training. Each\nbears a clear red\ncross and a\nwritten TRAINING\nlabel.",
+                                        "Rivet would rather\nteach with a real\nfailed part than\nlet a new",
+                                        "worker learn\nfailure on a live\npipe."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "9474ae0c-6f82-46e7-a1e1-b19f84c09759",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Not Waste",
+                                        "A shelf holds\nparts too worn for\npressure work but\nstill useful for",
+                                        "training. Each\nbears a clear red\ncross and a\nwritten TRAINING\nlabel.",
+                                        "Rivet would rather\nteach with a real\nfailed part than\nlet a new",
+                                        "worker learn\nfailure on a live\npipe."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "f4e5e826-ca32-4cb4-ad46-604b66d4f583",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "43"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 22
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "76b8c3ce-242b-43ef-a301-c2d65203aeaa",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "44"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "92242d2a-848a-413d-a728-a2d823169196",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Rivet checks a\npractice packet\nwith four branch\nnames and only\nthree",
+                                        "received marks.\nFrostwick, Candy,\nand Brassworks\nhave signed.\nVelvet",
+                                        "has a sent entry\nbut no received\nmark. Moxie is\nfree to carry a",
+                                        "copy; the lamp\ncard cannot\nconfirm it. Pip\nstarts to count\nthe sent",
+                                        "entry as close\nenough, catches\nhimself, and\nleaves the empty\nbox",
+                                        "visible. Nib would\nrather answer a\nreal check than be\ncongratulated",
+                                        "by assumption."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "d29e15fa-807c-4839-aac0-8f3951acca75",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "44",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 2
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "9f6cc480-006a-4dd0-a979-f4cc9d637fd5",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Candy Sorting:\nrecord Moxie's\nlaunch reply."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "ed506ef7-6486-4317-ad44-5e204e43900d",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "69"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 0
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "14a4d6cc-8699-4d93-a757-a4792e5e6419",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "69",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 1
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "id": "83550254-5835-4530-a6b2-a935e33dcc30",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Not Waste",
+                                              "A shelf holds\nparts too worn for\npressure work but\nstill useful for",
+                                              "training. Each\nbears a clear red\ncross and a\nwritten TRAINING\nlabel.",
+                                              "Rivet would rather\nteach with a real\nfailed part than\nlet a new",
+                                              "worker learn\nfailure on a live\npipe."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "795476cd-e080-424e-a015-011f8ca364e8",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Not Waste",
+                                              "A shelf holds\nparts too worn for\npressure work but\nstill useful for",
+                                              "training. Each\nbears a clear red\ncross and a\nwritten TRAINING\nlabel.",
+                                              "Rivet would rather\nteach with a real\nfailed part than\nlet a new",
+                                              "worker learn\nfailure on a live\npipe."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "2ed386f6-24a4-4553-a4ef-6c1d30b0ac21",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "69"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "ebe9626c-f4d2-4641-a2cc-a11824050df3",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "69",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "bd4ae532-268d-420f-a31a-baae30348019",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Not Waste",
+                                        "A shelf holds\nparts too worn for\npressure work but\nstill useful for",
+                                        "training. Each\nbears a clear red\ncross and a\nwritten TRAINING\nlabel.",
+                                        "Rivet would rather\nteach with a real\nfailed part than\nlet a new",
+                                        "worker learn\nfailure on a live\npipe."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "d0b6526e-97a9-4a68-a48b-d4aad7b51779",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Not Waste",
+                                        "A shelf holds\nparts too worn for\npressure work but\nstill useful for",
+                                        "training. Each\nbears a clear red\ncross and a\nwritten TRAINING\nlabel.",
+                                        "Rivet would rather\nteach with a real\nfailed part than\nlet a new",
+                                        "worker learn\nfailure on a live\npipe."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

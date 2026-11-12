@@ -1,71 +1,63 @@
-# Native prototype status
+# Campaign build status
 
-Version 0.2.0 prototype, checked November 12, 2026. This report describes the tested cartridge, not the entire campaign design. [Previous prototype evidence](history/v0.1.0-prototype.md).
+Version 0.3.0 campaign prototype, checked November 12, 2026. [Previous build evidence](history/v0.2.0-prototype.md).
 
-## Build identity
+**The campaign targets approximately two hours for a first-time player. That duration has not been measured in a human playtest.** The authored content and actual-ROM completion tests below are verified; the pacing estimate is separate.
 
-- Project: `hollywild.gbsproj`, native GB Studio 4.3.2 resources.
-- Target: Game Boy Color only, intended for ModRetro Chromatic.
-- Cartridge: 262,144 bytes, MBC5 with RAM and battery, 32 KB save RAM.
-- ROM SHA-256: `1e96c98a82546b88e6263eaf866d9a245dc978a08246389ce8f4ea489085681d`.
-- Official GB Studio source: `ccb891b2670134ba8237416772eea4ed09d34e1e`.
-- GBVM engine: `bd6f41cc5e05cbe6601dcc7f8e2db89bed527fe3`.
+## The playable campaign
 
-The compiler completed with authored files unchanged during compilation. An independent cartridge parser verified the native logo, color flag, ROM size, header checksum, and global checksum. Tool binaries and builds are local outputs. Rebuilding is not promised to produce identical bytes or compatible saves.
+Hollywild now contains a complete six-act story: 24 missions, 144 objectives, 45 puzzles, four persistent choices with later reactions, 40 optional discoveries, and three endings. Ten new campaign locations bring the total to 20 scenes and 91 interaction sites. Every district and campaign room remains publicly reachable from the start.
 
-## Implemented
+Begin at the story desk in the garage. START > Story shows the next destination; START > Clues rereads completed steps from the current mission without revealing future evidence. Each new campaign room has a checkpoint. Save between repeatable jobs, including during an unfinished story mission.
 
-Five freely connected districts, a garage, and four enterable property interiors: Cocoa Corner, Parcel Palace, Tinsel Toolworks, and Lantern Flats. All interiors are publicly inspectable before purchase. The native project contains ten scenes and forty interaction sites.
+The story investigates public heat records, Slush's property scheme, repair evidence, route reliability, a failed regulator, lawful access, and the city's final restoration. Missions combine conversations, protected evidence, spatial investigation, arithmetic and deduction puzzles, and choices. The engine uses authored native logic; there is no live generative AI requirement.
 
-Systems include five one-time neighborhood commissions, walking and collisions, route guidance, job boards, repeatable salvage and delivery jobs, optional bonus salvage, workshop production, four property purchases, a restoration objective, basic sound effects, and manual garage saves.
+A representative main route contains about 8,800 narrative words, with optional lore and other paths adding more. Counts across all endings and alternate responses are not presented as required reading. The [campaign guide](CAMPAIGN.md) explains the unmeasured pacing budget and includes spoilers and solutions.
 
-Rivet can make goods (2 surplus scrap for 30 Coins while protecting 4 scrap), recycle (2 scrap without an input), or run deliveries (10 Coins without an input). Role changes are available between jobs; dispatch records the chosen role. Work/Rest controls whether production occurs. Local commissions pay 25 Coins and 2 scrap each, once, without advancing production.
+## Cartridge identity
 
-Property ownership changes the sign to a check flag. Public streets have no story locks. Crew production resolves on successful jobs; walking and cancelling do not advance it. Job crates and parcel stops in other districts are valid alternatives to the suggested opening route.
+- Native GB Studio 4.3.2 project: `hollywild.gbsproj`.
+- Intended platform: Game Boy Color-compatible ModRetro Chromatic.
+- ROM size: 1,048,576 bytes (1 MiB), Color Only, MBC5 with battery-backed RAM.
+- Save RAM header: 32 KB.
+- SHA-256: `e0ece0d594442836bb39e1b1fb72f9fc10a1efc53ac5818401dc54f9bf0c0db6`.
+- GB Studio source: `ccb891b2670134ba8237416772eea4ed09d34e1e`.
+- GBVM: `bd6f41cc5e05cbe6601dcc7f8e2db89bed527fe3`.
 
-## Executed checks
+Authored native resources and generation inputs remained unchanged during compilation. The build manifest records hashes for both, matching debug symbols, and the compiled CLI. An independent parser verified the cartridge logo, size, color flag, and both checksums. All 38 linked code areas fit the 16 KB bank limit. These checks do not establish byte-identical rebuilds or physical-device compatibility.
 
-PyBoy 2.6.1 ran the actual ROM with button inputs. Matching-build symbols were read to verify state. The tests did not write game memory or restore emulator save states. Test cartridge RAM starts blank and is retained only for the explicit restart check.
+## Executed runtime tests
 
-| Check | Result and scope |
-| --- | --- |
-| Native asset validation | All ten scenes passed dimensions, allowed source colors, selected tile budget, approachability, safe destinations, and graph connectivity |
-| Native resource checks | 112 resources, 43 variables, and 2,213 events passed reference, ID, and menu checks; five checker corruption tests passed |
-| Commissions regression | 224 commands, 45 checkpoints passed; all four interiors and five commissions, preaccept collection guard, repeat guards, and saved completion flags |
-| Crew roles regression | 240 commands, 47 checkpoints passed; recycler and runner payouts, saved role, active-job role-change rejection, and cancellation |
-| Opening regression | 177 commands, 33 assertion checkpoints passed |
-| Fresh-game free roam | 40 commands, 10 assertion checkpoints passed; visited every district and completed east and west loops with no workshop or property purchases |
-| Shortcuts | Frostwick/Brassworks, Candy/Velvet, Frostwick/Aurora connections exercised both ways |
-| Opening economy | Banked salvage, repaired workshop, delivered parcel, purchased Cocoa, received Cocoa income |
-| Repeat ownership interaction | No second purchase or duplicated reward |
-| Cancellation | Repeat salvage carried 6 scrap; cancel returned to zero carried with stored supplies, Coins, and production cycles unchanged |
-| Checkpoint | Saved, rebooted with cartridge RAM, resumed with resources and ownership intact |
-| Active-job save/load | Save was rejected during a job; explicitly confirmed Load restored the earlier checkpoint |
-| Rendering | Inspected actual ROM frames for all four new interiors, crew menu fit, property ownership sign, garage, and district streets |
+PyBoy ran the actual compiled cartridge using ordinary button inputs. Tests read matching-build symbols to observe outcomes. No gameplay memory was written, no teleportation was used, and no emulator save state substituted for cartridge saving. Travel helpers find routes, send directional inputs, and verify every actual movement step. Each scenario starts with blank test cartridge RAM.
 
-The required-route ledger observed in the ROM:
+| Scenario | Commands | Assertion checkpoints | Verified behavior |
+| --- | ---: | ---: | --- |
+| Warmth ending and recovery | 845 | 350 | All 24 missions; B cancellation and wrong-answer retries at every puzzle; choice cancellation; no duplicate rewards; active-job pending payout and retry; Clues without progress or payout; six saved act checkpoints and reboots; lore and choices restored; free play after ending |
+| Industry ending | 448 | 222 | Full campaign with alternate route/policy/trust selections and industry ending |
+| Commons ending | 448 | 222 | Full campaign and commons ending |
+| Local commissions | 224 | 45 | All five commissions and four property interiors; one-time payouts; collection guards; saved completion |
+| Crew roles | 240 | 47 | Maker opening, recycler/runner payouts, role persistence, role-change rejection during a job, cancellation |
+| Fresh free roam | 40 | 10 | All five districts in both directions with no purchases or story progress |
+| Original opening | 177 | 33 | Salvage, workshop, delivery, Cocoa acquisition/income, shortcuts, save/load |
 
-| Point | Coins | Stored scrap | Cheer | Successful jobs |
-| --- | ---: | ---: | ---: | ---: |
-| New game | 100 | 0 | 0 | 0 |
-| First salvage banked | 100 | 10 | 0 | 1 |
-| Workshop repaired | 60 | 6 | 0 | 1 |
-| First delivery plus workshop batch | 110 | 4 | 0 | 2 |
-| Cocoa purchased | 10 | 0 | 5 | 2 |
-| Next delivery plus Cocoa income | 46 | 0 | 5 | 3 |
+Total: 2,422 commands and 929 assertion checkpoints, all passing. Scenarios share steps; this is not a count of 929 distinct features or independent human playtests. Campaign routes each end with 1,108 Coins, 48 scrap, all 24 story rewards claimed, zero ordinary production ticks, the selected ending, and continued access to the garage.
 
-The full suite passed 681 commands and 135 assertion checkpoints. The crew scenario includes the opening scenario, so these are regression checkpoints rather than 135 unique behaviors. The five commission rewards ended at 225 Coins, 10 scrap, 5 Cheer, and zero production cycles; save/restart retained all five completion flags. Recycler and runner deliveries ended at 82 Coins/2 scrap and 128 Coins/2 scrap, respectively, after the standard opening.
+Asset and native-resource checks passed for 20 scenes and 324 resources. The native project declares 90 globals and 6,266 events. A separate generated-event interpreter passed 1,224 interaction checks, including wallet/storage reward guards and completed-only clue visibility. That interpreter is additional source-level evidence, not another hardware test. Five deliberate-corruption tests verified that source guards reject broken references, duplicated IDs, oversized menus, and altered legacy variable IDs.
 
-Replay commands are in `tests/opening-loop.jsonl`, `tests/free-roam.jsonl`, `tests/commissions.jsonl`, and `tests/crew-roles.jsonl`. See [development instructions](DEVELOPMENT.md). Raw runtime captures and logs remain local. Failed assertions produce a nonzero process exit.
+Independent review checked all 45 answer keys, clue support, destination hints, choice reactions, reachable geometry, and the emitted Clues call graph. Actual ROM frames were inspected for campaign rooms and menus. These reviews do not establish that every player will find the game fun or understand every clue.
 
-## Limits and next work
+## Economy and free play
 
-This is an early prototype. It is not the full twelve-mission campaign. Driving, traffic, timed hazards, multiple simultaneous crew assignments, continuous world simulation, and a music soundtrack remain unimplemented. The three crew roles are a first strategy choice, not a full workforce system. Toolworks is a passive recycler; Lantern Flats is currently a finale prerequisite. Property progress changes signs rather than rebuilding entire facades.
+The campaign grants 1,008 Coins and 48 scrap through guarded one-time rewards. Main-story objectives consume neither; there is no required delivery grind or property purchase. Story evidence cannot be sold or consumed by production. A full wallet, full storage, or active repeatable job leaves the completed mission pending; the final site or Story journal can retry its reward later.
 
-The tested path covers Cocoa and the opening workshop. Purchasing every other property, the finale, optional bonus collection, near-cap balances, active-main-job commission turn-in rejection, and long-session balance still need dedicated runtime coverage. Capacity and transaction guards received source review, which does not replace those playthroughs. Scene traversal and a handful of frames do not establish worst-case performance or sprite scanline behavior.
+The campaign replaces the prototype's separate 1,000-Coin Aurora ending. The old station now points players toward the story until it is complete, then celebrates restoration. Four property purchases, workshop repair, three crew roles, local commissions, and repeatable jobs remain available. Story progress does not generate ordinary crew ticks.
 
-The native player collision box is 16 by 8 pixels; some alley interactions rely on that footprint. Expanding it requires a new world-layout review.
+## Limits and next validation
 
-Manual saves use one garage slot and are disabled during active jobs. No autosave or power-interruption guarantee is claimed. Physical playback, controls, audio quality, save persistence on the Chromatic, cartridge installation, and save compatibility across different builds remain untested. The plugin and physical device are not required for further source development.
+This is a native campaign prototype, not a claim of a finished commercial game. Physical Chromatic playback, cartridge installation, physical save persistence, and human first-time completion duration are untested. Save compatibility with previous builds is unverified; keep earlier saves separate. There is one manual checkpoint slot and no power-interruption guarantee.
 
-See the [team assignments](TEAM_BUILD_PLAN.md) for the next builder milestones.
+Driving, traffic, action combat, timed hazards, multiple simultaneous workers, continuous world simulation, and a music soundtrack are not implemented. Puzzles use authored clues and menus; they do not simulate physical factories or route logistics. Property progress uses ownership signs rather than complete building transformations. The native player collider is 16 by 8 pixels; some narrow routes rely on it.
+
+Native runtime coverage still needs broader near-cap economy tests, all property combinations, and long-session balance. Wallet/storage story payout boundaries passed the source interpreter, while the active-job payout blocker was additionally exercised in the actual ROM. Automated solved routes do not replace a first-time usability and pacing session.
+
+Rebuild and rerun with the [development instructions](DEVELOPMENT.md). The public repository includes editable source and replay commands; local tool installations, test saves, debug outputs, and raw logs are excluded.

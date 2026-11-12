@@ -1,0 +1,305 @@
+{
+  "_resourceType": "script",
+  "id": "b7cfbedc-3ba3-4f76-afd0-f9b50919d3f9",
+  "name": "Story clues_mission_7",
+  "symbol": "script_story_clues_mission_7",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "29256d78-084e-4a33-a745-f4c0ba246266",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Clues: The Sled Is\nNot the Debt"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "add27b9f-a2e5-40ca-a8d4-7df771886aba",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d6e32db0-658e-4058-a0a3-08a00ac03e79",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "No clues yet for\nthis mission.\nFollow the next\nlead in START >\nStory."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "516d731e-ded3-42a2-a160-afeefcdaacfb",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "281d4d98-d4a9-4b35-a934-751d9b2577a3",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The sled register\nlists the city as\nowner. Its repair\ncharge was",
+                "paid from a public\nfund. Storage is\nthe only unpaid\nitem. A penciled",
+                "note says\nequipment cannot\nbe pledged by a\ndriver. Moxie\nlooks",
+                "deeply relieved by\nthis detail."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "f448ddb7-4bcd-4147-a6d0-5696564af13e",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b9b8f2d5-d722-437b-a975-d357923105ba",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The release\nchecklist requires\ntwo facts: public\nownership and a",
+                "cleared repair\ncharge. The\nsorting register\nproves ownership;\nthe",
+                "paid repair line\nproves the charge\ncleared. The\nstorage dispute",
+                "belongs on a\nseparate account.\nA substitute form\noffers release if",
+                "Moxie signs a\npersonal loan. She\ncould sign\nquickly, but it\nwould",
+                "turn a public\npaperwork error\ninto her private\ndebt. She puts the",
+                "pen down."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "9d032f4c-28d8-463d-a5f0-8289e9c37f4d",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d261b1ce-0d95-4ac8-a1ac-1012422ab3b0",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Manifest: Vehicle\nloan: none. Repair\ndebt: cleared.\nStorage claim:",
+                "disputed. Release\nrequires the\nmunicipal owner\nmark, a square.\nThe",
+                "crown stamp would\ntransfer a private\nvehicle, which\nthis sled has",
+                "never been."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "51348095-d8cc-42f1-a5f7-94ef9a6cce34",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "34dc9f66-a733-4769-a2ea-d2cfef3e9cd7",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Select the release\nform appropriate\nto this sled\nownership. The\nmark",
+                "is specified in\nthe manifest."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "c1ec2da0-0efa-4e1f-aabf-8eac0ed28b85",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 4
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "9a0cb6bb-ebc0-477c-a399-59b4b64fe88f",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Which packet\nsatisfies the two\nrelease conditions\nwithout making",
+                "Moxie personally\nliable? The clerk\ncan attach more\nthan one",
+                "document. Do not\nsolve a missing\nproof by inventing\na new borrower.",
+                "Moxie says she\nwill wait while\nyou get it right;\nthe sled belongs\nto",
+                "the city, and so\ndoes the duty to\nkeep its records\nstraight."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "a893c2e0-f630-450e-a6e2-187034ac5238",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "gt",
+          "valueA": {
+            "type": "variable",
+            "value": "44"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 5
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "bcd22f4c-510a-4150-a6de-a6ddf8fb4eaa",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Moxie: We can use\nthe sled again\nwithout pretending\nthe storage bill",
+                "disappeared. That\nis a surprisingly\ngrown up victory.\nShe writes",
+                "REPAIR THE RUNNER\nbefore drawing a\nracing stripe. The\nstripe comes",
+                "second, by a\nnarrow vote."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

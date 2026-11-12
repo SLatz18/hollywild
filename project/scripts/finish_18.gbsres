@@ -1,0 +1,269 @@
+{
+  "_resourceType": "script",
+  "id": "984c82a2-22e8-40e4-a851-31c8fa4538bc",
+  "name": "Story finish_18",
+  "symbol": "script_story_finish_18",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "d00fa9bb-39f3-4aea-a71c-daf9bba60751",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "6"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "12784070-7040-434a-a891-2f04d0849d7d",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "lte",
+                "valueA": {
+                  "type": "variable",
+                  "value": "1"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 9955
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "a5893d73-f133-4122-af7f-26fafd0a3486",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "lte",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "2"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 97
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "e3e924ac-6230-4feb-a61f-5eb914fc4f58",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "lt",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "45"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 18
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "8a9ff304-980c-4951-a93f-24fcec359147",
+                              "command": "EVENT_VARIABLE_MATH",
+                              "args": {
+                                "vectorX": "1",
+                                "operation": "add",
+                                "other": "val",
+                                "value": 44,
+                                "clamp": false
+                              }
+                            },
+                            {
+                              "id": "834003c0-4261-4691-ae9e-c071048e19e6",
+                              "command": "EVENT_VARIABLE_MATH",
+                              "args": {
+                                "vectorX": "2",
+                                "operation": "add",
+                                "other": "val",
+                                "value": 2,
+                                "clamp": false
+                              }
+                            },
+                            {
+                              "id": "09ce7eb7-860c-4e92-a5f8-d1d7083fe341",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "45",
+                                "value": {
+                                  "type": "number",
+                                  "value": 18
+                                }
+                              }
+                            },
+                            {
+                              "id": "02382296-1ef6-4c89-a02a-c776cfca28d1",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The message now\nhas a meaning, a\nreply, and a\nbackup that avoids\nthe",
+                                  "old fault. No\nreflex test or\nwaiting period is\nneeded to prove\nthe",
+                                  "code. You have\nchosen the correct\naction from the\nagreed rule, and",
+                                  "the crew records\nit."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "a213e286-c150-4b07-abe9-a47c30c72da7",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Mission complete.\n44 Coins and 2\nscrap."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "f5447084-ea1c-4338-a707-0253d57ca81a",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "44",
+                                "value": {
+                                  "type": "number",
+                                  "value": 0
+                                }
+                              }
+                            },
+                            {
+                              "id": "2d567e0f-6b0b-4737-ad6d-d94e45a1a334",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "43",
+                                "value": {
+                                  "type": "number",
+                                  "value": 19
+                                }
+                              }
+                            },
+                            {
+                              "id": "8a0ba502-d528-424a-aaed-98c1dd3ea38e",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Core is\nlarger than Pip\nexpected and\nquieter than he\nhoped.",
+                                  "Rivet prefers\nquiet machinery.\nThe turbine plate\nhas a safe",
+                                  "operating mark, a\ntest mark, and a\nmaximum mark that\nSlush once",
+                                  "mistook for a\nsensible daily\ntarget."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "9e3df08a-c9ca-4e35-a074-e7190e120e48",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Core:\ninspect the\nturbine plate."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "a5b5cf40-86d6-4a67-a122-418bc3e7449f",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Your reward is\nsafe. Make room in\nscrap storage,\nthen use Story or\nreturn here."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "fbf0f401-9e92-4a63-a918-5da371cfe0fe",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Your reward is\nsafe. Spend some\nCoins, then use\nStory or return\nhere."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "739bd726-eb53-4ab2-a306-20fdf29ab9ac",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Mission ready.\nFinish or cancel\nyour job, then use\nStory or return\nhere for the",
+                "reward."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

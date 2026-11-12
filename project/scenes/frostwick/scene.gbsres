@@ -427,7 +427,7 @@
                                                             "command": "EVENT_TEXT",
                                                             "args": {
                                                               "text": [
-                                                                "Explore the city.\nOwn all properties\nto restore Aurora."
+                                                                "Follow the ledger.\nGarage story desk\nleads to Aurora."
                                                               ],
                                                               "avatarId": "",
                                                               "minHeight": 4,
@@ -770,7 +770,7 @@
                                                 "command": "EVENT_TEXT",
                                                 "args": {
                                                   "text": [
-                                                    "Explore the city.\nOwn all properties\nto restore Aurora."
+                                                    "Follow the ledger.\nGarage story desk\nleads to Aurora."
                                                   ],
                                                   "avatarId": "",
                                                   "minHeight": 4,
@@ -820,7 +820,7 @@
       }
     },
     {
-      "id": "1a6e4f70-e008-4b6a-a31e-7b9403c6de77",
+      "id": "31f44448-cb2e-44fa-a048-8e886be3a7f7",
       "command": "EVENT_SET_INPUT_SCRIPT",
       "args": {
         "input": [
@@ -851,7 +851,7 @@
             "command": "EVENT_MENU",
             "args": {
               "variable": "14",
-              "items": 5,
+              "items": 7,
               "layout": "menu",
               "cancelOnLastOption": false,
               "cancelOnB": true,
@@ -859,7 +859,9 @@
               "option2": "Guide",
               "option3": "Crew",
               "option4": "Cancel",
-              "option5": "Close"
+              "option5": "Close",
+              "option6": "Story",
+              "option7": "Clues"
             }
           },
           {
@@ -1081,7 +1083,7 @@
                                                 "command": "EVENT_TEXT",
                                                 "args": {
                                                   "text": [
-                                                    "Explore the city.\nOwn all properties\nto restore Aurora."
+                                                    "Follow the ledger.\nGarage story desk\nleads to Aurora."
                                                   ],
                                                   "avatarId": "",
                                                   "minHeight": 4,
@@ -1525,12 +1527,70 @@
               ],
               "false": []
             }
+          },
+          {
+            "id": "12a4e92e-f455-4f07-ace6-1663354edcd5",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 6
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "8d7794ea-eb54-4f7a-a3de-32f35097e950",
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "1f447236-729f-4d76-a14f-33a7a3ff5505"
+                  }
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "id": "bdcf876f-9c17-4f1f-a011-36cd6cb981e5",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 7
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "ce4fb82b-b6f3-4fe9-a304-dabb38fe7770",
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "67179144-64f2-41bb-ad3b-aa2d20d33998"
+                  }
+                }
+              ],
+              "false": []
+            }
           }
         ]
       }
     },
     {
-      "id": "e08e234c-a550-43e8-ac04-485d39eadba1",
+      "id": "60ee1756-46b8-4a02-a4ba-e3da5f4c723a",
       "command": "EVENT_SET_INPUT_SCRIPT",
       "args": {
         "input": [
@@ -1541,7 +1601,7 @@
       "children": {
         "true": [
           {
-            "id": "dae7dca7-f4c7-4241-a34b-268be7b3ce68",
+            "id": "3b431ce9-9484-490d-af9d-0e8da925c6b9",
             "command": "EVENT_TEXT",
             "args": {
               "text": [
@@ -1562,7 +1622,7 @@
       }
     },
     {
-      "id": "2fdd8993-a703-485e-a6c0-67c741ab355d",
+      "id": "b688036a-3e62-4041-a2c7-8d2ed3f6710f",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -1580,7 +1640,7 @@
       "children": {
         "true": [
           {
-            "id": "2220bd90-330a-40fb-ad0f-7f29e28f81b7",
+            "id": "b7ea23ad-0b1e-4b0d-ac12-10c6ab9e7ca2",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "22",
@@ -1591,7 +1651,7 @@
             }
           },
           {
-            "id": "48024b2a-5118-47cb-a24b-d8d4124348af",
+            "id": "e617503d-407e-4f1f-a5a5-45e094150d84",
             "command": "EVENT_VARIABLE_MATH",
             "args": {
               "vectorX": "21",
@@ -1602,7 +1662,7 @@
             }
           },
           {
-            "id": "c7f52f59-e33f-49b9-a15f-b677472f1c7f",
+            "id": "f489a254-e074-4564-a61e-150454a0d85c",
             "command": "EVENT_TEXT",
             "args": {
               "text": [
@@ -1618,7 +1678,7 @@
             }
           },
           {
-            "id": "1e94fdcf-2b0e-4307-a7f8-6da3554a7ecf",
+            "id": "d00d8b6e-0b63-4b1f-ae61-eb13efe9a828",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -1636,7 +1696,7 @@
             "children": {
               "true": [
                 {
-                  "id": "a4334072-84f1-4e38-ab2f-db1f2eadb1f6",
+                  "id": "e2fbb30b-db28-4889-aca7-03889fc19dd9",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -1654,7 +1714,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "6be3e64c-4034-4ac0-af5f-91fbeeb02b8a",
+                        "id": "4dfcd882-3ddc-478c-a7fc-aafaadf7f6fe",
                         "command": "EVENT_VARIABLE_MATH",
                         "args": {
                           "vectorX": "3",
@@ -1667,7 +1727,7 @@
                     ],
                     "false": [
                       {
-                        "id": "e0ff69f3-af3b-43d2-af25-4f8eb9327082",
+                        "id": "f1cc8aa9-9395-4b45-a278-e8637c4b11fc",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "3",
@@ -1681,7 +1741,7 @@
                   }
                 },
                 {
-                  "id": "354857f0-49ec-4642-aa04-b88e54e6b26a",
+                  "id": "78188933-26df-446e-a499-ab32d6ed2689",
                   "command": "EVENT_TEXT",
                   "args": {
                     "text": [
