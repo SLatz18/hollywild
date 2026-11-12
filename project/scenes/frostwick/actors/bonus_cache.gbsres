@@ -1,0 +1,215 @@
+{
+  "_resourceType": "actor",
+  "id": "a1e4b156-c19c-4c6f-af62-d64e2ff2cfc2",
+  "_index": 4,
+  "symbol": "actor_frostwick_bonus_cache",
+  "prefabId": "",
+  "name": "Back-alley bonus cache",
+  "coordinateType": "tiles",
+  "x": 7,
+  "y": 21,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "6ead2450-474f-4ffb-a4b1-9991bd92b071",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "b7f13caf-b615-4979-a89e-d999057e3dd4",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "6"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "700e8dba-ceef-4b09-ae58-4dd258bc8110",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "8"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "45214beb-3ad1-48b8-afc1-613957d346d6",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "9"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "4521c507-0f96-4680-a5ad-058ba93bbfa4",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "7"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 0
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "43e28f4e-0067-4842-a4f8-4345605c2dd7",
+                              "command": "EVENT_VARIABLE_MATH",
+                              "args": {
+                                "vectorX": "8",
+                                "operation": "add",
+                                "other": "val",
+                                "value": 4,
+                                "clamp": false
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "c412fc93-4440-4f31-a7ca-693db0842057",
+                              "command": "EVENT_VARIABLE_MATH",
+                              "args": {
+                                "vectorX": "8",
+                                "operation": "add",
+                                "other": "val",
+                                "value": 2,
+                                "clamp": false
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "c02a0461-cca3-4d32-af9c-8cdabb0df272",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "9",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "5679f81b-6ff1-4314-a295-2248e272fd2e",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A hidden haul!\nBonus scrap packed.\nReturn to a board."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "20c2db45-fd78-493f-a0d3-ed4efab1dc2b",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Bonus packed.\nTry another route\non your next run."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "7e435ed1-b86e-40dd-a2b6-82baabb238b6",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Pack the main crate\nfirst, then return\nfor the extra haul."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "369ea9dd-93d7-46d3-a8d6-88b331a8c7ef",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Extra depot supplies.\nAccept a salvage\njob to collect."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

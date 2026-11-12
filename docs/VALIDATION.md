@@ -39,6 +39,6 @@ These checks validate the stated arithmetic only. They do not prove the eventual
 
 ## Outstanding runtime validation
 
-Toolchain setup, compilation, assets, emulator playthrough, interaction behavior, failure recovery, storage-cap handling, save/load, physical controls, screen readability, sound, cartridge installation, and normal power-cycle persistence all remain untested.
+This was the pre-build planning review. Current compilation, asset, emulator, and save/load evidence is recorded in [Native prototype status](BUILD_STATUS.md). Physical hardware checks and additional edge cases remain pending as listed there.
 
 See the [engineering test matrix](ENGINEERING.md#test-matrix) for acceptance cases. The independent planning review found transaction and progression ambiguities; those were corrected in the specifications before publication.

@@ -32,7 +32,7 @@ Slush should have a credible motive: he thinks centralized control is the only w
 | Velvet Heights | Ornate houses, strange open houses, hidden service alleys | Slush's showcase estate sits above an essential junction | Negotiate, inspect, or trade favors; recruit Nib and advance Dot's discovery arc | Restore Lantern Flats and secure junction access; public paths reconnect formerly closed streets |
 | Aurora Yard | Snowy rail approaches and the old station | The system failed from a single-point dependency, not a lack of holiday spirit | Coordinate acquired capabilities and choose the final restoration emphasis | Restore Aurora Station; the Winterlight Festival transforms a previously explored route |
 
-District access is unlocked by explicit story milestones, not an invisible reputation score. Each district can have optional prosperity goals, but a less optimized player still reaches the ending. Required objects cannot be sold, discarded, or consumed by production.
+Public district streets are accessible from the start in the full-city build. Story milestones unlock particular jobs, interiors, recruits, or improvements, not whole neighborhoods. The [open-world contract](OPEN_WORLD.md) supersedes earlier geographic gating. Each district can have optional prosperity goals, but a less optimized player still reaches the ending. Required objects cannot be sold, discarded, or consumed by production.
 
 Campaign content target: five districts and twelve authored missions, added incrementally. The first release candidate can be Frostwick alone if that loop is fun. Campaign length should be measured during playtests, not promised from a mission count.
 
@@ -88,9 +88,9 @@ For M06, recovery of the sled can be represented as an object delivered at the e
 
 Repeatable post-mission contracts reuse clear spaces and vary pickup/drop-off markers, cargo type, or one route obstruction. Authored campaign missions remain finite and testable. Random variation should never hide a required campaign item or change the cost after accepting a job.
 
-## First playable: exactly three scenes
+## Guided opening: three core scene roles
 
-The first chapter uses a garage, a street, and a depot. A 10–15 minute first playthrough is an unmeasured pacing target, not a promise. Cocoa Corner is an exterior transformation with a management panel. No café interior, driving, extra district, procedural map, combat, or separate cinematic scene is needed.
+The original guided route uses a garage, a street, and a depot role. The open-world native build expands traversal to five districts with a garage interior; a depot interaction can live in a district scene. These scene sketches remain content guidance, not a three-scene limit. A 10–15 minute first playthrough is an unmeasured pacing target, not a promise. Cocoa Corner is an exterior transformation with a management panel. A café interior, driving, procedural map, combat, and separate cinematic scene are not needed to prove the guided economic loop.
 
 ### Scene F01: inherited garage
 
@@ -251,4 +251,4 @@ First chapter content is ready only when a fresh player can tell what to do with
 
 Review every listing against the actual property cost and effect. Review every mission hint against a reachable object. Read every text box at actual display size. Verify that every saved choice has its promised consequence and that no flavor line contradicts a failed or incomplete mission.
 
-Preserve the warm city-building fantasy if scope is reduced: cut driving, extra interiors, ambient NPC schedules, and procedural contracts before cutting the property transformation or first successful automation result.
+Preserve the warm city-building fantasy if scope is reduced: cut ambient NPC schedules, procedural contracts, and decorative interiors before reducing geographic freedom, property transformation, or the first successful automation result. Test driving feasibility early, without treating it as a validated feature.

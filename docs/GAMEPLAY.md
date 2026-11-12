@@ -6,7 +6,7 @@ Design proposal for the first playable chapter and staged expansion. Numerical v
 
 The best version is a small city-building adventure with short playable errands and satisfying automation. The game should reward choosing an opportunity, doing something in the city, and seeing a building improve. Complexity belongs in combinations of a few clear rules.
 
-The first chapter has three scenes: garage, Frostwick street, depot. SnowPlace and Cocoa Corner are street interactions; Cocoa has no explorable interior yet. Three tutorial mission IDs are agreed with the world designer: M01 inspect listings and accept depot job, M02 complete depot salvage, M03 repair workshop, recruit Rivet, assign production, finish a safe street delivery, and acquire Cocoa Corner.
+The guided chapter has three core location roles: garage, Frostwick street, depot. The native open-world target expands travel to five districts with a garage interior; see [OPEN_WORLD.md](OPEN_WORLD.md). SnowPlace and Cocoa Corner are street interactions; Cocoa has no explorable interior yet. Three tutorial mission IDs are agreed with the world designer: M01 inspect listings and accept depot job, M02 complete depot salvage, M03 repair workshop, recruit Rivet, assign production, finish a safe street delivery, and acquire Cocoa Corner.
 
 The old draft's 6 guaranteed Salvage cannot cover workshop repair (4), the demonstration batch (2), and Cocoa restoration (4). Increase guaranteed first-depot salvage to 10. This makes the intended sequence feasible in two productive expeditions without asking the player to grind or discover an unstated extra reward.
 
@@ -20,7 +20,7 @@ Hub browsing, conversations, purchases, crew assignments, and scene exits consum
 
 A successful eligible contract advances the productive cycle counter by one and resolves queued work once. A failed contract or voluntary retreat increments a separate attempt counter only. It provides no property income, production, relationship bonuses, or automatic scouting result. Reserved workshop inputs are refunded. This distinction appears in the pre-departure card as "Crew work completes when this job succeeds."
 
-This is a game abstraction rather than a literal clock simulation. No wall-clock or offline income is proposed. Pausing, closing the console, or leaving the character idle never produces money. Repeating the safe delivery legitimately produces income because the player still performs its route. No anti-player diminishing rewards are needed; district progression also requires missions, recruits, and restored landmarks, so money alone cannot skip the story.
+This is a game abstraction rather than a literal clock simulation. No wall-clock or offline income is proposed. Pausing, closing the console, or leaving the character idle never produces money. Repeating the safe delivery legitimately produces income because the player still performs its route. No anti-player diminishing rewards are needed; specialist jobs and the finale also require missions, recruits, and restored landmarks, so money alone cannot skip the story.
 
 First-chapter pacing target: 1–2 minutes of introduction, 3–4 minutes of depot exploration, 2–3 minutes of setup and discovery, 2–3 minutes of delivery, and 1–2 minutes of restoration payoff. This 9–14 minute target is unvalidated.
 
@@ -80,7 +80,7 @@ M03 includes the purchase as its story completion condition, but the delivery su
 
 ## Buildings and specialization
 
-Prototype contains only the repaired garage and Cocoa. The other SnowPlace prospects can be inspected with clear future access requirements; the player cannot spend tutorial funds on unrelated purchases before Cocoa restoration. This protection is part of the brief introduction and disappears at the first milestone.
+Prototype contains only the repaired garage and Cocoa. The guided build may expose other prospects as previews, but the open-world target permits available purchases based on their stated costs and requirements. The tutorial ledger describes the recommended path only. Free supply and delivery tasks must recover from alternative spending choices.
 
 | Property | Acquisition/restoration cost | Base effect | Optional specialization after the prototype |
 | --- | --- | --- | --- |
@@ -146,4 +146,4 @@ Test cases:
 
 Playtest hypotheses: first visible restoration within 15 minutes, no required repeat mission before Cocoa, at most two menu pages between selecting a job and departing, and each recurring contract enjoyable enough to repeat three times. Track completion time, menu time, failed purchases, unused crew, reserve confusion, and players who cannot explain where their last reward came from. Measure these through actual play; do not present them as achieved.
 
-Deferred systems: driving, Heat, combat, worker injuries, debt, dynamic rent, random market prices, live listings, live generative conversations, co-op, offline income, and infinite procedural districts. Expand only after the first complete loop is fun and reliable.
+Driving is an early feasibility experiment after traversal works. Other deferred systems: Heat, combat, worker injuries, debt, dynamic rent, random market prices, live listings, live generative conversations, co-op, offline income, and infinite procedural districts. Expand only after the first complete loop is fun and reliable.

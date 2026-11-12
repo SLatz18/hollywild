@@ -1,0 +1,385 @@
+{
+  "_resourceType": "actor",
+  "id": "de3c720d-dfbf-4e74-ae2c-efbe1fb222e8",
+  "_index": 2,
+  "symbol": "actor_candy_parcel_palace",
+  "prefabId": "",
+  "name": "Parcel Palace",
+  "coordinateType": "tiles",
+  "x": 24,
+  "y": 10,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "1f8200c3-d9d6-4eaf-a7d6-b657d1b4aa28",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "3887c857-443e-4100-a59c-db238da20228",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "17"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2080d039-4b57-45cc-a7ec-2555152a48d3",
+            "command": "EVENT_ACTOR_SET_SPRITE",
+            "args": {
+              "actorId": "$self$",
+              "spriteSheetId": "3719a3fd-d601-457d-ac4d-f53637f128cb"
+            }
+          },
+          {
+            "id": "5380e1c0-4219-43e1-ae98-2ac7a877d8b4",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "PARCEL PALACE\nYour property.",
+                "20 Coins after each\nsuccessful job."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "64c043cc-dab4-4b6f-aab6-b609d3aad41f",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "PARCEL PALACE\n260 Coins + 8 scrap",
+                "20 Coins after each\nsuccessful job."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "b13aa4ea-74cf-4b9b-ad77-4c78ff78ec07",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "6"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "e40a0a77-3c14-4de6-ad24-bf05c339a152",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 2,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "Buy",
+                    "option2": "Back"
+                  }
+                },
+                {
+                  "id": "19fdf88d-e611-4d78-a0a0-67f3dad52a97",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "e97f2024-245d-40e5-af41-ac060817aa5e",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "gte",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "1"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 260
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "f0b80b91-c3bd-480a-a18a-e8ec8da3c121",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "gte",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "2"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 8
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "d23963ce-8461-48d4-aa97-b7f093979bf5",
+                                    "command": "EVENT_VARIABLE_MATH",
+                                    "args": {
+                                      "vectorX": "1",
+                                      "operation": "sub",
+                                      "other": "val",
+                                      "value": 260,
+                                      "clamp": false
+                                    }
+                                  },
+                                  {
+                                    "id": "e5549185-28d2-46f3-aed4-c42404b0eeec",
+                                    "command": "EVENT_VARIABLE_MATH",
+                                    "args": {
+                                      "vectorX": "2",
+                                      "operation": "sub",
+                                      "other": "val",
+                                      "value": 8,
+                                      "clamp": false
+                                    }
+                                  },
+                                  {
+                                    "id": "52aac722-31e1-40e1-aef5-449150fffe77",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "17",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "bd8d3403-4bd6-4e7c-a05d-21becb2e56fb",
+                                    "command": "EVENT_SOUND_PLAY_EFFECT",
+                                    "args": {
+                                      "type": "beep",
+                                      "pitch": 7,
+                                      "duration": 0.1,
+                                      "priority": "medium",
+                                      "wait": false
+                                    }
+                                  },
+                                  {
+                                    "id": "c3a0722b-a674-464d-a63e-3e2e185b3742",
+                                    "command": "EVENT_ACTOR_SET_SPRITE",
+                                    "args": {
+                                      "actorId": "$self$",
+                                      "spriteSheetId": "3719a3fd-d601-457d-ac4d-f53637f128cb"
+                                    }
+                                  },
+                                  {
+                                    "id": "151c12b2-5501-4a85-a82b-f90ca8f83ec1",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "lte",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "3"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 95
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "b9f7be22-108d-4f39-a963-c90d7c96937f",
+                                          "command": "EVENT_VARIABLE_MATH",
+                                          "args": {
+                                            "vectorX": "3",
+                                            "operation": "add",
+                                            "other": "val",
+                                            "value": 5,
+                                            "clamp": false
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "7170af84-c74b-4d0d-ad64-06028ca14fb1",
+                                          "command": "EVENT_SET_VALUE",
+                                          "args": {
+                                            "variable": "3",
+                                            "value": {
+                                              "type": "number",
+                                              "value": 100
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "id": "6571de0a-164f-45c8-a811-8f8f6787b172",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "RESTORED!\nA warmer corner\nof the city."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "717ccf2a-c78a-41fa-af18-0a7f29418d1b",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Not enough scrap.\nYour Coins were\nnot spent."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "f7f603b1-c32d-42ba-a0ca-ef199e5e9268",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Not enough Coins.\nNothing was spent."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "ba3f5185-3b69-47d6-ab0e-27ef79d6dba5",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Finish or cancel\nyour current job\nfirst. START menu."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "startScript": [
+    {
+      "id": "10e35d08-67a3-497d-a72e-f8cc550e9ad1",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "17"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5e73d90a-0cde-4863-a0f5-4bf9bd9bcd86",
+            "command": "EVENT_ACTOR_SET_SPRITE",
+            "args": {
+              "actorId": "$self$",
+              "spriteSheetId": "3719a3fd-d601-457d-ac4d-f53637f128cb"
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

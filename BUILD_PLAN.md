@@ -2,13 +2,13 @@
 
 ## Detailed production blueprint
 
-Version 0.2, November 12, 2026. Planning only. No playable ROM, installed toolchain, tested cartridge, or measured playtime is claimed.
+Version 0.4, November 12, 2026. This document describes the larger design. A native prototype now builds and has emulator coverage; see [current build status](docs/BUILD_STATUS.md) for implemented scope and evidence. Physical cartridge testing and measured playtime are pending.
 
 This is the entry point for the expanded plan. This blueprint and its linked specifications define the current proposal. Numeric values are tuning hypotheses until playtested.
 
 ## The recommendation
 
-Build a compact, funny property-and-expedition strategy game that feels like a city you can explore. The first release should earn its depth through interacting systems: a property changes what your crew can produce, that production changes which expedition is worthwhile, and the expedition reveals the next property opportunity.
+Build an open-world holiday city adventure centered on property, expeditions, and automation. Geographic freedom is a core requirement; see the [open-world contract](docs/OPEN_WORLD.md). The first release should earn its depth through interacting systems: a property changes what your crew can produce, that production changes which expedition is worthwhile, and the expedition reveals the next property opportunity.
 
 The personal fit comes from the creative brief:
 
@@ -44,10 +44,10 @@ flowchart LR
 | Feasibility | One character, one interaction, one compiled ROM | Build reproducibly; load in an emulator; verify buttons and display |
 | First chapter | Garage, neighborhood street, depot; two expeditions; workshop production; café acquisition | Finish the entire loop, recover from failure, and preserve state through save/load |
 | One-district release | More property decisions, side jobs, crew choices, inspection clues | Several strategies work; readable menus; no repeated chore required to progress |
-| Campaign | Five districts, staged recruits, a chain of restoration milestones | Each district adds a meaningful choice and fits the measured hardware budget |
-| Optional expansion | Driving, Heat, deeper route variation, further mission packs | Each feature proves fun and affordable in isolation before integration |
+| Campaign | Five freely connected districts, optional jobs, staged recruits, and restoration milestones | Each district adds a meaningful choice and fits the measured hardware budget |
+| Optional expansion | Heat, deeper route variation, and further mission packs | Each feature proves fun and affordable in isolation before integration |
 
-The first chapter targets 10–15 minutes, but only playtesting can establish its actual duration. The larger campaign is a content direction, not a delivery estimate. Driving is appealing, but it must not hold up testing the core strategy game.
+The first chapter targets 10–15 minutes, but only playtesting can establish its actual duration. The larger campaign is a content direction, not a delivery estimate. Prototype driving after walking and city transitions work, before committing to the full campaign art. Its feasibility remains unverified.
 
 ## The opening we should build first
 
@@ -73,7 +73,7 @@ If we later add Codex-authored mission packs, they are new game builds with deli
 
 - Standalone cartridge play is the target.
 - The core is strategy, property transformation, and expeditions.
-- Use compact connected scenes before attempting a large continuous city.
+- Connect public streets across all five districts without main-story travel locks. Use compact connected scenes as the initial implementation.
 - Advance the economy through explicit expedition resolution, not wall-clock waiting.
 - Keep early resources and menus small enough to understand on a handheld.
 - Keep mandatory progression recoverable after a mistake or failed mission.
@@ -83,7 +83,7 @@ If we later add Codex-authored mission packs, they are new game builds with deli
 
 ## Open questions that require evidence
 
-The preferred workflow uses the ModRetro plugin, with direct GB Studio authoring and export as a documented alternative. Toolchain availability and physical deployment must be verified during setup; neither is claimed complete.
+The preferred workflow uses the ModRetro plugin, with direct GB Studio authoring and export as a documented alternative. The official GB Studio native toolchain has been exercised locally. Physical deployment remains unverified.
 
 The following are development checks, not reasons to stop designing: which toolchain is available, how the chosen save configuration behaves, the actual scene and sprite budget, which controller mappings the preview uses, and whether proposed driving or hazard mechanics perform well. Hardware testing waits for the physical console.
 
@@ -99,6 +99,7 @@ No cartridge is written until a build passes emulator checks and the owner confi
 
 ## Reading order
 
+0. [Open-world contract](docs/OPEN_WORLD.md): free exploration, geographic connections, persistent state, and travel acceptance checks.
 1. [Gameplay and economy](docs/GAMEPLAY.md): exact opening ledger, resources, properties, production, recovery, and edge cases.
 2. [World and missions](docs/WORLD_AND_MISSIONS.md): five districts, twelve missions, three scene specifications, characters, dialogue, art, and interface design.
 3. [Engineering and verification](docs/ENGINEERING.md): data model, settlement contract, saving, thirteen backlog items, toolchain alternatives, and release gates.

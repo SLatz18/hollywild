@@ -1,0 +1,166 @@
+{
+  "_resourceType": "actor",
+  "id": "eec83fd4-03bd-4657-ad4d-8a1c92e212ef",
+  "_index": 3,
+  "symbol": "actor_aurora_relay_cache",
+  "prefabId": "",
+  "name": "Relay salvage",
+  "coordinateType": "tiles",
+  "x": 24,
+  "y": 10,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "bf60ad4c-876d-476f-a654-3161297781a1",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "7cb51abd-8bfc-4d2c-ae86-219967f61123",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "6"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "4373fb79-08d2-40b2-aee2-ee9f607d5102",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "8"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "123735b5-78ab-441b-aa90-c7ca456bc073",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "7"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "45d4b580-c648-4be8-a90d-04772138420e",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "8",
+                          "value": {
+                            "type": "number",
+                            "value": 10
+                          }
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "5313d0ce-fd70-4368-a9ca-fa343e735238",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "8",
+                          "value": {
+                            "type": "number",
+                            "value": 6
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "7b72185b-f712-4316-a5be-b0a2f8db80b9",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Packed $8$ scrap.\nFind the bonus crate\nor return to a board."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "77480453-bc9c-4588-aa70-52904e53e714",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "You already packed\nthe main salvage\nfor this run."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "7a15b7aa-88d6-42d1-a748-60442bef0b86",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "SALVAGE DEPOT\nTake a salvage job\nat the nearby board."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

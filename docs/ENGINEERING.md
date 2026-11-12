@@ -24,6 +24,8 @@ References: [scenes](https://www.gbstudio.dev/docs/project-editor/scenes/), [set
 
 ## First playable boundary
 
+Direction update: [OPEN_WORLD.md](OPEN_WORLD.md) extends the original three-location economic slice into a five-district traversal prototype. Earlier scene counts below describe the guided-loop baseline, not a restriction on the connected city. Only implemented and tested features belong in release notes.
+
 The complete chapter is the product of the first milestone sequence, not a disposable movement demo. Target 10–15 minutes for a familiar player, then measure a first-time player's duration. Exclude driving, free placement of buildings, live services, multiplayer, dynamic weather simulation, and infinite generated maps.
 
 Include one visually upgraded hub, a neighborhood street, a depot expedition, a compact listing interface, two crew members, one automatic job, one recoverable failure, one optional discovery, and a clear chapter ending. Placeholder graphics are acceptable until the full loop works. Test persistence before expanding the world.
@@ -72,7 +74,7 @@ Use a small explicit registry, even if GB Studio represents every entry as an in
 | Group | Required state |
 | --- | --- |
 | Identity | build ID, save schema version, active checkpoint identifier |
-| Progression | chapter ID, tutorial step, unlocked district flags |
+| Progression | chapter ID, tutorial step, discovered district flags; public travel is not story-gated |
 | Economy | Coins, owned Salvage, reserved_salvage, Cheer; configured resource caps |
 | Properties | fixed property IDs, ownership, upgrade level, specialization |
 | Crew | recruited flag, assignment ID, priority, reserve setting |
@@ -180,7 +182,7 @@ Do not install a second full engine merely because plugin search is empty. Do no
 
 ## Scope cuts and risks
 
-Cut in this order if complexity rises: driving, seamless map transitions, large crowds and weather effects, procedural missions, advanced conditional automation, additional property specializations, then extra districts. Preserve the complete expedition-to-upgrade loop, readable menus, a recovery path, and tested saving.
+Cut in this order if complexity rises: large crowds and weather effects, procedural missions, seamless streaming, advanced conditional automation, decorative interiors, then optional property specializations. Preserve open public routes. Test driving feasibility early; adopt it only if the native experiment succeeds. Preserve the complete expedition-to-upgrade loop, readable menus, a recovery path, and tested saving.
 
 Principal risks are an unclear plugin installation route, resource/economy contradictions, instant-retreat production farming, crowded screens, menu fatigue, incompatible saves after ROM updates, and a large content plan becoming a substitute for a fun loop. Resolve them with one empirical probe or narrow playtest each, not wholesale engine changes.
 
