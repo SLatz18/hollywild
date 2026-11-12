@@ -1,0 +1,128 @@
+{
+  "_resourceType": "script",
+  "id": "15c4addf-3523-4b2c-a099-49a179e45c21",
+  "name": "Story side_step_neighbors_2_2",
+  "symbol": "script_story_side_step_neighbors_2_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "014d4cdf-961e-4039-a9fa-c29b1a70143c",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Which decoration\nkeeps the\nfour-pace delivery\ngap and still\ndisplays the",
+          "sponsor's name?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "d41b37cf-40ae-4ace-a717-ba40277aca6e",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "ARCH",
+        "option2": "BANNER",
+        "option3": "BOTH"
+      }
+    },
+    {
+      "id": "b37c9e15-f618-4ef7-a6b4-f8287f60b4a4",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "3965950f-38b7-40ce-a0d3-f15402e056b8",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "97",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "da15c19f-5dee-47a6-ad13-92729de55085",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Velvet Heights:\nagree the sponsor\ncredit at the side\ndesk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "6cc7e394-a299-4e26-a869-e1db0a6207bd",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "f0a55e2d-343c-416f-a0a2-8c678526957d",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The arch leaves\nonly two paces.\nThe wall banner\nleaves all four\nand can carry the",
+                      "sponsor's name."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

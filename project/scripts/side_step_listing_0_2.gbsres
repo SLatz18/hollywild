@@ -1,0 +1,126 @@
+{
+  "_resourceType": "script",
+  "id": "c58e2274-717d-48ff-aed6-7ecf040863f0",
+  "name": "Story side_step_listing_0_2",
+  "symbol": "script_story_side_step_listing_0_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "c3bedf2e-6712-44dc-a73e-15fa6a1dda3a",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "What is actually\non Lot 8, the lot\nnamed in the\nbrochure?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "b4ed461c-e02f-4d13-ae42-d6bde5ce9747",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "LANDING",
+        "option2": "HUT",
+        "option3": "COTTAGE"
+      }
+    },
+    {
+      "id": "1a66935f-ad09-4c68-a531-599447b64478",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "db15724c-de83-4dff-ad81-621588bd7a2b",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "94",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "4df1d256-1cb7-4525-ac93-0ede8dcfd010",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Velvet Lodge:\nchoose how to\ncorrect the\nbrochure at the\nside desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "f7d4dc7f-811c-4545-a02f-323a1f38172b",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "21237d96-442f-4c80-adf9-c3df573535b0",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The survey and the\nmarker agree: Lot\n8 is the stair\nlanding. The hut\nstands on Lot 9."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

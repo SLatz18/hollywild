@@ -1,0 +1,275 @@
+{
+  "_resourceType": "script",
+  "id": "b8153572-819e-4f95-aa4a-23b21dfc8d67",
+  "name": "Story side_finish_courier_1",
+  "symbol": "script_story_side_finish_courier_1",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "631fef2e-3b6f-4d3f-add8-0a1673cf0318",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "90"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "aed0aae4-8ef9-475b-a02f-1879952da58a",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "91"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 5
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "06c0b00d-3bc6-4eb3-ad96-7f972287ac89",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "6"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "202fc3c0-8a1f-4ce0-a8dd-4bae635e551a",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "lte",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "1"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 9956
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "3f30dfe6-a97f-4cdd-a4cd-12146f341719",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "lte",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "2"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 98
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "169fdf21-c025-44eb-ab21-e6eb8f5d73f2",
+                                    "command": "EVENT_VARIABLE_MATH",
+                                    "args": {
+                                      "vectorX": "1",
+                                      "operation": "add",
+                                      "other": "val",
+                                      "value": 43,
+                                      "clamp": false
+                                    }
+                                  },
+                                  {
+                                    "id": "b0474275-81ad-4cfc-ae18-8bf867110e89",
+                                    "command": "EVENT_VARIABLE_MATH",
+                                    "args": {
+                                      "vectorX": "2",
+                                      "operation": "add",
+                                      "other": "val",
+                                      "value": 1,
+                                      "clamp": false
+                                    }
+                                  },
+                                  {
+                                    "id": "9225037f-7884-407c-a3b5-d41d20a24059",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "91",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 0
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "0ac75544-35bb-40c9-a3c3-03b9db6609b3",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "90",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 3
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "db2d74ec-7e6a-4f7b-ad01-cc627ada6c1d",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "One fern\ndelivered, two\nforests returned.\nFig adds a cargo\ncount to every",
+                                        "future order."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "8457a07e-b7f6-47e2-a6b5-76911ccf6f67",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Reward: 43 Coins\nand 1 scrap."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "79a1e757-6cea-4a30-a393-a3643b5ee77d",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A crate addressed\nto Nobody has\ncircled town. Fig\nwants to find its\nperson without",
+                                        "opening somebody\nelse's gift."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "1c8f9c2b-929f-4651-af21-aaa1d10f773c",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Parcel Palace:\nread the return\nlabel at the side\ndesk."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "fcb34aa6-524d-4b73-a40e-700c41911702",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Reward pending.\nMake room in scrap\nstorage, then\nreturn or use\nSide."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "17a02059-b5a6-47ca-a7f8-095646729171",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Reward pending.\nSpend some Coins,\nthen return or use\nSide."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "b6020e03-faed-45c8-a202-b3611c9113e2",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Reward pending.\nFinish or cancel\nyour job, then\nreturn or use\nSide."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

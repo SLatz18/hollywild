@@ -1,0 +1,121 @@
+{
+  "_resourceType": "script",
+  "id": "a744c9b7-3437-4f09-abd4-de0e6869dd87",
+  "name": "Story side_step_neighbors_1_4",
+  "symbol": "script_story_side_step_neighbors_1_4",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "ad432880-2e84-40ae-ace9-1d3624f6fb7c",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Elm records the\nfitter's name and\nthe two views\nchecked. A child\ndraws a lamp that",
+          "looks suspiciously\nlike a carrot."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "799abc68-c5d6-4740-ae04-60546796073c",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "98"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "ad6a7d77-0bb1-4d49-af5b-c5d68aa7fdd0",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The sharing shelf\nnow holds a spare\nlantern for\nborrowing. Its\ncard names the",
+                "person who checks\nit after return."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "35101f64-ca2a-44f5-a0eb-fea65872aa5d",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "98"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "70dad6f7-132e-4eca-a5e6-6f96078255ba",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The request board\ngains a completed\nlamp entry. Elm\nkeeps the request\nvisible beside the",
+                "result."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "3180e57a-cc97-4e39-a896-8364740e7b76",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "97",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      }
+    },
+    {
+      "id": "72a4d47d-08db-463d-afe2-c5ad8b1ce4f4",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "1b237655-8a5b-4540-a9a3-80ce84ea3293"
+      }
+    }
+  ]
+}

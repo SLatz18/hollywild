@@ -1,0 +1,127 @@
+{
+  "_resourceType": "script",
+  "id": "8dcc44a1-f283-487e-a246-5199741bd977",
+  "name": "Story side_step_silent_soup_0_1",
+  "symbol": "script_story_side_step_silent_soup_0_1",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "f9e94037-4c4b-4b1d-a8e6-7d6f74b82b86",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "What signals ready\nsoup without\nmaking a sound?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "e8f05338-2799-4d58-a6ea-25a7521155df",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "WHISTLE",
+        "option2": "CARD",
+        "option3": "BELL"
+      }
+    },
+    {
+      "id": "682d1403-4e62-40cd-a103-ca5d4b90cc76",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "5451000c-911f-4ab2-a1e7-e5436ba05301",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "106",
+              "value": {
+                "type": "number",
+                "value": 2
+              }
+            }
+          },
+          {
+            "id": "79ee3142-8bbf-4512-af22-de515a8e8cd3",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Cocoa Corner:\ndeliver the READY\ncard at the side\ndesk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "e78886d4-661e-438f-ad3c-b007220657f8",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "4bea0409-857c-408c-ab86-593593de049f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The READY card is\nvisible and\nsilent. Both bell\nand whistle would\nmake the problem",
+                      "worse."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

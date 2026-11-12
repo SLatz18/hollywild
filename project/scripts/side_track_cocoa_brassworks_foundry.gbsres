@@ -1,0 +1,343 @@
+{
+  "_resourceType": "script",
+  "id": "0e60e03c-d13d-4046-ad62-dff6a332148c",
+  "name": "Story side_track_cocoa_brassworks_foundry",
+  "symbol": "script_story_side_track_cocoa_brassworks_foundry",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "4b675423-f30d-4dfe-af82-8ef463f78870",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "120"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "0eb738fb-052f-4af0-ad0a-953baba357af",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A Counter for Cold\nHands",
+                "Your cafe has\ncustomers\nbalancing hot cups\nbeside the door.\nBuild a useful",
+                "pickup counter\nwithout narrowing\nthe entrance.",
+                "Begin at Cocoa\nCorner."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "eebecef8-7c68-4e6e-a099-8863904e8c56",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "120"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "69a966fc-837c-4d65-a1f3-903dd814d3bc",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A Counter for Cold\nHands",
+                      "Room for the Next\nCup"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "a74050b8-1335-4f97-ac67-1b76cd3ac3fd",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "121"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "cc58240b-7745-4636-a80b-f2bd90f59524",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Cocoa Corner:\ninspect your\npickup-counter\nplan at the side\ndesk."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "57fe5180-7166-48dd-abb3-e2a50b7c9ce0",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "121"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "5d64a496-2f0c-47e1-a5e7-138f8c369d4b",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "eefe4ad6-aa12-41d7-a0ac-37edcf3a2ea8"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "3df6c493-b3ea-4ce8-a569-1a8e2a91373a",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "121"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "72cfe460-8240-477f-a5ff-c700e3eec53d",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Cocoa Corner:\nchoose your\ncounter layout at\nthe side desk."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "b3c3c30d-f520-4348-ae71-f28392123296",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "121"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "699cacc0-557e-434c-aaa2-e34246fdaad5",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Cocoa Corner:\ncheck the finished\npickup counter at\nthe side desk."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "5ea6b634-1305-49e2-a6c2-150300dd3836",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "121"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 4
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "0a088d2e-e61b-4cfb-a340-24fd6865809d",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Reward ready. Use\nSide to claim it."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "73923447-c606-4335-af35-a728e9a2250c",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Check the Side\njournal for your\nnext lead."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "ba0b3581-4374-45a3-ac9a-1a12cec51254",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "120"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "6fc61136-b25a-4afe-a9dc-84f8970b831c",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Counter for Cold\nHands",
+                            "Your cafe\nimprovement pays 4\nextra Coins per\nsuccessful\nordinary job. No",
+                            "extra project fee\nwas charged."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "f2d68251-d7c5-41e4-a162-d8ae525fb827",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Check the Side\njournal for your\nnext lead."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

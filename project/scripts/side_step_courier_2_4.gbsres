@@ -1,0 +1,121 @@
+{
+  "_resourceType": "script",
+  "id": "83d8714a-0a71-4546-a7dd-4848f1201110",
+  "name": "Story side_step_courier_2_4",
+  "symbol": "script_story_side_step_courier_2_4",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "2ecd8fce-8842-4971-a8e2-d759ca225537",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Every strange\nparcel has a\ndestination and a\nreceipt. Fig gives\nthe regular",
+          "couriers his\nfitted crates.\nCompleted ordinary\ndelivery jobs now\npay 5 extra Coins."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "715dd657-cc69-4c40-a0b9-d6b3210c2338",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "92"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "6af951d3-2edf-4209-a07e-da55e7838743",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "His pocket horn\nbecomes an\noptional arrival\nbell. The clerk\nbooks a two-note",
+                "concert for her\nlunch break."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "f30865a8-feed-4c18-a0df-c13adc219208",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "92"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "41197280-0046-474c-aa49-b7a68cfaf10e",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "His cards become a\ncity receipt pad.\nThe clerk saves\nthe first one\nbeside Alma's",
+                "note."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "9dafc681-b6bf-4e27-a60f-80d6dc51fe9c",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "91",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      }
+    },
+    {
+      "id": "7e3f3496-0930-4110-ac5c-8349e0cf0346",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "65bea6c8-e794-4cbe-abad-20bf86bc2800"
+      }
+    }
+  ]
+}

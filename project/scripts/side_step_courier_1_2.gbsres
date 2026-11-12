@@ -1,0 +1,126 @@
+{
+  "_resourceType": "script",
+  "id": "e5c39925-2ab7-4d16-a0d8-5266071339aa",
+  "name": "Story side_step_courier_1_2",
+  "symbol": "script_story_side_step_courier_1_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "94d2d93b-71a2-463c-a54f-fbde202e5849",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Which pot belongs\nin the reading\nroom? The order\nnames the pot and\nits tag."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "677986f0-36f2-4eee-a33e-48599487684f",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "F4",
+        "option2": "T2",
+        "option3": "T3"
+      }
+    },
+    {
+      "id": "9595b001-1acf-4ff6-a249-0b0bff4cf223",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "564eb714-d151-4aac-a9dc-e1f693972a13",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "91",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "9dda6552-87e0-4f20-a956-1e8e7e6914c0",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Candy Row: return\nthe two theatre\npots at the side\ndesk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "3ca823db-2c52-4905-afed-e297ccba8175",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "5ad083ac-bec6-4975-aa98-ab0a7317d9bf",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "F4 has the square\nbrass tag named on\nthe order. The\ntheatre pots must\ngo back."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "_resourceType": "script",
+  "id": "721abb4c-093a-4803-a17d-123f41cbc3f5",
+  "name": "Story side_step_listing_1_4",
+  "symbol": "script_story_side_step_listing_1_4",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "82db9d32-790d-4923-ad87-126aa313230a",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The file says:\nsound reported,\nsource traced,\nrepair requested.\nIt does not claim",
+          "the repair is\ncomplete."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "0c922662-e169-4d31-ae3d-e2e6f34b2a63",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "95"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "660b7ca0-c548-42bb-abe3-e0ac8972d883",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Nib adds a dated\nrepair-status box\nto his facts card.\nA box marked\npending is much",
+                "kinder than a\nfalse promise."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "1960bc68-3756-47ac-afa0-ece0613a2453",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "95"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "e6ab449f-2078-4eef-a73f-0ca8fa70982d",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Nib adds the quiet\nwall and the\nrunning bell to\nhis tour. Visitors\ncan hear the",
+                "difference instead\nof trusting his\nadjectives."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "a311a2c1-7db9-432f-adb8-98e6c77ac293",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "94",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      }
+    },
+    {
+      "id": "b96d5862-acd2-4dd1-a0b8-ac9e50955332",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "daaedf6a-0972-4f9a-a3d8-a33f5fbce068"
+      }
+    }
+  ]
+}

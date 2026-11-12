@@ -1,0 +1,288 @@
+{
+  "_resourceType": "script",
+  "id": "3db2e242-db91-40a5-ab42-fef170c9e6e9",
+  "name": "Story side_track_lantern_code_aurora_core",
+  "symbol": "script_story_side_track_lantern_code_aurora_core",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "0005887c-ff04-49b4-a784-c2017676818c",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "111"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "233d4f57-1544-46fc-a8d1-a68e53d976e8",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A Signal for the\nBiscuit Tin",
+                "The signal clerk\nhas secured the\nbiscuit tin with a\nwritten reminder.\nPip calls it a",
+                "cipher because\nthat sounds less\nlike being unable\nto find lunch.",
+                "Begin at Aurora\nSignal."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "bf3a4e1a-ae94-4c56-a576-75b6d96fac80",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "111"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "4f10333f-dddf-439c-ac14-6227fc2bbec0",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A Signal for the\nBiscuit Tin",
+                      "Read Before Crumbs"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "914a6e3d-35c8-4a56-a48b-763a112c584f",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "112"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "0d5b37c6-9222-4900-a149-9546fb03e030",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Aurora Signal:\nread the biscuit\nreminder at the\nside desk."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "0f7af849-033d-4f3c-aa7a-083c0c830977",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "112"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "fe036ed0-6e98-47b3-ab4c-6487895923c0",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "7aeabc68-ef68-476c-a7f5-a8499824cbae"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "d8b8de08-5ca2-4724-a1df-a6718d4b2b3a",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "112"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "5698cc9b-8bdb-429e-a903-0994fc65ce24",
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "2bb4bd30-9665-4eca-ad5a-5827705cc8b0"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "e5cd2a68-802b-4c40-afb8-8d354f2eb73f",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "112"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "df28a1e5-66e3-406c-ae0e-0407187f8ee4",
+                                          "command": "EVENT_CALL_CUSTOM_EVENT",
+                                          "args": {
+                                            "customEventId": "280b9980-30ca-4b15-acdf-e9240396ec4d"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "b711626b-dbc2-4993-a4b2-c8a0d8ce2b8b",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Check the Side\njournal for your\nnext lead."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "641fa696-f5a5-47ce-a3ed-d496d8cbeef6",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "111"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "541e1589-c475-4688-a7f8-fdb66ebcfb8d",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Signal for the\nBiscuit Tin",
+                            "The crew has found\nits lunch. No\npublic signal was\ntouched in the\npursuit of crumbs."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "1806460e-fc3f-4896-a260-05ba0dacbbfc",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Check the Side\njournal for your\nnext lead."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

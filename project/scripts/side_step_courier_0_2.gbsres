@@ -1,0 +1,126 @@
+{
+  "_resourceType": "script",
+  "id": "5a62e360-ef0a-4d24-ac82-b8d4fab5d4b5",
+  "name": "Story side_step_courier_0_2",
+  "symbol": "script_story_side_step_courier_0_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "6feb2dfc-770b-4876-a01b-797b21f8c529",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The pudding must\nremain upright in\ntransit. Which\ncrate fits the\norder?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "a835c75c-7076-4159-a124-b920024e6ce0",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "RED",
+        "option2": "BLUE",
+        "option3": "EITHER"
+      }
+    },
+    {
+      "id": "36c35faa-0da0-4f9e-a08e-88f2f0af72ad",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "7f10e4a6-a345-4018-add3-58d02983d430",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "91",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "f2ca469a-5c58-40e7-a6ed-22b9b92cef31",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Candy Row: choose\nFig's delivery\nstyle at the side\ndesk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "6bc72fc9-48ef-4161-ac51-3e8e3be580b8",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "84d043ee-a83c-48b8-a161-c2eb176a0913",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The blue crate has\na ring that holds\nthe bowl upright.\nThe flat red crate\ncannot steady it."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

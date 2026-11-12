@@ -1,0 +1,121 @@
+{
+  "_resourceType": "script",
+  "id": "f84507d5-5773-4fa3-ad95-832811d047c9",
+  "name": "Story side_step_neighbors_0_4",
+  "symbol": "script_story_side_step_neighbors_0_4",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "3b64390a-15c3-49ff-ad21-65fbf363c9d7",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Elm asks people\nwhat they need\nbefore announcing\nan opening. One\nneighbor wants a",
+          "place to wait for\na lift. The bench\nalready has its\nfirst job."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "f80a9e24-1bb7-437b-ae83-d1588425642d",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "98"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "e4ccd3c2-7567-43ec-a478-17a70f2d8c84",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A neighbor offers\nclean mittens for\nthe sharing shelf.\nElm labels the\nsizes so nobody",
+                "has to unfold\nevery pair."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "d4d9c1e6-1120-4cbe-ad33-5970648b35b1",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "98"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "140886bd-8dd5-4c3e-a00a-129c19a8f8a2",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A neighbor writes\nLIFT TO MARKET\nbeside their name.\nAnother adds a\nreply and agrees",
+                "the arrangement\ndirectly."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "93f216dd-3ae1-4d0e-a5d7-9e4e17df7b7a",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "97",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      }
+    },
+    {
+      "id": "4339c12c-9d70-4b86-ae6f-0ee0e9dde61c",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "2e9b9b08-a3a0-46e0-af27-174538b14710"
+      }
+    }
+  ]
+}

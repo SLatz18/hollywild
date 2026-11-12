@@ -1,0 +1,128 @@
+{
+  "_resourceType": "script",
+  "id": "f7d939e4-43a6-4755-a718-659f2d0a2808",
+  "name": "Story side_step_neighbors_1_2",
+  "symbol": "script_story_side_step_neighbors_1_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "3fac6d00-f65b-4aeb-adbb-b1e881117d83",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The lamp works and\nthe bedroom lies\nabove it. Which\ndirection should\nthe hood send the",
+          "light?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "8184b585-b9d8-44a8-ad9d-dd3541cb2ac8",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "UP",
+        "option2": "DOWN",
+        "option3": "WINDOW"
+      }
+    },
+    {
+      "id": "9f63c139-f423-41ef-aefe-792579ef720b",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b02f5853-6722-4f1a-a652-8bad52de2788",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "97",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "2913c105-02b8-460f-a2e3-ac0c914c21ff",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Frostwick: observe\nthe fitted hood at\nthe side desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "d0bc46b5-dbcd-47aa-a0ef-d1ff4c996d5f",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "e745a46c-3c59-4906-a865-4b01af032b8d",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The treads need\nlight below the\nlamp. Point the\nhood down and\nshield the bedroom",
+                      "above."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

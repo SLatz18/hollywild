@@ -1,0 +1,125 @@
+{
+  "_resourceType": "script",
+  "id": "36b688d1-e637-4ada-ab03-14cd28719266",
+  "name": "Story side_step_cocoa_0_2",
+  "symbol": "script_story_side_step_cocoa_0_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "b81b1d6a-174b-4606-a481-242df2ff4bd9",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Which layout\npreserves both\nclear floor tiles\nat the entrance?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "fd4795d1-8e65-4231-a1d5-f637f01c2266",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 2,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "ISLAND",
+        "option2": "WALL"
+      }
+    },
+    {
+      "id": "bffb6736-bca3-4760-a32a-46a050dd9082",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "29bbecdf-43ed-4612-afb3-0ae8a6de51cc",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "121",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "97365a22-1a0c-4040-a347-575bfd17f0d8",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Cocoa Corner:\ncheck the finished\npickup counter at\nthe side desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "a2adfba8-743b-46b2-a7c5-d395fb67f0ff",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "b4854063-4eb7-44e7-ab86-4b7c82e0da39",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The shallow wall\ncounter leaves two\ntiles. The deep\nisland leaves only\none."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "_resourceType": "script",
+  "id": "e2bb1038-a036-4108-a3f4-d98dc07e232d",
+  "name": "Story side_step_neighbors_2_4",
+  "symbol": "script_story_side_step_neighbors_2_4",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "bd1ca6c1-8e07-42e3-a202-4908ab3592aa",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The corner is\nready for daily\nuse. Elm\ncoordinates\ndonation sorting.",
+          "Each ordinary\ndonation now adds\n1 extra Cheer, up\nto the city limit\nof 100."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "71781445-a201-4e38-ae48-25be22b26f88",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "98"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "de30ed84-1692-4757-ad7a-b983c6d3581f",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "At the sharing\nshelf, a donated\ncoat reaches\nsomeone who asked\nfor that size. The",
+                "first shelf label\nis already getting\nsoft at the\ncorners."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "d1a0791f-5c97-4669-afdc-65d28e8cc666",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "98"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2257d7e4-488b-4f41-a1c4-9ba787b76fa5",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "At the request\nboard, the first\nchalk sun is\njoined by three\nreplies. Elm keeps",
+                "space for people\nwho arrive after\nthe ceremony."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "8a398b59-6ce7-4ea8-aa46-e5c6ee9e3967",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "97",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      }
+    },
+    {
+      "id": "53576f14-032a-4c0b-a4a8-724a23c78318",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ef093245-6adf-4a95-a959-7678a10220c2"
+      }
+    }
+  ]
+}

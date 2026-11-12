@@ -1,0 +1,375 @@
+{
+  "_resourceType": "script",
+  "id": "a818378e-5432-4cd5-af7b-435c34c0125c",
+  "name": "Story side_track_silent_soup_cocoa_interior",
+  "symbol": "script_story_side_track_silent_soup_cocoa_interior",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "6d377586-1791-4c6c-ace0-5133197f5769",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "105"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "61b4fbb5-fbcb-4ce7-ae19-238dcddefb92",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The Soup That\nWould Not Ring",
+                "A cook has ordered\na quiet lunch\nservice. Pip has\ninterpreted this\nas a soup recipe",
+                "without any noisy\nvegetables."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "30c3f39b-51ed-4f94-a334-75bdf0f1210c",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 2,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "Begin",
+              "option2": "Back"
+            }
+          },
+          {
+            "id": "2a113bf6-0165-4f43-aeb7-d3565f4dcfa6",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "891204e7-0fd8-4f75-a02d-f28b44dbbc9d",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "105",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "9b469d90-1c62-450e-ace8-40cf33749bf2",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "106",
+                    "value": {
+                      "type": "number",
+                      "value": 0
+                    }
+                  }
+                },
+                {
+                  "id": "2f655940-744d-4161-ae9a-8ca1c87a91dc",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The cook means the\ncounter bell,\nwhich wakes a\nchild in the\nupstairs flat."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "e2e8673a-ce8f-41d6-adc3-81df8f3d3f78",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Cocoa Corner: read\nthe quiet-service\nrequest at the\nside desk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "a00316ad-5327-4360-a041-cc66ec9004f4",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "105"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "13e6fee2-733d-4e3b-a835-48d45963dc0e",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The Soup That\nWould Not Ring",
+                      "A Bell Apart"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "5da0155d-04f9-422f-a409-4bebe7019ce1",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "106"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "c36177ba-1718-4afe-a3d9-fcb1b8166e1a",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "304b3039-aea0-4952-ad40-d151b9a0e798"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "c42250ae-c9b6-49a0-a1a9-f5ce6520fb25",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "106"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "a759c4ea-bfb8-481b-aab5-9c564d83a646",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Parcel Palace:\nselect the lunch\nsignal at the side\ndesk."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "03c6cc76-63be-4cd4-a787-ee6f8eb60017",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "106"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "a0f11e1c-d84e-4b2e-a721-3862ab4616ff",
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "9c872579-849a-498f-adc8-7cce81b94eea"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "d2f6a2b3-5ef4-41d2-a302-4d381349d559",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "106"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "4e45f478-a798-4605-a652-bc145e919d83",
+                                          "command": "EVENT_CALL_CUSTOM_EVENT",
+                                          "args": {
+                                            "customEventId": "ae9d6392-d9ff-4fb4-af3b-78dc7d708e96"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "57f03975-7c57-40e7-a86c-74b7c7cf6c17",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Check the Side\njournal for your\nnext lead."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "87f6adc1-e9f2-4e6c-a8d8-0c3aa513ac8a",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "105"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "f3191d8b-c72d-471e-af97-c257678de0b4",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Soup That\nWould Not Ring",
+                            "The cafe has a\nsilent lunch card.\nPip has learned\nthat quiet service\nconcerns the",
+                            "service, not the\ncarrot."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "0998dff1-230e-4a71-aac0-af94c611d22b",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Check the Side\njournal for your\nnext lead."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,390 @@
+{
+  "_resourceType": "script",
+  "id": "4b3650af-653d-495f-a211-74b9f7cdc53b",
+  "name": "Story side_track_lantern_code_aurora_signal",
+  "symbol": "script_story_side_track_lantern_code_aurora_signal",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "0f48ed23-f328-4360-ad82-c10063a03dc3",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "111"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "9a37b934-7347-461d-a279-ea42553644bf",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A Signal for the\nBiscuit Tin",
+                "The signal clerk\nhas secured the\nbiscuit tin with a\nwritten reminder.\nPip calls it a",
+                "cipher because\nthat sounds less\nlike being unable\nto find lunch."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "64e0959e-6889-4e8a-ab16-5c0be9bf0291",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 2,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "Begin",
+              "option2": "Back"
+            }
+          },
+          {
+            "id": "30c5b9d7-bbf4-41c6-af66-85c9245196de",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "12f6a47b-9663-48b2-aa32-d073ef5858a5",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "111",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "4b48e9ee-95ba-4784-a344-0dd978e17515",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "112",
+                    "value": {
+                      "type": "number",
+                      "value": 0
+                    }
+                  }
+                },
+                {
+                  "id": "69202ebc-ee1c-43aa-a03e-dad5a8ee2b36",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The reminder\npoints to a\nlocker, not a\nsecret emergency\nsignal."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "29f26f2f-7df1-4034-a833-e5ec5d24da2f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Aurora Signal:\nread the biscuit\nreminder at the\nside desk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "ac8c0677-e6a2-4595-a34f-161c3e3daceb",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "111"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "e42e3436-a771-45e8-a538-81d928ee45d1",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A Signal for the\nBiscuit Tin",
+                      "Read Before Crumbs"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "f134e70e-e539-4ea0-ab34-c02f1045fe10",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "112"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "0c45100b-76af-4938-a65e-fab3b262587d",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "7953d831-21f4-4922-a1cf-b04776bc258a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "eb274afa-4408-49fb-a512-200c33cd28ff",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "112"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "c5e87562-cba2-4670-a8fb-a9c7235ecdc9",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Core:\ninspect the lunch\nlockers at the\nside desk."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "6e93c201-1b63-4cd0-afbf-103c29b6a05c",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "112"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "fe1f6d98-1687-4f02-a802-c6664961ab1a",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Aurora Core:\nchoose the biscuit\nlocker at the side\ndesk."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "9ee4d169-3a9d-41c3-a3ed-de8182dadd14",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "112"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "8d14c438-17e6-4b12-a383-cc9726ab1344",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Reward ready. Use\nSide to claim it."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "2808ee8c-1e26-4658-a22e-a0b62eac54de",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Check the Side\njournal for your\nnext lead."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "a085a5b4-d2e8-4ee5-a08b-4da95be156df",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "111"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "420677ca-d353-4628-a14b-db8e88cf2e51",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Signal for the\nBiscuit Tin",
+                            "The crew has found\nits lunch. No\npublic signal was\ntouched in the\npursuit of crumbs."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "f5cb8355-4dac-498b-aa7b-6b9174b7ea19",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Check the Side\njournal for your\nnext lead."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

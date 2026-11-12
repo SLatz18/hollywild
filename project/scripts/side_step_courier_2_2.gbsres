@@ -1,0 +1,128 @@
+{
+  "_resourceType": "script",
+  "id": "890132f2-2e5e-4611-a520-59a5130985b0",
+  "name": "Story side_step_courier_2_2",
+  "symbol": "script_story_side_step_courier_2_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "7381d03d-de12-4e28-a939-a1c4d10db239",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The crate is for\nthe keeper of the\nempty chair. Who\nshould acknowledge\nit before you hand",
+          "it over?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "9ce20a12-16cf-4006-aae4-acbcf86d7631",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "CLERK",
+        "option2": "NOBODY",
+        "option3": "FIG"
+      }
+    },
+    {
+      "id": "ffe8f631-e9eb-4b44-a569-02b3110b1f4e",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2661cab5-8c34-47cd-ad2f-77e3e1676504",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "91",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "7badc4ce-0b43-4ec7-ad56-5c5ba33b8bd2",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Aurora Signal:\nobtain the clerk's\nreceipt at the\nside desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "98bed660-9129-48d7-a07f-13eda0d28e66",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "f0c6b472-0944-4809-a436-b6c4c04a97f3",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The archive\nidentified the\nnickname as the\nsignal clerk. An\nodd label does not",
+                      "make a gift\nownerless."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,243 @@
+{
+  "_resourceType": "actor",
+  "id": "777f648b-66e5-4ff5-a89d-19fa064ef92f",
+  "_index": 2,
+  "symbol": "actor_cocoa_interior_side_cocoa_interior",
+  "prefabId": "",
+  "name": "Neighborhood stories",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 11,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "b36bffac-91c0-43c8-af9f-f9f8b62cccd9",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "0bf705ef-97c2-4ae6-acb1-fcf39df2f053",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 4,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "Stories",
+        "option2": "Moments",
+        "option3": "Build",
+        "option4": "Back"
+      }
+    },
+    {
+      "id": "213edac5-23b0-4688-ab07-57233fe11a9a",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "ac1eef73-46e1-493e-ae06-0375e15e221e",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "No leads here in\nthis category.\nCheck Side for\nother stories."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "e87fddd5-32b5-4cb8-a98e-215323e48516",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "aef2c75c-e79f-4a95-a9e2-245c0e460568",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 3,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "SOUP",
+                    "option2": "CRATE",
+                    "option3": "Back"
+                  }
+                },
+                {
+                  "id": "a8cb88f0-62e5-421c-ac32-11d39f7caf38",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "973f3461-37d9-4699-a71f-3178e394eec1",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "a818378e-5432-4cd5-af7b-435c34c0125c"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "775a1bb9-7faa-467b-ae09-6bcf3a19920a",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "e47e1d84-9c48-4da9-a818-ec75149b9c67",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "f4a1e665-e646-42fc-a235-d2693c4171eb"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "efaf2dac-8e53-4e3c-abaa-2b987ed4c740",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 3
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "ebe6a110-57d4-4709-a13b-811e4a4b5168",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 2,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "COCOA",
+                          "option2": "Back"
+                        }
+                      },
+                      {
+                        "id": "e569ccd4-4b47-45d2-adc9-7982ab4bbeab",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "77e3069a-f87e-4845-a50a-ea2cc250b963",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "6451e7ac-d66b-41cb-a3b2-ed9f33c5d20f"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

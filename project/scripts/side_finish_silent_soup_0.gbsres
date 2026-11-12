@@ -1,0 +1,260 @@
+{
+  "_resourceType": "script",
+  "id": "ae9d6392-d9ff-4fb4-af3b-78dc7d708e96",
+  "name": "Story side_finish_silent_soup_0",
+  "symbol": "script_story_side_finish_silent_soup_0",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "1672c181-a878-4089-a7f9-e9b857fb26aa",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "105"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "cdc31322-b42f-40cd-aa64-613f4e97fd7c",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "106"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "b25e8223-5cd5-4f3a-ae7b-8396b54b72d7",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "6"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "92e4fc96-4403-4ed4-a136-275768e436af",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "lte",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "1"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 9971
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "b400bd5c-7f8a-4c48-ab85-a359eb773f60",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "lte",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "2"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 98
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "0358c2b2-ce6a-4dac-ae89-d006a14a3d6b",
+                                    "command": "EVENT_VARIABLE_MATH",
+                                    "args": {
+                                      "vectorX": "1",
+                                      "operation": "add",
+                                      "other": "val",
+                                      "value": 28,
+                                      "clamp": false
+                                    }
+                                  },
+                                  {
+                                    "id": "70f80c1f-4fa3-48e4-a46f-f4206d4716d7",
+                                    "command": "EVENT_VARIABLE_MATH",
+                                    "args": {
+                                      "vectorX": "2",
+                                      "operation": "add",
+                                      "other": "val",
+                                      "value": 1,
+                                      "clamp": false
+                                    }
+                                  },
+                                  {
+                                    "id": "476ead87-e6f2-4cbf-ac5a-cb2aaed74082",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "106",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 0
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "24cc8101-1774-4273-ab1a-4a9ef41ec212",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "105",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 2
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "d8a9f8d1-b454-436e-a2d0-2fe01471d941",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Lunch continues\nwithout the\ncounter bell.\nUpstairs, a nap\nsurvives a",
+                                        "complete soup\nservice."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "4b790ef4-b1b1-4693-a7dc-54f468d5b1a6",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Reward: 28 Coins\nand 1 scrap."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "a6e8871f-c1e2-4758-a1fb-f7d47698fbf6",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The cafe has a\nsilent lunch card.\nPip has learned\nthat quiet service\nconcerns the",
+                                        "service, not the\ncarrot."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "715c69b4-6745-4ac5-a4b2-e5772f8ac853",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Reward pending.\nMake room in scrap\nstorage, then\nreturn or use\nSide."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "25f19853-140f-4dca-a5ed-19b686dadce8",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Reward pending.\nSpend some Coins,\nthen return or use\nSide."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "87cf8e51-1fb7-4e26-aa0d-893041bec0a4",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Reward pending.\nFinish or cancel\nyour job, then\nreturn or use\nSide."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

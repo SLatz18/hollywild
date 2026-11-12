@@ -2,7 +2,7 @@
 
 An open-world holiday city adventure about overlooked properties, mischievous expeditions, and an elf-powered business empire.
 
-**Status: full story campaign built for native Game Boy Color. Approximately two hours is the first-time pacing target, not a measured playtime. Physical Chromatic testing is pending.**
+**Status: native Game Boy Color campaign with an expanded neighborhood-story prototype. Human completion time and physical Chromatic playback remain untested.**
 
 Built for ModRetro Chromatic using GB Studio 4.3.2. The development computer runs the editor, compiler, and tests. The playable deliverable is a native `.gbc` cartridge.
 
@@ -14,12 +14,14 @@ Built for ModRetro Chromatic using GB Studio 4.3.2. The development computer run
 - Three crew roles, workshop production, and purchasable properties with visible ownership signs.
 - A 24-mission campaign with 144 objectives, 45 puzzles, and three endings.
 - Forty optional discoveries, a saved Clues journal, and ten city checkpoints.
+- Four three-mission side-story arcs, six short encounters, and four property projects.
+- Twenty neighborhood desks, independent side-story progress, four more saved choices, and eight useful unlocks.
 
 The inspiration is city freedom, earnest holiday comedy, property hunting, and strategy. Driving, traffic, and multiple simultaneous crew assignments remain planned. The current build uses simple sound effects and has no music soundtrack.
 
 ![Archive in the running ROM](docs/images/frostwick_archive-campaign.png) ![A campaign puzzle in the running ROM](docs/images/campaign-puzzle.png)
 
-[Download the current native prototype](https://github.com/SLatz18/hollywild/releases/tag/v0.3.0-campaign)
+[Download the current native prototype](https://github.com/SLatz18/hollywild/releases/tag/v0.4.0-neighborhoods)
 
 ## Story campaign
 
@@ -28,6 +30,21 @@ Help Pip investigate why Hollywild keeps freezing. Trace missing public records,
 Talk to the **story desk in the garage** and choose Begin. START → Story shows the next objective; START → Clues rereads evidence you have already collected. All streets and campaign rooms are open, and you can pause the story for jobs or property work.
 
 [Campaign overview and pacing](docs/CAMPAIGN.md) contains a full walkthrough and puzzle answers, so it includes spoilers.
+
+## Neighborhood stories
+
+Use **START > Side** to find a lead. Visit the book-shaped neighborhood desk in the named location, choose Stories, Moments, or Build, and select the activity. Begin starts a track; return to the desk to complete its first objective. Each track progresses independently, so you can follow several at once.
+
+- **Extremely Special Delivery:** establish Fig's peculiar courier business and earn a delivery bonus.
+- **The View Is Negotiable:** investigate a suspicious listing and earn a property purchase discount.
+- **The Block That Stayed:** help neighbors improve shared spaces and make donations more effective.
+- **The Tin Comets:** turn a rival crew's contest into cooperation and improve salvage returns.
+
+Six smaller encounters include a disputed hat, a sleeping parcel, and a dubious lease on the sky. Four ownership-required projects improve Cocoa Corner, Parcel Palace, Tinsel Toolworks, and Lantern Flats. These are narrative exploration, clue, and menu-choice activities, not separate action minigames. Ordinary work and main-story progress remain independent.
+
+![Side-story journal in the running ROM](docs/images/side-stories-menu.png) ![A side-story puzzle in the running ROM](docs/images/side-puzzle.png)
+
+[Side-story guide and solutions (spoilers)](docs/SIDE_STORIES.md).
 
 ## Start here
 

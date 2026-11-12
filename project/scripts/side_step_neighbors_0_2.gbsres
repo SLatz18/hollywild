@@ -1,0 +1,127 @@
+{
+  "_resourceType": "script",
+  "id": "ceda6952-9e93-4c9f-ad29-411dbf1e8f7e",
+  "name": "Story side_step_neighbors_0_2",
+  "symbol": "script_story_side_step_neighbors_0_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "deba8454-d324-4d3c-ad5d-74f96de09fe8",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Which material\nbelongs on a seat\nafter the frame\nand boards are\nchecked?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "35bfb272-087b-4099-a373-9cfacdb40c57",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "BOARDS",
+        "option2": "GEARS",
+        "option3": "RIBBON"
+      }
+    },
+    {
+      "id": "f7eadcd4-5383-495f-ac40-b6a61faa9879",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "8a3f8008-3674-460e-adb0-097fe3db2745",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "97",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "1fcad2d9-eecf-40fb-a5d1-1b038957fb0e",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Candy Row: choose\nthe restored\ncorner's purpose\nat the side desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "4e186328-114d-439b-a085-40df6601ab16",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "da184390-36c5-4933-ab69-7bce8ea8e60e",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The smooth boards\nreplace the split\nseat. Gears have\nsharp teeth;\nribbon cannot bear",
+                      "a sitter."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

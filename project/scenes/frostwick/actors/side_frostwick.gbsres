@@ -1,0 +1,212 @@
+{
+  "_resourceType": "actor",
+  "id": "c3a40f32-e149-4733-ac39-a87a4e34304f",
+  "_index": 7,
+  "symbol": "actor_frostwick_side_frostwick",
+  "prefabId": "",
+  "name": "Neighborhood stories",
+  "coordinateType": "tiles",
+  "x": 13,
+  "y": 24,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "b36bffac-91c0-43c8-af9f-f9f8b62cccd9",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "b5f73d18-cc81-4e68-a312-b85fd47255f0",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 4,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "Stories",
+        "option2": "Moments",
+        "option3": "Build",
+        "option4": "Back"
+      }
+    },
+    {
+      "id": "444d5fb9-86cf-412c-a31d-15a06ba75db6",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "c6cc6aa6-91c4-4043-a994-4872b1e54be2",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 2,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "BLOCK",
+              "option2": "Back"
+            }
+          },
+          {
+            "id": "a7db9377-29a9-49d0-af0d-1ac81bee7113",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "7a4e08dd-88f3-4985-aa4e-d91efe080f8f",
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "a08c704c-c7d5-435a-a790-ab1552d8fabb"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "74721387-05cc-4b3f-a3d9-9bfdc80df98b",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "6cd9ae5d-b4b8-47cd-af89-cee5364ffe67",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 2,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "HATS",
+                    "option2": "Back"
+                  }
+                },
+                {
+                  "id": "4ef5d1ce-589c-45ac-a7a6-d64f153a899c",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "c3d8864a-1c7a-4906-aec4-05d9a71adb1a",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "3bc4f7ad-eba9-4b78-ac98-24c2f2528fec"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "b1279272-f748-4502-ab1d-113fce52aba1",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 3
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "427eddfd-e2f8-40cc-ae78-8439c732c3ed",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "No leads here in\nthis category.\nCheck Side for\nother stories."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

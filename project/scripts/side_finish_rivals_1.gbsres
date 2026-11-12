@@ -1,0 +1,275 @@
+{
+  "_resourceType": "script",
+  "id": "c4e76762-ba2e-40c7-a37c-f5b19f20b8be",
+  "name": "Story side_finish_rivals_1",
+  "symbol": "script_story_side_finish_rivals_1",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "c1a9d181-c906-452a-a742-9aaf8670768f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "99"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "c025f50a-0a46-44d3-a35e-9afacaccfef2",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "100"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 5
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "ec18c848-2b56-4cfa-a2f4-9975ef668e53",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "6"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "c6807b9d-42f2-45a1-ae4d-f464e45f426e",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "lte",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "1"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 9956
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "567e61d5-c371-4a2e-ad12-2d93f0f77e11",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "lte",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "2"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 98
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "21ddec26-b9ec-4244-ac9e-06ef90246ba3",
+                                    "command": "EVENT_VARIABLE_MATH",
+                                    "args": {
+                                      "vectorX": "1",
+                                      "operation": "add",
+                                      "other": "val",
+                                      "value": 43,
+                                      "clamp": false
+                                    }
+                                  },
+                                  {
+                                    "id": "10d2ef2b-3555-4028-a2e2-557369d67760",
+                                    "command": "EVENT_VARIABLE_MATH",
+                                    "args": {
+                                      "vectorX": "2",
+                                      "operation": "add",
+                                      "other": "val",
+                                      "value": 1,
+                                      "clamp": false
+                                    }
+                                  },
+                                  {
+                                    "id": "a26506d3-0f1c-4cab-afc7-558993908bc9",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "100",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 0
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "bc7b383a-b65c-4af6-a24a-51bfeaad22a2",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "99",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 3
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "f0e6f990-3133-4b3c-a3c7-2f81e37bc35a",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The paper spanner\nacquires a paper\nsafety sleeve. The\nrivalry is\nbecoming",
+                                        "alarmingly well\norganized."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "927398aa-090d-4e88-a2e7-7b0b5c4f50cb",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Reward: 43 Coins\nand 1 scrap."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "3c60e6cb-bb4c-4d26-aedd-161167cc77b0",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Comets want a\nparade cart for\ntheir paper\ntrophies. Their\nsketch has wheels,",
+                                        "a tall sail, and\nno brake."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "6835ad8e-2eb6-44de-ad93-626aa68f8b79",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Your Garage:\ninspect Bea's\nparade-cart sketch\nat the side desk."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "d0fe23b4-0850-4f42-a049-4d770469ec4e",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Reward pending.\nMake room in scrap\nstorage, then\nreturn or use\nSide."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "49c67978-9fb4-4227-a6d6-209bc0d1c3dc",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Reward pending.\nSpend some Coins,\nthen return or use\nSide."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "77c49782-a116-474a-a1cc-52a1276dc9d4",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Reward pending.\nFinish or cancel\nyour job, then\nreturn or use\nSide."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

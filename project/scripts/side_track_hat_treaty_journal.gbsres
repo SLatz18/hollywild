@@ -1,0 +1,305 @@
+{
+  "_resourceType": "script",
+  "id": "4283a663-957f-48a4-a34a-9102c03b8b3a",
+  "name": "Story side_track_hat_treaty_journal",
+  "symbol": "script_story_side_track_hat_treaty_journal",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "7a65f8c2-c802-4bfe-a7d7-dc2dfe17e710",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "102"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "e63e17c6-5e05-435e-adbd-b90f27c4a14f",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The Hat With Two\nOwners",
+                "Two neighbors have\nclaimed the same\nred hat. One\nidentifies it by\ncolor. The other",
+                "knows what is\nstitched inside.",
+                "Begin at\nFrostwick."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "4ea18c31-2ac1-4ade-a991-9eaca2efb083",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "102"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "b03ce004-4ff0-40a9-a8fa-75a68c2cc54f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The Hat With Two\nOwners",
+                      "Inside Information"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "bf31f747-b830-405c-a69d-477bf5b09388",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "103"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "b62502f1-e759-4c23-a408-ec1693f91f8a",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Frostwick: hear\nthe hat claims at\nthe side desk."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "74067c44-f11b-48c6-a606-b76866f0fb2f",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "103"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "72080b3f-417a-493c-aca4-ace70ca09d91",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Frostwick Depot:\ninspect the hat\nlining at the side\ndesk."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "7e4aaa67-1afb-402c-ad17-dc8132c83199",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "103"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "92e7362b-52c6-459d-a99e-4e5abc01e26b",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Frostwick: return\nthe hat at the\nside desk."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "c2dc648f-2dd8-4d07-a67d-394a1073a982",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "103"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "90b9fcba-735a-4f0d-a337-2d7592951108",
+                                          "command": "EVENT_CALL_CUSTOM_EVENT",
+                                          "args": {
+                                            "customEventId": "769a0adf-83c1-4a19-a90f-72860fa36fdf"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "a0e84bf7-5511-473a-a49f-502721ed58a1",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Check the Side\njournal for your\nnext lead."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "7b1bfccd-2e79-42f2-aeb6-7a29b5538c53",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "102"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "cc82a42e-3036-4cd8-a760-fb325a819763",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Hat With Two\nOwners",
+                            "Nell has her hat.\nOtto has a lead\nand a borrowed\nscarf. The public\npeg is available",
+                            "for the next very\nsmall mystery."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "749b5f52-0814-4558-adc4-cc0a7fb2b7ad",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Check the Side\njournal for your\nnext lead."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

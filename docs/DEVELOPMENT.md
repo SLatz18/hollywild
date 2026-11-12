@@ -84,3 +84,11 @@ The harness requires the manifest and symbols produced by `build-game.py`; it ca
 This is targeted regression coverage, not exhaustive acceptance testing.
 
 Successful compilation, emulator checks, and physical Chromatic testing are separate evidence. Consult the build status for the checks completed on a particular ROM. Saving during a power interruption and compatibility with a replacement ROM remain separate tests.
+
+## Neighborhood expansion
+
+Author optional tracks in `content/side-stories.json` using `content/SIDE_CONTRACT.md`. The side engine appends state after the original campaign variables. Preserve IDs and existing menu indexes. `scripts/create-assets.py` places the separate neighborhood desks; `scripts/create-game.mjs` integrates them and applies economic perks.
+
+After authoring, regenerate assets and native resources, run `node scripts/check-side.mjs`, and generate button walkthroughs with `python3 scripts/create-side-tests.py`. Generate the mixed-progress scenario with `python3 scripts/create-interleave-test.py`. The standard full regression runner includes both side paths and the mixed-progress scenario. `node scripts/check-side-economy.mjs` exercises generated economic branches at boundary states in a source interpreter, separately from real-ROM tests.
+
+The emulator and suite reports record elapsed wall seconds and simulated frames. They are automated execution measurements with scripted dialogue advancement, known answers, retries and save tests. Neither is a human completion-time measurement. Fresh run IDs, exact command matching and ROM hashes prevent stale traces from passing as current evidence.

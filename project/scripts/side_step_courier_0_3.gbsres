@@ -1,0 +1,191 @@
+{
+  "_resourceType": "script",
+  "id": "ad914199-6126-4e0e-a821-db6db7598d73",
+  "name": "Story side_step_courier_0_3",
+  "symbol": "script_story_side_step_courier_0_3",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "3598f278-0374-4c3c-ae38-43a053662253",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Fig needs a firm\nidentity. Will\nparcels arrive\nwith a tiny brass\nfanfare or a quiet",
+          "handwritten\narrival card? Both\ninclude the same\ncareful handling."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "d3b855be-93bb-49a3-abfb-08965e1c4823",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 2,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "FANFARE",
+        "option2": "CARD"
+      }
+    },
+    {
+      "id": "8a9a37e8-6696-4f31-a3d5-57db956c34b3",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "aa4f544a-8782-4547-ac90-7e5ce417b746",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "92",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "d2ef0bb2-e15c-425f-a736-db42536e1217",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Fig polishes a\npocket horn. It\nplays one\nrespectable note\nand one that",
+                "resembles a wet\nboot."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "adf38e36-a79d-4ef5-ac49-0a4000d74dfd",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "91",
+              "value": {
+                "type": "number",
+                "value": 4
+              }
+            }
+          },
+          {
+            "id": "a1e973ae-9060-4802-a250-443d68f8c02e",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Candy Sorting:\ndeliver the\npudding at the\nside desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "f6995420-1fa4-44f7-af35-29e514449fd1",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "bb053e3a-ef06-4890-a16f-81d8f09dd2b5",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "92",
+                    "value": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  }
+                },
+                {
+                  "id": "5c81fb62-a80a-4e1e-a46d-39578ccaae59",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Fig buys a pencil\nand a stack of\ncards. His first\ndraft says: Your\nitem has reached",
+                      "where you wanted\nit."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "2d2d37d0-f1bd-4cf2-a289-73b227074696",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "91",
+                    "value": {
+                      "type": "number",
+                      "value": 4
+                    }
+                  }
+                },
+                {
+                  "id": "34a18e58-1a4f-4d70-aaac-25dc21916b7b",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Candy Sorting:\ndeliver the\npudding at the\nside desk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

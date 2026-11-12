@@ -1,0 +1,126 @@
+{
+  "_resourceType": "script",
+  "id": "d6c168a8-5de0-48f5-aefd-f690f0b6cbdb",
+  "name": "Story side_step_snow_statue_0_1",
+  "symbol": "script_story_side_step_snow_statue_0_1",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "f452a8f3-44ef-4613-aeb1-37430d345775",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Which location\ndisplays the\nstatue while\nleaving the east\ndrain open?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "5fbf9446-d22a-4c5c-af49-5730d521f0be",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "EAST",
+        "option2": "WEST",
+        "option3": "DRAIN"
+      }
+    },
+    {
+      "id": "c1bbbfbe-c9e3-45c3-abfc-323bb91be16a",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "c65ac025-8eaa-496b-ada8-9093d1df2644",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "115",
+              "value": {
+                "type": "number",
+                "value": 2
+              }
+            }
+          },
+          {
+            "id": "380b4ea2-cd94-48bf-ae9c-69ce789f2f03",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Velvet Lodge:\nreport the clear\ndrain at the side\ndesk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "582c31c3-34fc-4b66-aa10-0c841827fea3",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "e5091f2e-7550-456f-a43c-969af81adc5f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The clear west pad\nleaves the drain\nat the east corner\nopen."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

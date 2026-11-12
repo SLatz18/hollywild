@@ -1,0 +1,191 @@
+{
+  "_resourceType": "script",
+  "id": "d7015c95-a836-44f5-a478-3781c83176bc",
+  "name": "Story side_step_listing_0_3",
+  "symbol": "script_story_side_step_listing_0_3",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "cb149c57-39b2-49c6-a3be-6438fc013e22",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Nib will publish\nthe correction.\nChoose a plain\nfacts card or a\nguided tour",
+          "showing how the\nphotograph misled\nreaders."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "d4689e15-cee2-435b-a041-307e9e909f00",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 2,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "FACTS",
+        "option2": "TOUR"
+      }
+    },
+    {
+      "id": "6709d034-2f6c-45b2-a578-bb6e3ebb4789",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "fbcda2e5-777b-414b-a8c6-ab11b55d71de",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "95",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "a5edc209-5d3c-4f59-a2f4-4a13c95ec0bc",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Nib prints a large\nlot number and a\nmeasured diagram.\nThe sunset\nreceives no square",
+                "footage."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "053b2d0f-a255-4340-aa0e-0fc3ff53cbc7",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "94",
+              "value": {
+                "type": "number",
+                "value": 4
+              }
+            }
+          },
+          {
+            "id": "c9afc6fe-b78c-43f0-ab69-f89d92a984fe",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Velvet Heights:\nshow the\ncorrection at the\nside desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "157c74db-3604-4836-abb7-db9125d1c872",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "3bdd94dd-a36a-499b-a9d3-8f7be976d882",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "95",
+                    "value": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  }
+                },
+                {
+                  "id": "40b4e64c-af30-4638-a0ec-eb194ab36411",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Nib marks the\nphotographer's\nkettle position.\nVisitors may\ninspect the",
+                      "illusion and then\nthe real boundary."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "2b6f4d93-a7a2-4c6d-a780-9801bb8306e4",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "94",
+                    "value": {
+                      "type": "number",
+                      "value": 4
+                    }
+                  }
+                },
+                {
+                  "id": "81650cf5-65b0-4eea-ae49-e6f8fbbf9e77",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Velvet Heights:\nshow the\ncorrection at the\nside desk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

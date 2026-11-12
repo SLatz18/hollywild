@@ -1,0 +1,126 @@
+{
+  "_resourceType": "script",
+  "id": "80002926-b832-4181-a2ea-a145c6457d82",
+  "name": "Story side_step_rivals_1_2",
+  "symbol": "script_story_side_step_rivals_1_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "b44e965d-d2cc-40b3-a233-7d127a70ff64",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Which numbered\nitem can the\nsalvage crew\naccept under the\nposted rule?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "10cf5850-38b3-4c34-af37-45980d0f6315",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "SIX",
+        "option2": "SEVEN",
+        "option3": "BOTH"
+      }
+    },
+    {
+      "id": "fe312f40-b5ed-4d87-a65d-0ecdad787239",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "a714a9c8-c078-4bf5-ace4-2f0cdf5443b8",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "100",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "b4282fc4-01f5-4723-ad52-b226a9fdda7e",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Brassworks\nControl: ask Dot\nto check the\nsurvey at the side\ndesk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "c8bc4a95-9980-493f-aa30-69ba3597956c",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "61f62bb1-f375-486a-a70d-5e8c283a4cfa",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Only number 6 is\neligible. Number 7\nis marked for\ntraining and must\nremain separate."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

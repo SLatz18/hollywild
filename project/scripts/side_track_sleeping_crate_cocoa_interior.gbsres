@@ -1,0 +1,297 @@
+{
+  "_resourceType": "script",
+  "id": "f4a1e665-e646-42fc-a235-d2693c4171eb",
+  "name": "Story side_track_sleeping_crate_cocoa_interior",
+  "symbol": "script_story_side_track_sleeping_crate_cocoa_interior",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "57b986ca-1137-4388-ae78-36e4788032c4",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "117"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "93e5759a-6830-488d-a185-5c2018911a9b",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Please Do Not Wake\nthe Cargo",
+                "A parcel on the\nroof has begun to\npurr. Its sender\ninsists the\ncontents are a",
+                "deluxe lap-warming\naccessory.",
+                "Begin at Candy\nRooftops."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "23c14cdb-6d8f-4fa0-ac36-dee9f3b3095a",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "117"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "9ee57e93-159d-48af-aa8b-0ad9650b480b",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Please Do Not Wake\nthe Cargo",
+                      "A Furry Address"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "16e86c5c-bffb-4489-a1c0-4c3488c1078e",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "118"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "7e15e3f4-3e72-48b0-a50d-cff2c22dffba",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Candy Rooftops:\nread the purring\ncrate's care card\nat the side desk."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "9390d516-2aa3-424d-ac86-aa7080d9f6bb",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "118"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "5b1a10d2-13bc-47b5-a8cf-f494cb8a1da8",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Candy Sorting:\nchoose Boots'\ndestination at the\nside desk."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "f4cb500d-6c7b-482d-ac05-43aca2a6b6cc",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "118"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "db09de08-82fc-45b5-a6e4-286bfe275393",
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "106e344a-17a2-4ba7-ac5b-39cbe7ab5e77"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "30955dca-9cc6-4c02-a371-f4f1c67716c4",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "118"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "745826ce-d88f-460f-a582-10b6db4cc1a1",
+                                          "command": "EVENT_CALL_CUSTOM_EVENT",
+                                          "args": {
+                                            "customEventId": "fb09cc01-8f69-49f9-a586-c06d765ebebe"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "bac4c78d-91fe-4550-a886-811194ef7100",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Check the Side\njournal for your\nnext lead."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "81991b94-1bd0-4468-ae23-6d7afafe22ea",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "117"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "98fccccb-ebe6-4d48-aa64-8f9dd667d0bf",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Please Do Not Wake\nthe Cargo",
+                            "Boots and the\nowner are\nreunited. The\ncarrier keeps its\nopen air slots and",
+                            "loses its\nmarketing copy."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "781ff93d-de76-4355-a326-1e9d679b5c6f",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Check the Side\njournal for your\nnext lead."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

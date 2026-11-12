@@ -1,0 +1,121 @@
+{
+  "_resourceType": "script",
+  "id": "4116fc34-e35e-498b-a14e-ac3d07ec0a2d",
+  "name": "Story side_step_rivals_0_4",
+  "symbol": "script_story_side_step_rivals_0_4",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "9c3f05a3-857e-48aa-a136-29c1a95553ad",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The shop checks\nthree spanners\ninto the kit. You\nalso return the\ntiny flag. Bea",
+          "calls this\nexcellent\nsportsmanship for\na terrifying\nopponent."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "84728b20-e786-40b2-a6cd-8392a86df12a",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "101"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "734ea1fd-ad4a-455b-a3bb-2da20e4d222f",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Bea practices\nlatch\nidentification for\nthe rematch. She\nhas drawn your",
+                "winning triangle\non her cap."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "6fd1884a-36ac-484a-a9e8-de37b4c2f9f9",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "101"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "b82d2728-b2e7-4186-a9fe-6ffcf2a3093a",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Bea divides the\nroute notes\nbetween both\ncrews. Your giant\nstar now obscures",
+                "the club's lunch\nnotice."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "821f80e7-1676-4dfe-a659-c4a9fa476550",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "100",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      }
+    },
+    {
+      "id": "94b48b16-1ff9-4a5d-a0b8-f9750f4ac82d",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "d4e56109-7b04-41b6-a385-4d77cce7c061"
+      }
+    }
+  ]
+}

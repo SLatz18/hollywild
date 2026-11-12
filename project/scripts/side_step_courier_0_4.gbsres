@@ -1,0 +1,121 @@
+{
+  "_resourceType": "script",
+  "id": "6e5b046d-ecbc-4e4d-abe3-96f7c39e3ebf",
+  "name": "Story side_step_courier_0_4",
+  "symbol": "script_story_side_step_courier_0_4",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "147f3f64-a562-4aaa-a930-cf683bc47321",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The staff remove\nthe bowl seal and\ncheck the order.\nDelivery accepted.\nThe pudding has no",
+          "comment, which Fig\nenters as complete\nsatisfaction."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "31be1c37-806f-4236-a0a1-1ccbafbd2a09",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "92"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "663bcf6c-736e-4020-a47d-ce0ef0bc7ec9",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The staff request\nthe horn only\nafter the sleeping\napprentice wakes.\nFig adds ASK FIRST",
+                "to his fanfare\npolicy."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "e8afedf2-8445-4fd4-a8c8-ea5262ad4136",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "92"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "38b8c38b-bb8f-41e4-aa28-f11cdb522879",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The staff pin the\narrival card over\nthe table. A quiet\nreceipt earns a\nvery loud round of",
+                "applause."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "64eedcc9-cd86-4ebc-a0f9-3b498853abb5",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "91",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      }
+    },
+    {
+      "id": "7818f156-7df6-49a8-a2f7-53f665bf6bba",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "d73ba567-3e66-4f6c-a8b1-14f5da3d10a5"
+      }
+    }
+  ]
+}

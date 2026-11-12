@@ -1,0 +1,122 @@
+{
+  "_resourceType": "script",
+  "id": "9ca64503-3584-478a-add0-648e93fc20d8",
+  "name": "Story side_step_listing_2_4",
+  "symbol": "script_story_side_step_listing_2_4",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "a8f2dd4f-8a46-44cd-a08f-3675f2ddd4fd",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Nib trades his\ncommission bonus\nfor a city\nbuyer-service\ngrant. Future",
+          "property purchases\ncost 20 fewer\nCoins. The\ndiscount applies\nwhen you buy, with",
+          "no refund on\nearlier purchases."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "91577e7a-019d-4886-a8a1-6d657967e18e",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "95"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "9f1ab827-d39d-4583-a981-7803cd7e1ac6",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "His facts cards\nsit beside every\nnew offer. A child\ndraws a sunset in\nthe margin,",
+                "carefully outside\nthe floor area."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "b8642620-2cc1-4991-a169-b141fae6a838",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "95"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "c261f23a-63b8-4657-a3b0-d9260ef7f453",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "His honest tours\nbecome popular. He\nopens each by\nshowing the\nboundaries before",
+                "showing the\nflattering kettle."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "524dadd2-4cd4-4db0-a1c3-bfa349cd7d83",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "94",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      }
+    },
+    {
+      "id": "66fbb189-a35c-4aca-ad3e-d587a2301493",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "91753878-57c1-4a2d-a71e-79ce2f927978"
+      }
+    }
+  ]
+}

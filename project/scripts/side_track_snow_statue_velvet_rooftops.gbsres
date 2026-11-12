@@ -1,0 +1,384 @@
+{
+  "_resourceType": "script",
+  "id": "9f12ac98-dda5-443c-a973-427d881a1cd9",
+  "name": "Story side_track_snow_statue_velvet_rooftops",
+  "symbol": "script_story_side_track_snow_statue_velvet_rooftops",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "81a6f743-b991-4071-a6b4-7b6128d4b04a",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "114"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "51177569-fa22-4467-a18f-9db3c2ee633b",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The Monument to\nAlmost",
+                "A rooftop sculptor\nhas built a snow\nstatue of an\nimportant local\nlandlord. It is",
+                "magnificent from\nthe shoulders up\nand mostly bucket\nbelow."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "e31aacf6-0a07-43da-a446-af2a680c9f55",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 2,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "Begin",
+              "option2": "Back"
+            }
+          },
+          {
+            "id": "4025dd00-d1ef-4076-a1f0-702f56809cd1",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "a9c3fa18-c415-403f-ad8e-d71fe6219489",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "114",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "78fd0f73-a80b-4039-a6f4-ab3f2dfad507",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "115",
+                    "value": {
+                      "type": "number",
+                      "value": 0
+                    }
+                  }
+                },
+                {
+                  "id": "32ac25b7-4875-4458-abb8-c0e6cb57853d",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The sculptor wants\nto keep the\nrooftop drain\nclear while\ndisplaying the",
+                      "statue."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "f17dcdff-55c1-4471-ad0e-29f203248071",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Velvet Rooftops:\ninspect the\nsculptor's sketch\nat the side desk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "24dfdce3-84d1-40b7-a7a0-b2071c1f7b14",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "114"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "eb98e34d-24f9-447c-abf1-14db51d69b78",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The Monument to\nAlmost",
+                      "A Lighter Legacy"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "3e485b78-c213-4e81-afae-8ed5477bf881",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "115"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "75010660-b71d-4873-a520-7ee34e32b5c6",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "843e44b3-a694-4b42-ab6d-b2d03702bd87"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "ca5b91cf-a408-4161-a7c0-baa9d28eea43",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "115"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "3a43a808-efe8-4b64-a5e4-aea328ece8dd",
+                              "command": "EVENT_CALL_CUSTOM_EVENT",
+                              "args": {
+                                "customEventId": "d6c168a8-5de0-48f5-aefd-f690f0b6cbdb"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "cbcc1e4a-d647-40ad-ae07-7e5363f67fc9",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "115"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "ec9a9a2e-cd80-4b87-ace8-0206a6983d7f",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Velvet Lodge:\nreport the clear\ndrain at the side\ndesk."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "d74bd39d-55c0-4ab0-abd8-0c4943f9489b",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "115"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "87e8f105-3e7d-402e-a873-785189f96183",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Reward ready. Use\nSide to claim it."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "04ad50f7-124e-4e42-a501-1cf7cea22b20",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Check the Side\njournal for your\nnext lead."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "6349b872-5ec1-4fbf-aa90-198193ae0e21",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "114"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "711fe32a-68eb-4df3-ad18-7bdf081c49f6",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Monument to\nAlmost",
+                            "The drain stays\nclear. The snow\nstatue has a\nsuitable place to\nenjoy its brief",
+                            "career."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "25733405-0b41-4dde-af5a-dcf1b6ad9348",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Check the Side\njournal for your\nnext lead."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,126 @@
+{
+  "_resourceType": "script",
+  "id": "95b48a12-4a6f-4687-abd4-b289d6bc75d3",
+  "name": "Story side_step_flats_0_2",
+  "symbol": "script_story_side_step_flats_0_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "3a404917-9020-4afb-a4d3-bde347ef0259",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Where can the\ndraft screen stand\noutside the east\ndoor's swing?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "5b627267-da97-4dd0-a13e-80a9533c7ad6",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "EAST",
+        "option2": "WEST",
+        "option3": "DOOR"
+      }
+    },
+    {
+      "id": "e4faef71-6652-4d94-a49d-6fb0b4502db1",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "78e1c324-9557-4034-a542-f401e35fc756",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "130",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "f1301830-96b7-46db-aecd-a52df5e7db06",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Lantern Flats:\ncheck the landing\nwith the tenants\nat the side desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "a7cbf6db-a714-4659-a20d-10e808e788b5",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "80424a9e-f7dc-4364-adf4-8a164a243bfe",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The west alcove\nlies beyond the\ndoor arc. The east\nwall is inside the\nexit swing."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

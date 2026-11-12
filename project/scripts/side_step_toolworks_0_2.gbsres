@@ -1,0 +1,126 @@
+{
+  "_resourceType": "script",
+  "id": "e3d1fca9-9610-4f3a-aa4a-9f68971d3179",
+  "name": "Story side_step_toolworks_0_2",
+  "symbol": "script_story_side_step_toolworks_0_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "f4b40f9b-48ad-47ed-a77f-3ddc5444661f",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The valve body\nfailed inspection.\nWhich tray\nreceives it?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "ef38026a-0c0d-405f-a633-f5da7d88aed2",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 2,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "LEFT",
+        "option2": "RIGHT"
+      }
+    },
+    {
+      "id": "9be48072-fbea-4a21-ab8a-33c8f9bce057",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "c9427a26-7848-4400-a5ca-47c4ccc28928",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "127",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "fe1378ab-a094-41d9-a2b4-397446f2ce41",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Tinsel Toolworks:\ncheck your\ncompleted parts\nsorter at the side\ndesk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "57e8a7be-7f5e-4302-a534-57ebd479436b",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "65bf5edc-e976-4567-abed-84247f9ece11",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The right tray is\nmarked REJECTED,\nDO NOT USE. The\nsound-offcut tray\nis for pieces that",
+                      "passed inspection."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

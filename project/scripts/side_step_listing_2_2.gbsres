@@ -1,0 +1,127 @@
+{
+  "_resourceType": "script",
+  "id": "cc1c0a84-ef2f-4bc3-a323-1aaf5aaee0a6",
+  "name": "Story side_step_listing_2_2",
+  "symbol": "script_story_side_step_listing_2_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "4a3ddaa9-1ffb-4b4e-a7e7-7b437b05667d",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "What does the\noffered deed\nactually convey?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "380c7ed1-3ea3-4363-a124-a156c1b72908",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "PANTRY",
+        "option2": "PATH P",
+        "option3": "BOTH"
+      }
+    },
+    {
+      "id": "7b8785c0-a5fd-43e6-aad4-f4911f73b7ed",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "94254ec3-5eaf-46bb-ae1c-64ff82ebab67",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "94",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "91e62d5e-70b1-4838-aeab-1d4a9d5ac801",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Velvet Rooftops:\nverify the public\nstair entrance at\nthe side desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "ecbbab36-9e09-43d7-a59e-dda51fd57619",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "502fbcb3-d97f-4bd5-aa1f-88181503b94f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The deed names the\npantry, and the\ndotted public path\nremains outside\nits solid room",
+                      "boundary."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

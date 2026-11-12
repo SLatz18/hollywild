@@ -1,0 +1,121 @@
+{
+  "_resourceType": "script",
+  "id": "040f582c-5a5d-4df3-ada0-812ecd042f90",
+  "name": "Story side_step_listing_0_4",
+  "symbol": "script_story_side_step_listing_0_4",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "7e6c74c3-dc5d-4a07-aaed-6b931b302a46",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The prospective\nbuyer keeps their\ndeposit. They\nwanted a workshop,\nand a public stair",
+          "is an inconvenient\nplace to install a\nsaw."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "3bac9d1b-877f-41b9-aec2-e9ae69f82a0f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "95"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "4342ab87-e0f1-4ac3-ab19-ce314cd40055",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The buyer uses the\nfacts card to\ncompare a second\naddress. Its plain\nlittle diagram",
+                "becomes more\nuseful than the\nglossy brochure."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "1ae1ad1a-8999-4f9d-a936-f9a13b1ee1cb",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "95"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "52d11a8a-74f4-4332-a77f-4be01fb43987",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The buyer attends\nthe tour, then\nteaches a friend\nthe kettle trick.\nNib gets applause",
+                "for explaining his\nown correction."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "db5458f7-0bf5-4846-a17e-5c5eb408643d",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "94",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      }
+    },
+    {
+      "id": "a26ea1c9-a694-4e02-a5ca-711c73c4349f",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fb30be1e-55d0-40c2-a899-435698039178"
+      }
+    }
+  ]
+}

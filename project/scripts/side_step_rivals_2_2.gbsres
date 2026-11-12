@@ -1,0 +1,127 @@
+{
+  "_resourceType": "script",
+  "id": "0d20fad4-daa6-4f7f-a1f8-ce8001d875d0",
+  "name": "Story side_step_rivals_2_2",
+  "symbol": "script_story_side_step_rivals_2_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "73b7f393-9d1a-4a7e-a3d4-7761f0dd3fbc",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Which plan\naddresses the\nslope and the\nwind?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "1e4f4204-e8f1-4cd8-ad96-446fe96c1327",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "LOW+BRA",
+        "option2": "SAIL",
+        "option3": "NO BRA"
+      }
+    },
+    {
+      "id": "a124cc66-03f6-443a-abe0-26577a8cfdea",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "ee40edbf-c873-4bca-aa4b-a2ac3307adde",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "100",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "76a629ea-eef8-47d0-ae76-c8e9c7745b8d",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Candy Row: watch\nthe inspected cart\ndemonstration at\nthe side desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "9eab7012-549e-46cb-a193-485ddc285569",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "6564b53c-66ac-4cb5-ac4c-0a3415ac5b3a",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Use the low tray\nand brake. A sail\ncatches wind; a\nsloping route\nstill needs a",
+                      "brake."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

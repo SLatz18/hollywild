@@ -1,0 +1,127 @@
+{
+  "_resourceType": "script",
+  "id": "f6d0891b-8294-4d5e-aa28-03cf3a0634c0",
+  "name": "Story side_step_star_lease_0_1",
+  "symbol": "script_story_side_step_star_lease_0_1",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "3ffd9cf8-df56-48c5-a55f-1629551d755a",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "What does the\ncertificate\nactually give its\nbuyer?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "a3cf77a0-ee72-4ee8-a449-a7ded0c4d8aa",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "PAPER",
+        "option2": "SKY",
+        "option3": "AWNING"
+      }
+    },
+    {
+      "id": "a51cc036-2ed3-4e21-a7c5-28bc172aa6f6",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "7019a824-7665-46f3-acb6-1cec74d60ede",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "109",
+              "value": {
+                "type": "number",
+                "value": 2
+              }
+            }
+          },
+          {
+            "id": "8fb0133c-a8d4-4a09-a888-68a1ef8c3ef3",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Aurora Yard:\ncorrect the star\nstall's sign at\nthe side desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "fc5a43f0-9947-46ba-ada0-a9010669d6c7",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "d2cd51b8-87f2-4ebc-a1cf-1b85e497fd16",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The certificate\nnames a decorative\npaper star. The\npublic overlook\nremains open to",
+                      "everyone."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

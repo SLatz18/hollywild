@@ -780,14 +780,13 @@ def validate(world):
     # Native GB Studio uses a 16x8 player at y and 16x16 actors at y-8.
     # Prove actual interaction approaches, rather than walking through actors.
     for scene in world["scenes"]:
-        if not scene.get("campaign") and scene["id"] != "garage":
-            continue
         w, h = scene["width"] // 8, scene["height"] // 8
         def rect(x, y, width=2, height=1):
             return x, y, x + width - 1, y + height - 1
         def overlap(a, b):
             return a[0] <= b[2] and b[0] <= a[2] and a[1] <= b[3] and b[1] <= a[3]
-        actors = [rect(a["x"], a["y"] - 1, 2, 2) for a in scene["sites"]]
+        native_sites = [a for a in scene["sites"] if a["type"] != "door"]
+        actors = [rect(a["x"], a["y"] - 1, 2, 2) for a in native_sites]
         triggers = [rect(e["x"], e["y"], e["width"], e["height"]) for e in scene["exits"]]
         def free(point, allowed=None):
             x, y = point
@@ -804,8 +803,8 @@ def validate(world):
             for point in [(x-1,y),(x+1,y),(x,y-1),(x,y+1)]:
                 if point not in seen and free(point):
                     seen.add(point); queue.append(point)
-        for index, site in enumerate(scene["sites"]):
-            if not site["type"].startswith("campaign_"):
+        for index, site in enumerate(native_sites):
+            if not site["type"].startswith("campaign_") and site["type"] != "side_node":
                 continue
             x, y = site["x"], site["y"]
             assert any(p in seen for p in [(x,y+1),(x,y-2),(x-2,y),(x+2,y)]), (scene["id"], site["id"], "no native approach")
@@ -817,11 +816,29 @@ def validate(world):
     assert all(set(c.p)<=set(range(4)) for c in WORLD_CANVASES)
 
 
+def add_neighborhood_contacts(world):
+    """Place a distinct bulletin/contact for optional stories, off old routes."""
+    aliases = {"candy_row": "candy", "velvet_heights": "velvet", "aurora_yard": "aurora"}
+    for scene in world["scenes"]:
+        name = aliases.get(scene["id"], scene["id"])
+        if scene.get("campaign"):
+            x, y = 10, 27
+        elif name == "garage":
+            x, y = 10, 4
+        elif scene["width"] == 160:
+            x, y = 10, 11
+        else:
+            x, y = 13, 24
+        scene["sites"].append({"id": "side_" + name, "type": "side_node", "node": name,
+                               "x": x, "y": y, "sprite": "book", "label": "Neighborhood stories"})
+
+
 if __name__=="__main__":
     districts=make_world()
     WORLD_CANVASES=[d.c for d in districts]
     world={"version":1,"tileSize":8,"coordinateNotes":"All positions use 8-pixel tiles. Native player bounds are 16x8 at y; actor bounds are 16x16 at y-8. Sites retain a conservative 2x2 terrain clearance.",
            "palettes":PALETTES,"scenes":[d.finish() for d in districts],"sprites":create_sprites()}
+    add_neighborhood_contacts(world)
     validate(world)
     (ROOT/"world-layout.json").write_text(json.dumps(world,indent=2)+"\n")
     print(json.dumps({"scenes":[{"id":s["id"],"uniqueTiles":s["uniqueTiles"],"sites":len(s["sites"])} for s in world["scenes"]],"sprites":len(world["sprites"])}))

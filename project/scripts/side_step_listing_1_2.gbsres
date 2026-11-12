@@ -1,0 +1,128 @@
+{
+  "_resourceType": "script",
+  "id": "bbc63864-c757-4a22-ac1c-0a91475bdaad",
+  "name": "Story side_step_listing_1_2",
+  "symbol": "script_story_side_step_listing_1_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "840f38cc-1e3d-4d6c-a9f6-9574ed607885",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The noise follows\nthe display bell,\nand its bracket is\nloose. Which\nrepair addresses",
+          "the observed\nsource?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "a253ac6b-5602-48e4-a1ab-8350ff039cbc",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "BRACKET",
+        "option2": "PAPER",
+        "option3": "LOUDER"
+      }
+    },
+    {
+      "id": "c0e6e5c2-7ac5-42fd-a234-af44a4880a6b",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "0f2288b2-571b-4b73-a034-447dd1305deb",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "94",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "9378d24b-8e0a-4c03-ad67-a95f6d2916f9",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Lantern Flats:\nrecord the\ntenant's repair\nrequest at the\nside desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "ae783796-c0b9-4c4a-a696-ffe528bc82ca",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "4b0580c6-b801-470d-a04c-913a051992cd",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The loose bracket\ncarries the\nvibration. A\npadded mounting\naddresses that",
+                      "source; wallpaper\nonly covers the\nwall."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

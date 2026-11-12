@@ -1,0 +1,443 @@
+{
+  "_resourceType": "script",
+  "id": "765fbcb5-5ce7-4bf0-a0bb-f53c049bcbae",
+  "name": "Story side_track_flats_flats_interior",
+  "symbol": "script_story_side_track_flats_flats_interior",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "34780e70-4ad2-4d13-acee-0753a847e55b",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "129"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "91bee535-91cb-416b-ad4e-efe0eb1c486e",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The Landing\nBelongs to Feet",
+                "Your tenants want\na warmer common\nlanding. Their\nfirst request is\nto remove the",
+                "decorative\nsuitcase that\nnobody can walk\naround."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "2058061c-2124-48b6-a6f0-24d9f44df7ef",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "15"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "d5aac7df-546e-4aa8-a57a-ed06d1d1bebe",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Buy this property\nbefore beginning\nits project."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "630f09a9-c646-4c67-a643-d5ebdc1c4fdc",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 2,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "Begin",
+                    "option2": "Back"
+                  }
+                },
+                {
+                  "id": "99c6315e-1a2e-4160-a049-b883aa5f7b1f",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "ccb36627-c85d-4c58-a0c1-46741d63ab52",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "129",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "816c7012-b438-42ee-a27e-856bc40de57b",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "130",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "9e6df612-7f05-4e3c-ae3c-01777a1faac9",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Make a draft\nscreen and a\nnotice rail while\npreserving the\nshared exit."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "25db6fc7-884b-4d6a-a16d-2f65469c0d19",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Lantern Flats:\nread the tenants'\nlanding plan at\nthe side desk."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "1a14b625-d490-41fd-a0d4-fe9a14c4135a",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "129"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "b3b974de-41c1-451c-a097-078e4d8344c6",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The Landing\nBelongs to Feet",
+                      "A Common Place"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "21fd9b1c-62b5-48cb-a1eb-5eb6a9d0a9a1",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "130"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "d607797b-9f7a-4fc5-aa44-f5083cf36bef",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "1b6ff137-c00a-407d-a315-f38d08fffca2"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "85aefde8-cb76-4bc0-a890-f042265bead7",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "130"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "913f0b5b-f462-47db-a97b-23446f1f76ed",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Velvet Lodge:\ncollect the fitted\ndraft screen at\nthe side desk."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "175cf8d6-4696-43b9-a7a9-edb725d5cb36",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "130"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "a477bb3f-abd5-414d-a695-235b9ef333dc",
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "95b48a12-4a6f-4687-abd4-b289d6bc75d3"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "1acd82b0-9d84-4f59-a181-00619c75904b",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "130"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "678c4a45-aadf-4085-ae0a-c977803a4082",
+                                          "command": "EVENT_CALL_CUSTOM_EVENT",
+                                          "args": {
+                                            "customEventId": "e29de668-2260-4a72-ad14-7078e4a87425"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "37fd4f1d-95a6-4e58-a42b-202d8d48a8ce",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "130"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 4
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "cf6e27d0-505b-4e00-addb-75c8505c5b56",
+                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                "args": {
+                                                  "customEventId": "91fe2a7c-070e-4c4b-a7fc-3fe01818cb11"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "ba192bde-8a8f-4e91-af90-aaf7c9494d76",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Check the Side\njournal for your\nnext lead."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "5f70c42e-ec8d-4f40-a272-487e802b9060",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "129"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "7faa398d-03b7-4bba-a705-8c25d34d8618",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The Landing\nBelongs to Feet",
+                            "Your landing\nimprovement pays 3\nextra Coins per\nsuccessful\nordinary job. No",
+                            "extra project fee\nwas charged."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "33e94481-ac4c-43f0-ad34-6a7947fb0e4b",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Check the Side\njournal for your\nnext lead."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

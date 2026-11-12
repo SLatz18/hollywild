@@ -1,0 +1,443 @@
+{
+  "_resourceType": "script",
+  "id": "ad655ff1-f5a5-4767-a6e8-ad8121c19043",
+  "name": "Story side_track_toolworks_toolworks_interior",
+  "symbol": "script_story_side_track_toolworks_toolworks_interior",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "3f631216-f5d5-4887-a763-ebd92b085b78",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "126"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "8845eeec-9a4e-479c-a56f-e7da605d0d1d",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A Place for the\nUseful Bits",
+                "Your tool shop has\none enormous scrap\nbin. Finding a\nwasher in it\ncurrently counts",
+                "as a winter\nexpedition."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "c0b53371-991c-4c57-ae4f-8aa42c7e7349",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "16"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "5aaca23a-7d28-4e70-aa7e-c5bc52073c86",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Buy this property\nbefore beginning\nits project."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "f681144d-3e47-47e4-a075-9e0596bedf6b",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 2,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "Begin",
+                    "option2": "Back"
+                  }
+                },
+                {
+                  "id": "1813ab10-b268-4b7b-a7dc-336fedabfeb6",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "14"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "a1bf00cf-73e1-46c9-a73c-68bb8fc93bcd",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "126",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "ad9dac51-903d-41d1-a6b5-cef19cf4347f",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "127",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "f105ba16-f349-400c-ad08-e67687881876",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Fit a sorter that\nkeeps sound\noffcuts apart from\nrejected pressure\nparts."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "287c6e5b-6a8c-46dc-af99-cec61cf95e00",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Tinsel Toolworks:\ninspect your bin\nplan at the side\ndesk."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "cbc4f23d-266a-4acd-a620-6cf7c3a69844",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "126"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "36e7c97b-3e68-437f-a646-b02d50af6d49",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A Place for the\nUseful Bits",
+                      "Small Parts, Clear\nHomes"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "c7271d82-ea9c-4a44-af39-b49eca61d197",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "127"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "7bcf52b3-771a-4ab4-af0a-48ab4212aa6c",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "50d2c787-94f6-481d-a71f-11ad99bf0f8c"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "22727297-a2ad-4ba4-a090-0f3916098fb6",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "127"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "d1367c6f-9766-412a-aa76-48cc48a70ae8",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Brassworks\nFoundry: collect\nthe inspected\nsorter trays at\nthe side desk."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "c39452bc-1fe7-4ba5-a651-33d5d03c3a7e",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "127"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "03c143f5-7721-4344-a07a-4037b56bc103",
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "e3d1fca9-9610-4f3a-aa4a-9f68971d3179"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "6c53c670-2886-4b6c-afe7-0867949b3684",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "127"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "7e417abc-733b-40b2-a3f2-7e453b89086d",
+                                          "command": "EVENT_CALL_CUSTOM_EVENT",
+                                          "args": {
+                                            "customEventId": "3dec632c-7f4b-4f02-a199-3abbc8d26cd4"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "cdfb2c24-dbc0-40ea-a673-5fd344ff14d6",
+                                          "command": "EVENT_IF",
+                                          "args": {
+                                            "condition": {
+                                              "type": "eq",
+                                              "valueA": {
+                                                "type": "variable",
+                                                "value": "127"
+                                              },
+                                              "valueB": {
+                                                "type": "number",
+                                                "value": 4
+                                              }
+                                            }
+                                          },
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "88178ee0-2ee0-4ce0-aead-3c86246df4ba",
+                                                "command": "EVENT_CALL_CUSTOM_EVENT",
+                                                "args": {
+                                                  "customEventId": "80b3ec75-1706-4dc5-a102-17dbee20d552"
+                                                }
+                                              }
+                                            ],
+                                            "false": [
+                                              {
+                                                "id": "f4b31bb5-bd05-4413-aa12-3e2c23dda49f",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Check the Side\njournal for your\nnext lead."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "d19bef82-8b51-4e3b-af2a-3157da090d82",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "126"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "95c24fb0-97ec-4220-ad87-33cdc68b8b54",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Place for the\nUseful Bits",
+                            "Your sorter adds 1\nscrap per\nsuccessful\nordinary job. No\nextra project fee",
+                            "was charged."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "887d872a-3e44-4a72-a334-b89c1095e024",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Check the Side\njournal for your\nnext lead."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "_resourceType": "script",
+  "id": "39ea78da-54db-40ad-adf7-91152d99cd07",
+  "name": "Story side_step_sleeping_crate_0_1",
+  "symbol": "script_story_side_step_sleeping_crate_0_1",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "bdc00c1e-6976-458c-a2af-8b0fa47f0f63",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Which stop is\nnamed on the care\ncard and has\nBoots' owner\nwaiting?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "24dec850-3ab5-4bb7-a861-6cb79adb5dc9",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "DEPOT",
+        "option2": "CAFE",
+        "option3": "ROOF"
+      }
+    },
+    {
+      "id": "2eb8bf10-1e26-4f8f-a715-c2748ed1ba75",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "2b474e05-51fd-4e1b-a42d-ff9250b5e92e",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "118",
+              "value": {
+                "type": "number",
+                "value": 2
+              }
+            }
+          },
+          {
+            "id": "6503d1be-cac7-4630-a6e1-a9312d9332e9",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Cocoa Corner:\ndeliver Boots to\nthe owner at the\nside desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "958bbb0f-148b-4b1a-ad2b-9ecb25b27383",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "ab90d237-8d95-49ab-a2c8-4059ecf9b749",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The care card\nnames Cocoa\nCorner. The depot\nis cold storage,\nand the roof is",
+                      "only a transit\nstop."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -8,12 +8,26 @@ The actor position layout is from the pinned GBVM actor_t structure.
 import hashlib
 import io
 import json
+import os
+import time
+import uuid
 import re
 import sys
 from collections import deque
 from pathlib import Path
 
 from pyboy import PyBoy
+
+SESSION_STARTED = time.perf_counter()
+SIMULATED_FRAMES = 0
+RUN_ID = os.environ.get("HOLLYWILD_QA_RUN_ID", str(uuid.uuid4()))
+
+
+def tick(machine, frames):
+    global SIMULATED_FRAMES
+    machine.tick(frames)
+    SIMULATED_FRAMES += frames
+
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build/rom"
@@ -55,12 +69,19 @@ def boot():
     ram.seek(0)
     machine = PyBoy(str(rom), window="null", sound_emulated=False, ram_file=ram)
     machine.set_emulation_speed(0)
-    machine.tick(180)
+    tick(machine, 180)
     return machine
 
 
 pyboy = boot()
-history = {"romSha256": rom_hash, "commands": []}
+history = {"romSha256": rom_hash, "runId": RUN_ID, "commands": [],
+           "timingNote": "Automated wall time and simulated frames are measured separately; neither estimates human pacing."}
+
+
+def write_history():
+    history["elapsedWallSeconds"] = round(time.perf_counter() - SESSION_STARTED, 6)
+    history["simulatedFrames"] = SIMULATED_FRAMES
+    (OUT / "emulator-session.json").write_text(json.dumps(history, indent=2) + "\n")
 
 
 def word(address):
@@ -161,9 +182,9 @@ def navigate(destination):
     walked = []
     for point, button in reversed(path):
         pyboy.button_press(button)
-        pyboy.tick(8)
+        tick(pyboy, 8)
         pyboy.button_release(button)
-        pyboy.tick(1)
+        tick(pyboy, 1)
         observed = state()
         walked.append({"button": button, "frames": 8, "scene": observed["scene"], "x": observed["x"], "y": observed["y"]})
         if observed["scene"] != scene_name:
@@ -173,12 +194,12 @@ def navigate(destination):
         # Trigger scripts fade before switching the current-scene pointer. Do
         # not issue another movement step while that transition owns input.
         if expected_scene and any(overlap(bounds(player, *point), area) for area in permitted_triggers):
-            pyboy.tick(120)
+            tick(pyboy, 120)
             arrived = state()
             assert arrived["scene"] == expected_scene, f"Expected transition to {expected_scene}, still in {arrived['scene']}"
             return walked
     if expected_scene:
-        pyboy.tick(120)
+        tick(pyboy, 120)
         assert state()["scene"] == expected_scene, f"Expected transition to {expected_scene}, still in {state()['scene']}"
     return walked
 
@@ -190,11 +211,11 @@ def read_dialogue(limit=240):
     Dialogue is at x=0. This observes rendered UI position, not story state.
     """
     presses = 0
-    pyboy.tick(200)
+    tick(pyboy, 200)
     while state()["windowY"] != 144 and state()["windowX"] != 80:
         assert presses < limit, "Dialogue did not close within the button budget"
         pyboy.button("a")
-        pyboy.tick(200)
+        tick(pyboy, 200)
         presses += 1
     return presses
 
@@ -205,13 +226,13 @@ def choose(index):
     assert isinstance(index, int) and 0 <= index <= 8
     if index == 0:
         pyboy.button("b")
-        pyboy.tick(200)
+        tick(pyboy, 200)
     else:
         for _ in range(index - 1):
             pyboy.button("down")
-            pyboy.tick(20)
+            tick(pyboy, 20)
         pyboy.button("a")
-        pyboy.tick(200)
+        tick(pyboy, 200)
     return read_dialogue()
 
 
@@ -243,7 +264,7 @@ def travel(destination):
     moves = []
     for target, trigger in reversed(route):
         moves.extend(navigate({"x": trigger["x"], "y": trigger["y"], "expectScene": target}))
-        pyboy.tick(160)
+        tick(pyboy, 160)
         read_dialogue()
         assert state()["scene"] == target
     return moves
@@ -268,11 +289,11 @@ def interact(target):
                 continue
             raise
         pyboy.button_press(direction)
-        pyboy.tick(8)
+        tick(pyboy, 8)
         pyboy.button_release(direction)
-        pyboy.tick(1)
+        tick(pyboy, 1)
         pyboy.button("a")
-        pyboy.tick(200)
+        tick(pyboy, 200)
         read_dialogue()
         return walked
     raise AssertionError(f"No safe interaction approach to {actor_path.name}")
@@ -293,14 +314,14 @@ try:
             if "tap" in cmd:
                 for _ in range(cmd.get("count", 1)):
                     pyboy.button(cmd["tap"])
-                    pyboy.tick(cmd.get("frames", 40))
+                    tick(pyboy, cmd.get("frames", 40))
             if "hold" in cmd:
                 pyboy.button_press(cmd["hold"])
-                pyboy.tick(cmd.get("frames", 8))
+                tick(pyboy, cmd.get("frames", 8))
                 pyboy.button_release(cmd["hold"])
-                pyboy.tick(1)
+                tick(pyboy, 1)
             if "tick" in cmd:
-                pyboy.tick(cmd["tick"])
+                tick(pyboy, cmd["tick"])
             if "restart" in cmd:
                 ram.seek(0)
                 pyboy.stop(ram_file=ram)
@@ -312,7 +333,7 @@ try:
             if "capture" in cmd:
                 name = Path(cmd["capture"]).name
                 assert name.endswith(".png")
-                pyboy.tick(1)
+                tick(pyboy, 1)
                 pyboy.screen.image.save(OUT / name)
             current = state()
             if "assert" in cmd:
@@ -320,16 +341,17 @@ try:
                     assert current[key] == expected, f"{key}: expected {expected}, got {current[key]}"
             history["commands"].append({"input": cmd, "state": current, "passed": True,
                                         **({"navigation_steps": navigation_steps} if navigation_steps is not None else {})})
-            (OUT / "emulator-session.json").write_text(json.dumps(history, indent=2))
+            write_history()
             print(json.dumps({"ok": True, "state": current}), flush=True)
             if cmd.get("stop"):
                 break
         except Exception as error:
             history["commands"].append({"input": line.strip(), "passed": False, "error": str(error)})
-            (OUT / "emulator-session.json").write_text(json.dumps(history, indent=2))
+            write_history()
             print(json.dumps({"ok": False, "error": str(error), "state": state()}), flush=True)
 finally:
     pyboy.stop(save=False)
+    write_history()
 
 # Interactive exploration may continue after an assertion, but batch replay
 # must fail visibly if any command failed.

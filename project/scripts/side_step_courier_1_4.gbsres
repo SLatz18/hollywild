@@ -1,0 +1,121 @@
+{
+  "_resourceType": "script",
+  "id": "a33959c6-fa86-4595-a892-3065df632158",
+  "name": "Story side_step_courier_1_4",
+  "symbol": "script_story_side_step_courier_1_4",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "4b082383-fec0-4cb6-af43-43720161af0b",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The reader checks\nF4 and places it\nbeside a chair.\nFig resists\ncalling the chair",
+          "an adjacent\nlifestyle\nopportunity."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "b32bf365-b8fe-4a8c-a264-ba9d09d8183d",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "92"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "80ae0faa-f0cb-417c-a8fc-adb1c5434e57",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Fig asks before\nsounding his horn.\nThe reader\nrequests one tiny\nnote outside the",
+                "closed\nreading-room door."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "9b0d38b2-e476-4f78-ad66-939e7aae3f7f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "92"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "48b4eeb6-4cda-41a7-a50e-e90bc12acbc4",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Fig leaves a card\nthat names the\npot. The reader\nuses its blank\nback to record",
+                "watering duties."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "10242ee4-a103-4e55-a50b-3d60b95119c3",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "91",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      }
+    },
+    {
+      "id": "1f9c61d3-e388-414f-ab44-e5a4ddf8e8d6",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "b8153572-819e-4f95-aa4a-23b21dfc8d67"
+      }
+    }
+  ]
+}

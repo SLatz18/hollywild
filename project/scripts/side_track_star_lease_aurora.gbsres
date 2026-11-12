@@ -1,0 +1,375 @@
+{
+  "_resourceType": "script",
+  "id": "a494e25a-9f01-4c6d-a403-ae5c3cc0a314",
+  "name": "Story side_track_star_lease_aurora",
+  "symbol": "script_story_side_track_star_lease_aurora",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "dd225536-2c83-45fb-a1c3-99f7eff28383",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "108"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "da7feb53-33d2-473b-ac25-04878be67b73",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A Lease on the\nNorth Star",
+                "A promoter is\nselling exclusive\nviews of the North\nStar. His sign\nstands under the",
+                "one awning that\nblocks it."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "431aafd7-c292-4985-ab0a-4f87d3fb6e98",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 2,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "Begin",
+              "option2": "Back"
+            }
+          },
+          {
+            "id": "b05d99ca-40fa-41d9-a203-2655f994b825",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "3ed35733-afc6-4528-a300-3ee68a9b9d4c",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "108",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "3bf86435-4d79-46ed-aa33-d007fdb75320",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "109",
+                    "value": {
+                      "type": "number",
+                      "value": 0
+                    }
+                  }
+                },
+                {
+                  "id": "f214b4d5-3593-45be-a6b7-765bdaeea2fd",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A customer asks\nwhether buying the\ncertificate would\nmove the awning."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "633d074a-f9ca-43a6-a7cd-ddda6e6fce6d",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Aurora Yard: read\nthe star\ncertificate at the\nside desk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "8407687e-60d7-4a03-a86f-4a72501403b4",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "108"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "36e4ac33-23fb-4835-ad3b-31167520ed10",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A Lease on the\nNorth Star",
+                      "Open-Sky\nInspection"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "07086f96-8b48-4e84-abb9-315f0ddee992",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "109"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "8d656b09-86e7-4515-a44e-496e56edfb40",
+                        "command": "EVENT_CALL_CUSTOM_EVENT",
+                        "args": {
+                          "customEventId": "2d47d316-dd42-486c-ae60-f165bb4cfe95"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "dc9d6499-184b-41bb-a722-f9c6b53e6134",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "109"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "c6929757-9aa3-4305-ab93-52831a49c242",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Signal:\nexplain the\ncertificate at the\nside desk."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "b8b45981-5490-4276-a910-ad4321e59dbf",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "109"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 2
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "1d1cddf8-5db1-48a1-a4b2-42281868cadf",
+                                    "command": "EVENT_CALL_CUSTOM_EVENT",
+                                    "args": {
+                                      "customEventId": "34376c6a-4a6d-4360-a705-ed583f9e1dc8"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "12a00c1b-443d-4f26-ab67-4331c19355eb",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "109"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "ef4d1c8f-fcc9-4833-a1e7-946a6b3e7b76",
+                                          "command": "EVENT_CALL_CUSTOM_EVENT",
+                                          "args": {
+                                            "customEventId": "871feae7-12b0-4931-a679-96ab677d69f7"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "7231aebe-429d-4128-a637-e7d2cde579c1",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Check the Side\njournal for your\nnext lead."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "79d22059-8abb-4e9a-a564-9fe05728516c",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "108"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "e1f4c24a-cf04-4742-abfa-0332054f2819",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Lease on the\nNorth Star",
+                            "The stall sells\nwhat it actually\nhas. The public\noverlook remains a\ngood place to",
+                            "enjoy things no\nstall owns."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "bacadade-c447-437b-a8e1-bd89b752a147",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Check the Side\njournal for your\nnext lead."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,127 @@
+{
+  "_resourceType": "script",
+  "id": "45514706-31db-458d-a78d-c44f0e368fde",
+  "name": "Story side_step_parcel_0_2",
+  "symbol": "script_story_side_step_parcel_0_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "778d48ff-5c1f-4f21-aa8a-05c33eaafd3a",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Where does the\nfragile glass\nornament belong\nunder the posted\nrule?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "ba5864e2-0aac-43b1-a521-107b8111f997",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "PAD LOW",
+        "option2": "PLAIN",
+        "option3": "TOP"
+      }
+    },
+    {
+      "id": "838076cd-4488-434d-ad45-adb18585df6b",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "bb1669c9-fd90-4972-a862-1b170c1c3231",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "124",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "e63039af-c18a-4f67-ac4a-69fd14bde80a",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Parcel Palace:\nfinish the shelf\ncheck at the side\ndesk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "100828f8-b11b-4d99-aff3-1d398e2fed65",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "f8c8209e-2bd7-4716-ad42-b5bc27258721",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Fragile cargo goes\non the low padded\nshelf. Weight\nalone is not its\nonly handling",
+                      "need."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

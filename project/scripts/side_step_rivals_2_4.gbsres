@@ -1,0 +1,121 @@
+{
+  "_resourceType": "script",
+  "id": "c5eb137c-d3fc-4968-ae25-5193566f0ae7",
+  "name": "Story side_step_rivals_2_4",
+  "symbol": "script_story_side_step_rivals_2_4",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "36013fc6-00a4-45e9-aa65-ae67e9cf72d6",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The Comets share\ntheir\noffcut-sorting jig\nwith the salvage\ncrew. Each",
+          "successful\nordinary salvage\njob now yields 1\nextra scrap."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "5157acfc-8340-490c-abae-5463b324a32c",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "101"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "6837e444-c8e6-4714-ac37-8b9f0829c232",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Bea hangs your\nsolo victory\nbeside the joint\nsurvey. She\npromises a future",
+                "rematch, then\ngives you the\nfirst biscuit."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "9be9934f-3441-4e97-a972-9140a9c5de3b",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "101"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "42d9e14f-915b-410c-ad3f-e18583644031",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Bea hangs the\njoint recovery\nbeside the survey.\nYour smaller star\nfits between",
+                "everyone else's\nnames."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "edfed736-a075-45ed-a6d3-e56137740545",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "100",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      }
+    },
+    {
+      "id": "c7788661-2c74-47c4-a4d9-1a186010c0d6",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f1c271ac-786f-4ccd-a3ce-8891e3049ca1"
+      }
+    }
+  ]
+}

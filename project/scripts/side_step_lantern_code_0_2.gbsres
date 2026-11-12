@@ -1,0 +1,119 @@
+{
+  "_resourceType": "script",
+  "id": "2bb4bd30-9665-4eca-ad5a-5827705cc8b0",
+  "name": "Story side_step_lantern_code_0_2",
+  "symbol": "script_story_side_step_lantern_code_0_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "be724c2e-b4e7-4fe0-ae9d-62b1188dbcf0",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The reminder says\nmatch shape, not\npaint. Which\nlocker holds\nlunch?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "5e78ddce-a155-4e9e-a9d4-3f9d1c72687b",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 3,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "SQUARE",
+        "option2": "TRI",
+        "option3": "ROUND"
+      }
+    },
+    {
+      "id": "9937e62b-d64a-4ff1-a8f7-7b95ab814a86",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "01ef299a-3fb4-46a5-a2d6-da8a5c582106",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "112",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "812a30ed-27ea-43f2-a122-799caacee2f3",
+            "command": "EVENT_CALL_CUSTOM_EVENT",
+            "args": {
+              "customEventId": "280b9980-30ca-4b15-acdf-e9240396ec4d"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "b00730a1-86f9-431c-a368-0f01e3ea0a2c",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "f2fdc241-33a3-4fc5-a799-58e39f04d648",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "The spare lens box\nis triangular.\nChoose the\ntriangular locker\neven though its",
+                      "paint is yellow."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

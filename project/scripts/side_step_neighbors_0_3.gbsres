@@ -1,0 +1,190 @@
+{
+  "_resourceType": "script",
+  "id": "9af6cc68-5178-4464-a2b7-fa4a7477f5ff",
+  "name": "Story side_step_neighbors_0_3",
+  "symbol": "script_story_side_step_neighbors_0_3",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "b1f0471a-e77c-4694-a7b7-31bab1d30af7",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Elm can fit one\nnotice beside the\nbench: a sharing\nshelf for spare\ngoods or a chalk",
+          "board for neighbor\nrequests. Both\nleave the path\nopen."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "f86aac72-5c4a-457c-a2e4-e1c1027aba0f",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 2,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "SHELF",
+        "option2": "BOARD"
+      }
+    },
+    {
+      "id": "b2e3b10d-7ee5-4d59-a247-ec5c47485c5f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "1232ca42-f344-407d-adcb-25352c76aafd",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "98",
+              "value": {
+                "type": "number",
+                "value": 1
+              }
+            }
+          },
+          {
+            "id": "557b6fde-1192-450d-a62a-4eb7adf50325",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "A shelf gets two\nsturdy hooks and a\nsign: Take what\nhelps. Leave it\nusable."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "8fb61f54-92ca-4485-a216-580a2c33d414",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "97",
+              "value": {
+                "type": "number",
+                "value": 4
+              }
+            }
+          },
+          {
+            "id": "8bd7ab41-cfdb-40d9-a007-b557f0a8032f",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Frostwick: invite\nthe block's\nresidents at the\nside desk."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "1aa5c947-f5a3-4ab4-ad66-8607a98390c1",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "a8576a34-657a-467a-a783-9db859239fd6",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "98",
+                    "value": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  }
+                },
+                {
+                  "id": "77bd3a53-4820-40ea-a7d9-ce503b81d536",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A board gets a\nweather lip and\nchalk. Its first\nrequest is for\nsomeone to draw a",
+                      "better sun."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "88c76d21-c29d-421c-a6ea-27d56fc80f81",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "97",
+                    "value": {
+                      "type": "number",
+                      "value": 4
+                    }
+                  }
+                },
+                {
+                  "id": "f2dfb2f1-e8f3-4578-aa6a-29a32e30986d",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Frostwick: invite\nthe block's\nresidents at the\nside desk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

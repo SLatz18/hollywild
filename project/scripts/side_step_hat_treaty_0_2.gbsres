@@ -1,0 +1,117 @@
+{
+  "_resourceType": "script",
+  "id": "7d6cf8ed-29d7-42f6-a19e-d09a742419ce",
+  "name": "Story side_step_hat_treaty_0_2",
+  "symbol": "script_story_side_step_hat_treaty_0_2",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "37d01f73-e777-42b9-a927-50300cc6a39b",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Whose claim\nmatches the inside\nfish and the name\nlabel?"
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "53841889-1044-4371-ad6b-96f39dbfc56b",
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "14",
+        "items": 2,
+        "layout": "menu",
+        "cancelOnLastOption": false,
+        "cancelOnB": true,
+        "option1": "NELL",
+        "option2": "OTTO"
+      }
+    },
+    {
+      "id": "731cef03-ec2d-4719-a4d1-a06f8c03c5f1",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "14"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "4b58af0c-d38e-497f-a22f-c142f6767119",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "103",
+              "value": {
+                "type": "number",
+                "value": 3
+              }
+            }
+          },
+          {
+            "id": "9467a6e1-1ca4-4c0a-a8d6-cd6165d18bd8",
+            "command": "EVENT_CALL_CUSTOM_EVENT",
+            "args": {
+              "customEventId": "769a0adf-83c1-4a19-a90f-72860fa36fdf"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "ae979336-2047-46ca-ac14-4f8900c58c6f",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "859e2197-412b-4ba8-aab4-f8e2dafe931f",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Nell described the\nhidden repair, and\nthe label names\nNell. Red alone\nfits both claims."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

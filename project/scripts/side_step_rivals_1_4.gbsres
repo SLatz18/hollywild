@@ -1,0 +1,120 @@
+{
+  "_resourceType": "script",
+  "id": "984b9e20-fc28-4568-a7b1-7e01b4b7edc2",
+  "name": "Story side_step_rivals_1_4",
+  "symbol": "script_story_side_step_rivals_1_4",
+  "description": "Native persistent campaign interaction",
+  "variables": {},
+  "actors": {},
+  "script": [
+    {
+      "id": "788c7684-53a7-415c-aeaf-a04c197e7095",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Bea returns a tray\nof sound offcuts\nand leaves the\ntraining part in\nits marked rack."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "fe9f8856-4b26-4295-aea3-4e610c060736",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "101"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d07f477b-55ec-41b6-aad2-73c9626e1ac3",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "She announces a\ndraw, then admits\nshe had hoped to\nbeat your triangle\ncap. You both sign",
+                "the eligible-item\nlist."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "1822e28b-efaf-4155-a479-1a605dec0741",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "101"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "7f4ab179-b2ab-49e9-a95f-d3795ed154a3",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "She calls it\nanother joint\nresult and redraws\nthe giant star\nsmaller so",
+                "everyone can read\nthe notes."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "4198d65e-5ba5-44f6-a5df-e0863eeec42c",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "100",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      }
+    },
+    {
+      "id": "d34cc18f-f6a3-4722-a1c6-ed9797f2cb07",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c4e76762-ba2e-40c7-a37c-f5b19f20b8be"
+      }
+    }
+  ]
+}
