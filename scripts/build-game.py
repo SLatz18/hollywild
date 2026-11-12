@@ -22,6 +22,8 @@ ROOT = Path(__file__).resolve().parents[1]
 STUDIO = ROOT / ".tools" / "gb-studio"
 CLI = STUDIO / "out" / "cli" / "gb-studio-cli.js"
 PIN = "ccb891b2670134ba8237416772eea4ed09d34e1e"
+ENGINE = STUDIO / "appData" / "engine" / "gbvm"
+ENGINE_PIN = "bd6f41cc5e05cbe6601dcc7f8e2db89bed527fe3"
 LOGO = bytes.fromhex(
     "CEED6666CC0D000B03730083000C000D"
     "0008111F8889000EDCCC6EE6DDDDD999"
@@ -102,6 +104,15 @@ def main() -> int:
     actual_ref = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=STUDIO, text=True).strip()
     if actual_ref != PIN:
         parser.error(f"Expected GB Studio 4.3.2 commit {PIN}, found {actual_ref}")
+    engine_ref = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ENGINE, text=True).strip()
+    if engine_ref != ENGINE_PIN:
+        parser.error(f"Expected GBVM commit {ENGINE_PIN}, found {engine_ref}")
+    for checkout in (STUDIO, ENGINE):
+        changes = subprocess.check_output(
+            ["git", "status", "--porcelain", "--untracked-files=no"], cwd=checkout, text=True
+        ).strip()
+        if changes:
+            parser.error(f"Tracked toolchain source has local changes in {checkout.name}")
     node = shutil.which("node")
     if not node:
         parser.error("Node.js is required")
@@ -147,6 +158,9 @@ def main() -> int:
         "rom": str(output.relative_to(ROOT)),
         "gb_studio_version": "4.3.2",
         "gb_studio_commit": actual_ref,
+        "gbvm_commit": engine_ref,
+        "tracked_toolchain_source_clean": True,
+        "cli_sha256": digest(CLI),
         "node_version": subprocess.check_output([node, "--version"], text=True).strip(),
         "authored_files_unchanged": True,
         "authored_sha256": before,

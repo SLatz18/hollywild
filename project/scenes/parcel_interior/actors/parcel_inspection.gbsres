@@ -1,0 +1,99 @@
+{
+  "_resourceType": "actor",
+  "id": "a8146882-e5f0-42a8-a2ad-0cb123f14ee9",
+  "_index": 0,
+  "symbol": "actor_parcel_interior_parcel_inspection",
+  "prefabId": "",
+  "name": "Parcel Palace inspection",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 7,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "2922080e-0ba5-4a4b-ab0c-d7de93cc7a0f",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "4aba2aa2-fff7-4c26-ae08-edfa237cda6c",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "PARCEL PALACE",
+          "A public post room.\nOwn it for 20 Coins\nper successful job."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "cf331716-a7d7-4c04-a44a-7902f9e6beda",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "17"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "bc355e79-4366-4caa-a74c-d71b346d3b70",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Your property!\nThe neighborhood\nthanks you."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "3073991b-2e2a-4e11-a2a2-fe352945d287",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Everyone may visit.\nThe sign outside\nhandles purchases."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -820,7 +820,7 @@
       }
     },
     {
-      "id": "615a057f-fce4-440f-abb0-02d843d7aa9e",
+      "id": "1a6e4f70-e008-4b6a-a31e-7b9403c6de77",
       "command": "EVENT_SET_INPUT_SCRIPT",
       "args": {
         "input": [
@@ -1169,7 +1169,7 @@
             }
           },
           {
-            "id": "224802dc-583a-49cf-a571-e766007a48d2",
+            "id": "8c5af215-111f-48b3-a8de-da81e707774b",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -1187,7 +1187,7 @@
             "children": {
               "true": [
                 {
-                  "id": "c091b1c6-f3ca-4541-abd4-cb563bf64995",
+                  "id": "3128047d-b388-4fc3-a515-982b4b951314",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -1222,7 +1222,7 @@
                     ],
                     "false": [
                       {
-                        "id": "7735522e-ce2a-4f37-a233-014210761dbd",
+                        "id": "25f24ab6-46fa-4881-a918-ab978577293f",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -1240,24 +1240,100 @@
                         "children": {
                           "true": [
                             {
-                              "id": "5395d401-b9cb-4588-a9f9-bfe1d8a2691b",
-                              "command": "EVENT_TEXT",
+                              "id": "224802dc-583a-49cf-a571-e766007a48d2",
+                              "command": "EVENT_IF",
                               "args": {
-                                "text": [
-                                  "RIVET: working\n2 spare scrap makes\n30 Coins per job."
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "41"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 0
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "5395d401-b9cb-4588-a9f9-bfe1d8a2691b",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "RIVET: maker\n2 spare scrap makes\n30 Coins per job."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
                                 ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                                "false": [
+                                  {
+                                    "id": "c091b1c6-f3ca-4541-abd4-cb563bf64995",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "41"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 1
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "86aee579-0c54-471e-afd9-8e6237fe24bb",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "RIVET: recycler\n2 scrap per job.\nNo supplies used."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "id": "7735522e-ce2a-4f37-a233-014210761dbd",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "RIVET: runner\n10 Coins per job.\nNo supplies used."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
                               }
                             }
                           ],
                           "false": [
                             {
-                              "id": "86aee579-0c54-471e-afd9-8e6237fe24bb",
+                              "id": "5a472737-cf30-41d7-af83-b8c506965bd3",
                               "command": "EVENT_TEXT",
                               "args": {
                                 "text": [
@@ -1282,7 +1358,7 @@
             }
           },
           {
-            "id": "4f3f04a4-064e-4c2c-a40e-8d40d1c41a9b",
+            "id": "88a444e0-e515-4eb5-ac9b-8901e152f24e",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -1300,7 +1376,7 @@
             "children": {
               "true": [
                 {
-                  "id": "6db630f9-5092-447e-ad0c-79cd4c97a0dd",
+                  "id": "0f42ddb8-c8f5-453b-a51e-37055913eac9",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -1318,7 +1394,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "5a472737-cf30-41d7-af83-b8c506965bd3",
+                        "id": "a19211bb-1cd5-43df-ae66-16d66c0ad40f",
                         "command": "EVENT_TEXT",
                         "args": {
                           "text": [
@@ -1333,7 +1409,7 @@
                         }
                       },
                       {
-                        "id": "d5f9ebea-6aca-48dc-ae1a-606002c5deab",
+                        "id": "4f3f04a4-064e-4c2c-a40e-8d40d1c41a9b",
                         "command": "EVENT_MENU",
                         "args": {
                           "variable": "14",
@@ -1346,7 +1422,7 @@
                         }
                       },
                       {
-                        "id": "b23a4ae1-6675-4c3c-a9bf-e404101d01ae",
+                        "id": "615a057f-fce4-440f-abb0-02d843d7aa9e",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -1364,7 +1440,7 @@
                         "children": {
                           "true": [
                             {
-                              "id": "25f24ab6-46fa-4881-a918-ab978577293f",
+                              "id": "3f5653db-57c3-4b81-a702-7ec059c0598e",
                               "command": "EVENT_SET_VALUE",
                               "args": {
                                 "variable": "6",
@@ -1375,7 +1451,7 @@
                               }
                             },
                             {
-                              "id": "3128047d-b388-4fc3-a515-982b4b951314",
+                              "id": "d5f9ebea-6aca-48dc-ae1a-606002c5deab",
                               "command": "EVENT_SET_VALUE",
                               "args": {
                                 "variable": "8",
@@ -1386,7 +1462,7 @@
                               }
                             },
                             {
-                              "id": "8c5af215-111f-48b3-a8de-da81e707774b",
+                              "id": "b23a4ae1-6675-4c3c-a9bf-e404101d01ae",
                               "command": "EVENT_SET_VALUE",
                               "args": {
                                 "variable": "9",
@@ -1397,7 +1473,7 @@
                               }
                             },
                             {
-                              "id": "a19211bb-1cd5-43df-ae66-16d66c0ad40f",
+                              "id": "5471ea63-4d27-42b1-af74-8df9113702f7",
                               "command": "EVENT_SET_VALUE",
                               "args": {
                                 "variable": "11",
@@ -1408,7 +1484,7 @@
                               }
                             },
                             {
-                              "id": "3f5653db-57c3-4b81-a702-7ec059c0598e",
+                              "id": "6db630f9-5092-447e-ad0c-79cd4c97a0dd",
                               "command": "EVENT_TEXT",
                               "args": {
                                 "text": [
@@ -1429,7 +1505,7 @@
                     ],
                     "false": [
                       {
-                        "id": "5471ea63-4d27-42b1-af74-8df9113702f7",
+                        "id": "3caaae7d-4f3e-418c-a5ab-e69dc196df01",
                         "command": "EVENT_TEXT",
                         "args": {
                           "text": [
@@ -1454,7 +1530,7 @@
       }
     },
     {
-      "id": "0f42ddb8-c8f5-453b-a51e-37055913eac9",
+      "id": "e08e234c-a550-43e8-ac04-485d39eadba1",
       "command": "EVENT_SET_INPUT_SCRIPT",
       "args": {
         "input": [
@@ -1465,7 +1541,7 @@
       "children": {
         "true": [
           {
-            "id": "3caaae7d-4f3e-418c-a5ab-e69dc196df01",
+            "id": "dae7dca7-f4c7-4241-a34b-268be7b3ce68",
             "command": "EVENT_TEXT",
             "args": {
               "text": [
@@ -1486,7 +1562,7 @@
       }
     },
     {
-      "id": "e0ff69f3-af3b-43d2-af25-4f8eb9327082",
+      "id": "2fdd8993-a703-485e-a6c0-67c741ab355d",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -1504,7 +1580,7 @@
       "children": {
         "true": [
           {
-            "id": "88a444e0-e515-4eb5-ac9b-8901e152f24e",
+            "id": "2220bd90-330a-40fb-ad0f-7f29e28f81b7",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "22",
@@ -1515,7 +1591,7 @@
             }
           },
           {
-            "id": "1a6e4f70-e008-4b6a-a31e-7b9403c6de77",
+            "id": "48024b2a-5118-47cb-a24b-d8d4124348af",
             "command": "EVENT_VARIABLE_MATH",
             "args": {
               "vectorX": "21",
@@ -1526,7 +1602,7 @@
             }
           },
           {
-            "id": "dae7dca7-f4c7-4241-a34b-268be7b3ce68",
+            "id": "c7f52f59-e33f-49b9-a15f-b677472f1c7f",
             "command": "EVENT_TEXT",
             "args": {
               "text": [
@@ -1542,7 +1618,7 @@
             }
           },
           {
-            "id": "6be3e64c-4034-4ac0-af5f-91fbeeb02b8a",
+            "id": "1e94fdcf-2b0e-4307-a7f8-6da3554a7ecf",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -1560,7 +1636,7 @@
             "children": {
               "true": [
                 {
-                  "id": "48024b2a-5118-47cb-a24b-d8d4124348af",
+                  "id": "a4334072-84f1-4e38-ab2f-db1f2eadb1f6",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -1578,7 +1654,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "e08e234c-a550-43e8-ac04-485d39eadba1",
+                        "id": "6be3e64c-4034-4ac0-af5f-91fbeeb02b8a",
                         "command": "EVENT_VARIABLE_MATH",
                         "args": {
                           "vectorX": "3",
@@ -1591,7 +1667,7 @@
                     ],
                     "false": [
                       {
-                        "id": "2220bd90-330a-40fb-ad0f-7f29e28f81b7",
+                        "id": "e0ff69f3-af3b-43d2-af25-4f8eb9327082",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "3",
@@ -1605,7 +1681,7 @@
                   }
                 },
                 {
-                  "id": "c7f52f59-e33f-49b9-a15f-b677472f1c7f",
+                  "id": "354857f0-49ec-4642-aa04-b88e54e6b26a",
                   "command": "EVENT_TEXT",
                   "args": {
                     "text": [

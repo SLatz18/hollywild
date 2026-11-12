@@ -1,0 +1,143 @@
+{
+  "_resourceType": "actor",
+  "id": "dca010bd-a93b-433a-a0d2-62ce3eff8164",
+  "_index": 4,
+  "symbol": "actor_velvet_velvet_commission_cache",
+  "prefabId": "",
+  "name": "Local supply cache",
+  "coordinateType": "tiles",
+  "x": 18,
+  "y": 24,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "6ead2450-474f-4ffb-a4b1-9991bd92b071",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "e2c86c2a-b163-4689-aeae-d15593d648f4",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "39"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "d92c9393-592a-4f08-a523-d161ff91c4b3",
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "39",
+              "value": {
+                "type": "number",
+                "value": 2
+              }
+            }
+          },
+          {
+            "id": "f667b4ee-55fc-43bc-a8c6-05c03ee99775",
+            "command": "EVENT_SOUND_PLAY_EFFECT",
+            "args": {
+              "type": "beep",
+              "pitch": 4,
+              "duration": 0.1,
+              "priority": "medium",
+              "wait": false
+            }
+          },
+          {
+            "id": "61bfdf9c-f39f-4b8b-a966-5ef220a11415",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "LOCAL SUPPLIES\nReturn these to your\nlocal contact."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "45d1ca5b-26b9-4629-a954-54582eb459ab",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "39"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "471978ae-2c21-4b4d-a22a-9d6d7d2a16ad",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "LOCAL SUPPLIES\nAsk the contact in\nthis district first."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "9a10eeec-3682-4a41-abd7-cb41dd7758d5",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Supplies collected.\nThis local crate\nis now empty."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

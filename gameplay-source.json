@@ -147,6 +147,34 @@
     "save_version": {
       "id": "35",
       "symbol": "VAR_SAVE_VERSION"
+    },
+    "quest_frostwick": {
+      "id": "36",
+      "symbol": "VAR_QUEST_FROSTWICK"
+    },
+    "quest_candy": {
+      "id": "37",
+      "symbol": "VAR_QUEST_CANDY"
+    },
+    "quest_brassworks": {
+      "id": "38",
+      "symbol": "VAR_QUEST_BRASSWORKS"
+    },
+    "quest_velvet": {
+      "id": "39",
+      "symbol": "VAR_QUEST_VELVET"
+    },
+    "quest_aurora": {
+      "id": "40",
+      "symbol": "VAR_QUEST_AURORA"
+    },
+    "crew_mode": {
+      "id": "41",
+      "symbol": "VAR_CREW_MODE"
+    },
+    "crew_mode_snapshot": {
+      "id": "42",
+      "symbol": "VAR_CREW_MODE_SNAPSHOT"
     }
   },
   "sites": [
@@ -199,6 +227,14 @@
       "sprite": "parcel"
     },
     {
+      "scene": "frostwick",
+      "id": "frostwick_commission_cache",
+      "type": "district_cache",
+      "x": 1,
+      "y": 7,
+      "sprite": "parcel"
+    },
+    {
       "scene": "candy",
       "id": "candy_row_board",
       "type": "job_board",
@@ -228,6 +264,14 @@
       "type": "delivery",
       "x": 7,
       "y": 10,
+      "sprite": "parcel"
+    },
+    {
+      "scene": "candy",
+      "id": "candy_commission_cache",
+      "type": "district_cache",
+      "x": 29,
+      "y": 22,
       "sprite": "parcel"
     },
     {
@@ -263,6 +307,14 @@
       "sprite": "crate"
     },
     {
+      "scene": "brassworks",
+      "id": "brassworks_commission_cache",
+      "type": "district_cache",
+      "x": 1,
+      "y": 21,
+      "sprite": "parcel"
+    },
+    {
       "scene": "velvet",
       "id": "velvet_heights_board",
       "type": "job_board",
@@ -293,6 +345,14 @@
       "x": 24,
       "y": 10,
       "sprite": "board"
+    },
+    {
+      "scene": "velvet",
+      "id": "velvet_commission_cache",
+      "type": "district_cache",
+      "x": 18,
+      "y": 24,
+      "sprite": "parcel"
     },
     {
       "scene": "aurora",
@@ -327,6 +387,22 @@
       "sprite": "crate"
     },
     {
+      "scene": "aurora",
+      "id": "aurora_commission_cache",
+      "type": "district_cache",
+      "x": 18,
+      "y": 26,
+      "sprite": "parcel"
+    },
+    {
+      "scene": "aurora",
+      "id": "aurora_contact",
+      "type": "district_contact",
+      "x": 18,
+      "y": 22,
+      "sprite": "dot"
+    },
+    {
       "scene": "garage",
       "id": "workbench",
       "type": "workshop",
@@ -357,6 +433,70 @@
       "x": 4,
       "y": 12,
       "sprite": "pip"
+    },
+    {
+      "scene": "cocoa_interior",
+      "id": "cocoa_inspection",
+      "type": "interior_info",
+      "x": 4,
+      "y": 7,
+      "sprite": "board"
+    },
+    {
+      "scene": "cocoa_interior",
+      "id": "frostwick_contact",
+      "type": "district_contact",
+      "x": 13,
+      "y": 7,
+      "sprite": "pip"
+    },
+    {
+      "scene": "parcel_interior",
+      "id": "parcel_inspection",
+      "type": "interior_info",
+      "x": 4,
+      "y": 7,
+      "sprite": "board"
+    },
+    {
+      "scene": "parcel_interior",
+      "id": "candy_contact",
+      "type": "district_contact",
+      "x": 13,
+      "y": 7,
+      "sprite": "moxie"
+    },
+    {
+      "scene": "toolworks_interior",
+      "id": "toolworks_inspection",
+      "type": "interior_info",
+      "x": 4,
+      "y": 7,
+      "sprite": "board"
+    },
+    {
+      "scene": "toolworks_interior",
+      "id": "brassworks_contact",
+      "type": "district_contact",
+      "x": 13,
+      "y": 7,
+      "sprite": "rivet"
+    },
+    {
+      "scene": "flats_interior",
+      "id": "flats_inspection",
+      "type": "interior_info",
+      "x": 4,
+      "y": 7,
+      "sprite": "board"
+    },
+    {
+      "scene": "flats_interior",
+      "id": "velvet_contact",
+      "type": "district_contact",
+      "x": 13,
+      "y": 7,
+      "sprite": "nib"
     }
   ],
   "economy": {
@@ -379,6 +519,16 @@
       "coins": 100,
       "salvage": 4,
       "payout": 16
+    },
+    "commission": {
+      "coins": 25,
+      "salvage": 2
+    },
+    "crewModes": {
+      "maker": 0,
+      "recycler": 1,
+      "runner": 2,
+      "disabledSnapshot": 3
     }
   },
   "prototypeNotes": [
@@ -388,6 +538,9 @@
     "Manual garage saves are disabled during active jobs. Loading is allowed after explicit confirmation and restores the saved checkpoint.",
     "Capacity guard at dispatch: at most9800 Coins and80 stored Scrap.",
     "Toolworks is a passive recycler in this prototype.",
-    "Lantern Flats is a story prerequisite; extra worker assignment UI is not yet implemented."
+    "Lantern Flats is a story prerequisite; extra worker assignment UI is not yet implemented.",
+    "Four interiors are public and freely inspectable.",
+    "Five independent local commissions each pay 25 Coins and 2 scrap once, without production ticks.",
+    "Rivet modes: maker 2 scrap to 30 Coins with reserve 4; recycler adds 2 scrap; runner adds 10 Coins. Modes snapshot at dispatch."
   ]
 }

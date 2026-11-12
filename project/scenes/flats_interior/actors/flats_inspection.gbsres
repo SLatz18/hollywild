@@ -1,0 +1,99 @@
+{
+  "_resourceType": "actor",
+  "id": "8c30d0ba-259b-4c88-a207-8675b6feeb1e",
+  "_index": 0,
+  "symbol": "actor_flats_interior_flats_inspection",
+  "prefabId": "",
+  "name": "Lantern Flats inspection",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 7,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "2922080e-0ba5-4a4b-ab0c-d7de93cc7a0f",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "4fbc8ca2-0c1f-4681-ab1f-ca0bcdedb5ab",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "LANTERN FLATS",
+          "A public show flat.\nOwn it to help\nrestore Aurora."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "187b6081-d99f-477d-a700-fa6637efa1a8",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "15"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "6ffa35cf-5cb7-40b6-ad2c-72dc7ccc574b",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Your property!\nThe neighborhood\nthanks you."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "1d2f9efe-0652-4ab2-a072-bec2cbe552b3",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Everyone may visit.\nThe sign outside\nhandles purchases."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

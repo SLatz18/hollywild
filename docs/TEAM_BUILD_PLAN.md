@@ -23,7 +23,7 @@ World/art owns image pixels; gameplay owns the corresponding native metadata. Ch
 
 ## Present foundation
 
-The authored source currently contains five district backgrounds, a garage interior, thirteen original sprite sheets, and twenty-six scripted interaction sites. The five districts are connected by a bidirectional street loop and additional north/south routes. The game generator defines movement, route guidance, job boards, salvage, deliveries, property purchases, workshop production, a restoration objective, and a garage save/load interaction.
+The authored source currently contains five district backgrounds, a garage and four property interiors, thirteen original sprite sheets, and forty scripted interaction sites. The five districts are connected by a bidirectional street loop and additional north/south routes. The game generator defines movement, route guidance, job boards, salvage, deliveries, property purchases, workshop production, five local commissions, three crew roles, a restoration objective, and a garage save/load interaction.
 
 The local native build pipeline has produced a Game Boy Color ROM from the actual editable project, with header and checksum inspection recorded in its build manifest. Compilation establishes a cartridge artifact; it does not establish a correct playthrough, reliable physical saves, or compatibility with a particular cartridge.
 
@@ -38,6 +38,10 @@ This is the implemented foundation, not a claim that the full planned campaign h
 5. **Test the exact cartridge.** QA uses the manifest's ROM hash and matching symbols. Test outcomes distinguish ordinary button-input playthroughs from any diagnostic state manipulation.
 6. **Fix the smallest demonstrated defect.** The owning builder changes the source, regenerates affected resources, and hands it back for a fresh build. Existing successful checks are repeated when the fix could affect them.
 7. **Publish a coherent revision.** Integration checks source ownership, licenses, generated-resource consistency, and supported status wording. Tool installations, private session history, save files, and local logs stay outside the public source commit.
+
+## Expansion delivered
+
+The 0.2.0 prototype adds publicly inspectable interiors, one-time local commissions across all five districts, and selectable maker/recycler/runner roles. All four native regression scenarios pass, including saved commission completion and crew selection. See [build evidence](BUILD_STATUS.md) for the exact ROM, coverage, and limits.
 
 ## Milestones after the foundation
 

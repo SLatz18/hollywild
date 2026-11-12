@@ -374,7 +374,149 @@ def make_world():
     g.site("pip_garage","npc",4,12,sprite="pip",name="Pip")
     g.data["spawn"]={"x":9,"y":14}
     g.data["exits"]=[{"x":8,"y":16,"width":4,"height":2,"destScene":"frostwick","destX":7,"destY":11}]
-    return districts+[g]
+    # Public property inspections use side entrances, away from sale signs and
+    # delivery approaches. Existing exits and interaction coordinates stay fixed.
+    interiors=[]
+    room_specs=[
+        (f,"cocoa","frostwick","Cocoa Corner",29,6,29,9,"Juniper","pip"),
+        (c,"parcel","candy","Parcel Palace",29,6,29,9,"Postmaster","moxie"),
+        (b,"toolworks","brassworks","Tinsel Toolworks",12,6,12,9,"Foreman","rivet"),
+        (v,"flats","velvet","Lantern Flats",12,6,12,9,"Caretaker","nib"),
+    ]
+    for street_map,prop,district,title,ex,ey,rx,ry,contact,sprite in room_specs:
+        ident=prop+"_interior"
+        # A bright side-door threshold advertises public access. The two-tile
+        # passage and return point remain clear for the player's full footprint.
+        street_map.area(ex,ey,2,2,4,0)
+        street_map.c.rect(ex*8,ey*8,16,16,0)
+        street_map.c.rect(ex*8+1,ey*8+1,14,14,1)
+        street_map.c.rect(ex*8+3,ey*8+2,10,5,3)
+        street_map.c.rect(ex*8+5,ey*8+11,6,2,3)
+        street_map.data["exits"].append({"x":ex,"y":ey,"width":2,"height":1,
+            "destScene":ident,"destX":9,"destY":14,"direction":"up"})
+        room=property_room(ident,title,prop,district,contact,sprite)
+        room.data["exits"]=[{"x":8,"y":16,"width":4,"height":2,
+            "destScene":street_map.data["id"],"destX":rx,"destY":ry,"direction":"down"}]
+        interiors.append(room)
+    cache_specs=[(f,"frostwick",1,7),(c,"candy",29,22),
+                 (b,"brassworks",1,21),(v,"velvet",18,24),(a,"aurora",18,26)]
+    for street_map,district,x,y in cache_specs:
+        street_map.site(district+"_commission_cache","district_cache",x,y,
+            district=district,sprite="parcel",name="Local supply cache")
+    a.site("aurora_contact","district_contact",18,22,district="aurora",
+           sprite="dot",name="Station Clerk")
+    return districts+[g]+interiors
+
+
+def property_room(ident,title,prop,district,contact,sprite):
+    """A useful public inspection room, with no ownership-based door lock."""
+    room=District(ident,title,4,160,144)
+    room.data["spawn"]={"x":9,"y":14}
+    room.data["property"]=prop
+    room.data["district"]=district
+    floor_palette={"cocoa":4,"parcel":6,"toolworks":1,"flats":5}[prop]
+    room.area(0,0,20,18,floor_palette)
+    room.c.rect(0,0,160,144,3)
+    for ty in range(3,18):
+        for tx in range(1,19):
+            x,y=tx*8,ty*8
+            if prop=="cocoa":
+                room.c.rect(x,y,8,8,2 if (tx+ty)%2 else 3)
+            elif prop=="parcel":
+                room.c.line(x,y,x+7,y,2)
+                room.c.pixel(x,y+4,2)
+            elif prop=="toolworks":
+                room.c.rect(x,y,8,8,2)
+                room.c.line(x,y,x+7,y,1)
+                room.c.pixel(x+2,y+2,3)
+                room.c.pixel(x+6,y+6,1)
+            else:
+                room.c.rect(x,y,8,8,2)
+                room.c.line(x,y+7,x+7,y+7,1)
+                room.c.pixel(x+(3 if ty%2 else 0),y+3,3)
+    # Top wall, baseboard, and doorway. The doorway is the sole exit.
+    room.c.rect(0,0,160,24,0)
+    room.c.rect(8,5,144,16,1)
+    room.c.rect(0,23,160,2,3)
+    room.c.rect(0,0,8,144,0);room.c.rect(152,0,8,144,0)
+    room.c.rect(0,136,160,8,0)
+    room.area(0,0,20,3,block=1)
+    room.area(0,0,1,18,block=1);room.area(19,0,1,18,block=1)
+    room.area(0,17,20,1,block=1)
+    room.area(8,16,4,2,4,0)
+    room.c.rect(64,128,32,16,0);room.c.rect(68,128,24,16,1)
+    room.c.rect(69,128,22,3,3)
+
+    def fixture(tx,ty,w,h,palette=4):
+        room.area(tx,ty,w,h,palette,1)
+        x,y=tx*8,ty*8
+        room.c.rect(x,y,w*8,h*8,0)
+        room.c.rect(x+1,y+1,w*8-2,h*8-2,2)
+        return x,y
+
+    if prop=="cocoa":
+        x,y=fixture(2,4,16,2,4)
+        room.c.rect(x+1,y+1,126,5,3)
+        for cupx in [32,56,96,120]:
+            room.c.rect(cupx,y+3,6,6,0)
+            room.c.rect(cupx+1,y+3,4,4,3)
+            room.c.rect(cupx+6,y+4,2,3,1)
+        for tx in [3,14]:
+            x,y=fixture(tx,11,3,3,4)
+            room.c.rect(x+2,y+2,20,16,3)
+            room.c.rect(x+9,y+6,6,6,1)
+            room.c.rect(x+10,y+6,4,3,3)
+            room.c.rect(x+3,y+20,3,4,0)
+            room.c.rect(x+18,y+20,3,4,0)
+        room.c.rect(48,7,64,13,3);label(room.c,"COCOA CORNER",56,11)
+    elif prop=="parcel":
+        x,y=fixture(2,4,16,2,6)
+        for px in range(x+3,x+122,16):
+            room.c.rect(px,y+2,12,10,1)
+            room.c.rect(px+1,y+3,10,7,3)
+            room.c.rect(px+5,y+4,3,5,0)
+        for tx,ty in [(2,11),(4,13),(16,11),(15,13)]:
+            room.crate(tx,ty,4)
+        # A sorting lane made of painted arrows, not moving machinery.
+        for yy in [80,96,112]:
+            room.c.line(72,yy+4,80,yy+4,1)
+            room.c.line(80,yy+4,76,yy,1)
+            room.c.line(80,yy+4,76,yy+8,1)
+        room.c.rect(48,7,64,13,3);label(room.c,"PARCEL PALACE",54,11)
+    elif prop=="toolworks":
+        x,y=fixture(2,4,16,2,4)
+        room.c.rect(x+2,y+2,124,5,3)
+        for px in [26,42,74,98,122]:
+            room.c.rect(px,y+1,3,10,0)
+            room.c.rect(px-2,y+1,7,3,1)
+        x,y=fixture(14,11,4,4,1)
+        room.c.rect(x+4,y+3,24,4,0)
+        room.c.rect(x+12,y+6,8,13,1)
+        room.c.rect(x+7,y+20,18,5,3)
+        room.c.rect(x+4,y+26,24,4,0)
+        room.crate(2,11);room.crate(4,13)
+        room.c.rect(40,7,80,13,3);label(room.c,"TINSEL TOOLWORKS",50,11)
+    else:
+        # Public lobby with a sofa, key desk, and a small reading nook.
+        x,y=fixture(2,4,6,2,5)
+        room.c.rect(x+2,y+2,44,9,3)
+        room.c.rect(x+23,y+1,2,12,1)
+        x,y=fixture(12,4,6,2,4)
+        room.c.rect(x+2,y+2,44,5,3)
+        for px in [102,118,134]:
+            room.c.rect(px,y+4,4,4,0)
+            room.c.rect(px+1,y+7,2,5,1)
+        x,y=fixture(3,11,5,3,5)
+        room.c.rect(x+3,y+3,34,13,3)
+        room.c.rect(x+3,y+16,34,3,1)
+        room.c.line(x+19,y+3,x+19,y+15,1)
+        room.tree(15,11)
+        room.c.rect(48,7,64,13,3);label(room.c,"LANTERN FLATS",54,11)
+    room.site(prop+"_inspection","interior_info",4,7,property=prop,
+        district=district,sprite="board",name=title+" inspection")
+    room.site(district+"_contact","district_contact",13,7,property=prop,
+        district=district,sprite=sprite,name=contact)
+    return room
 
 
 def person(kind, direction, step=0):

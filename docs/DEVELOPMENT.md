@@ -25,9 +25,9 @@ python3 scripts/build-game.py hollywild.gbsproj
 python3 scripts/inspect-rom.py build/rom/hollywild.gbc
 ```
 
-The build helper invokes the official native `make:rom` command. It checks the GB Studio commit, detects changes to project inputs during compilation, validates the cartridge header and checksums, and keeps matching debug symbols. Outputs remain in ignored `build/` directories. The helper currently uses a macOS temporary directory; the editor export is the simpler path on other hosts.
+The build helper invokes the official native `make:rom` command. It checks the GB Studio and GBVM commits, rejects tracked changes in those source checkouts, records the compiled CLI hash, detects changes to project inputs during compilation, validates the cartridge header and checksums, and keeps matching debug symbols. Outputs remain in ignored `build/` directories. The helper currently uses a macOS temporary directory; the editor export is the simpler path on other hosts.
 
-`build/rom/build-manifest.json` records source hashes, the ROM hash, and debug-artifact hashes. A matching upstream commit alone does not establish that the toolchain is unmodified. The helper does not independently validate every tool binary or engine dependency. Neither byte-for-byte reproducibility nor save compatibility between rebuilt cartridges is promised.
+`build/rom/build-manifest.json` records source hashes, the ROM hash, and debug-artifact hashes. Clean pinned source and a recorded CLI hash improve traceability, but the helper does not independently validate every tool binary or engine dependency. Neither byte-for-byte reproducibility nor save compatibility between rebuilt cartridges is promised.
 
 ## Authoring and regeneration
 
@@ -49,9 +49,11 @@ Create an isolated test environment and install the pinned test dependencies:
 ```bash
 python3 -m venv .tools/emulator
 .tools/emulator/bin/python -m pip install -r requirements-test.txt
-.tools/emulator/bin/python scripts/validate-assets.py
+.tools/emulator/bin/python scripts/test-game.py
 .tools/emulator/bin/python scripts/emulator-qa.py
 ```
+
+The test runner executes asset and native-resource checks, then each checked-in button replay on a fresh test cartridge, retaining a report for the exact ROM.
 
 The asset check verifies source colors, dimensions, the chosen tile budget, walkability to interaction sites, and district connectivity. The separate ROM inspector checks the actual compiled file. Neither check proves that the game plays correctly.
 

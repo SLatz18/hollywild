@@ -1,0 +1,380 @@
+{
+  "_resourceType": "actor",
+  "id": "3ac1f8ef-3f1b-4f70-a79b-86a0634bf6e3",
+  "_index": 5,
+  "symbol": "actor_aurora_aurora_contact",
+  "prefabId": "",
+  "name": "Station Clerk",
+  "coordinateType": "tiles",
+  "x": 18,
+  "y": 22,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "577806b2-c45a-439d-aa2f-33ee8efe1521",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "5941e6a7-d7d2-4ba2-aab6-bfb661b2b25f",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "40"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 3
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "0e911b1a-e9ae-4923-a913-23755eb74123",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "LOCAL JOB COMPLETE\nYour help made this\nplace a little warmer."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "bf0614b1-e44e-4ed7-a918-6f01042589b2",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "40"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "9cab5584-e906-4c48-add1-a81549e412d0",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "6"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "2429d3c5-1edc-4f67-a733-711666bc0a08",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "lte",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "1"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 9974
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "1c77474d-f125-4607-a6f1-e8535225c53a",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "lte",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "2"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 97
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "7cf68b39-46f7-4cd6-a441-9f15bb8e70d4",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "40",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 3
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "id": "56328631-1fef-4cf6-a0c2-565edc67cab0",
+                                    "command": "EVENT_VARIABLE_MATH",
+                                    "args": {
+                                      "vectorX": "1",
+                                      "operation": "add",
+                                      "other": "val",
+                                      "value": 25,
+                                      "clamp": false
+                                    }
+                                  },
+                                  {
+                                    "id": "c1307257-4c30-469e-a374-32cc9320beb9",
+                                    "command": "EVENT_VARIABLE_MATH",
+                                    "args": {
+                                      "vectorX": "2",
+                                      "operation": "add",
+                                      "other": "val",
+                                      "value": 2,
+                                      "clamp": false
+                                    }
+                                  },
+                                  {
+                                    "id": "0f5509d9-ddae-4543-a57a-9f798c15d5f0",
+                                    "command": "EVENT_SOUND_PLAY_EFFECT",
+                                    "args": {
+                                      "type": "beep",
+                                      "pitch": 6,
+                                      "duration": 0.1,
+                                      "priority": "medium",
+                                      "wait": false
+                                    }
+                                  },
+                                  {
+                                    "id": "e36bee66-90c5-41c8-a71f-8d7b72e4c20b",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "COMMISSION PAID\n+25 Coins +2 scrap\nNo crew work tick."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "600b20af-696a-4acb-ad47-65372cd3b4dc",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Need room for\n2 scrap. Sell or\nbuild, then return."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "9dd1b5bf-5cb0-43f8-a640-517ddac25afb",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Need wallet space\nfor 25 Coins. Spend\nor donate first."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "01c94591-c33d-4a22-a2a3-c993da203be6",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Finish or cancel\nyour current job\nfirst. START menu."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "ffb63450-c70c-46d5-a67c-571c93020ef7",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "40"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "41bd4fab-5257-475d-a64b-c7ca1e753dbf",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Find our marked\nlocal supply crate.\nBring it back here."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "8c31ef09-b51c-40f0-abc2-922f10afd92b",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "CLERK: LIGHT THE WAY",
+                            "Find the local crate\nof signal parts.\nBring them here.",
+                            "One local errand.\nReward: 25 Coins\nand 2 scrap."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "4e7bb1bf-cce5-46a3-a762-88cc546416b8",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 2,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "Accept",
+                          "option2": "Back"
+                        }
+                      },
+                      {
+                        "id": "0b5b0727-c80e-4b7e-aeb0-9db8b6a41ea0",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "14"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "4474bc21-f558-498c-a2cd-ca04b954dc07",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "40",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "c58f1ba0-170c-4826-a51f-c1a1383f499e",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "LOCAL JOB ACCEPTED\nFind this district\nsupply crate."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

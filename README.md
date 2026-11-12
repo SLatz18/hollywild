@@ -8,15 +8,17 @@ Built for ModRetro Chromatic using GB Studio 4.3.2. The development computer run
 
 ## Playable foundation
 
-- Five freely connected districts and an enterable garage.
+- Five freely connected districts, an enterable garage, and four furnished property interiors.
 - Original pixel art, characters, dialogue, and property listings.
-- Salvage jobs, optional bonus salvage, deliveries, and cancellation.
-- Workshop production and purchasable properties with visible ownership signs.
+- Salvage jobs, optional bonus salvage, deliveries, five local commissions, and cancellation.
+- Three crew roles, workshop production, and purchasable properties with visible ownership signs.
 - Garage save/load and a restoration objective.
 
-The inspiration is city freedom, earnest holiday comedy, property hunting, and strategy. The full campaign, driving, traffic, deeper crew assignments, and additional interiors remain planned. The current build uses simple sound effects and has no music soundtrack.
+The inspiration is city freedom, earnest holiday comedy, property hunting, and strategy. The full campaign, driving, traffic, deeper crew assignments, and more interiors remain planned. The current build uses simple sound effects and has no music soundtrack.
 
-![Cocoa ownership in the running ROM](docs/images/cocoa-owned.png) ![Job board in the running ROM](docs/images/jobs-menu.png)
+![Cocoa Corner interior in the running ROM](docs/images/cocoa_interior.png) ![Crew roles in the running ROM](docs/images/crew-roles.png)
+
+[Download the current native prototype](https://github.com/SLatz18/hollywild/releases/tag/v0.2.0-prototype)
 
 ## Start here
 

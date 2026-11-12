@@ -1,0 +1,99 @@
+{
+  "_resourceType": "actor",
+  "id": "58d94bc4-fc7d-4c86-ad51-44173dc29aae",
+  "_index": 0,
+  "symbol": "actor_toolworks_interior_toolworks_inspection",
+  "prefabId": "",
+  "name": "Tinsel Toolworks inspection",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 7,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "2922080e-0ba5-4a4b-ab0c-d7de93cc7a0f",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "9bebbace-8221-471c-a6dc-75906d9e5475",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "TINSEL TOOLWORKS",
+          "Inspect the machines.\nOwn it for 2 scrap\nper successful job."
+        ],
+        "avatarId": "",
+        "minHeight": 4,
+        "maxHeight": 7,
+        "position": "bottom",
+        "closeWhen": "key",
+        "closeButton": "a"
+      }
+    },
+    {
+      "id": "eecc8cb9-762d-4f11-aba3-ef86456df856",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "16"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "798427cf-2997-4eba-ad90-4bf398322d01",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Your property!\nThe neighborhood\nthanks you."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "b67b0811-6b1d-4605-a7f0-c4e1da946fd1",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Everyone may visit.\nThe sign outside\nhandles purchases."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}
