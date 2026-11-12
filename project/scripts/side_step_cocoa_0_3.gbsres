@@ -8,23 +8,42 @@
   "actors": {},
   "script": [
     {
-      "id": "6be0481c-937a-4eda-aede-a999d51983e8",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "The carpenter\nsecures the\nbrackets. You\ncheck the clear\ndoorway and the",
-          "rounded edge.\nCompleted ordinary\njobs now pay 4\nextra Coins."
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "4b30fbad-9e7c-4e45-a6f7-1c13cc5e11eb",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "c1e937f3-cb85-424a-aeb2-3d633189dd9b",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "8a2acb3e-94ba-4a7a-a60d-3e543612f6ed",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The carpenter\nsecures the\nbrackets. You\ncheck the clear\ndoorway and the",
+                "rounded edge.\nCompleted ordinary\njobs now pay 4\nextra Coins."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "3213f0fc-c5c8-430a-afb1-1e326d35aed9",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "f3400596-85f5-4b53-a4c9-378e0aeb58ff",
+      "id": "c393223f-d76f-4b9d-a40a-100cdf8a8192",
       "command": "EVENT_SET_VALUE",
       "args": {
         "variable": "121",
@@ -35,7 +54,7 @@
       }
     },
     {
-      "id": "63cddeb4-fa0f-4308-af0c-e7b17e47deea",
+      "id": "36fc627d-36de-4b89-a0df-54c13a8b3bee",
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
         "customEventId": "549c8f4c-0a7e-4321-a7b1-101a7485d8c6"

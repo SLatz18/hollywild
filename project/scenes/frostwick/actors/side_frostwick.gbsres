@@ -9,12 +9,12 @@
   "x": 13,
   "y": 24,
   "frame": 0,
-  "animate": false,
+  "animate": true,
   "spriteSheetId": "b36bffac-91c0-43c8-af9f-f9f8b62cccd9",
   "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
   "direction": "down",
   "moveSpeed": 1,
-  "animSpeed": 15,
+  "animSpeed": 31,
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
@@ -22,22 +22,41 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "b5f73d18-cc81-4e68-a312-b85fd47255f0",
-      "command": "EVENT_MENU",
-      "args": {
-        "variable": "14",
-        "items": 4,
-        "layout": "menu",
-        "cancelOnLastOption": false,
-        "cancelOnB": true,
-        "option1": "Stories",
-        "option2": "Moments",
-        "option3": "Build",
-        "option4": "Back"
+      "id": "0ca01a04-f19a-47da-abbb-d6e655f86e06",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "8af65174-b7aa-4f02-aed5-dc367197e383",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "75803e92-165c-4aca-a79d-926aef432390",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 4,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "Stories",
+              "option2": "Moments",
+              "option3": "Build",
+              "option4": "Back"
+            }
+          },
+          {
+            "id": "6f641414-f77f-499d-adba-ac6b6ee12f37",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "444d5fb9-86cf-412c-a31d-15a06ba75db6",
+      "id": "34258b4b-23eb-48e5-a550-e305ca83ca3e",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -55,20 +74,39 @@
       "children": {
         "true": [
           {
-            "id": "c6cc6aa6-91c4-4043-a994-4872b1e54be2",
-            "command": "EVENT_MENU",
-            "args": {
-              "variable": "14",
-              "items": 2,
-              "layout": "menu",
-              "cancelOnLastOption": false,
-              "cancelOnB": true,
-              "option1": "BLOCK",
-              "option2": "Back"
+            "id": "c67aff5e-1974-4b0c-a81d-81cf6544734c",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "ca4b711f-dd07-44be-ac41-a90b7febd4ad",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "e5cdd61f-94c0-46b0-a709-4869d773976c",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 2,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "BLOCK",
+                    "option2": "Back"
+                  }
+                },
+                {
+                  "id": "9272f247-c3f1-48c2-ac47-7c531d907ad8",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           },
           {
-            "id": "a7db9377-29a9-49d0-af0d-1ac81bee7113",
+            "id": "1f1bb32d-d4c7-4b1f-ac62-59a74b612855",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -86,7 +124,7 @@
             "children": {
               "true": [
                 {
-                  "id": "7a4e08dd-88f3-4985-aa4e-d91efe080f8f",
+                  "id": "12dad195-6946-4e7d-a9d2-4e68308355f9",
                   "command": "EVENT_CALL_CUSTOM_EVENT",
                   "args": {
                     "customEventId": "a08c704c-c7d5-435a-a790-ab1552d8fabb"
@@ -99,7 +137,7 @@
         ],
         "false": [
           {
-            "id": "74721387-05cc-4b3f-a3d9-9bfdc80df98b",
+            "id": "a6f67492-c75e-49fe-a34d-e9bc0ac22fcf",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -117,20 +155,39 @@
             "children": {
               "true": [
                 {
-                  "id": "6cd9ae5d-b4b8-47cd-af89-cee5364ffe67",
-                  "command": "EVENT_MENU",
-                  "args": {
-                    "variable": "14",
-                    "items": 2,
-                    "layout": "menu",
-                    "cancelOnLastOption": false,
-                    "cancelOnB": true,
-                    "option1": "HATS",
-                    "option2": "Back"
+                  "id": "52d852db-a98b-446b-a4d6-2483f9313218",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "19891543-c40d-4c1d-ab9c-bdbd432cb6d5",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "0fe15fb2-d144-4e45-ab85-0e5fa561e6a6",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 2,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "HATS",
+                          "option2": "Back"
+                        }
+                      },
+                      {
+                        "id": "7a7d2a97-2c92-466a-ad04-aee93cc96b02",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "4ef5d1ce-589c-45ac-a7a6-d64f153a899c",
+                  "id": "ad9dac51-903d-41d1-a6b5-cef19cf4347f",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -148,7 +205,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "c3d8864a-1c7a-4906-aec4-05d9a71adb1a",
+                        "id": "a1bf00cf-73e1-46c9-a73c-68bb8fc93bcd",
                         "command": "EVENT_CALL_CUSTOM_EVENT",
                         "args": {
                           "customEventId": "3bc4f7ad-eba9-4b78-ac98-24c2f2528fec"
@@ -161,7 +218,7 @@
               ],
               "false": [
                 {
-                  "id": "b1279272-f748-4502-ab1d-113fce52aba1",
+                  "id": "36e7c97b-3e68-437f-a646-b02d50af6d49",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -179,18 +236,37 @@
                   "children": {
                     "true": [
                       {
-                        "id": "427eddfd-e2f8-40cc-ae78-8439c732c3ed",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "No leads here in\nthis category.\nCheck Side for\nother stories."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "c0b53371-991c-4c57-ae4f-8aa42c7e7349",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "287c6e5b-6a8c-46dc-af99-cec61cf95e00",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "f105ba16-f349-400c-ad08-e67687881876",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "No leads here in\nthis category.\nCheck Side for\nother stories."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "1813ab10-b268-4b7b-a7dc-336fedabfeb6",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ],

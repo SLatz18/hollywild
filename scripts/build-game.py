@@ -52,7 +52,8 @@ def authored_snapshot(folder: Path) -> dict[str, str]:
 def generation_snapshot() -> dict[str, str]:
     paths = ["scripts/create-assets.py", "scripts/create-game.mjs", "scripts/campaign-events.mjs",
              "scripts/side-events.mjs", "world-layout.json", "content/campaign.json",
-             "content/side-stories.json"]
+             "content/side-stories.json", "scripts/create-music.mjs", "scripts/dialogue-layout.mjs",
+             "scripts/create-upgrade-tiles.py", "content/soundtrack.json", "content/visual-upgrades.json"]
     return {name: digest(ROOT / name) for name in paths if (ROOT / name).is_file()}
 
 

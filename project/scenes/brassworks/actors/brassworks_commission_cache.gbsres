@@ -22,7 +22,7 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "57e9ed59-ab48-492b-ac90-251d24501406",
+      "id": "64075bd2-c027-4b51-a4b4-0660561d4ed4",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -40,7 +40,7 @@
       "children": {
         "true": [
           {
-            "id": "df46e25e-7e9a-49ea-a307-88df9540679b",
+            "id": "8cdb8f8b-42e3-493f-a9d5-7bd847da05d0",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "38",
@@ -51,7 +51,7 @@
             }
           },
           {
-            "id": "26884797-ecf4-42e0-a914-26585ae791cb",
+            "id": "db556bfb-11bc-4cf3-a552-6c4e9d11cb6a",
             "command": "EVENT_SOUND_PLAY_EFFECT",
             "args": {
               "type": "beep",
@@ -62,24 +62,43 @@
             }
           },
           {
-            "id": "17b5ac7e-048f-481d-a736-484cb82d8132",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "LOCAL SUPPLIES\nReturn these to your\nlocal contact."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "116cf03b-5d77-4d89-a83b-a86e5a878d89",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "0441df8f-27f0-4f6b-a85b-446a27e0f9e6",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "51b908f1-7fd0-4022-a937-5751af6ab2d1",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "LOCAL SUPPLIES\nReturn these to\nyour\nlocal contact."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "a3d53170-aeb6-4063-a91e-65fc9af94971",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           }
         ],
         "false": [
           {
-            "id": "033eebe5-c69a-4a34-a402-ecb72936d98d",
+            "id": "4c2edc28-44cf-49f1-a9ca-7ff0c6d7437f",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -97,35 +116,73 @@
             "children": {
               "true": [
                 {
-                  "id": "58a705b8-a677-4260-a095-e98ba696ad02",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "LOCAL SUPPLIES\nAsk the contact in\nthis district first."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "c8189a50-7472-4341-a842-834d5281a2e3",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "5637313b-9e8d-4322-ac7c-8703cd31221a",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "f0bd8ac8-befe-45b3-af7b-a595aea0ff23",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "LOCAL SUPPLIES\nAsk the contact in\nthis district\nfirst."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "37e38612-edfd-4932-aae1-2b802cfb53cd",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],
               "false": [
                 {
-                  "id": "46645884-4e99-4ab5-a4f6-81a939d07e6a",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "Supplies collected.\nThis local crate\nis now empty."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "51313829-9f53-4aeb-ad9d-fee8e3e81087",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "0a5fb08b-45ad-4c6d-a7c0-d22338b2aa32",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "56e70e18-efca-45bb-ac26-61d79f7a1d1a",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Supplies\ncollected.\nThis local crate\nis now empty."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "85c5a33c-4dab-4687-acc1-7005aaade80f",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ]

@@ -8,35 +8,73 @@
   "actors": {},
   "script": [
     {
-      "id": "b81b1d6a-174b-4606-a481-242df2ff4bd9",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "Which layout\npreserves both\nclear floor tiles\nat the entrance?"
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "02937ac2-69e6-481e-a219-3034695e1cf8",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "cfdb64ff-2f97-47b6-a9df-e1839503a6f3",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "f882d4d8-f613-4a48-a1bf-d670475a5264",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Which layout\npreserves both\nclear floor tiles\nat the entrance?"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "c8b0e3f3-7a96-4925-a7fc-c2d6e9f58d11",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "fd4795d1-8e65-4231-a1d5-f637f01c2266",
-      "command": "EVENT_MENU",
-      "args": {
-        "variable": "14",
-        "items": 2,
-        "layout": "menu",
-        "cancelOnLastOption": false,
-        "cancelOnB": true,
-        "option1": "ISLAND",
-        "option2": "WALL"
+      "id": "6f2f1d6e-6233-4ba6-ab80-90330fd71445",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "59cc8e26-d243-48c8-ab5e-15bd50b0037a",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "6b9a6c02-6a0a-4690-ae2c-6eaf47068580",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 2,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "ISLAND",
+              "option2": "WALL"
+            }
+          },
+          {
+            "id": "0a81e944-f051-45ac-a1dc-d40e04670e69",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "bffb6736-bca3-4760-a32a-46a050dd9082",
+      "id": "7c92ab19-1d05-4af3-a1c1-86a0ea917619",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -54,7 +92,7 @@
       "children": {
         "true": [
           {
-            "id": "29bbecdf-43ed-4612-afb3-0ae8a6de51cc",
+            "id": "4d057000-939f-41e7-a179-e2ac606816f1",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "121",
@@ -65,24 +103,43 @@
             }
           },
           {
-            "id": "97365a22-1a0c-4040-a347-575bfd17f0d8",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "Cocoa Corner:\ncheck the finished\npickup counter at\nthe side desk."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "761c466e-3577-4a32-afca-5d98b8eb531a",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "d344554f-abf6-4acd-a17a-410f5e6e4add",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "69d5aa42-bb04-47fe-ac5a-0c38ea5a8901",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Cocoa Corner:\ncheck the finished\npickup counter at\nthe side desk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "4a676ce8-a96f-4961-a2e5-6bee48b2a0e7",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           }
         ],
         "false": [
           {
-            "id": "a2adfba8-743b-46b2-a7c5-d395fb67f0ff",
+            "id": "1c342e83-1a36-4f4e-a0fa-954ff8ce41fb",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -100,18 +157,37 @@
             "children": {
               "true": [
                 {
-                  "id": "b4854063-4eb7-44e7-ab86-4b7c82e0da39",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "The shallow wall\ncounter leaves two\ntiles. The deep\nisland leaves only\none."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "6c38c068-271b-4192-afc3-68213a31f1d8",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "626ceb1d-895e-4e93-a3b6-5d9c5a37e2e4",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "ff78c6c8-4899-4343-a0fb-ae4e31c3337f",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The shallow wall\ncounter leaves two\ntiles. The deep\nisland leaves only\none."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "7b4cea18-2b47-4397-a2e3-dd6185dc5d8e",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],

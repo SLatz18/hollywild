@@ -8,36 +8,74 @@
   "actors": {},
   "script": [
     {
-      "id": "b44e965d-d2cc-40b3-a233-7d127a70ff64",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "Which numbered\nitem can the\nsalvage crew\naccept under the\nposted rule?"
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "ee627c60-188d-44b2-a387-cd62c70419d0",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "52e82285-2ab2-4126-ad1c-15870a23b23d",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "b72753e3-a37b-4d94-a432-61ae95abbfea",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Which numbered\nitem can the\nsalvage crew\naccept under the\nposted rule?"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "5bde7acd-1f47-4a88-a41c-159ddcc7047b",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "10cf5850-38b3-4c34-af37-45980d0f6315",
-      "command": "EVENT_MENU",
-      "args": {
-        "variable": "14",
-        "items": 3,
-        "layout": "menu",
-        "cancelOnLastOption": false,
-        "cancelOnB": true,
-        "option1": "SIX",
-        "option2": "SEVEN",
-        "option3": "BOTH"
+      "id": "40b5d59d-7a63-449f-a76b-7f97b9f718a1",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "35586c69-bd4c-43dc-a721-c162133e8be0",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "e0484eaa-cbb4-459a-a871-81d82fa2af7a",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 3,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "SIX",
+              "option2": "SEVEN",
+              "option3": "BOTH"
+            }
+          },
+          {
+            "id": "b630aed5-54e7-4eb4-a8da-060a9b3967cf",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "fe312f40-b5ed-4d87-a65d-0ecdad787239",
+      "id": "2fd30507-abc5-4bff-a16d-b9db309e8bd9",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -55,7 +93,7 @@
       "children": {
         "true": [
           {
-            "id": "a714a9c8-c078-4bf5-ace4-2f0cdf5443b8",
+            "id": "5ca44e25-4406-4771-aea8-fca289158e7a",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "100",
@@ -66,24 +104,43 @@
             }
           },
           {
-            "id": "b4282fc4-01f5-4723-ad52-b226a9fdda7e",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "Brassworks\nControl: ask Dot\nto check the\nsurvey at the side\ndesk."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "f7bafc34-5714-4158-a4af-b33f48b4e77e",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "6d28d960-055d-4d0d-a6c1-8c76c47ea0e3",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "9b4e0692-4051-42d0-a655-d6335353168e",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Brassworks\nControl: ask Dot\nto check the\nsurvey at the side\ndesk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "eab0f62f-fe79-4a91-a05c-6a2335f2d05a",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           }
         ],
         "false": [
           {
-            "id": "c8bc4a95-9980-493f-aa30-69ba3597956c",
+            "id": "456876f5-8326-4bd5-a091-b71cb9d7abe7",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -101,18 +158,37 @@
             "children": {
               "true": [
                 {
-                  "id": "61f62bb1-f375-486a-a70d-5e8c283a4cfa",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "Only number 6 is\neligible. Number 7\nis marked for\ntraining and must\nremain separate."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "18d2b09b-cf8a-4942-a414-51c24b439d13",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "b67e190b-fba4-4163-a7e1-4d8500de7fd5",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "c0286783-ebdf-490d-a88f-c745548873f0",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Only number 6 is\neligible. Number 7\nis marked for\ntraining and must\nremain separate."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "7ba1cd46-55ad-4ded-ab8a-ced40e760e60",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],

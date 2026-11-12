@@ -8,36 +8,74 @@
   "actors": {},
   "script": [
     {
-      "id": "e2069d00-6c54-4ec0-a85e-1432189a4518",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "You found K first.\nClaim a solo win,\nor share credit\nwith the Comets\nfor checking the",
-          "north route? Bea\nwill keep the\nresult on the club\nboard."
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "b147f53d-82a3-4055-adbd-08e9d31eabd0",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "93f0c765-61ad-43d0-a3c7-4ecdcfa4df0a",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "de73dda3-5e6e-4e4f-a3e3-11aa5ef550eb",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "You found K first.\nClaim a solo win,\nor share credit\nwith the Comets\nfor checking the",
+                "north route? Bea\nwill keep the\nresult on the club\nboard."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "41d3aca6-435c-4b65-ac6f-ce7502aa4594",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "af7d852b-ca28-4c34-ab2d-03dfcf4597b8",
-      "command": "EVENT_MENU",
-      "args": {
-        "variable": "14",
-        "items": 2,
-        "layout": "menu",
-        "cancelOnLastOption": false,
-        "cancelOnB": true,
-        "option1": "SOLO",
-        "option2": "SHARE"
+      "id": "435a33a1-cfa1-49ca-a3d5-179bd94e89fb",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "7d51890a-33b8-4710-a7f8-907f663430c7",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "080d2698-59e3-4d2a-a3db-130c948638da",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 2,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "SOLO",
+              "option2": "SHARE"
+            }
+          },
+          {
+            "id": "04db19ef-4809-454a-af50-64c4f64aa893",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "10a16907-7b7f-426f-a1c0-c3ae17c5c9da",
+      "id": "2308dc69-75c0-4ed3-ab02-ceb0df0d2785",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -55,7 +93,7 @@
       "children": {
         "true": [
           {
-            "id": "de13aa2c-becf-4f31-af25-341b9bd79b5a",
+            "id": "d98931e0-ebc2-4503-a29b-f411fcab2707",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "101",
@@ -66,22 +104,41 @@
             }
           },
           {
-            "id": "9e2acbdf-abf8-485a-a864-1901860358d5",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "Bea records your\nsolo win and asks\nfor a rematch with\nbetter crate\nknowledge."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "5f2ba295-546e-4570-a78e-4a2045172cfb",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "11067260-e715-4c7e-a168-ceff4400f2ab",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "c3986a51-6879-45ff-aea5-a966f3e07c37",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Bea records your\nsolo win and asks\nfor a rematch with\nbetter crate\nknowledge."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "e5d5ec4b-accd-4351-a868-73b4b61c4b3d",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           },
           {
-            "id": "d6b91aa7-baee-4ae5-a8fc-566caf4efa3d",
+            "id": "fabc8b91-7b0d-46a6-a8ba-36d739c3eb66",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "100",
@@ -92,24 +149,43 @@
             }
           },
           {
-            "id": "24a1e0f9-43e0-42c1-a238-d4bc3b522b26",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "Tinsel Toolworks:\nreturn Kit K at\nthe side desk."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "ebd06105-7d6f-402b-ae28-2ab0381deaf8",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "4e9688b9-85ab-451e-a062-cb57ad113e4e",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "d60d4eed-7117-4cea-a943-0b410810ac0d",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Tinsel Toolworks:\nreturn Kit K at\nthe side desk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "e94e8032-59c5-4f0a-a5a1-5ca65771910f",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           }
         ],
         "false": [
           {
-            "id": "2c0fe623-eea2-4a6e-a640-575b2a423592",
+            "id": "5a295b47-9718-487d-a25c-f1f45992b273",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -127,7 +203,7 @@
             "children": {
               "true": [
                 {
-                  "id": "6af0c29d-4b43-4e3a-aec6-6889a6af9f39",
+                  "id": "c71bde3a-f879-4ae9-ab29-10195e25ce93",
                   "command": "EVENT_SET_VALUE",
                   "args": {
                     "variable": "101",
@@ -138,23 +214,42 @@
                   }
                 },
                 {
-                  "id": "0c603c47-00a1-400c-ab14-dff3a1860a86",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "Bea records a\njoint recovery.\nThe club board\ngains your name in\nan unnecessarily",
-                      "large star."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "1d588f99-4540-47d2-a300-0630b8918697",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "b11418ad-d66c-4fe6-a08b-438f2be81709",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "90e15156-1dbc-4f00-a247-be3ed7783db8",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Bea records a\njoint recovery.\nThe club board\ngains your name in\nan unnecessarily",
+                            "large star."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "f91ecf50-e408-402d-ac95-b8f75ae8b897",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "9ce6d545-40ee-4f18-a3a9-8c7bc50d8a1a",
+                  "id": "5cef0c57-df49-4f61-a0b2-ebe31c40464e",
                   "command": "EVENT_SET_VALUE",
                   "args": {
                     "variable": "100",
@@ -165,18 +260,37 @@
                   }
                 },
                 {
-                  "id": "7e219c19-162c-4d62-ab3f-854665760ea9",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "Tinsel Toolworks:\nreturn Kit K at\nthe side desk."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "911e7c59-03c9-415e-a892-cc735f079085",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "f01518a6-33a4-4e9b-a462-bae32e85da71",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "67a1178b-21c6-4f56-ad00-c967be96d68a",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Tinsel Toolworks:\nreturn Kit K at\nthe side desk."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "96dce126-1720-44c7-af01-e20ec6c1cdbe",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],

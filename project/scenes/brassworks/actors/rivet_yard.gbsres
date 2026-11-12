@@ -9,12 +9,12 @@
   "x": 18,
   "y": 12,
   "frame": 0,
-  "animate": false,
+  "animate": true,
   "spriteSheetId": "624969ff-611d-446b-a832-02c8e0d2d960",
   "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
   "direction": "down",
   "moveSpeed": 1,
-  "animSpeed": 15,
+  "animSpeed": 31,
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
@@ -22,19 +22,38 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "9f781528-c3de-4c21-a8f8-35ce68579605",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "RIVET\nSpare parts make\nstrong neighborhoods.",
-          "Fix the workshop\nin your garage.\nI will handle batches."
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "b8c4734e-65f1-4cd7-ae7a-b14cee0fbbac",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "51ff8cf8-f692-4b52-aa77-7960a495a9e2",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "9d8e6b52-da2d-4d04-adea-eb2207736a48",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "RIVET\nSpare parts make\nstrong\nneighborhoods.",
+                "Fix the workshop\nin your garage.\nI will handle\nbatches."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "dc85e13b-1ba2-4420-addd-08faf7e8661b",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     }
   ],

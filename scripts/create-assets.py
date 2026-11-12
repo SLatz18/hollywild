@@ -16,13 +16,13 @@ SPRITES = ROOT / "assets" / "sprites"
 SHADES = [(7, 24, 33), (48, 104, 80), (134, 192, 108), (224, 248, 207)]
 TRANSPARENT = (101, 255, 0)
 PALETTES = [
-    ["17334D", "587B95", "B1CFDE", "F0F5E9"],  # snow and winter stone
-    ["202A46", "40556B", "7C96A0", "D4E1DC"],  # streets and iron
-    ["183E39", "397059", "80B47D", "E7EFD4"],  # evergreen
-    ["401F3D", "8C4157", "D68A83", "F8DDC4"],  # brick / cranberry
-    ["3C3348", "906F51", "E8B665", "FFF0B1"],  # lights / timber
-    ["263355", "526399", "A6A3D0", "EEE5F4"],  # slate / violet
-    ["254650", "4A929A", "91CDC0", "E1F3D5"],  # mint
+    ["24354B", "687E99", "BBCDDD", "F7EEDD"],  # snow and winter stone
+    ["202C42", "49556C", "8A99A6", "DFE2D7"],  # streets and iron
+    ["233E40", "497466", "92AF8A", "ECE5C9"],  # evergreen
+    ["482C47", "96566B", "D99B91", "FFE2BA"],  # brick / cranberry
+    ["403445", "977356", "E5AD68", "FFF0BD"],  # lights / timber
+    ["363652", "756B95", "B5A7C6", "F4E6DE"],  # slate / violet
+    ["2C4750", "648F91", "AFD1BC", "FFF0D2"],  # mint
     ["172C42", "46657C", "9EB6C3", "F7F4DA"],  # UI reserved
 ]
 
@@ -170,6 +170,24 @@ class District:
             self.c.line(wx + 5, y + 30, wx + 5, y + 39, 1)
             self.c.line(wx + 1, y + 35, wx + 8, y + 35, 1)
             self.c.rect(wx - 1, y + 41, 12, 2, 3)
+        # Brick bond, drainpipes, sills and inset timber preserve a clear outline.
+        for yy in range(y + 44, y + h * 8 - 2, 8):
+            self.c.line(x + 4, yy, x + w * 8 - 5, yy, 1)
+            for xx in range(x + 8, x + w * 8 - 5, 16):
+                self.c.pixel(xx, yy - 2, 3)
+        self.c.rect(x + 3, y + 26, 2, h * 8 - 28, 1)
+        self.c.rect(x + w * 8 - 5, y + 26, 2, h * 8 - 28, 1)
+        self.c.rect(x + 2, y + h * 8 - 3, w * 8 - 4, 2, 1)
+        for wx in range(x + 8, x + w * 8 - 9, 16):
+            self.c.rect(wx + 1, y + 30, 2, 9, 2)
+            self.c.rect(wx + 7, y + 30, 2, 9, 2)
+            self.c.rect(wx + 2, y + 39, 6, 1, 2)
+        # Snow scallops and tiny eave lights sit wholly inside the roof bounds.
+        for xx in range(x, x + w * 8, 8):
+            self.c.rect(xx + 1, y + 4, 5, 1, 3)
+            self.c.pixel(xx + 3, y + 5, 3)
+            self.c.pixel(xx + 4, y + 25, 2)
+            self.c.pixel(xx + 4, y + 26, 3)
         label_x = x + (w * 8 - len(name) * 4 + 1) // 2
         self.c.rect(x + 3, y + 16, w * 8 - 6, 7, 3)
         label(self.c, name, label_x, y + 17)
@@ -207,6 +225,13 @@ class District:
         self.data["collisions"] = self.col
         self.data["paletteIndices"] = self.pal
         self.data["uniqueTiles"] = len(self.c.tiles())
+        if self.data.get("property"):
+            improved=property_upgrade(self)
+            filename=self.data["id"]+"_upgraded.png"
+            improved.save(BG / filename)
+            self.data["backgroundVariants"]=[{
+                "variable":"perk_"+self.data["property"], "background":filename,
+                "paletteIndices":self.pal.copy(), "uniqueTiles":len(improved.tiles())}]
         assert self.data["uniqueTiles"] <= 256, (self.data["id"], self.data["uniqueTiles"])
         return self.data
 
@@ -690,13 +715,236 @@ def campaign_rooms(old_rooms):
     return rooms
 
 
+def wall_lights(room, x, y, count, spacing=16):
+    """A restrained evergreen swag and warm bulbs on existing wall surfaces."""
+    for n in range(count):
+        xx=x+n*spacing
+        room.c.line(xx,y,xx+spacing//2,y+3,1)
+        room.c.line(xx+spacing//2,y+3,xx+spacing-1,y,1)
+        room.c.rect(xx+spacing//2-1,y+3,3,2,3)
+
+
+def round_detail(c,x,y):
+    """Eight-pixel brass dial used only on solid machinery."""
+    c.rect(x+2,y,4,1,0);c.rect(x,y+2,8,4,0)
+    c.rect(x+1,y+1,6,6,0);c.rect(x+2,y+2,4,4,3)
+    c.line(x+4,y+3,x+4,y+5,1)
+
+
+def atmospheric_pass(rooms):
+    """Paint existing surfaces; never mutate terrain, exits, sites or spawns."""
+    for room in rooms:
+        ident=room.data["id"]
+        if ident in ("frostwick","candy_row","brassworks","velvet_heights","aurora_yard"):
+            # City rhythm: trim lives on facades, roads remain broad and quiet.
+            for tx,ty,w in [(3,3,9),(21,3,8),(3,24,9),(21,24,8)]:
+                x,y=tx*8,ty*8
+                wall_lights(room,x+8,y+27,w-2,8)
+                if ident=="frostwick":
+                    # Timber lintels and a garage-style checker end cap.
+                    room.c.rect(x+6,y+44,w*8-12,2,1)
+                    for xx in range(x+8,x+w*8-8,8):room.c.rect(xx,y+45,3,2,3)
+                elif ident=="candy_row":
+                    for xx in (x+4,x+w*8-8):
+                        for yy in range(y+28,y+52,4):
+                            room.c.rect(xx,yy,3,2,3)
+                            room.c.rect(xx,yy+2,3,2,1)
+                elif ident=="brassworks":
+                    room.c.rect(x+5,y+45,w*8-10,3,0)
+                    room.c.rect(x+6,y+45,w*8-12,1,3)
+                    for xx in range(x+10,x+w*8-8,8):room.c.pixel(xx,y+46,2)
+                elif ident=="velvet_heights":
+                    for xx in (x+5,x+w*8-9):
+                        room.c.rect(xx,y+28,4,25,3)
+                        room.c.rect(xx+1,y+30,2,21,2)
+                    room.c.line(x+8,y+6,x+w*8-9,y+6,2)
+                else:
+                    for xx in range(x+8,x+w*8-8,16):
+                        room.c.rect(xx,y+9,10,5,0)
+                        room.c.rect(xx+1,y+10,8,3,2)
+                        room.c.pixel(xx+6,y+11,3)
+            # Snow banks are sparse, pale, and never resemble additional walls.
+            for tx,ty in [(5,11),(22,11),(5,22),(22,22)]:
+                room.c.rect(tx*8,ty*8+5,8,2,3)
+                room.c.rect(tx*8+2,ty*8+4,4,1,3)
+        elif ident=="garage":
+            wall_lights(room,16,12,8)
+            # Pegboard tools and a tiny heater inside the blocked workbench.
+            for x in (25,39,53):
+                room.c.rect(x,40,2,5,1)
+                room.c.rect(x-2,40,6,2,0)
+            for y in (34,38,42):
+                room.c.rect(122,y,10,1,0)
+            room.c.rect(10,8,6,9,2)
+            room.c.rect(11,9,4,5,3)
+            # Flat stitched runner distinguishes the welcome area from furniture.
+            for y in (91,115):
+                room.c.line(56,y,103,y,1)
+                for x in range(57,104,8):room.c.rect(x,y+1,3,1,3)
+        elif room.data.get("property"):
+            prop=room.data["property"]
+            wall_lights(room,16,25,8)
+            # A window at either end of the title catches the evening snowlight.
+            for x in (16,128):
+                room.c.rect(x,7,16,12,0)
+                room.c.rect(x+1,8,14,10,3)
+                room.c.line(x+8,8,x+8,17,1)
+                room.c.line(x+1,12,x+14,12,1)
+                room.c.rect(x,19,16,2,2)
+            if prop=="cocoa":
+                for x in (38,62,102,126):
+                    room.c.pixel(x,32,2);room.c.pixel(x+1,30,3)
+                # Cupboard doors and a rounded copper espresso face.
+                for x in range(20,140,16):
+                    room.c.rect(x,42,12,4,1);room.c.pixel(x+9,43,3)
+                round_detail(room.c,76,35)
+            elif prop=="parcel":
+                for x in range(20,140,16):
+                    room.c.rect(x+1,44,10,2,1)
+                    room.c.pixel(x+5,44,3)
+                for x,y in [(16,88),(32,104),(128,88),(120,104)]:
+                    room.c.rect(x+3,y+3,10,4,3)
+                    room.c.rect(x+5,y+4,6,1,0)
+            elif prop=="toolworks":
+                for x in (31,55,87,111,135):
+                    room.c.rect(x,38,2,7,1);room.c.pixel(x-1,38,3)
+                round_detail(room.c,124,95)
+                room.c.rect(116,111,24,2,2)
+            else:
+                # Sofa upholstery, an open book, and a quiet framed landscape.
+                for x in (30,44):
+                    room.c.rect(x,93,9,8,2)
+                    room.c.line(x,99,x+8,99,1)
+                room.c.rect(22,36,12,7,0)
+                room.c.rect(23,37,10,5,3)
+                room.c.line(28,37,28,41,1)
+        else:
+            # Public room fixtures get district-specific materials and silhouettes.
+            index=next(i for i,spec in enumerate(CAMPAIGN_ROOMS) if spec[0]==ident)
+            blocks=CAMPAIGN_ROOMS[index][-1]
+            wall_lights(room,24,7,13)
+            for tx in (3,27):
+                room.c.rect(tx*8,25,16,3,1)
+                room.c.rect(tx*8+3,25,10,2,3)
+            for n,(tx,ty,w,h) in enumerate(blocks):
+                x,y=tx*8,ty*8
+                # Existing outer black contour remains the collision cue.
+                if index==0:
+                    room.area(tx,ty,w,h,4)
+                    for yy in range(y+5,y+h*8-2,8):
+                        for xx in range(x+4,x+w*8-3,6):
+                            room.c.rect(xx,yy-2,2,5,2)
+                            room.c.pixel(xx,yy-1,3)
+                        room.c.rect(x+3,yy+3,w*8-6,1,0)
+                elif index in (1,2):
+                    for yy in range(y+4,y+h*8-7,16):
+                        for xx in range(x+4,x+w*8-7,16):
+                            room.c.rect(xx,yy,10,9,2)
+                            room.c.rect(xx+4,yy,2,9,3)
+                            room.c.rect(xx,yy+3,10,2,3)
+                            room.c.rect(xx+1,yy+1,2,1,0)
+                elif index in (3,7):
+                    room.area(tx,ty,w,h,5 if index==7 else 6)
+                    for xx in range(x+8,x+w*8-3,8):
+                        room.c.line(xx,y+4,xx,y+h*8-4,1)
+                    room.c.rect(x+3,y+h*8-4,w*8-6,2,0)
+                    room.c.rect(x+3,y+3,w*8-6,2,3)
+                elif index in (4,5,8,9):
+                    room.area(tx,ty,w,h,4 if index==4 else 6 if index==8 else 1)
+                    room.c.rect(x+3,y+3,w*8-6,3,2)
+                    for yy in range(y+9,y+h*8-7,16):
+                        round_detail(room.c,x+5,yy)
+                        if w>=8:round_detail(room.c,x+w*8-13,yy)
+                    if index in (4,9):
+                        for xx in range(x+16,x+w*8-8,8):
+                            room.c.rect(xx,y+h*8-7,4,3,3)
+                else:
+                    room.area(tx,ty,w,h,4 if n==2 else 5)
+                    for xx in range(x+5,x+w*8-4,16):
+                        room.c.rect(xx,y+5,8,min(12,h*8-10),2)
+                        room.c.rect(xx+1,y+6,6,2,3)
+                        room.c.pixel(xx+5,y+9,1)
+    return rooms
+
+
+def property_upgrade(room):
+    """Upgrade the actual existing furniture, with identical terrain geometry."""
+    upgraded=Canvas(room.c.width,room.c.height)
+    upgraded.p=room.c.p.copy()
+    c=upgraded
+    prop=room.data["property"]
+    # Premium runner is unmistakably a flat floor furnishing with stitched trim.
+    for ty in range(10,15):
+        for tx in range(8,12):
+            x,y=tx*8,ty*8
+            c.rect(x,y,8,8,2)
+            if tx in (8,11):c.line(x+(1 if tx==8 else 6),y,x+(1 if tx==8 else 6),y+7,3)
+            if ty in (10,14):c.line(x,y+(1 if ty==10 else 6),x+7,y+(1 if ty==10 else 6),3)
+            c.pixel(x+3,y+3,3)
+    if prop=="cocoa":
+        # Richly tiled serving counter and polished new espresso machine.
+        for x in range(18,142,8):
+            c.rect(x,42,6,4,1);c.rect(x+1,43,4,2,3)
+        c.rect(72,33,24,13,0);c.rect(74,35,20,7,2)
+        round_detail(c,76,34);round_detail(c,85,34)
+        c.rect(77,43,6,3,3);c.rect(86,43,6,3,3)
+        for x in (24,112):
+            c.rect(x+2,90,20,14,2)
+            c.rect(x+3,91,18,2,3)
+            c.rect(x+9,94,6,6,0);c.rect(x+10,95,4,3,3)
+    elif prop=="parcel":
+        # New numbered brass sorting cubbies and reinforced ribboned parcels.
+        for n,x in enumerate(range(19,140,16)):
+            c.rect(x,34,12,10,0);c.rect(x+1,35,10,8,3)
+            c.rect(x+3,36,6,2,2);c.rect(x+5,39,2,3,1)
+        for x,y in ((16,88),(32,104),(128,88),(120,104)):
+            c.rect(x+1,y+1,14,3,3);c.rect(x+7,y+2,2,12,3)
+            c.rect(x+3,y+6,4,3,2)
+    elif prop=="toolworks":
+        # Better tooling, copper lathe, and paired calibrated instrument faces.
+        c.rect(114,90,28,28,0);c.rect(116,92,24,22,2)
+        round_detail(c,119,95);round_detail(c,130,95)
+        c.rect(120,105,16,3,0);c.rect(124,105,8,2,3)
+        c.rect(116,115,24,3,3)
+        for x in range(24,140,16):
+            c.rect(x,34,10,3,3);c.rect(x+4,37,2,8,0)
+    else:
+        # Reupholstered sofa, key desk brasswork, and a tiny record cabinet.
+        for x in (27,44):
+            c.rect(x,91,14,13,2);c.rect(x+1,92,12,2,3)
+            c.rect(x+1,102,12,2,1)
+        c.rect(28,89,29,2,3)
+        c.rect(98,35,42,10,2)
+        for x in (103,119,135):
+            c.rect(x,36,4,3,3);c.rect(x+1,39,2,4,0)
+        c.rect(17,34,14,11,0);c.rect(18,35,12,9,2)
+        round_detail(c,20,35)
+    # Native replacement changes shared VRAM tiles. Keep only transformations
+    # with one consistent destination for every occurrence of a source tile.
+    pairs={}
+    locations=[]
+    for y in range(0,c.height,8):
+        for x in range(0,c.width,8):
+            base=tuple(room.c.p[(y+dy)*c.width+x+dx] for dy in range(8) for dx in range(8))
+            target=tuple(c.p[(y+dy)*c.width+x+dx] for dy in range(8) for dx in range(8))
+            pairs.setdefault(base,set()).add(target)
+            locations.append((x,y,base))
+    for x,y,base in locations:
+        if len(pairs[base])!=1:
+            for dy in range(8):
+                for dx in range(8):c.pixel(x+dx,y+dy,base[dy*8+dx])
+    assert len(c.tiles())<=256,(room.data["id"],"upgrade tile budget",len(c.tiles()))
+    return c
+
+
 def person(kind, direction, step=0):
     c=Canvas(16,16,4)
     # A two-pixel dark outline keeps small characters legible against the snow.
     c.rect(5,1,7,3,0);c.rect(4,3,9,3,0);c.rect(5,3,7,3,2)
     c.rect(5,6,7,5,0);c.rect(4,8,9,3,0);c.rect(5,7,7,4,2)
     c.rect(6,11,5,2,0)
-    c.rect(5 if step==0 else 4,13,3,2,0);c.rect(10 if step==0 else 11,13,3,2,0)
+    walking = kind == "player" and step != 0
+    c.rect(4 if walking else 5,13,3,2,0);c.rect(11 if walking else 10,13,3,2,0)
     if direction=="down":
         c.rect(5,5,7,3,3);c.pixel(6,6,0);c.pixel(10,6,0)
         c.rect(5,9,7,1,3)
@@ -719,19 +967,25 @@ def person(kind, direction, step=0):
     if kind=="slush":
         c.rect(3,1,11,4,0);c.rect(5,0,7,2,3);c.rect(3,5,11,2,2)
         c.rect(3,9,3,4,3);c.rect(7,9,6,2,0)
+    if step and kind != "player":
+        # One-pixel scarf and cap movement, feet and collision silhouette stay put.
+        c.pixel(3, 8, 2)
+        c.pixel(2, 9, 3)
+        if kind in ("pip", "moxie", "slush"):
+            c.pixel(11, 1, 3)
     return c
 
 
 def create_sprites():
     meta=[]
     for name in ["player","pip","rivet","moxie","nib","dot","slush"]:
-        frames=[person(name,d,s) for d in ["down","up","right"] for s in ([0,1] if name=="player" else [0])]
+        frames=[person(name,d,s) for d in ["down","right","up"] for s in [0,1]]
         sheet=Canvas(16*len(frames),16,4)
         for i,frame in enumerate(frames):
             for y in range(16):
                 for x in range(16):sheet.pixel(i*16+x,y,frame.p[y*16+x])
         sheet.save(SPRITES/(name+".png"),True)
-        meta.append({"id":name,"filename":name+".png","profile":"directional_animated" if name=="player" else "directional","width":sheet.width,"height":16})
+        meta.append({"id":name,"filename":name+".png","profile":"directional_animated", "ambientAnimation": name != "player", "suggestedAnimSpeed": 31,"width":sheet.width,"height":16})
     for name in ["board","property_sign","parcel","crate","book","door_marker"]:
         c=Canvas(16,16,4)
         if name in ("board","property_sign"):
@@ -747,8 +1001,27 @@ def create_sprites():
             c.rect(2,2,12,12,0);c.rect(3,3,10,10,3);c.rect(4,3,2,10,2);c.rect(7,5,5,1,0);c.rect(7,8,4,1,0)
         else:
             c.rect(4,4,8,2,3);c.rect(6,2,4,2,3);c.rect(6,6,4,4,3)
-        c.save(SPRITES/(name+".png"),True)
-        meta.append({"id":name,"filename":name+".png","profile":"static","width":16,"height":16})
+        if name in ("book", "property_sign"):
+            # The idle frame gets a glint or turning-page highlight. Six frames
+            # follow the existing down/up/right two-frame native template.
+            sheet=Canvas(96,16,4)
+            for index in range(6):
+                for yy in range(16):
+                    for xx in range(16):sheet.pixel(index*16+xx,yy,c.p[yy*16+xx])
+                if index%2:
+                    if name=="book":
+                        sheet.rect(index*16+8,4,4,1,2)
+                        sheet.line(index*16+10,5,index*16+10,10,2)
+                    else:
+                        sheet.pixel(index*16+4,3,3)
+                        sheet.pixel(index*16+5,4,3)
+                        sheet.pixel(index*16+4,5,3)
+            sheet.save(SPRITES/(name+".png"),True)
+            meta.append({"id":name,"filename":name+".png","profile":"directional_animated",
+                         "width":96,"height":16,"ambientAnimation":True,"suggestedAnimSpeed":31})
+        else:
+            c.save(SPRITES/(name+".png"),True)
+            meta.append({"id":name,"filename":name+".png","profile":"static","width":16,"height":16})
     return meta
 
 
@@ -834,7 +1107,7 @@ def add_neighborhood_contacts(world):
 
 
 if __name__=="__main__":
-    districts=make_world()
+    districts=atmospheric_pass(make_world())
     WORLD_CANVASES=[d.c for d in districts]
     world={"version":1,"tileSize":8,"coordinateNotes":"All positions use 8-pixel tiles. Native player bounds are 16x8 at y; actor bounds are 16x16 at y-8. Sites retain a conservative 2x2 terrain clearance.",
            "palettes":PALETTES,"scenes":[d.finish() for d in districts],"sprites":create_sprites()}

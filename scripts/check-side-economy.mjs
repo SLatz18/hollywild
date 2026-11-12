@@ -26,6 +26,8 @@ function machine(initial = {}) {
   const run = events => { for (const e of events) {
     const a = e.args;
     switch (e.command) {
+      case 'EVENT_GROUP': run(e.children.true); break;
+      case 'EVENT_HIDE_SPRITES': case 'EVENT_SHOW_SPRITES':
       case 'EVENT_TEXT': case 'EVENT_SOUND_PLAY_EFFECT': case 'EVENT_ACTOR_SET_SPRITE': break;
       case 'EVENT_MENU': assert(answers.length, 'Unexpected menu'); state[a.variable] = answers.shift(); break;
       case 'EVENT_SET_VALUE': state[a.variable] = value(a.value); break;

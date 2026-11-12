@@ -8,7 +8,7 @@
   "actors": {},
   "script": [
     {
-      "id": "8056f758-6163-4f18-ab33-6aa1ababa5bd",
+      "id": "eb597118-0db3-470e-afe7-a8eaeb88b59a",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -26,7 +26,7 @@
       "children": {
         "true": [
           {
-            "id": "7d6932c1-c5e1-4f95-a2e2-ecf5e0b7f883",
+            "id": "6346714f-2c50-477b-a5ac-e56e750b8d01",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -44,25 +44,44 @@
             "children": {
               "true": [
                 {
-                  "id": "ff29522c-585f-4f1b-ac72-3cb7759adf5d",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "Dot: The wire path\nruns roof, relay,\nstation. A courier\npath can run",
-                      "station, depot,\nroof. They share\nno relay. A second\nwire through the",
-                      "same frozen box\nwould have the\nsame fault. A new\ncolor is not a new",
-                      "path."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "469e6912-d1b5-4d90-abbd-b1e7cc5722c4",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "e598f48a-65e9-4d58-a44a-7cd89fa02186",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "a401fe16-eda9-4de9-af72-9bf56a4a0169",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Dot: The wire path\nruns roof, relay,\nstation. A courier\npath can run",
+                            "station, depot,\nroof. They share\nno relay. A second\nwire through the",
+                            "same frozen box\nwould have the\nsame fault. A new\ncolor is not a new",
+                            "path."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "678c9eb0-8839-4caf-aa62-8bc9fb0e0087",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "7f2a77a0-4383-48d0-a2a4-9799783b8c16",
+                  "id": "7a009254-14dc-49e4-a2ba-54e02315167f",
                   "command": "EVENT_SET_VALUE",
                   "args": {
                     "variable": "44",
@@ -73,24 +92,43 @@
                   }
                 },
                 {
-                  "id": "5ffb9f6c-f95a-4b8d-aaec-fd6eed1c6058",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "Aurora Signal:\nselect the\nindependent backup\nat the lantern."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "eae57f42-3d9e-4d86-aaea-0620afc18fa0",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "357e6deb-636a-43e3-a890-31bd111ef6ea",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "9d3214d3-8d46-46e6-a95c-80a8ad88c653",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Aurora Signal:\nselect the\nindependent backup\nat the lantern."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "203ee972-0627-495a-a30c-a9ddeec6a1f7",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],
               "false": [
                 {
-                  "id": "dae8361a-2a71-4998-a6ab-46f46b3930a8",
+                  "id": "76914a90-a008-4fa5-a613-9c4e61ffd337",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -108,7 +146,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "ced8ac8b-8bd8-4297-abcf-ffe4511fd529",
+                        "id": "6c132c98-64bc-49c3-aa82-b8b1650ca12c",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "83",
@@ -119,43 +157,81 @@
                         }
                       },
                       {
-                        "id": "18822ef0-6db1-44c6-a6ef-8b50087301f7",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "A Route Is a\nPerson",
-                            "The courier path\non the signal map\nincludes a blank\nfor the duty",
-                            "name. Dot added it\nafter noticing\nevery old map\ntreated messages\nas",
-                            "if they moved\nthemselves. Moxie\nfilled her name in\nlarge letters and",
-                            "left room for\nwhoever covers her\nlunch."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "26dbf0cf-e5fa-481c-af25-d40a1ad9edd5",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "972d7ac2-d479-4d37-a1aa-4ff43b54ebc7",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "ac523b72-08bd-40a7-a0d8-70706a399c4b",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A Route Is a\nPerson",
+                                  "The courier path\non the signal map\nincludes a blank\nfor the duty",
+                                  "name. Dot added it\nafter noticing\nevery old map\ntreated messages\nas",
+                                  "if they moved\nthemselves. Moxie\nfilled her name in\nlarge letters and",
+                                  "left room for\nwhoever covers her\nlunch."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "48c04d96-0f7d-46e4-aeb6-f9965e86ec2f",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ],
                     "false": [
                       {
-                        "id": "8a059036-0d42-46f8-a551-6fdac932dbef",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "A Route Is a\nPerson",
-                            "The courier path\non the signal map\nincludes a blank\nfor the duty",
-                            "name. Dot added it\nafter noticing\nevery old map\ntreated messages\nas",
-                            "if they moved\nthemselves. Moxie\nfilled her name in\nlarge letters and",
-                            "left room for\nwhoever covers her\nlunch."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "60ea4c16-11b0-4bff-a213-17876fb842e0",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "32f8badb-2016-4af9-a545-915dd3ae7ce9",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "b1c788b7-778f-4079-aef8-cdc4537600aa",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A Route Is a\nPerson",
+                                  "The courier path\non the signal map\nincludes a blank\nfor the duty",
+                                  "name. Dot added it\nafter noticing\nevery old map\ntreated messages\nas",
+                                  "if they moved\nthemselves. Moxie\nfilled her name in\nlarge letters and",
+                                  "left room for\nwhoever covers her\nlunch."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "15d8d135-1d71-4d8d-ab9e-e29281ec2b26",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ]
@@ -167,7 +243,7 @@
         ],
         "false": [
           {
-            "id": "68a079ad-7072-49d5-a2bc-41dfa7ed5a6b",
+            "id": "10d9a3b9-a2a1-4b99-a467-71115ef9aff6",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -185,7 +261,7 @@
             "children": {
               "true": [
                 {
-                  "id": "928e1291-9292-41b9-ab36-e8d81bde7624",
+                  "id": "f9471b17-57ba-4ccb-a1d5-21551c579f21",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -203,27 +279,46 @@
                   "children": {
                     "true": [
                       {
-                        "id": "73e68203-3b81-4b1a-ae5c-562cc5f970ba",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "A sample report\nsays someone saw a\nlamp but could not\ntell whether",
-                            "it was steady or\ndouble. The\nreceiver must not\ninvent a clear\ncode",
-                            "from an unclear\nsighting. A\nwritten received\ncard at the post\ncan",
-                            "resolve the doubt;\nif it cannot, the\nreceiver must\ncheck in person.",
-                            "The clerk\nremembers how much\ntrouble began when\nsilence was\ntreated",
-                            "as agreement. An\nuncertain flash\ndeserves the same\nhonest caution."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "bea5c767-49ac-444e-afb1-3150de618ab6",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "2badda87-45be-4102-abe9-b2713488745f",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "3dccb625-08f5-41f8-a870-d070b5af9479",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A sample report\nsays someone saw a\nlamp but could not\ntell whether",
+                                  "it was steady or\ndouble. The\nreceiver must not\ninvent a clear\ncode",
+                                  "from an unclear\nsighting. A\nwritten received\ncard at the post\ncan",
+                                  "resolve the doubt;\nif it cannot, the\nreceiver must\ncheck in person.",
+                                  "The clerk\nremembers how much\ntrouble began when\nsilence was\ntreated",
+                                  "as agreement. An\nuncertain flash\ndeserves the same\nhonest caution."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "672b9d4e-1592-41ed-a00c-c5f6c0a01a6e",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       },
                       {
-                        "id": "687c0b98-45c1-4f0a-aec0-b0a60e081584",
+                        "id": "ea0b19d9-72ab-453d-a6b3-6a893d66332c",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "44",
@@ -234,24 +329,43 @@
                         }
                       },
                       {
-                        "id": "a6d4b26c-1f53-4389-a62e-70697a71ed8d",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Aurora Signal:\ncollect the\nwritten signal\ncard at the\nlantern."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "2c4686dc-1b1b-46e2-ac04-daf6cb73f440",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "ab1089f5-e026-43d2-a279-735ed97d8467",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "27a59ee0-bcf3-44ab-afc1-27d1117dc4f9",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Aurora Signal:\ncollect the\nwritten signal\ncard at the\nlantern."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "437115c7-7e49-44a5-a245-4054ea6abb64",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ],
                     "false": [
                       {
-                        "id": "6850e2a0-4253-4892-a730-2a76bf1b4ee2",
+                        "id": "a58773e9-dec8-4418-a84d-de508fbceccf",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -269,7 +383,7 @@
                         "children": {
                           "true": [
                             {
-                              "id": "b1fccb52-14ed-4fd9-a7f5-bc742849916d",
+                              "id": "2dd1da26-61dd-4b7b-a88f-c92782dd042a",
                               "command": "EVENT_SET_VALUE",
                               "args": {
                                 "variable": "83",
@@ -280,43 +394,81 @@
                               }
                             },
                             {
-                              "id": "e82b8305-6994-4efc-a4bc-9a4633f85170",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "A Route Is a\nPerson",
-                                  "The courier path\non the signal map\nincludes a blank\nfor the duty",
-                                  "name. Dot added it\nafter noticing\nevery old map\ntreated messages\nas",
-                                  "if they moved\nthemselves. Moxie\nfilled her name in\nlarge letters and",
-                                  "left room for\nwhoever covers her\nlunch."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "39e49848-382b-4c6b-a920-312c3ab1a849",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "03770d88-4bc6-4bc9-a781-0641d53cc12b",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "c2c6e672-223c-410e-a35c-21a41377f006",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Route Is a\nPerson",
+                                        "The courier path\non the signal map\nincludes a blank\nfor the duty",
+                                        "name. Dot added it\nafter noticing\nevery old map\ntreated messages\nas",
+                                        "if they moved\nthemselves. Moxie\nfilled her name in\nlarge letters and",
+                                        "left room for\nwhoever covers her\nlunch."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "89c254df-57b2-43eb-a49a-058a1ba96e60",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ],
                           "false": [
                             {
-                              "id": "77760652-20f9-4b31-aeb4-333b97e65766",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "A Route Is a\nPerson",
-                                  "The courier path\non the signal map\nincludes a blank\nfor the duty",
-                                  "name. Dot added it\nafter noticing\nevery old map\ntreated messages\nas",
-                                  "if they moved\nthemselves. Moxie\nfilled her name in\nlarge letters and",
-                                  "left room for\nwhoever covers her\nlunch."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "a0f7cd46-70a9-4ee3-a556-0abcc93b05c3",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "6913616d-8608-4bc3-a183-9f10e0de1a0c",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "f4895647-24fe-4fac-a3ed-6f5885ff70b7",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "A Route Is a\nPerson",
+                                        "The courier path\non the signal map\nincludes a blank\nfor the duty",
+                                        "name. Dot added it\nafter noticing\nevery old map\ntreated messages\nas",
+                                        "if they moved\nthemselves. Moxie\nfilled her name in\nlarge letters and",
+                                        "left room for\nwhoever covers her\nlunch."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "c73afd70-a035-4050-a81b-2ab7dd2f4e49",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ]
@@ -328,7 +480,7 @@
               ],
               "false": [
                 {
-                  "id": "9616a926-457c-4de9-ade8-f78ac57205e2",
+                  "id": "601f0658-99e0-49c7-af15-b97eb169d349",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -346,7 +498,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "8c26f950-66b9-4e79-a8eb-65f07aedd498",
+                        "id": "bc23d245-9f8c-4a50-a8f5-1433c0f2e548",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "83",
@@ -357,43 +509,81 @@
                         }
                       },
                       {
-                        "id": "6e2a8fea-d913-4f4b-aac7-d71876ae5db5",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "A Route Is a\nPerson",
-                            "The courier path\non the signal map\nincludes a blank\nfor the duty",
-                            "name. Dot added it\nafter noticing\nevery old map\ntreated messages\nas",
-                            "if they moved\nthemselves. Moxie\nfilled her name in\nlarge letters and",
-                            "left room for\nwhoever covers her\nlunch."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "efa614c9-4570-4586-ae6d-986fe0f9bb3a",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "cb87f41d-1a86-4a7c-a9ea-3a3ef3cde7b7",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "e2ba1b4b-4d3a-4849-a5ae-8090e9976d87",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A Route Is a\nPerson",
+                                  "The courier path\non the signal map\nincludes a blank\nfor the duty",
+                                  "name. Dot added it\nafter noticing\nevery old map\ntreated messages\nas",
+                                  "if they moved\nthemselves. Moxie\nfilled her name in\nlarge letters and",
+                                  "left room for\nwhoever covers her\nlunch."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "c78c748b-76d1-401a-abf5-adb03712a3f1",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ],
                     "false": [
                       {
-                        "id": "258bf77b-0870-409e-ac82-8aa2c97e51a6",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "A Route Is a\nPerson",
-                            "The courier path\non the signal map\nincludes a blank\nfor the duty",
-                            "name. Dot added it\nafter noticing\nevery old map\ntreated messages\nas",
-                            "if they moved\nthemselves. Moxie\nfilled her name in\nlarge letters and",
-                            "left room for\nwhoever covers her\nlunch."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "05e4c78a-341b-4c86-ac76-9da7e34b8537",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "3f2dd1f6-3878-4bee-a269-00f5486d07ba",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "0b6907d3-b941-46ba-ac5d-68edf1ba0030",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A Route Is a\nPerson",
+                                  "The courier path\non the signal map\nincludes a blank\nfor the duty",
+                                  "name. Dot added it\nafter noticing\nevery old map\ntreated messages\nas",
+                                  "if they moved\nthemselves. Moxie\nfilled her name in\nlarge letters and",
+                                  "left room for\nwhoever covers her\nlunch."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "4817c0e8-df97-44dd-a8f8-2a1c3b011c39",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ]

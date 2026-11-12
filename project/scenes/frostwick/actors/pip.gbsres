@@ -9,12 +9,12 @@
   "x": 18,
   "y": 12,
   "frame": 0,
-  "animate": false,
+  "animate": true,
   "spriteSheetId": "223c41a6-904b-4985-ab1a-4d5d9875981c",
   "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
   "direction": "down",
   "moveSpeed": 1,
-  "animSpeed": 15,
+  "animSpeed": 31,
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
@@ -22,22 +22,41 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "ab1db4be-de23-4513-a76d-f1367bf3f75f",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "PIP\nA property empire?\nStart with a warm cup."
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "e44a6412-32d2-46e6-a947-851d3d906e63",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "84877d6c-ab2e-4bbe-a49a-b8f1176c01ea",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "4eca9ad0-53ef-4bfa-a571-ec4385193076",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "PIP\nA property empire?\nStart with a warm\ncup."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "d4c64daa-cf83-4868-ad2a-080cb4455ad5",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "c7a2f4d6-19df-403a-aab6-86314a23f51e",
+      "id": "7e15e3f4-3e72-48b0-a50d-cff2c22dffba",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -55,7 +74,7 @@
       "children": {
         "true": [
           {
-            "id": "8836e263-227d-4841-ac57-11e0a73e586f",
+            "id": "30c3f39b-51ed-4f94-a334-75bdf0f1210c",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -73,35 +92,74 @@
             "children": {
               "true": [
                 {
-                  "id": "7da62f6e-a658-4941-a79d-eb867ff050fe",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "SALVAGE READY\nReturn to any job\nboard to bank it."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "bc2f6d35-13cb-42ba-a906-22b3f9d09729",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "e11e2bb9-ff52-41a0-a68c-1f66e2600a8c",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "2e5fa373-252a-4119-aef3-0894e607d696",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "SALVAGE READY\nReturn to any job\nboard to bank it."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "9db6dc88-109d-48f3-a1a9-cdcda988d132",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],
               "false": [
                 {
-                  "id": "ccdef7f0-2bf0-433c-afc6-3b3b75e4e56d",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "SALVAGE JOB\nAny marked depot.\nTry Frostwick first."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "61b4fbb5-fbcb-4ce7-ae19-238dcddefb92",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "ac1eef73-46e1-493e-ae06-0375e15e221e",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "0bf705ef-97c2-4ae6-acb1-fcf39df2f053",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "SALVAGE JOB\nAny marked depot.\nFrostwick: go\neast,\nthen south. Crate",
+                            "below Cocoa cafe."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "aef2c75c-e79f-4a95-a9e2-245c0e460568",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ]
@@ -110,7 +168,7 @@
         ],
         "false": [
           {
-            "id": "5da2b139-248f-41d6-a62e-376df5dac585",
+            "id": "9ee57e93-159d-48af-aa8b-0ad9650b480b",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -128,24 +186,43 @@
             "children": {
               "true": [
                 {
-                  "id": "1f959ea5-3380-4247-aa92-2e3d395ba013",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "DELIVERY JOB\nAny marked drop-off.\nTry Cocoa first."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "e2e8673a-ce8f-41d6-adc3-81df8f3d3f78",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "9b469d90-1c62-450e-ace8-40cf33749bf2",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "891204e7-0fd8-4f75-a02d-f28b44dbbc9d",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "DELIVERY JOB\nAny marked\ndrop-off.\nTry Cocoa first."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "2f655940-744d-4161-ae9a-8ca1c87a91dc",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],
               "false": [
                 {
-                  "id": "fc8d811c-b38f-4001-a46a-39dad18401ec",
+                  "id": "93e5759a-6830-488d-a185-5c2018911a9b",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -163,24 +240,102 @@
                   "children": {
                     "true": [
                       {
-                        "id": "60b27877-bd41-449c-a1eb-95c585510272",
-                        "command": "EVENT_TEXT",
+                        "id": "0f677ee5-8e9e-4256-a530-6aceacb2c17b",
+                        "command": "EVENT_IF",
                         "args": {
-                          "text": [
-                            "A warm beginning:\nSalvage, then fix\nyour garage bench."
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "7"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 1
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "d9ad8ba2-8875-4c2f-a44b-767e483de637",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "13e6fee2-733d-4e3b-a835-48d45963dc0e",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "2a113bf6-0165-4f43-aeb7-d3565f4dcfa6",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Scrap banked!\nReturn to your\ngarage workbench."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "53a673d8-b848-4ff1-a6dd-0fd6ac044c32",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
+                              }
+                            }
                           ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                          "false": [
+                            {
+                              "id": "d43880cd-fbc2-41a6-a5a2-5394f6b8cc9d",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "c36177ba-1718-4afe-a3d9-fcb1b8166e1a",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "99f44ff3-46bd-46e9-a899-81ce7060afb8",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "First job?\nExit south to\nFrostwick. The job\nboard is just\nright",
+                                        "of the garage\ndoor.",
+                                        "Face the board.\nPress A. Choose\nSalvage. Or roam!"
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "a759c4ea-bfb8-481b-aab5-9c564d83a646",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
+                              }
+                            }
+                          ]
                         }
                       }
                     ],
                     "false": [
                       {
-                        "id": "135b5a13-3abd-4fa6-a894-c3f73f5f3904",
+                        "id": "973f3461-37d9-4699-a71f-3178e394eec1",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -198,24 +353,43 @@
                         "children": {
                           "true": [
                             {
-                              "id": "2550c7e8-5fbb-4fb5-a267-01f858cd4b4b",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "Build your empire:\nWork + delivery\ncan fund Cocoa."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "57f03975-7c57-40e7-a86c-74b7c7cf6c17",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "a0f11e1c-d84e-4b2e-a721-3862ab4616ff",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "ed9bc0c0-dfc9-4a5c-aa0b-8b0102678350",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Build your empire:\nWork + delivery\ncan fund Cocoa."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "4e45f478-a798-4605-a652-bc145e919d83",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ],
                           "false": [
                             {
-                              "id": "58a1d08d-375c-44d1-a6b1-c7e68dc78748",
+                              "id": "6d377586-1791-4c6c-ace0-5133197f5769",
                               "command": "EVENT_IF",
                               "args": {
                                 "condition": {
@@ -233,35 +407,73 @@
                               "children": {
                                 "true": [
                                   {
-                                    "id": "cdf6d548-42f5-46d4-a987-4b96938a7934",
-                                    "command": "EVENT_TEXT",
-                                    "args": {
-                                      "text": [
-                                        "Follow the ledger.\nGarage story desk\nleads to Aurora."
-                                      ],
-                                      "avatarId": "",
-                                      "minHeight": 4,
-                                      "maxHeight": 7,
-                                      "position": "bottom",
-                                      "closeWhen": "key",
-                                      "closeButton": "a"
+                                    "id": "5da0155d-04f9-422f-a409-4bebe7019ce1",
+                                    "command": "EVENT_GROUP",
+                                    "args": {},
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "03c6cc76-63be-4cd4-a787-ee6f8eb60017",
+                                          "command": "EVENT_HIDE_SPRITES",
+                                          "args": {}
+                                        },
+                                        {
+                                          "id": "d2f6a2b3-5ef4-41d2-a302-4d381349d559",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Follow the ledger.\nGarage story desk\nleads to Aurora."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "c42250ae-c9b6-49a0-a1a9-f5ce6520fb25",
+                                          "command": "EVENT_SHOW_SPRITES",
+                                          "args": {}
+                                        }
+                                      ]
                                     }
                                   }
                                 ],
                                 "false": [
                                   {
-                                    "id": "2bea25c2-5d77-4965-a536-3e34648ff982",
-                                    "command": "EVENT_TEXT",
-                                    "args": {
-                                      "text": [
-                                        "Winterlight shines!\nKeep exploring and\nbuilding your city."
-                                      ],
-                                      "avatarId": "",
-                                      "minHeight": 4,
-                                      "maxHeight": 7,
-                                      "position": "bottom",
-                                      "closeWhen": "key",
-                                      "closeButton": "a"
+                                    "id": "a00316ad-5327-4360-a041-cc66ec9004f4",
+                                    "command": "EVENT_GROUP",
+                                    "args": {},
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "0998dff1-230e-4a71-aac0-af94c611d22b",
+                                          "command": "EVENT_HIDE_SPRITES",
+                                          "args": {}
+                                        },
+                                        {
+                                          "id": "f3191d8b-c72d-471e-af97-c257678de0b4",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Winterlight\nshines!\nKeep exploring and\nbuilding your\ncity."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "87f6adc1-e9f2-4e6c-a8d8-0c3aa513ac8a",
+                                          "command": "EVENT_SHOW_SPRITES",
+                                          "args": {}
+                                        }
+                                      ]
                                     }
                                   }
                                 ]

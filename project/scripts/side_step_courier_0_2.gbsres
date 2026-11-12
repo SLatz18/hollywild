@@ -8,36 +8,74 @@
   "actors": {},
   "script": [
     {
-      "id": "6feb2dfc-770b-4876-a01b-797b21f8c529",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "The pudding must\nremain upright in\ntransit. Which\ncrate fits the\norder?"
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "409e9dee-1760-456c-afef-51961551c3a8",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "b814e117-93c3-4f44-a73c-978998a5c673",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "d33a6807-10ce-4204-aead-a0abff647da0",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The pudding must\nremain upright in\ntransit. Which\ncrate fits the\norder?"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "8489adf0-cc77-4640-a786-f8717708f56f",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "a835c75c-7076-4159-a124-b920024e6ce0",
-      "command": "EVENT_MENU",
-      "args": {
-        "variable": "14",
-        "items": 3,
-        "layout": "menu",
-        "cancelOnLastOption": false,
-        "cancelOnB": true,
-        "option1": "RED",
-        "option2": "BLUE",
-        "option3": "EITHER"
+      "id": "e605d94b-02fa-4134-a254-fcb39d53a14d",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "5856cff7-cdab-44d0-a4f7-df2198bbb0a4",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "6651c4c1-6930-4fc3-ae92-a88f9b1ba12d",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 3,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "RED",
+              "option2": "BLUE",
+              "option3": "EITHER"
+            }
+          },
+          {
+            "id": "a08dbabb-f55b-4643-a3fa-ba0bf19f5eb8",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "36c35faa-0da0-4f9e-a08e-88f2f0af72ad",
+      "id": "205c76e6-0a49-4d00-a84f-ce796831eb8f",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -55,7 +93,7 @@
       "children": {
         "true": [
           {
-            "id": "7f10e4a6-a345-4018-add3-58d02983d430",
+            "id": "e905a1c5-1869-4c84-a7cb-347e8a0c7cd5",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "91",
@@ -66,24 +104,43 @@
             }
           },
           {
-            "id": "f2ca469a-5c58-40e7-a6ed-22b9b92cef31",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "Candy Row: choose\nFig's delivery\nstyle at the side\ndesk."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "54651b80-b9ce-4fa3-a7fd-f97c9b958eab",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "bbd49225-5c36-403a-aa27-735ad422dab8",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "741ecaa0-699c-46d1-a73a-c8496561b8f9",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Candy Row: choose\nFig's delivery\nstyle at the side\ndesk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "36922961-dbd2-4364-ae4e-f5f7fbb3ab0f",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           }
         ],
         "false": [
           {
-            "id": "6bc72fc9-48ef-4161-ac51-3e8e3be580b8",
+            "id": "1a22aac2-b4f0-4461-a0fb-faf555e1923b",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -101,18 +158,37 @@
             "children": {
               "true": [
                 {
-                  "id": "84d043ee-a83c-48b8-a161-c2eb176a0913",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "The blue crate has\na ring that holds\nthe bowl upright.\nThe flat red crate\ncannot steady it."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "55d459a8-1145-4264-ac00-b48e1e4af6eb",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "a2d6de82-8dfa-4127-aa9f-e5a9a59e8db1",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "80b315ea-f3a6-4f7e-a3ac-d44b47feb88a",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The blue crate has\na ring that holds\nthe bowl upright.\nThe flat red crate\ncannot steady it."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "f04d0157-1572-4aa6-a31d-95a8c5032da9",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],

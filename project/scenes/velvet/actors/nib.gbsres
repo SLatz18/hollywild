@@ -9,12 +9,12 @@
   "x": 18,
   "y": 12,
   "frame": 0,
-  "animate": false,
+  "animate": true,
   "spriteSheetId": "70d9c305-1850-4793-a2f9-a7089c3f6884",
   "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
   "direction": "down",
   "moveSpeed": 1,
-  "animSpeed": 15,
+  "animSpeed": 31,
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
@@ -22,19 +22,38 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "116f0713-ed6b-4fdf-a88b-eb3bb5ec0332",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "NIB\nI said open-plan.\nThe roof disagreed.",
-          "Lantern Flats needs\n240 Coins, 8 scrap.\nAn honest bargain."
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "c538c4fa-845c-4a87-a401-9154f97db551",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "89a737b3-c516-4df3-a984-dab5d7f5aa73",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "ec45b807-0d44-444c-a3fc-6783a373a7c4",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "NIB\nI said open-plan.\nThe roof\ndisagreed.",
+                "Lantern Flats\nneeds\n240 Coins, 8\nscrap.\nAn honest bargain."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "80cf34d7-929b-4fda-a4bf-7dfd7ae216f0",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     }
   ],

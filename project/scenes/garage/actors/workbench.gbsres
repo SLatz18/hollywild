@@ -9,12 +9,12 @@
   "x": 4,
   "y": 7,
   "frame": 0,
-  "animate": false,
+  "animate": true,
   "spriteSheetId": "624969ff-611d-446b-a832-02c8e0d2d960",
   "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
   "direction": "down",
   "moveSpeed": 1,
-  "animSpeed": 15,
+  "animSpeed": 31,
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
@@ -22,7 +22,7 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "ebe9626c-f4d2-4641-a2cc-a11824050df3",
+      "id": "c7486533-a74f-4e7c-ab99-7be81b7b31bc",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -40,22 +40,41 @@
       "children": {
         "true": [
           {
-            "id": "433a930f-ea4a-45f2-a981-bc3ddb16d966",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "RIVET\nGood bones. Cold\nfingers. Let us fix it."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "db0f46fe-ed52-448a-aefb-96ef5d92f8f0",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "29de0bc4-c52c-4be4-a8fe-b135c5689340",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "77d06df3-62a5-40cd-a166-dee537827440",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "RIVET\nGood bones. Cold\nfingers. Let us\nfix it."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "b8c3e8e8-e5aa-4122-a32f-7ff24c45822c",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           },
           {
-            "id": "17ef1f6a-52c8-439e-a153-50fd1fb568e4",
+            "id": "e9e761f5-91ce-4308-a3f2-ec28321e5cbf",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -73,41 +92,79 @@
             "children": {
               "true": [
                 {
-                  "id": "e3dbeded-121b-4bf7-a885-4f9dd4a80a4c",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "WORKSHOP\nYour property.",
-                      "2 spare scrap makes\n30 Coins after a\nsuccessful job."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "e5480a4b-ca2e-4004-a1e7-1b761b1f2652",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "377d1a86-841e-43b4-acdc-bfb5f7726da3",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "59d66a36-5a7f-4599-a902-8339784e4819",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "WORKSHOP\nYour property.",
+                            "2 spare scrap\nmakes\n30 Coins after a\nsuccessful job."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "bab2456e-0f06-4cb0-a901-146e10526283",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],
               "false": [
                 {
-                  "id": "a81f1602-0def-4e75-a610-36401f04564a",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "WORKSHOP\n40 Coins + 4 scrap",
-                      "2 spare scrap makes\n30 Coins after a\nsuccessful job."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "4c799c8a-fb24-434f-ae6b-ebe301528147",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "9ce6ae48-271d-49dd-aedc-9b2f328c4071",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "21c35d69-fabe-451c-a51e-1c07c42795c5",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "WORKSHOP\n40 Coins + 4 scrap",
+                            "2 spare scrap\nmakes\n30 Coins after a\nsuccessful job."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "e7555f2c-b0fc-428c-a147-23605ababe65",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "a9cb00fe-654c-4ec9-a857-cc9b4b821131",
+                  "id": "06893259-2ee1-48e3-adf0-d0194d5f2912",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -125,20 +182,39 @@
                   "children": {
                     "true": [
                       {
-                        "id": "0303a8ba-99b7-4313-a8fc-05974aa98675",
-                        "command": "EVENT_MENU",
-                        "args": {
-                          "variable": "14",
-                          "items": 2,
-                          "layout": "menu",
-                          "cancelOnLastOption": false,
-                          "cancelOnB": true,
-                          "option1": "Repair",
-                          "option2": "Back"
+                        "id": "1a181bdf-f717-4bce-ad55-c49a471ad2b8",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "759272a5-324f-4735-af1a-934905c9e53f",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "71ba1e8d-f4f4-4994-adf9-42f5671e1701",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 2,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "Repair",
+                                "option2": "Back"
+                              }
+                            },
+                            {
+                              "id": "74437acd-a34f-4eb4-abd4-76d96f337b35",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       },
                       {
-                        "id": "f3984800-2614-487f-ace1-40dd2ef55c6a",
+                        "id": "0e8c5060-67c5-4780-a687-ee3f9987740c",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -156,7 +232,7 @@
                         "children": {
                           "true": [
                             {
-                              "id": "e6a9a493-f1d8-4c12-a701-456aff4a6426",
+                              "id": "3f4babc2-cc40-48f6-aa03-8d60c15a9eee",
                               "command": "EVENT_IF",
                               "args": {
                                 "condition": {
@@ -174,7 +250,7 @@
                               "children": {
                                 "true": [
                                   {
-                                    "id": "cfe67f42-92d1-4c0a-a522-90cd78717161",
+                                    "id": "af4dd8aa-b165-44f7-a1b2-8ac3b7988bac",
                                     "command": "EVENT_IF",
                                     "args": {
                                       "condition": {
@@ -192,7 +268,7 @@
                                     "children": {
                                       "true": [
                                         {
-                                          "id": "cd525e50-160a-4d2d-a3d4-8347de1b802b",
+                                          "id": "18ad3c34-6cdf-4848-ac15-b81d424b761a",
                                           "command": "EVENT_VARIABLE_MATH",
                                           "args": {
                                             "vectorX": "1",
@@ -203,7 +279,7 @@
                                           }
                                         },
                                         {
-                                          "id": "ebda72b4-8aa2-4c5b-a249-453b937d048e",
+                                          "id": "e24175d1-6ac7-4760-ab46-9d91c340c704",
                                           "command": "EVENT_VARIABLE_MATH",
                                           "args": {
                                             "vectorX": "2",
@@ -214,7 +290,7 @@
                                           }
                                         },
                                         {
-                                          "id": "fbb0bff3-763e-414d-a451-fab325cba04d",
+                                          "id": "a022a688-1194-407e-ad85-528d1dc652ef",
                                           "command": "EVENT_SET_VALUE",
                                           "args": {
                                             "variable": "4",
@@ -225,7 +301,7 @@
                                           }
                                         },
                                         {
-                                          "id": "f4668f2c-a279-4f05-aed8-231e80417b11",
+                                          "id": "9a97a14e-4ab7-4cbc-a3e3-cbecbc5d32e7",
                                           "command": "EVENT_SOUND_PLAY_EFFECT",
                                           "args": {
                                             "type": "beep",
@@ -236,22 +312,41 @@
                                           }
                                         },
                                         {
-                                          "id": "9bfc429b-7813-4e7d-a55f-409cf5470ef4",
-                                          "command": "EVENT_TEXT",
-                                          "args": {
-                                            "text": [
-                                              "RESTORED!\nA warmer corner\nof the city."
-                                            ],
-                                            "avatarId": "",
-                                            "minHeight": 4,
-                                            "maxHeight": 7,
-                                            "position": "bottom",
-                                            "closeWhen": "key",
-                                            "closeButton": "a"
+                                          "id": "4eff0517-55e0-4f35-a0e3-1aabf56f8aa6",
+                                          "command": "EVENT_GROUP",
+                                          "args": {},
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "2823da50-9385-4935-ac47-6e1a3eff90fe",
+                                                "command": "EVENT_HIDE_SPRITES",
+                                                "args": {}
+                                              },
+                                              {
+                                                "id": "223bd226-9e9a-4e40-afab-bda681a93384",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "RESTORED!\nA warmer corner\nof the city."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              },
+                                              {
+                                                "id": "fddb032e-080c-45ad-a687-5f868261c0b6",
+                                                "command": "EVENT_SHOW_SPRITES",
+                                                "args": {}
+                                              }
+                                            ]
                                           }
                                         },
                                         {
-                                          "id": "2bcb44eb-d57c-4bf9-a352-2974ed05f767",
+                                          "id": "35d2f528-8459-49e0-a9b9-f80dc8f36155",
                                           "command": "EVENT_SET_VALUE",
                                           "args": {
                                             "variable": "10",
@@ -262,35 +357,73 @@
                                           }
                                         },
                                         {
-                                          "id": "8b8bee6f-15d4-47ed-ab34-eb204a95c28c",
-                                          "command": "EVENT_TEXT",
-                                          "args": {
-                                            "text": [
-                                              "Rivet is assigned.\nTake a delivery to\ntry your first batch."
-                                            ],
-                                            "avatarId": "",
-                                            "minHeight": 4,
-                                            "maxHeight": 7,
-                                            "position": "bottom",
-                                            "closeWhen": "key",
-                                            "closeButton": "a"
+                                          "id": "ce90fc7d-5fdb-4e1a-a039-8839c2ae7df9",
+                                          "command": "EVENT_GROUP",
+                                          "args": {},
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "38b32299-63a5-4d7c-ad0d-d106a081457b",
+                                                "command": "EVENT_HIDE_SPRITES",
+                                                "args": {}
+                                              },
+                                              {
+                                                "id": "870f916e-7c75-4b44-a5ba-4bc75b38e750",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Rivet is assigned.\nTake a delivery to\ntry your first\nbatch."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              },
+                                              {
+                                                "id": "a6c764b8-b3e3-4b6f-afc2-04db4a116103",
+                                                "command": "EVENT_SHOW_SPRITES",
+                                                "args": {}
+                                              }
+                                            ]
                                           }
                                         }
                                       ],
                                       "false": [
                                         {
-                                          "id": "ca22d8a1-2533-41ab-a420-870ecd606c62",
-                                          "command": "EVENT_TEXT",
-                                          "args": {
-                                            "text": [
-                                              "Not enough scrap.\nYour Coins were\nnot spent."
-                                            ],
-                                            "avatarId": "",
-                                            "minHeight": 4,
-                                            "maxHeight": 7,
-                                            "position": "bottom",
-                                            "closeWhen": "key",
-                                            "closeButton": "a"
+                                          "id": "39f1f76f-04de-479b-a354-3b3440723181",
+                                          "command": "EVENT_GROUP",
+                                          "args": {},
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "4b0ffed9-cb36-44b6-aff4-1842e5d5cc9b",
+                                                "command": "EVENT_HIDE_SPRITES",
+                                                "args": {}
+                                              },
+                                              {
+                                                "id": "28563e3b-0373-4f93-a41e-a962136b6993",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Not enough scrap.\nYour Coins were\nnot spent."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              },
+                                              {
+                                                "id": "23a41b90-8d6a-4727-aa35-c51515a73fba",
+                                                "command": "EVENT_SHOW_SPRITES",
+                                                "args": {}
+                                              }
+                                            ]
                                           }
                                         }
                                       ]
@@ -299,18 +432,37 @@
                                 ],
                                 "false": [
                                   {
-                                    "id": "8d36b716-6988-45ce-a1bf-216dd76467a0",
-                                    "command": "EVENT_TEXT",
-                                    "args": {
-                                      "text": [
-                                        "Not enough Coins.\nNothing was spent."
-                                      ],
-                                      "avatarId": "",
-                                      "minHeight": 4,
-                                      "maxHeight": 7,
-                                      "position": "bottom",
-                                      "closeWhen": "key",
-                                      "closeButton": "a"
+                                    "id": "a8872aa5-959e-4d79-a78d-f0a81c9a3e91",
+                                    "command": "EVENT_GROUP",
+                                    "args": {},
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "5c4539ba-00c4-4cc3-aca1-a91d1f3c7d1d",
+                                          "command": "EVENT_HIDE_SPRITES",
+                                          "args": {}
+                                        },
+                                        {
+                                          "id": "c96d312d-84f6-4824-a875-2fd1ab678b07",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Not enough Coins.\nNothing was spent."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "95fec025-b066-423b-a71d-a92ab6806ac7",
+                                          "command": "EVENT_SHOW_SPRITES",
+                                          "args": {}
+                                        }
+                                      ]
                                     }
                                   }
                                 ]
@@ -323,18 +475,37 @@
                     ],
                     "false": [
                       {
-                        "id": "8dbdc405-2177-4bc0-a8b1-36ffc48aaf99",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Finish or cancel\nyour current job\nfirst. START menu."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "917ab51e-35b3-4d41-a80b-80549a7c9593",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "25b0d5d9-9c0d-415f-aa3d-936511491fde",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "657a4074-e4d8-4935-ac66-8d0f43c548b8",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Finish or cancel\nyour current job\nfirst. START menu."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "a62f01e2-130d-4e7d-ab54-e7f1a820e230",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ]
@@ -346,37 +517,75 @@
         ],
         "false": [
           {
-            "id": "85819bd6-6c2d-4d3e-a2a6-c8341a2fc7d2",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "RIVET\nWork or rest here.\nRole changes the job."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "e56682de-2739-42db-a04e-b055b6cd54fd",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "77637b61-a45c-4bdd-a43e-df736d443992",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "3a48cd51-9077-4504-a6d9-df5d6b49b3b2",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "RIVET\nWork or rest here.\nRole changes the\njob."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "db702b02-73ad-41c0-a0b2-471ea92db6cd",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           },
           {
-            "id": "892bcc74-1ba7-48b3-ab16-4fb4578a48fd",
-            "command": "EVENT_MENU",
-            "args": {
-              "variable": "14",
-              "items": 4,
-              "layout": "menu",
-              "cancelOnLastOption": false,
-              "cancelOnB": true,
-              "option1": "Work",
-              "option2": "Rest",
-              "option3": "Back",
-              "option4": "Role"
+            "id": "42bb8289-ea1f-4b53-a2be-ef542a65d527",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "36cb6635-b5ba-4cd6-a056-05d01d1b1456",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "b51e62c1-fa84-4132-a198-4cb92dcca277",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 4,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "Work",
+                    "option2": "Rest",
+                    "option3": "Back",
+                    "option4": "Role"
+                  }
+                },
+                {
+                  "id": "78aa6523-02ac-4db0-a17a-43dc1e97dd43",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           },
           {
-            "id": "2d9eac09-8160-4b11-add5-2615b6d8b213",
+            "id": "6c63b42b-1d2b-46ec-a0a2-ed0f63cd1164",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -394,7 +603,7 @@
             "children": {
               "true": [
                 {
-                  "id": "7d29d42a-a2d6-461a-ac7c-47e720bfd359",
+                  "id": "718ddc34-b5e6-4eda-a04f-57f358f2883f",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -412,7 +621,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "986400b5-edeb-4973-a4fc-8c91a08cc68f",
+                        "id": "8eff40fd-c5f6-46e8-ab2e-90f2d9b90a4f",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "10",
@@ -423,35 +632,73 @@
                         }
                       },
                       {
-                        "id": "6b6fe1af-8289-4ca1-a888-2ad3fb3f1c4a",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Rivet will work\nin the chosen role\nafter successful jobs."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "b4f3f295-d37e-468d-ab88-354f33468a47",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "62f91c11-9e77-46d8-a68b-ba115438ea5b",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "ade66fce-8a3f-493d-a2b2-55ac17da1d7a",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Rivet will work\nin the chosen role\nafter successful\njobs."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "42d7c2dd-c4d1-4636-a0bb-e225e39aff09",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ],
                     "false": [
                       {
-                        "id": "fcea8bec-376e-48c1-a743-999612f97409",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Finish or cancel\nyour current job\nfirst. START menu."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "b7aba509-e477-4c8c-aa2b-37117337f194",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "6cd2fc41-3535-4fa7-ace9-069ce94f81ae",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "6cc8d399-d5e7-4ea5-a152-e75addaca193",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Finish or cancel\nyour current job\nfirst. START menu."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "8459db7b-4105-4f9c-a97e-af4337430f59",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ]
@@ -462,7 +709,7 @@
             }
           },
           {
-            "id": "4dedebb4-5023-4068-a6a9-1398bfe20fba",
+            "id": "77a115cf-ab66-4005-a9b4-f48528fe06ea",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -480,7 +727,7 @@
             "children": {
               "true": [
                 {
-                  "id": "d6654ce5-3a82-4ca6-a7d2-2b749c6b3dfe",
+                  "id": "c534cced-8e38-4516-ac83-545c6c09cd19",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -498,7 +745,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "89c3699e-ee5d-4cdc-ae56-29a7cea1245f",
+                        "id": "13a4a8e6-1c9b-4331-a6a3-078779f730e0",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "10",
@@ -509,35 +756,73 @@
                         }
                       },
                       {
-                        "id": "8c203e37-d9c3-4600-a715-4093acebf871",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Rivet is resting.\nNo workshop input\nwill be reserved."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "93192524-e12f-4bdd-a013-37574e1e4fde",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "4925a349-f320-4b91-a63b-e4b701c2f4a5",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "aa1250fd-612f-49d8-ada9-cde123f864c6",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Rivet is resting.\nNo workshop input\nwill be reserved."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "49030816-066c-4114-adcd-8aca0c0c12fd",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ],
                     "false": [
                       {
-                        "id": "54c46ed6-30fd-4925-a078-1b99e407f402",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Finish or cancel\nyour current job\nfirst. START menu."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "db5738ba-f515-4338-a1cf-09e45c5eacd4",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "7fd7edc6-7aa7-4902-a3b6-fd7bf9fb46b4",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "47bcbfeb-c5f6-4d36-a316-3c30977693b5",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Finish or cancel\nyour current job\nfirst. START menu."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "b49fefd3-2ad9-48ca-adee-2857648757f1",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ]
@@ -548,7 +833,7 @@
             }
           },
           {
-            "id": "76b8c3ce-242b-43ef-a301-c2d65203aeaa",
+            "id": "4243818f-363f-4a01-a96f-f50eeaf196ea",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -566,7 +851,7 @@
             "children": {
               "true": [
                 {
-                  "id": "ed506ef7-6486-4317-ad44-5e204e43900d",
+                  "id": "936f75d8-2ab0-42f8-a181-d45eb2063cf1",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -584,39 +869,77 @@
                   "children": {
                     "true": [
                       {
-                        "id": "96dc08b5-bf9e-4aaa-adf7-7557699b7d61",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "MAKER: -2 scrap\n+30 Coins per job.\nKeeps 4 scrap safe.",
-                            "RECYCLE: +2 scrap\nRUNNER: +10 Coins\nNeither uses scrap.",
-                            "Pick a free role.\nIt runs only after\na successful job."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "25c5873c-947a-4963-a0e4-48d7489d97a4",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "0b47fd2f-0c81-4681-a8a3-37ea4fd311d7",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "862dc537-7f66-4d63-a2b9-0916bb91467c",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "MAKER: -2 scrap\n+30 Coins per job.\nKeeps 4 scrap\nsafe.",
+                                  "RECYCLE: +2 scrap\nRUNNER: +10 Coins\nNeither uses\nscrap.",
+                                  "Pick a free role.\nIt runs only after\na successful job."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "6232c80c-776d-46b4-a06c-6186b8214dd1",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       },
                       {
-                        "id": "246e98b3-310a-4c9d-a59c-b8bdc0f68557",
-                        "command": "EVENT_MENU",
-                        "args": {
-                          "variable": "14",
-                          "items": 4,
-                          "layout": "menu",
-                          "cancelOnLastOption": false,
-                          "cancelOnB": true,
-                          "option1": "Maker",
-                          "option2": "Recycle",
-                          "option3": "Runner",
-                          "option4": "Back"
+                        "id": "7c43aff1-ed4d-43bd-a88b-d84d94271917",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "e683142f-5763-415b-a6f2-49042d8a147b",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "589ba8ed-da9d-41a5-a480-289104965b15",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 4,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "Maker",
+                                "option2": "Recycle",
+                                "option3": "Runner",
+                                "option4": "Back"
+                              }
+                            },
+                            {
+                              "id": "8258927a-e350-46fd-ac59-19d46e9e6460",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       },
                       {
-                        "id": "d8cab038-9da8-4c98-a986-5fa0c3ee969b",
+                        "id": "d6591b7c-a8c8-4ffb-a40f-e4924be58813",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -634,7 +957,7 @@
                         "children": {
                           "true": [
                             {
-                              "id": "79e3b5c2-38db-4ece-a585-8807c9215074",
+                              "id": "16934867-53a0-4536-aa23-df351b418358",
                               "command": "EVENT_SET_VALUE",
                               "args": {
                                 "variable": "41",
@@ -645,18 +968,37 @@
                               }
                             },
                             {
-                              "id": "9474ae0c-6f82-46e7-a1e1-b19f84c09759",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "Maker selected.\nUse Work to assign\nor Rest to pause."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "a712a3e1-8cd9-48ec-a104-b8d3f256a615",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "18486545-04aa-49f6-a550-62d6cd34cfc4",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "ea962793-4af5-4358-a412-49a15675242e",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Maker selected.\nUse Work to assign\nor Rest to pause."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "83cc5ce9-5d6b-4b3a-adf2-40c8fe8999a5",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ],
@@ -664,7 +1006,7 @@
                         }
                       },
                       {
-                        "id": "d29e15fa-807c-4839-aac0-8f3951acca75",
+                        "id": "b98f51d7-4e49-445e-a088-b863b05b8850",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -682,7 +1024,7 @@
                         "children": {
                           "true": [
                             {
-                              "id": "5654197f-7876-4fc7-aab5-6bf000c40b2f",
+                              "id": "41bbd86e-fbc5-41a7-afcc-8501398db637",
                               "command": "EVENT_SET_VALUE",
                               "args": {
                                 "variable": "41",
@@ -693,18 +1035,37 @@
                               }
                             },
                             {
-                              "id": "92242d2a-848a-413d-a728-a2d823169196",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "Recycler selected.\nUse Work to assign\nor Rest to pause."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "3f8f9138-a17d-4e38-a0d9-0fa14d87a730",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "ffae4f1f-1ebd-485b-aa90-b262bfd3a88d",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "550a6c1c-9e59-473d-a1a6-24d6ca4d906e",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Recycler selected.\nUse Work to assign\nor Rest to pause."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "40a184a1-2e34-4ad8-aeb9-28f65debaa6f",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ],
@@ -712,7 +1073,7 @@
                         }
                       },
                       {
-                        "id": "83550254-5835-4530-a6b2-a935e33dcc30",
+                        "id": "69d4e686-5499-4bb3-afbf-7b442f676efc",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -730,7 +1091,7 @@
                         "children": {
                           "true": [
                             {
-                              "id": "9f6cc480-006a-4dd0-a979-f4cc9d637fd5",
+                              "id": "feedab7e-d53a-4933-ae0f-a39f520414b1",
                               "command": "EVENT_SET_VALUE",
                               "args": {
                                 "variable": "41",
@@ -741,18 +1102,37 @@
                               }
                             },
                             {
-                              "id": "14a4d6cc-8699-4d93-a757-a4792e5e6419",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "Runner selected.\nUse Work to assign\nor Rest to pause."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "54ec6dd3-9365-4b7c-a2ce-7c9f97ba348f",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "c0d6da3d-d9c5-48f2-a34d-90b87a0b4e27",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "1f95321d-65e1-4b4e-a052-f8bf5f4035f7",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Runner selected.\nUse Work to assign\nor Rest to pause."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "9d37fdd3-e261-4c22-a4d0-3e9b3a155163",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ],
@@ -762,18 +1142,37 @@
                     ],
                     "false": [
                       {
-                        "id": "795476cd-e080-424e-a015-011f8ca364e8",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Finish or cancel\nyour current job\nfirst. START menu."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "7f4e9632-f281-45a0-aa57-707e7bbcc4d3",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "ee7c8456-5617-49e9-adf6-b7963fcd40c8",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "7276c6ed-4e87-4391-a308-4d259011d951",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Finish or cancel\nyour current job\nfirst. START menu."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "4244cb1c-b1c4-4809-aad7-aeab3fb4019f",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ]

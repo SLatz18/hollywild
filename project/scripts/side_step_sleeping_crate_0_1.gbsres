@@ -8,36 +8,74 @@
   "actors": {},
   "script": [
     {
-      "id": "bdc00c1e-6976-458c-a2af-8b0fa47f0f63",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "Which stop is\nnamed on the care\ncard and has\nBoots' owner\nwaiting?"
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "306f05f0-5445-41f6-a79b-965e21bdb564",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "797f0747-e71e-403f-a76b-cb87f51ea346",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "18eec6a2-6d3c-4ac4-ac4d-a1aecb600b52",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Which stop is\nnamed on the care\ncard and has\nBoots' owner\nwaiting?"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "b0089df8-4112-475b-ab12-6af536f4a87c",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "24dec850-3ab5-4bb7-a861-6cb79adb5dc9",
-      "command": "EVENT_MENU",
-      "args": {
-        "variable": "14",
-        "items": 3,
-        "layout": "menu",
-        "cancelOnLastOption": false,
-        "cancelOnB": true,
-        "option1": "DEPOT",
-        "option2": "CAFE",
-        "option3": "ROOF"
+      "id": "b9312873-fe44-411e-a40f-ed2901f3a72e",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "0c285313-ca3a-4e16-a809-b9ab6d5b2ad9",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "5f3d1272-d715-4304-ae63-457c5adf2ed2",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 3,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "DEPOT",
+              "option2": "CAFE",
+              "option3": "ROOF"
+            }
+          },
+          {
+            "id": "ee85bd9f-8f55-442b-a919-5dcd312be70b",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "2eb8bf10-1e26-4f8f-a715-c2748ed1ba75",
+      "id": "177d16db-630b-4aeb-a3aa-26a10ccecf41",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -55,7 +93,7 @@
       "children": {
         "true": [
           {
-            "id": "2b474e05-51fd-4e1b-a42d-ff9250b5e92e",
+            "id": "9bca53e6-e055-4f33-ae60-2a128b904450",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "118",
@@ -66,24 +104,43 @@
             }
           },
           {
-            "id": "6503d1be-cac7-4630-a6e1-a9312d9332e9",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "Cocoa Corner:\ndeliver Boots to\nthe owner at the\nside desk."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "b125e8e8-4988-4308-a4cf-662949d417ff",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "79be0161-1229-4c29-abf6-03aac88f5283",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "7d68d3e8-778c-4042-aa8b-b700e66e09de",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Cocoa Corner:\ndeliver Boots to\nthe owner at the\nside desk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "d070e576-4fe7-4b62-a23d-fac12f67904b",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           }
         ],
         "false": [
           {
-            "id": "958bbb0f-148b-4b1a-ad2b-9ecb25b27383",
+            "id": "7ef7673e-e3d4-47e2-a621-5159fdf485bb",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -101,19 +158,38 @@
             "children": {
               "true": [
                 {
-                  "id": "ab90d237-8d95-49ab-a2c8-4059ecf9b749",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "The care card\nnames Cocoa\nCorner. The depot\nis cold storage,\nand the roof is",
-                      "only a transit\nstop."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "1a1dbfeb-2ce7-421f-a4d0-10b958fd52bb",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "f25da384-0dd6-45ab-a82b-5135dd8c749e",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "7d740608-5450-4585-abb1-7baf2e2b3c7d",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The care card\nnames Cocoa\nCorner. The depot\nis cold storage,\nand the roof is",
+                            "only a transit\nstop."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "0ffe7633-a8f9-4c38-a053-c030f27e814d",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],

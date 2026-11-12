@@ -11,6 +11,8 @@ import json
 import os
 import time
 import uuid
+import wave
+import numpy as np
 import re
 import sys
 from collections import deque
@@ -31,8 +33,8 @@ def tick(machine, frames):
 
 ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / "build/rom"
-OUT = ROOT / "test-results"
-OUT.mkdir(exist_ok=True)
+OUT = Path(os.environ.get('HOLLYWILD_QA_OUT', str(ROOT / "test-results")))
+OUT.mkdir(parents=True, exist_ok=True)
 manifest = json.loads((BUILD / "build-manifest.json").read_text())
 rom = ROOT / manifest["rom"]
 rom_hash = hashlib.sha256(rom.read_bytes()).hexdigest()
@@ -43,6 +45,9 @@ for filename, expected in artifacts.items():
 noi = next(ROOT / p for p in artifacts if p.endswith(".noi"))
 globals_file = next(ROOT / p for p in artifacts if p.endswith("globals.i"))
 symbols = {k: int(v, 16) for k, v in re.findall(r"^DEF (\S+) 0x([0-9A-Fa-f]+)$", noi.read_text(), re.M)}
+music_symbols = {symbols['_song_' + key + '_Data']: key for key in
+                 ('garage','frostwick','candy','brassworks','velvet','aurora','finale')
+                 if '_song_' + key + '_Data' in symbols}
 variables = {k[4:].lower(): int(v) for k, v in re.findall(r"^(VAR_\w+) = (\d+)$", globals_file.read_text(), re.M)}
 scene_symbols = {}
 scene_resources = {}
@@ -67,7 +72,8 @@ ram = io.BytesIO(bytes(ram_bytes))
 
 def boot():
     ram.seek(0)
-    machine = PyBoy(str(rom), window="null", sound_emulated=False, ram_file=ram)
+    machine = PyBoy(str(rom), window="null", sound_emulated=os.environ.get('HOLLYWILD_QA_AUDIO') == '1',
+                    sound_sample_rate=48000, ram_file=ram)
     machine.set_emulation_speed(0)
     tick(machine, 180)
     return machine
@@ -97,6 +103,10 @@ def state():
                   windowX=pyboy.memory[symbols["_win_pos_x"]],
                   windowY=pyboy.memory[symbols["_win_pos_y"]],
                   textDrawn=pyboy.memory[symbols["_text_drawn"]])
+    if '_music_current_track_bank' in symbols:
+        bank=pyboy.memory[symbols['_music_current_track_bank']]
+        pointer=word(symbols['_music_current_track'])
+        result['musicTrack']='muted' if bank==255 else music_symbols.get((bank<<16)+pointer,hex((bank<<16)+pointer))
     return result
 
 
@@ -335,6 +345,16 @@ try:
                 assert name.endswith(".png")
                 tick(pyboy, 1)
                 pyboy.screen.image.save(OUT / name)
+            if "audio" in cmd:
+                assert os.environ.get('HOLLYWILD_QA_AUDIO') == '1', 'Enable real audio capture explicitly'
+                spec=cmd['audio'];name=Path(spec['name']).name;assert name.endswith('.wav')
+                seconds=spec.get('seconds',6);assert 0 < seconds <= 120
+                chunks=[]
+                for _ in range(round(seconds*59.7275)):
+                    tick(pyboy,1);chunks.append(pyboy.sound.ndarray.copy())
+                samples=np.concatenate(chunks).astype(np.int16)*256
+                with wave.open(str(OUT/name),'wb') as output:
+                    output.setnchannels(2);output.setsampwidth(2);output.setframerate(48000);output.writeframes(samples.astype('<i2').tobytes())
             current = state()
             if "assert" in cmd:
                 for key, expected in cmd["assert"].items():

@@ -150,6 +150,8 @@ for path in (1, 2):
             add(choose=1)
             side[prefix + 'mission'] = 1
             check()
+            if track.get('requires'):
+                add(capture=track['requires'] + '-before.png')
         for mi, mission in enumerate(track['missions'], 1):
             blocked = path == 1 and ti == 0 and mi == 1
             if blocked:
@@ -208,6 +210,7 @@ for path in (1, 2):
                 select(track, journal=True)
                 check()
         if track['kind'] == 'project':
+            add(capture=track['requires'] + '-after.png')
             job(delivery=True)  # Exercises purchased and improved property income.
         save_reload()
 

@@ -8,7 +8,7 @@
   "actors": {},
   "script": [
     {
-      "id": "6fa6e863-372e-4727-a4d3-04403ed6802a",
+      "id": "de1e803d-dd4e-456e-a6a3-8f770dce1589",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -26,7 +26,7 @@
       "children": {
         "true": [
           {
-            "id": "e881537e-0acb-4b1d-a052-0697e6d414f9",
+            "id": "bf402224-2e7d-4649-a96d-55e6d4fbacc6",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -44,36 +44,74 @@
             "children": {
               "true": [
                 {
-                  "id": "70714660-6a1c-45bb-a2cc-fd90c426dea5",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "Which regulator\npart supplies the\nclosing action\nwhen power fails?"
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "ec05e776-121c-4f9d-ab4b-69dd5d3db8a9",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "34c2922c-1707-4cc5-a5e6-f4f462bcc2f8",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "e75efc27-a07e-408a-a529-b8a81a140b76",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Which regulator\npart supplies the\nclosing action\nwhen power fails?"
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "d87c6232-1ef4-4810-ae53-911c06379c80",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "139ced9c-5464-4e38-a89a-193340464951",
-                  "command": "EVENT_MENU",
-                  "args": {
-                    "variable": "14",
-                    "items": 3,
-                    "layout": "menu",
-                    "cancelOnLastOption": false,
-                    "cancelOnB": true,
-                    "option1": "GEAR",
-                    "option2": "SPRING",
-                    "option3": "KEY"
+                  "id": "ef474656-43b0-46fa-afd7-700d5324e998",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "99cd7e4e-ad25-4f1d-a1ea-94a2cf3f82b4",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "5ad69c6e-5441-4300-a725-ab24265eb9b9",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 3,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "GEAR",
+                          "option2": "SPRING",
+                          "option3": "KEY"
+                        }
+                      },
+                      {
+                        "id": "9c5ec2d2-b0c1-4ec9-addc-801c392fc4df",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "736b8bc1-e0f5-4ee4-acc3-b9bd75234275",
+                  "id": "7b584531-ed71-4bc6-a2ac-7d53e079acbc",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -91,7 +129,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "a6295583-1183-47c5-abe0-8f9506705174",
+                        "id": "79465236-bc01-4e1d-a5fd-32caaaced589",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "44",
@@ -102,7 +140,7 @@
                         }
                       },
                       {
-                        "id": "9137f89a-58b3-493c-a6bf-b4c6d4e8b64f",
+                        "id": "be7876fe-c84d-4fb5-a279-7c1c3d2ecf02",
                         "command": "EVENT_CALL_CUSTOM_EVENT",
                         "args": {
                           "customEventId": "944051d6-2170-43c8-a9b4-12ee8f5fe1d2"
@@ -111,7 +149,7 @@
                     ],
                     "false": [
                       {
-                        "id": "f33d6231-bf74-400f-a279-654dfecd81db",
+                        "id": "12bfed26-4463-4d61-a767-3e6b82215e88",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -129,19 +167,38 @@
                         "children": {
                           "true": [
                             {
-                              "id": "ed6d64b4-8040-43d7-ac7b-89b9c687c46a",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "Rivet assigned a\ndifferent job to\neach part. Find\nthe job that",
-                                  "remains possible\nwith the power\ndisconnected."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "e308d861-8a2f-46cc-a3d1-63fe5cd3ea40",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "140cb2a8-e18f-4d47-a444-ca9b5598ee48",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "e7d8e4d3-de8c-442f-a7d8-bae991fc9d52",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Rivet assigned a\ndifferent job to\neach part. Find\nthe job that",
+                                        "remains possible\nwith the power\ndisconnected."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "5767c55f-3ea1-47a1-a364-e6e5083e7df8",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ],
@@ -154,7 +211,7 @@
               ],
               "false": [
                 {
-                  "id": "b8dee262-77ad-49c8-abe3-c33e3241a116",
+                  "id": "c8d4c1be-c9cc-4348-a2b4-239e3763b7e4",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -172,7 +229,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "2c45ea21-3834-45f8-a73b-92ceff12a075",
+                        "id": "e1dafeba-3d1f-4607-acc9-643cd5eeced8",
                         "command": "EVENT_CALL_CUSTOM_EVENT",
                         "args": {
                           "customEventId": "944051d6-2170-43c8-a9b4-12ee8f5fe1d2"
@@ -181,7 +238,7 @@
                     ],
                     "false": [
                       {
-                        "id": "36bad7a2-9534-4359-a4d1-1b2f3f0b4b0d",
+                        "id": "23b24e4c-f87c-4403-a86c-fa9896fb8dd0",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -199,7 +256,7 @@
                         "children": {
                           "true": [
                             {
-                              "id": "5b8a786d-c214-49a0-a632-4897d5a8d9d2",
+                              "id": "806bc983-8e82-418f-a5db-0cd7ed7e1582",
                               "command": "EVENT_SET_VALUE",
                               "args": {
                                 "variable": "67",
@@ -210,45 +267,83 @@
                               }
                             },
                             {
-                              "id": "45241e98-187c-42d1-a9d9-6b9446f22ee9",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "The Polished\nOutside",
-                                  "The regulator\ncasing is polished\nonly where hands\nrest during",
-                                  "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
-                                  "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
-                                  "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
-                                  "NOT."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "84ae88f6-544b-4bec-a0e8-b6536549bbcd",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "005c55b8-0b61-4eb2-aa6f-af2a7a885cf4",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "e296dfda-48fe-41ce-a9c2-f525347f49e5",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Polished\nOutside",
+                                        "The regulator\ncasing is polished\nonly where hands\nrest during",
+                                        "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
+                                        "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
+                                        "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
+                                        "NOT."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "48944875-4b4d-4f37-a671-31e755d39e4a",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ],
                           "false": [
                             {
-                              "id": "6f89d4d1-29c8-4c2d-a91c-00d2b302bb5f",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "The Polished\nOutside",
-                                  "The regulator\ncasing is polished\nonly where hands\nrest during",
-                                  "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
-                                  "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
-                                  "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
-                                  "NOT."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "88589fea-6a36-4a54-ad6b-3b9bab5f767b",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "02beee96-e652-4d0a-a38e-a672790672a3",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "650947de-868e-479e-aa6a-58c5676e215a",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Polished\nOutside",
+                                        "The regulator\ncasing is polished\nonly where hands\nrest during",
+                                        "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
+                                        "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
+                                        "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
+                                        "NOT."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "e56203ea-51fe-4089-a4ad-c56b664501d5",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ]
@@ -263,7 +358,7 @@
         ],
         "false": [
           {
-            "id": "6105b610-565c-442d-ae70-e07605b6e2bc",
+            "id": "d6163158-782f-4d69-a31b-1cf2ce51c08f",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -281,7 +376,7 @@
             "children": {
               "true": [
                 {
-                  "id": "80b66113-b1a8-4232-a510-816fe7da9844",
+                  "id": "64eb15b4-a9a3-4cc3-ac84-59c862be88b2",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -299,25 +394,44 @@
                   "children": {
                     "true": [
                       {
-                        "id": "64848b7b-365d-4583-a19b-8cec61a09a93",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "The spring closes\nthe valve with a\nsmall click. Rivet\nrepeats the",
-                            "test with the\npower\ndisconnected. The\nsame click\nanswers. Pip says",
-                            "it sounds less\ngrand than\nexpected. Rivet\nsays good safety\nequipment",
-                            "often has\nexcellent manners."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "6aaf72b1-ca64-440b-a8c2-a6dad70c6ea5",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "bed5dda0-a8a4-4a1c-a4ae-d7131a6c1271",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "bc3d62c4-1c51-4437-a115-30454bc3b965",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The spring closes\nthe valve with a\nsmall click. Rivet\nrepeats the",
+                                  "test with the\npower\ndisconnected. The\nsame click\nanswers. Pip says",
+                                  "it sounds less\ngrand than\nexpected. Rivet\nsays good safety\nequipment",
+                                  "often has\nexcellent manners."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "04831a93-1b8b-4255-aa7f-5501010f9882",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       },
                       {
-                        "id": "6b7145b5-3703-4e7a-a68d-c3bd03b761c0",
+                        "id": "719d4702-f67d-4e41-ab6b-c615b4b8db6c",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "44",
@@ -328,7 +442,7 @@
                         }
                       },
                       {
-                        "id": "37addaaf-712e-4fcd-a8b8-5e0e0cb79152",
+                        "id": "c3da1e91-2b1a-4159-ac04-7d9bacbb7940",
                         "command": "EVENT_CALL_CUSTOM_EVENT",
                         "args": {
                           "customEventId": "e15a996e-88c5-4c98-a1a8-a31995e9a066"
@@ -337,7 +451,7 @@
                     ],
                     "false": [
                       {
-                        "id": "364da225-3710-43cf-a5a9-cb5843ea27f7",
+                        "id": "cce8dfc2-c81e-4fbe-a0ef-2d0233aff4dd",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -355,7 +469,7 @@
                         "children": {
                           "true": [
                             {
-                              "id": "493d2a5b-2afb-4fbe-a016-86c000c28b73",
+                              "id": "b910b5b7-e886-4ed8-aa44-26f691e9b9e0",
                               "command": "EVENT_CALL_CUSTOM_EVENT",
                               "args": {
                                 "customEventId": "e15a996e-88c5-4c98-a1a8-a31995e9a066"
@@ -364,7 +478,7 @@
                           ],
                           "false": [
                             {
-                              "id": "ea2b7752-e3ef-4c9c-acbb-86e9847b06f2",
+                              "id": "563546d1-bfcd-49b5-ac38-a9f7d09917a8",
                               "command": "EVENT_IF",
                               "args": {
                                 "condition": {
@@ -382,7 +496,7 @@
                               "children": {
                                 "true": [
                                   {
-                                    "id": "6afd52ba-a804-4d09-a5d4-8b1cf5d7aa11",
+                                    "id": "0eec02b2-c993-4444-a2b6-60afaa7411a6",
                                     "command": "EVENT_SET_VALUE",
                                     "args": {
                                       "variable": "67",
@@ -393,45 +507,83 @@
                                     }
                                   },
                                   {
-                                    "id": "e99a3e59-f4af-4a52-af25-5447a60d85d6",
-                                    "command": "EVENT_TEXT",
-                                    "args": {
-                                      "text": [
-                                        "The Polished\nOutside",
-                                        "The regulator\ncasing is polished\nonly where hands\nrest during",
-                                        "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
-                                        "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
-                                        "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
-                                        "NOT."
-                                      ],
-                                      "avatarId": "",
-                                      "minHeight": 4,
-                                      "maxHeight": 7,
-                                      "position": "bottom",
-                                      "closeWhen": "key",
-                                      "closeButton": "a"
+                                    "id": "27f07ea8-bf77-4a43-a9d7-e1165877f163",
+                                    "command": "EVENT_GROUP",
+                                    "args": {},
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "23edc8f5-ae76-4f3e-ad1e-6a3f775741c8",
+                                          "command": "EVENT_HIDE_SPRITES",
+                                          "args": {}
+                                        },
+                                        {
+                                          "id": "00687f96-badb-4fc8-a1c0-e2c78d10b4f1",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Polished\nOutside",
+                                              "The regulator\ncasing is polished\nonly where hands\nrest during",
+                                              "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
+                                              "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
+                                              "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
+                                              "NOT."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "76ff49ba-2613-4709-aa72-5651a7b8bc08",
+                                          "command": "EVENT_SHOW_SPRITES",
+                                          "args": {}
+                                        }
+                                      ]
                                     }
                                   }
                                 ],
                                 "false": [
                                   {
-                                    "id": "73fd5176-c6bc-4079-a322-50f8c1bf1b4c",
-                                    "command": "EVENT_TEXT",
-                                    "args": {
-                                      "text": [
-                                        "The Polished\nOutside",
-                                        "The regulator\ncasing is polished\nonly where hands\nrest during",
-                                        "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
-                                        "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
-                                        "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
-                                        "NOT."
-                                      ],
-                                      "avatarId": "",
-                                      "minHeight": 4,
-                                      "maxHeight": 7,
-                                      "position": "bottom",
-                                      "closeWhen": "key",
-                                      "closeButton": "a"
+                                    "id": "481f6e3a-9616-45a8-a254-aec93a96713e",
+                                    "command": "EVENT_GROUP",
+                                    "args": {},
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "124b202c-14be-4ecb-ae0d-5e7ff7c03190",
+                                          "command": "EVENT_HIDE_SPRITES",
+                                          "args": {}
+                                        },
+                                        {
+                                          "id": "2ee40f70-c709-4c43-a007-77c1f753d5e6",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Polished\nOutside",
+                                              "The regulator\ncasing is polished\nonly where hands\nrest during",
+                                              "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
+                                              "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
+                                              "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
+                                              "NOT."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "ca39a06c-103f-4d03-ae57-72ff5bc6e491",
+                                          "command": "EVENT_SHOW_SPRITES",
+                                          "args": {}
+                                        }
+                                      ]
                                     }
                                   }
                                 ]
@@ -446,7 +598,7 @@
               ],
               "false": [
                 {
-                  "id": "34e0ab61-a507-433d-aaf3-2c93d0112bfb",
+                  "id": "eca6a0a4-f38b-4a37-af15-b25e20ee8d75",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -464,7 +616,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "ddbfdecc-96cf-40d0-a592-503136012426",
+                        "id": "dc7c8f76-2741-4b33-ab16-cc4263f46383",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -482,37 +634,75 @@
                         "children": {
                           "true": [
                             {
-                              "id": "c27f1f85-6836-4ba0-a469-44a71b9abaf2",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "Which pair of\nactions must be\ncompleted, in that\norder, before the",
-                                  "powered test?"
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "f284508b-d491-40c1-a912-6ea0f7a2dfc8",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "76273498-6e6e-4978-a0f5-6607d2c3328a",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "436b12c6-6ea1-46b4-a5b0-b39cdd86361e",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Which pair of\nactions must be\ncompleted, in that\norder, before the",
+                                        "powered test?"
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "38569b61-3f6b-439e-a49e-534e75b1730f",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             },
                             {
-                              "id": "67b2451d-3803-41b7-a974-7b9221cc62c1",
-                              "command": "EVENT_MENU",
-                              "args": {
-                                "variable": "14",
-                                "items": 3,
-                                "layout": "menu",
-                                "cancelOnLastOption": false,
-                                "cancelOnB": true,
-                                "option1": "FIT SET",
-                                "option2": "SET FIT",
-                                "option3": "TEST"
+                              "id": "7ddec1f5-fd2f-48a7-a6b6-0e7da50b25f2",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "e287b209-8644-4258-a82f-c4e1af4c63bb",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "43b5e37f-10b2-4edf-aed2-96bdb4bcc7b2",
+                                    "command": "EVENT_MENU",
+                                    "args": {
+                                      "variable": "14",
+                                      "items": 3,
+                                      "layout": "menu",
+                                      "cancelOnLastOption": false,
+                                      "cancelOnB": true,
+                                      "option1": "FIT SET",
+                                      "option2": "SET FIT",
+                                      "option3": "TEST"
+                                    }
+                                  },
+                                  {
+                                    "id": "4f386490-d1dd-4e14-abd3-eca8ae01d616",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             },
                             {
-                              "id": "48297d82-5f39-4a5b-a616-1e4213fb7f65",
+                              "id": "64a3019d-7572-4da5-a767-841461175c9a",
                               "command": "EVENT_IF",
                               "args": {
                                 "condition": {
@@ -530,7 +720,7 @@
                               "children": {
                                 "true": [
                                   {
-                                    "id": "7449ae85-86e4-45ea-a2bc-6eff4d6b00ef",
+                                    "id": "71c213f3-be75-438f-a6c1-e0cd2dc64c5e",
                                     "command": "EVENT_SET_VALUE",
                                     "args": {
                                       "variable": "44",
@@ -541,24 +731,43 @@
                                     }
                                   },
                                   {
-                                    "id": "dc2361d0-8a9f-47dc-a4c4-bd0d9c575031",
-                                    "command": "EVENT_TEXT",
-                                    "args": {
-                                      "text": [
-                                        "Brassworks\nControl: review\nthe supply\nresponse at the\nrelay."
-                                      ],
-                                      "avatarId": "",
-                                      "minHeight": 4,
-                                      "maxHeight": 7,
-                                      "position": "bottom",
-                                      "closeWhen": "key",
-                                      "closeButton": "a"
+                                    "id": "d3155f5f-fd7d-4d08-a452-3da1c81409d1",
+                                    "command": "EVENT_GROUP",
+                                    "args": {},
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "47cabf19-fc52-4828-ae4b-bb6a6d885254",
+                                          "command": "EVENT_HIDE_SPRITES",
+                                          "args": {}
+                                        },
+                                        {
+                                          "id": "52c32263-3db9-4635-a47d-572494cce4d4",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Brassworks\nControl: review\nthe supply\nresponse at the\nrelay."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "fdf728fb-24d2-400c-a63d-a11e6747b361",
+                                          "command": "EVENT_SHOW_SPRITES",
+                                          "args": {}
+                                        }
+                                      ]
                                     }
                                   }
                                 ],
                                 "false": [
                                   {
-                                    "id": "4b248199-e59f-4fc8-a8ed-0b10a38524c5",
+                                    "id": "85e6fbbf-51d8-4232-a0e0-0c8142d7fc1a",
                                     "command": "EVENT_IF",
                                     "args": {
                                       "condition": {
@@ -576,20 +785,39 @@
                                     "children": {
                                       "true": [
                                         {
-                                          "id": "2ab442e7-11c2-4b04-a232-827dbc3a8399",
-                                          "command": "EVENT_TEXT",
-                                          "args": {
-                                            "text": [
-                                              "Use the process\ncards\nprerequisites. One\npreparation action\ndepends",
-                                              "on another; a test\nis necessary later\nbut is not the\npreparation",
-                                              "pair."
-                                            ],
-                                            "avatarId": "",
-                                            "minHeight": 4,
-                                            "maxHeight": 7,
-                                            "position": "bottom",
-                                            "closeWhen": "key",
-                                            "closeButton": "a"
+                                          "id": "409c1ff4-7865-45d2-a847-64f3f65d76b6",
+                                          "command": "EVENT_GROUP",
+                                          "args": {},
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "6ae94543-cd97-4580-a928-a4cb692df648",
+                                                "command": "EVENT_HIDE_SPRITES",
+                                                "args": {}
+                                              },
+                                              {
+                                                "id": "1caf9cc5-2f33-45fe-a477-b434304c47f7",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Use the process\ncards\nprerequisites. One\npreparation action\ndepends",
+                                                    "on another; a test\nis necessary later\nbut is not the\npreparation",
+                                                    "pair."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              },
+                                              {
+                                                "id": "ed3c7053-c8d5-4af2-a830-c6be84b47427",
+                                                "command": "EVENT_SHOW_SPRITES",
+                                                "args": {}
+                                              }
+                                            ]
                                           }
                                         }
                                       ],
@@ -602,7 +830,7 @@
                           ],
                           "false": [
                             {
-                              "id": "a4030a8a-4b28-4f00-a218-e744c58ef3d1",
+                              "id": "5552024d-d6d3-4413-a707-46541aa48d63",
                               "command": "EVENT_IF",
                               "args": {
                                 "condition": {
@@ -620,7 +848,7 @@
                               "children": {
                                 "true": [
                                   {
-                                    "id": "d7d58590-aae3-4e1d-ab11-74efb2d87280",
+                                    "id": "97a9402b-795a-432f-af0e-4cf0a2ea24e6",
                                     "command": "EVENT_SET_VALUE",
                                     "args": {
                                       "variable": "67",
@@ -631,45 +859,83 @@
                                     }
                                   },
                                   {
-                                    "id": "9e46dbfb-f45c-4e9d-ab58-27086bf4eba4",
-                                    "command": "EVENT_TEXT",
-                                    "args": {
-                                      "text": [
-                                        "The Polished\nOutside",
-                                        "The regulator\ncasing is polished\nonly where hands\nrest during",
-                                        "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
-                                        "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
-                                        "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
-                                        "NOT."
-                                      ],
-                                      "avatarId": "",
-                                      "minHeight": 4,
-                                      "maxHeight": 7,
-                                      "position": "bottom",
-                                      "closeWhen": "key",
-                                      "closeButton": "a"
+                                    "id": "eef5ddca-bd72-4e4a-ac4e-8a7a14657b0e",
+                                    "command": "EVENT_GROUP",
+                                    "args": {},
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "935525a0-f3a1-4132-a3f0-a77c6f28dfdf",
+                                          "command": "EVENT_HIDE_SPRITES",
+                                          "args": {}
+                                        },
+                                        {
+                                          "id": "0349d334-0400-4610-a0fe-f0ec1bb1950e",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Polished\nOutside",
+                                              "The regulator\ncasing is polished\nonly where hands\nrest during",
+                                              "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
+                                              "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
+                                              "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
+                                              "NOT."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "5965378d-9945-428d-a59b-673a8d249fc7",
+                                          "command": "EVENT_SHOW_SPRITES",
+                                          "args": {}
+                                        }
+                                      ]
                                     }
                                   }
                                 ],
                                 "false": [
                                   {
-                                    "id": "984ce41e-25d1-48a1-af29-97802740dcce",
-                                    "command": "EVENT_TEXT",
-                                    "args": {
-                                      "text": [
-                                        "The Polished\nOutside",
-                                        "The regulator\ncasing is polished\nonly where hands\nrest during",
-                                        "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
-                                        "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
-                                        "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
-                                        "NOT."
-                                      ],
-                                      "avatarId": "",
-                                      "minHeight": 4,
-                                      "maxHeight": 7,
-                                      "position": "bottom",
-                                      "closeWhen": "key",
-                                      "closeButton": "a"
+                                    "id": "f1c7b274-7c03-45fd-ae83-75dea932f1c9",
+                                    "command": "EVENT_GROUP",
+                                    "args": {},
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "2aa051f5-460a-4dab-a69c-c5fceecb1332",
+                                          "command": "EVENT_HIDE_SPRITES",
+                                          "args": {}
+                                        },
+                                        {
+                                          "id": "f629fd2c-a7fd-4728-a3d7-a886d6f0a0bb",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "The Polished\nOutside",
+                                              "The regulator\ncasing is polished\nonly where hands\nrest during",
+                                              "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
+                                              "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
+                                              "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
+                                              "NOT."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "b05eac3e-5ca8-4a62-a32e-f0cadc2363f5",
+                                          "command": "EVENT_SHOW_SPRITES",
+                                          "args": {}
+                                        }
+                                      ]
                                     }
                                   }
                                 ]
@@ -681,7 +947,7 @@
                     ],
                     "false": [
                       {
-                        "id": "8c06522e-2102-46fb-a62a-7df26de48c41",
+                        "id": "847111c0-70a8-4cba-a577-ec0a93bb0e65",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -699,7 +965,7 @@
                         "children": {
                           "true": [
                             {
-                              "id": "2098852b-bfca-4040-ad53-cf37f24f2f8f",
+                              "id": "7d24bf05-2549-4ded-a9d6-1787fd4be383",
                               "command": "EVENT_SET_VALUE",
                               "args": {
                                 "variable": "67",
@@ -710,45 +976,83 @@
                               }
                             },
                             {
-                              "id": "b92c4200-3ccb-4042-adbd-4e83a2b8178a",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "The Polished\nOutside",
-                                  "The regulator\ncasing is polished\nonly where hands\nrest during",
-                                  "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
-                                  "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
-                                  "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
-                                  "NOT."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "5edd7741-c160-4a81-ae9d-c3ce98c3a9de",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "74090fb1-00d3-4d54-a056-b997eb3da523",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "c91c95e1-6173-45eb-aea9-348e3ffbc1cd",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Polished\nOutside",
+                                        "The regulator\ncasing is polished\nonly where hands\nrest during",
+                                        "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
+                                        "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
+                                        "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
+                                        "NOT."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "ca052056-65c5-4716-a631-3909ab90954c",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ],
                           "false": [
                             {
-                              "id": "16b226be-7461-4ba6-a893-c7429ce44d96",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "The Polished\nOutside",
-                                  "The regulator\ncasing is polished\nonly where hands\nrest during",
-                                  "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
-                                  "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
-                                  "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
-                                  "NOT."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "015a70b6-1b03-4b9f-afb0-a65ac074b3a6",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "68880e80-a926-4f9d-a5fe-95c8b285daac",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "0fcff2f9-9547-4e08-aac5-c97b5dee557e",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "The Polished\nOutside",
+                                        "The regulator\ncasing is polished\nonly where hands\nrest during",
+                                        "maintenance. Rivet\nsays she has\nnothing against\npolish elsewhere.",
+                                        "She objects when\nthe shine arrives\nbefore the spring.\nThe underside",
+                                        "bears a small\nengraved promise:\nCLOSE SAFE, EVEN\nWHEN THE LIGHTS DO",
+                                        "NOT."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "f9a6fc33-d725-4977-a286-08c00d9b4327",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ]

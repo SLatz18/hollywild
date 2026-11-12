@@ -8,36 +8,74 @@
   "actors": {},
   "script": [
     {
-      "id": "fc27a817-8b47-4632-a4fb-b9c2fb0cc068",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "Which latch\nidentifies the\nrequested spanner\nkit?"
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "2afa30ce-e9ba-4ab1-ab86-324ed78d205a",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "fa5373b3-407f-4fe2-aa92-ec3a5bf69360",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "9a6c90b1-b018-481f-a5e1-cb169d438603",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Which latch\nidentifies the\nrequested spanner\nkit?"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "1e2a34c2-49fb-4379-a3a7-bc26b69b59aa",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "40d44be5-30c7-415a-abd9-67aa55fe7fef",
-      "command": "EVENT_MENU",
-      "args": {
-        "variable": "14",
-        "items": 3,
-        "layout": "menu",
-        "cancelOnLastOption": false,
-        "cancelOnB": true,
-        "option1": "ROUND",
-        "option2": "TRI",
-        "option3": "EITHER"
+      "id": "3375709e-b1a2-480d-aefc-0a1369a23f43",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "13cddd11-2d65-453a-ad07-10e525643c2f",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "e6d6e593-6ce1-47dc-a1c3-61d5ff8f5c1c",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 3,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "ROUND",
+              "option2": "TRI",
+              "option3": "EITHER"
+            }
+          },
+          {
+            "id": "bbde4665-6242-406f-a589-21dbb00735d2",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "4773f7d2-0967-4438-af0d-825cc71cbf49",
+      "id": "df0b51de-7dfc-41c3-aa31-07d0b20383a2",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -55,7 +93,7 @@
       "children": {
         "true": [
           {
-            "id": "075897c9-94ec-4f7c-a41c-8aa973550a85",
+            "id": "edf925c3-d91b-448e-ab4c-7699a344c4a0",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "100",
@@ -66,24 +104,43 @@
             }
           },
           {
-            "id": "ef0b403d-abae-4f08-ac05-ce353a79a36a",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "Brassworks: choose\nthe challenge\nresult at the side\ndesk."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "656b0d46-9b73-4133-a573-c1799f8497a9",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "2c5a3024-9f2e-4658-a053-d1d3f1afab6b",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "85391810-73f6-4b63-a659-4e5961eec62d",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Brassworks: choose\nthe challenge\nresult at the side\ndesk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "11a1838a-2986-46ce-ac28-4d30b45cd43b",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           }
         ],
         "false": [
           {
-            "id": "91f2efcf-b34b-4842-a844-15613d9dd5b9",
+            "id": "d3a41f8b-e505-4782-afa0-df897aa0732f",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -101,18 +158,37 @@
             "children": {
               "true": [
                 {
-                  "id": "65651d70-90df-4f3a-a748-b180216578d0",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "Kit K has the\ntriangular latch.\nThe round latch\nidentifies the\npainting kit."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "bde49b9b-d649-4e6e-a6d0-3f8aae2cfff2",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "7038e628-57fc-4eb8-a156-1ece25670517",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "515dd562-97d5-44de-a26c-e0fb78e62f2c",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Kit K has the\ntriangular latch.\nThe round latch\nidentifies the\npainting kit."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "2fbbd0bb-5971-4d5f-ad1a-d651416bdc97",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],

@@ -8,23 +8,42 @@
   "actors": {},
   "script": [
     {
-      "id": "d43880cd-fbc2-41a6-a5a2-5394f6b8cc9d",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "The cook turns the\ncard outward.\nThree bowls reach\nthree customers.\nPip whispers at a",
-          "carrot until\nsomeone gently\ngives him a spoon."
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "1a6bf292-db82-49c1-a2c7-a0940be24a05",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "748607f5-4d24-41de-a26a-18fb669f870f",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "d050779e-69e0-4286-aa76-221ed5395c32",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The cook turns the\ncard outward.\nThree bowls reach\nthree customers.\nPip whispers at a",
+                "carrot until\nsomeone gently\ngives him a spoon."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "d3f1363f-7269-4a81-a1a2-b4d338a55be2",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "0f677ee5-8e9e-4256-a530-6aceacb2c17b",
+      "id": "15896e42-ab71-49d3-a895-d0be9da62d47",
       "command": "EVENT_SET_VALUE",
       "args": {
         "variable": "106",
@@ -35,7 +54,7 @@
       }
     },
     {
-      "id": "ed9bc0c0-dfc9-4a5c-aa0b-8b0102678350",
+      "id": "d5c2d0cf-2637-4f9f-a492-83a79e67117f",
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
         "customEventId": "ae9d6392-d9ff-4fb4-af3b-78dc7d708e96"

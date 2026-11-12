@@ -8,23 +8,42 @@
   "actors": {},
   "script": [
     {
-      "id": "a5cf0cee-a81e-4834-a258-6e1fff2fb8da",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "The owner checks\nthe name tag and\nopens the carrier.\nBoots climbs onto\nan empty chair and",
-          "begins inspecting\nthe cafe's lap\ninventory."
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "74680ae7-0637-4c56-a367-cefaf72d0693",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "465fd53b-c7c0-4178-aa95-5f97ad17171a",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "5a669f04-eff4-4ed5-a889-af7c5307ad32",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The owner checks\nthe name tag and\nopens the carrier.\nBoots climbs onto\nan empty chair and",
+                "begins inspecting\nthe cafe's lap\ninventory."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "c0aee240-9c59-4ec9-afef-d8259ab6037e",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "d017d9b6-e948-4d84-a15e-677e88218af5",
+      "id": "f6520e6a-dcdd-43f1-a599-90c9d784bcb4",
       "command": "EVENT_SET_VALUE",
       "args": {
         "variable": "118",
@@ -35,7 +54,7 @@
       }
     },
     {
-      "id": "d415ca7d-aa9e-4ad5-a349-cad262cecfd7",
+      "id": "a65d0eb6-6649-48ac-a71b-9b3364052b05",
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
         "customEventId": "fb09cc01-8f69-49f9-a586-c06d765ebebe"

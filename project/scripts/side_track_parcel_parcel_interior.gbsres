@@ -8,7 +8,7 @@
   "actors": {},
   "script": [
     {
-      "id": "258574f6-bfd6-43b8-a7ee-62943f959741",
+      "id": "d8436c2a-0200-47b6-af7d-a832c3d4b36e",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -26,24 +26,43 @@
       "children": {
         "true": [
           {
-            "id": "07d2a992-0f65-4cdc-a230-60925b9e2ccb",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "Every Parcel Gets\na Shelf",
-                "Your parcel shop\nhas a shelf\nlabeled MISC. It\ncontains\neverything that",
-                "should never have\nmet."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "ce62e9a8-6e9e-4c4e-ac6d-6d45acafb010",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "b942acde-f5bb-452f-a55a-d2c381b4a004",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "b42471fd-b0de-43e2-ac46-92f28d52e6a1",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Every Parcel Gets\na Shelf",
+                      "Your parcel shop\nhas a shelf\nlabeled MISC. It\ncontains\neverything that",
+                      "should never have\nmet."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "46319eed-9465-4d71-a6b1-f6b787b7e9f5",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           },
           {
-            "id": "d0ff8020-3c58-4fd2-a607-2a30102b0e2a",
+            "id": "9e97fb3c-a402-445f-a5f2-4a9238ab5e1b",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -61,37 +80,75 @@
             "children": {
               "true": [
                 {
-                  "id": "391af33a-cb44-4898-ac4b-cd0bba4812b2",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "Buy this property\nbefore beginning\nits project."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "fef506a9-c60c-4015-a118-8b8f5263a52f",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "39f43d66-2fb3-476b-af0e-70257f4ddf5c",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "509574e7-23bb-419f-ab04-38c9b080a5d6",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Buy this property\nbefore beginning\nits project."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "2c736fd4-9c6f-4174-a18d-f9fddac9622a",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],
               "false": [
                 {
-                  "id": "a991b378-cd8f-4b11-a165-0765a72978e4",
-                  "command": "EVENT_MENU",
-                  "args": {
-                    "variable": "14",
-                    "items": 2,
-                    "layout": "menu",
-                    "cancelOnLastOption": false,
-                    "cancelOnB": true,
-                    "option1": "Begin",
-                    "option2": "Back"
+                  "id": "823595ed-d7d4-467d-ae19-cf0fad1a92ee",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "e7a1cab8-e594-46be-a2dc-c304aba5d097",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "19a1c03f-8df8-4508-a377-ee56226ad831",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 2,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "Begin",
+                          "option2": "Back"
+                        }
+                      },
+                      {
+                        "id": "e0841228-4c7a-4363-a7d5-4be221bb37dd",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "62646c24-f63e-408b-aa19-5d2bb3cbf875",
+                  "id": "5dcd6ae3-f202-4a27-a90f-17c1af02228c",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -109,7 +166,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "11711931-a2e3-4088-abd5-abcadbbbc515",
+                        "id": "005e68bb-bc4d-4d56-af72-f69a28b41af5",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "123",
@@ -120,7 +177,7 @@
                         }
                       },
                       {
-                        "id": "b0a6385c-7c7a-4607-a911-05abcf3f0c43",
+                        "id": "19702ad1-0a10-4d20-a359-b5b14409fff4",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "124",
@@ -131,33 +188,71 @@
                         }
                       },
                       {
-                        "id": "1f0a33db-6497-4f10-a126-a2e24a7dd8c9",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Fit a shelf system\nwith readable\ndestinations and a\nseparate space for\nfragile cargo."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "a86b73af-8155-4da0-a186-f6295916037b",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "d53288a2-62da-4f53-a30f-a4a2652bd212",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "c4c69938-da24-427e-a97a-2c79110570c7",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Fit a shelf system\nwith readable\ndestinations and a\nseparate space for\nfragile cargo."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "37b4af3c-b509-43f6-a376-b4830b04eb03",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       },
                       {
-                        "id": "5aa26be7-9d86-4fa4-a8d9-a39fb52fa327",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Parcel Palace:\nread your shelf\nsurvey at the side\ndesk."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "e153c288-2119-4443-a451-28b63dcc3071",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "a04709e9-7854-4e1f-a9f0-fb52bfe1cf2b",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "100768de-d9fa-4fca-abdf-7d3d5ea02300",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Parcel Palace:\nread your shelf\nsurvey at the side\ndesk."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "107dcb9f-63ad-49f3-aaa2-2c8b60fd3fa9",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ],
@@ -170,7 +265,7 @@
         ],
         "false": [
           {
-            "id": "778fcf53-ab09-42da-a223-82663c76b506",
+            "id": "c2125bdc-e54c-40eb-ac68-1e5f64c43295",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -188,23 +283,42 @@
             "children": {
               "true": [
                 {
-                  "id": "1c7973fb-577d-49af-a638-429f41cb2850",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "Every Parcel Gets\na Shelf",
-                      "The End of Misc"
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "01baebbb-c60a-483b-a47c-3ab658b34e81",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "279a82ef-6c56-4373-ae48-07b62eeb7221",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "958f2919-9fe8-4ce9-ac85-168b0ab3cf10",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Every Parcel Gets\na Shelf",
+                            "The End of Misc"
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "a1f3a938-dd11-4382-a87f-62a26bb6b63b",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "c20838e0-da27-44bf-a53a-2ef1919a083b",
+                  "id": "01079017-7c2a-4200-ae1d-1301aaa63c36",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -222,7 +336,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "e3464378-d193-41f9-a71a-ebea610415e9",
+                        "id": "f4b93e35-0bba-4953-a2c7-2f09ad405316",
                         "command": "EVENT_CALL_CUSTOM_EVENT",
                         "args": {
                           "customEventId": "40274180-21d4-4055-a01a-07e6cc4cbb6f"
@@ -231,7 +345,7 @@
                     ],
                     "false": [
                       {
-                        "id": "1f49f8c6-bf93-4fb2-a886-f9040a0e3520",
+                        "id": "b93058f9-ffad-413a-a2b6-8d8f0b2fde02",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -249,24 +363,43 @@
                         "children": {
                           "true": [
                             {
-                              "id": "05f36b4a-ac78-4176-abe6-1eee539e4c86",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "Candy Sorting:\ncollect the shelf\nlabels at the side\ndesk."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "00f29656-0606-4e44-a1df-b53d210ea89a",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "2b9d7b45-8da9-4c9a-ad5c-4246486bb8a9",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "a74d3711-c310-47c7-a206-45b611c71a53",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Candy Sorting:\ncollect the shelf\nlabels at the side\ndesk."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "aa8d2c6f-208e-4b37-a129-b58a23a4139a",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ],
                           "false": [
                             {
-                              "id": "f689549c-b2f0-468a-abcb-6d2369ad2814",
+                              "id": "c6f58c60-7831-41df-aa45-ac7f0b2c7de7",
                               "command": "EVENT_IF",
                               "args": {
                                 "condition": {
@@ -284,7 +417,7 @@
                               "children": {
                                 "true": [
                                   {
-                                    "id": "75a048e1-7ce9-49be-a329-4ecbae95bba1",
+                                    "id": "7cc1bc9e-6cd5-40e0-af0f-254351ac34d6",
                                     "command": "EVENT_CALL_CUSTOM_EVENT",
                                     "args": {
                                       "customEventId": "45514706-31db-458d-a78d-c44f0e368fde"
@@ -293,7 +426,7 @@
                                 ],
                                 "false": [
                                   {
-                                    "id": "11405b8c-3cce-4ec1-a723-24aa1316e31a",
+                                    "id": "e9d4992f-e843-4413-ac8f-c7293675b5fc",
                                     "command": "EVENT_IF",
                                     "args": {
                                       "condition": {
@@ -311,7 +444,7 @@
                                     "children": {
                                       "true": [
                                         {
-                                          "id": "84ed844f-e28a-4168-ae49-8a2a075427a4",
+                                          "id": "eb9b8d07-ebd0-47f3-aeb1-d74625fa69b5",
                                           "command": "EVENT_CALL_CUSTOM_EVENT",
                                           "args": {
                                             "customEventId": "4817fd0b-ce5e-4893-ab7f-54ba6555fe01"
@@ -320,7 +453,7 @@
                                       ],
                                       "false": [
                                         {
-                                          "id": "c8398be1-12ec-4641-a548-facf305a472d",
+                                          "id": "a0598698-2cc1-48b9-a9cb-fe774a066d19",
                                           "command": "EVENT_IF",
                                           "args": {
                                             "condition": {
@@ -338,7 +471,7 @@
                                           "children": {
                                             "true": [
                                               {
-                                                "id": "a9ad8d53-85c1-4371-a75c-cc9a476f0175",
+                                                "id": "575184c7-4e78-483a-a6da-d5081844a9f7",
                                                 "command": "EVENT_CALL_CUSTOM_EVENT",
                                                 "args": {
                                                   "customEventId": "28f9d33d-802c-40ad-afa0-eee6b388987d"
@@ -347,18 +480,37 @@
                                             ],
                                             "false": [
                                               {
-                                                "id": "22989f0e-3331-46fa-a439-28d233709307",
-                                                "command": "EVENT_TEXT",
-                                                "args": {
-                                                  "text": [
-                                                    "Check the Side\njournal for your\nnext lead."
-                                                  ],
-                                                  "avatarId": "",
-                                                  "minHeight": 4,
-                                                  "maxHeight": 7,
-                                                  "position": "bottom",
-                                                  "closeWhen": "key",
-                                                  "closeButton": "a"
+                                                "id": "2924b001-5c22-4f40-a6ce-216acf35496b",
+                                                "command": "EVENT_GROUP",
+                                                "args": {},
+                                                "children": {
+                                                  "true": [
+                                                    {
+                                                      "id": "07e075f7-f316-421c-abfd-956f0ea0bd8f",
+                                                      "command": "EVENT_HIDE_SPRITES",
+                                                      "args": {}
+                                                    },
+                                                    {
+                                                      "id": "86dc9f7c-3a49-4a98-a9ba-a20b8f84e155",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "Check the Side\njournal for your\nnext lead."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "minHeight": 4,
+                                                        "maxHeight": 7,
+                                                        "position": "bottom",
+                                                        "closeWhen": "key",
+                                                        "closeButton": "a"
+                                                      }
+                                                    },
+                                                    {
+                                                      "id": "f81fc37d-d816-4fd2-ad1e-277ded04e4ca",
+                                                      "command": "EVENT_SHOW_SPRITES",
+                                                      "args": {}
+                                                    }
+                                                  ]
                                                 }
                                               }
                                             ]
@@ -379,7 +531,7 @@
               ],
               "false": [
                 {
-                  "id": "2b5950b6-0935-458b-a5f7-3f78d320267e",
+                  "id": "8caee5e7-2301-40c4-a2de-4172e51a00b4",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -397,37 +549,75 @@
                   "children": {
                     "true": [
                       {
-                        "id": "f6080b24-a4e4-48b5-abed-0b5eb7026ca6",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Every Parcel Gets\na Shelf",
-                            "Your parcel\nshelves pay 6\nextra Coins per\nsuccessful\nordinary job. No",
-                            "extra project fee\nwas charged."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "bc6c3987-8c18-4d55-a32d-d40d83085b68",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "50586720-74f9-49ac-a47a-ea8ef81613ce",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "6ab2d017-c0bc-4de5-adaa-295a77fabfe7",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Every Parcel Gets\na Shelf",
+                                  "Your parcel\nshelves pay 6\nextra Coins per\nsuccessful\nordinary job. No",
+                                  "extra project fee\nwas charged."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "49331ce2-265b-4f8c-a7b7-47623d5eeec5",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ],
                     "false": [
                       {
-                        "id": "5ea03392-36dd-430c-a1a4-63222f51f2f1",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Check the Side\njournal for your\nnext lead."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "6519691c-faa1-4bb1-aae7-fa8d8e91765c",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "f563c296-3971-4b4a-aab3-a1cee13571f4",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "98b1d1a0-7cb9-4055-a00f-e927168d224e",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Check the Side\njournal for your\nnext lead."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "01f1cd3b-4655-41b3-a89f-a71afd14b78b",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ]

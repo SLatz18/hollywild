@@ -9,12 +9,12 @@
   "x": 7,
   "y": 10,
   "frame": 0,
-  "animate": false,
+  "animate": true,
   "spriteSheetId": "1f8200c3-d9d6-4eaf-a7d6-b657d1b4aa28",
   "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
   "direction": "down",
   "moveSpeed": 1,
-  "animSpeed": 15,
+  "animSpeed": 31,
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
@@ -22,7 +22,7 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "69bb4727-9553-4d86-ae05-29065ca4e151",
+      "id": "b96bd8de-7b3d-43ab-a928-b809c04079fa",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -40,7 +40,7 @@
       "children": {
         "true": [
           {
-            "id": "51ab8dc0-6aa0-47b7-a4f5-b7725689c917",
+            "id": "4915bb55-0857-4f02-a441-a2912b66794c",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -58,7 +58,7 @@
             "children": {
               "true": [
                 {
-                  "id": "552b4dcf-504b-49ca-a7de-54a2e9343ecb",
+                  "id": "48039ca3-0a8c-418e-ac23-850def5c7410",
                   "command": "EVENT_ACTOR_SET_SPRITE",
                   "args": {
                     "actorId": "$self$",
@@ -66,41 +66,79 @@
                   }
                 },
                 {
-                  "id": "85204f72-9e27-4941-a3bb-9efc5c63c5c7",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "LANTERN FLATS\nYour property.",
-                      "A home for your crew.\nOptional property.\nA warmer city."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "7312dc3c-4751-4e4f-a5c8-5e523c19d0fe",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "1eaf3cc0-fcf8-4edf-a181-512dd8dd9590",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "a68e85d8-7c78-4b24-ad42-b29430502218",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "LANTERN FLATS\nYour property.",
+                            "A home for your\ncrew.\nOptional property.\nA warmer city."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "25e371f9-73a7-4464-a658-0d9465d47319",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],
               "false": [
                 {
-                  "id": "47cac1fd-725f-4bbe-a1e4-62c4eb4710ad",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "LANTERN FLATS\n220 Coins + 8 scrap",
-                      "A home for your crew.\nOptional property.\nA warmer city."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "323fbe27-dacc-4add-aa65-5e891225077c",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "5d676f91-3307-4fd6-ac1a-11a997abdf24",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "d76a43e5-4afc-4d70-a922-610ea16b045e",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "LANTERN FLATS\n220 Coins + 8\nscrap",
+                            "A home for your\ncrew.\nOptional property.\nA warmer city."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "45b47902-b46e-448a-aeb2-f02a00eb1642",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "5012364f-97ea-4817-ac3f-83c68d1270ae",
+                  "id": "dda27d3a-a4da-423f-a01b-c70b15853bb3",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -118,20 +156,39 @@
                   "children": {
                     "true": [
                       {
-                        "id": "d187bfe8-f691-4980-add2-327719fdc070",
-                        "command": "EVENT_MENU",
-                        "args": {
-                          "variable": "14",
-                          "items": 2,
-                          "layout": "menu",
-                          "cancelOnLastOption": false,
-                          "cancelOnB": true,
-                          "option1": "Buy",
-                          "option2": "Back"
+                        "id": "f40ae254-7af8-42a1-a15b-99afe64bc360",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "c7d36d25-f81f-417b-acde-eec5336d2eee",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "8db35831-ddaa-4598-a02d-51df9907866c",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 2,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "Buy",
+                                "option2": "Back"
+                              }
+                            },
+                            {
+                              "id": "749a82cc-6d43-428b-af71-946d7447840b",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       },
                       {
-                        "id": "41e20ae4-5728-40fe-a10a-d9aee8177096",
+                        "id": "d9da30f9-8672-4f0a-a372-650e1f7b7075",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -149,7 +206,7 @@
                         "children": {
                           "true": [
                             {
-                              "id": "9b94b917-e1f4-41f1-a615-90a280cb3ab3",
+                              "id": "d4e6bc8b-4106-41b8-af8c-31725066b4a1",
                               "command": "EVENT_IF",
                               "args": {
                                 "condition": {
@@ -167,7 +224,7 @@
                               "children": {
                                 "true": [
                                   {
-                                    "id": "d7fab6da-a789-44f0-a342-0f60e1ca4d01",
+                                    "id": "b54f6251-7cc7-4dfb-a784-8415c8c92746",
                                     "command": "EVENT_IF",
                                     "args": {
                                       "condition": {
@@ -185,7 +242,7 @@
                                     "children": {
                                       "true": [
                                         {
-                                          "id": "4d8e67b7-211b-4b8e-a0f6-fa571144de13",
+                                          "id": "16662033-f7c7-46f5-a342-7f415c9ea960",
                                           "command": "EVENT_VARIABLE_MATH",
                                           "args": {
                                             "vectorX": "1",
@@ -196,7 +253,7 @@
                                           }
                                         },
                                         {
-                                          "id": "57666fef-9b72-4a19-a460-f080b13e961b",
+                                          "id": "76c78246-7d8e-4b61-abdb-1cea5c0ddf93",
                                           "command": "EVENT_VARIABLE_MATH",
                                           "args": {
                                             "vectorX": "2",
@@ -207,7 +264,7 @@
                                           }
                                         },
                                         {
-                                          "id": "facd41e5-05bd-43bd-a1b5-6f01fc60e14c",
+                                          "id": "17e67135-1d2b-4227-adfd-368182d58955",
                                           "command": "EVENT_SET_VALUE",
                                           "args": {
                                             "variable": "15",
@@ -218,7 +275,7 @@
                                           }
                                         },
                                         {
-                                          "id": "6bf7b5cd-36e8-4848-a098-a64fed1b76af",
+                                          "id": "3ff12702-ba80-4667-ab68-38b50fb9d522",
                                           "command": "EVENT_SOUND_PLAY_EFFECT",
                                           "args": {
                                             "type": "beep",
@@ -229,7 +286,7 @@
                                           }
                                         },
                                         {
-                                          "id": "a766fe83-2353-4e2e-a425-89dd92afa048",
+                                          "id": "fe5a6ef9-1797-4ef9-a2d2-9bca5b1cbf90",
                                           "command": "EVENT_ACTOR_SET_SPRITE",
                                           "args": {
                                             "actorId": "$self$",
@@ -237,7 +294,7 @@
                                           }
                                         },
                                         {
-                                          "id": "99d53a35-0620-4a2c-ae93-af4f01151ae1",
+                                          "id": "4fc0bbf2-f407-40b6-a0f7-e7f7c5fe75ea",
                                           "command": "EVENT_IF",
                                           "args": {
                                             "condition": {
@@ -255,7 +312,7 @@
                                           "children": {
                                             "true": [
                                               {
-                                                "id": "95279d00-24dd-4bd3-a3c8-c14a135d45e4",
+                                                "id": "ffab2ec4-b525-4f3a-a99f-0af648088731",
                                                 "command": "EVENT_VARIABLE_MATH",
                                                 "args": {
                                                   "vectorX": "3",
@@ -268,7 +325,7 @@
                                             ],
                                             "false": [
                                               {
-                                                "id": "ce959d97-1a8d-4d7a-ae17-e5806b2e1ca2",
+                                                "id": "5c818e68-fc9e-4744-a5d1-2ea6cc7c55f4",
                                                 "command": "EVENT_SET_VALUE",
                                                 "args": {
                                                   "variable": "3",
@@ -282,35 +339,73 @@
                                           }
                                         },
                                         {
-                                          "id": "de057df4-7145-4d6a-a501-98262cee73f6",
-                                          "command": "EVENT_TEXT",
-                                          "args": {
-                                            "text": [
-                                              "RESTORED!\nA warmer corner\nof the city."
-                                            ],
-                                            "avatarId": "",
-                                            "minHeight": 4,
-                                            "maxHeight": 7,
-                                            "position": "bottom",
-                                            "closeWhen": "key",
-                                            "closeButton": "a"
+                                          "id": "caa5538b-8762-4a7d-a3f1-57268ded766f",
+                                          "command": "EVENT_GROUP",
+                                          "args": {},
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "5b34085c-34a0-4090-aaa9-9a2c542f82b6",
+                                                "command": "EVENT_HIDE_SPRITES",
+                                                "args": {}
+                                              },
+                                              {
+                                                "id": "93647cfc-b4b8-46e5-aa0e-baae6b2366d5",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "RESTORED!\nA warmer corner\nof the city."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              },
+                                              {
+                                                "id": "0a786c88-e485-4ffd-a542-c1659bb30322",
+                                                "command": "EVENT_SHOW_SPRITES",
+                                                "args": {}
+                                              }
+                                            ]
                                           }
                                         }
                                       ],
                                       "false": [
                                         {
-                                          "id": "8f597b27-75fe-4531-a51b-afca8e055814",
-                                          "command": "EVENT_TEXT",
-                                          "args": {
-                                            "text": [
-                                              "Not enough scrap.\nYour Coins were\nnot spent."
-                                            ],
-                                            "avatarId": "",
-                                            "minHeight": 4,
-                                            "maxHeight": 7,
-                                            "position": "bottom",
-                                            "closeWhen": "key",
-                                            "closeButton": "a"
+                                          "id": "5a0a08fc-4232-42aa-a3e7-a64e15585965",
+                                          "command": "EVENT_GROUP",
+                                          "args": {},
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "d5080015-dd5e-4303-af8d-cf5292c540d1",
+                                                "command": "EVENT_HIDE_SPRITES",
+                                                "args": {}
+                                              },
+                                              {
+                                                "id": "ac82af10-1d78-4f09-ae02-c2d7ab862678",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Not enough scrap.\nYour Coins were\nnot spent."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              },
+                                              {
+                                                "id": "0a4acde3-e664-4598-a85a-87e16b2d44fc",
+                                                "command": "EVENT_SHOW_SPRITES",
+                                                "args": {}
+                                              }
+                                            ]
                                           }
                                         }
                                       ]
@@ -319,18 +414,37 @@
                                 ],
                                 "false": [
                                   {
-                                    "id": "34e05f44-5d85-4dbd-a03b-ead48929673d",
-                                    "command": "EVENT_TEXT",
-                                    "args": {
-                                      "text": [
-                                        "Not enough Coins.\nNothing was spent."
-                                      ],
-                                      "avatarId": "",
-                                      "minHeight": 4,
-                                      "maxHeight": 7,
-                                      "position": "bottom",
-                                      "closeWhen": "key",
-                                      "closeButton": "a"
+                                    "id": "400f3409-6d10-43ff-ac82-ca1b09cd3792",
+                                    "command": "EVENT_GROUP",
+                                    "args": {},
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "1bd5397b-8899-48e6-a154-23bc9d9edae5",
+                                          "command": "EVENT_HIDE_SPRITES",
+                                          "args": {}
+                                        },
+                                        {
+                                          "id": "3c6e6fe1-a00c-4446-a1b6-80d1bae71bdc",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Not enough Coins.\nNothing was spent."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "0e28ce3f-dab9-4c33-adca-5fe78296bb82",
+                                          "command": "EVENT_SHOW_SPRITES",
+                                          "args": {}
+                                        }
+                                      ]
                                     }
                                   }
                                 ]
@@ -343,18 +457,37 @@
                     ],
                     "false": [
                       {
-                        "id": "851f8814-6dfe-4c8c-a4b5-03b110cee3b3",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Finish or cancel\nyour current job\nfirst. START menu."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "22732537-f4ad-44eb-ad2f-d0d11d96f819",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "2e3d38b8-9cc3-4397-aac3-5404ca715e9d",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "d4ffa1e7-5d58-47d5-a69b-71399a2f31c4",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Finish or cancel\nyour current job\nfirst. START menu."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "858e1d69-6e45-4943-a0b4-014d8333e2c3",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ]
@@ -366,7 +499,7 @@
         ],
         "false": [
           {
-            "id": "ad64fd64-92fe-4aa2-aee5-972a3bdf1716",
+            "id": "9eb5a224-dcbd-4faa-ad3b-179a34315d0a",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -384,7 +517,7 @@
             "children": {
               "true": [
                 {
-                  "id": "4d036c6a-ea82-4a53-a448-f21e05b64457",
+                  "id": "28fc1a52-45e1-4763-abf1-8fbdf9f521ac",
                   "command": "EVENT_ACTOR_SET_SPRITE",
                   "args": {
                     "actorId": "$self$",
@@ -392,41 +525,79 @@
                   }
                 },
                 {
-                  "id": "e36d4ed4-6cb6-4c60-a175-14fe0e0279f2",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "LANTERN FLATS\nYour property.",
-                      "A home for your crew.\nOptional property.\nA warmer city."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "22f428e6-9840-4ed5-a85a-c690902e9047",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "0ab3bc49-ad82-457e-aaf7-f7d3d60ca595",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "03bc926c-e265-49ce-abd6-b42358da3b26",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "LANTERN FLATS\nYour property.",
+                            "A home for your\ncrew.\nOptional property.\nA warmer city."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "a5d847a2-bbed-4383-a90c-f46e389d7913",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],
               "false": [
                 {
-                  "id": "d50526d1-037b-4edf-a65b-fc84668a5b72",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "LANTERN FLATS\n240 Coins + 8 scrap",
-                      "A home for your crew.\nOptional property.\nA warmer city."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "84621941-6072-4288-a4d6-1cdad0e00dcc",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "62be2023-8ffd-4c15-a6b5-a267cfea4266",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "2e769546-08c8-46b2-a5e7-30e4948abf82",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "LANTERN FLATS\n240 Coins + 8\nscrap",
+                            "A home for your\ncrew.\nOptional property.\nA warmer city."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "50c6085c-dfc8-4720-ad84-ef64d6617ef0",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "84aec21a-b55e-4589-a8ac-c259a4f3637e",
+                  "id": "1d2ed48f-7500-4f44-ad95-0a1c980aee18",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -444,20 +615,39 @@
                   "children": {
                     "true": [
                       {
-                        "id": "762231ed-3787-4b5e-ac02-34dd2fe65011",
-                        "command": "EVENT_MENU",
-                        "args": {
-                          "variable": "14",
-                          "items": 2,
-                          "layout": "menu",
-                          "cancelOnLastOption": false,
-                          "cancelOnB": true,
-                          "option1": "Buy",
-                          "option2": "Back"
+                        "id": "ae02477d-5c67-4866-ad80-dc2dadc34f4b",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "d2397735-da8c-4fc1-a94a-54b48666d47b",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "b92896c7-ddf1-406d-ac1b-8a28ef410f53",
+                              "command": "EVENT_MENU",
+                              "args": {
+                                "variable": "14",
+                                "items": 2,
+                                "layout": "menu",
+                                "cancelOnLastOption": false,
+                                "cancelOnB": true,
+                                "option1": "Buy",
+                                "option2": "Back"
+                              }
+                            },
+                            {
+                              "id": "7149e305-1fa0-4f31-a759-daffed04ab06",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       },
                       {
-                        "id": "13c70009-8f43-48c5-abd5-3d888d15e493",
+                        "id": "ccd5cc62-e602-44da-a334-8c2afa959992",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -475,7 +665,7 @@
                         "children": {
                           "true": [
                             {
-                              "id": "97389072-18d1-47b7-a3cb-ef1bdb312092",
+                              "id": "a34e28ac-17c3-4719-a35e-edb4b54def66",
                               "command": "EVENT_IF",
                               "args": {
                                 "condition": {
@@ -493,7 +683,7 @@
                               "children": {
                                 "true": [
                                   {
-                                    "id": "1a8c5807-da44-4370-a259-15ce1eca056c",
+                                    "id": "e1bc8184-a24e-490f-a23b-0025369bcfe3",
                                     "command": "EVENT_IF",
                                     "args": {
                                       "condition": {
@@ -511,7 +701,7 @@
                                     "children": {
                                       "true": [
                                         {
-                                          "id": "24c779a8-6bdf-4883-aba4-c093ac4555a5",
+                                          "id": "c3a004c7-d325-483a-af34-b4d67d4886f5",
                                           "command": "EVENT_VARIABLE_MATH",
                                           "args": {
                                             "vectorX": "1",
@@ -522,7 +712,7 @@
                                           }
                                         },
                                         {
-                                          "id": "0888e9d3-03bd-481c-af18-dda79908a0af",
+                                          "id": "ec4338d8-29a8-4ce5-a490-8da268733214",
                                           "command": "EVENT_VARIABLE_MATH",
                                           "args": {
                                             "vectorX": "2",
@@ -533,7 +723,7 @@
                                           }
                                         },
                                         {
-                                          "id": "d04969df-c48d-4cd6-a65d-1cd7bbf1301b",
+                                          "id": "90bc7746-3d64-4faa-a566-5ad34c9a9e53",
                                           "command": "EVENT_SET_VALUE",
                                           "args": {
                                             "variable": "15",
@@ -544,7 +734,7 @@
                                           }
                                         },
                                         {
-                                          "id": "149f2b66-1e42-4eb8-a0ee-cec8052ffe1d",
+                                          "id": "4d0ecb92-e49c-4b45-a970-ef3400a0c8e6",
                                           "command": "EVENT_SOUND_PLAY_EFFECT",
                                           "args": {
                                             "type": "beep",
@@ -555,7 +745,7 @@
                                           }
                                         },
                                         {
-                                          "id": "032cec5f-8d9b-4d92-a4da-c7068acc7ac6",
+                                          "id": "91df0043-d6e4-4acf-ad21-af706e582830",
                                           "command": "EVENT_ACTOR_SET_SPRITE",
                                           "args": {
                                             "actorId": "$self$",
@@ -563,7 +753,7 @@
                                           }
                                         },
                                         {
-                                          "id": "d7ea5d9a-ce3d-48c9-ae0e-91d4dd0450a2",
+                                          "id": "f84e6f3f-d732-432b-a49d-060f5433c7e2",
                                           "command": "EVENT_IF",
                                           "args": {
                                             "condition": {
@@ -581,7 +771,7 @@
                                           "children": {
                                             "true": [
                                               {
-                                                "id": "3870c1c4-eb41-40c9-a586-493747991aa1",
+                                                "id": "a16d759c-a637-43ae-a5c1-ae926c169087",
                                                 "command": "EVENT_VARIABLE_MATH",
                                                 "args": {
                                                   "vectorX": "3",
@@ -594,7 +784,7 @@
                                             ],
                                             "false": [
                                               {
-                                                "id": "1705c035-fa18-4b0a-a95a-c6dde36f2c09",
+                                                "id": "8f5e879b-6b19-4415-a918-a145e529ff71",
                                                 "command": "EVENT_SET_VALUE",
                                                 "args": {
                                                   "variable": "3",
@@ -608,35 +798,73 @@
                                           }
                                         },
                                         {
-                                          "id": "c0fddf40-7bd0-47b6-ab81-122cd4e4e208",
-                                          "command": "EVENT_TEXT",
-                                          "args": {
-                                            "text": [
-                                              "RESTORED!\nA warmer corner\nof the city."
-                                            ],
-                                            "avatarId": "",
-                                            "minHeight": 4,
-                                            "maxHeight": 7,
-                                            "position": "bottom",
-                                            "closeWhen": "key",
-                                            "closeButton": "a"
+                                          "id": "386d6686-f851-4d55-a8d8-3cbce0492f7c",
+                                          "command": "EVENT_GROUP",
+                                          "args": {},
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "c5460254-5157-427d-a6c7-29593fc24207",
+                                                "command": "EVENT_HIDE_SPRITES",
+                                                "args": {}
+                                              },
+                                              {
+                                                "id": "de89e290-42c9-4ad1-adff-8586ab22264e",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "RESTORED!\nA warmer corner\nof the city."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              },
+                                              {
+                                                "id": "b4134ecd-660b-4fcb-aace-c8796f93aa25",
+                                                "command": "EVENT_SHOW_SPRITES",
+                                                "args": {}
+                                              }
+                                            ]
                                           }
                                         }
                                       ],
                                       "false": [
                                         {
-                                          "id": "0bef69cc-5549-4395-a057-f5a3c7794661",
-                                          "command": "EVENT_TEXT",
-                                          "args": {
-                                            "text": [
-                                              "Not enough scrap.\nYour Coins were\nnot spent."
-                                            ],
-                                            "avatarId": "",
-                                            "minHeight": 4,
-                                            "maxHeight": 7,
-                                            "position": "bottom",
-                                            "closeWhen": "key",
-                                            "closeButton": "a"
+                                          "id": "229cfa2e-aff9-4468-a6d2-b759aa4ad10f",
+                                          "command": "EVENT_GROUP",
+                                          "args": {},
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "f208e9b2-5424-405d-a409-aa260043d645",
+                                                "command": "EVENT_HIDE_SPRITES",
+                                                "args": {}
+                                              },
+                                              {
+                                                "id": "409805f0-bae6-404b-a10d-9dfda61cf80c",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "Not enough scrap.\nYour Coins were\nnot spent."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              },
+                                              {
+                                                "id": "ab5add6f-9258-4338-a233-7d8178f4df14",
+                                                "command": "EVENT_SHOW_SPRITES",
+                                                "args": {}
+                                              }
+                                            ]
                                           }
                                         }
                                       ]
@@ -645,18 +873,37 @@
                                 ],
                                 "false": [
                                   {
-                                    "id": "f4a926af-050d-447c-a066-34cd5e6d8503",
-                                    "command": "EVENT_TEXT",
-                                    "args": {
-                                      "text": [
-                                        "Not enough Coins.\nNothing was spent."
-                                      ],
-                                      "avatarId": "",
-                                      "minHeight": 4,
-                                      "maxHeight": 7,
-                                      "position": "bottom",
-                                      "closeWhen": "key",
-                                      "closeButton": "a"
+                                    "id": "7cf2c55f-61d4-418e-a2a6-ab22bc733d1e",
+                                    "command": "EVENT_GROUP",
+                                    "args": {},
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "9e814edd-4ef9-44a5-aed2-f270e1591022",
+                                          "command": "EVENT_HIDE_SPRITES",
+                                          "args": {}
+                                        },
+                                        {
+                                          "id": "6bdf04cb-5a08-4777-a9ce-094e14ce5a2e",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Not enough Coins.\nNothing was spent."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "6c401148-cf33-4f51-ac4f-d8041bae14b1",
+                                          "command": "EVENT_SHOW_SPRITES",
+                                          "args": {}
+                                        }
+                                      ]
                                     }
                                   }
                                 ]
@@ -669,18 +916,37 @@
                     ],
                     "false": [
                       {
-                        "id": "a60631ee-9e3b-44c8-a4cf-2dafe563da32",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Finish or cancel\nyour current job\nfirst. START menu."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "262e3ff9-826d-47c2-aee2-73742db0c7aa",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "b549f66d-1f58-40d7-a6e1-bcde93e6b5c7",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "d7b293de-df57-4c4e-a560-5c6222bb8134",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Finish or cancel\nyour current job\nfirst. START menu."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "7184db14-99eb-4c53-ac5d-c1a71a02c411",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ]
@@ -695,7 +961,7 @@
   ],
   "startScript": [
     {
-      "id": "4f4a15c2-6edc-4d37-a472-9e74f47fbb6f",
+      "id": "b1189319-e568-4da5-a2df-de0a9fe561ce",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -713,7 +979,7 @@
       "children": {
         "true": [
           {
-            "id": "4defb90b-e054-4ffd-a0ce-9d4b74d4afd5",
+            "id": "11d46cad-8f81-44c8-a06d-d3fa4bb8a25c",
             "command": "EVENT_ACTOR_SET_SPRITE",
             "args": {
               "actorId": "$self$",

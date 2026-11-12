@@ -22,10 +22,75 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "88a4a723-9a41-4f45-ad88-595d7a46a170",
+      "id": "77f5f9bb-b1d2-42a0-ab5a-d7da9a578610",
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
         "customEventId": "42f65a29-3680-405e-a6e9-001e10e77f98"
+      }
+    },
+    {
+      "id": "156a8f23-de9a-4d94-a249-bfde2a19b77b",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "140"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "31c21b6e-ed8c-4a62-acf8-9f3ed92f8e6b",
+            "command": "EVENT_MUSIC_STOP",
+            "args": {}
+          }
+        ],
+        "false": [
+          {
+            "id": "51815d0c-a27c-4933-a349-57508dfad527",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "34"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "4db87e2e-fd4b-4502-a1c7-3cdd4d0bc7d1",
+                  "command": "EVENT_MUSIC_PLAY",
+                  "args": {
+                    "musicId": "55d0eb68-ef30-5f46-a2ca-d86b5d12596e"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "9701a589-519c-4005-a36b-154c095c97e1",
+                  "command": "EVENT_MUSIC_PLAY",
+                  "args": {
+                    "musicId": "f2905faa-e99c-5e1e-ab03-ef3ae78bb967"
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

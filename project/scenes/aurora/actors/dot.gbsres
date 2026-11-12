@@ -9,12 +9,12 @@
   "x": 18,
   "y": 12,
   "frame": 0,
-  "animate": false,
+  "animate": true,
   "spriteSheetId": "577806b2-c45a-439d-aa2f-33ee8efe1521",
   "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
   "direction": "down",
   "moveSpeed": 1,
-  "animSpeed": 15,
+  "animSpeed": 31,
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
@@ -22,19 +22,38 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "655d239c-dd08-405c-a2b0-2de2301477c0",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "DOT\nThe old station still\nconnects everyone.",
-          "Follow Aurora north.\nIt leads to the south\nend of Frostwick."
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "a7abf1d1-b141-4ac7-abb1-6e85208036af",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "d5aaa0e0-806c-4061-a11b-ee7f3ff6c158",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "442b3023-3cb1-4a07-a51a-19ab0325a132",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "DOT\nThe old station\nstill\nconnects everyone.",
+                "Follow Aurora\nnorth.\nIt leads to the\nsouth\nend of Frostwick."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "d07eaa52-43b5-43e7-a018-3bf5f50e7f13",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     }
   ],

@@ -2,14 +2,15 @@
 
 An open-world holiday city adventure about overlooked properties, mischievous expeditions, and an elf-powered business empire.
 
-**Status: native Game Boy Color campaign with an expanded neighborhood-story prototype. Human completion time and physical Chromatic playback remain untested.**
+**Status: native Game Boy Color campaign with neighborhood stories, original music, and upgraded art. Human completion time and physical Chromatic playback remain untested.**
 
 Built for ModRetro Chromatic using GB Studio 4.3.2. The development computer runs the editor, compiler, and tests. The playable deliverable is a native `.gbc` cartridge.
 
 ## Playable foundation
 
 - Five freely connected districts, a garage, four property interiors, and ten new campaign locations.
-- Original pixel art, characters, dialogue, and property listings.
+- Original pixel art, animated characters, dialogue, and property listings.
+- Seven original four-channel music tracks, saved Play/Mute setting, and visible room improvements.
 - Salvage jobs, optional bonus salvage, deliveries, five local commissions, and cancellation.
 - Three crew roles, workshop production, and purchasable properties with visible ownership signs.
 - A 24-mission campaign with 144 objectives, 45 puzzles, and three endings.
@@ -17,11 +18,13 @@ Built for ModRetro Chromatic using GB Studio 4.3.2. The development computer run
 - Four three-mission side-story arcs, six short encounters, and four property projects.
 - Twenty neighborhood desks, independent side-story progress, four more saved choices, and eight useful unlocks.
 
-The inspiration is city freedom, earnest holiday comedy, property hunting, and strategy. Driving, traffic, and multiple simultaneous crew assignments remain planned. The current build uses simple sound effects and has no music soundtrack.
+The inspiration is city freedom, earnest holiday comedy, property hunting, and strategy. Driving, traffic, and multiple simultaneous crew assignments remain planned. The soundtrack combines warm jazz harmony, relaxed hip-hop rhythms, rounded bass, and playful chiptune keys. It uses original compositions, with no existing recordings or sampled songs.
 
 ![Archive in the running ROM](docs/images/frostwick_archive-campaign.png) ![A campaign puzzle in the running ROM](docs/images/campaign-puzzle.png)
 
-[Download the current native prototype](https://github.com/SLatz18/hollywild/releases/tag/v0.4.0-neighborhoods)
+![Fixed introduction](docs/images/intro-fixed.png) ![Improved Cocoa Corner](docs/images/cocoa-after.png)
+
+[Download the current native prototype](https://github.com/SLatz18/hollywild/releases/tag/v0.5.0-atmosphere)
 
 ## Story campaign
 
@@ -50,6 +53,8 @@ Six smaller encounters include a disputed hat, a sleeping parcel, and a dubious 
 
 - [Team builder assignments and handoffs](docs/TEAM_BUILD_PLAN.md)
 - [Current build, test evidence, and limitations](docs/BUILD_STATUS.md)
+- [Agent usability research and resulting fixes](docs/PLAYER_RESEARCH.md)
+- [Original soundtrack](docs/SOUNDTRACK.md) and [visual design](docs/VISUALS.md)
 - [Build or edit the native game](docs/DEVELOPMENT.md)
 - [Production blueprint](BUILD_PLAN.md)
 - [Open-world rules](docs/OPEN_WORLD.md)
@@ -60,7 +65,7 @@ Six smaller encounters include a disputed hat, a sleeping parcel, and a dubious 
 
 ## Controls and first steps
 
-D-pad walks, A interacts and confirms, B closes menus, START opens the pocket book, and SELECT shows routes. Save at the garage or a city checkpoint between repeatable jobs. Story progress can be saved between objectives.
+D-pad walks, A interacts and confirms, B cancels choice menus, START opens the pocket book, and SELECT shows routes. Use START > Guide > Music to play or mute the soundtrack. Save at the garage or a city checkpoint between repeatable jobs. Story progress can be saved between objectives.
 
 Start with 100 Coins. Leave the garage, accept Salvage at a job board, collect a marked depot crate, and Bank the haul. Repair the garage workshop, then finish a delivery to fund Cocoa Corner. Every district is open from the beginning, so this opening route is optional.
 

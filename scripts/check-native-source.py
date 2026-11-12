@@ -90,7 +90,7 @@ def check(root):
     for path, data in resources:
         label = str(path.relative_to(root))
         kind = data.get("_resourceType")
-        if kind in ("background", "sprite", "font"):
+        if kind in ("background", "sprite", "font", "music", "tileset"):
             filename = data.get("filename")
             require(bool(filename) and (path.parent / filename).is_file(), f"{label}: missing source asset {filename!r}")
         if kind == "scene":
@@ -146,6 +146,10 @@ def check(root):
                 reference(args.get("spriteSheetId"), "sprite", location)
             if command == "EVENT_CALL_CUSTOM_EVENT":
                 reference(args.get("customEventId"), "script", location)
+            if command == "EVENT_MUSIC_PLAY":
+                reference(args.get("musicId"), "music", location)
+            if command == "EVENT_REPLACE_TILE_XY":
+                reference(args.get("tilesetId"), "tileset", location)
 
     # A scene must have a real return path, not merely an inbound link.
     graph = {identifier: set() for identifier in scene_index}

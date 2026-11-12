@@ -9,12 +9,12 @@
   "x": 10,
   "y": 27,
   "frame": 0,
-  "animate": false,
+  "animate": true,
   "spriteSheetId": "b36bffac-91c0-43c8-af9f-f9f8b62cccd9",
   "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
   "direction": "down",
   "moveSpeed": 1,
-  "animSpeed": 15,
+  "animSpeed": 31,
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
@@ -22,22 +22,41 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "6037d7ee-71c4-4bc8-a055-2a94d48d57eb",
-      "command": "EVENT_MENU",
-      "args": {
-        "variable": "14",
-        "items": 4,
-        "layout": "menu",
-        "cancelOnLastOption": false,
-        "cancelOnB": true,
-        "option1": "Stories",
-        "option2": "Moments",
-        "option3": "Build",
-        "option4": "Back"
+      "id": "1e7a9f5a-ae66-4f40-a1b1-4a39c9c65493",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "476c103f-e8d5-4e03-aef2-6ad4a46c6308",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "b9996e3c-a70c-4d6a-ae0b-d816c8ce3d4f",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 4,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "Stories",
+              "option2": "Moments",
+              "option3": "Build",
+              "option4": "Back"
+            }
+          },
+          {
+            "id": "2b648f04-1bd0-4c50-a96b-5fa572054d1e",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "ce571107-31f5-42e0-a454-352171079673",
+      "id": "2fc2cfa3-cafa-4c38-a405-1b752c3a92cf",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -55,24 +74,43 @@
       "children": {
         "true": [
           {
-            "id": "a389fe45-cc37-483c-a6c3-657c6dd743b5",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "No leads here in\nthis category.\nCheck Side for\nother stories."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "5a7d6000-3bc0-4349-a97d-4bb18ce5caec",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "f9484a87-9d33-4882-a618-25266c61f606",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "3be7e18c-328e-4f6e-a7ca-0d014021636c",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "No leads here in\nthis category.\nCheck Side for\nother stories."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "8807c290-74cf-4ec6-a455-63dbab63f360",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           }
         ],
         "false": [
           {
-            "id": "99875f3c-5a5e-4fea-ae62-22bb434a94a4",
+            "id": "c71c7a99-e60d-4756-aa11-71af46c48a6a",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -90,20 +128,39 @@
             "children": {
               "true": [
                 {
-                  "id": "1d7ae8c2-50c8-4a3b-a75f-b83f039c3058",
-                  "command": "EVENT_MENU",
-                  "args": {
-                    "variable": "14",
-                    "items": 2,
-                    "layout": "menu",
-                    "cancelOnLastOption": false,
-                    "cancelOnB": true,
-                    "option1": "CRATE",
-                    "option2": "Back"
+                  "id": "3aec62e6-88bb-4701-afa7-e18d688cf3a8",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "4d054155-82b9-478f-af54-f47e4cde5cf0",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "a267e591-3394-4ef0-a8c0-1315b72a84c7",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 2,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "CRATE",
+                          "option2": "Back"
+                        }
+                      },
+                      {
+                        "id": "95f8f338-8711-4b21-af1b-8b76c21d5494",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "b8afd693-809a-4914-ad17-a6d9c443f07c",
+                  "id": "a6f64b77-d7fd-45a9-a27e-580878e0a780",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -121,7 +178,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "186b2b6f-189b-4438-ac21-863f9f7902c1",
+                        "id": "e2b84ff9-af26-4e89-a490-97e937b442ea",
                         "command": "EVENT_CALL_CUSTOM_EVENT",
                         "args": {
                           "customEventId": "486a3de4-3fe0-47ef-a090-314e0b0e8a28"
@@ -134,7 +191,7 @@
               ],
               "false": [
                 {
-                  "id": "c54b58ce-4a17-43f3-a965-acdd84574dc4",
+                  "id": "32bcd60f-a984-447e-a677-1016cfa37ea4",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -152,18 +209,37 @@
                   "children": {
                     "true": [
                       {
-                        "id": "bab6b0a9-209a-4c07-a57c-36806d747b18",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "No leads here in\nthis category.\nCheck Side for\nother stories."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "bd70d95f-e8a4-4bc1-a707-314d8e1a4caf",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "fa237563-19fc-454b-ab26-dd9d9aae2dd7",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "bd633f10-5561-4be6-a3ab-3bf8213210e2",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "No leads here in\nthis category.\nCheck Side for\nother stories."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "b29e9050-ec79-4c64-a417-75f565cfefe4",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ],

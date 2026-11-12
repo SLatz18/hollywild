@@ -18,6 +18,8 @@ function machine(initial={}){
  const value=v=>v.type==='variable'?(state[v.value]??0):v.value;
  function run(events){for(const event of events){const a=event.args??{};
   switch(event.command){
+   case 'EVENT_GROUP':run(event.children.true);break;
+   case 'EVENT_HIDE_SPRITES':case 'EVENT_SHOW_SPRITES':break;
    case 'EVENT_TEXT': pages.push(...a.text);break;
    case 'EVENT_SET_VALUE':state[a.variable]=value(a.value);break;
    case 'EVENT_VARIABLE_MATH':{const n=a.other==='var'?(state[a.vectorY]??0):a.value;assert(['add','sub'].includes(a.operation));state[a.vectorX]=(state[a.vectorX]??0)+(a.operation==='add'?n:-n);break;}

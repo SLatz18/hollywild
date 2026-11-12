@@ -35,6 +35,8 @@ The checked-in native resources are editable in GB Studio. Campaign writing live
 
 ```bash
 python3 scripts/create-assets.py
+node scripts/create-music.mjs
+.tools/emulator/bin/python scripts/create-upgrade-tiles.py
 node scripts/create-game.mjs
 node scripts/check-campaign.mjs
 python3 scripts/create-campaign-tests.py
@@ -42,7 +44,7 @@ python3 scripts/create-campaign-tests.py
 
 **These commands overwrite generated art, world data, project settings, scenes, actors, and scripts.** Commit or preserve deliberate editor changes before regeneration. Do not run them as a routine prerequisite for opening or exporting the included project.
 
-`create-assets.py` uses Python's standard library. `create-game.mjs` uses Node's built-in modules and reads template resources from the pinned `.tools/gb-studio` checkout. Keep gameplay changes in the generator when regeneration is intended to remain the source of truth. Avoid modifying the same generated resources in parallel with a build.
+`create-assets.py` uses Python's standard library. The upgrade-tile generator uses Pillow from the test environment, and the music generator uses the pinned editor's resource parser and writer. `create-game.mjs` uses Node's built-in modules and reads template resources from the pinned `.tools/gb-studio` checkout. Keep gameplay changes in the generator when regeneration is intended to remain the source of truth. Avoid modifying the same generated resources in parallel with a build.
 
 ## Validation tools
 
@@ -92,3 +94,13 @@ Author optional tracks in `content/side-stories.json` using `content/SIDE_CONTRA
 After authoring, regenerate assets and native resources, run `node scripts/check-side.mjs`, and generate button walkthroughs with `python3 scripts/create-side-tests.py`. Generate the mixed-progress scenario with `python3 scripts/create-interleave-test.py`. The standard full regression runner includes both side paths and the mixed-progress scenario. `node scripts/check-side-economy.mjs` exercises generated economic branches at boundary states in a source interpreter, separately from real-ROM tests.
 
 The emulator and suite reports record elapsed wall seconds and simulated frames. They are automated execution measurements with scripted dialogue advancement, known answers, retries and save tests. Neither is a human completion-time measurement. Fresh run IDs, exact command matching and ROM hashes prevent stale traces from passing as current evidence.
+
+## Music, text and blind playtests
+
+Seven original native four-channel compositions are described in [SOUNDTRACK.md](SOUNDTRACK.md). START > Guide > Music provides Play and Mute. Save at a checkpoint to persist that setting. [VISUALS.md](VISUALS.md) describes the art and tile-safe property upgrades.
+
+`node scripts/check-dialogue.mjs` checks every generated text page against the 18-column, five-line layout, including conservative runtime number widths. Native UI rendering is checked separately with `scripts/check-ui-rom.py`. The shared modal wrapper hides hardware sprites during text and menu display, then restores them after closing.
+
+For independent screen-only agent sessions, run `.tools/emulator/bin/python scripts/player-session.py participant-name`. That harness exposes button presses and screenshots, with separate fresh cartridge RAM, no navigation helpers, puzzle answers or game-variable reads. Results remain in ignored `test-results/player-research/`. [PLAYER_RESEARCH.md](PLAYER_RESEARCH.md) distinguishes observed usability findings from agent vision errors and from human research.
+
+Actual emulator audio can be recorded with `HOLLYWILD_QA_AUDIO=1` and an `audio` command such as `{"audio":{"name":"sample.wav","seconds":8}}`. Set `HOLLYWILD_QA_OUT` to a separate output directory for parallel runs. The checked-in `tests/audio/` scenarios verify routing, mute, save/reboot persistence, and the finale loop. Signal checks do not establish subjective music quality.

@@ -8,35 +8,73 @@
   "actors": {},
   "script": [
     {
-      "id": "f4b40f9b-48ad-47ed-a77f-3ddc5444661f",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "The valve body\nfailed inspection.\nWhich tray\nreceives it?"
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "cb87183c-a06f-4fcf-a4a0-8fbe53068388",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "67c226de-a4b4-4d8c-ae58-a8c9dd9db73c",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "d7688761-3338-4440-a95e-594489af5e33",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "The valve body\nfailed inspection.\nWhich tray\nreceives it?"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "9a202030-5b66-49f3-a040-8493c359f03b",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "ef38026a-0c0d-405f-a633-f5da7d88aed2",
-      "command": "EVENT_MENU",
-      "args": {
-        "variable": "14",
-        "items": 2,
-        "layout": "menu",
-        "cancelOnLastOption": false,
-        "cancelOnB": true,
-        "option1": "LEFT",
-        "option2": "RIGHT"
+      "id": "addd63f2-2015-4e1e-a51c-afbb34cd9eb3",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "9a8edf93-fc3a-425c-a206-14e1375535c8",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "b4bbe255-1955-4b75-a037-0731731a0e8f",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 2,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "LEFT",
+              "option2": "RIGHT"
+            }
+          },
+          {
+            "id": "aa8f127b-9566-4c4c-a811-084a05cc9f94",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "9be48072-fbea-4a21-ab8a-33c8f9bce057",
+      "id": "fca3c68c-94c0-46bc-a74d-b4a626185b59",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -54,7 +92,7 @@
       "children": {
         "true": [
           {
-            "id": "c9427a26-7848-4400-a5ca-47c4ccc28928",
+            "id": "db5a32c2-d772-4d10-abef-9c6c45ffbe8e",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "127",
@@ -65,24 +103,43 @@
             }
           },
           {
-            "id": "fe1378ab-a094-41d9-a2b4-397446f2ce41",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "Tinsel Toolworks:\ncheck your\ncompleted parts\nsorter at the side\ndesk."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "cc68dd59-a652-47f9-acfc-3f05b623d8db",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "a09208d7-c557-42e7-a324-daaf85902c00",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "c099f42c-d9d6-4ffd-a06d-2a42bbd4069b",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Tinsel Toolworks:\ncheck your\ncompleted parts\nsorter at the side\ndesk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "b552d815-1a25-4ce3-a5fc-606a3f015111",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           }
         ],
         "false": [
           {
-            "id": "57e8a7be-7f5e-4302-a534-57ebd479436b",
+            "id": "f2041dfd-cfbd-4932-a3c1-f311ad524a90",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -100,19 +157,38 @@
             "children": {
               "true": [
                 {
-                  "id": "65bf5edc-e976-4567-abed-84247f9ece11",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "The right tray is\nmarked REJECTED,\nDO NOT USE. The\nsound-offcut tray\nis for pieces that",
-                      "passed inspection."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "e1e8fa3a-3805-44a1-ac03-fae2e494365f",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "c21243c3-fe88-40b9-adf9-60e7c40685bb",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "5f5d3596-af52-4baf-a67f-10b2660f935f",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The right tray is\nmarked REJECTED,\nDO NOT USE. The\nsound-offcut tray\nis for pieces that",
+                            "passed inspection."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "e04725c5-5a5d-49c0-aa94-cbf79736fa3f",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],

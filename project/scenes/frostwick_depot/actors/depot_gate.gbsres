@@ -22,10 +22,45 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "3cfdbe81-3ea8-4eb6-a464-2e47233924ac",
+      "id": "758c48a7-653d-406a-a8e5-c8d7e326daee",
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
         "customEventId": "7c88d2ad-cb99-4a02-a9b3-8ca6ca8338be"
+      }
+    },
+    {
+      "id": "8c067a31-1804-43c5-a464-dad715886e00",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "140"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "302a8252-80cc-4253-a3d9-086add5df8c5",
+            "command": "EVENT_MUSIC_STOP",
+            "args": {}
+          }
+        ],
+        "false": [
+          {
+            "id": "1a9478d5-3359-4143-a7c7-80761b57ddfd",
+            "command": "EVENT_MUSIC_PLAY",
+            "args": {
+              "musicId": "6e761f3a-0bdb-5f6b-abc6-73f38c6c5478"
+            }
+          }
+        ]
       }
     }
   ],

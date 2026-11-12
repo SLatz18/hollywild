@@ -8,36 +8,74 @@
   "actors": {},
   "script": [
     {
-      "id": "f452a8f3-44ef-4613-aeb1-37430d345775",
-      "command": "EVENT_TEXT",
-      "args": {
-        "text": [
-          "Which location\ndisplays the\nstatue while\nleaving the east\ndrain open?"
-        ],
-        "avatarId": "",
-        "minHeight": 4,
-        "maxHeight": 7,
-        "position": "bottom",
-        "closeWhen": "key",
-        "closeButton": "a"
+      "id": "ffde3474-0ad0-403f-ae7d-5873b25d0ae2",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "ec319f54-ee7a-4dc1-a23d-e1d647f5e6d7",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "e5905ef4-437e-4382-a798-96d758d19daa",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "Which location\ndisplays the\nstatue while\nleaving the east\ndrain open?"
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "0bf8267a-c825-4607-a541-c1a0454d0b41",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "5fbf9446-d22a-4c5c-af49-5730d521f0be",
-      "command": "EVENT_MENU",
-      "args": {
-        "variable": "14",
-        "items": 3,
-        "layout": "menu",
-        "cancelOnLastOption": false,
-        "cancelOnB": true,
-        "option1": "EAST",
-        "option2": "WEST",
-        "option3": "DRAIN"
+      "id": "0123b3d6-6d5a-4472-aee4-41a79bcdbd4e",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "ac456248-5571-40ec-abe5-492278d6901e",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "11e2269e-0959-4840-a56f-b76fe7c75f45",
+            "command": "EVENT_MENU",
+            "args": {
+              "variable": "14",
+              "items": 3,
+              "layout": "menu",
+              "cancelOnLastOption": false,
+              "cancelOnB": true,
+              "option1": "EAST",
+              "option2": "WEST",
+              "option3": "DRAIN"
+            }
+          },
+          {
+            "id": "e5638155-ba00-41f0-aecf-7bf7cb2864f9",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
       }
     },
     {
-      "id": "c1bbbfbe-c9e3-45c3-abfc-323bb91be16a",
+      "id": "b93f4c21-85e8-4f12-a614-582bbac0f646",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -55,7 +93,7 @@
       "children": {
         "true": [
           {
-            "id": "c65ac025-8eaa-496b-ada8-9093d1df2644",
+            "id": "68321d81-514d-4e15-a3c3-748c747e63cb",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "115",
@@ -66,24 +104,43 @@
             }
           },
           {
-            "id": "380b4ea2-cd94-48bf-ae9c-69ce789f2f03",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "Velvet Lodge:\nreport the clear\ndrain at the side\ndesk."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "62d3d2ab-fd19-4723-a0bd-d3bb0cdc119c",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "f11bb465-efea-4d8f-a71f-5bd9c98d23c5",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "23848101-64e1-4020-a157-29d244b6f0df",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Velvet Lodge:\nreport the clear\ndrain at the side\ndesk."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "b111eacc-ec5a-46fd-a8d4-13b1a3c1c28a",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           }
         ],
         "false": [
           {
-            "id": "582c31c3-34fc-4b66-aa10-0c841827fea3",
+            "id": "196a3c2c-44d0-49d4-a75c-024d8d902d1a",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -101,18 +158,37 @@
             "children": {
               "true": [
                 {
-                  "id": "e5091f2e-7550-456f-a43c-969af81adc5f",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "The clear west pad\nleaves the drain\nat the east corner\nopen."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "b9260363-4408-450a-afd6-c7a12d202c25",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "68c3a551-14a1-48d7-ae2f-4d69fcef1e6e",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "9297726c-d531-4045-ad06-8c364c11124c",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "The clear west pad\nleaves the drain\nat the east corner\nopen."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "633621a6-edc0-43d2-ae19-ff72ea6b81a3",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],

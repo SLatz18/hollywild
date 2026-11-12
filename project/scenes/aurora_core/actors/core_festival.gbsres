@@ -22,10 +22,75 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "99c819b3-cc43-4384-a6a0-30e465b69562",
+      "id": "ba8b0294-963c-48f4-a5d8-28418febeca7",
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
         "customEventId": "d1a651ee-ee2f-4942-ae98-7d945ff23e33"
+      }
+    },
+    {
+      "id": "04667940-939c-4609-af44-72a5fdb5b398",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "140"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "c1f23a98-7d98-4e82-a1e2-cff6e2aaae18",
+            "command": "EVENT_MUSIC_STOP",
+            "args": {}
+          }
+        ],
+        "false": [
+          {
+            "id": "004e92d2-aa3f-4269-a175-d77ec7116cb5",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "34"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "f3aa93c3-d1fc-4e44-a1ba-86ed2880aa3d",
+                  "command": "EVENT_MUSIC_PLAY",
+                  "args": {
+                    "musicId": "55d0eb68-ef30-5f46-a2ca-d86b5d12596e"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "32ee1fb7-36da-47ae-a1a1-db7c73d219ee",
+                  "command": "EVENT_MUSIC_PLAY",
+                  "args": {
+                    "musicId": "f2905faa-e99c-5e1e-ab03-ef3ae78bb967"
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],

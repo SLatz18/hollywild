@@ -1,77 +1,55 @@
-# Neighborhood expansion build status
+# Native build status: v0.5.0-atmosphere
 
-Version 0.4.0 neighborhood prototype. [Previous campaign build](history/v0.3.0-campaign.md).
+Hollywild is a native Game Boy Color prototype for ModRetro Chromatic. This update adds original music, richer city art, ambient character animation, visible property projects, and fixes for dialogue fit and menu overlap.
 
-**Human completion time and physical Chromatic playback remain untested.** The original two-hour target has not been validated. Automated elapsed time below measures the test machinery, not a person's playtime.
+## What changed
 
-## Implemented content
+- Seven original four-channel compositions accompany the garage, five districts and festival finale. START > Guide > Music offers Play/Mute with visible confirmation. Checkpoint saves retain the choice. See [soundtrack](SOUNDTRACK.md).
+- All 20 rooms have revised palettes and decorative detail. Six characters, books and property signs have subtle idle animation. Four property projects visibly improve their interiors immediately and on return. Navigation and collision geometry are unchanged. See [visual design](VISUALS.md).
+- Shared dialogue formatting wraps at 18 glyph columns and five lines, including conservative runtime number widths. The reported indoor-text clipping was reproduced before correction; the complete word now fits. Modal dialogue and menus hide world sprites so icons cannot cover labels.
+- The opening now has five pages, clearer controls, and specific job-board and salvage directions. Detailed help remains in Guide. Three blind agent sessions found the usability issues; an experienced-agent retry completed salvage and workshop repair. See [research methods, outcomes and remaining friction](PLAYER_RESEARCH.md).
 
-The 24-mission, six-act main campaign remains intact, with 144 objectives, 45 puzzles, 40 optional discoveries, and three endings. All five districts and all 20 public scenes remain freely reachable.
+The main campaign still has 24 missions, 144 objectives, 45 puzzles, 40 discoveries and three endings. Neighborhood content adds 22 optional missions with 94 objectives, 22 puzzles, four choices and eight perks. Five local commissions, ordinary salvage/delivery work, property ownership and three crew roles remain. Activity counts are not proof of a particular human playtime.
 
-This expansion adds four independent three-mission side arcs, six smaller encounters, and four ownership-required property projects: 22 new optional missions with 94 objectives and 22 puzzles. Four additional choices have later authored reactions. Twenty book-shaped neighborhood desks provide the new interactions. The original five local commissions, two ordinary job types, property ownership, and three crew roles remain available.
+## Exact tested cartridge
 
-Side-story mechanics are authored conversations, protected collections, clue puzzles and menu choices. They do not introduce driving, combat, physical construction, races, or action minigames. Choice consequences are narrative reactions; completion perks are fixed for each arc or project. The side-story scenes reuse existing geography, and property improvements change benefits rather than building artwork.
+- ROM: 1,048,576 bytes, Game Boy Color Only, MBC5 with battery-backed RAM; 32 KB save-RAM header.
+- SHA-256: `e69ccb06012236e201dafe92a82d964550069f46b815be177271b071cc97879b`.
+- GB Studio 4.3.2: `ccb891b2670134ba8237416772eea4ed09d34e1e`.
+- GBVM: `bd6f41cc5e05cbe6601dcc7f8e2db89bed527fe3`.
+- Native source: 20 scenes, 111 interaction sites, 141 declared globals and 23,208 events.
+- Header, size and checksums passed inspection. All 52 linked code areas fit the 16 KB bank limit.
+- Native source and generator hashes remained unchanged through the final build and full regression suite.
 
-Use START > Side for leads. Visit the neighborhood desk in the named room, choose Stories, Moments, or Build, select a track, and choose Begin. Starting does not also perform the first objective; interact again to follow the lead. Each track advances independently. The journal shows the next destination and can claim a pending completion reward; it cannot start or perform an objective. All 94 hints use the actual scene names.
+## Actual-ROM verification
 
-[Main campaign walkthrough](CAMPAIGN.md) and [side-story walkthrough](SIDE_STORIES.md) contain spoilers.
-
-## Rewards and progression
-
-Side missions grant 700 Coins and 22 scrap in total. Property purchases remain separate. An owned property's improvement project has no extra fee.
-
-| Completion | Benefit |
-| --- | --- |
-| Extremely Special Delivery | +5 Coins per successful ordinary delivery |
-| The View Is Negotiable | 20-Coin discount on future property purchases, excluding workshop repair; no retroactive refund |
-| The Block That Stayed | +1 extra Cheer per donation, capped at 100 |
-| The Tin Comets | +1 scrap per successful ordinary salvage job |
-| Cocoa Corner project | +4 Coins per successful ordinary job |
-| Parcel Palace project | +6 Coins per successful ordinary job |
-| Tinsel Toolworks project | +1 scrap per successful ordinary job |
-| Lantern Flats project | +3 Coins per successful ordinary job |
-
-These are completion-triggered benefits, not passive timed income. Main and side story steps do not run crew production. Pending rewards survive an active ordinary job or insufficient wallet/storage capacity and can be retried without duplicate payment. New ordinary jobs require at most 9,800 Coins and 79 scrap, leaving room for the largest combined payout. All four properties remain optional for the main campaign.
-
-## Exact cartridge
-
-- Native GB Studio 4.3.2 source, compiled through the pinned official CLI.
-- ROM: 1,048,576 bytes, Game Boy Color Only, MBC5 with battery-backed RAM.
-- Save RAM header: 32 KB.
-- SHA-256: `d40b1da9573f6b702a850caa3152a98ec757ecede35c85c7948486e27977585f`.
-- GB Studio commit: `ccb891b2670134ba8237416772eea4ed09d34e1e`.
-- GBVM commit: `bd6f41cc5e05cbe6601dcc7f8e2db89bed527fe3`.
-- Native source: 20 scenes, 111 interaction sites, 523 resources, 140 declared globals and 10,464 events. Unused declarations may be omitted by the compiler.
-
-The header logo, declared size, Color flag and both checksums passed inspection. All 51 linked code areas fit the 16 KB bank limit. The build manifest records native input hashes, generator/data hashes, the compiled CLI hash, and matching debug artifacts. Inputs remained unchanged throughout compilation and the final regression suite. These are build-integrity checks, not a guarantee of identical rebuilds or hardware compatibility.
-
-## Actual-ROM regressions
-
-The local PyBoy environment ran the exact compiled cartridge using ordinary button input. Matching-build symbols were read to observe outcomes. No gameplay-memory injection, teleportation, or emulator save-state loading was used. Each scenario starts with blank cartridge RAM; reboot checks carry only cartridge RAM into a fresh emulator instance.
+Tests ran the exact cartridge in PyBoy through normal buttons. Matching-build symbols and hardware registers were read to observe state. No gameplay-memory injection, teleportation, or emulator save states were used. Each scenario starts with fresh cartridge RAM; reboot checks carry only that scenario's cartridge RAM.
 
 | Scenario | Commands | Assertion checkpoints | Automated wall seconds |
 | --- | ---: | ---: | ---: |
-| campaign-ending-1.jsonl | 845 | 350 | 33.36 |
-| campaign-ending-2.jsonl | 448 | 222 | 19.82 |
-| campaign-ending-3.jsonl | 448 | 222 | 23.99 |
-| commissions.jsonl | 224 | 45 | 2.44 |
-| crew-roles.jsonl | 240 | 47 | 2.06 |
-| free-roam.jsonl | 40 | 10 | 0.54 |
-| opening-loop.jsonl | 177 | 33 | 1.36 |
-| side-interleave.jsonl | 93 | 27 | 3.85 |
-| side-path-1.jsonl | 1291 | 310 | 47.76 |
-| side-path-2.jsonl | 837 | 213 | 27.87 |
+| campaign-ending-1.jsonl | 845 | 350 | 32.20 |
+| campaign-ending-2.jsonl | 448 | 222 | 21.04 |
+| campaign-ending-3.jsonl | 448 | 222 | 21.01 |
+| commissions.jsonl | 224 | 45 | 2.41 |
+| crew-roles.jsonl | 240 | 47 | 2.49 |
+| free-roam.jsonl | 40 | 10 | 0.53 |
+| opening-loop.jsonl | 177 | 33 | 1.62 |
+| side-interleave.jsonl | 93 | 27 | 3.94 |
+| side-path-1.jsonl | 1299 | 310 | 46.39 |
+| side-path-2.jsonl | 845 | 213 | 28.93 |
 
-All ten scenarios passed: 4,643 commands and 1,479 checkpoints. Scenarios share steps, so this is not a count of distinct features. Total suite wall time was 164.35 seconds. Scripted dialogue advancement, known puzzle answers, repeated cancellation checks and save tests make these timings unsuitable for predicting human playtime. The [compact report](verification/v0.4.0-neighborhoods.json) also records simulated frames separately.
+All ten scenarios passed: 4,659 commands and 1,479 assertion checkpoints. The full suite took 162.07 seconds. These are automated measurements with known routes and puzzle answers, not a human completion-time estimate. Six source/asset checks also passed. The [compact verification report](verification/v0.5.0-atmosphere.json) records provenance and simulated frames.
 
-The two full side routes complete all 14 tracks, cover both options for every new choice, earn resources through gameplay, buy all four properties, and exercise every completion perk. They verify ownership gates, wrong-answer and B retries, one-time rewards, blocked-job payout recovery, completed-track replay, saves and reboots. The mixed-progress scenario starts the main story and two side arcs together, alternates objectives, preserves nondefault choices across reboot, and checks both payouts independently. Three complete main-story ending routes and the existing economy/free-roam scenarios pass on the same cartridge.
+Additional checks on the same ROM:
 
-Additional source-level interpreters passed 1,224 main-campaign checks, 1,104 side-engine checks, and six economic boundary groups. The economic probes include first salvage with all bonuses reaching exactly 99 scrap from 79, maximum delivery payout of 104 Coins, discounted purchase failures, and donation saturation. These boundary states were exercised in a source interpreter, not injected into the actual ROM. Five deliberate-corruption tests passed for the native source checker. Independent review checked all 22 new puzzle solutions and both reactions for each side choice. Actual frames from the final ROM were inspected for the neighborhood menus and a puzzle; captures are included in the README.
+- UI: 18 observations verified five intro pages, full text, six menu captures without sprite overlap, visible mute confirmation, and restored sprites after closing.
+- Audio: 35 routing commands and 452 finale-path commands passed. All seven tracks produced nonzero, unclipped captured output. Muted output was digital zero for 2.987 seconds; mute persisted after checkpoint save and reboot. A 94.685-second finale capture continued through its first approximately 77-second loop. This is signal verification, not a listening review.
+- Art: final side-story replays captured all four project interiors before and after completion. Changed-pixel checks and direct screenshot review confirmed visible changes. An idle garage capture changed 25 pixels over 32 frames without button input, confirming ambient animation in the ROM.
 
-## Remaining validation
+## Delivery and remaining limits
 
-Physical installation, playback, screen readability on the actual Chromatic, physical save persistence, and human first-time pacing still require testing. There is one manual checkpoint slot, no power-interruption guarantee, and no verified save compatibility with earlier releases. Keep earlier saves separate.
+[Download the cartridge](https://github.com/SLatz18/hollywild/releases/tag/v0.5.0-atmosphere). Open `hollywild.gbsproj` to edit the included native resources. [Build instructions](DEVELOPMENT.md) explain the pinned local compiler and test environment.
 
-Driving, traffic, action combat, timed hazards, multiple simultaneous workers, continuous simulation and a music soundtrack remain unimplemented. Ordinary jobs remain two repeatable types; the expansion adds authored side stories rather than new repeatable minigames. The tests cover representative simultaneous story progress, not every possible interleaving or long-session economic balance. Automated success does not establish that a first-time player will enjoy or understand every activity.
+Physical Chromatic playback, hardware audio/save persistence, and save compatibility across different releases remain unverified. There is no live generative AI or network dependency in the cartridge. Agent playtests do not establish human enjoyment, accessibility, pacing or subjective music quality. Optional-story navigation remains deep, and checkpoint discovery still needs clearer presentation. Driving, traffic, combat and action minigames are not implemented.
 
-See [development instructions](DEVELOPMENT.md) to rebuild and rerun. Tool installations, test saves, debug artifacts and raw logs remain local and ignored by Git.
+The prior build record is preserved in [v0.4.0 history](history/v0.4.0-neighborhoods.md).

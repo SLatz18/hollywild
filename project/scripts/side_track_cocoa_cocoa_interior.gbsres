@@ -8,7 +8,7 @@
   "actors": {},
   "script": [
     {
-      "id": "e7d204a5-924e-4053-a364-3ad2af212d25",
+      "id": "45798cf7-e5e1-40c9-af4b-705ccad9e27d",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -26,24 +26,43 @@
       "children": {
         "true": [
           {
-            "id": "0551ec70-37d5-4152-a4c5-dc684efe6ea3",
-            "command": "EVENT_TEXT",
-            "args": {
-              "text": [
-                "A Counter for Cold\nHands",
-                "Your cafe has\ncustomers\nbalancing hot cups\nbeside the door.\nBuild a useful",
-                "pickup counter\nwithout narrowing\nthe entrance."
-              ],
-              "avatarId": "",
-              "minHeight": 4,
-              "maxHeight": 7,
-              "position": "bottom",
-              "closeWhen": "key",
-              "closeButton": "a"
+            "id": "7cb7c8c6-6057-4ed3-affc-64ac7727cf7e",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "292959cd-c789-48aa-a559-30dba8803646",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "812002ac-c093-4c54-a6cd-56db8be6ff43",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "A Counter for Cold\nHands",
+                      "Your cafe has\ncustomers\nbalancing hot cups\nbeside the door.\nBuild a useful",
+                      "pickup counter\nwithout narrowing\nthe entrance."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "3d947985-7251-4f30-af4b-42b1fc8ed2cb",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
             }
           },
           {
-            "id": "e32a7b05-efd8-4ac4-a471-80b9a23302cf",
+            "id": "3f4f9eb9-a3a1-42bc-aae6-d201a2fa60bd",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -61,37 +80,75 @@
             "children": {
               "true": [
                 {
-                  "id": "e0e7f722-77c3-4024-af03-eddf4134a202",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "Buy this property\nbefore beginning\nits project."
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "76b65f93-7f93-4e1b-a313-c63f8eaea728",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "390ca8b2-8592-4340-a0da-e27937a9b409",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "07d45a7a-c2d2-4ee1-a3b3-1a1c71e4cbf5",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Buy this property\nbefore beginning\nits project."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "c8ad41df-075e-4ae2-aef2-5de1cb300b60",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 }
               ],
               "false": [
                 {
-                  "id": "280adc53-725c-415e-a4a2-75011a347a7d",
-                  "command": "EVENT_MENU",
-                  "args": {
-                    "variable": "14",
-                    "items": 2,
-                    "layout": "menu",
-                    "cancelOnLastOption": false,
-                    "cancelOnB": true,
-                    "option1": "Begin",
-                    "option2": "Back"
+                  "id": "f4d3fa84-fb0f-451c-ab8c-524bef1e8804",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "c9a5101b-3038-4c1d-adbc-86a2aba345fd",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "d52b68ca-1d60-401c-ad3b-21e9414023c0",
+                        "command": "EVENT_MENU",
+                        "args": {
+                          "variable": "14",
+                          "items": 2,
+                          "layout": "menu",
+                          "cancelOnLastOption": false,
+                          "cancelOnB": true,
+                          "option1": "Begin",
+                          "option2": "Back"
+                        }
+                      },
+                      {
+                        "id": "edd70a41-5036-48c7-a39a-bcef8793110b",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "010b5b52-8cb4-4c89-ae93-f0022e2472a6",
+                  "id": "bfb524a6-549d-4d93-a3d1-f072d3bea575",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -109,7 +166,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "b8422f1a-92b7-4567-a0f2-4345aeba59c5",
+                        "id": "b966eb6d-5210-4a3b-ae84-802e43f6a849",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "120",
@@ -120,7 +177,7 @@
                         }
                       },
                       {
-                        "id": "2541738f-f358-4cae-a778-e11e3bcb9b79",
+                        "id": "09065a61-b9ba-4f77-aafd-1f7ed3d9ebec",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "121",
@@ -131,34 +188,72 @@
                         }
                       },
                       {
-                        "id": "619f742d-096e-480b-ad3d-e473402a62e0",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "The project is\nincluded with\nownership. Nobody\nneeds to buy a\npremium",
-                            "door-widening\nsubscription."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "0aa7d543-3aaa-4229-aa89-947921e2c931",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "0591a770-7fde-47d7-aba4-5de5233a1f3a",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "7801bac5-d2f6-4866-a0e3-9231f047fc1f",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "The project is\nincluded with\nownership. Nobody\nneeds to buy a\npremium",
+                                  "door-widening\nsubscription."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "6cd66646-a5ea-4abe-ae46-923de56e6ec0",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       },
                       {
-                        "id": "c683213a-858b-4707-ac70-069728ec1e6f",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Cocoa Corner:\ninspect your\npickup-counter\nplan at the side\ndesk."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "5c717640-738e-4e8b-a1f5-a37a047c98e5",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "5ff6197b-8dfb-4166-ad0c-8bbe92fde921",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "0adaf940-41eb-4985-a287-7250f6451b4f",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Cocoa Corner:\ninspect your\npickup-counter\nplan at the side\ndesk."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "b2682e12-b965-4502-a5cc-fd32dd953d80",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ],
@@ -171,7 +266,7 @@
         ],
         "false": [
           {
-            "id": "38e5a41f-125f-40df-a1d9-ef2d1b849f93",
+            "id": "eb8929fb-aca3-4a3b-a357-c4ac77032d26",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -189,23 +284,42 @@
             "children": {
               "true": [
                 {
-                  "id": "cf095a8b-fe44-4e68-ae8f-90c6f525debc",
-                  "command": "EVENT_TEXT",
-                  "args": {
-                    "text": [
-                      "A Counter for Cold\nHands",
-                      "Room for the Next\nCup"
-                    ],
-                    "avatarId": "",
-                    "minHeight": 4,
-                    "maxHeight": 7,
-                    "position": "bottom",
-                    "closeWhen": "key",
-                    "closeButton": "a"
+                  "id": "1e61f562-1637-486c-a6cd-08f5c1721d07",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "e7297129-375d-4b4b-ad54-1b234bf1d640",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "84c89e41-b735-48b0-af37-2766f5b221d1",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "A Counter for Cold\nHands",
+                            "Room for the Next\nCup"
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "8fd00c4f-bdcd-473b-ab22-fc5070f8a981",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
                   }
                 },
                 {
-                  "id": "1a86da75-cc04-4c0d-a92c-91a11ddaca35",
+                  "id": "af026ac3-b07b-4c61-a284-e569f4064758",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -223,7 +337,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "263c06a2-24b8-4869-a050-bdd71197f790",
+                        "id": "f9b3c38e-bf84-4f38-a5e0-0e981891aeb6",
                         "command": "EVENT_CALL_CUSTOM_EVENT",
                         "args": {
                           "customEventId": "bfc129a3-e308-403e-a2bc-09a66ff1687a"
@@ -232,7 +346,7 @@
                     ],
                     "false": [
                       {
-                        "id": "42fca63a-bffb-4b11-a45e-64b62fa0f6c5",
+                        "id": "0def77bd-a054-413f-a5ea-f23c97c9d3fa",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -250,24 +364,43 @@
                         "children": {
                           "true": [
                             {
-                              "id": "2c1baa1b-3633-4b45-a007-16882e854735",
-                              "command": "EVENT_TEXT",
-                              "args": {
-                                "text": [
-                                  "Brassworks\nFoundry: collect\nthe prepared\ncounter pieces at\nthe side desk."
-                                ],
-                                "avatarId": "",
-                                "minHeight": 4,
-                                "maxHeight": 7,
-                                "position": "bottom",
-                                "closeWhen": "key",
-                                "closeButton": "a"
+                              "id": "b69d3047-c7a3-4b6f-a6e8-a0b2bd046dc1",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "3c0883c8-8c7b-47f8-a088-0c7482cab5c1",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "5f7abfb9-c88d-42bb-aa2f-c26f46fc1481",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Brassworks\nFoundry: collect\nthe prepared\ncounter pieces at\nthe side desk."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "edfe329d-c3a5-477f-a569-8b955cb50277",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
                               }
                             }
                           ],
                           "false": [
                             {
-                              "id": "dd795d7b-d242-424d-a106-d35a38fb92bb",
+                              "id": "fe8fa6dd-1c8b-49b7-a76f-ec331fe0d46f",
                               "command": "EVENT_IF",
                               "args": {
                                 "condition": {
@@ -285,7 +418,7 @@
                               "children": {
                                 "true": [
                                   {
-                                    "id": "9ce16f03-032a-4abb-a7cc-4fc31e05db1e",
+                                    "id": "480e138c-2394-4ae5-afd2-2316f8e0104e",
                                     "command": "EVENT_CALL_CUSTOM_EVENT",
                                     "args": {
                                       "customEventId": "36b688d1-e637-4ada-ab03-14cd28719266"
@@ -294,7 +427,7 @@
                                 ],
                                 "false": [
                                   {
-                                    "id": "ec70342a-cb63-4cba-aa6e-27348bb498f6",
+                                    "id": "31a57134-58e3-4d0c-aa1f-28424e5918f9",
                                     "command": "EVENT_IF",
                                     "args": {
                                       "condition": {
@@ -312,7 +445,7 @@
                                     "children": {
                                       "true": [
                                         {
-                                          "id": "d173ffdd-b802-4a66-ae36-56ad5f4d4ccf",
+                                          "id": "6992b42e-70f0-4cdb-a1e2-6f9ba8f51d60",
                                           "command": "EVENT_CALL_CUSTOM_EVENT",
                                           "args": {
                                             "customEventId": "f5e8c5ba-3161-4e49-a61b-8d29d02bb17c"
@@ -321,7 +454,7 @@
                                       ],
                                       "false": [
                                         {
-                                          "id": "c9245754-230c-405a-ad6c-b78671b3dcc0",
+                                          "id": "c276a443-2cc6-4f26-aef9-9bc5fc3ea503",
                                           "command": "EVENT_IF",
                                           "args": {
                                             "condition": {
@@ -339,7 +472,7 @@
                                           "children": {
                                             "true": [
                                               {
-                                                "id": "75a47c8c-290d-469f-a4d8-0f15f60682ac",
+                                                "id": "a988c155-d702-4129-ab8c-c390a1b4a11c",
                                                 "command": "EVENT_CALL_CUSTOM_EVENT",
                                                 "args": {
                                                   "customEventId": "549c8f4c-0a7e-4321-a7b1-101a7485d8c6"
@@ -348,18 +481,37 @@
                                             ],
                                             "false": [
                                               {
-                                                "id": "cf85195f-21a7-4b0c-a3de-bfd59c82fdbb",
-                                                "command": "EVENT_TEXT",
-                                                "args": {
-                                                  "text": [
-                                                    "Check the Side\njournal for your\nnext lead."
-                                                  ],
-                                                  "avatarId": "",
-                                                  "minHeight": 4,
-                                                  "maxHeight": 7,
-                                                  "position": "bottom",
-                                                  "closeWhen": "key",
-                                                  "closeButton": "a"
+                                                "id": "cdb99ae3-b9f7-45ef-a075-2f248a7acddc",
+                                                "command": "EVENT_GROUP",
+                                                "args": {},
+                                                "children": {
+                                                  "true": [
+                                                    {
+                                                      "id": "2cd45037-be1b-45cc-ad8e-17282cb6f389",
+                                                      "command": "EVENT_HIDE_SPRITES",
+                                                      "args": {}
+                                                    },
+                                                    {
+                                                      "id": "19058d75-d4f9-4f86-abc4-f021975dc834",
+                                                      "command": "EVENT_TEXT",
+                                                      "args": {
+                                                        "text": [
+                                                          "Check the Side\njournal for your\nnext lead."
+                                                        ],
+                                                        "avatarId": "",
+                                                        "minHeight": 4,
+                                                        "maxHeight": 7,
+                                                        "position": "bottom",
+                                                        "closeWhen": "key",
+                                                        "closeButton": "a"
+                                                      }
+                                                    },
+                                                    {
+                                                      "id": "47c34795-51d4-4be0-a4b3-a2d469c41774",
+                                                      "command": "EVENT_SHOW_SPRITES",
+                                                      "args": {}
+                                                    }
+                                                  ]
                                                 }
                                               }
                                             ]
@@ -380,7 +532,7 @@
               ],
               "false": [
                 {
-                  "id": "05e86c3f-aa0f-402d-a56b-ba6c1850d229",
+                  "id": "c6695870-539e-46f9-acb8-74c0d823df5e",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -398,37 +550,75 @@
                   "children": {
                     "true": [
                       {
-                        "id": "5150cfec-7005-44ce-ac08-65a926b69bb8",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "A Counter for Cold\nHands",
-                            "Your cafe\nimprovement pays 4\nextra Coins per\nsuccessful\nordinary job. No",
-                            "extra project fee\nwas charged."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "336e4791-ceb0-4d81-a188-c720b83d2e17",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "bb608ab2-8316-4a69-ab8c-78b487827352",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "37a696a1-05cc-4dc1-a2f1-34c8d6a73149",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "A Counter for Cold\nHands",
+                                  "Your cafe\nimprovement pays 4\nextra Coins per\nsuccessful\nordinary job. No",
+                                  "extra project fee\nwas charged."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "a49d4a9e-dcec-40d2-ab48-748efb2b498c",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ],
                     "false": [
                       {
-                        "id": "7bcfd045-5192-48ab-aa10-f2e9f3988f02",
-                        "command": "EVENT_TEXT",
-                        "args": {
-                          "text": [
-                            "Check the Side\njournal for your\nnext lead."
-                          ],
-                          "avatarId": "",
-                          "minHeight": 4,
-                          "maxHeight": 7,
-                          "position": "bottom",
-                          "closeWhen": "key",
-                          "closeButton": "a"
+                        "id": "1de43378-f27f-46d4-a828-5d82f37550e2",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "0f27d247-9655-4893-a49e-598b61ab60b1",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "124011bf-8d03-4a35-a8d9-4cfc20b73077",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Check the Side\njournal for your\nnext lead."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "2659c225-e19c-44de-a687-a2aa912c08c8",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
                         }
                       }
                     ]

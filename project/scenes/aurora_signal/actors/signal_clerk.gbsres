@@ -9,12 +9,12 @@
   "x": 25,
   "y": 23,
   "frame": 0,
-  "animate": false,
+  "animate": true,
   "spriteSheetId": "577806b2-c45a-439d-aa2f-33ee8efe1521",
   "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
   "direction": "down",
   "moveSpeed": 1,
-  "animSpeed": 15,
+  "animSpeed": 31,
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
@@ -22,10 +22,75 @@
   "prefabScriptOverrides": {},
   "script": [
     {
-      "id": "3405a467-0484-4bd8-a076-47cfb2243034",
+      "id": "204ef5d3-66e7-4f8d-a431-3df8a44ffd40",
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
         "customEventId": "2dc04086-a821-4147-a0ee-acd3abacab8b"
+      }
+    },
+    {
+      "id": "4ac0d49f-c9dd-4662-a7d4-0b909a148e82",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "140"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "f784ec77-0bfa-4dff-ae0f-bcd85c2fbe7b",
+            "command": "EVENT_MUSIC_STOP",
+            "args": {}
+          }
+        ],
+        "false": [
+          {
+            "id": "854498b2-974e-40ae-a0af-d9fc5446072d",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "34"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "07e102d0-89f4-4112-a4d0-81d82d15df6c",
+                  "command": "EVENT_MUSIC_PLAY",
+                  "args": {
+                    "musicId": "55d0eb68-ef30-5f46-a2ca-d86b5d12596e"
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "afd5fb4f-597b-4d74-aea4-1568fac4f0b3",
+                  "command": "EVENT_MUSIC_PLAY",
+                  "args": {
+                    "musicId": "f2905faa-e99c-5e1e-ab03-ef3ae78bb967"
+                  }
+                }
+              ]
+            }
+          }
+        ]
       }
     }
   ],
