@@ -32,10 +32,27 @@ try {
     {key:'aurora',name:'Rooftop Blue Hour',ticks:10,chords:[[9,'min11'],[5,'maj9'],[0,'maj9'],[7,'dom9']],motif:[4,2,3,4,1,2],kick:[0,6,10],mood:'Suspended elevenths open into warm major chords beneath high keys.'},
     {key:'finale',name:'All the Windows Glow',ticks:9,chords:[[0,'maj9'],[4,'min9'],[5,'maj6'],[7,'dom9']],motif:[2,3,4,2,1,4],kick:[0,7,10,15],mood:'Full ensemble reprise with an original rising answer and soft landing.'},
   ];
+  // Place seasonal color by scene and phrase, retaining the existing harmony,
+  // bass, tempos and groove. The other three songs remain byte-identical.
+  const seasonal = {
+    garage: {musicBoxBlocks:[0,4], musicBoxBars:[0,2], jingleBlocks:[],
+      motif:[2,4,3,2,0,1], description:'Four short music-box bars at home; no sleigh percussion.'},
+    frostwick: {musicBoxBlocks:[1,5], musicBoxBars:[0,2], jingleBlocks:[1,5],
+      motif:[0,2,4,3,1,0], description:'Brief snowy-street chimes and two restrained sleigh-percussion sections.'},
+    candy: {musicBoxBlocks:[1,5], musicBoxBars:[0,1,2,3], jingleBlocks:[1,5],
+      motif:[2,4,2,1,3,0], description:'Playful music-box answers and sleigh accents in two shopping-street sections.'},
+    finale: {musicBoxBlocks:[0,1,3,5,6,7], musicBoxBars:[0,1,2,3], jingleBlocks:[0,1,3,5,6,7],
+      motif:[2,4,3,2,0,1], description:'The home music-box idea returns as a fuller festival celebration; the sparse breakdown stays quiet.'},
+  };
   await fs.mkdir(path.join(root,'assets/music'),{recursive:true});
   const tracks=[];
   for (const spec of specs) {
+    const holiday=seasonal[spec.key];
     const song={version:6,name:spec.name,artist:'Chromatic City Original Score',comment:'Original composition. Pulse keys / comping, wave bass, noise kit. 32-bar seamless loop.',filename:spec.key,dutyInstruments:[duty(0,'Felt Pocket Keys',9,-3,2),duty(1,'Soft Chord Dust',5,-5,2),duty(2,'Glass Bell Answer',7,-4,1),duty(3,'Copper Muted Keys',7,-4,0)],waveInstruments:[{index:0,name:'Rounded Sine Bass',length:null,volume:2,waveIndex:0,subpatternEnabled:false,subpattern:sub()}],noiseInstruments:[noise(0,'Low Pillow Kick',10,-7,22,7),noise(1,'Brushed Backbeat',8,-6,12),noise(2,'Closed Dust Hat',3,-7,4),noise(3,'Soft Rim Ghost',4,-7,5)],waves:[Uint8Array.from({length:32},(_,i)=>Math.round(7.5+6.5*Math.sin(2*Math.PI*i/32)+0.7*Math.sin(4*Math.PI*i/32)))],ticksPerRow:spec.ticks,timerEnabled:false,timerDivider:0,patterns:[],sequence:[]};
+    if(holiday){
+      song.dutyInstruments.push(duty(4,'Winterlight Music Box',6,-5,1));
+      song.noiseInstruments.push(noise(4,'Soft Sleigh Shimmer',4,-7,5));
+    }
     const counts=[0,0,0,0];
     // Eight four-bar blocks: A, A answer, B, B lift, A sparse, A answer,
     // C high answer, turnaround. Final dominant resolves into the first tonic.
@@ -48,11 +65,17 @@ try {
         if(block===2||block===3)chordIndex=[2,1,0,3][bar];
         const [base,quality]=spec.chords[chordIndex], tones=qualities[quality], row=bar*16;
         const higher=block===6?12:0;
+        const musicBox=holiday?.musicBoxBlocks.includes(block)&&holiday.musicBoxBars.includes(bar);
         const melodicRows=block===4?[3,8,14]:[0,3,6,8,11,14];
         melodicRows.forEach((r,i)=>{
           if(block===0&&bar===0&&i===0)return; // leave room for the downbeat
-          const degree=(spec.motif[(i+bar+(block%2))%spec.motif.length]+(block===3?1:0))%tones.length;
-          put(0,row+r,12+base+tones[degree]+higher,spec.key==='brassworks'?3:(block===6?2:0),r===14?1:2);
+          const motif=musicBox?holiday.motif:spec.motif;
+          const degree=(motif[(i+bar+(block%2))%motif.length]+(block===3?1:0))%tones.length;
+          // A narrow pulse, short decay and a bounded octave lift suggest a
+          // music box without turning the entire arrangement into a bell lead.
+          let note=12+base+tones[degree]+higher;
+          if(musicBox){note+=higher?0:12;if(note>47)note-=12;}
+          put(0,row+r,note,musicBox?4:spec.key==='brassworks'?3:(block===6?2:0),r===14?1:2);
         });
         // Shell voicings imply full extended chords through thirds, sevenths and ninths.
         const compRows=block===4?[0,6,11]:[0,2,5,7,10,13];
@@ -66,6 +89,13 @@ try {
         hits.set(4,[22,1]);hits.set(12,[22,1]);
         if(block%2===1&&bar===3){hits.set(13,[27,3]);hits.set(15,[30,3]);}
         if(spec.key==='velvet')hits.delete(4);
+        if(holiday?.jingleBlocks.includes(block)){
+          // Paired short noise pulses evoke a sleigh shake. Keep kicks, snares
+          // and rim answers intact on the single shared percussion channel.
+          for(const r of [2,3,6,7,10,11,14,15]){
+            if(!hits.has(r)||hits.get(r)[1]===2)hits.set(r,[r%2?46:42,4]);
+          }
+        }
         for(const [r,[n,instrument]]of hits)put(3,row+r,n,instrument);
       }
       const offset=song.patterns.length;song.patterns.push(...channels);song.sequence.push({splitPattern:false,channels:[offset,offset+1,offset+2,offset+3]});
@@ -91,13 +121,19 @@ try {
     }
     assert.deepEqual(parsedCounts,counts);
     assert(counts.every(n=>n>=96));
+    const instrumentUses=(channel,instrument)=>loaded.sequence.reduce((total,order)=>total+loaded.patterns[order.channels[channel]].filter(c=>c.note!==null&&c.instrument===instrument).length,0);
+    const musicBoxNotes=instrumentUses(0,4),sleighHits=instrumentUses(3,4);
+    assert.equal(musicBoxNotes>0,Boolean(holiday));
+    assert.equal(sleighHits>0,Boolean(holiday?.jingleBlocks.length));
     const resource={_resourceType:'music',id:uuid(spec.key),name:spec.name,symbol:`song_${spec.key}`,filename:`${spec.key}.uge`,settings:{},type:'uge'};
     await fs.writeFile(path.join(root,'assets/music',resource.filename),bytes);
     await fs.writeFile(path.join(root,'assets/music',`${resource.filename}.gbsres`),JSON.stringify(resource,null,2)+'\n');
-    tracks.push({...resource,key:spec.key,bpm:Number((900/spec.ticks).toFixed(2)),ticksPerRow:spec.ticks,bars:32,loopSeconds:Number((512*spec.ticks/59.7275).toFixed(2)),chords:spec.chords.map(([r,q])=>`${['C','Db','D','Eb','E','F','Gb','G','Ab','A','Bb','B'][r]} ${q}`),mood:spec.mood,noteCounts:counts,sha256:createHash('sha256').update(bytes).digest('hex'),bytes:bytes.length});
+    tracks.push({...resource,key:spec.key,bpm:Number((900/spec.ticks).toFixed(2)),ticksPerRow:spec.ticks,bars:32,loopSeconds:Number((512*spec.ticks/59.7275).toFixed(2)),chords:spec.chords.map(([r,q])=>`${['C','Db','D','Eb','E','F','Gb','G','Ab','A','Bb','B'][r]} ${q}`),mood:spec.mood,noteCounts:counts,seasonal:holiday?{...holiday,musicBoxNotes,sleighHits}:{description:'Original v0.5 arrangement retained.',musicBoxNotes,sleighHits},sha256:createHash('sha256').update(bytes).digest('hex'),bytes:bytes.length});
     console.log(`${spec.key}: official v6 roundtrip OK, ${bytes.length} bytes, notes ${counts.join('/')}`);
   }
   assert.equal(new Set(tracks.map(t=>t.sha256)).size,7,'Tracks must be distinct');
   const manifest={version:1,composer:'Chromatic City Original Score',provenance:'Original arrangements, generated from authored harmonic and rhythmic structures; no recordings, samples, existing melodies or lyrics.',channels:['Pulse 1: felt keys and melodic answers','Pulse 2: extended-chord shell comping','Wave: rounded sine bass','Noise: pillow kick, brush snare, dust hat, rim ghost'],soundbank:['Felt Pocket Keys','Soft Chord Dust','Glass Bell Answer','Copper Muted Keys','Rounded Sine Bass','Low Pillow Kick','Brushed Backbeat','Closed Dust Hat','Soft Rim Ghost'],tracks,musicResources:tracks.map(({_resourceType,id,name,symbol,filename,settings,type})=>({_resourceType,id,name,symbol,filename,settings,type}))};
+  manifest.soundbank.push('Winterlight Music Box','Soft Sleigh Shimmer');
+  manifest.seasonalDirection='Selective scene accents: home, snowy streets, shopping streets and the festival. Brassworks, Velvet and regular Aurora retain their v0.5 arrangements.';
   await fs.writeFile(path.join(root,'content/soundtrack.json'),JSON.stringify(manifest,null,2)+'\n');
 }finally{await fs.rm(scratch,{recursive:true,force:true});}

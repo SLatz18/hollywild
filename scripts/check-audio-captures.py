@@ -9,6 +9,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parents[1]
 sha = hashlib.sha256((ROOT / "build/rom/hollywild.gbc").read_bytes()).hexdigest()
+loops = {t['key']: t['loopSeconds'] for t in json.loads((ROOT / "content/soundtrack.json").read_text())['tracks']}
 report = {"romSha256": sha, "passed": True, "captures": [],
           "limit": "Signal and routing checks, not a listening review or hardware test."}
 for directory, tracks in (
@@ -26,10 +27,12 @@ for directory, tracks in (
         duration = len(samples) / 48000
         peak = float(np.max(np.abs(samples)))
         rms = float(np.sqrt(np.mean(samples ** 2)))
-        assert duration > (90 if track == "finale" else 2 if track == "muted" else 7)
-        assert peak == 0 if track == "muted" else 0 < peak < 1
-        if track == "finale":
-            # The ~77-second order list must produce sound beyond its first loop.
+        assert duration > (2 if track == "muted" else loops[track] + 2)
+        # Captures expand signed 8-bit APU samples into PCM16 without gain.
+        # Detect the original positive rail too, not just PCM16 full scale.
+        assert peak == 0 if track == "muted" else 0 < peak < 127 / 128
+        if track != "muted":
+            # Capture the quieter breaks, seasonal phrases and a complete loop.
             assert all(np.any(samples[n:n + 48000]) for n in range(0, len(samples) - 48000, 48000))
         report["captures"].append({"track": track, "seconds": round(duration, 3),
                                    "peakFullScale": round(peak, 6), "rmsFullScale": round(rms, 6)})

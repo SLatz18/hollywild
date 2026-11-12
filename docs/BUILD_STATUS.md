@@ -1,55 +1,42 @@
-# Native build status: v0.5.0-atmosphere
+# Native build status: v0.5.1-holiday-accents
 
-Hollywild is a native Game Boy Color prototype for ModRetro Chromatic. This update adds original music, richer city art, ambient character animation, visible property projects, and fixes for dialogue fit and menu overlap.
+This update places original holiday accents where the scene calls for them. It retains the relaxed jazz/hip-hop foundation. Gameplay, visuals, dialogue and music controls are unchanged from v0.5.
 
-## What changed
+## Musical placement
 
-- Seven original four-channel compositions accompany the garage, five districts and festival finale. START > Guide > Music offers Play/Mute with visible confirmation. Checkpoint saves retain the choice. See [soundtrack](SOUNDTRACK.md).
-- All 20 rooms have revised palettes and decorative detail. Six characters, books and property signs have subtle idle animation. Four property projects visibly improve their interiors immediately and on return. Navigation and collision geometry are unchanged. See [visual design](VISUALS.md).
-- Shared dialogue formatting wraps at 18 glyph columns and five lines, including conservative runtime number widths. The reported indoor-text clipping was reproduced before correction; the complete word now fits. Modal dialogue and menus hide world sprites so icons cannot cover labels.
-- The opening now has five pages, clearer controls, and specific job-board and salvage directions. Detailed help remains in Guide. Three blind agent sessions found the usability issues; an experienced-agent retry completed salvage and workshop repair. See [research methods, outcomes and remaining friction](PLAYER_RESEARCH.md).
+Each track has 32 bars. Selected bars receive a short music-box phrase or soft, paired noise pulses suggesting sleigh percussion.
 
-The main campaign still has 24 missions, 144 objectives, 45 puzzles, 40 discoveries and three endings. Neighborhood content adds 22 optional missions with 94 objectives, 22 puzzles, four choices and eight perks. Five local commissions, ordinary salvage/delivery work, property ownership and three crew roles remain. Activity counts are not proof of a particular human playtime.
+| Track | Music-box bars | Sleigh-percussion bars |
+| --- | ---: | ---: |
+| garage | 4 | 0 |
+| frostwick | 4 | 8 |
+| candy | 8 | 8 |
+| finale | 24 | 24 |
+
+Brassworks, Velvet and regular Aurora retain byte-identical v0.5 music files. The garage has no sleigh percussion. Every track retains its previous tempo, harmony, comping, bass, loop length, and kick/snare/rim notes. The festival finale reprises the garage motif with a fuller seasonal treatment; its sparse breakdown remains quiet. These are original melodies and synthesized sounds, not recorded bells or a traditional carol medley. See [soundtrack details](SOUNDTRACK.md).
+
+An independent agent parsed baseline and new UGE assets through the official local reader. It checked the actual selected bars, exported instrument usage, unchanged accompaniment, protected drum notes and the three byte-identical tracks. This was a structural score review, not a listening review.
 
 ## Exact tested cartridge
 
-- ROM: 1,048,576 bytes, Game Boy Color Only, MBC5 with battery-backed RAM; 32 KB save-RAM header.
-- SHA-256: `e69ccb06012236e201dafe92a82d964550069f46b815be177271b071cc97879b`.
-- GB Studio 4.3.2: `ccb891b2670134ba8237416772eea4ed09d34e1e`.
-- GBVM: `bd6f41cc5e05cbe6601dcc7f8e2db89bed527fe3`.
-- Native source: 20 scenes, 111 interaction sites, 141 declared globals and 23,208 events.
-- Header, size and checksums passed inspection. All 52 linked code areas fit the 16 KB bank limit.
-- Native source and generator hashes remained unchanged through the final build and full regression suite.
+- Native Game Boy Color Only, MBC5 with battery-backed RAM; 1,048,576 bytes and a 32 KB save-RAM header.
+- SHA-256: `17fa74718a9c50df9602722b4aefd7ca01fca5c67ed172cb19fd4a77f5e41721`.
+- Pinned GB Studio 4.3.2: `ccb891b2670134ba8237416772eea4ed09d34e1e`; GBVM: `bd6f41cc5e05cbe6601dcc7f8e2db89bed527fe3`.
+- Header, size and both checksums passed. All 52 linked code areas fit the 16 KB bank limit.
+- Build inputs remained unchanged through compilation and the final regression suite.
 
-## Actual-ROM verification
+## Verification
 
-Tests ran the exact cartridge in PyBoy through normal buttons. Matching-build symbols and hardware registers were read to observe state. No gameplay-memory injection, teleportation, or emulator save states were used. Each scenario starts with fresh cartridge RAM; reboot checks carry only that scenario's cartridge RAM.
+All ten actual-ROM scenarios passed, covering 4,659 commands and 1,479 assertion checkpoints: three campaign endings, local commissions, crew roles, free roaming, the opening economy loop, mixed main/side progress, and both side-story paths. Six source/asset checks also passed. Suite wall time was 162.77 seconds, an automated measurement with known answers and routes, not human playtime.
 
-| Scenario | Commands | Assertion checkpoints | Automated wall seconds |
-| --- | ---: | ---: | ---: |
-| campaign-ending-1.jsonl | 845 | 350 | 32.20 |
-| campaign-ending-2.jsonl | 448 | 222 | 21.04 |
-| campaign-ending-3.jsonl | 448 | 222 | 21.01 |
-| commissions.jsonl | 224 | 45 | 2.41 |
-| crew-roles.jsonl | 240 | 47 | 2.49 |
-| free-roam.jsonl | 40 | 10 | 0.53 |
-| opening-loop.jsonl | 177 | 33 | 1.62 |
-| side-interleave.jsonl | 93 | 27 | 3.94 |
-| side-path-1.jsonl | 1299 | 310 | 46.39 |
-| side-path-2.jsonl | 845 | 213 | 28.93 |
+The UI regression passed all 18 observations on this exact ROM, including the five-page introduction, readable menus, mute confirmation and sprite restoration. Audio routing passed 35 commands, and the finale path passed 452 commands. The six ordinary tracks were each captured for 104.647 seconds, and the finale for 94.685 seconds. Every capture extends beyond one complete loop; all contained sound in every full one-second interval and had no digital clipping. Muted output was digital zero for 2.987 seconds, and the setting persisted after checkpoint save and reboot.
 
-All ten scenarios passed: 4,659 commands and 1,479 assertion checkpoints. The full suite took 162.07 seconds. These are automated measurements with known routes and puzzle answers, not a human completion-time estimate. Six source/asset checks also passed. The [compact verification report](verification/v0.5.0-atmosphere.json) records provenance and simulated frames.
+These tests use normal button inputs, fresh isolated cartridge RAM, and read-only state observations. They do not inject gameplay state or load emulator save states. The [compact report](verification/v0.5.1-holiday-accents.json) records the exact cartridge and results.
 
-Additional checks on the same ROM:
+## Delivery and limits
 
-- UI: 18 observations verified five intro pages, full text, six menu captures without sprite overlap, visible mute confirmation, and restored sprites after closing.
-- Audio: 35 routing commands and 452 finale-path commands passed. All seven tracks produced nonzero, unclipped captured output. Muted output was digital zero for 2.987 seconds; mute persisted after checkpoint save and reboot. A 94.685-second finale capture continued through its first approximately 77-second loop. This is signal verification, not a listening review.
-- Art: final side-story replays captured all four project interiors before and after completion. Changed-pixel checks and direct screenshot review confirmed visible changes. An idle garage capture changed 25 pixels over 32 frames without button input, confirming ambient animation in the ROM.
+[Download v0.5.1](https://github.com/SLatz18/hollywild/releases/tag/v0.5.1-holiday-accents). The native `.gbc` file is the playable artifact. [Build instructions](DEVELOPMENT.md) and [hardware installation](HARDWARE_INSTALL.md) remain available.
 
-## Delivery and remaining limits
+Physical Chromatic playback, hardware audio/save persistence, cross-release save compatibility, human pacing and subjective music quality remain unverified. The [v0.5 agent usability research](PLAYER_RESEARCH.md) belongs to its recorded earlier ROMs, not a new blind test of this soundtrack. The existing navigation and checkpoint-discovery limitations remain. There is no live AI/network dependency in the cartridge.
 
-[Download the cartridge](https://github.com/SLatz18/hollywild/releases/tag/v0.5.0-atmosphere). Open `hollywild.gbsproj` to edit the included native resources. [Build instructions](DEVELOPMENT.md) explain the pinned local compiler and test environment.
-
-Physical Chromatic playback, hardware audio/save persistence, and save compatibility across different releases remain unverified. There is no live generative AI or network dependency in the cartridge. Agent playtests do not establish human enjoyment, accessibility, pacing or subjective music quality. Optional-story navigation remains deep, and checkpoint discovery still needs clearer presentation. Driving, traffic, combat and action minigames are not implemented.
-
-The prior build record is preserved in [v0.4.0 history](history/v0.4.0-neighborhoods.md).
+The prior detailed gameplay, art and testing record is preserved in [v0.5 history](history/v0.5.0-atmosphere.md).
