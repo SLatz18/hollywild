@@ -1,42 +1,27 @@
-# Native build status: v0.5.1-holiday-accents
+# Native build status: v0.6.0-composed-score
 
-This update places original holiday accents where the scene calls for them. It retains the relaxed jazz/hip-hop foundation. Gameplay, visuals, dialogue and music controls are unchanged from v0.5.
-
-## Musical placement
-
-Each track has 32 bars. Selected bars receive a short music-box phrase or soft, paired noise pulses suggesting sleigh percussion.
-
-| Track | Music-box bars | Sleigh-percussion bars |
-| --- | ---: | ---: |
-| garage | 4 | 0 |
-| frostwick | 4 | 8 |
-| candy | 8 | 8 |
-| finale | 24 | 24 |
-
-Brassworks, Velvet and regular Aurora retain byte-identical v0.5 music files. The garage has no sleigh percussion. Every track retains its previous tempo, harmony, comping, bass, loop length, and kick/snare/rim notes. The festival finale reprises the garage motif with a fuller seasonal treatment; its sparse breakdown remains quiet. These are original melodies and synthesized sounds, not recorded bells or a traditional carol medley. See [soundtrack details](SOUNDTRACK.md).
-
-An independent agent parsed baseline and new UGE assets through the official local reader. It checked the actual selected bars, exported instrument usage, unchanged accompaniment, protected drum notes and the three byte-identical tracks. This was a structural score review, not a listening review.
+Seven original compositions now have written melodies, distinct grooves, 48-bar forms, quieter passages and thematic returns. Bass register and percussion were corrected against the native driver. Holiday accents remain selective; Brassworks, Velvet and regular Aurora use none. See [soundtrack details](SOUNDTRACK.md).
 
 ## Exact tested cartridge
 
-- Native Game Boy Color Only, MBC5 with battery-backed RAM; 1,048,576 bytes and a 32 KB save-RAM header.
-- SHA-256: `17fa74718a9c50df9602722b4aefd7ca01fca5c67ed172cb19fd4a77f5e41721`.
-- Pinned GB Studio 4.3.2: `ccb891b2670134ba8237416772eea4ed09d34e1e`; GBVM: `bd6f41cc5e05cbe6601dcc7f8e2db89bed527fe3`.
-- Header, size and both checksums passed. All 52 linked code areas fit the 16 KB bank limit.
-- Build inputs remained unchanged through compilation and the final regression suite.
+- SHA-256: `440c3667c5fe386128eb0d7cdc60aa6000a72329f6bc6943d3795cd4811ea8d1`.
+- 1,048,576-byte native Game Boy Color Only cartridge, MBC5 with battery-backed RAM and a 32 KB save-RAM header.
+- GB Studio 4.3.2 commit `ccb891b2670134ba8237416772eea4ed09d34e1e`; GBVM `bd6f41cc5e05cbe6601dcc7f8e2db89bed527fe3`.
+- Header and both checksums passed. All 53 linked code areas fit their 16 KB bank limit.
+- Build inputs stayed unchanged through compilation and the full regression suite.
 
 ## Verification
 
-All ten actual-ROM scenarios passed, covering 4,659 commands and 1,479 assertion checkpoints: three campaign endings, local commissions, crew roles, free roaming, the opening economy loop, mixed main/side progress, and both side-story paths. Six source/asset checks also passed. Suite wall time was 162.77 seconds, an automated measurement with known answers and routes, not human playtime.
+All ten actual-ROM scenarios passed: 4,659 commands and 1,479 assertion checkpoints, including three campaign endings, both side-story paths, mixed progress, free roaming, commissions, crew roles and the opening economy. Six source checks passed. The suite took 164.89 seconds of automated execution with known routes and answers. This does not measure human playtime.
 
-The UI regression passed all 18 observations on this exact ROM, including the five-page introduction, readable menus, mute confirmation and sprite restoration. Audio routing passed 35 commands, and the finale path passed 452 commands. The six ordinary tracks were each captured for 104.647 seconds, and the finale for 94.685 seconds. Every capture extends beyond one complete loop; all contained sound in every full one-second interval and had no digital clipping. Muted output was digital zero for 2.987 seconds, and the setting persisted after checkpoint save and reboot.
+The UI regression passed 18 observations, including the five-page introduction, menus, mute confirmation and restored sprites. Audio routing passed 35 commands and the finale path passed 452. Every track was captured beyond one full loop. All eight captures passed signal checks; mute was digital zero, and music had no clipped samples. Deliberate phrase rests last up to 1.72 seconds.
 
-These tests use normal button inputs, fresh isolated cartridge RAM, and read-only state observations. They do not inject gameplay state or load emulator save states. The [compact report](verification/v0.5.1-holiday-accents.json) records the exact cartridge and results.
+Independent agents reviewed the actual UGE files and captured WAV samples. The capture harness now respects the valid audio-buffer byte count, removing a stale sample pair previously included at each frame boundary. These are structural, routing and signal checks, not a listening review. The [compact verification report](verification/v0.6.0-composed-score.json) ties results to the exact ROM.
 
 ## Delivery and limits
 
-[Download v0.5.1](https://github.com/SLatz18/hollywild/releases/tag/v0.5.1-holiday-accents). The native `.gbc` file is the playable artifact. [Build instructions](DEVELOPMENT.md) and [hardware installation](HARDWARE_INSTALL.md) remain available.
+[Download v0.6.0](https://github.com/SLatz18/hollywild/releases/tag/v0.6.0-composed-score). The `.gbc` cartridge is the playable artifact. [Build instructions](DEVELOPMENT.md) and [hardware installation](HARDWARE_INSTALL.md) are available.
 
-Physical Chromatic playback, hardware audio/save persistence, cross-release save compatibility, human pacing and subjective music quality remain unverified. The [v0.5 agent usability research](PLAYER_RESEARCH.md) belongs to its recorded earlier ROMs, not a new blind test of this soundtrack. The existing navigation and checkpoint-discovery limitations remain. There is no live AI/network dependency in the cartridge.
+Physical Chromatic playback, hardware saves, cross-release save compatibility, human pacing and subjective music quality remain unverified. This score update does not resolve the repetitive menu-based gameplay identified in the v0.4 review. That is a separate gameplay change under development. No live AI or network connection is required by the cartridge.
 
-The prior detailed gameplay, art and testing record is preserved in [v0.5 history](history/v0.5.0-atmosphere.md).
+Previous details are preserved in [v0.5.1 history](history/v0.5.1-holiday-accents.md).

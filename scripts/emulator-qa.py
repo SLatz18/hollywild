@@ -348,10 +348,18 @@ try:
             if "audio" in cmd:
                 assert os.environ.get('HOLLYWILD_QA_AUDIO') == '1', 'Enable real audio capture explicitly'
                 spec=cmd['audio'];name=Path(spec['name']).name;assert name.endswith('.wav')
-                seconds=spec.get('seconds',6);assert 0 < seconds <= 120
+                seconds=spec.get('seconds',6);assert 0 < seconds <= 240
                 chunks=[]
                 for _ in range(round(seconds*59.7275)):
-                    tick(pyboy,1);chunks.append(pyboy.sound.ndarray.copy())
+                    tick(pyboy,1)
+                    # PyBoy 2.6.1's ndarray convenience accessor slices rows
+                    # with a byte count, including one stale stereo sample.
+                    # Use the documented raw buffer and its actual byte head.
+                    head=pyboy.sound.raw_buffer_head
+                    assert head % 2 == 0
+                    valid_samples=head // 2
+                    assert valid_samples <= len(pyboy.sound.raw_ndarray)
+                    chunks.append(pyboy.sound.raw_ndarray[:valid_samples].copy())
                 samples=np.concatenate(chunks).astype(np.int16)*256
                 with wave.open(str(OUT/name),'wb') as output:
                     output.setnchannels(2);output.setsampwidth(2);output.setframerate(48000);output.writeframes(samples.astype('<i2').tobytes())

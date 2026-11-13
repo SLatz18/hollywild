@@ -31,10 +31,15 @@ for directory, tracks in (
         # Captures expand signed 8-bit APU samples into PCM16 without gain.
         # Detect the original positive rail too, not just PCM16 full scale.
         assert peak == 0 if track == "muted" else 0 < peak < 127 / 128
+        silent = np.all(samples == 0, axis=1)
+        edges = np.flatnonzero(np.diff(np.concatenate(([False], silent, [False]))))
+        longest_silence = float(np.max(edges[1::2] - edges[::2], initial=0) / 48000)
         if track != "muted":
-            # Capture the quieter breaks, seasonal phrases and a complete loop.
-            assert all(np.any(samples[n:n + 48000]) for n in range(0, len(samples) - 48000, 48000))
+            # The new sparse passages intentionally breathe. Their longest
+            # authored rest is under two seconds; longer gaps indicate dropout.
+            assert longest_silence < 2.5, (track, longest_silence)
         report["captures"].append({"track": track, "seconds": round(duration, 3),
-                                   "peakFullScale": round(peak, 6), "rmsFullScale": round(rms, 6)})
+                                   "peakFullScale": round(peak, 6), "rmsFullScale": round(rms, 6),
+                                   "longestSilentSeconds": round(longest_silence, 3)})
 (ROOT / "test-results/audio-report.json").write_text(json.dumps(report, indent=2) + "\n")
 print(json.dumps(report, indent=2))

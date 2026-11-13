@@ -18,13 +18,13 @@ Built for ModRetro Chromatic using GB Studio 4.3.2. The development computer run
 - Four three-mission side-story arcs, six short encounters, and four property projects.
 - Twenty neighborhood desks, independent side-story progress, four more saved choices, and eight useful unlocks.
 
-The inspiration is city freedom, earnest holiday comedy, property hunting, and strategy. Driving, traffic, and multiple simultaneous crew assignments remain planned. The soundtrack combines warm jazz harmony, relaxed hip-hop rhythms, rounded bass, and playful chiptune keys. Music-box phrases and light sleigh-style accents appear at home and in selected festive streets, with a fuller festival finale. Brassworks, Velvet, and regular Aurora keep their original arrangements. All compositions are original, with no existing recordings or sampled songs.
+The inspiration is city freedom, earnest holiday comedy, property hunting, and strategy. Driving, traffic, and multiple simultaneous crew assignments remain planned. The soundtrack combines warm jazz harmony, relaxed hip-hop rhythms, rounded bass, and playful chiptune keys. Music-box phrases and light sleigh-style accents appear at home and in selected festive streets, with a fuller festival finale. Each area now has written melodic themes, distinct bass lines and a developed 48-bar arrangement; Brassworks, Velvet, and regular Aurora stay free of holiday instruments. All compositions are original, with no existing recordings or sampled songs.
 
 ![Archive in the running ROM](docs/images/frostwick_archive-campaign.png) ![A campaign puzzle in the running ROM](docs/images/campaign-puzzle.png)
 
 ![Fixed introduction](docs/images/intro-fixed.png) ![Improved Cocoa Corner](docs/images/cocoa-after.png)
 
-[Download the current native prototype](https://github.com/SLatz18/hollywild/releases/tag/v0.5.1-holiday-accents)
+[Download the current native prototype](https://github.com/SLatz18/hollywild/releases/tag/v0.6.0-composed-score)
 
 ## Story campaign
 
