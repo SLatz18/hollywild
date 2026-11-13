@@ -24,7 +24,8 @@ report = {"romSha256": expected, "checks": [], "replays": [], "passed": True,
           "timingNote": "Automated wall time and simulated frames are measured separately; neither estimates human pacing."}
 for runtime, name in ((sys.executable, "validate-assets.py"), (sys.executable, "check-native-source.py"),
                       ("node", "check-campaign.mjs"), ("node", "check-side.mjs"),
-                      ("node", "check-side-economy.mjs"), ("node", "check-dialogue.mjs")):
+                      ("node", "check-side-economy.mjs"), ("node", "check-dialogue.mjs"),
+                      ("node", "check-challenges.mjs")):
     check_started = time.perf_counter()
     result = subprocess.run([runtime, str(ROOT / "scripts" / name)], cwd=ROOT,
                             capture_output=True, text=True)

@@ -1,0 +1,82 @@
+{
+  "_resourceType": "trigger",
+  "id": "d32372c1-2247-482a-a259-282139dd7a8d",
+  "_index": 8,
+  "symbol": "trigger_candy_rooftops_trial_rough_1",
+  "prefabId": "",
+  "name": "trial_rough_1",
+  "x": 12,
+  "y": 20,
+  "width": 3,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "f14ca712-cba7-47b5-aca6-be28f6906963",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "149"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "46374dd8-0171-4be1-a419-44eb949d3162",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "152"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "2e465c36-df25-423c-a30a-708e552979be",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "152",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "1b4a8ae8-103e-47a2-aa28-c5760e8bc744",
+                  "command": "EVENT_SOUND_PLAY_EFFECT",
+                  "args": {
+                    "type": "beep",
+                    "pitch": 2,
+                    "duration": 0.05,
+                    "priority": "medium",
+                    "wait": false
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "leaveScript": []
+}

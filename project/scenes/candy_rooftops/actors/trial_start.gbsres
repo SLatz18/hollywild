@@ -1,0 +1,497 @@
+{
+  "_resourceType": "actor",
+  "id": "61208499-a03f-415c-a5ea-a34971846a4e",
+  "_index": 6,
+  "symbol": "actor_candy_rooftops_trial_start",
+  "prefabId": "",
+  "name": "Parcel foot trial",
+  "coordinateType": "tiles",
+  "x": 15,
+  "y": 12,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "223c41a6-904b-4985-ab1a-4d5d9875981c",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 31,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "c31e262d-f9c6-40c8-a145-69cda24da7e7",
+      "command": "EVENT_GROUP",
+      "args": {},
+      "children": {
+        "true": [
+          {
+            "id": "be620091-7342-4831-a481-73eef6e11390",
+            "command": "EVENT_HIDE_SPRITES",
+            "args": {}
+          },
+          {
+            "id": "a934fea7-605f-4a0f-afae-faf2dcdcdecb",
+            "command": "EVENT_TEXT",
+            "args": {
+              "text": [
+                "PARCEL FOOT TRIAL\nLong left flags:12\nCareful short:16\nRough hit:6 Coins",
+                "Three left flags\nmark the safe\nroute.\nThe center is\nshort.",
+                "Pass both center\nflags going down.\nTurning back ends\nyour shortcut run.",
+                "Dodge the two\nstriped rough\npatches\nin the center\nlane.",
+                "Only improvements\npay the\ndifference.\n16 Coins total\ncap."
+              ],
+              "avatarId": "",
+              "minHeight": 4,
+              "maxHeight": 7,
+              "position": "bottom",
+              "closeWhen": "key",
+              "closeButton": "a"
+            }
+          },
+          {
+            "id": "c2aceeec-d5e1-4411-ae34-35c384026d1f",
+            "command": "EVENT_SHOW_SPRITES",
+            "args": {}
+          }
+        ]
+      }
+    },
+    {
+      "id": "14619e0b-9068-4769-a54d-76148db12af6",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "149"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "257011cc-ac3b-4f8e-afbb-148d5bb7f63d",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "19f4f734-dd7d-4220-a225-e5fb7fc9ad2c",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "e5a7ad3b-e617-4682-ad86-9bbe7a922c97",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "Reset this run?\nYour best paid\nscore\nstays yours."
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "a506e202-dee4-4452-a396-396cbd85992d",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
+            }
+          },
+          {
+            "id": "69892d85-7066-4333-ac92-630f50cda17f",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "128b7db4-a40f-4491-ac74-3fd0d8b0f4c8",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "4b8c34e1-ed51-4b2b-ad83-96f1c8f94631",
+                  "command": "EVENT_MENU",
+                  "args": {
+                    "variable": "14",
+                    "items": 2,
+                    "layout": "menu",
+                    "cancelOnLastOption": false,
+                    "cancelOnB": true,
+                    "option1": "Reset",
+                    "option2": "Back"
+                  }
+                },
+                {
+                  "id": "542243c6-9dc1-465d-ae7a-6c7664b7883c",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
+            }
+          },
+          {
+            "id": "2beea236-eabd-4d40-a18e-3824212f37d6",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "6a2b3872-94bf-4cd7-ac2c-49332b7eb426",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "gt",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "153"
+                      },
+                      "valueB": {
+                        "type": "variable",
+                        "value": "154"
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "894e6076-5d01-4225-ac3c-ab450ee59169",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "157ad9ae-baa9-45e1-ad45-7af22e4c91f6",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "4196bfbd-a1f5-4242-a54f-db797ea42cb0",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Trial reward\npending.\nClaim at the\nfinish\nbefore another",
+                                  "run."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "64ea5dc0-79a8-45d8-aec9-51cd39393bdc",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "4b281a85-ed50-42f1-ac66-05ea3762716c",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "150",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "ba457263-bea5-49d8-a78c-bdc50e2a0d09",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "151",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "c9acbb4a-44fb-472f-acc6-a1ecae6b9697",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "152",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "fa0972c0-8067-413d-a54d-03114634687a",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "153",
+                          "value": {
+                            "type": "number",
+                            "value": 0
+                          }
+                        }
+                      },
+                      {
+                        "id": "9e57f1b4-ba84-4024-af62-a057e33ab1d5",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "149",
+                          "value": {
+                            "type": "number",
+                            "value": 1
+                          }
+                        }
+                      },
+                      {
+                        "id": "dcc438d8-6f11-4082-af68-ca7c4cde47e1",
+                        "command": "EVENT_SOUND_PLAY_EFFECT",
+                        "args": {
+                          "type": "beep",
+                          "pitch": 5,
+                          "duration": 0.05,
+                          "priority": "medium",
+                          "wait": false
+                        }
+                      },
+                      {
+                        "id": "d7e6ce0b-6bf8-4aa1-aa30-c007e162202c",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "ac0c9e19-e627-4491-aa60-c502ed5d7af9",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "c378e2ef-fa6e-48cb-a701-c283b423d248",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "PARCEL READY\nWalk the left\nflags\nor the center\nlane.",
+                                  "A at finish to\nbank."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "cc4dfb9b-6bd4-4ae9-a9b7-517eed503b1c",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "f691ec3f-0cd3-4837-ae93-83d196eff16e",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "gt",
+                "valueA": {
+                  "type": "variable",
+                  "value": "153"
+                },
+                "valueB": {
+                  "type": "variable",
+                  "value": "154"
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "d6f43200-e3e1-41ae-a8aa-77b8d831b0fc",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "7a949994-f707-4b16-ab9e-7be749fb8980",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "ad6e8dd8-f724-49dd-a642-32f029d9439a",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Trial reward\npending.\nClaim at the\nfinish\nbefore another",
+                            "run."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "7173a4e1-047b-46a0-ad84-c7d81c28f15c",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "df382c7b-ee82-4b99-a0cb-5c37df55ab08",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "150",
+                    "value": {
+                      "type": "number",
+                      "value": 0
+                    }
+                  }
+                },
+                {
+                  "id": "b21ee7c4-0b4b-4213-a657-a2034a7244d9",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "151",
+                    "value": {
+                      "type": "number",
+                      "value": 0
+                    }
+                  }
+                },
+                {
+                  "id": "809fb52e-d1bd-4a19-a3bc-fc1cb2924abf",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "152",
+                    "value": {
+                      "type": "number",
+                      "value": 0
+                    }
+                  }
+                },
+                {
+                  "id": "b974b9c3-6e19-4df6-adce-e670081b81c4",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "153",
+                    "value": {
+                      "type": "number",
+                      "value": 0
+                    }
+                  }
+                },
+                {
+                  "id": "66b7cf63-6cb8-49fd-a044-e1e323c5d07b",
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "149",
+                    "value": {
+                      "type": "number",
+                      "value": 1
+                    }
+                  }
+                },
+                {
+                  "id": "80b607b2-abc9-4db9-ad46-c6b95b15c906",
+                  "command": "EVENT_SOUND_PLAY_EFFECT",
+                  "args": {
+                    "type": "beep",
+                    "pitch": 5,
+                    "duration": 0.05,
+                    "priority": "medium",
+                    "wait": false
+                  }
+                },
+                {
+                  "id": "3adc8217-8d60-45ef-aa48-617d2d92b7d7",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "55eb551c-ffcf-46d0-afc1-cc5069a8412f",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "9e8c7fc6-6c53-4841-a796-26fd456efde0",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "PARCEL READY\nWalk the left\nflags\nor the center\nlane.",
+                            "A at finish to\nbank."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "7432e89c-a93e-40cd-a127-f3808deead9d",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

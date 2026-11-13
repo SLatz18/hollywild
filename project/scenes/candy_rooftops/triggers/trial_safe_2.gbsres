@@ -1,0 +1,104 @@
+{
+  "_resourceType": "trigger",
+  "id": "ce143e51-6b1f-4019-a0cd-b7c503f37565",
+  "_index": 3,
+  "symbol": "trigger_candy_rooftops_trial_safe_2",
+  "prefabId": "",
+  "name": "trial_safe_2",
+  "x": 4,
+  "y": 20,
+  "width": 3,
+  "height": 1,
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "f9ffd127-acb2-4a74-a931-e31fedcd860b",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "149"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "416165cd-5de4-4aac-a87d-1e0d148d9b4f",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "150"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 1
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "e0cd59f0-c9ec-4ae8-a0f3-8c98f22f5437",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "151"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "caba9ca7-1500-4f0d-a6e7-6558a7181d64",
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "151",
+                          "value": {
+                            "type": "number",
+                            "value": 2
+                          }
+                        }
+                      },
+                      {
+                        "id": "46348fec-7249-40c2-afdd-aec3b71562de",
+                        "command": "EVENT_SOUND_PLAY_EFFECT",
+                        "args": {
+                          "type": "beep",
+                          "pitch": 5,
+                          "duration": 0.05,
+                          "priority": "medium",
+                          "wait": false
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ],
+        "false": []
+      }
+    }
+  ],
+  "leaveScript": []
+}

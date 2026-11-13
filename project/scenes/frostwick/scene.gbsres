@@ -585,7 +585,7 @@
       }
     },
     {
-      "id": "96dc08b5-bf9e-4aaa-adf7-7557699b7d61",
+      "id": "7856fd25-5f8c-44e4-ad16-1667a0c97010",
       "command": "EVENT_SET_INPUT_SCRIPT",
       "args": {
         "input": [
@@ -669,7 +669,7 @@
             }
           },
           {
-            "id": "4dedebb4-5023-4068-a6a9-1398bfe20fba",
+            "id": "fd72c35a-82c1-4662-a16c-721522669e68",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -832,7 +832,8 @@
                                     "command": "EVENT_TEXT",
                                     "args": {
                                       "text": [
-                                        "DELIVERY JOB\nAny marked\ndrop-off.\nTry Cocoa first."
+                                        "DELIVERY JOB\nAny marked\ndrop-off.\nFrostwick: Cocoa\nis",
+                                        "east of the\ngarage.\nFace its cafe\nsign."
                                       ],
                                       "avatarId": "",
                                       "minHeight": 4,
@@ -1125,7 +1126,7 @@
               ],
               "false": [
                 {
-                  "id": "d6654ce5-3a82-4ca6-a7d2-2b749c6b3dfe",
+                  "id": "02829cb1-d9e8-4593-aabc-175c203333b1",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -1158,13 +1159,14 @@
                               "command": "EVENT_MENU",
                               "args": {
                                 "variable": "14",
-                                "items": 3,
+                                "items": 4,
                                 "layout": "menu",
                                 "cancelOnLastOption": false,
                                 "cancelOnB": true,
                                 "option1": "Help",
                                 "option2": "Music",
-                                "option3": "Back"
+                                "option3": "Play",
+                                "option4": "Back"
                               }
                             },
                             {
@@ -1176,7 +1178,7 @@
                         }
                       },
                       {
-                        "id": "dd49b8d6-23bf-4360-ab75-af57c2319669",
+                        "id": "35cb024f-3f11-4dd3-a574-2a4cc2733241",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -1209,11 +1211,11 @@
                                     "command": "EVENT_TEXT",
                                     "args": {
                                       "text": [
-                                        "D-PAD: walk freely\nA: talk / confirm\nB: cancel menus",
-                                        "START: pocket book\nSide: local\nstories\nSELECT: city\nroutes",
-                                        "All five districts\nare open. Follow\nthe road signs.",
-                                        "Accept one job at\na board. Success\nfinishes crew\nwork.",
-                                        "Keep 4 scrap for\nbuilding. Work\nuses\n2 surplus scrap."
+                                        "D-PAD: walk freely\nA: talk / confirm\nB: cancel menus\nSTART: pocket book\nSELECT: city",
+                                        "routes",
+                                        "Signs sell homes.\nSide doors let\nyou enter free.",
+                                        "Want a challenge?\nGuide > Play has\nroutes to pipes\nand parcel trials.",
+                                        "One job at a time.\nFinish it to run\ncrew production.\nKeep 4 scrap\nfor renovations."
                                       ],
                                       "avatarId": "",
                                       "minHeight": 4,
@@ -1234,7 +1236,7 @@
                           ],
                           "false": [
                             {
-                              "id": "558a825d-1f59-4c4e-a08a-b0fa0ad04ea9",
+                              "id": "2fdd94c6-d9e1-4543-a107-7895a55fca57",
                               "command": "EVENT_IF",
                               "args": {
                                 "condition": {
@@ -1495,7 +1497,67 @@
                                     }
                                   }
                                 ],
-                                "false": []
+                                "false": [
+                                  {
+                                    "id": "70167fc4-2b1b-4484-a32d-fdb9e3c0eb4a",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "14"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 3
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "7315fba2-194b-4c8e-a240-01494d21171c",
+                                          "command": "EVENT_GROUP",
+                                          "args": {},
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "dd49b8d6-23bf-4360-ab75-af57c2319669",
+                                                "command": "EVENT_HIDE_SPRITES",
+                                                "args": {}
+                                              },
+                                              {
+                                                "id": "558a825d-1f59-4c4e-a08a-b0fa0ad04ea9",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "PIPE WORKSHOP\nBrassworks: TOOLS.\nSide door, right.\nFree to enter.",
+                                                    "Inside: east exit.\nNorth via Foundry\nto Control.\nA: turn elbows.",
+                                                    "PARCEL FOOT TRIAL\nCandy: PARCEL.\nSide door, right.\nInside: east exit.\nNorth to roof.",
+                                                    "Pipes: +25 once.\nTrial: best score,\nup to 16 total.\nBoth are optional."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              },
+                                              {
+                                                "id": "c0a42fd6-23a7-4c26-aeec-000ec02944d7",
+                                                "command": "EVENT_SHOW_SPRITES",
+                                                "args": {}
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
                               }
                             }
                           ]
@@ -1504,7 +1566,7 @@
                     ],
                     "false": [
                       {
-                        "id": "54c46ed6-30fd-4925-a078-1b99e407f402",
+                        "id": "cbf71084-87a0-498b-a39b-70ddb3e089ad",
                         "command": "EVENT_IF",
                         "args": {
                           "condition": {
@@ -1522,7 +1584,7 @@
                         "children": {
                           "true": [
                             {
-                              "id": "ee37dc5e-218c-4eb2-ad24-aebca6d519b8",
+                              "id": "53e650ec-e98d-4c5c-a0ff-4e969039d47f",
                               "command": "EVENT_IF",
                               "args": {
                                 "condition": {
@@ -1540,18 +1602,18 @@
                               "children": {
                                 "true": [
                                   {
-                                    "id": "2fdd94c6-d9e1-4543-a107-7895a55fca57",
+                                    "id": "dcbd8b33-19ed-490e-ab9a-730ffeb2ba27",
                                     "command": "EVENT_GROUP",
                                     "args": {},
                                     "children": {
                                       "true": [
                                         {
-                                          "id": "7315fba2-194b-4c8e-a240-01494d21171c",
+                                          "id": "88901e49-e292-4cef-aaac-f6c44139175b",
                                           "command": "EVENT_HIDE_SPRITES",
                                           "args": {}
                                         },
                                         {
-                                          "id": "c0a42fd6-23a7-4c26-aeec-000ec02944d7",
+                                          "id": "5f11ab87-3ff4-4d95-aa9c-c6be1b5be004",
                                           "command": "EVENT_TEXT",
                                           "args": {
                                             "text": [
@@ -1566,7 +1628,7 @@
                                           }
                                         },
                                         {
-                                          "id": "70167fc4-2b1b-4484-a32d-fdb9e3c0eb4a",
+                                          "id": "22fef143-b2d9-47bf-aef4-1255af2187b2",
                                           "command": "EVENT_SHOW_SPRITES",
                                           "args": {}
                                         }
@@ -1576,7 +1638,7 @@
                                 ],
                                 "false": [
                                   {
-                                    "id": "b0e3c0a1-179a-4447-a08e-d7951f95dfc9",
+                                    "id": "e7f2b466-463e-4055-acc9-57a7428dbc5e",
                                     "command": "EVENT_IF",
                                     "args": {
                                       "condition": {
@@ -1594,7 +1656,7 @@
                                     "children": {
                                       "true": [
                                         {
-                                          "id": "ddb69838-8610-4900-af81-7930cc31294a",
+                                          "id": "b0e3c0a1-179a-4447-a08e-d7951f95dfc9",
                                           "command": "EVENT_IF",
                                           "args": {
                                             "condition": {
@@ -1612,18 +1674,18 @@
                                           "children": {
                                             "true": [
                                               {
-                                                "id": "22fef143-b2d9-47bf-aef4-1255af2187b2",
+                                                "id": "bc74ef1a-d928-48e9-ad0b-6813d3c05c19",
                                                 "command": "EVENT_GROUP",
                                                 "args": {},
                                                 "children": {
                                                   "true": [
                                                     {
-                                                      "id": "5f11ab87-3ff4-4d95-aa9c-c6be1b5be004",
+                                                      "id": "59d1c531-4286-4ef9-a577-2e0126bdce09",
                                                       "command": "EVENT_HIDE_SPRITES",
                                                       "args": {}
                                                     },
                                                     {
-                                                      "id": "35cb024f-3f11-4dd3-a574-2a4cc2733241",
+                                                      "id": "eaea6cd9-2c6f-47a6-a66a-2c270ba6b314",
                                                       "command": "EVENT_TEXT",
                                                       "args": {
                                                         "text": [
@@ -1638,7 +1700,7 @@
                                                       }
                                                     },
                                                     {
-                                                      "id": "88901e49-e292-4cef-aaac-f6c44139175b",
+                                                      "id": "34cdfc8e-28d7-4fb2-a7d6-8e444510136d",
                                                       "command": "EVENT_SHOW_SPRITES",
                                                       "args": {}
                                                     }
@@ -1648,7 +1710,7 @@
                                             ],
                                             "false": [
                                               {
-                                                "id": "ae032f9d-df60-481d-a742-330f37d63552",
+                                                "id": "9c622691-c8b9-4aa5-a4d0-e6ac8e70605b",
                                                 "command": "EVENT_IF",
                                                 "args": {
                                                   "condition": {
@@ -1666,18 +1728,18 @@
                                                 "children": {
                                                   "true": [
                                                     {
-                                                      "id": "34cdfc8e-28d7-4fb2-a7d6-8e444510136d",
+                                                      "id": "ae032f9d-df60-481d-a742-330f37d63552",
                                                       "command": "EVENT_GROUP",
                                                       "args": {},
                                                       "children": {
                                                         "true": [
                                                           {
-                                                            "id": "eaea6cd9-2c6f-47a6-a66a-2c270ba6b314",
+                                                            "id": "58e57dc7-ac15-4902-a86e-7dd14d8c7759",
                                                             "command": "EVENT_HIDE_SPRITES",
                                                             "args": {}
                                                           },
                                                           {
-                                                            "id": "dcbd8b33-19ed-490e-ab9a-730ffeb2ba27",
+                                                            "id": "210ae87c-9684-40ba-a7fc-a896d0f67caa",
                                                             "command": "EVENT_TEXT",
                                                             "args": {
                                                               "text": [
@@ -1692,7 +1754,7 @@
                                                             }
                                                           },
                                                           {
-                                                            "id": "59d1c531-4286-4ef9-a577-2e0126bdce09",
+                                                            "id": "57f1fc0b-1be3-4a99-ae19-e93da4c3bddc",
                                                             "command": "EVENT_SHOW_SPRITES",
                                                             "args": {}
                                                           }
@@ -1702,18 +1764,18 @@
                                                   ],
                                                   "false": [
                                                     {
-                                                      "id": "57f1fc0b-1be3-4a99-ae19-e93da4c3bddc",
+                                                      "id": "0e831446-3b42-467d-aef0-ffde78ea8dfb",
                                                       "command": "EVENT_GROUP",
                                                       "args": {},
                                                       "children": {
                                                         "true": [
                                                           {
-                                                            "id": "210ae87c-9684-40ba-a7fc-a896d0f67caa",
+                                                            "id": "92a66cb6-e21c-4e77-a2f5-21322102e351",
                                                             "command": "EVENT_HIDE_SPRITES",
                                                             "args": {}
                                                           },
                                                           {
-                                                            "id": "bc74ef1a-d928-48e9-ad0b-6813d3c05c19",
+                                                            "id": "ddb69838-8610-4900-af81-7930cc31294a",
                                                             "command": "EVENT_TEXT",
                                                             "args": {
                                                               "text": [
@@ -1728,7 +1790,7 @@
                                                             }
                                                           },
                                                           {
-                                                            "id": "58e57dc7-ac15-4902-a86e-7dd14d8c7759",
+                                                            "id": "f135d74b-f9e7-4572-a841-9d754cf87edb",
                                                             "command": "EVENT_SHOW_SPRITES",
                                                             "args": {}
                                                           }
@@ -1744,18 +1806,18 @@
                                       ],
                                       "false": [
                                         {
-                                          "id": "9c622691-c8b9-4aa5-a4d0-e6ac8e70605b",
+                                          "id": "a8b9a95c-1718-4f06-acd1-e19e606a6997",
                                           "command": "EVENT_GROUP",
                                           "args": {},
                                           "children": {
                                             "true": [
                                               {
-                                                "id": "f135d74b-f9e7-4572-a841-9d754cf87edb",
+                                                "id": "c4d720ad-bdc9-4ce1-aec2-77fc6dcd0286",
                                                 "command": "EVENT_HIDE_SPRITES",
                                                 "args": {}
                                               },
                                               {
-                                                "id": "92a66cb6-e21c-4e77-a2f5-21322102e351",
+                                                "id": "ee37dc5e-218c-4eb2-ad24-aebca6d519b8",
                                                 "command": "EVENT_TEXT",
                                                 "args": {
                                                   "text": [
@@ -1770,7 +1832,7 @@
                                                 }
                                               },
                                               {
-                                                "id": "0e831446-3b42-467d-aef0-ffde78ea8dfb",
+                                                "id": "6c2c3bb5-547b-47b2-a082-4c267f12a227",
                                                 "command": "EVENT_SHOW_SPRITES",
                                                 "args": {}
                                               }
@@ -1786,7 +1848,7 @@
                           ],
                           "false": [
                             {
-                              "id": "8c203e37-d9c3-4600-a715-4093acebf871",
+                              "id": "1d8eba80-e3f3-481f-a743-113848122222",
                               "command": "EVENT_IF",
                               "args": {
                                 "condition": {
@@ -1804,7 +1866,7 @@
                               "children": {
                                 "true": [
                                   {
-                                    "id": "2ceaf57f-6dc1-4b1d-a7f2-981b890aca87",
+                                    "id": "970566d1-017f-40dd-a1f3-40525a431a55",
                                     "command": "EVENT_IF",
                                     "args": {
                                       "condition": {
@@ -1822,18 +1884,18 @@
                                     "children": {
                                       "true": [
                                         {
-                                          "id": "e7f2b466-463e-4055-acc9-57a7428dbc5e",
+                                          "id": "f97a23d5-8461-4a8b-a09d-55680ec8db9e",
                                           "command": "EVENT_GROUP",
                                           "args": {},
                                           "children": {
                                             "true": [
                                               {
-                                                "id": "6c2c3bb5-547b-47b2-a082-4c267f12a227",
+                                                "id": "99e558e6-1844-40fc-ad13-56f754be14cc",
                                                 "command": "EVENT_HIDE_SPRITES",
                                                 "args": {}
                                               },
                                               {
-                                                "id": "c4d720ad-bdc9-4ce1-aec2-77fc6dcd0286",
+                                                "id": "dc82bdb8-b3f3-4c49-afd5-7a1e09c24f5a",
                                                 "command": "EVENT_TEXT",
                                                 "args": {
                                                   "text": [
@@ -1848,7 +1910,7 @@
                                                 }
                                               },
                                               {
-                                                "id": "a8b9a95c-1718-4f06-acd1-e19e606a6997",
+                                                "id": "e72a2999-364f-4aa5-ac5e-266bd4e8a14e",
                                                 "command": "EVENT_SHOW_SPRITES",
                                                 "args": {}
                                               }
@@ -1856,18 +1918,18 @@
                                           }
                                         },
                                         {
-                                          "id": "43610464-822c-45c3-a625-33da2ae3ee7b",
+                                          "id": "cd54675e-d538-41e2-ab5e-8d1ad09fef59",
                                           "command": "EVENT_GROUP",
                                           "args": {},
                                           "children": {
                                             "true": [
                                               {
-                                                "id": "d3b14023-326c-46f9-ab7a-d0e0385b24f6",
+                                                "id": "05083c12-7dda-4a4e-a040-a97b6ebbd0a3",
                                                 "command": "EVENT_HIDE_SPRITES",
                                                 "args": {}
                                               },
                                               {
-                                                "id": "0d6d62c4-855d-4728-a15c-be27d9d4fdb8",
+                                                "id": "6ceabdf1-1ef2-4c97-ad91-2a9e51b717fc",
                                                 "command": "EVENT_MENU",
                                                 "args": {
                                                   "variable": "14",
@@ -1880,7 +1942,7 @@
                                                 }
                                               },
                                               {
-                                                "id": "0017893a-5d23-475c-a485-8150fd510931",
+                                                "id": "82311170-f18f-45ff-aad0-3cf9f5ec0fe1",
                                                 "command": "EVENT_SHOW_SPRITES",
                                                 "args": {}
                                               }
@@ -1888,7 +1950,7 @@
                                           }
                                         },
                                         {
-                                          "id": "8f6f828a-a794-4259-a6d6-5286bad8481e",
+                                          "id": "2ceaf57f-6dc1-4b1d-a7f2-981b890aca87",
                                           "command": "EVENT_IF",
                                           "args": {
                                             "condition": {
@@ -1906,7 +1968,7 @@
                                           "children": {
                                             "true": [
                                               {
-                                                "id": "53e650ec-e98d-4c5c-a0ff-4e969039d47f",
+                                                "id": "efaaa329-3521-4003-a92e-a0cada004981",
                                                 "command": "EVENT_SET_VALUE",
                                                 "args": {
                                                   "variable": "6",
@@ -1917,7 +1979,7 @@
                                                 }
                                               },
                                               {
-                                                "id": "dc82bdb8-b3f3-4c49-afd5-7a1e09c24f5a",
+                                                "id": "575a1395-4e55-4d9c-aaa6-24275f1805ef",
                                                 "command": "EVENT_SET_VALUE",
                                                 "args": {
                                                   "variable": "8",
@@ -1928,7 +1990,7 @@
                                                 }
                                               },
                                               {
-                                                "id": "99e558e6-1844-40fc-ad13-56f754be14cc",
+                                                "id": "138a70dd-3c32-4431-ad57-b11290f281f6",
                                                 "command": "EVENT_SET_VALUE",
                                                 "args": {
                                                   "variable": "9",
@@ -1939,7 +2001,7 @@
                                                 }
                                               },
                                               {
-                                                "id": "e72a2999-364f-4aa5-ac5e-266bd4e8a14e",
+                                                "id": "0d6d62c4-855d-4728-a15c-be27d9d4fdb8",
                                                 "command": "EVENT_SET_VALUE",
                                                 "args": {
                                                   "variable": "11",
@@ -1950,18 +2012,18 @@
                                                 }
                                               },
                                               {
-                                                "id": "138a70dd-3c32-4431-ad57-b11290f281f6",
+                                                "id": "8f6f828a-a794-4259-a6d6-5286bad8481e",
                                                 "command": "EVENT_GROUP",
                                                 "args": {},
                                                 "children": {
                                                   "true": [
                                                     {
-                                                      "id": "efaaa329-3521-4003-a92e-a0cada004981",
+                                                      "id": "0017893a-5d23-475c-a485-8150fd510931",
                                                       "command": "EVENT_HIDE_SPRITES",
                                                       "args": {}
                                                     },
                                                     {
-                                                      "id": "f97a23d5-8461-4a8b-a09d-55680ec8db9e",
+                                                      "id": "d3b14023-326c-46f9-ab7a-d0e0385b24f6",
                                                       "command": "EVENT_TEXT",
                                                       "args": {
                                                         "text": [
@@ -1976,7 +2038,7 @@
                                                       }
                                                     },
                                                     {
-                                                      "id": "575a1395-4e55-4d9c-aaa6-24275f1805ef",
+                                                      "id": "43610464-822c-45c3-a625-33da2ae3ee7b",
                                                       "command": "EVENT_SHOW_SPRITES",
                                                       "args": {}
                                                     }
@@ -1990,18 +2052,18 @@
                                       ],
                                       "false": [
                                         {
-                                          "id": "cd54675e-d538-41e2-ab5e-8d1ad09fef59",
+                                          "id": "8796a955-bfb0-4c22-a08b-48ee23454ea4",
                                           "command": "EVENT_GROUP",
                                           "args": {},
                                           "children": {
                                             "true": [
                                               {
-                                                "id": "05083c12-7dda-4a4e-a040-a97b6ebbd0a3",
+                                                "id": "28441779-f83b-47ed-ae83-3d6551aa43be",
                                                 "command": "EVENT_HIDE_SPRITES",
                                                 "args": {}
                                               },
                                               {
-                                                "id": "6ceabdf1-1ef2-4c97-ad91-2a9e51b717fc",
+                                                "id": "89049f25-7aec-415e-ae05-dad5b7bec6cf",
                                                 "command": "EVENT_TEXT",
                                                 "args": {
                                                   "text": [
@@ -2016,7 +2078,7 @@
                                                 }
                                               },
                                               {
-                                                "id": "82311170-f18f-45ff-aad0-3cf9f5ec0fe1",
+                                                "id": "33a47031-7d7a-4c64-ab53-e1915fc4f68d",
                                                 "command": "EVENT_SHOW_SPRITES",
                                                 "args": {}
                                               }
@@ -2029,7 +2091,7 @@
                                 ],
                                 "false": [
                                   {
-                                    "id": "89c3699e-ee5d-4cdc-ae56-29a7cea1245f",
+                                    "id": "10028ecf-e13e-41a6-afc8-16cc64bfe576",
                                     "command": "EVENT_IF",
                                     "args": {
                                       "condition": {
@@ -2047,7 +2109,7 @@
                                     "children": {
                                       "true": [
                                         {
-                                          "id": "8703d2d5-d892-4474-aecf-ebdb6cad2e5d",
+                                          "id": "4950b1d8-41c0-40c3-a155-148633ac6440",
                                           "command": "EVENT_CALL_CUSTOM_EVENT",
                                           "args": {
                                             "customEventId": "1f447236-729f-4d76-a14f-33a7a3ff5505"
@@ -2056,7 +2118,7 @@
                                       ],
                                       "false": [
                                         {
-                                          "id": "2d9eac09-8160-4b11-add5-2615b6d8b213",
+                                          "id": "a390da71-8a5d-4784-aaf3-107060dc89b9",
                                           "command": "EVENT_IF",
                                           "args": {
                                             "condition": {
@@ -2074,7 +2136,7 @@
                                           "children": {
                                             "true": [
                                               {
-                                                "id": "a4c1aec8-5867-47a3-a5e1-a0eb6384a7d5",
+                                                "id": "9648068e-81b6-4628-adac-91293d8ab207",
                                                 "command": "EVENT_CALL_CUSTOM_EVENT",
                                                 "args": {
                                                   "customEventId": "67179144-64f2-41bb-ad3b-aa2d20d33998"
@@ -2083,7 +2145,7 @@
                                             ],
                                             "false": [
                                               {
-                                                "id": "7d29d42a-a2d6-461a-ac7c-47e720bfd359",
+                                                "id": "c67fc272-fa31-4f9e-af50-8bcfa80ba491",
                                                 "command": "EVENT_IF",
                                                 "args": {
                                                   "condition": {
@@ -2101,18 +2163,18 @@
                                                 "children": {
                                                   "true": [
                                                     {
-                                                      "id": "a4b96a1d-c727-48ed-ac18-2e09b7b84a8a",
+                                                      "id": "69264d4c-94ab-4e7c-abf1-0e4a9f51cf29",
                                                       "command": "EVENT_GROUP",
                                                       "args": {},
                                                       "children": {
                                                         "true": [
                                                           {
-                                                            "id": "74e68ead-1f8c-40e2-ae5d-a0406ed31c65",
+                                                            "id": "4c31d731-accd-4a5c-aa59-386773e6febe",
                                                             "command": "EVENT_HIDE_SPRITES",
                                                             "args": {}
                                                           },
                                                           {
-                                                            "id": "22f14332-ad52-4b04-a99d-3fc1a7784c8d",
+                                                            "id": "c3dce613-7fa7-450a-a712-0f09c30d1f54",
                                                             "command": "EVENT_MENU",
                                                             "args": {
                                                               "variable": "14",
@@ -2127,7 +2189,7 @@
                                                             }
                                                           },
                                                           {
-                                                            "id": "1c712532-e9a7-4e42-aa7d-8e7a4403b713",
+                                                            "id": "b707b9ed-2510-40be-a39c-db1f8b6bc42c",
                                                             "command": "EVENT_SHOW_SPRITES",
                                                             "args": {}
                                                           }
@@ -2135,7 +2197,7 @@
                                                       }
                                                     },
                                                     {
-                                                      "id": "fcea8bec-376e-48c1-a743-999612f97409",
+                                                      "id": "3b64bb0f-281a-47dc-af5c-74a4543ae92e",
                                                       "command": "EVENT_IF",
                                                       "args": {
                                                         "condition": {
@@ -2153,18 +2215,18 @@
                                                       "children": {
                                                         "true": [
                                                           {
-                                                            "id": "f54b3f55-aff4-4d0b-a820-2f29ae81e8b6",
+                                                            "id": "30b436f0-1630-4ee7-a42f-209169eb0cc0",
                                                             "command": "EVENT_GROUP",
                                                             "args": {},
                                                             "children": {
                                                               "true": [
                                                                 {
-                                                                  "id": "3c42b770-9b54-4d93-aaee-156e43f1bbb2",
+                                                                  "id": "e9a96118-0b68-428c-ad30-fc7fbeac8384",
                                                                   "command": "EVENT_HIDE_SPRITES",
                                                                   "args": {}
                                                                 },
                                                                 {
-                                                                  "id": "595cfc5e-8e5b-49f9-afa2-772124ce84f4",
+                                                                  "id": "7183b76c-c9e5-4ea0-a5e8-aba2965d8d63",
                                                                   "command": "EVENT_MENU",
                                                                   "args": {
                                                                     "variable": "14",
@@ -2180,7 +2242,7 @@
                                                                   }
                                                                 },
                                                                 {
-                                                                  "id": "d93554a4-108c-481a-a9bb-90a2655f0538",
+                                                                  "id": "8252575e-e81d-4dec-a6c9-99c7e86164bd",
                                                                   "command": "EVENT_SHOW_SPRITES",
                                                                   "args": {}
                                                                 }
@@ -2188,7 +2250,7 @@
                                                             }
                                                           },
                                                           {
-                                                            "id": "a7eabdeb-ebc2-4030-a9b4-279934cc4d5f",
+                                                            "id": "95279d00-24dd-4bd3-a3c8-c14a135d45e4",
                                                             "command": "EVENT_IF",
                                                             "args": {
                                                               "condition": {
@@ -2206,7 +2268,7 @@
                                                             "children": {
                                                               "true": [
                                                                 {
-                                                                  "id": "f00d912a-bba8-4c30-a485-b87543f36c13",
+                                                                  "id": "7fb5f90e-5018-4c62-ab4d-03fb3b88b220",
                                                                   "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                   "args": {
                                                                     "customEventId": "9a11e04f-dd25-4aed-aa30-719a643961cc"
@@ -2215,7 +2277,7 @@
                                                               ],
                                                               "false": [
                                                                 {
-                                                                  "id": "c1a85d80-1cf4-4ee6-a285-12b1a0dd6a90",
+                                                                  "id": "a766fe83-2353-4e2e-a425-89dd92afa048",
                                                                   "command": "EVENT_IF",
                                                                   "args": {
                                                                     "condition": {
@@ -2233,7 +2295,7 @@
                                                                   "children": {
                                                                     "true": [
                                                                       {
-                                                                        "id": "e1f60150-2d82-456a-a974-c39f81b9dd0e",
+                                                                        "id": "2c1a723c-b693-48e0-ae10-870232cb6182",
                                                                         "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                         "args": {
                                                                           "customEventId": "5e98821a-2c71-49b4-a976-382af78a8859"
@@ -2242,7 +2304,7 @@
                                                                     ],
                                                                     "false": [
                                                                       {
-                                                                        "id": "9c910626-8948-4969-a684-1b8b7e2507a8",
+                                                                        "id": "6bf7b5cd-36e8-4848-a098-a64fed1b76af",
                                                                         "command": "EVENT_IF",
                                                                         "args": {
                                                                           "condition": {
@@ -2260,7 +2322,7 @@
                                                                         "children": {
                                                                           "true": [
                                                                             {
-                                                                              "id": "7ad3a8ba-5e7a-4dbb-aed9-f9989fd8e302",
+                                                                              "id": "34b4f943-c7cd-46f5-ab61-dad5c0d5decb",
                                                                               "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                               "args": {
                                                                                 "customEventId": "2b1793cb-8116-418a-ae8c-179ecef9799b"
@@ -2269,7 +2331,7 @@
                                                                           ],
                                                                           "false": [
                                                                             {
-                                                                              "id": "6e4dca41-9ed0-4367-aebf-b2d1afe0a2dd",
+                                                                              "id": "facd41e5-05bd-43bd-a1b5-6f01fc60e14c",
                                                                               "command": "EVENT_IF",
                                                                               "args": {
                                                                                 "condition": {
@@ -2287,7 +2349,7 @@
                                                                               "children": {
                                                                                 "true": [
                                                                                   {
-                                                                                    "id": "f9f432f5-a6cd-4b8d-a328-9e8b874bab39",
+                                                                                    "id": "47cac1fd-725f-4bbe-a1e4-62c4eb4710ad",
                                                                                     "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                     "args": {
                                                                                       "customEventId": "00fb835b-824b-4293-a07c-68cd66dd46fb"
@@ -2309,7 +2371,7 @@
                                                         ],
                                                         "false": [
                                                           {
-                                                            "id": "6b6fe1af-8289-4ca1-a888-2ad3fb3f1c4a",
+                                                            "id": "8950d418-eae5-4aba-a61b-7de163e2a32d",
                                                             "command": "EVENT_IF",
                                                             "args": {
                                                               "condition": {
@@ -2327,18 +2389,18 @@
                                                             "children": {
                                                               "true": [
                                                                 {
-                                                                  "id": "6b951b03-38e4-4ed0-a258-3482725c2bac",
+                                                                  "id": "4d8e67b7-211b-4b8e-a0f6-fa571144de13",
                                                                   "command": "EVENT_GROUP",
                                                                   "args": {},
                                                                   "children": {
                                                                     "true": [
                                                                       {
-                                                                        "id": "c1304d3e-dddd-4acb-a9b9-1d5ab4faa9ec",
+                                                                        "id": "99d53a35-0620-4a2c-ae93-af4f01151ae1",
                                                                         "command": "EVENT_HIDE_SPRITES",
                                                                         "args": {}
                                                                       },
                                                                       {
-                                                                        "id": "e68383af-3405-495c-a350-68ba615a4119",
+                                                                        "id": "ce959d97-1a8d-4d7a-ae17-e5806b2e1ca2",
                                                                         "command": "EVENT_MENU",
                                                                         "args": {
                                                                           "variable": "14",
@@ -2356,7 +2418,7 @@
                                                                         }
                                                                       },
                                                                       {
-                                                                        "id": "61ac30dc-d710-427e-a69a-113e6c1d0ea7",
+                                                                        "id": "de057df4-7145-4d6a-a501-98262cee73f6",
                                                                         "command": "EVENT_SHOW_SPRITES",
                                                                         "args": {}
                                                                       }
@@ -2364,7 +2426,7 @@
                                                                   }
                                                                 },
                                                                 {
-                                                                  "id": "51174396-0dd3-453c-a35e-f6788bfd3e3f",
+                                                                  "id": "5ee76f68-021c-4d49-a744-d749a9cb0efd",
                                                                   "command": "EVENT_IF",
                                                                   "args": {
                                                                     "condition": {
@@ -2382,7 +2444,7 @@
                                                                   "children": {
                                                                     "true": [
                                                                       {
-                                                                        "id": "09f1a91c-3508-401f-a02e-e9c4a98fefac",
+                                                                        "id": "cfc2c65b-b21d-4aa0-ab88-678ad1227d50",
                                                                         "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                         "args": {
                                                                           "customEventId": "4283a663-957f-48a4-a34a-9102c03b8b3a"
@@ -2391,7 +2453,7 @@
                                                                     ],
                                                                     "false": [
                                                                       {
-                                                                        "id": "3381be98-8808-4a1a-a2a5-f86b9b5e77a7",
+                                                                        "id": "c532ef7b-c13f-48e8-a73c-b1e170a7564a",
                                                                         "command": "EVENT_IF",
                                                                         "args": {
                                                                           "condition": {
@@ -2409,7 +2471,7 @@
                                                                         "children": {
                                                                           "true": [
                                                                             {
-                                                                              "id": "588d2c07-2882-4d10-ad6d-d03f8ab06cf3",
+                                                                              "id": "cb50a79c-e650-42c0-ae5a-e2c72d9346cd",
                                                                               "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                               "args": {
                                                                                 "customEventId": "433c6484-8682-4fbf-a7d0-cec52887ad70"
@@ -2418,7 +2480,7 @@
                                                                           ],
                                                                           "false": [
                                                                             {
-                                                                              "id": "37dc8bfb-767c-4ffe-a6a7-88e3e9f40eeb",
+                                                                              "id": "f228e038-f53d-4999-aaa2-9f97826b9fdc",
                                                                               "command": "EVENT_IF",
                                                                               "args": {
                                                                                 "condition": {
@@ -2436,7 +2498,7 @@
                                                                               "children": {
                                                                                 "true": [
                                                                                   {
-                                                                                    "id": "8ddc9337-7fbf-4f64-abce-78ed98ccf4f4",
+                                                                                    "id": "4701fed6-5f7c-4252-a8e8-9f46556d0f5d",
                                                                                     "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                     "args": {
                                                                                       "customEventId": "6f89825a-3402-4cf9-a034-1fb234cedcab"
@@ -2445,7 +2507,7 @@
                                                                                 ],
                                                                                 "false": [
                                                                                   {
-                                                                                    "id": "39d3e4e4-8759-4192-a27c-e35530d18a80",
+                                                                                    "id": "f4103d12-8ee3-41dd-a603-dcaa86d468d3",
                                                                                     "command": "EVENT_IF",
                                                                                     "args": {
                                                                                       "condition": {
@@ -2463,7 +2525,7 @@
                                                                                     "children": {
                                                                                       "true": [
                                                                                         {
-                                                                                          "id": "0a56b35f-accb-4e31-af2b-f9cbeb2eeef7",
+                                                                                          "id": "141f1a87-a4c8-427c-ae30-688e5d324249",
                                                                                           "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                           "args": {
                                                                                             "customEventId": "7af11515-d1c2-42b1-a749-45e547b1310d"
@@ -2472,7 +2534,7 @@
                                                                                       ],
                                                                                       "false": [
                                                                                         {
-                                                                                          "id": "faed8b79-664e-4df8-a4cb-590384c35bb8",
+                                                                                          "id": "65a9cc4b-f9dc-4aaf-a337-e26719a092ae",
                                                                                           "command": "EVENT_IF",
                                                                                           "args": {
                                                                                             "condition": {
@@ -2490,7 +2552,7 @@
                                                                                           "children": {
                                                                                             "true": [
                                                                                               {
-                                                                                                "id": "3f84cfa4-1f55-461b-a132-ee5e8d203a33",
+                                                                                                "id": "2ab9362a-9e9e-4f02-a464-acaca76d6d18",
                                                                                                 "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                                 "args": {
                                                                                                   "customEventId": "e840d99d-0500-4fe6-ae3a-444e98f01508"
@@ -2499,7 +2561,7 @@
                                                                                             ],
                                                                                             "false": [
                                                                                               {
-                                                                                                "id": "0b4a8aee-63c8-4421-a8e6-2b1f27056f18",
+                                                                                                "id": "221d1ff2-47fd-4010-a0fb-039404ce6953",
                                                                                                 "command": "EVENT_IF",
                                                                                                 "args": {
                                                                                                   "condition": {
@@ -2517,7 +2579,7 @@
                                                                                                 "children": {
                                                                                                   "true": [
                                                                                                     {
-                                                                                                      "id": "9f5d0ca3-a89e-4bd5-a4e0-e710bc5996e2",
+                                                                                                      "id": "f371b7c9-5a58-4d6c-aa4b-90957276de3e",
                                                                                                       "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                                       "args": {
                                                                                                         "customEventId": "966c209e-1048-41d1-a372-ec39fffe2d36"
@@ -2545,7 +2607,7 @@
                                                               ],
                                                               "false": [
                                                                 {
-                                                                  "id": "986400b5-edeb-4973-a4fc-8c91a08cc68f",
+                                                                  "id": "d1cedffa-5f6e-441d-a8d6-7cc61d502b49",
                                                                   "command": "EVENT_IF",
                                                                   "args": {
                                                                     "condition": {
@@ -2563,18 +2625,18 @@
                                                                   "children": {
                                                                     "true": [
                                                                       {
-                                                                        "id": "e0b18cb4-d03a-4086-ac55-80fa02a0eb1c",
+                                                                        "id": "8a935147-be69-44d7-a744-386ba8ba179d",
                                                                         "command": "EVENT_GROUP",
                                                                         "args": {},
                                                                         "children": {
                                                                           "true": [
                                                                             {
-                                                                              "id": "2746726b-fbeb-4f4c-a2db-7c1da870993f",
+                                                                              "id": "b1dc3adb-f384-4e90-aa98-cc4cd42030f3",
                                                                               "command": "EVENT_HIDE_SPRITES",
                                                                               "args": {}
                                                                             },
                                                                             {
-                                                                              "id": "756553f3-3a4b-4a0f-aa9b-ff65734433d5",
+                                                                              "id": "76d18a36-39ff-46d0-aed9-f7b30913e364",
                                                                               "command": "EVENT_MENU",
                                                                               "args": {
                                                                                 "variable": "14",
@@ -2590,7 +2652,7 @@
                                                                               }
                                                                             },
                                                                             {
-                                                                              "id": "57ca02f8-e725-479b-a157-545261e7bca1",
+                                                                              "id": "b87bf86d-fb6e-4955-ad1d-d5fc71f940c6",
                                                                               "command": "EVENT_SHOW_SPRITES",
                                                                               "args": {}
                                                                             }
@@ -2598,7 +2660,7 @@
                                                                         }
                                                                       },
                                                                       {
-                                                                        "id": "892bcc74-1ba7-48b3-ab16-4fb4578a48fd",
+                                                                        "id": "7fc78da7-8715-4513-a0dc-53a8178cc502",
                                                                         "command": "EVENT_IF",
                                                                         "args": {
                                                                           "condition": {
@@ -2616,7 +2678,7 @@
                                                                         "children": {
                                                                           "true": [
                                                                             {
-                                                                              "id": "443b16f9-a9b6-4c57-ab17-c49891d49fa7",
+                                                                              "id": "93198b94-1753-43c3-a72e-baecd33f9e3d",
                                                                               "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                               "args": {
                                                                                 "customEventId": "44abe185-ee9d-4e52-a891-dada5b7c9cae"
@@ -2625,7 +2687,7 @@
                                                                           ],
                                                                           "false": [
                                                                             {
-                                                                              "id": "85819bd6-6c2d-4d3e-a2a6-c8341a2fc7d2",
+                                                                              "id": "979f859e-2d39-4b42-a709-8ae20944011f",
                                                                               "command": "EVENT_IF",
                                                                               "args": {
                                                                                 "condition": {
@@ -2643,7 +2705,7 @@
                                                                               "children": {
                                                                                 "true": [
                                                                                   {
-                                                                                    "id": "bacadade-c447-437b-a8e1-bd89b752a147",
+                                                                                    "id": "8c074302-b586-4086-a482-e4b48ffe85c7",
                                                                                     "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                     "args": {
                                                                                       "customEventId": "c29548aa-ad27-41a2-a241-811ef35371ad"
@@ -2652,7 +2714,7 @@
                                                                                 ],
                                                                                 "false": [
                                                                                   {
-                                                                                    "id": "17ef1f6a-52c8-439e-a153-50fd1fb568e4",
+                                                                                    "id": "9b63739d-782a-480b-abc1-d5da11635bf7",
                                                                                     "command": "EVENT_IF",
                                                                                     "args": {
                                                                                       "condition": {
@@ -2670,7 +2732,7 @@
                                                                                     "children": {
                                                                                       "true": [
                                                                                         {
-                                                                                          "id": "360fc951-5167-41ac-a051-0b4d027608c4",
+                                                                                          "id": "5e07b645-a239-44bc-a85d-fcdfb77e8136",
                                                                                           "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                           "args": {
                                                                                             "customEventId": "7be62b9b-1043-4b0c-a519-64e83bcbceab"
@@ -2679,7 +2741,7 @@
                                                                                       ],
                                                                                       "false": [
                                                                                         {
-                                                                                          "id": "a9cb00fe-654c-4ec9-a857-cc9b4b821131",
+                                                                                          "id": "f9232e42-99d2-4c65-ad87-d3f657e6be82",
                                                                                           "command": "EVENT_IF",
                                                                                           "args": {
                                                                                             "condition": {
@@ -2697,7 +2759,7 @@
                                                                                           "children": {
                                                                                             "true": [
                                                                                               {
-                                                                                                "id": "8dbdc405-2177-4bc0-a8b1-36ffc48aaf99",
+                                                                                                "id": "f4e5e826-ca32-4cb4-ad46-604b66d4f583",
                                                                                                 "command": "EVENT_CALL_CUSTOM_EVENT",
                                                                                                 "args": {
                                                                                                   "customEventId": "24ae90d4-d0a3-4166-a264-18d8357a8da5"
@@ -2752,7 +2814,7 @@
       }
     },
     {
-      "id": "5654197f-7876-4fc7-aab5-6bf000c40b2f",
+      "id": "278605e5-564a-4df5-acc0-1edef15e568a",
       "command": "EVENT_SET_INPUT_SCRIPT",
       "args": {
         "input": [
@@ -2763,18 +2825,52 @@
       "children": {
         "true": [
           {
-            "id": "d8cab038-9da8-4c98-a986-5fa0c3ee969b",
+            "id": "6720a780-892d-4cfe-a50c-67efe64ac1b0",
             "command": "EVENT_GROUP",
             "args": {},
             "children": {
               "true": [
                 {
-                  "id": "79e3b5c2-38db-4ece-a585-8807c9215074",
+                  "id": "31dd74f0-4494-4af4-a1e2-8d0c62c588a5",
                   "command": "EVENT_HIDE_SPRITES",
                   "args": {}
                 },
                 {
-                  "id": "246e98b3-310a-4c9d-a59c-b8bdc0f68557",
+                  "id": "7ecb2bd1-279e-45cd-a628-0954d49d57eb",
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "text": [
+                      "YOU ARE HERE\nFrostwick"
+                    ],
+                    "avatarId": "",
+                    "minHeight": 4,
+                    "maxHeight": 7,
+                    "position": "bottom",
+                    "closeWhen": "key",
+                    "closeButton": "a"
+                  }
+                },
+                {
+                  "id": "c5c93361-0d82-4824-ae48-214f500e2d4e",
+                  "command": "EVENT_SHOW_SPRITES",
+                  "args": {}
+                }
+              ]
+            }
+          },
+          {
+            "id": "955011ab-0802-4785-abdc-331a34982571",
+            "command": "EVENT_GROUP",
+            "args": {},
+            "children": {
+              "true": [
+                {
+                  "id": "0bd8fce7-49c5-434f-a37d-344096a28156",
+                  "command": "EVENT_HIDE_SPRITES",
+                  "args": {}
+                },
+                {
+                  "id": "e8add9dc-84b0-4e15-a9b6-b518f0e3d6c8",
                   "command": "EVENT_TEXT",
                   "args": {
                     "text": [
@@ -2792,7 +2888,7 @@
                   }
                 },
                 {
-                  "id": "9474ae0c-6f82-46e7-a1e1-b19f84c09759",
+                  "id": "92844816-e62c-4d55-a556-2c658eaa7822",
                   "command": "EVENT_SHOW_SPRITES",
                   "args": {}
                 }
@@ -2803,7 +2899,7 @@
       }
     },
     {
-      "id": "9b63739d-782a-480b-abc1-d5da11635bf7",
+      "id": "fa9db0a8-e71e-4339-ae7c-5205b8d1179c",
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -2821,7 +2917,7 @@
       "children": {
         "true": [
           {
-            "id": "92242d2a-848a-413d-a728-a2d823169196",
+            "id": "ddd8b86e-526d-4780-ab35-6e4e21b43f82",
             "command": "EVENT_SET_VALUE",
             "args": {
               "variable": "22",
@@ -2832,7 +2928,7 @@
             }
           },
           {
-            "id": "d29e15fa-807c-4839-aac0-8f3951acca75",
+            "id": "393b8f3f-ecc7-4597-a0b8-4b144054883b",
             "command": "EVENT_VARIABLE_MATH",
             "args": {
               "vectorX": "21",
@@ -2843,18 +2939,18 @@
             }
           },
           {
-            "id": "795476cd-e080-424e-a015-011f8ca364e8",
+            "id": "14ec206f-0b4f-4905-ad2d-a8ac0b319fa2",
             "command": "EVENT_GROUP",
             "args": {},
             "children": {
               "true": [
                 {
-                  "id": "14a4d6cc-8699-4d93-a757-a4792e5e6419",
+                  "id": "15b62526-1329-400a-a1b5-214e0da2d7f4",
                   "command": "EVENT_HIDE_SPRITES",
                   "args": {}
                 },
                 {
-                  "id": "9f6cc480-006a-4dd0-a979-f4cc9d637fd5",
+                  "id": "73c90474-581c-43bb-a89f-737135e9f651",
                   "command": "EVENT_TEXT",
                   "args": {
                     "text": [
@@ -2870,7 +2966,7 @@
                   }
                 },
                 {
-                  "id": "83550254-5835-4530-a6b2-a935e33dcc30",
+                  "id": "257c82c4-19ae-474a-af5d-0a697a055c88",
                   "command": "EVENT_SHOW_SPRITES",
                   "args": {}
                 }
@@ -2878,7 +2974,7 @@
             }
           },
           {
-            "id": "f9232e42-99d2-4c65-ad87-d3f657e6be82",
+            "id": "83c6ec78-c0b4-484e-a4c8-982b8d55c914",
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -2896,7 +2992,7 @@
             "children": {
               "true": [
                 {
-                  "id": "ebe9626c-f4d2-4641-a2cc-a11824050df3",
+                  "id": "b4306a92-960d-42b5-a5d3-bba4acb1eb69",
                   "command": "EVENT_IF",
                   "args": {
                     "condition": {
@@ -2914,7 +3010,7 @@
                   "children": {
                     "true": [
                       {
-                        "id": "ed506ef7-6486-4317-ad44-5e204e43900d",
+                        "id": "ae2d3106-6845-4168-add9-f6a3fb6823da",
                         "command": "EVENT_VARIABLE_MATH",
                         "args": {
                           "vectorX": "3",
@@ -2927,7 +3023,7 @@
                     ],
                     "false": [
                       {
-                        "id": "76b8c3ce-242b-43ef-a301-c2d65203aeaa",
+                        "id": "ab3cbc5b-a40d-4b33-a220-aaf1dbd12589",
                         "command": "EVENT_SET_VALUE",
                         "args": {
                           "variable": "3",
@@ -2941,18 +3037,18 @@
                   }
                 },
                 {
-                  "id": "f4e5e826-ca32-4cb4-ad46-604b66d4f583",
+                  "id": "62465705-b8de-4fd1-ae07-650a95187590",
                   "command": "EVENT_GROUP",
                   "args": {},
                   "children": {
                     "true": [
                       {
-                        "id": "d0b6526e-97a9-4a68-a48b-d4aad7b51779",
+                        "id": "9a82a4f7-128f-4b25-a1b4-e41c31932f2d",
                         "command": "EVENT_HIDE_SPRITES",
                         "args": {}
                       },
                       {
-                        "id": "bd4ae532-268d-420f-a31a-baae30348019",
+                        "id": "1dbcd595-8212-4103-a605-5532f024b044",
                         "command": "EVENT_TEXT",
                         "args": {
                           "text": [
@@ -2967,7 +3063,7 @@
                         }
                       },
                       {
-                        "id": "2ed386f6-24a4-4553-a4ef-6c1d30b0ac21",
+                        "id": "deccbd1f-24a4-4455-aaf7-6ae1a6f00658",
                         "command": "EVENT_SHOW_SPRITES",
                         "args": {}
                       }

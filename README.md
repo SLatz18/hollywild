@@ -2,7 +2,7 @@
 
 An open-world holiday city adventure about overlooked properties, mischievous expeditions, and an elf-powered business empire.
 
-**Status: native Game Boy Color campaign with neighborhood stories, original music, and upgraded art. Human completion time and physical Chromatic playback remain untested.**
+**Status: native Game Boy Color campaign with neighborhood stories, original music, physical pipe repairs, a rooftop parcel trial, and upgraded art. Human completion time and physical Chromatic playback remain untested.**
 
 Built for ModRetro Chromatic using GB Studio 4.3.2. The development computer runs the editor, compiler, and tests. The playable deliverable is a native `.gbc` cartridge.
 
@@ -11,6 +11,8 @@ Built for ModRetro Chromatic using GB Studio 4.3.2. The development computer run
 - Five freely connected districts, a garage, four property interiors, and ten new campaign locations.
 - Original pixel art, animated characters, dialogue, and property listings.
 - Seven original four-channel music tracks, saved Play/Mute setting, and visible room improvements.
+- Physical pipe routing with rotating elbows, plus a safe-versus-short rooftop parcel course.
+- Visible garage restoration, labeled desks, shorter story briefings, and optional next-mission introductions.
 - Salvage jobs, optional bonus salvage, deliveries, five local commissions, and cancellation.
 - Three crew roles, workshop production, and purchasable properties with visible ownership signs.
 - A 24-mission campaign with 144 objectives, 45 puzzles, and three endings.
@@ -24,7 +26,15 @@ The inspiration is city freedom, earnest holiday comedy, property hunting, and s
 
 ![Fixed introduction](docs/images/intro-fixed.png) ![Improved Cocoa Corner](docs/images/cocoa-after.png)
 
-[Download the current native prototype](https://github.com/SLatz18/hollywild/releases/tag/v0.6.0-composed-score)
+[Download the current native prototype](https://github.com/SLatz18/hollywild/releases/tag/v0.7.0-hands-on)
+
+![Pipe repair in the running cartridge](docs/images/physical-pipe-flow.png) ![Rooftop parcel course](docs/images/physical-shortcut.png)
+
+## Hands-on activities
+
+Visit **Brassworks Control** to turn the pipe elbows and connect the tank to the gauge. Visit **Candy Rooftops** for an on-foot parcel trial with a long safe route and a shorter path through staggered hazards. START > Guide > Play lists both.
+
+These are the first two physical activities; the existing narrative puzzles remain. [Rules, design research and limits](docs/HANDS_ON_PLAY.md).
 
 ## Story campaign
 

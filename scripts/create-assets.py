@@ -225,12 +225,12 @@ class District:
         self.data["collisions"] = self.col
         self.data["paletteIndices"] = self.pal
         self.data["uniqueTiles"] = len(self.c.tiles())
-        if self.data.get("property"):
-            improved=property_upgrade(self)
+        if self.data.get("property") or self.data["id"] == "garage":
+            improved=garage_upgrade(self) if self.data["id"] == "garage" else property_upgrade(self)
             filename=self.data["id"]+"_upgraded.png"
             improved.save(BG / filename)
             self.data["backgroundVariants"]=[{
-                "variable":"perk_"+self.data["property"], "background":filename,
+                "variable":"workshop" if self.data["id"] == "garage" else "perk_"+self.data["property"], "background":filename,
                 "paletteIndices":self.pal.copy(), "uniqueTiles":len(improved.tiles())}]
         assert self.data["uniqueTiles"] <= 256, (self.data["id"], self.data["uniqueTiles"])
         return self.data
@@ -781,6 +781,21 @@ def atmospheric_pass(rooms):
             for y in (91,115):
                 room.c.line(56,y,103,y,1)
                 for x in range(57,104,8):room.c.rect(x,y+1,3,1,3)
+            # The inherited bench is visibly worn. Every detail stays inside
+            # its existing blocked footprint, including the unfinished truck.
+            room.c.rect(16,40,48,16,0)
+            room.c.rect(17,41,46,6,1)
+            room.c.line(18,42,27,45,2)
+            room.c.line(49,42,61,44,2)
+            room.c.rect(19,48,4,8,1);room.c.rect(57,48,4,8,1)
+            room.c.rect(29,42,17,4,2)
+            room.c.rect(35,40,7,3,0)
+            room.c.rect(29,46,5,2,0);room.c.rect(43,47,5,2,0)
+            # Labels are readable at cartridge resolution and sit outside the
+            # icon footprints. These signs do not add terrain or actors.
+            for text,x,y in (("SIDE",74,16),("STORY",123,64),("SAVE",119,110)):
+                room.c.rect(x-1,y-1,len(text)*4+1,7,3)
+                label(room.c,text,x,y)
         elif room.data.get("property"):
             prop=room.data["property"]
             wall_lights(room,16,25,8)
@@ -864,7 +879,147 @@ def atmospheric_pass(rooms):
                         room.c.rect(xx,y+5,8,min(12,h*8-10),2)
                         room.c.rect(xx+1,y+6,6,2,3)
                         room.c.pixel(xx+5,y+9,1)
+    for room in rooms:
+        if room.data["id"]=="candy_rooftops":
+            parcel_trial_markings(room)
+        elif room.data["id"]=="brassworks_control":
+            pressure_pipe_markings(room)
     return rooms
+
+
+def pressure_pipe_markings(room):
+    """Draw fixed sockets only across gaps between the challenge actors."""
+    spec=json.loads((ROOT/"content/challenges.json").read_text())["pipes"]
+    valves=spec["valves"]
+    items=valves+[spec["source"],spec["sink"]]
+    edges=set()
+    for a in items:
+        for dx,dy in ((1,0),(-1,0),(0,1),(0,-1)):
+            aligned=[b for b in items if b is not a and
+                     ((dx and b["y"]==a["y"] and (b["x"]-a["x"])*dx>0) or
+                      (dy and b["x"]==a["x"] and (b["y"]-a["y"])*dy>0))]
+            if not aligned:continue
+            b=min(aligned,key=lambda b:abs(b["x"]-a["x"])+abs(b["y"]-a["y"]))
+            # The tank and gauge have single lateral sockets. No vertical
+            # branch is drawn from them, even if a future actor aligns there.
+            if any(item in (spec["source"],spec["sink"]) for item in (a,b)) and dy:continue
+            edges.add(tuple(sorted((a["id"],b["id"]))))
+    by_id={item["id"]:item for item in items}
+    for first,second in sorted(edges):
+        a,b=by_id[first],by_id[second]
+        if a["y"]==b["y"]:
+            left,right=sorted((a,b),key=lambda item:item["x"])
+            x,y=left["x"]*8+16,left["y"]*8
+            width=right["x"]*8-x
+            if width<=0:continue
+            room.c.rect(x,y-2,width,4,0)
+            room.c.rect(x,y-1,width,2,2)
+            room.c.rect(x,y-1,width,1,3)
+            bounds=(x,y-2,width,4)
+        else:
+            top,bottom=sorted((a,b),key=lambda item:item["y"])
+            x,y=top["x"]*8+8,top["y"]*8+8
+            height=bottom["y"]*8-8-y
+            if height<=0:continue
+            room.c.rect(x-2,y,4,height,0)
+            room.c.rect(x-1,y,2,height,2)
+            room.c.rect(x-1,y,1,height,3)
+            bounds=(x-2,y,4,height)
+        x,y,w,h=bounds
+        for ty in range(y//8,(y+h-1)//8+1):
+            for tx in range(x//8,(x+w-1)//8+1):room.area(tx,ty,1,1,4)
+    for text,item,offset in (("IN",spec["source"],-16),("OUT",spec["sink"],-16),("RESET",spec["reset"],12)):
+        x=item["x"]*8+8-(len(text)*4-1)//2
+        y=item["y"]*8+offset
+        room.c.rect(x-1,y-1,len(text)*4+1,7,3)
+        label(room.c,text,x,y)
+
+
+def parcel_trial_markings(room):
+    """Paint a long safe line and a short rough line on existing rooftop floor."""
+    trial=json.loads((ROOT/"content/challenges.json").read_text())["delivery"]
+    def floor_tile(tx,ty):
+        return 0<=tx<room.tw and 0<=ty<room.th and not room.col[ty*room.tw+tx]
+    # Sparse flat dashes stay distinct from furniture and its solid outline.
+    track={(x,13) for x in range(6,16)}|{(6,y) for y in range(14,27)}
+    track|={(x,26) for x in range(6,16)}|{(15,y) for y in range(13,27)}
+    for tx,ty in sorted(track):
+        if floor_tile(tx,ty):
+            x,y=tx*8,ty*8
+            room.c.rect(x+3,y+2,2,4,3)
+            room.c.pixel(x+2,y+4,0);room.c.pixel(x+5,y+4,0)
+    checkpoints=[(item,6) for item in trial["safeCheckpoints"]]
+    checkpoints.extend((trial[key],4) for key in ("shortcut","shortcutExit"))
+    for item,palette in checkpoints:
+        tx,ty,w=item["x"],item["y"],item["width"]
+        for xx in range(tx,tx+w):
+            if floor_tile(xx,ty):
+                room.area(xx,ty,1,1,palette)
+                room.c.rect(xx*8,ty*8+2,8,4,0)
+                for offset in (0,4):room.c.rect(xx*8+offset,ty*8+2,2,4,3)
+        # A flat pennant at the edge identifies the checkpoint before play.
+        if floor_tile(tx,ty-1):
+            room.c.line(tx*8+1,ty*8-7,tx*8+1,ty*8-1,0)
+            room.c.rect(tx*8+2,ty*8-7,4,3,3)
+    # Down arrows mark the point where a committed shortcut cannot turn back.
+    guard=trial["shortcutBacktrack"]
+    for tx in range(guard["x"],guard["x"]+guard["width"]):
+        ty=guard["y"]
+        if floor_tile(tx,ty):
+            x,y=tx*8,ty*8
+            room.c.line(x+3,y+3,x+3,y+6,0)
+            room.c.line(x+1,y+4,x+3,y+6,0)
+            room.c.line(x+5,y+4,x+3,y+6,0)
+    for tx,ty,palette in ((12,20,4),(15,22,0)):
+        for xx in range(tx,tx+3):
+            if floor_tile(xx,ty):
+                room.area(xx,ty,1,1,palette)
+                room.c.rect(xx*8,ty*8,8,8,2)
+                for offset in (0,4):
+                    room.c.line(xx*8+offset,ty*8+7,xx*8+offset+3,ty*8,0 if palette==4 else 3)
+    for text,x,y in (("START",111,78),("EXIT",114,201),("FINISH",108,224)):
+        room.c.rect(x-1,y-1,len(text)*4+1,7,3)
+        label(room.c,text,x,y)
+
+
+def consistent_upgrade(room, upgraded):
+    """Normalize the whole scene, including unchanged shared tile instances."""
+    c=upgraded
+    pairs={}
+    locations=[]
+    for y in range(0,c.height,8):
+        for x in range(0,c.width,8):
+            base=tuple(room.c.p[(y+dy)*c.width+x+dx] for dy in range(8) for dx in range(8))
+            target=tuple(c.p[(y+dy)*c.width+x+dx] for dy in range(8) for dx in range(8))
+            pairs.setdefault(base,set()).add(target)
+            locations.append((x,y,base))
+    for x,y,base in locations:
+        if len(pairs[base])!=1:
+            for dy in range(8):
+                for dx in range(8):c.pixel(x+dx,y+dy,base[dy*8+dx])
+    assert len(c.tiles())<=256,(room.data["id"],"upgrade tile budget",len(c.tiles()))
+    return c
+
+
+def garage_upgrade(room):
+    """Restore the existing bench, lamp, and little truck after workshop repair."""
+    c=Canvas(room.c.width,room.c.height)
+    c.p=room.c.p.copy()
+    # Brass task lamp replaces the tired heater on the existing back wall.
+    c.rect(8,8,8,16,1)
+    c.rect(10,9,5,2,0);c.rect(11,11,3,4,3)
+    c.line(12,15,12,20,0);c.rect(9,21,7,2,2)
+    # Sanded timber, solid paired legs, tidy drawers, and an intact crawler.
+    c.rect(16,40,48,16,0)
+    c.rect(17,41,46,6,2);c.rect(18,41,44,1,3)
+    c.rect(19,48,4,8,2);c.rect(57,48,4,8,2)
+    for x in (25,41):
+        c.rect(x,49,14,6,1);c.rect(x+5,50,4,1,3)
+    c.rect(29,42,20,4,0);c.rect(30,42,18,3,3)
+    c.rect(36,40,8,3,0);c.rect(37,40,5,2,3)
+    for x in (30,43):
+        c.rect(x,45,5,3,0);c.rect(x+1,46,3,1,2)
+    return consistent_upgrade(room,c)
 
 
 def property_upgrade(room):
@@ -921,20 +1076,7 @@ def property_upgrade(room):
         round_detail(c,20,35)
     # Native replacement changes shared VRAM tiles. Keep only transformations
     # with one consistent destination for every occurrence of a source tile.
-    pairs={}
-    locations=[]
-    for y in range(0,c.height,8):
-        for x in range(0,c.width,8):
-            base=tuple(room.c.p[(y+dy)*c.width+x+dx] for dy in range(8) for dx in range(8))
-            target=tuple(c.p[(y+dy)*c.width+x+dx] for dy in range(8) for dx in range(8))
-            pairs.setdefault(base,set()).add(target)
-            locations.append((x,y,base))
-    for x,y,base in locations:
-        if len(pairs[base])!=1:
-            for dy in range(8):
-                for dx in range(8):c.pixel(x+dx,y+dy,base[dy*8+dx])
-    assert len(c.tiles())<=256,(room.data["id"],"upgrade tile budget",len(c.tiles()))
-    return c
+    return consistent_upgrade(room,c)
 
 
 def person(kind, direction, step=0):
@@ -1022,6 +1164,49 @@ def create_sprites():
         else:
             c.save(SPRITES/(name+".png"),True)
             meta.append({"id":name,"filename":name+".png","profile":"static","width":16,"height":16})
+    # Big, open elbows communicate their connections without reading a menu.
+    # Static sheets use the existing native sprite shades and collision bounds.
+    outlets={"ne":("north","east"),"se":("south","east"),
+             "sw":("south","west"),"nw":("north","west")}
+    for suffix,directions in outlets.items():
+        name="valve_elbow_"+suffix
+        c=Canvas(16,16,4)
+        c.rect(4,4,8,8,0);c.rect(5,5,6,6,2)
+        for direction in directions:
+            if direction in ("north","south"):
+                y=0 if direction=="north" else 8
+                c.rect(4,y,8,8,0);c.rect(5,y,6,8,2)
+                c.rect(7,y,2,8,3)
+                c.rect(3,1 if direction=="north" else 13,10,2,0)
+                c.rect(5,1 if direction=="north" else 13,6,2,3)
+            else:
+                x=8 if direction=="east" else 0
+                c.rect(x,4,8,8,0);c.rect(x,5,8,6,2)
+                c.rect(x,7,8,2,3)
+                c.rect(13 if direction=="east" else 1,3,2,10,0)
+                c.rect(13 if direction=="east" else 1,5,2,6,3)
+        c.rect(6,6,4,4,3);c.pixel(6,9,2)
+        c.save(SPRITES/(name+".png"),True)
+        meta.append({"id":name,"filename":name+".png","profile":"static","width":16,"height":16})
+    for name in ("pressure_source","pressure_sink_off","pressure_sink_on"):
+        c=Canvas(16,16,4)
+        if name=="pressure_source":
+            c.rect(3,2,10,12,0);c.rect(4,3,8,10,2)
+            c.rect(5,1,6,2,0);c.rect(5,4,6,2,3)
+            c.rect(11,6,5,5,0);c.rect(12,7,4,3,3)
+            c.rect(2,13,12,2,0)
+        else:
+            c.rect(0,6,5,5,0);c.rect(0,7,4,3,3)
+            c.rect(3,2,12,12,0);c.rect(4,3,10,10,2)
+            c.rect(6,4,6,7,0);c.rect(7,5,4,5,3)
+            if name.endswith("_on"):
+                c.line(8,8,10,5,0)
+                c.rect(6,12,6,2,3);c.pixel(13,1,3)
+                c.pixel(14,0,3);c.pixel(15,1,3)
+            else:
+                c.line(7,9,9,8,0);c.rect(6,12,6,1,0)
+        c.save(SPRITES/(name+".png"),True)
+        meta.append({"id":name,"filename":name+".png","profile":"static","width":16,"height":16})
     return meta
 
 

@@ -133,7 +133,7 @@ def main():
         tap("down")
         capture("pocket-guide-selected", menu=True)
         tap("a")
-        capture("guide-menu", menu=True, expected="Help / Music / Back")
+        capture("guide-menu", menu=True, expected="Help / Music / Play / Back")
         tap("down")
         capture("guide-music-selected", menu=True)
         tap("a")
@@ -148,6 +148,27 @@ def main():
         capture("music-muted", expected="Music muted.")
         tap("a")
         capture("music-closed", visible=False)
+        tap("start")
+        settle(True)
+        tap("a")
+        settle(True)
+        tap("a")
+        settle(True)
+        tap("down")
+        tap("a")
+        capture("play-guide-menu", menu=True, expected="Help / Music / Play / Back")
+        tap("down")
+        tap("down")
+        tap("a")
+        for number, expected in enumerate([
+            "PIPE WORKSHOP / Brassworks: TOOLS. / Side door, right. / Free to enter.",
+            "Inside: east exit. / North via Foundry / to Control. / A: turn elbows.",
+            "PARCEL FOOT TRIAL / Candy: PARCEL. / Side door, right. / Inside: east exit. / North to roof.",
+            "Pipes: +25 once. / Trial: best score, / up to 16 total. / Both are optional.",
+        ], 1):
+            capture(f"activity-directions-{number}", expected=expected)
+            tap("a")
+        capture("activity-directions-closed", visible=False)
         assert sha(rom) == digest, "ROM changed during test"
         result["status"] = "passed"
     except Exception as exc:

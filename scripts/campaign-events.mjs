@@ -6,6 +6,7 @@ const keys=['route','policy','trust','ending'];
 export function wrapCampaignPages(pages) {
  const result=[];
  for(const original of pages){
+  const firstPage=result.length;
   let lines=[],line='';
   const flushLine=()=>{if(line){lines.push(line);line='';}if(lines.length===5){result.push(lines.join('\n'));lines=[];}};
   for(const paragraph of original.split('\n')){
@@ -16,7 +17,14 @@ export function wrapCampaignPages(pages) {
    }
    flushLine();
   }
-  if(lines.length)result.push(lines.join('\n'));
+  if(lines.length){
+   // Keep the final fragment with enough context to read as a page.
+   if(lines.length===1 && result.length>firstPage && result.at(-1).split('\n').length===5){
+    const previous=result.pop().split('\n');
+    result.push(previous.slice(0,3).join('\n'));
+    result.push([...previous.slice(3),...lines].join('\n'));
+   }else result.push(lines.join('\n'));
+  }
  }
  return result;
 }
@@ -68,7 +76,7 @@ export function createCampaignEngine(c,{ev,iff,set,add,text,menu,share=(key,buil
  // Branches are nested rather than sequential. A transition cannot match a
  // newly activated mission or a later step during the same interaction.
  const select=(name,entries,fallback=[])=>entries.reduceRight((tail,[value,script])=>[iff(name,'eq',value,script,tail)],fallback);
- const finish=m=>share('finish_'+m.id,()=>[iff('job','eq',0,[iff('coins','lte',9999-m.reward.coins,[iff('salvage','lte',99-m.reward.salvage,[iff('story_completed','lt',m.id,[add('coins',m.reward.coins),add('salvage',m.reward.salvage),set('story_completed',m.id),say(m.outro),say([`Mission complete. ${m.reward.coins} Coins and ${m.reward.salvage} scrap.`]),set('story_step',0),set('story_mission',m.id+1),...(m.id===24?[set('festival',1),set('aurora',1),set('cheer',100),...select('story_ending',[[1,[say(c.endings.warmth)]],[2,[say(c.endings.industry)]],[3,[say(c.endings.commons)]]]),say(['The city stays open. Explore, build, and visit your neighbors.'])]:[say(c.missions[m.id].intro),say([c.missions[m.id].steps[0].hint])])])],[say(['Your reward is safe. Make room in scrap storage, then use Story or return here.'])])],[say(['Your reward is safe. Spend some Coins, then use Story or return here.'])])],[say(['Mission ready. Finish or cancel your job, then use Story or return here for the reward.'])])]);
+ const finish=m=>share('finish_'+m.id,()=>[iff('job','eq',0,[iff('coins','lte',9999-m.reward.coins,[iff('salvage','lte',99-m.reward.salvage,[iff('story_completed','lt',m.id,[add('coins',m.reward.coins),add('salvage',m.reward.salvage),set('story_completed',m.id),say(m.outro),say([`Mission complete. ${m.reward.coins} Coins and ${m.reward.salvage} scrap.`]),set('story_step',0),set('story_mission',m.id+1),...(m.id===24?[set('festival',1),set('aurora',1),set('cheer',100),...select('story_ending',[[1,[say(c.endings.warmth)]],[2,[say(c.endings.industry)]],[3,[say(c.endings.commons)]]]),say(['The city stays open. Explore, build, and visit your neighbors.'])]:[say(['Take a breather. START > Story has the next lead.'])])])],[say(['Your reward is safe. Make room in scrap storage, then use Story or return here.'])])],[say(['Your reward is safe. Spend some Coins, then use Story or return here.'])])],[say(['Mission ready. Finish or cancel your job, then use Story or return here for the reward.'])])]);
  const advance=(m,i)=>[set('story_step',i+1),...(i===m.steps.length-1?finish(m):[say([m.steps[i+1].hint])])];
  const stepScript=(m,s,i)=>{
   const prefix=[say(s.pages),...(s.reactions??[]).map(r=>iff('story_'+r.key,'eq',r.value,[say(r.pages)]))];
@@ -91,7 +99,7 @@ export function createCampaignEngine(c,{ev,iff,set,add,text,menu,share=(key,buil
  };
  const journal=()=>select('story_mission',[
   [0,[say(['THE WINTERLIGHT LEDGER','Visit the new story desk in your garage to begin. Every district is open.'])]],
-  ...c.missions.map(m=>[m.id,share('journal_mission_'+m.id,()=>[say([`Mission ${m.id}: ${m.title}`,m.summary]),...select('story_step',m.steps.map((s,i)=>[i,[say([s.hint])]]),finish(m))])]),
+  ...c.missions.map(m=>[m.id,share('journal_mission_'+m.id,()=>[say([`Mission ${m.id}: ${m.title}`,m.summary]),iff('story_step','eq',0,[say(m.intro)]),...select('story_step',m.steps.map((s,i)=>[i,[say([s.hint])]]),finish(m))])]),
   [25,[say(['THE LEDGER IS COMPLETE','Your choices are part of the city. Free exploration and all ordinary jobs remain open.'])]]
  ],[say(['Visit the garage story desk.'])]);
  const clues=()=>select('story_mission',[

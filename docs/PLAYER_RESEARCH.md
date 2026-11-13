@@ -1,5 +1,7 @@
 # Hollywild: simulated agent usability research
 
+For the newer physical activities and entrance-discovery findings, see [the hands-on agent review](PLAYER_RESEARCH_ACTIONS.md).
+
 Three blind, screen-and-button agent sessions examined newcomer onboarding, exploration, and readability/settings on the same frozen initial ROM (SHA-256 `3a9194dc9cddfa92e8cb8bd4e3037a2020e93eef74ca536fe20c8f2f8c753edd`). These are agent observations, not human playtests. Sessions were capped at 50 input batches or ten minutes. Screenshots and individual findings are under `test-results/player-research/`.
 
 The strongest result is mixed: exploration worked, but the newcomer did not reach a useful first activity. The explorer independently reached Candy Row and Velvet Heights, met Moxie, and found an optional story. The settings tester found Music and selected Mute. No initial blind session completed a job or tested meaningful saved progress. A later experienced-agent retest completed salvage, restored the garage, and assigned Rivet.

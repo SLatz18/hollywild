@@ -155,8 +155,18 @@ def navigate(destination):
         if not actor.get("isPinned"):
             obstacles.append(bounds(sprites[actor["spriteSheetId"]], actor["x"], actor["y"]))
     triggers = []
+    has_activity_triggers = False
     for path in (scene_path.parent / "triggers").glob("*.gbsres"):
         trigger = checked_resource(path)
+        def changes_scene(value):
+            if isinstance(value, dict):
+                return value.get("command") == "EVENT_SWITCH_SCENE" or any(changes_scene(v) for v in value.values())
+            return isinstance(value, list) and any(changes_scene(v) for v in value)
+        # Ordinary activity triggers are playable terrain. Only exits need an
+        # explicit destination; walking over a checkpoint still sends buttons.
+        if not changes_scene(trigger.get("script", [])):
+            has_activity_triggers = True
+            continue
         triggers.append((trigger["x"] * 8, trigger["y"] * 8,
                          (trigger["x"] + trigger["width"]) * 8 - 1,
                          (trigger["y"] + trigger["height"]) * 8 - 1))
@@ -192,11 +202,14 @@ def navigate(destination):
     walked = []
     for point, button in reversed(path):
         pyboy.button_press(button)
-        tick(pyboy, 8)
+        held_frames = 8
+        tick(pyboy, held_frames)
         pyboy.button_release(button)
-        tick(pyboy, 1)
+        # Let the queued release and short checkpoint script finish. No input
+        # is held, and the same exact destination assertion still applies.
+        tick(pyboy, 24 if has_activity_triggers else 1)
         observed = state()
-        walked.append({"button": button, "frames": 8, "scene": observed["scene"], "x": observed["x"], "y": observed["y"]})
+        walked.append({"button": button, "frames": held_frames, "scene": observed["scene"], "x": observed["x"], "y": observed["y"]})
         if observed["scene"] != scene_name:
             assert observed["scene"] == expected_scene, f"Unexpected transition: {observed['scene']}"
             return walked

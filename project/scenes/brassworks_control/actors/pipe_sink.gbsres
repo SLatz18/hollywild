@@ -1,0 +1,955 @@
+{
+  "_resourceType": "actor",
+  "id": "fc64c9b0-d68a-495d-ab12-917741e20351",
+  "_index": 11,
+  "symbol": "actor_brassworks_control_pipe_sink",
+  "prefabId": "",
+  "name": "Pressure gauge",
+  "coordinateType": "tiles",
+  "x": 21,
+  "y": 10,
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "fbce8520-5a99-4553-accb-11a77e776834",
+  "paletteId": "dff14241-4872-45c1-a840-6d64b4957863",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "id": "97c03ca5-dda0-46cf-a779-79c62d43c576",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "146",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "96eb3b33-91e1-4c8f-acd6-854d3342d7cf",
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "147",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      }
+    },
+    {
+      "id": "7c814e65-2d3c-44ed-a9f7-6bac747ecc57",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "142"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 2
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "10bdbbef-2202-4bff-a285-31f10139d50c",
+            "command": "EVENT_VARIABLE_MATH",
+            "args": {
+              "vectorX": "147",
+              "operation": "add",
+              "other": "val",
+              "value": 1,
+              "clamp": false
+            }
+          },
+          {
+            "id": "52b95580-a690-4157-a02c-68ca9670d715",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "144"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "f3e22d30-e21f-469b-ad6d-c85b3707e8c8",
+                  "command": "EVENT_VARIABLE_MATH",
+                  "args": {
+                    "vectorX": "147",
+                    "operation": "add",
+                    "other": "val",
+                    "value": 1,
+                    "clamp": false
+                  }
+                },
+                {
+                  "id": "a3cc290b-7fd0-42e0-a17d-08d790ef1bed",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "145"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 2
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "2590ea04-a11f-46f7-a0cf-dffe30c2b488",
+                        "command": "EVENT_VARIABLE_MATH",
+                        "args": {
+                          "vectorX": "147",
+                          "operation": "add",
+                          "other": "val",
+                          "value": 1,
+                          "clamp": false
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "22ae9024-497b-4e7c-ad1b-208978be4df2",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "145"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 3
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "99c99914-c22c-48f6-ab61-4b09418c0fa6",
+                              "command": "EVENT_VARIABLE_MATH",
+                              "args": {
+                                "vectorX": "147",
+                                "operation": "add",
+                                "other": "val",
+                                "value": 1,
+                                "clamp": false
+                              }
+                            },
+                            {
+                              "id": "b7426245-e533-4bb3-a68d-dbecdeee1f77",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "143"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 1
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "2a7013c2-835c-4014-af25-a43bc7ed2037",
+                                    "command": "EVENT_VARIABLE_MATH",
+                                    "args": {
+                                      "vectorX": "147",
+                                      "operation": "add",
+                                      "other": "val",
+                                      "value": 1,
+                                      "clamp": false
+                                    }
+                                  },
+                                  {
+                                    "id": "f9f8f834-ab12-4576-aca5-d4e8f36d1903",
+                                    "command": "EVENT_SET_VALUE",
+                                    "args": {
+                                      "variable": "146",
+                                      "value": {
+                                        "type": "number",
+                                        "value": 1
+                                      }
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "e2a6560a-88b2-4657-a4a2-73155c2e270e",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "143"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 2
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "983072ac-ab9c-498b-abb6-edb837a14e8b",
+                                          "command": "EVENT_VARIABLE_MATH",
+                                          "args": {
+                                            "vectorX": "147",
+                                            "operation": "add",
+                                            "other": "val",
+                                            "value": 1,
+                                            "clamp": false
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": []
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "03f64e46-583a-489d-a83c-9a72dc9d067d",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "144"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 3
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "04355708-b253-41a5-af8b-4e730731388a",
+                        "command": "EVENT_VARIABLE_MATH",
+                        "args": {
+                          "vectorX": "147",
+                          "operation": "add",
+                          "other": "val",
+                          "value": 1,
+                          "clamp": false
+                        }
+                      }
+                    ],
+                    "false": []
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "a40557ad-8994-4924-a854-d95308391a32",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "142"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 3
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "49f6b5e7-0637-4dda-a383-cdd44ed9861e",
+                  "command": "EVENT_VARIABLE_MATH",
+                  "args": {
+                    "vectorX": "147",
+                    "operation": "add",
+                    "other": "val",
+                    "value": 1,
+                    "clamp": false
+                  }
+                }
+              ],
+              "false": []
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "6777fa21-ad8c-4ee0-aa4e-e14d140f7e8e",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "146"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "bfb5a1b9-d20e-4728-a99e-1373ae571e97",
+            "command": "EVENT_ACTOR_SET_SPRITE",
+            "args": {
+              "actorId": "fc64c9b0-d68a-495d-ab12-917741e20351",
+              "spriteSheetId": "c34e923b-5cb8-4c8e-acd6-08d2f4c8e2db"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "a93f1c6d-f56a-4a1c-a900-def14d9d01ce",
+            "command": "EVENT_ACTOR_SET_SPRITE",
+            "args": {
+              "actorId": "fc64c9b0-d68a-495d-ab12-917741e20351",
+              "spriteSheetId": "fbce8520-5a99-4553-accb-11a77e776834"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "59889422-63ff-4a36-a081-58a2212b0f1b",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "146"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "39474b86-8ca8-4636-ac3e-3971d7d5cf92",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "148"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "c5b31e7d-e51e-466e-a964-8b1216a12ff9",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "6"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 0
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "fdece03e-02d4-49ef-a21e-af5d078796a4",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "lte",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "1"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 9974
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "50bc2509-1447-434a-a8c1-b3dc58728d70",
+                              "command": "EVENT_SET_VALUE",
+                              "args": {
+                                "variable": "148",
+                                "value": {
+                                  "type": "number",
+                                  "value": 1
+                                }
+                              }
+                            },
+                            {
+                              "id": "79214e55-2a3a-4cbb-aebb-a6ec8614d150",
+                              "command": "EVENT_VARIABLE_MATH",
+                              "args": {
+                                "vectorX": "1",
+                                "operation": "add",
+                                "other": "val",
+                                "value": 25,
+                                "clamp": false
+                              }
+                            },
+                            {
+                              "id": "0914bdcd-1236-4c5c-a6a3-0c19c4ce69d4",
+                              "command": "EVENT_SOUND_PLAY_EFFECT",
+                              "args": {
+                                "type": "beep",
+                                "pitch": 7,
+                                "duration": 0.05,
+                                "priority": "medium",
+                                "wait": false
+                              }
+                            },
+                            {
+                              "id": "2932c211-1596-4272-a3e2-7b4a79bb276f",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "e4818b9e-a4a9-4786-a3c5-6005d659a144",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "f93c5cc3-8b14-43ae-afe0-4fb4ca083908",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "PRESSURE RESTORED!\n+25 Coins\nReset for free\nplay."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "92daf7bd-ada9-4773-a38a-d6505b00f9b9",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "c712dd77-2c29-4793-ab84-d62557c298f0",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "d8ec74f5-0528-48cb-a8e1-da528a329db1",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "54a5f698-c179-4aed-aa5c-d592835e91b5",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Flow is live.\n25 Coins pending.\nMake wallet room."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "fb5a3c2b-3be0-4eef-a22c-2e450c2819cb",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "90e1ff38-2830-4ddf-a8e9-f9de6c182a9c",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "93a6e771-d016-4a8c-a639-649dec320ef0",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "0a9bb85b-618a-46d0-acf1-b9a0e81129b0",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "Flow is live.\nFinish your job\nto claim 25 Coins."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "964fc1e7-2043-4bb8-ab29-f0d79e1b7e86",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "f4d6f7f2-ece7-49dc-afba-7547b908210f",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "79447ab5-3fdb-4a6d-acd1-f2282d04f851",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "3b98fc57-ff3e-4d9b-a928-2ec33f60c206",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "Pressure is live.\nReward already\npaid.\nReset for free\nplay."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "81481955-d980-462e-a543-495729f105c7",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "fb4c6b10-4b00-4e91-a335-aa171eaf6ecd",
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "147"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              }
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "ecb493d1-8749-43c7-a25e-efaa5f5e9696",
+                  "command": "EVENT_GROUP",
+                  "args": {},
+                  "children": {
+                    "true": [
+                      {
+                        "id": "68c723c5-4fa1-485e-a103-83e781040195",
+                        "command": "EVENT_HIDE_SPRITES",
+                        "args": {}
+                      },
+                      {
+                        "id": "1892ad86-6a51-44a2-a480-fdc0e340f0fa",
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "text": [
+                            "No inlet flow.\nCheck the elbow\nnext to the tank."
+                          ],
+                          "avatarId": "",
+                          "minHeight": 4,
+                          "maxHeight": 7,
+                          "position": "bottom",
+                          "closeWhen": "key",
+                          "closeButton": "a"
+                        }
+                      },
+                      {
+                        "id": "ab62d2ac-1e37-48a0-a48a-acdb5409ef4f",
+                        "command": "EVENT_SHOW_SPRITES",
+                        "args": {}
+                      }
+                    ]
+                  }
+                }
+              ],
+              "false": [
+                {
+                  "id": "385f9e04-f674-44bd-a2a8-9198fb8bfda2",
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "eq",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "147"
+                      },
+                      "valueB": {
+                        "type": "number",
+                        "value": 1
+                      }
+                    }
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "id": "45fbbf7d-e515-499d-a9f3-15c489fc614d",
+                        "command": "EVENT_GROUP",
+                        "args": {},
+                        "children": {
+                          "true": [
+                            {
+                              "id": "cd5b0b2d-f636-4689-a205-59bdf0304138",
+                              "command": "EVENT_HIDE_SPRITES",
+                              "args": {}
+                            },
+                            {
+                              "id": "7e0da3d7-330e-42c7-a65c-dad10a50796d",
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "text": [
+                                  "One elbow carries\npressure. Check\nits\nnext neighbor."
+                                ],
+                                "avatarId": "",
+                                "minHeight": 4,
+                                "maxHeight": 7,
+                                "position": "bottom",
+                                "closeWhen": "key",
+                                "closeButton": "a"
+                              }
+                            },
+                            {
+                              "id": "f2db1f43-05f2-42a1-aac6-3e9d9452ffdd",
+                              "command": "EVENT_SHOW_SPRITES",
+                              "args": {}
+                            }
+                          ]
+                        }
+                      }
+                    ],
+                    "false": [
+                      {
+                        "id": "2c5c4c54-2103-4160-a2af-a05a926e8ba0",
+                        "command": "EVENT_IF",
+                        "args": {
+                          "condition": {
+                            "type": "eq",
+                            "valueA": {
+                              "type": "variable",
+                              "value": "147"
+                            },
+                            "valueB": {
+                              "type": "number",
+                              "value": 2
+                            }
+                          }
+                        },
+                        "children": {
+                          "true": [
+                            {
+                              "id": "308bd55f-8580-4367-ad2a-d8912a3a937b",
+                              "command": "EVENT_GROUP",
+                              "args": {},
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "e8932b00-bfc7-4cbd-a458-cf4c32cacfde",
+                                    "command": "EVENT_HIDE_SPRITES",
+                                    "args": {}
+                                  },
+                                  {
+                                    "id": "b3955ab5-07ea-4329-a2d3-0860559c4036",
+                                    "command": "EVENT_TEXT",
+                                    "args": {
+                                      "text": [
+                                        "Two elbows carry\npressure. Check\nthe\nnext open outlet."
+                                      ],
+                                      "avatarId": "",
+                                      "minHeight": 4,
+                                      "maxHeight": 7,
+                                      "position": "bottom",
+                                      "closeWhen": "key",
+                                      "closeButton": "a"
+                                    }
+                                  },
+                                  {
+                                    "id": "7565fbdd-df50-4307-ac7f-101b1d70fff6",
+                                    "command": "EVENT_SHOW_SPRITES",
+                                    "args": {}
+                                  }
+                                ]
+                              }
+                            }
+                          ],
+                          "false": [
+                            {
+                              "id": "f1edd309-83ff-4c8e-acf8-6ad7b87ae9ce",
+                              "command": "EVENT_IF",
+                              "args": {
+                                "condition": {
+                                  "type": "eq",
+                                  "valueA": {
+                                    "type": "variable",
+                                    "value": "147"
+                                  },
+                                  "valueB": {
+                                    "type": "number",
+                                    "value": 3
+                                  }
+                                }
+                              },
+                              "children": {
+                                "true": [
+                                  {
+                                    "id": "33808dd0-601f-4857-a104-ff0d2c6521c2",
+                                    "command": "EVENT_GROUP",
+                                    "args": {},
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "bc1606ce-389a-47f3-a59a-0842e1d883e3",
+                                          "command": "EVENT_HIDE_SPRITES",
+                                          "args": {}
+                                        },
+                                        {
+                                          "id": "a10a76d2-6e9e-47d2-a89c-fbe423edbbcc",
+                                          "command": "EVENT_TEXT",
+                                          "args": {
+                                            "text": [
+                                              "Three elbows carry\npressure. Check\nthe\nlast connection."
+                                            ],
+                                            "avatarId": "",
+                                            "minHeight": 4,
+                                            "maxHeight": 7,
+                                            "position": "bottom",
+                                            "closeWhen": "key",
+                                            "closeButton": "a"
+                                          }
+                                        },
+                                        {
+                                          "id": "e02e47f6-e2a4-4470-aa52-0799703fc6fe",
+                                          "command": "EVENT_SHOW_SPRITES",
+                                          "args": {}
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "id": "13c592ed-e666-4301-a0d1-52d818e98d60",
+                                    "command": "EVENT_IF",
+                                    "args": {
+                                      "condition": {
+                                        "type": "eq",
+                                        "valueA": {
+                                          "type": "variable",
+                                          "value": "147"
+                                        },
+                                        "valueB": {
+                                          "type": "number",
+                                          "value": 4
+                                        }
+                                      }
+                                    },
+                                    "children": {
+                                      "true": [
+                                        {
+                                          "id": "43d5b80c-c3f4-44e8-a7ea-d87bebddd0c6",
+                                          "command": "EVENT_GROUP",
+                                          "args": {},
+                                          "children": {
+                                            "true": [
+                                              {
+                                                "id": "a84d4944-888f-4892-ad50-d93e77f09f3a",
+                                                "command": "EVENT_HIDE_SPRITES",
+                                                "args": {}
+                                              },
+                                              {
+                                                "id": "aca98bfc-c9b5-4b3d-a521-ce8b83d05a15",
+                                                "command": "EVENT_TEXT",
+                                                "args": {
+                                                  "text": [
+                                                    "All elbows linked.\nPoint the last\noutlet\ninto the right\ngauge."
+                                                  ],
+                                                  "avatarId": "",
+                                                  "minHeight": 4,
+                                                  "maxHeight": 7,
+                                                  "position": "bottom",
+                                                  "closeWhen": "key",
+                                                  "closeButton": "a"
+                                                }
+                                              },
+                                              {
+                                                "id": "058498a7-db4b-4f7f-a87b-efd4ea574e70",
+                                                "command": "EVENT_SHOW_SPRITES",
+                                                "args": {}
+                                              }
+                                            ]
+                                          }
+                                        }
+                                      ],
+                                      "false": []
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "startScript": [
+    {
+      "id": "b8cdbe6b-d0ab-47d3-ae84-e9182f7c7ae2",
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "146"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 1
+          }
+        }
+      },
+      "children": {
+        "true": [
+          {
+            "id": "6ee86e02-ded2-4a32-adad-26669caa8580",
+            "command": "EVENT_ACTOR_SET_SPRITE",
+            "args": {
+              "actorId": "fc64c9b0-d68a-495d-ab12-917741e20351",
+              "spriteSheetId": "c34e923b-5cb8-4c8e-acd6-08d2f4c8e2db"
+            }
+          }
+        ],
+        "false": [
+          {
+            "id": "b9fe525d-7673-4378-ad98-8ea3f514c0c4",
+            "command": "EVENT_ACTOR_SET_SPRITE",
+            "args": {
+              "actorId": "fc64c9b0-d68a-495d-ab12-917741e20351",
+              "spriteSheetId": "fbce8520-5a99-4553-accb-11a77e776834"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

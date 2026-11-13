@@ -104,3 +104,9 @@ Seven original native four-channel compositions are described in [SOUNDTRACK.md]
 For independent screen-only agent sessions, run `.tools/emulator/bin/python scripts/player-session.py participant-name`. That harness exposes button presses and screenshots, with separate fresh cartridge RAM, no navigation helpers, puzzle answers or game-variable reads. Results remain in ignored `test-results/player-research/`. [PLAYER_RESEARCH.md](PLAYER_RESEARCH.md) distinguishes observed usability findings from agent vision errors and from human research.
 
 Actual emulator audio can be recorded with `HOLLYWILD_QA_AUDIO=1` and an `audio` command such as `{"audio":{"name":"sample.wav","seconds":8}}`. Set `HOLLYWILD_QA_OUT` to a separate output directory for parallel runs. The checked-in `tests/audio/` scenarios verify routing, mute, save/reboot persistence, and the finale loop. Signal checks do not establish subjective music quality.
+
+## Physical activities
+
+`content/challenges.json` defines the pipe geometry and parcel course. `scripts/challenge-events.mjs` emits built-in native events and appends persistent state after the existing music flag. `scripts/create-assets.py` draws their original art and fixed pipe links. Regenerate art, upgrade tiles and native resources together after edits. `node scripts/check-challenges.mjs` checks all 256 elbow arrangements against a separate connectivity oracle, plus reward limits, deferred payment, reset and route ordering. `tests/challenges.jsonl` exercises the actual ROM through buttons and read-only state observations.
+
+The navigation harness treats activity triggers as walkable terrain, so checkpoint and hazard tests must actually cross them. Scene-transition triggers still require an explicit destination. No activity state is injected into the ROM.
